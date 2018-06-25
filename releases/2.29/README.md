@@ -7,7 +7,7 @@
 
 ## Web API / Data model
 
-- The `Tracked entity` object is renamed to `Tracked Entity Type` in the web API.
+- The `Tracked Entity` object is renamed to `Tracked Entity Type` in the web API.
 - Tracked entity types are associated with tracked entity attributes.
 - The link between user roles and data sets and programs has been replaced by the new *data write* sharing levels.
 - The system settings API only accepts supported system setting keys. This implies that custom setting keys will no longer be supported. Apps and clients which are using custom system settings for data storage should be migrated to using the data store API.
