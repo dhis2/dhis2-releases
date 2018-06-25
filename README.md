@@ -8,3 +8,4 @@ You can find upgrade notes for the following releases below:
 
 - [2.30](releases/2.30/README.md)
 - [2.29](releases/2.29/README.md)
+- [2.28](releases/2.28/README.md)
