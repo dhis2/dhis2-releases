@@ -4,5 +4,4 @@ This repository contains information about the DHIS 2 releases. It includes rele
 
 You can find notes for the following releases:
 
-- [2.30](releases/2.30/README.md)
-- [2.29](releases/2.29/README.md)
+- [2.30](2.30/README.md)
