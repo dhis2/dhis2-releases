@@ -2,6 +2,8 @@
 
 This repository contains information about the DHIS 2 releases. It includes upgrade notes and SQL upgrade scripts.
 
+## Versions
+
 You can find upgrade notes for the following releases below:
 
 - [2.30](releases/2.30/README.md)

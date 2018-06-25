@@ -4,9 +4,9 @@
 
 - Run the database [SQL upgrade script](upgrade-230.sql) once before updating the WAR file.
 
-# System
+## System
 
-- The following authorities have been removed from the system and superseded by the new *data read* and *data write* sharing levels in DHIS 2.29:
+- The following authorities have been removed from the system and superseded by the new *data read* and *data write* sharing levels from DHIS 2.29:
 
 ```
 F_TRACKED_ENTITY_DATAVALUE_ADD
