@@ -5,7 +5,7 @@
 - Run the database [SQL upgrade script](upgrade-229.sql) once before updating the WAR file.
 - DHIS 2 now only supports *PostgreSQL* as database platform. Minimum required version is 9.4, however version 10 is recommended. The *PostGIS* extension for spatial data is also recommended.
 
-## Web API / Data model
+## Web API
 
 - The `Tracked Entity` object is renamed to `Tracked Entity Type` in the web API.
 - Tracked entity types are associated with tracked entity attributes.
