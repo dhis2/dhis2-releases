@@ -2,28 +2,21 @@
 -- 2.30 upgrade script
 
 -- New function for generating uids in sql
-/*
- * Relationship upgrade script, DHIS2 2.30
- */
 
-/*
- * We add a new function for generating uids if such a method does not already exist.
- * This doesn't need to go in the transaction below.
- */
- create or replace function generate_uid()
-   returns text as
- $$
- declare
-   chars  text [] := '{0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}';
-   result text := chars [11 + random() * (array_length(chars, 1) - 11)];
- begin
-   for i in 1..10 loop
-     result := result || chars [1 + random() * (array_length(chars, 1) - 1)];
-   end loop;
-   return result;
- end;
- $$
- language plpgsql;
+create or replace function generate_uid()
+  returns text as
+$$
+declare
+  chars  text [] := '{0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}';
+  result text := chars [11 + random() * (array_length(chars, 1) - 11)];
+begin
+  for i in 1..10 loop
+    result := result || chars [1 + random() * (array_length(chars, 1) - 1)];
+  end loop;
+  return result;
+end;
+$$
+language plpgsql;
 
 /*
  * The following transaction will perform all database changes and migrate data
@@ -399,6 +392,25 @@ from
     (select * from to_relationshipitems) tri
 where relationship.relationshipid = fri.relationshipid
     and relationship.relationshipid = tri.relationshipid;
+
+/*
+ * Add new identifiable object columns, set data and make not-null
+ */
+alter table relationship
+    add column uid varchar(11) unique,
+    add column created timestamp,
+    add column lastupdated timestamp;
+
+update relationship
+SET
+    uid = generate_uid(),
+    created = now(),
+    lastupdated = now();
+
+alter table relationship
+    alter column uid set not null,
+    alter column created set not null,
+    alter column lastupdated set not null;
 
 /*
  * Now that all relationships have been created and updated, we remove the old relationships. First we remove columns
