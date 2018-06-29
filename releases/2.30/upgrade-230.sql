@@ -2,7 +2,14 @@
 -- 2.30 upgrade script
 
 -- New function for generating uids in sql
+/*
+ * Relationship upgrade script, DHIS2 2.30
+ */
 
+/*
+ * We add a new function for generating uids if such a method does not already exist.
+ * This doesn't need to go in the transaction below.
+ */
  create or replace function generate_uid()
    returns text as
  $$
@@ -18,8 +25,9 @@
  $$
  language plpgsql;
 
-                                                
--- Upgrading tables and data for Relationship and RelationshipTypes (Including descriptive comments)
+/*
+ * The following transaction will perform all database changes and migrate data
+ */
 begin;
 
 /*
@@ -424,4 +432,3 @@ alter table relationshiptype
   drop column b_is_to_a;
 
 commit;
-
