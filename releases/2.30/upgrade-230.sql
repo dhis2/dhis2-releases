@@ -115,7 +115,6 @@ create temporary table new_relationshiptypes
   generated_b_uid                           varchar(11),
   generated_a_name                          varchar(255),
   generated_b_name                          varchar(255),
-  original_description                      varchar(255),
   generated_a_code                          varchar(255),
   generated_b_code                          varchar(255),
   original_created                          timestamp,
@@ -154,7 +153,6 @@ insert into new_relationshiptypes
             generate_uid() as generated_b_uid,
             concat(max(rel_type.name), '_a-to-b_(', max(a.name), '-', max(b.name), ')') as generated_a_name,
             concat(max(rel_type.name), '_b-to-a_(', max(b.name), '-', max(a.name), ')') as generated_b_name,
-            max(rel_type.description) as original_description,
             concat(max(coalesce(rel_type.code, rel_type.relationshiptypeid::text)), '_A_(', max(a.name), '-', max(b.name), ')') as generated_a_code,
             concat(max(coalesce(rel_type.code, rel_type.relationshiptypeid::text)), '_B_(', max(b.name), '-', max(a.name), ')') as generated_b_code,
             max(rel_type.created) as original_created,
@@ -174,11 +172,10 @@ insert into new_relationshiptypes
 /*
  * Creating new relationshiptypes, including types for different combinations of tets if they where found in the previous query.
  */
-insert into relationshiptype(relationshiptypeid, description, name, uid, code, lastupdated, created, lastupdatedby)
+insert into relationshiptype(relationshiptypeid, name, uid, code, lastupdated, created, lastupdatedby)
     (
         select
             generated_a_relationshiptypeid,
-            original_description,
             generated_a_name,
             generated_a_uid,
             generated_a_code,
@@ -191,11 +188,10 @@ insert into relationshiptype(relationshiptypeid, description, name, uid, code, l
 /*
  * Creating all the counter-types for the previously created ones. Note we are not referrring to the "b" columns and not "a" as in the last query.
  */
-insert into relationshiptype(relationshiptypeid, description, name, uid, code, lastupdated, created, lastupdatedby)
+insert into relationshiptype(relationshiptypeid, name, uid, code, lastupdated, created, lastupdatedby)
     (
         select
             generated_b_relationshiptypeid,
-            original_description,
             generated_b_name,
             generated_b_uid,
             generated_b_code,
