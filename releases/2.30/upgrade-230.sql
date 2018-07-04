@@ -440,3 +440,30 @@ alter table relationshiptype
   drop column b_is_to_a;
 
 commit;
+
+
+/*
+ * Second transaction. Making TrackedEntityInstance item (trackedentityinstance table) an identifiable object. 
+ * The following transaction will perform all database changes and migrate data
+ */
+begin;
+
+/*
+ * Add new identifiable object columns, set default data and make not-null
+ */
+alter table trackedentitycomment
+    add column uid varchar(11) unique,
+    add column created timestamp,
+    add column lastupdated timestamp;
+
+update trackedentitycomment
+SET
+    uid = generate_uid(),
+    created = now(),
+    lastupdated = now();
+
+alter table trackedentitycomment
+    alter column uid set not null,
+    alter column created set not null,
+    alter column lastupdated set not null;
+commit;
