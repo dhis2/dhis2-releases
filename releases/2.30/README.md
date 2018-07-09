@@ -3,7 +3,7 @@
 ## Database
 
 - Run the database [SQL upgrade script](upgrade-230.sql) once before updating the WAR file.
-- PostGis has been added as a requirement, be sure to install and enable PostGis in your database before upgrading to 2.30
+- PostGIS is now a required extension for PostgreSQL. Make sure to install and enable PostGis in your database before upgrading to DHIS 2.30.
 
 ## System
 
