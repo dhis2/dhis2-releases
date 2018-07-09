@@ -443,8 +443,8 @@ commit;
 
 
 /*
- * Second transaction. Making TrackedEntityInstance item (trackedentityinstance table) an identifiable object. 
- * The following transaction will perform all database changes and migrate data
+ * Second transaction. Making TrackedEntityComment item (trackedentitycomment table) an identifiable object. 
+ * The following transaction will perform required database changes.
  */
 begin;
 
