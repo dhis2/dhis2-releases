@@ -26,6 +26,8 @@ F_SQLVIEW_MANAGEMENT
 
 - The _analytics table generation_ screen has been moved from _Reports_ app to _Data administration_ app.
 
+- The _SQL view_ screen has been moved to from _Data administration_ app to _Maintenance_ app.
+
 - The _Light_ web module has been removed and there is currently no plans to replace it.
 
 - The _user_, _import-export_, _messaging_, _data administration_ and _data quality_ apps have been rewritten as Javascript apps using Material UI design.
