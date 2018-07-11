@@ -24,6 +24,12 @@ F_IMPORT_GML
 F_SQLVIEW_MANAGEMENT
 ```
 
+- The following authority has been added and it is used for Program data synchronization purpose:
+
+```
+F_IGNORE_TRACKER_REQUIRED_VALUE_VALIDATION
+```
+
 - The _analytics table generation_ screen has been moved from _Reports_ app to _Data administration_ app.
 
 - The _SQL view_ screen has been moved to from _Data administration_ app to _Maintenance_ app.
