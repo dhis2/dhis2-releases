@@ -417,6 +417,11 @@ alter table program
   drop column relationshipfroma,
   drop column relationshiptext;
 
+/*
+ * We also have to remove any translations that are mapped to the old types
+ */
+delete from relationshiptypetranslations where relationshiptypeid in (select relationshiptypeid from relationshiptype where a_is_to_b is not null or b_is_to_a is not null);
+
 delete from relationshiptype where a_is_to_b is not null or b_is_to_a is not null;
 
 /*
