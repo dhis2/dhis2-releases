@@ -1,7 +1,11 @@
 
 -- 2.30 upgrade script
 
--- New function for generating uids in sql
+-- Install PostGIS extension
+
+create extension if not exists postgis;
+
+-- Function for generating uids in sql
 
 create or replace function generate_uid()
   returns text as
