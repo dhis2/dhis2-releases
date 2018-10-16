@@ -1,7 +1,65 @@
 ----------------------------------------------------------------------------------------------------------------
 ------------------ Scripts for converting ObjectTranslation to Jsonb -------------------------------------------
------------------- ***** Note: start DHIS2 2.31 server BEFORE executing below scripts **** ---------------------
 ----------------------------------------------------------------------------------------------------------------
+alter table dataelement add column translations jsonb; 
+alter table categorycombo add column translations jsonb; 
+alter table attribute add column translations jsonb; 
+alter table categoryoptioncombo add column translations jsonb; 
+alter table categoryoptiongroupset add column translations jsonb; 
+alter table categoryoptiongroup add column translations jsonb; 
+alter table dataelementcategoryoption add column translations jsonb; 
+alter table chart add column translations jsonb; 
+alter table colorset add column translations jsonb; 
+alter table color add column translations jsonb; 
+alter table constant add column translations jsonb; 
+alter table dashboarditem add column translations jsonb; 
+alter table dashboard add column translations jsonb; 
+alter table dataapprovallevel add column translations jsonb; 
+alter table dataapprovalworkflow add column translations jsonb; 
+alter table dataelementcategory add column translations jsonb; 
+alter table dataelementgroupset add column translations jsonb; 
+alter table dataelementgroup add column translations jsonb; 
+alter table dataentryform add column translations jsonb; 
+alter table dataset add column translations jsonb; 
+alter table document add column translations jsonb; 
+alter table eventchart add column translations jsonb; 
+alter table eventreport add column translations jsonb; 
+alter table indicatorgroupset add column translations jsonb; 
+alter table indicator add column translations jsonb; 
+alter table indicatortype add column translations jsonb; 
+alter table maplegendset add column translations jsonb; 
+alter table maplegend add column translations jsonb; 
+alter table map add column translations jsonb; 
+alter table mapview add column translations jsonb; 
+alter table optiongroupset add column translations jsonb; 
+alter table optiongroup add column translations jsonb; 
+alter table optionset add column translations jsonb; 
+alter table optionvalue add column translations jsonb; 
+alter table organisationunit add column translations jsonb; 
+alter table orgunitgroupset add column translations jsonb; 
+alter table orgunitgroup add column translations jsonb; 
+alter table orgunitlevel add column translations jsonb; 
+alter table predictorgroup add column translations jsonb; 
+alter table programindicatorgroup add column translations jsonb; 
+alter table programindicator add column translations jsonb; 
+alter table programmessage add column translations jsonb; 
+alter table programrule add column translations jsonb; 
+alter table programsection add column translations jsonb; 
+alter table programstagesection add column translations jsonb; 
+alter table programstage add column translations jsonb; 
+alter table program_attribute_group add column translations jsonb; 
+alter table program add column translations jsonb; 
+alter table relationshiptype add columnn translations jsonb; 
+alter table reporttable add column translations jsonb; 
+alter table report add column translations jsonb; 
+alter table trackedentityattribute add column translations jsonb; 
+alter table trackedentitytype add column translations jsonb; 
+alter table usergroup add column translations jsonb; 
+alter table userrole add column translations jsonb; 
+alter table validationrule add column translations jsonb; 
+alter table indicatorgroup add column translations jsonb; 
+alter table validationrulegroup add column translations jsonb; 
+
 update dataelement o set translations = (select to_jsonb(array_agg(jsonb_build_object('locale',locale,'property', property,'value', value ))) from objecttranslation ot inner join dataelementtranslations t on ot.objecttranslationid = t.objecttranslationid  where t.dataelementid = o.dataelementid );
 update attribute o set translations = (select to_jsonb(array_agg(jsonb_build_object('locale',locale,'property', property,'value', value ))) from objecttranslation ot inner join attributetranslations t on ot.objecttranslationid = t.objecttranslationid  where t.attributeid = o.attributeid );
 update categorycombo o set translations = (select to_jsonb(array_agg(jsonb_build_object('locale',locale,'property', property,'value', value ))) from objecttranslation ot inner join categorycombotranslations t on ot.objecttranslationid = t.objecttranslationid  where t.categorycomboid = o.categorycomboid );
