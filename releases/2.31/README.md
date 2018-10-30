@@ -1,5 +1,9 @@
 # DHIS 2.31 Upgrade Notes
 
+## Middleware
+
+- PostgreSQL version 9.6 is required. The minimum required version was previously 9.4. We recommend migrating straight to version 10 as it is well tested with DHIS 2 and contains several performance improvements over 9.x. 
+
 ## System
 
 - Support for _memcached_ as application cache provider is removed. Please use _Redis_ instead.
