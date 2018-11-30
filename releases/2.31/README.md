@@ -8,5 +8,5 @@
 
 - Support for _memcached_ as application cache provider is removed. Please use _Redis_ instead.
 - The system settings _Enable email notifications_ and _Enable SMS notifications_ have been removed. The corresponding user settings now default to `true`.
-- The **Mapzen** API is discontinued and removed from Maps app and Settings app.
+- The _Mapzen_ API is discontinued and removed from Maps app and Settings app.
 - [Flyway](https://flywaydb.org/) is introduced for database migration.
