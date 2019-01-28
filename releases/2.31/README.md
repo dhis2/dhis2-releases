@@ -3,6 +3,7 @@
 ## Upgrade
 
 - In 2.31 we are introducing [Flyway](https://flywaydb.org/) as a new system for database migrations. In the process we have removed most of the legacy database migration statements/scripts in order to have a fresh start and to reduce startup time of the application. As a result, when migrating from older DHIS 2 versions it is required to install *DHIS 2.30* before installing DHIS 2.31. This will ensure that older migration scripts are being executed.
+- As always, remember to drop your SQL views before upgrading the DHIS 2 version. The database upgrade routines might change data types, which is not allowed by PostgreSQL if referred to from SQL views.
 
 ## Middleware
 
