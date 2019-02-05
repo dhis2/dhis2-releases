@@ -1,4 +1,4 @@
-# 2.32 Release Notes
+# 2.32 Upgrade Notes
 
 ## System Administration
 - Server base url has been moved from System Settings to configurations and its value will be retrieved from dhis2.conf.
