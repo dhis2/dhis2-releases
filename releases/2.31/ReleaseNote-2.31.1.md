@@ -61,7 +61,7 @@
 ## Bugs
 
 **[DHIS2-3989](https://jira.dhis2.org/browse/DHIS2-3989): Cannot sort an event report by event date or organisation unit (Regression)**
-_[**API**] Analytics_, _[**App**] Event reports_ 
+_[API] Analytics_, _[App] Event reports_ 
 
 **[DHIS2-4034](https://jira.dhis2.org/browse/DHIS2-4034): Event/Tracker Queries and Update statements taking too long to execute**
 _[API] Events_ 
