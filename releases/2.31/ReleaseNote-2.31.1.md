@@ -44,7 +44,6 @@
 
 **[DHIS2-5495](https://jira.dhis2.org/browse/DHIS2-5495): Orgunit selector must respect display name property**
 >The display name user setting is now taken into account when showing orgunit names in the tree.
->**!!! THIS IS NOT WORKING IN MY TEST! - PHIL !!!**
 
 
 **[DHIS2-5552](https://jira.dhis2.org/browse/DHIS2-5552): Change the program placeholder for event data items and program indicators**
