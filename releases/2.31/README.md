@@ -10,7 +10,7 @@
 > A bug was introduced in 2.31.0 which was corrected later in the 2.31.1 flyway script. This leads to a checksum mismatch when upgrading from that earlier release.
 > You will need to **run the following SQL prior to upgrading from 2.31.0**, to correct the checksum:
 > ```
-> update flyway_schema_history set checksum = '-271885416' where version = '2.31.1';`
+> update flyway_schema_history set checksum = '-271885416' where version = '2.31.1';
 > ```
 > This manual intervention is **not** required when upgrading directly from 2.30.
 
