@@ -5,5 +5,6 @@
 
 ## Data model
 - The (unused) association between `Program` and `DataApprovalWorkflow` has been removed.
-- A Geometry (`Geometry, 4326`) has been added to replace the `coordinates` and `featuretype` columns for `organisationunit` table
-- A Geometry (`Geometry, 4326`) has been added to replace the `coordinates` columns for `orgunitgroup` table
+- The (unused) association between `TrackedEntityInstance` and "representative" `TrackedEntityInstance` has been removed.
+- A Geometry (`Geometry, 4326`) field has been added to replace the `coordinates` and `featuretype` fields for `OrganisationUnit`.
+- A Geometry (`Geometry, 4326`) has been added to replace the `coordinates` columns for `OrganisationUnitGroup`.
