@@ -1,10 +1,10 @@
 # 2.32 Upgrade Notes
 
 ## System Administration
-- Server base url has been moved from System Settings to configurations and its value will be retrieved from dhis2.conf.
+- The `Server base URL` system setting has changed from being a system setting to a `dhis.conf` property. This is done because the server base URL typically follows the server and not the database, and is helpful when copying databases between servers.
 
 ## Data model
-- The (unused) association between `Program` and `DataApprovalWorkflow` has been removed.
-- The (unused) association between `TrackedEntityInstance` and "representative" `TrackedEntityInstance` has been removed.
-- A Geometry (`Geometry, 4326`) field has been added to replace the `coordinates` and `featuretype` fields for `OrganisationUnit`.
-- A Geometry (`Geometry, 4326`) has been added to replace the `coordinates` columns for `OrganisationUnitGroup`.
+- The (unused) association between `Program` and `DataApprovalWorkflow` is removed.
+- The (unused) association between `TrackedEntityInstance` and "representative" `TrackedEntityInstance` is removed.
+- A Geometry (`Geometry, 4326`) field is added to replace the `coordinates` and `featuretype` fields for `OrganisationUnit`.
+- A Geometry (`Geometry, 4326`) is added to replace the `coordinates` columns for `OrganisationUnitGroup`.
