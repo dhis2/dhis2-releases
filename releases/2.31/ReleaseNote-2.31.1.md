@@ -3,7 +3,7 @@
 ## Features
 
 **[DHIS2-3250](https://jira.dhis2.org/browse/DHIS2-3250): Remove the Jiggle from Unique Object Attributes**
->The Edit dialogs in the Maintenane app are no longer resized due to field validation messages being displayed. This means the fields in the dialogs remain in a fixed position and do not jump around during editing.
+>The Edit dialogs in the Maintenance app are no longer resized due to field validation messages being displayed. This means the fields in the dialogs remain in a fixed position and do not jump around during editing.
 
 **[DHIS2-3706](https://jira.dhis2.org/browse/DHIS2-3706): Add Form-name to Tracked Entity Attributes**
 >
