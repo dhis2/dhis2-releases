@@ -162,7 +162,7 @@ _[App] Messaging_, _[App] User_
 **[DHIS2-5050](https://jira.dhis2.org/browse/DHIS2-5050): Measure criteria does not seem to work with indicators**
 _[App] Pivot table_ 
 
-**[DHIS2-5571](https://jira.dhis2.org/browse/DHIS2-5571): settings key input fields should be password field**
+**[DHIS2-5571](https://jira.dhis2.org/browse/DHIS2-5571): Settings key input fields should be password field**
 _[App] Settings_ 
 
 **[DHIS2-4460](https://jira.dhis2.org/browse/DHIS2-4460): Tracker dashboard - profile "Edit" hyperlink changing to "Show all"**
