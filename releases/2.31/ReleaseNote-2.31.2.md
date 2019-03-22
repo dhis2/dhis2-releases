@@ -6,7 +6,7 @@
 
 **[DHIS2-6080](https://jira.dhis2.org/browse/DHIS2-6080): Skip zero values in analytics table export**  
 Components: _[API] Analytics_ 
-> Analytics can now be configured to skip zero data values for sum aggregation type data elements. see [System settings docs](https://docs.dhis2.org/master/en/developer/html/webapi_system_settings.html).
+> Analytics can now be configured to skip zero data values for sum aggregation type data elements. See [System settings docs](https://docs.dhis2.org/master/en/developer/html/webapi_system_settings.html).
 
 
 **[DHIS2-6160](https://jira.dhis2.org/browse/DHIS2-6160): Option and authority for disabling audit in data value import**  
