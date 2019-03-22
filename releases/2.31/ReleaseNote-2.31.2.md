@@ -11,7 +11,7 @@ Components: _[API] Analytics_
 
 **[DHIS2-6160](https://jira.dhis2.org/browse/DHIS2-6160): Option and authority for disabling audit in data value import**  
 Components: _[API] Data value set_  
-> A skipAudit option is now available, to improve performance during import, for users with the correct authority. see [Import parameters docs](https://docs.dhis2.org/master/en/developer/html/webapi_data_values.html#webapi_data_values_import_parameters).
+> A skipAudit option is now available, to improve performance during import, for users with the correct authority. See [Import parameters docs](https://docs.dhis2.org/master/en/developer/html/webapi_data_values.html#webapi_data_values_import_parameters).
 
 
 **[DHIS2-5905](https://jira.dhis2.org/browse/DHIS2-5905): Program Rule Engine Performance Enhancement**  
