@@ -18,16 +18,16 @@ Components: _[API] Data value set_
 Components: _[API] Program rules_ 
 > Performance of event updates has been improved by optimising calls to the rule engine.
 
-**[DHIS2-5472](https://jira.dhis2.org/browse/DHIS2-5472), [DHIS2-4008](https://jira.dhis2.org/browse/DHIS2-4008)**: **Analytics apps: Order interpretations in descending order, and comments in ascending order**  
+**[DHIS2-5472](https://jira.dhis2.org/browse/DHIS2-5472), [DHIS2-4008](https://jira.dhis2.org/browse/DHIS2-4008)**: **Analytics apps: Order interpretations in descending order, comments in ascending order**  
 Components: _[App] Dashboard_, _[App] Maps_  
 > The Interpretations functionality has been improved to provide more intuitive ordering.
 
 
-**[DHIS2-5486](https://jira.dhis2.org/browse/DHIS2-5486), [DHIS2-5483](https://jira.dhis2.org/browse/DHIS2-5483), [DHIS2-5469](https://jira.dhis2.org/browse/DHIS2-5469): Dashboard, DV, Maps: Add interpretations toolbar, sharing, and styling changes**  
+**[DHIS2-5486](https://jira.dhis2.org/browse/DHIS2-5486), [DHIS2-5483](https://jira.dhis2.org/browse/DHIS2-5483), [DHIS2-5469](https://jira.dhis2.org/browse/DHIS2-5469): Dashboard, DV, Maps: Add interpretations toolbar, sharing, styling changes**  
 Components: _[App] Dashboard_ 
 > The Interpretations functionality has been improved and harmonised across applications.
 
-**[DHIS2-5470](https://jira.dhis2.org/browse/DHIS2-5470): Dashboard, Maps and Data Visualizer - Interpretation actions should show icons only, with hover tooltip**  
+**[DHIS2-5470](https://jira.dhis2.org/browse/DHIS2-5470): Dashboard, Maps and Data Visualizer - Interpretation actions show icons only, with hover tooltip**  
 Components: _[App] Dashboard_  
 > The Interpretations has been simplified and de-cluttered with the use of clear, simple icons.
 
