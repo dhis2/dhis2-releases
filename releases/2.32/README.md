@@ -6,5 +6,8 @@
 ## Data model
 - The (unused) association between `Program` and `DataApprovalWorkflow` is removed.
 - The (unused) association between `TrackedEntityInstance` and "representative" `TrackedEntityInstance` is removed.
-- A Geometry (`Geometry, 4326`) field is added to replace the `coordinates` and `featuretype` fields for `OrganisationUnit`.
-- A Geometry (`Geometry, 4326`) is added to replace the `coordinates` columns for `OrganisationUnitGroup`.
+- A Geometry (`Geometry, 4326`) field `geometry` is added replacing the `coordinates` and `featuretype` fields for `OrganisationUnit`.
+- A Geometry (`Geometry, 4326`) field `geometry` is added replacing the `coordinates` columns for `OrganisationUnitGroup`.
+
+## System
+- The *Event capture* app is removed. It is replaced by the *Capture* app which offers all of its features and more.
