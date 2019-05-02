@@ -9,5 +9,8 @@
 - A Geometry (`Geometry, 4326`) field `geometry` is added replacing the `coordinates` and `featuretype` fields for `OrganisationUnit`.
 - A Geometry (`Geometry, 4326`) field `geometry` is added replacing the `coordinates` columns for `OrganisationUnitGroup`.
 
+## Database
+- The `trackedentitydatavalue` table has been replaced by a PostgreSQL JSONB object/column in the `programstageinstance` table. 
+
 ## System
 - The *Event capture* app is removed. It is replaced by the *Capture* app which offers all of its features and more.
