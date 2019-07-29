@@ -1,7 +1,7 @@
 # 2.32 Upgrade Notes
 
 ## System Administration
-- The *Server base URL* system setting has changed from being a system setting to a `dhis.conf` property. This is done because the server base URL typically follows the server and not the database.
+- The *Server base URL* system setting has changed from being a system setting to a `dhis.conf` property. This is done because the server base URL typically follows the server and not the database. The setting key is `server.base.url`.
 
 ## Data model
 - The (unused) association between `Program` and `DataApprovalWorkflow` is removed.
