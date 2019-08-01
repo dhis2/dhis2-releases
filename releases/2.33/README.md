@@ -13,4 +13,4 @@
 
 ## Application
 
-- The default value for the system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now `true` (it was `false`).
+- The default value for the system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now `true` (previously `false`).
