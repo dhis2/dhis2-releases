@@ -10,3 +10,7 @@
 - Property `programScope` of object `TrackedEntityAttribute` is removed. Correspondingly column `programscope` of table `trackedentityattribute` is removed.
 - Column `tracedentityattributeid` of table `program_attributes` is made non-null.
 - Column `programstageid` of table `programstagedataelement` is made non-null.
+
+## Application
+
+- The default value for the system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now `True` (it was `False`).
