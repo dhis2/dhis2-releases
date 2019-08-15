@@ -6,7 +6,7 @@
 
 **[DHIS2-6327](https://jira.dhis2.org/browse/DHIS2-6327): Predictor - add support for percentiles**  
 Components: _[API] Predictors_  
-> Percentile and standard deviation aggregation functions have now been added to predictors to support the definition of thresholds. See [create_predictor](https://docs.dhis2.org/master/en/user/html/manage_predictor.html#create_predictor) documentation.
+> Percentile and standard deviation aggregation functions have now been added to predictors to support the definition of thresholds, etc.. See [create_predictor](https://docs.dhis2.org/master/en/user/html/manage_predictor.html#create_predictor) documentation.
 
 
 ## Bugs
