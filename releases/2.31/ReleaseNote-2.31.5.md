@@ -90,3 +90,6 @@ Components: _[API] User_, _[App] User_
 
 **[DHIS2-2022](https://jira.dhis2.org/browse/DHIS2-2022): Category option combination not updated after category option rename**  
 Components: _Backend_  
+
+**[DHIS2-6898](https://jira.dhis2.org/browse/DHIS2-6898): Add Event Layer - API Errors are not reported to user**  
+Components: _[App] Maps_
