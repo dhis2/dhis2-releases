@@ -5,7 +5,7 @@
 - Support for **Internet Explorer 11** has been dropped.
 - Supported web browsers are now Chrome, Firefox, Safari and Edge.
 
-## Configuration (dhis.conf)
+## Configuration / dhis.conf
 
 - A new property `server.https` is introduced. This setting is highly recommended to enable when deploying on HTTPS as it provides additional security (set `server.https = on` to enable). See install docs for details.
 - The property `connection.schema` no longer has any effect and can be removed.
@@ -19,7 +19,9 @@
 ## Application
 
 - The `Reports` legacy web module is removed from the system, and is replaced by the a new `Reports` React web app. The system uses the same authority as before, the app name is the same, and there is no action required to be taken.
-- The default value for the system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now `true` (previously `false`).
+- The `Approval` part of reports web module has been turned into a new web module. A new React-based app is in the works to replace it.
+- The system setting `Lock user account temporarily after multiple failed login attempts` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now enabled by default.
+- The system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now enabled by default.
 
 ## Process
 - Remember to drop SQL view from Apps > Data administration > SQL views before upgrading to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
