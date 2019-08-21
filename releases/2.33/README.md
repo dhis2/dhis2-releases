@@ -7,7 +7,7 @@
 
 ## Configuration (dhis.conf)
 
-- A new property `server.https` is introduced. This setting is highly recommended to enable when deploying on HTTPS (set `server.https = on`) as it provides additional security. See install docs for details.
+- A new property `server.https` is introduced. This setting is highly recommended to enable when deploying on HTTPS as it provides additional security (set `server.https = on` to enable). See install docs for details.
 - The property `connection.schema` no longer has any effect and can be removed from your configuration file.
 
 ## Data model
