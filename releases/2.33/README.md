@@ -5,6 +5,11 @@
 - Support for **Internet Explorer 11** has been dropped.
 - Supported web browsers are now Chrome, Firefox, Safari and Edge.
 
+## Configuration (dhis.conf)
+
+- A new property `server.https` is introduced. This setting is highly recommended to enable (set to `on`) when deploying on HTTPS as it provides additional security. See install docs for details.
+- The property `connection.schema` no longer has any effect and can be removed from your configuration file.
+
 ## Data model
 
 - Property `programScope` of object `TrackedEntityAttribute` is removed. Correspondingly column `programscope` of table `trackedentityattribute` is removed.
