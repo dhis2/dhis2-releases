@@ -18,8 +18,10 @@
 
 ## Application
 
-- The `Reports` legacy web module is removed from the system, and is replaced by the a new `Reports` React web app. The system uses the same authority as before, the app name is the same, and there is no action required to be taken.
+- The `Reports` legacy web module is removed from the system, and is replaced by the a new `Reports` React web app. The system uses the same authority as before, the app name is the same, and there is no action required.
 - The `Approval` part of reports web module has been turned into a new web module. A new React-based app is in the works to replace it.
+- The `Classic Data Visualizer` app is removed. This app is superseded by the new `Data Visualizer` app.
+- The `GIS` app is removed. This app is superseeded by the new `Maps` app.
 - The system setting `Lock user account temporarily after multiple failed login attempts` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now enabled by default.
 - The system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now enabled by default.
 
