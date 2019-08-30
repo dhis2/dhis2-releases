@@ -43,6 +43,7 @@ Components: _[API] Events_
 Components: _[API] Events_, _[API] Tracker_ 
 
 
+**[DHIS2-6064](https://jira.dhis2.org/browse/DHIS2-6064): Unify/merge Events push and Event sync into one common logic**  
 **[DHIS2-7008](https://jira.dhis2.org/browse/DHIS2-7008): Upgrade to Spring Security 5**  
 Components: _[API] Frameworks and libraries_ 
 
@@ -95,6 +96,7 @@ Components: _[API] Tracker_
 Components: _[API] Tracker_, _[App] Capture_ 
 
 
+**[DHIS2-2971](https://jira.dhis2.org/browse/DHIS2-2971): Add Bi-Weekly period type to analytics apps**  
 **[DHIS2-6048](https://jira.dhis2.org/browse/DHIS2-6048): Support "User assignment" in Capture app**  
 Components: _[App] Capture_  
 **In Review**
@@ -143,11 +145,11 @@ Components: _[App] Data visualizer_
 **Open**
 
 
-**[DHIS2-2757](https://jira.dhis2.org/browse/DHIS2-2757): Show description of report date, enrollment date and incident date**  
+**[DHIS2-2480](https://jira.dhis2.org/browse/DHIS2-2480): Show Enrollment date and Incident date in Event Reports**  
 Components: _[App] Event reports_ 
 
 
-**[DHIS2-2480](https://jira.dhis2.org/browse/DHIS2-2480): Show Enrollment date and Incident date in event report**  
+**[DHIS2-2757](https://jira.dhis2.org/browse/DHIS2-2757): Show description of report date, enrollment date and incident date**  
 Components: _[App] Event reports_ 
 
 
@@ -185,6 +187,11 @@ Components: _[App] Maintenance_
 Components: _[App] Maintenance_ 
 
 
+**[DHIS2-2255](https://jira.dhis2.org/browse/DHIS2-2255): Multiple maps and timeline to show change by period**  
+Components: _[App] Maps_  
+**Retesting**
+
+
 **[DHIS2-6321](https://jira.dhis2.org/browse/DHIS2-6321): Improve period selection for Google Earth Engine Layers**  
 Components: _[App] Maps_ 
 
@@ -193,6 +200,7 @@ Components: _[App] Maps_
 Components: _[App] Maps_ 
 
 
+**[DHIS2-7246](https://jira.dhis2.org/browse/DHIS2-7246): Standard report as XLS**  
 **[DHIS2-7134](https://jira.dhis2.org/browse/DHIS2-7134): Linkable report URLs**  
 Components: _[App] Reports_ 
 
@@ -237,6 +245,11 @@ Components: _[App] Settings_
 Components: _[App] Settings_ 
 
 
+**[DHIS2-5968](https://jira.dhis2.org/browse/DHIS2-5968): Tracker Dashboard not fully updated after permanent transfer of TEI to other orgunit**  
+Components: _[App] Tracker capture_  
+**Testing**
+
+
 **[DHIS2-6493](https://jira.dhis2.org/browse/DHIS2-6493): Include hyphen (-) as valid special character**  
 Components: _[App] User_, _[App] User Profile_ 
 
@@ -279,6 +292,7 @@ Components: _[API] Analytics_
 Components: _[API] Analytics_ 
 
 
+**[DHIS2-7155](https://jira.dhis2.org/browse/DHIS2-7155): Org unit count program indicator show no values in Pivot Tables**  
 **[DHIS2-7152](https://jira.dhis2.org/browse/DHIS2-7152): Incorrect reportParams data in reports resource for JASPER Reports**  
 Components: _[API] Analytics_, _[API] Other_  
 **To Do**
@@ -304,6 +318,10 @@ Components: _[API] Analytics_
 Components: _[API] Data value set_ 
 
 
+**[DHIS2-7268](https://jira.dhis2.org/browse/DHIS2-7268): DataElements identifiers are not translated to CODE when idScheme=CODE is used**  
+Components: _[API] Events_ 
+
+
 **[DHIS2-7373](https://jira.dhis2.org/browse/DHIS2-7373): Conflict in "geometry" does not include "reference" field in server response**  
 Components: _[API] Events_ 
 
@@ -313,10 +331,6 @@ Components: _[API] Events_, _[API] Tracker_
 
 
 **[DHIS2-7372](https://jira.dhis2.org/browse/DHIS2-7372): Update coordinates using "coordinate" field does not work in "/events" endpoint**  
-Components: _[API] Events_ 
-
-
-**[DHIS2-7268](https://jira.dhis2.org/browse/DHIS2-7268): DataElements identifiers are not translated to CODE when idScheme=CODE is used**  
 Components: _[API] Events_ 
 
 
@@ -330,6 +344,11 @@ Components: _[API] Job scheduler_
 
 **[DHIS2-6827](https://jira.dhis2.org/browse/DHIS2-6827): Backend does not store default JobParameters when no JobParameters are provided in POST request to /jobConfigurations**  
 Components: _[API] Job scheduler_ 
+
+
+**[DHIS2-7225](https://jira.dhis2.org/browse/DHIS2-7225): Importing map objects through /metadata API endpoint fails**  
+Components: _[API] Metadata import-export_  
+**Testing**
 
 
 **[DHIS2-7023](https://jira.dhis2.org/browse/DHIS2-7023): Extreme performance drop when exporting data using JSON in 2.30, 2.31, 2.32**  
@@ -614,6 +633,7 @@ Components: _[App] Data visualizer_
 Components: _[App] Data visualizer_ 
 
 
+**[DHIS2-6580](https://jira.dhis2.org/browse/DHIS2-6580): Dialogs in visualizer close on key release (not key press)**  
 **[DHIS2-6623](https://jira.dhis2.org/browse/DHIS2-6623): Dual-axes persists when switching data and other element**  
 Components: _[App] Data visualizer_ 
 
@@ -699,6 +719,7 @@ Components: _[App] Maintenance_
 Components: _[App] Maintenance_ 
 
 
+**[DHIS2-7334](https://jira.dhis2.org/browse/DHIS2-7334): (Maps) Legend is not included in image download**  
 **[DHIS2-7041](https://jira.dhis2.org/browse/DHIS2-7041): Event styling by option set is not working**  
 Components: _[App] Maps_ 
 
@@ -724,8 +745,7 @@ Components: _[App] Messaging_
 
 
 **[DHIS2-2651](https://jira.dhis2.org/browse/DHIS2-2651): Aggregation Type incorrect in Pivot Table download**  
-Components: _[App] Pivot table_  
-**Testing**
+Components: _[App] Pivot table_ 
 
 
 **[DHIS2-4151](https://jira.dhis2.org/browse/DHIS2-4151): Cannot scroll options menu, shifts app window if too tall**  
@@ -756,9 +776,12 @@ Components: _[App] Reports_
 Components: _[App] Settings_ 
 
 
-**[DHIS2-5968](https://jira.dhis2.org/browse/DHIS2-5968): Tracker Dashboard not fully updated after permanent transfer of TEI to other orgunit**  
-Components: _[App] Tracker capture_  
-**Testing**
+**[DHIS2-7098](https://jira.dhis2.org/browse/DHIS2-7098): Rules that make an attribute mandatory fail in TEI dashboard**  
+Components: _[App] Tracker capture_ 
+
+
+**[DHIS2-6926](https://jira.dhis2.org/browse/DHIS2-6926): Creating relationship between TEI of TET type A and TEI of TET type B only shows records of Type B**  
+Components: _[App] Tracker capture_ 
 
 
 **[DHIS2-7034](https://jira.dhis2.org/browse/DHIS2-7034): Program indicator filter with d2:hasValue not evaluating correctly in tracker capture**  
@@ -771,10 +794,6 @@ Components: _[App] Tracker capture_
 
 
 **[DHIS2-6125](https://jira.dhis2.org/browse/DHIS2-6125): Tracker Capture search with "Age" data type is unusable**  
-Components: _[App] Tracker capture_ 
-
-
-**[DHIS2-7098](https://jira.dhis2.org/browse/DHIS2-7098): Rules that make an attribute mandatory fail in TEI dashboard**  
 Components: _[App] Tracker capture_ 
 
 
