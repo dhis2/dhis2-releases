@@ -43,7 +43,6 @@ Components: _[API] Events_
 Components: _[API] Events_, _[API] Tracker_ 
 
 
-**[DHIS2-6064](https://jira.dhis2.org/browse/DHIS2-6064): Unify/merge Events push and Event sync into one common logic**  
 **[DHIS2-7008](https://jira.dhis2.org/browse/DHIS2-7008): Upgrade to Spring Security 5**  
 Components: _[API] Frameworks and libraries_ 
 
@@ -96,7 +95,6 @@ Components: _[API] Tracker_
 Components: _[API] Tracker_, _[App] Capture_ 
 
 
-**[DHIS2-2971](https://jira.dhis2.org/browse/DHIS2-2971): Add Bi-Weekly period type to analytics apps**  
 **[DHIS2-6048](https://jira.dhis2.org/browse/DHIS2-6048): Support "User assignment" in Capture app**  
 Components: _[App] Capture_  
 **In Review**
@@ -200,7 +198,6 @@ Components: _[App] Maps_
 Components: _[App] Maps_ 
 
 
-**[DHIS2-7246](https://jira.dhis2.org/browse/DHIS2-7246): Standard report as XLS**  
 **[DHIS2-7134](https://jira.dhis2.org/browse/DHIS2-7134): Linkable report URLs**  
 Components: _[App] Reports_ 
 
@@ -292,7 +289,6 @@ Components: _[API] Analytics_
 Components: _[API] Analytics_ 
 
 
-**[DHIS2-7155](https://jira.dhis2.org/browse/DHIS2-7155): Org unit count program indicator show no values in Pivot Tables**  
 **[DHIS2-7152](https://jira.dhis2.org/browse/DHIS2-7152): Incorrect reportParams data in reports resource for JASPER Reports**  
 Components: _[API] Analytics_, _[API] Other_  
 **To Do**
@@ -633,7 +629,6 @@ Components: _[App] Data visualizer_
 Components: _[App] Data visualizer_ 
 
 
-**[DHIS2-6580](https://jira.dhis2.org/browse/DHIS2-6580): Dialogs in visualizer close on key release (not key press)**  
 **[DHIS2-6623](https://jira.dhis2.org/browse/DHIS2-6623): Dual-axes persists when switching data and other element**  
 Components: _[App] Data visualizer_ 
 
@@ -719,7 +714,6 @@ Components: _[App] Maintenance_
 Components: _[App] Maintenance_ 
 
 
-**[DHIS2-7334](https://jira.dhis2.org/browse/DHIS2-7334): (Maps) Legend is not included in image download**  
 **[DHIS2-7041](https://jira.dhis2.org/browse/DHIS2-7041): Event styling by option set is not working**  
 Components: _[App] Maps_ 
 
