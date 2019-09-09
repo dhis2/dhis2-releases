@@ -1,0 +1,6 @@
+python3 -m venv --without-pip venv
+source venv/bin/activate
+curl https://bootstrap.pypa.io/get-pip.py | python
+pip3 install jira
+deactivate
+source venv/bin/activate
