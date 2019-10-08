@@ -26,4 +26,4 @@
 - The system setting `Skip zero data values in analytics tables` (with API key `keySkipZeroValuesInAnalyticsTableExport`) is now enabled by default.
 
 ## Process
-- Remember to drop SQL view from Apps > Data administration > SQL views before upgrading to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
+- Remember to drop SQL views from **Apps > Data administration > Maintenance > Drop SQL views** before upgrading, to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
