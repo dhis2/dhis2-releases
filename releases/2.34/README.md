@@ -2,7 +2,7 @@
 
 ## Tomcat support
 
-- Minimum required Tomcat version is now *8.5.x*. Support for Tomcat 7.0 and 8.0 is now dropped.
+- Minimum required Tomcat version is now _8.5.x_. Support for Tomcat 7.0 and 8.0 is now dropped.
 
 ## Data model
 
