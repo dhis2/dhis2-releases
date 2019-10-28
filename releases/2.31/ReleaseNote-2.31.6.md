@@ -66,7 +66,7 @@ Components: _[API] Other_
 Components: _[API] Predictors_  
 **Needs Update**
 
-**[DHIS2-7502](https://jira.dhis2.org/browse/DHIS2-7502): Realize user invitation UI is leaking token through referred header**  
+**[DHIS2-7502](https://jira.dhis2.org/browse/DHIS2-7502): [TITLE REDACTED]**  
 Components: _[API] Security_, _[API] User_
 
 **[DHIS2-6920](https://jira.dhis2.org/browse/DHIS2-6920): (Sync process) Dataset, Sections not updated when elements & sections removed**  
