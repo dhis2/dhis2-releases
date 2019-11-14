@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+pushd () {
+    command pushd "$@" > /dev/null
+}
+
+popd () {
+    command popd "$@" > /dev/null
+}
+
 function app_name {
     local repo=$1
     local name=$(echo "${repo}" | sed -n "s/^.*dhis2\/\(.*\)\.git$/\1/p")
@@ -69,7 +77,14 @@ function create_tag {
 function push {
     local refspec=$1
 
-    git push $git_quiet origin "$refspec"
+    #git push $git_quiet origin "$refspec"
+}
+
+function prepare_push {
+    local refspec=$1
+
+    echo "cd $(pwd)" >> $PUSH
+    echo "git push $git_quiet origin '$refspec'" >> $PUSH
 }
 
 
