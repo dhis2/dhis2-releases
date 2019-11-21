@@ -259,7 +259,7 @@ function release_core {
     local snapshot_branch="<version>${branch}-SNAPSHOT</version>"
     local snapshot_version="<version>${REL_VERSION}-SNAPSHOT</version>"
     local tag_version="<version>${tag}</version>"
-    if [ ${SUFFIX} -eq "" ]
+    if [ "${SUFFIX}" == "" ]
     then
       local next_snapshot_version=$snapshot_version
     else
