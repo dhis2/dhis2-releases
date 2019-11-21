@@ -20,7 +20,7 @@ shopt -s nullglob globstar
 
 readonly dry_run=1
 readonly git_quiet="-q"  # "" for normal, "-q" for quiet git calls
-readonly freeze=1
+readonly freeze=0
 readonly PATCH_BRANCH_PREFIX="patch/"
 
 
@@ -223,6 +223,7 @@ function release_apps {
 
         else
 
+          checkout "$branch"
           checkout "$freeze_branch"
 
           if [ $dry_run -eq 1 ];then
