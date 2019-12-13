@@ -259,11 +259,11 @@ function release_core {
     local snapshot_branch="<version>${branch}-SNAPSHOT</version>"
     local snapshot_version="<version>${REL_VERSION}-SNAPSHOT</version>"
     local tag_version="<version>${tag}</version>"
-    if [ "${SUFFIX}" == "" ]
+    if [ "${SUFFIX}" != "" ]
     then
-      local next_snapshot_version=$snapshot_version
-    else
       local next_snapshot_version="<version>$(get_next_snapshot)</version>"
+    else
+      local next_snapshot_version=$snapshot_version
     fi
     echo "NEXT SNAPSHOT VERSION: $next_snapshot_version"
 
@@ -301,14 +301,15 @@ function release_core {
       # back on the version branch...
       checkout "$branch"
       # update the mvn versions to next snapshot
-      local find=$(unregex "$tag_version")
+      local find=$(unregex "$snapshot_version")
       local replace=$(unregex "$next_snapshot_version")
+      echo "change snapshot from $find to $replace"
       for pom in `find . -name "pom*.xml"`
       do
         sed -i "s;${find};${replace};" $pom
         git add $pom
       done
-      git commit -m "chore: update maven versions to $(get_next_snapshot)"
+      git commit -m "chore: update maven versions to $next_snapshot_version"
 
       if [ $dry_run -eq 0 ];then
         push "$branch"
