@@ -206,7 +206,7 @@ function release_apps {
 
         if [ $freeze -eq 1 ];then
 
-            create_branch "$branch"
+            local created_app_b= $(create_branch "$branch")
             checkout "$branch"
 
             # create a new release branch for the patch
@@ -217,7 +217,10 @@ function release_apps {
               push "$branch"
               push "$freeze_branch"
             else
-              prepare_push "$branch"
+              if [ "$created_app_b" != "" ]
+              then
+                prepare_push "$branch"
+              fi
               prepare_push "$freeze_branch"
             fi
 
@@ -258,12 +261,12 @@ function release_core {
     local snapshot_branch="<version>${branch}-SNAPSHOT</version>"
     local snapshot_version="<version>${REL_VERSION}-SNAPSHOT</version>"
     local tag_version="<version>${tag}</version>"
-    if [ "${SUFFIX}" == "" ]
-    then
-      local next_snapshot_version=$snapshot_version
-    else
+#    if [ "${SUFFIX}" == "" ]
+#    then
+#      local next_snapshot_version=$snapshot_version
+#    else
       local next_snapshot_version="<version>$(get_next_snapshot)</version>"
-    fi
+#    fi
     echo "NEXT SNAPSHOT VERSION: $next_snapshot_version"
 
     pushd "$path"
@@ -300,7 +303,7 @@ function release_core {
       # back on the version branch...
       checkout "$branch"
       # update the mvn versions to next snapshot
-      local find=$(unregex "$tag_version")
+      local find=$(unregex "$snapshot_version")
       local replace=$(unregex "$next_snapshot_version")
       for pom in `find . -name "pom*.xml"`
       do
