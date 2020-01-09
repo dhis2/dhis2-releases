@@ -10,16 +10,11 @@ Components: _[App] Settings_
 
 ## Bugs
 
-**[DHIS2-7712](https://jira.dhis2.org/browse/DHIS2-7712): Event reports doesn't use dimension restrictions assigned to a user account**  
-Components: _[API] Analytics_, _[API] Events_  
-**Needs Update**
-
 **[DHIS2-7256](https://jira.dhis2.org/browse/DHIS2-7256): Error perfom maintanace updating category option combination**  
 Components: _[API] Data administration_
 
 **[DHIS2-7806](https://jira.dhis2.org/browse/DHIS2-7806): Deprecated/discarded table columns not deleted from database**  
 Components: _[API] Database migration_  
-**Testing**
 
 **[DHIS2-7994](https://jira.dhis2.org/browse/DHIS2-7994): Request to /event/eventRows fails on NullPointerException**  
 Components: _[API] Events_, _Backend_
@@ -38,7 +33,6 @@ Components: _[API] Metadata import-export_
 
 **[DHIS2-7936](https://jira.dhis2.org/browse/DHIS2-7936): Metadata sync and import is failing with TransientObjectException**  
 Components: _[API] Metadata import-export_, _[API] Synchronization_  
-**In Review**
 
 **[DHIS2-7461](https://jira.dhis2.org/browse/DHIS2-7461): No import summary shown for Event, Data and Metadata Import in all the formats**  
 Components: _[API] Metadata import-export_, _[App] Import-export_
@@ -51,7 +45,6 @@ Components: _[API] Other_
 
 **[DHIS2-8068](https://jira.dhis2.org/browse/DHIS2-8068): Error trying to save predictor**  
 Components: _[API] Predictors_, _[App] Maintenance_  
-**In Review**
 
 **[DHIS2-7755](https://jira.dhis2.org/browse/DHIS2-7755): Predictor - re-running Predictor with multiple levels is crashing**  
 Components: _[API] Predictors_
@@ -131,4 +124,3 @@ Components: _[App] User_
 
 **[DHIS2-7845](https://jira.dhis2.org/browse/DHIS2-7845): Prevent old password autofill**  
 Components: _[App] User Profile_
-
