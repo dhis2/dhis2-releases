@@ -117,7 +117,6 @@ Components: _[App] Tracker capture_
 
 **[DHIS2-7808](https://jira.dhis2.org/browse/DHIS2-7808): Editing the user fields also changes the assigned user roles in User App**  
 Components: _[App] User_  
-**Testing**
 
 **[DHIS2-7662](https://jira.dhis2.org/browse/DHIS2-7662): CreatedBy field is set to undefined in UserGroup after performing a metadatasync**  
 Components: _[App] User_
