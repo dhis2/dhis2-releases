@@ -67,6 +67,9 @@ Components: _[API] User_
 **[DHIS2-7875](https://jira.dhis2.org/browse/DHIS2-7875): Fields are pre-filled with current user username and password**  
 Components: _[API] User_
 
+**[DHIS2-8032](https://jira.dhis2.org/browse/DHIS2-8032): Application Title is cleared when clearing cache**  
+Components: _[App] Cache cleaner_
+
 **[DHIS2-7385](https://jira.dhis2.org/browse/DHIS2-7385): Unknown comment author when the comment was created with event**  
 Components: _[App] Capture_
 
