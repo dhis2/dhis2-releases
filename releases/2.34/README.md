@@ -11,4 +11,4 @@
 - The `/api/configuration/settings` and `/api/configuration/settings/filter` endpoints have been removed.
 
 ## Process
-
+- Remember to drop SQL views from **Apps > Data administration > Maintenance > Drop SQL views** before upgrading, to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
