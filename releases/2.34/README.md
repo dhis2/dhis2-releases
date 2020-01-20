@@ -12,4 +12,4 @@
 
 ## Process
 
-- Remember to drop SQL views from **Apps > Data administration > Maintenance > Drop SQL views** before upgrading, to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
+- Remember to drop SQL views from **Apps > Data administration > Maintenance > Drop SQL views** before upgrading and to recreate them after the upgrade is completed. This is to avoid database integrity issues during the upgrade process, as database tables/columns with associated views cannot be modified.
