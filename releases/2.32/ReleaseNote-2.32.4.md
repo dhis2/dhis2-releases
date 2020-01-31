@@ -59,10 +59,6 @@ Components: _[API] Synchronization_
 **[DHIS2-7476](https://jira.dhis2.org/browse/DHIS2-7476): Tracker data synchronization does not synchronize some of TEAVs**  
 Components: _[API] Synchronization_
 
-**[DHIS2-5527](https://jira.dhis2.org/browse/DHIS2-5527): Setting localized appearance settings throws a 409**  
-Components: _[API] System configuration_  
-**Needs Update**
-
 **[DHIS2-8137](https://jira.dhis2.org/browse/DHIS2-8137): Relationships API end point/resource do not block duplicate relationships**  
 Components: _[API] Tracker_
 
