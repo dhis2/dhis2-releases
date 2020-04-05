@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
 
 
 
@@ -15,12 +15,13 @@ else
     # Bash 4.3 and older chokes on empty arrays with set -u.
     set -eo pipefail
 fi
-# set -x
+# set -xv
 shopt -s nullglob globstar
 
 readonly dry_run=1
 readonly git_quiet="-q"  # "" for normal, "-q" for quiet git calls
 readonly freeze=0
+readonly freeze_date_time="" #"2020-03-11 13:00:00 +0100"
 readonly PATCH_BRANCH_PREFIX="patch/"
 
 
@@ -206,41 +207,36 @@ function release_apps {
 
         if [ $freeze -eq 1 ];then
 
-            create_branch "$branch"
-            checkout "$branch"
+            local created_app_b= $(create_branch "$branch")
+            checkout "$branch" "$freeze_date_time"
 
             # create a new release branch for the patch
             create_branch "$freeze_branch"
             checkout "$freeze_branch"
 
-            if [ $dry_run -eq 0 ];then
-              push "$branch"
-              push "$freeze_branch"
-            else
-              prepare_push "$branch"
+            # make an empty commit to ensure Travis builds this new branch
+            git commit --allow-empty -m "chore(release-prepare): cut $freeze_branch"
+
+              if [ "$created_app_b" != "" ]
+              then
+                prepare_push "$branch"
+              fi
               prepare_push "$freeze_branch"
-            fi
 
         else
 
           checkout "$branch"
           checkout "$freeze_branch"
 
-          if [ $dry_run -eq 1 ];then
             # during dry run display recent changes
             echo "============= ++ CHANGES IN PATCH RELEASE BRANCH ${name}:"
             #git log --no-merges --oneline --since='1 week ago'
             git log ${branch}..${freeze_branch} --oneline
             echo "============= -- CHANGES IN PATCH RELEASE BRANCH ${name}:"
-          fi
 
           create_tag "$tag"
 
-          if [ $dry_run -eq 0 ];then
-            push "$tag"
-          else
             prepare_push "$tag"
-          fi
 
         fi
 
@@ -259,12 +255,12 @@ function release_core {
     local snapshot_branch="<version>${branch}-SNAPSHOT</version>"
     local snapshot_version="<version>${REL_VERSION}-SNAPSHOT</version>"
     local tag_version="<version>${tag}</version>"
-    if [ "${SUFFIX}" != "" ]
-    then
+#    if [ "${SUFFIX}" == "" ]
+#    then
+#      local next_snapshot_version=$snapshot_version
+#    else
       local next_snapshot_version="<version>$(get_next_snapshot)</version>"
-    else
-      local next_snapshot_version=$snapshot_version
-    fi
+#    fi
     echo "NEXT SNAPSHOT VERSION: $next_snapshot_version"
 
     pushd "$path"
@@ -292,11 +288,7 @@ function release_core {
       git add "${pkg_path}/apps-to-bundle.json"
       git commit -m "chore: set apps to track patch release branches"
 
-      if [ $dry_run -eq 0 ];then
-        push "$freeze_branch"
-      else
         prepare_push "$freeze_branch"
-      fi
 
       # back on the version branch...
       checkout "$branch"
@@ -311,11 +303,7 @@ function release_core {
       done
       git commit -m "chore: update maven versions to $next_snapshot_version"
 
-      if [ $dry_run -eq 0 ];then
-        push "$branch"
-      else
         prepare_push "$branch"
-      fi
 
 
       # update the master in the case we have branched a new version
@@ -339,11 +327,7 @@ function release_core {
         done
         git commit -m "chore: update maven versions to ${new_master}"
 
-        if [ $dry_run -eq 0 ];then
-          push "master"
-        else
           prepare_push "master"
-        fi
       fi
 
 
@@ -354,13 +338,11 @@ function release_core {
 
       checkout "$freeze_branch"
 
-      if [ $dry_run -eq 1 ];then
         # during dry run display recent changes
         echo "============= ++ CHANGES IN PATCH RELEASE BRANCH core:"
 #        git log --no-merges --oneline --since='1 week ago'
         git log ${branch}..${freeze_branch} --oneline
         echo "============= -- CHANGES IN PATCH RELEASE BRANCH core:"
-      fi
 
       # updates all app version refs to tag
     jq --exit-status "(. |= (
@@ -393,14 +375,37 @@ function release_core {
 
       create_tag "$tag"
 
+      # updates all tags back to app version refs
+    jq --exit-status "(. |= (
+      .|map(
+              . |=
+                  if .|contains(\"#\") then
+                      .|sub(\"#.*$\"; \"#${freeze_branch}\")
+                  else
+                      .+\"#${freeze_branch}\"
+                  end
+      )
+    ))" "${pkg_path}/apps-to-bundle.json" > "${pkg_path}/apps-to-bundle.json.mod"
+      mv "${pkg_path}/apps-to-bundle.json.mod" "${pkg_path}/apps-to-bundle.json"
 
-      if [ $dry_run -eq 0 ];then
-        push "$freeze_branch"
-        push "$tag"
-      else
+      # commits and tags
+      git add "${pkg_path}/apps-to-bundle.json"
+      git commit -m "chore: lock app versions to patch branch ${freeze_branch}"
+
+      # update the mvn versions
+      local find=$(unregex "$tag_version")
+      local replace=$(unregex "$snapshot_branch")
+      for pom in `find . -name "pom*.xml"`
+      do
+        sed -i "s;${find};${replace};" $pom
+        sed -i "s;${find_branch};${replace};" $pom
+        git add $pom
+      done
+      git commit -m "chore: revert maven versions to ${snapshot_branch}"
+
+
         prepare_push "$freeze_branch"
         prepare_push "$tag"
-      fi
 
 
     fi
@@ -420,7 +425,7 @@ function clone_core {
     # creates release branch for The Core
     readonly created_branch=$(create_branch "$branch")
     echo $created_branch
-    checkout "$branch"
+    checkout "$branch" "$freeze_date_time"
 
     popd
 
