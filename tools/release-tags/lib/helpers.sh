@@ -17,8 +17,15 @@ function app_name {
 
 function checkout {
     local branch=$1
+    local fd=""
+    local freeze_date=${2:-${fd}}
     echo "checking out branch: ${branch}"
     git checkout $git_quiet "$branch"
+    if [[ "${freeze_date}" != "" ]]
+    then
+      local freeze_commit=$(git rev-list -1 --before="${freeze_date}" ${branch})
+      git checkout ${freeze_commit}
+    fi
     # git fetch origin "$branch"
     # git merge
 }
