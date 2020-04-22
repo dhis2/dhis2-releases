@@ -6,7 +6,7 @@
 
 ## Web API and Data model
 
-- A new entity and API resource is introduced called `Visualization`, located at `/api/visualizations`. The visualization entity merges the previous `ReportTable` and `Chart` entities and API resources. The corresponding API endpoints `/api/reportTables` and `/api/charts` will be functional for some time but will be removed in the future and we recommend clients to migrate as soon as possible. This also implies that report tables and charts cannot be exchanged between systems using the `/api/metadata` endpint, instead, metadata should be exchanged as visualizations.
+- A new entity and API resource is introduced called `Visualization`, located at `/api/visualizations`. The visualization entity merges the previous `ReportTable` and `Chart` entities and API resources. The corresponding API endpoints `/api/reportTables` and `/api/charts` will be functional for some time but will be removed in the future and we recommend clients to migrate as soon as possible. This also implies that report tables and charts cannot be exchanged between systems using the `/api/metadata` endpoint, instead, metadata should be exchanged as visualizations.
 
 - The `/api/configuration/settings` and `/api/configuration/settings/filter` endpoints have been removed.
 
