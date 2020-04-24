@@ -10,11 +10,15 @@
 
 - The `/api/configuration/settings` and `/api/configuration/settings/filter` endpoints have been removed.
 
-## Predictor expressions
+## Functionality
+
+- The _Continuous execution_ option for jobs in Scheduler app has been removed, as it was often misused and caused significant problems. Instead, jobs can now be of type _fixed delay_ which means they will be invoked with a fixed delay in between each run (such as the new _continuous analytics table_ job).
+
+## Predictor
 
 - Function names in predictor expressions are now case sensitive and must match the predictor function names in the DHIS 2 User Guide. Previously they were case-insensitive. As part of the upgrade to 2.34, functions names in existing predictor expressions are automatically converted to the correct case.
 
-- The stddev function in predictor expressions is now the same as stddevSamp, for consistency with other parts of DHIS 2 and with general usage. Previously, stddev was synonymous with stddevPop in predictor expressions. As part of the upgrade to 2.34, references to stddev in existing predictor expressions are automatically replaced with stddevPop.
+- The `stddev` function in predictor expressions is now the same as `stddevSamp` for consistency with other parts of DHIS 2 and with general usage. Previously, `stddev` was synonymous with `stddevPop` in predictor expressions. As part of the upgrade to 2.34, references to stddev in existing predictor expressions are automatically replaced with `stddevPop`.
 
 ## Process
 
