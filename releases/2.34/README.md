@@ -12,7 +12,7 @@
 
 ## Functionality
 
-- The _Continuous execution_ option for jobs in Scheduler app has been removed, as it was often misused and caused significant problems. Instead, jobs can now be of type _fixed delay_ which means they will be invoked with a fixed delay in between each run (such as the new _continuous analytics table_ job).
+- The _continuous execution_ option for jobs in Scheduler app has been removed, as it was often misused and caused significant problems. Instead, jobs can now be of type _fixed delay_ which means they will be invoked with a fixed delay in between each run (such as the new _continuous analytics table_ job).
 
 ## Predictor
 
