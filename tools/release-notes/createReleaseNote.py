@@ -35,6 +35,9 @@ jira = JIRA(options,auth=(args.user, args.password))
 release= args.version[0:4]
 outfile="../../releases/"+release+"/ReleaseNote-"+args.version+".md"
 apifile= open(outfile,'w')
+notdone="notdone.txt"
+notdonefile= open(notdone,'w')
+
 
 
 apifile.write('# Patch '+args.version+' Release Note'+'\n\n')
@@ -43,7 +46,10 @@ for type in ["Feature","Bug"]:
     #
     apifile.write('## '+type+'s''\n\n')
     cnt=0
-    jql='project = DHIS2 AND type = '+type+' AND fixVersion = '+args.version+' ORDER BY component ASC, updated DESC'
+    fallback_version = ""
+    if args.version[5] == '0':
+        fallback_version = ' or fixVersion = '+args.version[0:4]
+    jql='project = DHIS2 AND type = '+type+' AND (fixVersion = '+args.version+fallback_version+') ORDER BY component ASC, updated DESC'
     for issue in jira.search_issues(jql,maxResults=500):
         cnt+=1
         comp=""
@@ -53,8 +59,10 @@ for type in ["Feature","Bug"]:
         #apifile.write('>{}\n'.format(issue.fields.description))
         if issue.fields.status.name != "Done":
             apifile.write('Components: {}  \n**{}**\n\n'.format(comp[:-2], issue.fields.status.name))
+            notdonefile.write('{}: {} - {}\n'.format(issue.fields.status.name,issue.key,issue.permalink(), issue.fields.summary.rstrip()))
         else:
             apifile.write('Components: '+comp[:-2]+'\n\n')
 
 
 apifile.close()
+notdonefile.close()
