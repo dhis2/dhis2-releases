@@ -89,10 +89,10 @@ Components: _[API] Predictors_
 **[DHIS2-8223](https://jira.dhis2.org/browse/DHIS2-8223): Predictor Run failing for all predictors - Recently introduced bug**  
 Components: _[API] Predictors_
 
-**[DHIS2-8583](https://jira.dhis2.org/browse/DHIS2-8583): Any file types can be uploaded as file resources**  
+**[DHIS2-8583](https://jira.dhis2.org/browse/DHIS2-8583):**  
 Components: _[API] Security_
 
-**[DHIS2-7358](https://jira.dhis2.org/browse/DHIS2-7358): Disabled user can continue using the application in active session**  
+**[DHIS2-7358](https://jira.dhis2.org/browse/DHIS2-7358):**  
 Components: _[API] Security_
 
 **[DHIS2-8322](https://jira.dhis2.org/browse/DHIS2-8322): The legacy Event synchronization does not support new features**  
