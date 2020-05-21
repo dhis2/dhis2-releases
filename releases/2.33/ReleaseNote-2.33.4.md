@@ -2,7 +2,7 @@
 
 ## Features
 
-**[DHIS2-8398](https://jira.dhis2.org/browse/DHIS2-8398): Data approval stopgap module based on Struts module**  
+**[DHIS2-8398](https://jira.dhis2.org/browse/DHIS2-8398): Data approval stopgap app based on Struts module**  
 Components: _[App] Data approval_  
 
 The data approval functionality is re-introduced as a separate app called *Data approval*. It offers the same functionality which was previously accessible through the Reports app. It allows for approving data by data set and time period. 
@@ -62,7 +62,7 @@ Components: _[API] Tracker_
 **[DHIS2-8674](https://jira.dhis2.org/browse/DHIS2-8674): Make static strings translatable**  
 Components: _[API] User_
 
-**[DHIS2-7300](https://jira.dhis2.org/browse/DHIS2-7300): Capture app - ridiculous number of point coordinate decimals**  
+**[DHIS2-7300](https://jira.dhis2.org/browse/DHIS2-7300): Capture app - very high number of point coordinate decimals**  
 Components: _[App] Capture_
 
 **[DHIS2-7348](https://jira.dhis2.org/browse/DHIS2-7348): Order of lat/long coordinate is different in create/edit event and in view event**  
