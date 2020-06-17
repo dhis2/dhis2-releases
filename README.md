@@ -7,7 +7,7 @@ This repository contains information about the DHIS 2 releases. It includes upgr
 You can find upgrade notes for the following releases below:
 
 - [2.35](releases/2.35/README.md) (in progress)
-- [2.34](releases/2.34/README.md) (in progress)
+- [2.34](releases/2.34/README.md)
 - [2.33](releases/2.33/README.md)
 - [2.32](releases/2.32/README.md)
 - [2.31](releases/2.31/README.md)
