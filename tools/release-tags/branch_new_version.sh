@@ -2,8 +2,6 @@
 
 
 
-
-
 #
 ## bash setup
 #
@@ -18,11 +16,8 @@ fi
 # set -xv
 shopt -s nullglob globstar
 
-readonly dry_run=1
 readonly git_quiet="-q"  # "" for normal, "-q" for quiet git calls
-readonly freeze=0
 readonly freeze_date_time="" #"2020-03-11 13:00:00 +0100"
-readonly PATCH_BRANCH_PREFIX="patch/"
 
 
 
@@ -32,54 +27,6 @@ readonly PATCH_BRANCH_PREFIX="patch/"
 
 source ./lib/helpers.sh
 
-
-
-# function usage
-# {
-#     echo "usage: arg_parse_example -a AN_ARG -s SOME_MORE_ARGS [-y YET_MORE_ARGS || -h]"
-#     echo "   ";
-#     echo "  -a | --an_arg            : A super special argument";
-#     echo "  -s | --some_more_args    : Another argument";
-#     echo "  -y | --yet_more_args     : An optional argument";
-#     echo "  -h | --help              : This message";
-# }
-#
-# function parse_args
-# {
-#   # positional args
-#   args=()
-#
-#   # named args
-#   while [ "$1" != "" ]; do
-#       case "$1" in
-#           -a | --an_arg )               an_arg="$2";             shift;;
-#           -s | --some_more_args )       some_more_args="$2";     shift;;
-#           -y | --yet_more_args )        yet_more_args="$2";      shift;;
-#           -h | --help )                 usage;                   exit;; # quit and show usage
-#           * )                           args+=("$1")             # if no match, add it to the positional args
-#       esac
-#       shift # move to next kv pair
-#   done
-#
-#   # restore positional args
-#   set -- "${args[@]}"
-#
-#   # set positionals to vars
-#   positional_1="${args[0]}"
-#   positional_2="${args[1]}"
-#
-#   # validate required args
-#   if [[ -z "${an_arg}" || -z "${some_more_args}" ]]; then
-#       echo "Invalid arguments"
-#       usage
-#       exit;
-#   fi
-#
-#   # set defaults
-#   if [[ -z "$yet_more_args" ]]; then
-#       yet_more_args="a default value";
-#   fi
-# }
 
 
 #
@@ -165,10 +112,20 @@ function app_branch_name {
     if [[ " ${toggling_app_repos[@]} " =~ " $1 " ]]; then
         echo "master"
     else
+    if [[ "$1" =~ "data-visualizer-app" ]]; then
+
+                
+        local RHS=${REL_VERSION#*.}
+        local LHS=${RHS%%.*}
+        echo "${LHS}.x"
+      else
         local RHS=${REL_VERSION#*.}
         local LHS=${RHS%%.*}
         echo "v${LHS}"
-    fi
+
+      fi
+
+      fi
 
 }
 
@@ -203,42 +160,17 @@ function release_apps {
         pushd "$path"
 
         local branch=$(app_branch_name "$app")
-        local freeze_branch=$(patch_branch_name)
 
-        if [ $freeze -eq 1 ];then
-
-            local created_app_b= $(create_branch "$branch")
+           local created_app_b=$(create_branch "$branch")
             checkout "$branch" "$freeze_date_time"
 
-            # create a new release branch for the patch
-            create_branch "$freeze_branch"
-            checkout "$freeze_branch"
-
-            # make an empty commit to ensure Travis builds this new branch
-            git commit --allow-empty -m "chore(release-prepare): cut $freeze_branch"
+              # make an empty commit to ensure Travis builds this new branch
+            git commit --allow-empty -m "chore(release-prepare): branch $branch"
 
               if [ "$created_app_b" != "" ]
               then
                 prepare_push "$branch"
               fi
-              prepare_push "$freeze_branch"
-
-        else
-
-          checkout "$branch"
-          checkout "$freeze_branch"
-
-            # during dry run display recent changes
-            echo "============= ++ CHANGES IN PATCH RELEASE BRANCH ${name}:"
-            #git log --no-merges --oneline --since='1 week ago'
-            git log ${branch}..${freeze_branch} --oneline
-            echo "============= -- CHANGES IN PATCH RELEASE BRANCH ${name}:"
-
-          create_tag "$tag"
-
-            prepare_push "$tag"
-
-        fi
 
 
         popd
@@ -249,7 +181,6 @@ function release_core {
     local name=$(app_name "$core_repo")
     local path="${TEMP}/${name}"
     local branch="$(core_branch_name)"
-    local freeze_branch=$(patch_branch_name)
     local tag=$(app_tag_name)
     local pkg_path="./dhis-2/dhis-web/dhis-web-apps"
     local snapshot_branch="<version>${branch}-SNAPSHOT</version>"
@@ -267,43 +198,24 @@ function release_core {
 
     echo "----------------- Updating core ..."
 
-    if [ $freeze -eq 1 ];then
       # we checked out the relevant version branch when we cloned
-      # now we want to create a new patch release branch
 
-      # branch
-      create_branch "$freeze_branch"
-      checkout "$freeze_branch"
 
-      # track patch release app branches
+      # track app branches
       # updates all app version refs to tracking branch (either release or master)
       for app in "${app_repos[@]}"
       do
             local app_no_ext=${app%.git}
             local app_clean=${app_no_ext##*/}
-            sed -i "s:/${app_clean}.*\":/${app_clean}#${freeze_branch}\":" "${pkg_path}/apps-to-bundle.json"
+            local app_branch=$(app_branch_name "$app")
+            sed -i "s:/${app_clean}.*\":/${app_clean}#${app_branch}\":" "${pkg_path}/apps-to-bundle.json"
       done
 
       # commit
       git add "${pkg_path}/apps-to-bundle.json"
-      git commit -m "chore: set apps to track patch release branches"
+      git commit -m "chore: set apps to track version branches"
 
-        prepare_push "$freeze_branch"
-
-      # back on the version branch...
-      checkout "$branch"
-      # update the mvn versions to next snapshot
-      local find=$(unregex "$snapshot_version")
-      local replace=$(unregex "$next_snapshot_version")
-      echo "change snapshot from $find to $replace"
-      for pom in `find . -name "pom*.xml"`
-      do
-        sed -i "s;${find};${replace};" $pom
-        git add $pom
-      done
-      git commit -m "chore: update maven versions to $next_snapshot_version"
-
-        prepare_push "$branch"
+      prepare_push "$branch"
 
 
       # update the master in the case we have branched a new version
@@ -334,81 +246,6 @@ function release_core {
 
 
 
-    else
-
-      checkout "$freeze_branch"
-
-        # during dry run display recent changes
-        echo "============= ++ CHANGES IN PATCH RELEASE BRANCH core:"
-#        git log --no-merges --oneline --since='1 week ago'
-        git log ${branch}..${freeze_branch} --oneline
-        echo "============= -- CHANGES IN PATCH RELEASE BRANCH core:"
-
-      # updates all app version refs to tag
-    jq --exit-status "(. |= (
-      .|map(
-              . |=
-                  if .|contains(\"#\") then
-                      .|sub(\"#.*$\"; \"#${tag}\")
-                  else
-                      .+\"#${tag}\"
-                  end
-      )
-    ))" "${pkg_path}/apps-to-bundle.json" > "${pkg_path}/apps-to-bundle.json.mod"
-      mv "${pkg_path}/apps-to-bundle.json.mod" "${pkg_path}/apps-to-bundle.json"
-
-      # commits and tags
-      git add "${pkg_path}/apps-to-bundle.json"
-      git commit -m "chore: lock app versions to tag ${tag}"
-
-      # update the mvn versions
-      local find=$(unregex "$snapshot_version")
-      local find_branch=$(unregex "$snapshot_branch")
-      local replace=$(unregex "$tag_version")
-      for pom in `find . -name "pom*.xml"`
-      do
-        sed -i "s;${find};${replace};" $pom
-        sed -i "s;${find_branch};${replace};" $pom
-        git add $pom
-      done
-      git commit -m "chore: update maven versions to ${tag}"
-
-      create_tag "$tag"
-
-      # updates all tags back to app version refs
-    jq --exit-status "(. |= (
-      .|map(
-              . |=
-                  if .|contains(\"#\") then
-                      .|sub(\"#.*$\"; \"#${freeze_branch}\")
-                  else
-                      .+\"#${freeze_branch}\"
-                  end
-      )
-    ))" "${pkg_path}/apps-to-bundle.json" > "${pkg_path}/apps-to-bundle.json.mod"
-      mv "${pkg_path}/apps-to-bundle.json.mod" "${pkg_path}/apps-to-bundle.json"
-
-      # commits and tags
-      git add "${pkg_path}/apps-to-bundle.json"
-      git commit -m "chore: lock app versions to patch branch ${freeze_branch}"
-
-      # update the mvn versions
-      local find=$(unregex "$tag_version")
-      local replace=$(unregex "$snapshot_branch")
-      for pom in `find . -name "pom*.xml"`
-      do
-        sed -i "s;${find};${replace};" $pom
-        sed -i "s;${find_branch};${replace};" $pom
-        git add $pom
-      done
-      git commit -m "chore: revert maven versions to ${snapshot_branch}"
-
-
-        prepare_push "$freeze_branch"
-        prepare_push "$tag"
-
-
-    fi
 
     popd
 }
@@ -467,6 +304,7 @@ function main {
 
     clone_core
     clone_all
+    
     release_apps
     release_core
 

@@ -78,6 +78,7 @@ function create_tag {
         git tag "$tag"
     else
         echo "existing tag: ${tag}"
+        git tag --force "$tag"
     fi
 }
 
