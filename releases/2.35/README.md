@@ -6,7 +6,7 @@
 
 ## API
 
-- The `F_USER_VIEW` ("View users") authority is no longer required for regular end-users, e.g. in order to use the Tracker Capture app. This authority should be removed from user roles. Read more in the [change note](https://github.com/dhis2/notes-backend/blob/master/platform/35/changelog/export_user_authority.md).
+- The `F_USER_VIEW` ("View users") authority is no longer required for regular end-users, e.g. in order to use the Tracker Capture app. This authority should be removed from user roles which are meant for end users (not for user managers). Read more in the [change note](https://github.com/dhis2/notes-backend/blob/master/platform/35/changelog/export_user_authority.md).
 - The `F_USER_VIEW` authority is now required to export user information through the `/api/metadata` endpoint.
 
 ## Functionality
