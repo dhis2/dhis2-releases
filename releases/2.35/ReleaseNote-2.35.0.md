@@ -1,6 +1,8 @@
-DHIS2 version 2.35 is out with many new features, apps, improvements and bug fixes. This version is fully compatible with the DHIS2 [Android Capture App 2.3](https://www.dhis2.org/android-2-3).
+# DHIS version 2.35 Release Note
 
----
+This document highlights the key features of the initial release of DHIS2 version 2.35.
+This version is fully compatible with the DHIS2 [Android Capture App 2.3](https://www.dhis2.org/android-2-3).
+
 
 ## ANALYTICS FEATURES
 
