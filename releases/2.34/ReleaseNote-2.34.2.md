@@ -103,7 +103,6 @@ Components: _[App] Capture_
 
 **[DHIS2-9709](https://jira.dhis2.org/browse/DHIS2-9709): Capture app rules engine: assigning boolean values doesn't work**  
 Components: _[App] Capture_  
-**Retesting**
 
 **[DHIS2-9373](https://jira.dhis2.org/browse/DHIS2-9373): Coordinate field: rearrange input and fix display**  
 Components: _[App] Capture_
