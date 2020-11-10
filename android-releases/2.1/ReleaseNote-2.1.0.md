@@ -1,4 +1,4 @@
-# DHIS2 Android App version 2.2 Release Note
+# DHIS2 Android App version 2.1 Release Note
 
 DHIS2 [Android Capture App 2.1](https://www.dhis2.org/android-2-1) is out with many new features, improvements and bug fixes! This version is fully compatible with the [DHIS2 version 2.34](https://community.dhis2.org/t/dhis-version-2-34-is-released/39064).
 
