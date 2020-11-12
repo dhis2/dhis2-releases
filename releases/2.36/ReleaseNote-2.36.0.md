@@ -32,5 +32,5 @@ This document highlights the key features of the initial release of DHIS2 versio
 |Overview of bugs fixed on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
 |Source code on Github|https://github.com/dhis2|
 |Demo instance|https://play.dhis2.org/2.36/|
-|Docker|`docker pull dhis2/core:2.35.0`<br>_for more docker image variants see [dockerhub](https://hub.docker.com/repository/docker/dhis2/core)_|
+|Docker|`docker pull dhis2/core:2.36.0`<br>_for more docker image variants see [dockerhub](https://hub.docker.com/repository/docker/dhis2/core)_|
 |DHIS 2 community|https://community.dhis2.org/|
