@@ -57,7 +57,6 @@ Components: _[App] Dashboard_
 
 **[DHIS2-9677](https://jira.dhis2.org/browse/DHIS2-9677): The help (?) functionality generating error on Data Quality App**  
 Components: _[App] Data quality_  
-**Needs Update**
 
 **[DHIS2-9003](https://jira.dhis2.org/browse/DHIS2-9003): Legend key option is inverted**  
 Components: _[App] Data visualizer_
