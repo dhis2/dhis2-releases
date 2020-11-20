@@ -5,7 +5,7 @@
 **[DHIS2-9266](https://jira.dhis2.org/browse/DHIS2-9266): Config option for disabling all audit services**  
 Components: _[API] System configuration_
 
-**[DHIS2-7621](https://jira.dhis2.org/browse/DHIS2-7621): Flag for Madagascar**  
+**[DHIS2-7621](https://jira.dhis2.org/browse/DHIS2-7621): Add flags of the world**  
 Components: _[API] System configuration_
 
 **[DHIS2-5320](https://jira.dhis2.org/browse/DHIS2-5320): Disable rendering of parsed HTML and Javascript in interpretations app**  
