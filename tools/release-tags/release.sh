@@ -162,21 +162,34 @@ function app_branch_name {
     # turns 2.31 or 2.31.1.12.23.3 into `v31`
     # unless it is a feature-toggling app; in which case the branch is aways master
 
+
     if [[ " ${toggling_app_repos[@]} " =~ " $1 " ]]; then
+      if [[ "$1" =~ "core-resources-app" ]]; then
+        echo "FINAL"
+      else
         echo "master"
+      fi
     else
+      if [[ "$1" =~ "data-visualizer-app" ]]; then
+
+                
+        local RHS=${REL_VERSION#*.}
+        local LHS=${RHS%%.*}
+        echo "${LHS}.x"
+      else
         local RHS=${REL_VERSION#*.}
         local LHS=${RHS%%.*}
         echo "v${LHS}"
+
+      fi
+
     fi
 
 }
 
 function patch_branch_name {
     # turns 2.31.3 into `patch/2.31.3`
-
     echo "${PATCH_BRANCH_PREFIX}${REL_VERSION}"
-
 }
 
 function core_branch_name {
@@ -224,7 +237,8 @@ function release_apps {
               prepare_push "$freeze_branch"
 
         else
-
+          if [ "$name" != "core-resource-app" ]
+          then
           checkout "$branch"
           checkout "$freeze_branch"
 
@@ -237,7 +251,7 @@ function release_apps {
           create_tag "$tag"
 
             prepare_push "$tag"
-
+          fi
         fi
 
 
@@ -282,6 +296,7 @@ function release_core {
             local app_no_ext=${app%.git}
             local app_clean=${app_no_ext##*/}
             sed -i "s:/${app_clean}.*\":/${app_clean}#${freeze_branch}\":" "${pkg_path}/apps-to-bundle.json"
+            sed -i "s:/core-resource-app.*\":/core-resource-app#FINAL\":" "${pkg_path}/apps-to-bundle.json"
       done
 
       # commit
@@ -356,6 +371,7 @@ function release_core {
       )
     ))" "${pkg_path}/apps-to-bundle.json" > "${pkg_path}/apps-to-bundle.json.mod"
       mv "${pkg_path}/apps-to-bundle.json.mod" "${pkg_path}/apps-to-bundle.json"
+      sed -i "s:/core-resource-app.*\":/core-resource-app#FINAL\":" "${pkg_path}/apps-to-bundle.json"
 
       # commits and tags
       git add "${pkg_path}/apps-to-bundle.json"
@@ -387,6 +403,7 @@ function release_core {
       )
     ))" "${pkg_path}/apps-to-bundle.json" > "${pkg_path}/apps-to-bundle.json.mod"
       mv "${pkg_path}/apps-to-bundle.json.mod" "${pkg_path}/apps-to-bundle.json"
+      sed -i "s:/core-resource-app.*\":/core-resource-app#FINAL\":" "${pkg_path}/apps-to-bundle.json"
 
       # commits and tags
       git add "${pkg_path}/apps-to-bundle.json"
