@@ -8,9 +8,6 @@ Components: _[API] Metadata model_
 **[DHIS2-9346](https://jira.dhis2.org/browse/DHIS2-9346): Add Azure AD OpenID Connect provider support**  
 Components: _[API] Security_  
 
-**[DHIS2-9574](https://jira.dhis2.org/browse/DHIS2-9574): Show full name in notes**  
-Components: _[App] Tracker capture_  
-**Reopened**
 
 ## Bugs
 
