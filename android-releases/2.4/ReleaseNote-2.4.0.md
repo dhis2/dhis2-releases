@@ -1,4 +1,4 @@
-# DHIS2 Android App version 2.4 Release Note
+# DHIS2 Android App version 2.4 Release Notes
 
 DHIS2 [Android Capture App 2.4](https://www.dhis2.org/android-2-4) is out with many improvements. 
 Short description of the functionality.
