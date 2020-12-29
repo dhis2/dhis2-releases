@@ -155,12 +155,12 @@ RELEASE INFO
 
 |Release Information|Link|
 | --- | --- |
-|Download app from Google Play or Github|[https://www.dhis2.org/app-store ](https://www.dhis2.org/app-store)| (*ADDGITHUB*)
+|Download app from Google Play or Github (*ADD GITHUB*)|[https://www.dhis2.org/app-store ](https://www.dhis2.org/app-store)| 
 |Documentation and Javadocs|[https://www.dhis2.org/android-documentation ](https://www.dhis2.org/android-documentation)|
 |Details about each feature on JIRA (requires login)|[2.4 Features ](https://jira.dhis2.org/issues/?filter=11956)|
 |Overview of bugs fixed on JIRA (requires login)|[2.4 Bugs](https://jira.dhis2.org/issues/?filter=11957)|
 |Demo instance (user/password)|[https://play.dhis2.org/demo/ ](https://play.dhis2.org/demo/) android / Android123|
 |DHIS 2 community|[https://community.dhis2.org Mobile Community ](https://community.dhis2.org/c/subcommunities/mobile/16)|
 |Source code on Github|[https://github.com/dhis2/dhis2-android-capture-app ](https://github.com/dhis2/dhis2-android-capture-app)|
-|Source code of SDK on Github|[SDK 1.2.1 ](https://github.com/dhis2/dhis2-android-sdk/releases/tag/1.2.1)| (*UPDATE*)
+|Source code of SDK on Github (*UPDATE*)|[SDK 1.2.1 ](https://github.com/dhis2/dhis2-android-sdk/releases/tag/1.2.1)| 
 
