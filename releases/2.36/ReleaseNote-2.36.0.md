@@ -6,6 +6,13 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## ANALYTICS FEATURES
 
+Count favorite views in dashboards: There is now a system setting that causes DHIS2 to count views of favorites from within dashboards.  (Note: The setting is off by default.)
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-7042)
+
+Hide app title in dashboard apps: When the `hideTitle` property is set to true in a dashboard app's manifest.webapp, hide the title of the app, similar to the built-in dashboard Text Box.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-7660)
 
 
 ## TRACKER AND EVENT FEATURES
@@ -14,6 +21,9 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## PLATFORM FEATURES
 
+Information about continuous analytics runs in GUI: The About DHIS2 includes information about the most recent continuous analytics runs when applicable.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-8874)
 
 
 ## API FEATURES
