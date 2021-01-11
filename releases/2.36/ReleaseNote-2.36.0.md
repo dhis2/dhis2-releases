@@ -1,7 +1,7 @@
 # DHIS version 2.36 Release Note
 
 This document highlights the key features of the initial release of DHIS2 version 2.36.
-<!-- This version is fully compatible with the DHIS2 [Android Capture App 2.3](https://www.dhis2.org/android-2-3). -->
+This version is fully compatible with the DHIS2 [Android Capture App 2.4](https://www.dhis2.org/android-2-4).
 
 
 ## ANALYTICS FEATURES
