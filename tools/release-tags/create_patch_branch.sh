@@ -178,7 +178,7 @@ function clone_core {
                       grep -v '#FINAL' | \
                       sed 's;"https://github.com/d2-ci;git@github.com:dhis2;' | \
                       sed 's;#\([^"]*\)".*$;.git#\1;' | \
-                      sed 's;",;#master;'))
+                      sed 's;",*;#master;'))
   #readonly toggling_app_repos=($(cat "toggling_apps" | grep $branch | sed 's;\.git.*$;.git;'))
 }
 
