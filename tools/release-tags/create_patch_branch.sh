@@ -66,7 +66,6 @@ source ./lib/helpers.sh
 
 function release_apps {
     # creates release branch
-    # pushes to remote
 
     for app in "${app_repos[@]}"
     do
