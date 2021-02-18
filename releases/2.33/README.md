@@ -29,5 +29,8 @@
 - Remember to drop SQL views from **Apps > Data administration > Maintenance > Drop SQL views** before upgrading, to avoid database integrity issues during the upgrade process, then recreate them after the upgrade is completed.
 
 
-## Database Schema
+## Patch-specific Changes
+
+### 2.33.8 Database Schema
+
 - The `trackedentityattributevalue.value` column is changed to hold `1000 characters` maximum. In addition, we add a `new index` for this column to speed up the lookup time for values. More information can be found in [this community post](https://community.dhis2.org/t/important-database-upgrade-for-tracker-performance/38766).
