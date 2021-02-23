@@ -2,7 +2,7 @@
 
 ## Database
 
-- `Category`, `DataElementGroupSet` and `OrganisationUnitGroupSet` got a mandatory `shortName` property https://github.com/dhis2/dhis2-core/pull/7320
+- A `shortName` column (mandatory property) has been added to the following tables: `Category`, `DataElementGroupSet` and `OrganisationUnitGroupSet` ([DHIS2-8937](https://jira.dhis2.org/browse/DHIS2-8937))
 
 ## API
 
