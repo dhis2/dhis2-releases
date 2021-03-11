@@ -26,7 +26,7 @@
 
 ## Patch-specific Changes
 
-### 2.34.8 Database Schema
+### 2.34.4 Database Schema
 
 - New index on table `trackedentityprogramowner` over columns `(trackedentityinstanceid, programid, organisationunitid)`. Improves lookup related to organisation unit scopes in the context of a program.
 - New index on table `programinstance` over columns `(programid)`. Improves general lookup for programinstances based on program in most cases.
