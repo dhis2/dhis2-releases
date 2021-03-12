@@ -106,25 +106,15 @@ function get_new_master {
 }
 
 function app_branch_name {
-    # turns 2.31 or 2.31.1.12.23.3 into `v31`
+    # turns 2.31 or 2.31.1.12.23.3 into `2.31`
     # unless it is a feature-toggling app; in which case the branch is aways master
 
     if [[ " ${toggling_app_repos[@]} " =~ " $1 " ]]; then
         echo "master"
     else
-    if [[ "$1" =~ "data-visualizer-app" ]]; then
-
-                
         local RHS=${REL_VERSION#*.}
         local LHS=${RHS%%.*}
         echo "${LHS}.x"
-      else
-        local RHS=${REL_VERSION#*.}
-        local LHS=${RHS%%.*}
-        echo "v${LHS}"
-
-      fi
-
       fi
 
 }
