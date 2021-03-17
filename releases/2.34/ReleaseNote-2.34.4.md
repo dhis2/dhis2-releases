@@ -22,7 +22,7 @@ Components: _[App] Tracker capture_
 **[DHIS2-10648](https://jira.dhis2.org/browse/DHIS2-10648): Charts are missing values for rows, columns and filters when filter by UID is used**  
 Components: _[API] Analytics_
 
-**[DHIS2-10480](https://jira.dhis2.org/browse/DHIS2-10480): incorrect pager for dataElementOperands**  
+**[DHIS2-10480](https://jira.dhis2.org/browse/DHIS2-10480): Incorrect pager for dataElementOperands**  
 Components: _[API] Analytics_
 
 **[DHIS2-10346](https://jira.dhis2.org/browse/DHIS2-10346): Correct column name for enrollment status when using EVENT type Analytics**  
