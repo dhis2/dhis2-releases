@@ -19,7 +19,7 @@ Components: _[App] Tracker capture_
 
 ## Bugs
 
-**[DHIS2-10648](https://jira.dhis2.org/browse/DHIS2-10648): Charts (and maybe visualizations in general) are missing values for rows, columns and filters when filter by UID is used**  
+**[DHIS2-10648](https://jira.dhis2.org/browse/DHIS2-10648): Charts are missing values for rows, columns and filters when filter by UID is used**  
 Components: _[API] Analytics_
 
 **[DHIS2-10480](https://jira.dhis2.org/browse/DHIS2-10480): incorrect pager for dataElementOperands**  
