@@ -43,7 +43,15 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## TRACKER AND EVENT FEATURES
 
+**Performance improvements:** Ongoing performance improvements intensified in 2.36, and there is a broad improvement to tracker service performance. The improvements are impacting response times, reducing database queries and lowering memory consumption. Most of these updates has been applied to versions 2.34.4, 2.35.2 and 2.36.0, securing these versions as the most performant DHIS2 releases to date. All instances that are going to large scale are adviced to upgrade to one of these versions.
 
+**More tracker functionality in capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow than before.
+
+[Screenshot]() | [Docs]()
+
+**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yeilds a bigger potential for performance enhancements than it was possible to acheive in the old codebase. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
+
+[Docs]()
 
 ## PLATFORM FEATURES
 
