@@ -43,23 +43,37 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** Ongoing performance improvements intensified in 2.36, and there is a broad improvement to tracker service performance. The improvements are impacting response times, reducing database queries and lowering memory consumption. Most of these updates has been applied to versions 2.34.4, 2.35.2 and 2.36.0, securing these versions as the most performant DHIS2 releases to date. All instances that are going to large scale are adviced to upgrade to one of these versions.
+**Performance improvements:** Ongoing performance improvements intensified in 2.36, and there is a broad improvement to tracker service performance. The improvements are impacting response times, reducing database queries and lowering memory consumption. Most of these updates has been applied to versions 2.34.4, 2.35.2 and 2.36.0, making these versions as the most well-performing DHIS2 releases to date. All instances that are going to large scale are advised to upgrade to one of these versions.
 
 [Jira]()
 
-**More tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow than before.
+**Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow than before.
 
 [Screenshot]() | [Docs]() | [Jira]()
 
-**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yeilds a bigger potential for performance enhancements than it was possible to acheive in the old codebase. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
+**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to acheive in the old code base. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
 [Docs]() | [Jira]()
 
 ## PLATFORM FEATURES
 
+**Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which greatly affects your data analysis. Previously, outliers were returned without an order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response.
+
+[Screenshot]() | [Docs]()
+
+**OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
+
+[Docs]()
+
+**Translations:** Dynamic translations have been extended to cover many more entities and properties and allows you to translate most of the application in any number of languages. {TODO}
+
+[Docs]()
+
 
 
 ## API FEATURES
+
+**Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
 
 
 
