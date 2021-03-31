@@ -52,14 +52,12 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-1153) 
 
-**Indicators in Datasets:** The datasets display now indicators in the dataset data entry screen. The indicators will be displayed in the section, after the tables. *(verify final implementation)* 
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3464) | [Screenshot](*https://Update_URL*)
 
 ## LOCAL ANALYTICS
-**Local offline analytics in TEI Dasboard:** This version of the app includes the display of charts and tables in the domain of a Tracked Entity Instance. In the TEI Dashbaord the "Indicators" tab has been replaced by the Analytics tab. In this section the app will display:
+**Local offline analytics in TEI Dashboard:** This version of the app includes the display of charts and tables in the domain of a Tracked Entity Instance. In the TEI Dashbaord the "Indicators" tab has been replaced by the Analytics tab. In this section the app will display:
 
 - One value: either a Data Element or a Program Indicator
+- Feedback
 - Charts to display evolution of one data element or program indicator accross time in repeteable stages.
   - Column Plain Chart (no background)
   - Line Plain Chart (no background)
@@ -73,7 +71,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-2893) | [Jira2](https://jira.dhis2.org/browse/ANDROAPP-2978) | [Screenshot](*https://Update_URL*)
 
-**Display current location:** When the user opens the map, the current location of the device will be displayed. *(verify final implementation)* 
+**Display current location:** When the user opens the map, the current location of the device will be displayed.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3466) | [Screenshot](*https://Update_URL*)
 
@@ -85,9 +83,9 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 ## TEI SEARCH, REGISTRATION & DASHBOARD
 **Search form opens in full screen more:** The search screen covers most of the screen in most implementations not allowing to see the resulting TEI list. To avoid confusion the TEI search form will be open in full screen mode and the results will be shown when the user returns to the tracker program screen.*(verify final implementation)* 
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3528) | [Screenshot](*https://Update_URL*) | [Screenshot2](*https://Update_URL*)
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3528) | [Screenshot](*https://Update_URL*) 
 
-**Display Enrolling Organisation Unit in TEI list:** When the user opens a tracker program and a list of TEI's is displayed, the Enrolling Organisation Unit will be shown in the TEI Card after the TEI Attributes. *(verify final implementation)* 
+**Display Enrolling Organisation Unit in TEI list:** When the user opens a tracker program and a list of TEI's is displayed, the Enrolling Organisation Unit will be shown in the TEI Card after the TEI Attributes. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3039) | [Screenshot](*https://Update_URL*)
 
@@ -98,7 +96,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 *(verify final implementation)* 
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-2829) | [Screenshot](*https://Update_URL*)
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-2829) 
 
 ## TRACKER & EVENT PENDING FEATURES
 **Working lists:** Working lists have been implemented and will be available in either event or tracker programs. Working lists will be downloaded from the server and user in the app will not be able to edit them. The user will be able to add filters to a selected working list. *(verify final implementation)* 
@@ -111,7 +109,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 **Organisation unit of a program stage not editable:** The Organisation Unit of a program stage (event) can not be edited. This behaviour aligns the functionality with the current implementation in web Capture App.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3019) | [Screenshot](*https://Update_URL*)
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3019) 
 
 
 
