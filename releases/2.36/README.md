@@ -13,8 +13,7 @@
 
 ## API
 
-- A new `/api/outlierDetection` API is available for more advanced outlier detection.
-- The `/api/dataAnalysis/stdDevOutlier` and `/api/dataAnalysis/minMaxOutlier` API endpoints are deprecated and will be removed in 2.37. These endpoints are superseded by the `/api/outlierDetection` API.
+- The `/api/dataAnalysis/stdDevOutlier` and `/api/dataAnalysis/minMaxOutlier` API endpoints are deprecated and will be removed in 2.37. These endpoints are superseded by the `/api/outlierDetection` API which offers higher performance and more sophisticated outlier detection.
 
 ## Functionality
 
