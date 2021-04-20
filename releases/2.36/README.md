@@ -21,6 +21,8 @@ You can find the "new format" and the respective changed attributes at [DHIS2-10
 Basically, the "current format", is being converted into a "new format". To avoid breaking existing applications the "current format" will still be returned as part of the response. But we won't be able to make changes through them anymore (as they are read-only).
 Changes to the refactored attributes will only take effect when using the "new format". These changes are part of the feature [DHIS2-1369](https://jira.dhis2.org/browse/DHIS2-1369).
 
+- The `restrictToCaptureScope` parameter in the API endpoints `api/categoryOptions` and `api/programs`  is no longer supported. For programs alone, an alternate endpoint `/api/programs/orgUnits?programs={programUids}` for fetching organisationUnit associations can be used. 
+
 ## Functionality
 
 - 
