@@ -5,7 +5,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## ANALYTICS FEATURES
 
-**Scatter plots:** Enable users to chart organizational units as points against two variables for a single period with scatter plots.
+**Scatter plots:** The data visualizer app now features scatter plots. This enables users to chart organisational units as points against two variables for a single period with scatter plots.
 
   - *Zoom in* by clicking and dragging the cursor over an area you would like to zoom in on. This is often necessary to see more detail in areas where many organisation units are clustered together. 
   - *Outlier detection* can be done using either a standard z-score, modified z-score, or an interquartile range via the options menu. An extreme vertical (y-axis) and horizontal (x-axis) threshold line can also be applied. Endorsed by the WHO, this is a very clear and powerful way to identify outliers that often represent data quality issues. You can identify the outliers that are most likely to throw off national statistics by using the outlier detection in combination with the extreme X and Y threshold lines.
@@ -43,15 +43,15 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** A huge number of performance improvements got included in 2.36 and there are broad improvements to tracker performance, in particular around database query optimizations. The improvements are leading to lower response times, faster database queries and less memory consumption. Most of these updates have been applied to versions 2.34.4, 2.35.2 and 2.36.0. All instances large scale DHIS2 implementations are advised to upgrade to one of these versions.
+**Performance improvements:** A huge number of performance improvements got included in 2.36 and there are broad improvements to tracker performance, in particular around database query optimizations. The improvements are leading to lower response times, faster database queries and less memory consumption. Most of these updates have been applied to versions 2.34.4, 2.35.2 and 2.36.0. Large scale DHIS2 implementations are advised to upgrade.
 
 [Jira]()
 
-**Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow than before.
+**Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow.
 
 [Screenshot]() | [Docs]() | [Jira]()
 
-**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to acheive in the old code base. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
+**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
 [Docs]() | [Jira]()
 
@@ -63,15 +63,15 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers.  Specific providers for Azure and WSO2 are also added. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
 
-[Docs]()
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#outlier-detection)
 
-**Translations:** Dynamic metadata translations have been extended to cover many more entities and properties and allows you to translate most of the DHIS 2 application in any number of languages. This is helpful for multi-language DHIS2 instances. {TODO}
+**Translations:** Dynamic metadata translations have been extended to cover many more entities and properties and allows you to translate most of the DHIS 2 application in any number of languages. This is helpful for multi-language DHIS2 instances.
 
-[Docs]() |[Jira 1](https://jira.dhis2.org/browse/DHIS2-10562)|[2](https://jira.dhis2.org/browse/DHIS2-10556)|[3](https://jira.dhis2.org/browse/DHIS2-10487)|[4](https://jira.dhis2.org/browse/DHIS2-8669)|[5](https://jira.dhis2.org/browse/DHIS2-8297)|[6](https://jira.dhis2.org/browse/DHIS2-5587)
+[Docs]() | [Jira 1](https://jira.dhis2.org/browse/DHIS2-10562) | [2](https://jira.dhis2.org/browse/DHIS2-10556) | [3](https://jira.dhis2.org/browse/DHIS2-10487) | [4](https://jira.dhis2.org/browse/DHIS2-8669) | [5](https://jira.dhis2.org/browse/DHIS2-8297) | [6](https://jira.dhis2.org/browse/DHIS2-5587)
 
 **User account expiration:** User accounts can now be set to expire on a particular date. This is useful for creating temporary accounts, e.g. when inviting partners through guest accounts.
 
-[Jira](https://jira.dhis2.org/browse/DHIS2-8089)
+[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-8089)
 
 **Disable inactive users:** A new system job is available for automatically disable users which have been inactive (not logged in) for a given number of months. This is useful from a security perspective to prevent inactive user accounts from being compromised.
 
@@ -93,19 +93,19 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
 
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info)|[Jira](https://jira.dhis2.org/browse/DHIS2-102579)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info) | [Jira](https://jira.dhis2.org/browse/DHIS2-102579)
 
 **Data value follow-up:** A new endpoint is available for marking data values for follow-up.
 
-[Docs](https://docs.dhis2.org/master/en/dhis2_developer_manual/web-api.html#follow-up)
+[Docs](https://docs.dhis2.org/master/en/dhis2_developer_manual/web-api.html#follow-up) | [Jira](https://jira.dhis2.org/browse/DHIS2-10344)
 
 **Server timezone:** The server timezone information is added to the `/api/system/info` endpoint.
 
-[Docs]()
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#webapi_system_resource_view_system_information) | [Jira](https://jira.dhis2.org/browse/DHIS2-9970)
 
 **Delete validation results:** A new endpoint is available for deleting validation results.
 
- [Docs]()|[Jira](https://jira.dhis2.org/browse/DHIS2-74399)|
+ [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-74399)
 
 ## RELEASE INFO
 
