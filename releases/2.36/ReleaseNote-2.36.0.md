@@ -56,7 +56,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 [Docs]() | [Jira]()
 
 **New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the V{event_status} variable.
-[Jira](https://jira.dhis2.org/browse/DHIS2-10294)
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_indicator_functions_variables_operators) | [Jira](https://jira.dhis2.org/browse/DHIS2-10294)
 
 ## PLATFORM FEATURES
 
