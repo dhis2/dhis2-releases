@@ -4,17 +4,17 @@ This repository contains information about the DHIS 2 releases. It includes upgr
 
 ## Versions
 
-You can find upgrade notes for the following releases below:
+You can find release and upgrade notes for the following releases below:
 
-- [2.36](releases/2.36/README.md)
-- [2.35](releases/2.35/README.md)
-- [2.34](releases/2.34/README.md)
-- [2.33](releases/2.33/README.md)
-- [2.32](releases/2.32/README.md)
-- [2.31](releases/2.31/README.md)
-- [2.30](releases/2.30/README.md)
-- [2.29](releases/2.29/README.md)
-- [2.28](releases/2.28/README.md)
+- [2.36](releases/2.36/)
+- [2.35](releases/2.35/)
+- [2.34](releases/2.34/)
+- [2.33](releases/2.33/)
+- [2.32](releases/2.32/)
+- [2.31](releases/2.31/)
+- [2.30](releases/2.30/)
+- [2.29](releases/2.29/)
+- [2.28](releases/2.28/)
 
 ## Android Versions
 
