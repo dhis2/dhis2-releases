@@ -105,6 +105,10 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs]()
 
+**Core application modernization:** The majority of core applications bundled with the 2.36.0 DHIS2 release have been upgraded to leverage the latest DHIS2 application suite of tools.  This ensures that modernized apps have identical headerbars, improved translation coverage, and more standardized user interface elements.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-10026)
+
 ## API FEATURES
 
 **Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
