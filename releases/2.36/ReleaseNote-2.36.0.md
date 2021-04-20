@@ -55,6 +55,9 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs]() | [Jira]()
 
+**New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the V{event_status} variable.
+[Jira](https://jira.dhis2.org/browse/DHIS2-10294)
+
 ## PLATFORM FEATURES
 
 **Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which greatly affects your data analysis. Previously, outliers were returned without an order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response.
