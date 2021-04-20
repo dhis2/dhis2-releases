@@ -2,7 +2,7 @@
 
 ## Database
 
-- A `shortName` column (mandatory property) has been added to the `category`, `dataelementgroupset` and `organisationunitgroupset` tables. ([DHIS2-8937](https://jira.dhis2.org/browse/DHIS2-8937)).
+- A `shortName` column (mandatory property) has been added to the `category`, `dataelementgroupset` and `organisationunitgroupset` tables.
 - A `description` column has been added to the `dataelementgroupset` and `organisationunitgroupset` tables.
 - New index on table `trackedentityprogramowner` over columns `(trackedentityinstanceid, programid, organisationunitid)`. Improves lookup related to organisation unit scopes in the context of a program.
 - New index on table `programinstance` over columns `(programid)`. Improves general lookup for programinstances based on program in most cases.
