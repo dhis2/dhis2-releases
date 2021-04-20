@@ -11,7 +11,7 @@ This document highlights the key features of the initial release of DHIS2 versio
   - *Outlier detection* can be done using either a standard z-score, modified z-score, or an interquartile range via the options menu. An extreme vertical (y-axis) and horizontal (x-axis) threshold line can also be applied. Endorsed by the WHO, this is a very clear and powerful way to identify outliers that often represent data quality issues. You can identify the outliers that are most likely to throw off national statistics by using the outlier detection in combination with the extreme X and Y threshold lines.
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20scatter%20plot%201.png) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20scatter%20plot%202.png) | [Docs]()
-[Screenshot 1]() [Screenshot 1]()
+
 **Full screen dashboard item presentation mode:** Expand any dashboard item (chart, map, or pivot table) to the size of the entire screen. This is great  for presenting data in virtual or in-person meetings directly from the dashboard.
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20full%20screen.JPG) | [Docs]()
