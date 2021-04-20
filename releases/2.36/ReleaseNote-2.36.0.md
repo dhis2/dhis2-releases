@@ -43,7 +43,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** Ongoing performance improvements intensified in 2.36, and there is a broad improvement to tracker service performance. The improvements are impacting response times, reducing database queries and lowering memory consumption. Most of these updates has been applied to versions 2.34.4, 2.35.2 and 2.36.0, making these versions as the most well-performing DHIS2 releases to date. All instances that are going to large scale are advised to upgrade to one of these versions.
+**Performance improvements:** A huge number of performance improvements got included in 2.36 and there are broad improvements to tracker performance, in particular around database query optimizations. The improvements are leading to lower response times, faster database queries and less memory consumption. Most of these updates have been applied to versions 2.34.4, 2.35.2 and 2.36.0. All instances large scale DHIS2 implementations are advised to upgrade to one of these versions.
 
 [Jira]()
 
@@ -59,23 +59,53 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which greatly affects your data analysis. Previously, outliers were returned without an order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response.
 
-[Screenshot]() | [Docs]()
+[Screenshot]() | [User docs]() |[API docs]() 
 
-**OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
-
-[Docs]()
-
-**Translations:** Dynamic translations have been extended to cover many more entities and properties and allows you to translate most of the application in any number of languages. {TODO}
+**OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers.  Specific providers for Azure and WSO2 are also added. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
 
 [Docs]()
 
+**Translations:** Dynamic metadata translations have been extended to cover many more entities and properties and allows you to translate most of the DHIS 2 application in any number of languages. This is helpful for multi-language DHIS2 instances. {TODO}
 
+[Docs]() |[Jira 1](https://jira.dhis2.org/browse/DHIS2-10562)|[2](https://jira.dhis2.org/browse/DHIS2-10556)|[3](https://jira.dhis2.org/browse/DHIS2-10487)|[4](https://jira.dhis2.org/browse/DHIS2-8669)|[5](https://jira.dhis2.org/browse/DHIS2-8297)|[6](https://jira.dhis2.org/browse/DHIS2-5587)
+
+**User account expiration:** User accounts can now be set to expire on a particular date. This is useful for creating temporary accounts, e.g. when inviting partners through guest accounts.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-8089)
+
+**Disable inactive users:** A new system job is available for automatically disable users which have been inactive (not logged in) for a given number of months. This is useful from a security perspective to prevent inactive user accounts from being compromised.
+
+[Docs]()
+
+**Data read sharing for SQL views:** Data read sharing is now required to read the output of an SQL view. This allows implementers to grant users access to read the output of SQL views without giving access to add or edit the views.
+
+[Docs]()
+
+**Data integrity checks performance:** The performance of the data integrity checks (in the data administration app) has been improved and completes a lot faster.
+
+[Docs]()
+
+**Disable program rule execution:** A new configuration property is available in `dhis.conf` for disabling/enabling server-side program rule execution.
+
+[Docs]()
 
 ## API FEATURES
 
 **Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
 
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info)|[Jira](https://jira.dhis2.org/browse/DHIS2-102579)
 
+**Data value follow-up:** A new endpoint is available for marking data values for follow-up.
+
+[Docs](https://docs.dhis2.org/master/en/dhis2_developer_manual/web-api.html#follow-up)
+
+**Server timezone:** The server timezone information is added to the `/api/system/info` endpoint.
+
+[Docs]()
+
+**Delete validation results:** A new endpoint is available for deleting validation results.
+
+ [Docs]()|[Jira](https://jira.dhis2.org/browse/DHIS2-74399)|
 
 ## RELEASE INFO
 
