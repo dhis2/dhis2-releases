@@ -13,7 +13,7 @@
 ## API
 
 - The `/api/dataAnalysis/stdDevOutlier` and `/api/dataAnalysis/minMaxOutlier` API endpoints are deprecated and will be removed in 2.37. These endpoints are superseded by the `/api/outlierDetection` API which offers higher performance and more sophisticated outlier detection.
-- The `type` field in the `/api/analytcs` endpoint `metadata` > `headers` response is deprecated and will be removed in 2.37. Instead use the `valueType` field.
+- The `type` field in the `/api/analytcs` API endpoint `metadata` > `headers` response is deprecated and will be removed in 2.37. Instead use the `valueType` field.
 
 ## Functionality
 
