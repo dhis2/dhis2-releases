@@ -51,12 +51,25 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Screenshot]() | [Docs]() | [Jira]()
 
-**New endpoint for tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
+**New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes. 
 
-[Docs]() | [Jira]()
+[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
+
+**New endpoint for retreiving tracker data:** A new API for retreiving tracker data is now released with the new endpoint for importing tracker data. This new API allows downloading tracker data on the same format as the new endpoint for importing data uses, making it easier to integrate with this new set of services.
+
+[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
+
 
 **New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the V{event_status} variable.
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_indicator_functions_variables_operators) | [Jira](https://jira.dhis2.org/browse/DHIS2-10294)
+
+**Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously only the username was shown. The full name is useful in cases where the username is not readable.
+
+[Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
+
+**Mouseless data entry in tracker capture:** In tracker capture, data can now be entered without the use of a mouse. It is now possible to search and select options in option sets and boolean fields using the keyboard.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-5902)
 
 ## PLATFORM FEATURES
 
