@@ -6,20 +6,6 @@ Short description of the functionality.
 This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/236) and you can find the detailed new features and fixes below.
 
 
-## GENERIC APP FEATURES 
-**Configurable URL for Android App analytics:**  This version of the app uses Matomo for App analytics. This new platform allows to adding a custom server URL to track the Android App statistics. Custom URLs can be set in the Android Settings WebApp and will allow any implementation to  monitor staticits from the Android App its specific users. *(verify final implementation)* 
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3464) | [Screenshot](*https://Update_URL*)
-
-**Consume new importer error messages:**  This version of the app integrates with the new Tracker Importer which allows to provide more informative error messages (for servers using 2.36).
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-2582) | [Screenshot](*https://Update_URL*)
-
-**Support OpenID connect for authentication:**  Aligned with the server, this version of the app supports OpenID Connect (OAuth2 + OpenID) for authentication.
-
-[Jira ](https://jira.dhis2.org/browse/ANDROAPP-3310) 
-
-
 ## USER EXPERIENCE AND USER INTERFACE
 **New Icon for Searching TEIs:** The icon for searching TEIs has been redesigned to express the search/registration action. The android app forces for a search before creating a new TEI, however the information entered in the search fields is transferred to the registrtion form fields when the search is not successful and the user decides to enter a new TEI. This makes the search a first step for registration, hence the icon has been updated to reflect this integrated action.
 
