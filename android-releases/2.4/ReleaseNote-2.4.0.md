@@ -37,6 +37,9 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3497) | [Screenshot](*https://Update_URL*)
 
+**Apply legends to data element fields:** Now if a numeric data element has a legend, the app will display a badge with the color and description for the given legend value.
+[jira](https://jira.dhis2.org/browse/ANDROAPP-3312) | [Screenshot](*https://Update_URL*)
+
 ## EVENTS & TRACKER DATA ENTRY
 
 **Program Indicators in Event Programs:** The event programs display now program indicators in the event data entry. The events implement the new navigation bar which allows the user to switch between event details, event data entry form and event program indicators.
