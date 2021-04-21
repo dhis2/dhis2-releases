@@ -23,11 +23,11 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 ## USER EXPERIENCE AND USER INTERFACE
 **New Icon for Searching TEIs:** The icon for searching TEIs has been redesigned to express the search/registration action. The android app forces for a search before creating a new TEI, however the information entered in the search fields is transferred to the registrtion form fields when the search is not successful and the user decides to enter a new TEI. This makes the search a first step for registration, hence the icon has been updated to reflect this integrated action.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3527) | [Screenshot](*https://Update_URL*)
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3527) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot01.png)
 
 **New Navigation Bar:** In the current and next version of the app there are new modules like Analytics and Tasks (next version). To expand the structure of the app and offer an easy and intuitive navigation across the new modules navigation has been moved to a bottom bar. The new Navigation bar is present in the current version in the Event and Tracked Entity Instance Dasboard screens. It will added to more screens as the new functionality is implemented in the upcoming versions.  
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3510) | [Screenshot](*https://Update_URL*)
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3510) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot02.png)
 
 **New layout for events and data sets lists:** The user inteface of the lists of events and datasets has been modified to have a look that integrates with the lists of TEI's in tracker programs.
 
