@@ -90,14 +90,6 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3039) | [Screenshot](*https://Update_URL*)
 
-**Adjust TEI Dashboard to program configuration:** The available options in the TEI dashbaord will be adjusted to the program configuration as follows:
- - When a program does not allow to create more events, hide the FAB button that allows for creating events.
- - When a program does not have relationships configured, the relationships option will not be displayed in the navigation bar
- - When a program does not have any analytics or indicators configured, the analytics option will not be displayed in the navigation bar
-
-*(verify final implementation)* 
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-2829) 
 
 ## TRACKER & EVENT PENDING FEATURES
 **Working lists:** Working lists have been implemented and will be available in either event or tracker programs. Working lists will be downloaded from the server and user in the app will not be able to edit them. The user will be able to add filters to a selected working list. 
