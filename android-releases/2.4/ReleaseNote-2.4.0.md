@@ -21,7 +21,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 
 ## USER EXPERIENCE AND USER INTERFACE
-**New Icon for Searching TEIs:** The icon for searching TEIs has been redesigned to express the search/registration action. The android app forces for a search before creating a new TEI, however the information entered in the search fields is transferred to the registrtion form fields when the search is not successful and the user decides to enter a new TEI. This makes the search a first step for registration, hence the icon has been updated to reflect this integrated action. *(verify final implementation)* 
+**New Icon for Searching TEIs:** The icon for searching TEIs has been redesigned to express the search/registration action. The android app forces for a search before creating a new TEI, however the information entered in the search fields is transferred to the registrtion form fields when the search is not successful and the user decides to enter a new TEI. This makes the search a first step for registration, hence the icon has been updated to reflect this integrated action.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3527) | [Screenshot](*https://Update_URL*)
 
@@ -33,7 +33,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3562) | [Jira2](https://jira.dhis2.org/browse/ANDROAPP-3563) | [Screenshot](*https://Update_URL*)
 
-**Mandatory Data Elements are always displayed:** When a data element is configured as mandatory it will not be hiddenby program rules. This behaviour aligns with web Capture App. *(verify final implementation)* 
+**Mandatory Data Elements are always displayed:** When a data element is configured as mandatory it will not be hiddenby program rules. This behaviour aligns with web Capture App. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3497) | [Screenshot](*https://Update_URL*)
 
@@ -67,7 +67,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-664) | [Screenshot](*https://Update_URL*) | [Screenshot2](*https://Update_URL*) | [Screenshot3](*https://Update_URL*)
 
 ## MAPS
-**Display Attributes and Data Elements:** It is possible now to display in the map Attributes and Data Elements together with TEI, Enrollment and Event coordinates. When a program has Attributes or Data Elements configured as either coordinates or polygons they will be listed as maps layers to be displayed in the maps. *(verify final implementation)* 
+**Display Attributes and Data Elements:** It is possible now to display in the map Attributes and Data Elements together with TEI, Enrollment and Event coordinates. When a program has Attributes or Data Elements configured as either coordinates or polygons they will be listed as maps layers to be displayed in the maps. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-2893) | [Jira2](https://jira.dhis2.org/browse/ANDROAPP-2978) | [Screenshot](*https://Update_URL*)
 
@@ -81,7 +81,8 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 
 ## TEI SEARCH, REGISTRATION & DASHBOARD
-**Search form opens in full screen more:** The search screen covers most of the screen in most implementations not allowing to see the resulting TEI list. To avoid confusion the TEI search form will be open in full screen mode and the results will be shown when the user returns to the tracker program screen.*(verify final implementation)* 
+
+**Search form opens in full screen more:** The search screen covers most of the screen in most implementations not allowing to see the resulting TEI list. To avoid confusion the TEI search form will be open in full screen mode and the results will be shown when the user returns to the tracker program screen. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3528) | [Screenshot](*https://Update_URL*) 
 
@@ -99,7 +100,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-2829) 
 
 ## TRACKER & EVENT PENDING FEATURES
-**Working lists:** Working lists have been implemented and will be available in either event or tracker programs. Working lists will be downloaded from the server and user in the app will not be able to edit them. The user will be able to add filters to a selected working list. *(verify final implementation)* 
+**Working lists:** Working lists have been implemented and will be available in either event or tracker programs. Working lists will be downloaded from the server and user in the app will not be able to edit them. The user will be able to add filters to a selected working list. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-651) | [Screenshot](*https://Update_URL*)
 
