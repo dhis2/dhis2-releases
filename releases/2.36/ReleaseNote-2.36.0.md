@@ -7,38 +7,38 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Scatter plots:** The data visualizer app now features scatter plots. This enables users to chart organisational units as points against two variables for a single period with scatter plots.
 
-  - *Zoom in* by clicking and dragging the cursor over an area you would like to zoom in on. This is often necessary to see more detail in areas where many organisation units are clustered together. 
+  - *Zoom in* by clicking and dragging the cursor over an area you would like to zoom in on. This is often necessary to see more detail in areas where many organisation units are clustered together.
   - *Outlier detection* can be done using either a standard z-score, modified z-score, or an interquartile range via the options menu. An extreme vertical (y-axis) and horizontal (x-axis) threshold line can also be applied. Endorsed by the WHO, this is a very clear and powerful way to identify outliers that often represent data quality issues. You can identify the outliers that are most likely to throw off national statistics by using the outlier detection in combination with the extreme X and Y threshold lines.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20scatter%20plot%201.png) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20scatter%20plot%202.png) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+scatter+plot+1.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+scatter+plot+2.png) | [Docs]()
 
 **Full screen dashboard item presentation mode:** Expand any dashboard item (chart, map, or pivot table) to the size of the entire screen. This is great  for presenting data in virtual or in-person meetings directly from the dashboard.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20full%20screen.JPG) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+full+screen.JPG) | [Docs]()
 
 **Bar and column chart legends:** Change the color of a bar or column based upon a predefined legend. This makes it easy to highlight under and over-performance with bar and column charts.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20chart%20legend.png) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20chart%20legend%202.JPG) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+chart+legend.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+chart+legend+2.JPG) | [Docs]()
 
 **Mobile-friendly dashboard app:** The DHIS 2 dashboard web app is now more mobile-friendly and is more usable on mobile devices. This allows you to use the power of dashboards from your mobile device. Now you can take your dashboards with you, check them any time, and share data with anyone you need from the convenience of your phone. The app has adopted several of the principles of _Progressive Web Apps_ (PWA). Offline support to dashboards will come a in future release.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20PWA%201.jpg) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20PWA%202.jpg) [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20PWA%203.jpg) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+PWA+1.jpg) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+PWA+2.jpg) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+PWA+3.jpg) | [Docs]()
 
 **Population maps from Google Earth Engine:** Many DHIS2 instances suffer from not having adequate or accurate population values. This feature allows you to build maps with all data available in Google Earth Engine including the latest World Pop population estimates. You can apply a boundary layer to visualize the population totals, density by hectare, and average by hectare for organizational units. You can also apply a buffer around a facility or health post to see the population that falls within that buffer. Population dataset are available for age and sex disaggregation as well. These features allow you to quickly get the latest World Pop population estimates directly from the maps application. This is very useful feature for example in areas where census data is unreliable, for planning outreach or mass campaigns, and estimating risk for areas for high disease transmission.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20population%20map%202.png) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20population%20map%203.png) [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20population%20map%204.png) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+2.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+3.png) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+4.png) | [Docs]()
 
 **Universal data item search:** The data visualizer app now supports search for data items across all types, making it much easier to find the data items you want across indicators, data elements, data sets, program data elements and program indicators. All you need to do is search for the data item and all matches will be displayed irrespective of data item type.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20universal%20search%201.JPG) [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20universal%20search%202.JPG)| [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+universal+search+1.JPG) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+universal+search+2.JPG)| [Docs]()
 
 **Dashboard filter settings:** Dashboard owners can now define which filters to make available for each dashboard. Often, a large number of data dimensions exist, and not all of them apply to the data in dashboard. This makes it cumbersome to find and select relevant data dimension. By defining exactly which data dimensions are relevant and become available for a dashboard, the user experience is simplified and made more engaging. Go to _Edit_ > _Filter settings_ to select filters.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20dashboard%20filter%20settings.png) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+dashboard+filter+settings.png) | [Docs]()
 
 **Visualization type constraints for dashboard items:** Countries and projects work hard to craft dashboards that tell a specific story. In these countries the visualization types (maps, charts, or tables) are carefully selected and optimized. In previous versions of DHIS2 a user can quickly change the visualization type of each dashboard item between a table, map, or bar chart, but sometimes this may undermine the carefully crafted story the dashboard owner is trying to communicate. Now system administrators can control the availability of the option to change visualization types of the dashboard item, the interpretations panel, the option to open the analytics in the relevant app, and the option for view full-screen. This is a system wide setting by the administrator through the system settings app and applies to all dashboards.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/236%20vis%20type%20constraints.png) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+vis+type+constraints.png) | [Docs]()
 
 
 ## TRACKER AND EVENT FEATURES
