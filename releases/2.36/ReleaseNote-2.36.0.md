@@ -55,7 +55,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
 
-**New endpoint for retreiving tracker data:** A new API for retreiving tracker data is now released with the new endpoint for importing tracker data. This new API allows downloading tracker data on the same format as the new endpoint for importing data uses, making it easier to integrate with this new set of services.
+**New endpoint for retrieving tracker data:** A new API for retrieving tracker data is now released with the new endpoint for importing tracker data. This new API allows downloading tracker data on the same format as the new endpoint for importing data uses, making it easier to integrate with this new set of services.
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
 
