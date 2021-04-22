@@ -60,14 +60,14 @@ This document highlights the key features of the initial release of DHIS2 versio
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
 
 
-**New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the V{event_status} variable.
+**New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the `V{event_status}` variable.
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_indicator_functions_variables_operators) | [Jira](https://jira.dhis2.org/browse/DHIS2-10294)
 
 **Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously only the username was shown. The full name is useful in cases where the username is not readable.
 
 [Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
 
-**Mouseless data entry in tracker capture:** In tracker capture, data can now be entered without the use of a mouse. It is now possible to search and select options in option sets and boolean fields using the keyboard.
+**Keyboard-only data entry:** In tracker capture, data can now be entered without the use of a mouse. It is now possible to search and select options in option sets and boolean fields using the keyboard.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-5902)
 
