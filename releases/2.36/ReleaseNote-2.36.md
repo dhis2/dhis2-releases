@@ -10,7 +10,7 @@ This document highlights the key features of the initial release of DHIS2 versio
   - *Zoom in* by clicking and dragging the cursor over an area you would like to zoom in on. This is often necessary to see more detail in areas where many organisation units are clustered together.
   - *Outlier detection* can be done using either a standard z-score, modified z-score, or an interquartile range via the options menu. An extreme vertical (y-axis) and horizontal (x-axis) threshold line can also be applied. Endorsed by the WHO, this is a very clear and powerful way to identify outliers that often represent data quality issues. You can identify the outliers that are most likely to throw off national statistics by using the outlier detection in combination with the extreme X and Y threshold lines.
 
-    [Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_plot.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_outlier_options.png) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_outlier_analysis.png) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_plot.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_outlier_options.png) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_scatter_outlier_analysis.png) | [Docs]()
 
 **Full screen dashboard item presentation mode:** Expand any dashboard item (chart, map, or pivot table) to the size of the entire screen. This is great  for presenting data in virtual or in-person meetings directly from the dashboard.
 
@@ -22,7 +22,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Mobile-friendly dashboard app:** The DHIS 2 dashboard web app is now more mobile-friendly and is more usable on mobile devices. This allows you to use the power of dashboards from your mobile device. Now you can take your dashboards with you, check them any time, and share data with anyone you need from the convenience of your phone. The app has adopted several of the principles of _Progressive Web Apps_ (PWA). Offline support to dashboards will come a in future release.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_mobile.png) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_mobile.png) | [Docs]()
 
 **Population maps from Google Earth Engine:** Many DHIS2 instances suffer from not having accurate population data. This feature allows you to build maps with data from Google Earth Engine including the latest _World Pop_ population estimates. You can apply a boundary layer to visualize the population values, density by hectare and average by hectare for organisational units. You can apply a buffer around a facility to see the population that falls within the buffer. Population dataset are available for age and sex disaggregation. This is useful in areas where census data is incomplete or unreliable, e.g. for planning outreach campaigns and estimating risk of disease transmission.
 
@@ -30,11 +30,11 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Universal data item search:** The data visualizer app now supports search for data items across all types, making it much easier to find the data items you want across indicators, data elements, data sets, program data elements and program indicators. All you need to do is search for the data item and all matches will be displayed irrespective of data item type. You can still narrow down your search from the type selection.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_universal_search.png) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_universal_search.png) | [Docs]()
 
 **Dashboard filter settings:** Dashboard owners can now define which filters to make available for each dashboard. Often a large number of data dimensions exists and not all of them apply to the data in a specific dashboard. This makes it hard to find and select relevant data dimension. By defining exactly which data dimensions become available for a dashboard, the user experience is simplified and made more engaging. Go to _Edit_ > _Filter settings_ to select filters.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_settings.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_list.png) | [Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_settings.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_list.png) | [Docs]()
 
 **Visualization type for dashboard items:** Countries and projects work hard to design dashboards that tell a specific story, where the visualization type (maps, charts or tables) is carefully selected and optimized. In previous versions a user can change the visualization type of each dashboard item to a table, map or chart. In some cases, this may undermine the carefully crafted story the dashboard owner is trying to communicate. New system settings are now available in the _Analytics_ section of the settings app for controlling whether to allow users to switch visualization type, open items in the visualizer app, view interpretations and view in full screen.
 
@@ -49,7 +49,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei.png) [2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei_filter.png) [3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_search_tei.png) [4](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_register_tei_and_enroll.png) | [Docs]() | [Jira]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei.png) | [2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei_filter.png) | [3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_search_tei.png) | [4](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_register_tei_and_enroll.png) | [Docs]() | [Jira]()
 
 **New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
@@ -59,8 +59,8 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
 
-
 **New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the `V{event_status}` variable.
+
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_indicator_functions_variables_operators) | [Jira](https://jira.dhis2.org/browse/DHIS2-10294)
 
 **Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously only the username was shown. The full name is useful in cases where the username is not readable.
