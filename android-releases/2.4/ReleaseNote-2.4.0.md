@@ -77,8 +77,8 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3039) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot16.png)
 
 
-## TRACKER & EVENT PENDING FEATURES
-**Working lists:** Working lists have been implemented and will be available in either event or tracker programs. Working lists will be downloaded from the server and user in the app will not be able to edit them. The user will be able to add filters to a selected working list. 
+## TRACKER & EVENT FEATURES
+**Working lists:** Working lists have been implemented and are available in either event or tracker programs. Working lists are downloaded from the server while user in the app is not able to edit them. The user is able to add filters to a selected working list. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-651) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot14.png) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot15.png)
 
