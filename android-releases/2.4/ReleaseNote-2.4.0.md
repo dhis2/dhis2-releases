@@ -84,7 +84,7 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 **Edit Enrollment or Incident date:** The Enrollment and Incident date in tracker programs can be edited even if auto-generated events have been created. This behaviour aligns the functionality with the current implementation in web Capture App.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-2510) 
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-2510) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot13.png)
 
 **Organisation unit of a program stage not editable:** The Organisation Unit of a program stage (event) can not be edited. This behaviour aligns the functionality with the current implementation in web Capture App.
 
