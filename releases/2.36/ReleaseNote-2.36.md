@@ -36,7 +36,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_settings.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_filter_list.png) | [Docs]()
 
-**Visualization type for dashboard items:** Countries and projects work hard to design dashboards that tell a specific story, where the visualization type (maps, charts or tables) is carefully selected and optimized. In previous versions a user can change the visualization type of each dashboard item to a table, map or chart. In some cases, this may undermine the carefully crafted story the dashboard owner is trying to communicate. New system settings are now available in the _Analytics_ section of the settings app for controlling whether to allow users to switch visualization type, open items in the visualizer app, view interpretations and view in full screen. 
+**Visualization type for dashboard items:** Countries and projects work hard to design dashboards that tell a specific story, where the visualization type (maps, charts or tables) is carefully selected and optimized. In previous versions a user can change the visualization type of each dashboard item to a table, map or chart. In some cases, this may undermine the carefully crafted story the dashboard owner is trying to communicate. New system settings are now available in the _Analytics_ section of the settings app for controlling whether to allow users to switch visualization type, open items in the visualizer app, view interpretations and view in full screen.
 
 [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_system_settings.png) | [Docs]()
 
@@ -49,9 +49,9 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/capture_list_tei.png) [2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/capture_list_tei_filter.png) [3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/capture_search_tei.png) [4](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/images/capture_register_tei_and_enroll.png) | [Docs]() | [Jira]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei.png) [2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei_filter.png) [3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_search_tei.png) [4](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_register_tei_and_enroll.png) | [Docs]() | [Jira]()
 
-**New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes. 
+**New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
 
@@ -75,7 +75,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which greatly affects your data analysis. Previously, outliers were returned without an order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_selection.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_detection.png) | [User docs]() |[API docs]() 
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_selection.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_detection.png) | [User docs]() |[API docs]()
 
 **OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers.  Specific providers for Azure and WSO2 are also added. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
 
@@ -117,7 +117,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Data value follow-up:** A new endpoint is available for marking data values for follow-up.
 
-[Docs](https://docs.dhis2.org/master/en/dhis2_developer_manual/web-api.html#follow-up) | [Jira](https://jira.dhis2.org/browse/DHIS2-10344)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data.html#webapi_follow_up) | [Jira](https://jira.dhis2.org/browse/DHIS2-10344)
 
 **Server timezone:** The server timezone information is added to the `/api/system/info` endpoint.
 
@@ -133,7 +133,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 |Release Information|Link|
 | --- | --- |
 |Download release and sample database|https://www.dhis2.org/downloads|
-|Documentation|[https://www.dhis2.org/documentation](https://docs.dhis2.org/)|
+|Documentation|[https://docs.dhis2.org](https://docs.dhis2.org/)|
 |Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/README.md)|
 |Details about each feature on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
 |Overview of bugs fixed on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
