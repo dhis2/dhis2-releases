@@ -18,17 +18,17 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Bar and column chart legends:** Change the color of a bar or column based upon a predefined legend. This makes it easy to highlight under and over-performance with bar and column charts.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+chart+legend.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+chart+legend+2.JPG) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_legend_chart.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_legend_options.png) | [Docs]()
 
 **Mobile-friendly dashboard app:** The DHIS 2 dashboard web app is now more mobile-friendly and is more usable on mobile devices. This allows you to use the power of dashboards from your mobile device. Now you can take your dashboards with you, check them any time, and share data with anyone you need from the convenience of your phone. The app has adopted several of the principles of _Progressive Web Apps_ (PWA). Offline support to dashboards will come a in future release.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+PWA+1.jpg) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_mobile.png) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/dashboard_mobile.png) | [Docs]()
 
 **Population maps from Google Earth Engine:** Many DHIS2 instances suffer from not having accurate population data. This feature allows you to build maps with data from Google Earth Engine including the latest _World Pop_ population estimates. You can apply a boundary layer to visualize the population values, density by hectare and average by hectare for organisational units. You can apply a buffer around a facility to see the population that falls within the buffer. Population dataset are available for age and sex disaggregation. This is useful in areas where census data is incomplete or unreliable, e.g. for planning outreach campaigns and estimating risk of disease transmission.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+2.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+3.png) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/236+population+map+4.png) | [Docs]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/maps_population_1.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/maps_population_2.png) | [Screenshot 3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/maps_population_3.png) | [Docs]()
 
-**Universal data item search:** The data visualizer app now supports search for data items across all types, making it much easier to find the data items you want across indicators, data elements, data sets, program data elements and program indicators. All you need to do is search for the data item and all matches will be displayed irrespective of data item type.
+**Universal data item search:** The data visualizer app now supports search for data items across all types, making it much easier to find the data items you want across indicators, data elements, data sets, program data elements and program indicators. All you need to do is search for the data item and all matches will be displayed irrespective of data item type. You can still narrow down your search from the type selection.
 
 [Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/visualizer_universal_search.png) | [Docs]()
 
@@ -87,25 +87,25 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **User account expiration:** User accounts can now be set to expire on a particular date. This is useful for creating temporary accounts, e.g. when inviting partners through guest accounts.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-8089)
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/user_expiration.png) | [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-8089)
 
 **Disable inactive users:** A new system job is available for automatically disable users which have been inactive (not logged in) for a given number of months. This is useful from a security perspective to prevent inactive user accounts from being compromised.
 
-[Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/scheduler_disable_inactive_users.png) | [Docs]()
 
 **Data read sharing for SQL views:** Data read sharing is now required to read the output of an SQL view. This allows implementers to grant users access to read the output of SQL views without giving access to add or edit the views.
 
-[Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/sql_view_data_sharing.png) | [Docs]()
 
 **Data integrity checks performance:** The performance of the data integrity checks (in the data administration app) has been improved and completes a lot faster.
 
-[Docs]()
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/data_integrity_checks.png) | [Docs]()
 
 **Disable program rule execution:** A new configuration property is available in `dhis.conf` for disabling/enabling server-side program rule execution.
 
 [Docs]()
 
-**Core application modernization:** The majority of core applications bundled with the 2.36.0 DHIS2 release have been upgraded to leverage the latest DHIS2 application suite of tools.  This ensures that modernized apps have identical headerbars, improved translation coverage, and more standardized user interface elements.
+**Core application modernization:** The majority of core applications bundled with the 2.36.0 DHIS2 release have been upgraded to leverage the latest DHIS2 application suite of tools.  This ensures that modernized apps have identical header bar, improved translation coverage and more standardized user interface elements.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-10026)
 
