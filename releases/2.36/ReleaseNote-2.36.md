@@ -63,7 +63,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_indicator_functions_variables_operators) | [Jira](https://jira.dhis2.org/browse/DHIS2-10294)
 
-**Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously only the username was shown. The full name is useful in cases where the username is not readable.
+**Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously, only the username was shown. The full name is useful in cases where the username is not readable.
 
 [Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
 
@@ -73,15 +73,15 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 ## PLATFORM FEATURES
 
-**Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which greatly affects your data analysis. Previously, outliers were returned without an order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response.
+**Outlier detection:** A new and improved outlier detection is available in the data quality app. Outlier values are now ranked and the most significant outlier are returned first, making it lot easier to find and correct the outlier values which most significantly affect your data analysis. Previously, outliers were returned without any order. Outliers are ranked by *absolute distance from mean*. The *z-score* of the value, as well as mean, std dev, min and max are available in the response. The new solution is more scalable, allowing you to search across a larger data set.
 
 [Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_selection.png) | [Screenshot 2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/outlier_detection.png) | [User docs]() |[API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#outlier-detection)
 
-**OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers.  Specific providers for Azure and WSO2 are also added. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location.
+**OpenID Connect:** The OpenID Connect (OIDC) support is greatly improved. A generic solution is now available which will work with most OIDC providers.  Specific providers for Azure and WSO2 are also added. Providers which have been tested and verified to work are Google, Microsoft/Azure, Okta, Keykloak and WSO2. OIDC allows for Single Sign-On across multiple systems while managing identities in a central location. OIDC is useful for *Single Sign-On* across multiple systems.
 
 [Docs](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-235/installation.html#install_oidc_configuration)
 
-**Translations:** Dynamic metadata translations have been extended to cover many more entities and properties and allows you to translate most of the DHIS 2 application in any number of languages. This is helpful for multi-language DHIS2 instances.
+**Translations:** Dynamic metadata translations have been extended to cover many more entities and properties and allows you to translate most of the DHIS2 application in any number of languages. This is helpful for multi-language DHIS2 instances.
 
 [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/translation_validation_rule.png) | [Jira 1](https://jira.dhis2.org/browse/DHIS2-10562) | [2](https://jira.dhis2.org/browse/DHIS2-10556) | [3](https://jira.dhis2.org/browse/DHIS2-10487) | [4](https://jira.dhis2.org/browse/DHIS2-8669) | [5](https://jira.dhis2.org/browse/DHIS2-8297) | [6](https://jira.dhis2.org/browse/DHIS2-5587)
 
@@ -105,7 +105,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 [Docs](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-master/installation.html#install_system_configuration)
 
-**Core application modernization:** The majority of core applications bundled with the 2.36.0 DHIS2 release have been upgraded to leverage the latest DHIS2 application suite of tools.  This ensures that modernized apps have identical header bar, improved translation coverage and more standardized user interface elements.
+**Core application modernization:** The majority of core applications bundled with this release have been upgraded to leverage the latest DHIS2 application platform and suite of tools. This ensures that modernized apps have identical header bar, improved translation coverage and more standardized user interface elements.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-10026)
 
@@ -139,5 +139,5 @@ This document highlights the key features of the initial release of DHIS2 versio
 |Overview of bugs fixed on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
 |Source code on Github|https://github.com/dhis2|
 |Demo instance|https://play.dhis2.org/2.36/|
-|Docker|`docker pull dhis2/core:2.36.0`<br>_for more docker image variants see [dockerhub](https://hub.docker.com/repository/docker/dhis2/core)_|
-|DHIS 2 community|https://community.dhis2.org/|
+|Docker|`docker pull dhis2/core:2.36.0`<br>See [dockerhub](https://hub.docker.com/repository/docker/dhis2/core) for all available images|
+|Community forum|https://community.dhis2.org/|
