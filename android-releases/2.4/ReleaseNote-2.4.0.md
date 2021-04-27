@@ -19,11 +19,12 @@ This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/23
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3562) | [Jira2](https://jira.dhis2.org/browse/ANDROAPP-3563) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot23.png) | [Screenshot2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot26.png)
 
-**Mandatory Data Elements are always displayed:** When a data element is configured as mandatory it will not be hiddenby program rules. This behaviour aligns with web Capture App. 
+**Mandatory Data Elements are always displayed:** When a data element is configured as mandatory it will not be hidden by program rules. This behaviour aligns with web Capture App. 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3497) 
 
 **Apply legends to data element fields:** Now if a numeric data element has a legend, the app will display a badge with the color and description for the given legend value.
+
 [jira](https://jira.dhis2.org/browse/ANDROAPP-3312) | [Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.4/2.4-release-screenshot12.png)
 
 ## EVENTS & TRACKER DATA ENTRY
