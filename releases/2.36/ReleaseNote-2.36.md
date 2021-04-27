@@ -113,7 +113,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
 
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info) | [Jira](https://jira.dhis2.org/browse/DHIS2-102579)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info) | [Jira](https://jira.dhis2.org/browse/DHIS2-10257)
 
 **Data value follow-up:** A new endpoint is available for marking data values for follow-up.
 
@@ -125,7 +125,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Delete validation results:** A new endpoint is available for deleting validation results.
 
- [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-74399)
+ [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-7439)
 
 ## RELEASE INFO
 
