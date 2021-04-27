@@ -14,7 +14,7 @@
 ## API
 
 - The `POST /api/dataAnalysis/stdDevOutlier` and `POST /api/dataAnalysis/minMaxOutlier` API endpoints are deprecated and will be removed in 2.37. These endpoints are superseded by the `/api/outlierDetection` API which offers higher performance and more sophisticated outlier detection.
-- The `POST /api/followup` API endpoint is deprecated and will be removed in 2.38. This endpoint is superseded by the `GET /api/followup` API endpoint.
+- The `POST /api/followup` API endpoint for reading follow-up data values is deprecated and will be removed in 2.38. This endpoint is superseded by the `GET /api/followup` API endpoint.
 - The `type` field in the `/api/analytcs` API endpoint `metadata` > `headers` response is deprecated and will be removed in 2.37. Instead use the `valueType` field.
 - Several Visualization attributes are made read-only as part of a deprecation process related to changes in the Visualization API (`/api/visualizations`). You can find the "new format" and the respective changed attributes at [DHIS2-10054](https://jira.dhis2.org/browse/DHIS2-10054). The new format is being covered in the Visualization section of DHIS2 documentation. To avoid breaking existing applications the old format will still be returned as part of the response. Changes to the refactored attributes will only take effect when using the new format. See [DHIS2-1369](https://jira.dhis2.org/browse/DHIS2-1369).
 - The `restrictToCaptureScope` parameter in the API endpoints `api/categoryOptions` and `api/programs`  is no longer supported. For programs alone, an alternate endpoint `/api/programs/orgUnits?programs={programUids}` for fetching organisationUnit associations can be used. 
