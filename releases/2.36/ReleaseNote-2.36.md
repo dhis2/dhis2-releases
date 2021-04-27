@@ -135,8 +135,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 |Download release and sample database|https://www.dhis2.org/downloads|
 |Documentation|[https://docs.dhis2.org](https://docs.dhis2.org/)|
 |Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/README.md)|
-|Details about each feature on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
-|Overview of bugs fixed on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
+|Full list of features and bugs in this release|https://github.com/dhis2/dhis2-releases/edit/master/releases/2.36/ReleaseNote-2.36.0.md|
 |Source code on Github|https://github.com/dhis2|
 |Demo instance|https://play.dhis2.org/2.36/|
 |Docker|`docker pull dhis2/core:2.36.0`<br>See [dockerhub](https://hub.docker.com/repository/docker/dhis2/core) for all available images|
