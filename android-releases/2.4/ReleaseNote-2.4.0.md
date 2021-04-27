@@ -1,7 +1,6 @@
 # DHIS2 Android App version 2.4 Release Notes
 
-DHIS2 [Android Capture App 2.4](https://www.dhis2.org/android-2-4) is out with many improvements. 
-Short description of the functionality.
+DHIS2 [Android Capture App 2.4](https://www.dhis2.org/android-2-4) is out with many improvements. This release we have focused mainly on improving the user interface and the data entry user experience for events and tracker. We have also including local analytics at the enrollment scope, and several improvements in the maps.
 
 This version is fully compatible with the [DHIS2 2.36 ](https://www.dhis2.org/236) and you can find the detailed new features and fixes below.
 
