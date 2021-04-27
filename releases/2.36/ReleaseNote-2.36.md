@@ -65,11 +65,11 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously, only the username was shown. The full name is useful in cases where the username is not readable.
 
-[Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/full_name_in_notes.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
 
 **Keyboard-only data entry:** In tracker capture, data can now be entered without the use of a mouse. It is now possible to search and select options in option sets and boolean fields using the keyboard.
 
-[Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5902)
+[Jira](https://jira.dhis2.org/browse/DHIS2-5902)
 
 ## PLATFORM FEATURES
 
