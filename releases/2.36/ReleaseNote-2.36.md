@@ -53,11 +53,11 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/new-tracker.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
 
 **New endpoint for retrieving tracker data:** A new API for retrieving tracker data is now released with the new endpoint for importing tracker data. This new API allows downloading tracker data on the same format as the new endpoint for importing data uses, making it easier to integrate with this new set of services.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/new-tracker.html#webapi_nti_export) | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
 
 **New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the `V{event_status}` variable.
 
