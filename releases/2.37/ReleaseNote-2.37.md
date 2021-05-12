@@ -1,1 +1,14 @@
 # DHIS version 2.37 Release Note
+
+
+## ANALYTICS FEATURES
+
+
+## TRACKER AND EVENT FEATURES
+
+
+## PLATFORM FEATURES
+
+
+## API FEATURES
+
