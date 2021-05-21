@@ -45,19 +45,17 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Performance improvements:** A huge number of performance improvements got included in 2.36 and there are broad improvements to tracker performance, in particular around database query optimizations. The improvements are leading to lower response times, faster database queries and less memory consumption. Most of these updates have been applied to versions 2.34.4, 2.35.2 and 2.36.0. Large scale DHIS2 implementations are advised to upgrade.
 
-[Jira]()
-
 **Tracker functionality in Capture app:** The capture app now has more support for tracker programs than before. Users will now be able to list and interact with tracked entity instances much in the same way as events, and will have access to searching and registering/enrolling tracked entity instances in the Capture app itself. Further interaction with enrollments and events in enrollments will in 2.36 still take place in the Tracker Capture app, but navigation between the apps will happen seamlessly. This will allow data entry user to access tracker and event data in the same place, and have a more integrated workflow.
 
-[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei.png) | [2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei_filter.png) | [3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_search_tei.png) | [4](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_register_tei_and_enroll.png) | [Docs]() | [Jira]()
+[Screenshot 1](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei.png) | [2](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_list_tei_filter.png) | [3](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_search_tei.png) | [4](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/capture_register_tei_and_enroll.png)
 
 **New endpoint for importing tracker data:** A new API for tracker data is now released side by side with the existing API. The new API is redesigned and reimplemented from the bottom up with a new architecture. The new implementation is more maintainable and yields a bigger potential for performance enhancements than it was possible to achieve in the old code base. The new API will run a full program rule execution, and allows server side field assignment and payload validation in addition to the existing functionality for sending messages. The new API is going to take the place of the existing one in later versions of DHIS2, but is released side by side at this time to allow app developers to start integration processes.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/new-tracker.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-5068)
 
 **New endpoint for retrieving tracker data:** A new API for retrieving tracker data is now released with the new endpoint for importing tracker data. This new API allows downloading tracker data on the same format as the new endpoint for importing data uses, making it easier to integrate with this new set of services.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/new-tracker.html#webapi_nti_export) | [Jira](https://jira.dhis2.org/browse/DHIS2-10093)
 
 **New program indicator functionality:** It is now possible to build program indicator expressions and filters based on the event status, using the `V{event_status}` variable.
 
@@ -65,11 +63,11 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Full name shown in notes** In tracker capture, the full name is now shown for the user that entered a note/comment. Previously, only the username was shown. The full name is useful in cases where the username is not readable.
 
-[Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
+[Screenshot](https://s3-eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/36/full_name_in_notes.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-9574)
 
 **Keyboard-only data entry:** In tracker capture, data can now be entered without the use of a mouse. It is now possible to search and select options in option sets and boolean fields using the keyboard.
 
-[Screenshot]() | [Jira](https://jira.dhis2.org/browse/DHIS2-5902)
+[Jira](https://jira.dhis2.org/browse/DHIS2-5902)
 
 ## PLATFORM FEATURES
 
@@ -113,7 +111,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Cluster leader node:** In a cluster setup, the ID of the leader node is available in the new `/api/cluster/leader` endpoint. This is useful to sysadmins to understand which node in the cluster is acting as the leader and is running scheduled jobs.
 
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info) | [Jira](https://jira.dhis2.org/browse/DHIS2-102579)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/maintenance.html#cluster-info) | [Jira](https://jira.dhis2.org/browse/DHIS2-10257)
 
 **Data value follow-up:** A new endpoint is available for marking data values for follow-up.
 
@@ -125,7 +123,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 
 **Delete validation results:** A new endpoint is available for deleting validation results.
 
- [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-74399)
+ [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-7439)
 
 ## RELEASE INFO
 
@@ -135,8 +133,7 @@ This document highlights the key features of the initial release of DHIS2 versio
 |Download release and sample database|https://www.dhis2.org/downloads|
 |Documentation|[https://docs.dhis2.org](https://docs.dhis2.org/)|
 |Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/README.md)|
-|Details about each feature on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
-|Overview of bugs fixed on JIRA|https://jira.dhis2.org/issues/?filter=XXXXX|
+|Full list of features and bugs in this release|[Patch Release Note](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.36/ReleaseNote-2.36.0.md)|
 |Source code on Github|https://github.com/dhis2|
 |Demo instance|https://play.dhis2.org/2.36/|
 |Docker|`docker pull dhis2/core:2.36.0`<br>See [dockerhub](https://hub.docker.com/repository/docker/dhis2/core) for all available images|
