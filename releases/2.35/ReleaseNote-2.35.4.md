@@ -2,6 +2,8 @@
 
 ## Features
 
+None.
+
 ## Bugs
 
 **[DHIS2-10766](https://jira.dhis2.org/browse/DHIS2-10766): Duplicated elements in the pagination of /dataItems**  
