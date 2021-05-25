@@ -14,7 +14,6 @@ Components: _[API] Data administration_
 
 **[DHIS2-10864](https://jira.dhis2.org/browse/DHIS2-10864): Data value set endpoint not respecting data view orgunit**  
 Components: _[API] Data value set_  
-**In Progress**
 
 **[DHIS2-10805](https://jira.dhis2.org/browse/DHIS2-10805): Visualization fails to migrate from 2.34 to 2.35**  
 Components: _[API] Database migration_, _[App] Data visualizer_
@@ -39,18 +38,15 @@ Components: _[API] Program rules_
 
 **[DHIS2-10853](https://jira.dhis2.org/browse/DHIS2-10853): Unable to Authenticate with LDAP**  
 Components: _[API] System configuration_  
-**Testing**
 
 **[DHIS2-11164](https://jira.dhis2.org/browse/DHIS2-11164): Create index for reservedvalue table**  
 Components: _[API] Tracker_  
-**Testing**
 
 **[DHIS2-11073](https://jira.dhis2.org/browse/DHIS2-11073): Tracked entity instance query with event filters produces illegal SQL**  
 Components: _[API] Tracker_
 
 **[DHIS2-10866](https://jira.dhis2.org/browse/DHIS2-10866): Cached user accesses are not invalidated after changing**  
 Components: _[API] Tracker_  
-**Needs Update**
 
 **[DHIS2-10870](https://jira.dhis2.org/browse/DHIS2-10870): Search by unique attribute doesn't work when minAttributesRequiredToSearch > 1**  
 Components: _[API] Tracker_
@@ -66,7 +62,6 @@ Components: _[API] Validation_
 
 **[DHIS2-10859](https://jira.dhis2.org/browse/DHIS2-10859): App Management App self-update version comparison is incorrect**  
 Components: _[App] App management_  
-**Testing**
 
 **[DHIS2-8998](https://jira.dhis2.org/browse/DHIS2-8998): Untranslatable strings in Capture app**  
 Components: _[App] Capture_
