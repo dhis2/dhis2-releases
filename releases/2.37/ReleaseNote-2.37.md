@@ -7,6 +7,8 @@
 
 **DEVELOPMENT**
 
+**Indicator type for single value:** This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. [jira](https://jira.dhis2.org/browse/DHIS2-7420)
+
 **Dashboard default layout** will automatically configure a dashboard as users add more items. [jira](https://jira.dhis2.org/browse/DHIS2-3600)
 
 **Drill-down in charts for period and org unit dimensions** is not possible as long as those demensions are not in the filter. [jira](https://jira.dhis2.org/browse/DHIS2-11061)
