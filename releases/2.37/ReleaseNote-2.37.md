@@ -5,6 +5,8 @@
 
 ## ANALYTICS FEATURES
 
+**DEVELOPMENT**
+
 **Dashboard default layout** will automatically configure a dashboard as users add more items.
 
 **Drill-down in charts for period and org unit dimensions** is not possible as long as those demensions are not in the filter.
@@ -15,7 +17,11 @@
 
 **Continuous analytics for event and enrollment data** will make it possible to see new tracker and event data added to your dashboard in real-time. 
 
+**DESIGN AND REQUIRMENTS GATHERING**
 
+**Design of the new event reports/line listing application:** we are working on the next generation of the event reports and linelisting application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. 
+
+**New series management in the data visualizer application:** There is an ever expanding fuctionality in the data visualizer application, and this means that we periodically have to update your menues and user experience to keep the application easy to use. Now we are working to design a new series management menue so that we can continue to expand the fuctionality specifially around custom series colors. 
 
 ## TRACKER AND EVENT FEATURES
 
