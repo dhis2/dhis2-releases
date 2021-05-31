@@ -5,6 +5,17 @@
 
 ## ANALYTICS FEATURES
 
+**Dashboard default layout** will automatically configure a dashboard as users add more items.
+
+**Drill-down in charts for period and org unit dimensions** is not possible as long as those demensions are not in the filter.
+
+**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels.
+
+**Axis labels for multi-axis charts** 
+
+**Continuous analytics for event and enrollment data** will make it possible to see new tracker and event data added to your dashboard in real-time. 
+
+
 
 ## TRACKER AND EVENT FEATURES
 
