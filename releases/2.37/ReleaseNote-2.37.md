@@ -33,6 +33,8 @@
 
 **Design of the new event reports/line listing application:** we are working on the next generation of the event reports and linelisting application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. [jira](https://jira.dhis2.org/browse/DHIS2-3442)
 
+**Dashboard cascade sharing** will enable dashboard owners to share a dahsobard and all of is consitient meta-data to users at one time. This will remove the burden of having to make sure all individual sharing pemissions for object on the dahsobard are in agreement for a user to be able to view the dashboard. [jira](https://jira.dhis2.org/browse/DHIS2-101)
+
 **New series management in the data visualizer application:** There is an ever expanding fuctionality in the data visualizer application, and this means that we periodically have to update your menues and user experience to keep the application easy to use. Now we are working to design a new series management menue so that we can continue to expand the fuctionality specifially around custom series colors. [jira](https://jira.dhis2.org/browse/DHIS2-11132)
 
 ## TRACKER AND EVENT FEATURES
