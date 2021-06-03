@@ -11,13 +11,23 @@
 
 **Dashboard default layout** will automatically configure a dashboard as users add more items. [jira](https://jira.dhis2.org/browse/DHIS2-3600)
 
-**Drill-down in charts for period and org unit dimensions** is not possible as long as those demensions are not in the filter. [jira](https://jira.dhis2.org/browse/DHIS2-11061)
+**Org unit drill down in charts** will be enabled as long as the org unit demension are not in the filter. [jira](https://jira.dhis2.org/browse/DHIS2-11061)
 
 **Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. [jira](https://jira.dhis2.org/browse/DHIS2-11057)
 
 **Axis labels for multi-axis charts** [jira](https://jira.dhis2.org/browse/DHIS2-6672)
 
 **Continuous analytics for event and enrollment data** will make it possible to see new tracker and event data added to your dashboard in real-time. [jira](https://jira.dhis2.org/browse/DHIS2-11188)
+
+**Last 10 years relative period** in data visualizer and maps applications. [jira](https://jira.dhis2.org/browse/DHIS2-7029)
+
+**Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it. This will make DHIS2 much more suitable as a master facility list.[jira](https://jira.dhis2.org/browse/DHIS2-11176)
+
+**Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will cashe onto the device and the user will be able to view that dashboard while offline. No new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard while offline. However, viewing as in fullscreen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline. [jira](https://jira.dhis2.org/browse/DHIS2-10874)
+
+**Custom date labels are respected in event reports downloads** [jira](https://jira.dhis2.org/browse/DHIS2-9641)
+
+**Legend key for pivot tables on dashboard** will be available if a legend is applied to a pivot table to make it into a scorecard. [jira](https://jira.dhis2.org/browse/DHIS2-6296)
 
 **DESIGN AND REQUIRMENTS GATHERING**
 
