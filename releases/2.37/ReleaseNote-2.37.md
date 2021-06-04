@@ -1,4 +1,4 @@
-# 🚧 UNDER CONSTRUCTION 🚧
+🚧 UNDER CONSTRUCTION 🚧
 
 # DHIS version 2.37 Release Note
 
