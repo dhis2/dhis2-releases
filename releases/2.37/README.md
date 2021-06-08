@@ -4,7 +4,7 @@
 
 ## API
 
-- The `/api/userCredentials` API endpoint has been removed. API users should use the `/api/users` and `/api/userLookup` API endpoints instead.
+- The `/api/userCredentials` API endpoint is removed. API users should use the `/api/users` and `/api/userLookup` API endpoints instead.
 
 ## Authorities
 
