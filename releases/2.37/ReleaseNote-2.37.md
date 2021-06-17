@@ -49,13 +49,14 @@
 
 ### API FEATURES
 <!-- -dev -->
+
+## DESIGN AND REQUIREMENTS GATHERING
+<!-- +des -->
 - [Analytics](#analytics)
 - [Tracker](#tracker)
 - [Platform](#platform)
 - [API](#api)
 
-## DESIGN AND REQUIREMENTS GATHERING
-<!-- +des -->
 ### ANALYTICS
 
 **Design of the new event reports/line listing application:** we are working on the next generation of the event reports and linelisting application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. [jira](https://jira.dhis2.org/browse/DHIS2-3442)
