@@ -26,13 +26,13 @@
 
 **Last 10 years relative period** in data visualizer and maps applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
-**Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it. This will make DHIS2 much more suitable as a master facility list.[jira](https://jira.dhis2.org/browse/DHIS2-11176)
+**Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it. This will make DHIS2 much more suitable as a master facility list. [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
-**Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will cashe onto the device and the user will be able to view that dashboard while offline. No new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard while offline. However, viewing as in fullscreen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline. [jira](https://jira.dhis2.org/browse/DHIS2-10874)
+**Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will cashe onto the device and the user will be able to view that dashboard while offline. No new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard while offline. However, viewing as in fullscreen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline. [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
-**Custom date labels are respected in event reports downloads** [jira](https://jira.dhis2.org/browse/DHIS2-9641)
+**Custom date labels are respected in event reports downloads** [DHIS2-9641](https://jira.dhis2.org/browse/DHIS2-9641)
 
-**Legend key for pivot tables on dashboard** will be available if a legend is applied to a pivot table to make it into a scorecard. [jira](https://jira.dhis2.org/browse/DHIS2-6296)
+**Legend key for pivot tables on dashboard** will be available if a legend is applied to a pivot table to make it into a scorecard. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 
 ### TRACKER AND EVENT FEATURES
@@ -59,11 +59,11 @@
 
 ### ANALYTICS
 
-**Design of the new event reports/line listing application:** we are working on the next generation of the event reports and linelisting application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. [jira](https://jira.dhis2.org/browse/DHIS2-3442)
+**Design of the new event reports/line listing application:** we are working on the next generation of the event reports and linelisting application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. [DHIS2-3442](https://jira.dhis2.org/browse/DHIS2-3442)
 
-**Dashboard cascade sharing** will enable dashboard owners to share a dahsobard and all of is consitient meta-data to users at one time. This will remove the burden of having to make sure all individual sharing pemissions for object on the dahsobard are in agreement for a user to be able to view the dashboard. [jira](https://jira.dhis2.org/browse/DHIS2-101)
+**Dashboard cascade sharing** will enable dashboard owners to share a dahsobard and all of is consitient meta-data to users at one time. This will remove the burden of having to make sure all individual sharing pemissions for object on the dahsobard are in agreement for a user to be able to view the dashboard. [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
-**New series management in the data visualizer application:** There is an ever expanding fuctionality in the data visualizer application, and this means that we periodically have to update your menues and user experience to keep the application easy to use. Now we are working to design a new series management menue so that we can continue to expand the fuctionality specifially around custom series colors. [jira](https://jira.dhis2.org/browse/DHIS2-11132)
+**New series management in the data visualizer application:** There is an ever expanding fuctionality in the data visualizer application, and this means that we periodically have to update your menues and user experience to keep the application easy to use. Now we are working to design a new series management menue so that we can continue to expand the fuctionality specifially around custom series colors. [DHIS2-11132](https://jira.dhis2.org/browse/DHIS2-11132)
 
 ### TRACKER
 
