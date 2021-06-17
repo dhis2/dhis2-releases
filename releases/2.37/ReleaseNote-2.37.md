@@ -49,6 +49,10 @@
 
 ### API FEATURES
 <!-- -dev -->
+- [Analytics](#analytics)
+- [Tracker](#tracker)
+- [Platform](#platform)
+- [API](#api)
 
 ## DESIGN AND REQUIREMENTS GATHERING
 <!-- +des -->
@@ -68,10 +72,10 @@
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
 
-### PLATFORM FEATURES
+### PLATFORM
 
 
-### API FEATURES
+### API
 
 
 <!-- -des -->
