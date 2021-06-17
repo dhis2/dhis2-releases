@@ -5,7 +5,7 @@
 ## DEVELOPMENT
 <!-- +dev -->
 - [Analytics](#analytics-features)
-- [Tracker](#tracker-and-event-features)- 
+- [Tracker](#tracker-and-event-features)
 - [Platform](#platform-features)
 - [API](#api-features)
 
