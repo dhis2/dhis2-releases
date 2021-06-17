@@ -66,10 +66,7 @@
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
 
-### PLATFORM
 
-
-### API
 
 
 <!-- END-WEBSITE-SYNC-ID:des -->
