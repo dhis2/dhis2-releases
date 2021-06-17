@@ -49,10 +49,6 @@
 
 ## DESIGN AND REQUIREMENTS GATHERING
 <!-- BEGIN-WEBSITE-SYNC-ID:des -->
-- [Analytics](#analytics)
-- [Tracker](#tracker)
-- [Platform](#platform)
-- [API](#api)
 
 ### ANALYTICS
 
