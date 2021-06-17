@@ -12,19 +12,19 @@
 ### ANALYTICS FEATURES
 
 
-**Indicator type for single value:** This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. [jira](https://jira.dhis2.org/browse/DHIS2-7420)
+**Indicator type for single value:** This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
 
-**Dashboard default layout** will automatically configure a dashboard as users add more items. [jira](https://jira.dhis2.org/browse/DHIS2-3600)
+**Dashboard default layout** will automatically configure a dashboard as users add more items. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
-**Org unit drill down in charts** will be enabled as long as the org unit demension are not in the filter. [jira](https://jira.dhis2.org/browse/DHIS2-11061)
+**Org unit drill down in charts** will be enabled as long as the org unit demension are not in the filter. [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
-**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. [jira](https://jira.dhis2.org/browse/DHIS2-11057)
+**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
-**Axis labels for multi-axis charts** [jira](https://jira.dhis2.org/browse/DHIS2-6672)
+**Axis labels for multi-axis charts** [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
-**Continuous analytics for event and enrollment data** will make it possible to see new tracker and event data added to your dashboard in real-time. [jira](https://jira.dhis2.org/browse/DHIS2-11188)
+**Continuous analytics for event and enrollment data** will make it possible to see new tracker and event data added to your dashboard in real-time. [DHIS2-11188](https://jira.dhis2.org/browse/DHIS2-11188)
 
-**Last 10 years relative period** in data visualizer and maps applications. [jira](https://jira.dhis2.org/browse/DHIS2-7029)
+**Last 10 years relative period** in data visualizer and maps applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
 **Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it. This will make DHIS2 much more suitable as a master facility list.[jira](https://jira.dhis2.org/browse/DHIS2-11176)
 
