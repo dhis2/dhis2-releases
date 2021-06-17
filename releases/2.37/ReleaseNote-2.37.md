@@ -3,7 +3,7 @@
 # DHIS version 2.37 Release Note
 
 ## DEVELOPMENT
-<!-- +dev -->
+<!-- BEGIN-WEBSITE-SYNC-ID:dev -->
 - [Analytics](#analytics-features)
 - [Tracker](#tracker-and-event-features)
 - [Platform](#platform-features)
@@ -48,10 +48,10 @@
 
 
 ### API FEATURES
-<!-- -dev -->
+<!-- END-WEBSITE-SYNC-ID:dev -->
 
 ## DESIGN AND REQUIREMENTS GATHERING
-<!-- +des -->
+<!-- BEGIN-WEBSITE-SYNC-ID:des -->
 - [Analytics](#analytics)
 - [Tracker](#tracker)
 - [Platform](#platform)
@@ -79,4 +79,4 @@
 ### API
 
 
-<!-- -des -->
+<!-- END-WEBSITE-SYNC-ID:des -->
