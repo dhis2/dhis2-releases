@@ -8,6 +8,8 @@
 - [Tracker](#tracker-and-event-features)
 - [Platform](#platform-features)
 - [API](#api-features)
+<!-- END-WEBSITE-SYNC-ID:dev -->
+<!-- BEGIN-WEBSITE-SYNC-ID:dev2 -->
 
 ### ANALYTICS FEATURES
 
@@ -48,7 +50,7 @@
 
 
 ### API FEATURES
-<!-- END-WEBSITE-SYNC-ID:dev -->
+<!-- END-WEBSITE-SYNC-ID:dev2 -->
 
 ## DESIGN AND REQUIREMENTS GATHERING
 <!-- BEGIN-WEBSITE-SYNC-ID:des -->
