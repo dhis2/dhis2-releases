@@ -12,7 +12,7 @@
 ### ANALYTICS FEATURES
 
 
-**Indicator type for single value:** This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. <a class="button" href="https://jira.dhis2.org/browse/DHIS2-7420">DHIS2-7420</a>
+<a class="button" href="https://jira.dhis2.org/browse/DHIS2-7420">Indicator type for single value</a> This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. 
 
 **Dashboard default layout** will automatically configure a dashboard as users add more items. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
