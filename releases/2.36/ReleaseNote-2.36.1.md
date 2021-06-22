@@ -13,4 +13,4 @@ The system is vulnerable to attack only from users that are logged in to DHIS2, 
 
 The vulnerability will never be exposed to a non-malicious user - the vulnerability requires a conscious attack to be exploited.
 
-The vulnerability itself will allow a user matching the above 2 criteria a chance of reading, editing and deleting data in the DHIS2 instance. 
+A successful exploit of this vulnerability could allow a malicious user to read, edit and delete data in the DHIS2 instance. 
