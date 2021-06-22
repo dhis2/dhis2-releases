@@ -2,11 +2,13 @@
 <!-- BEGIN-WEBSITE-SYNC-ID:android -->
 
 <!-- Analytics -->
-# Local Analytics
+**LOCAL ANALYTICS**
+
 **Offline In-App Program/Dataset Analytics:** The android app can now render analytics (charts, and tables) that have been created in DHIS2 and are compatible with Android. These visualizations can be rendered in the home screen of the App, and at the dataset level and program level. Analytics to be displayed require to be configured using the Android Settings WebApp, where administrators will be able to decide the charts and tables to be displayed for end users. 
 [ANDROAPP-2557](https://jira.dhis2.org/browse/ANDROAPP-2557)
 
-# Data Entry User Experience 
+**DATA ENTRY USER EXPERIENCE**
+
 **Adjust TEI Dashboard options to program configuration:** The options offered at the TEI dahsboard will be taileored to the specific configurtion of the program.
 - Relationships tab will not be visible if the program relatioships are not configured.
 - Create event button will be hidden When the user cannot create more events based on tracker configuration.
@@ -23,14 +25,16 @@
 **Display reason for data non-editable:** Data can be blocked for many reasons in DHIS2, because of access restrictions or expiration among others. When an Event, TEI or Data Set are not editable the user will be able to find the reason on the "Details" section.   
 [ANDROAPP-3565](https://jira.dhis2.org/browse/ANDROAPP-3565)
 
-# Maps
+**MAPS**
+
 **General Maps User experience:** After three versions since maps were included in the DHIS2 Android App, we have reviewed and improved the user experience based on community feedback.  
 [ANDROAPP-4024](https://jira.dhis2.org/browse/ANDROAPP-4024)
 
 **Center to user postion:** The maps in the DHIS2 Android Capture App include now the posibility to center the map on the user location.  
 [ANDROAPP-3583](https://jira.dhis2.org/browse/ANDROAPP-3583)
 
-# Tracker
+**TRACKER FEATURES**
+
 **Break the Glass:** The "Break the glass" functionality for TEI access auditing will be supported from this version of the DHIS2 Android App.
 [ANDROAPP-657](https://jira.dhis2.org/browse/ANDROAPP-657)
 
@@ -42,7 +46,7 @@
 **Improve search performance, separate online and offline search:** Previous versions of the Android App where performing TEI search both locally and on the server simultanenously and offering a combined list of results which made the double search transparent to the user. This approach slows down the search in locations where interent connection is slow or weak. Since in most cases the users can find their patients in their device, the new version of the Android App separates these two search in different steps, offering the user the list of local results first, with the option to expand the scope and search on the server.
 [ANDROAPP-4023](https://jira.dhis2.org/browse/ANDROAPP-4023)
 
-# Other features
+**OTHER FEATURES**
 
 **Interface language based on DHIS2 user language:** The language of the DHIS2 Android App user interface and metadata will be the ones configured on the user account of the DHIS2 server. 
 [ANDROAPP-2925](https://jira.dhis2.org/browse/ANDROAPP-2925)
@@ -50,9 +54,9 @@
 **Export/Share QR and Bar codes:** Users will be able to display a bar or QR code in an image so that it can be shared it for printing, take a screenshot or show it in the screen for scanning.
 [ANDROAPP-3891](https://jira.dhis2.org/browse/ANDROAPP-3891)
 
-# Implementation support
+**IMPLEMENTATION SUPPORT**
 
-**Add Dev options to settings screen for error debugging:** A new section for debuggindg will be included in the settings menu of the DHIS2 Android App.
+**Dev options to settings screen for error debugging:** A new section for debuggindg will be included in the settings menu of the DHIS2 Android App.
 [ANDROAPP-1655](https://jira.dhis2.org/browse/ANDROAPP-1655)
 
 <!-- END-WEBSITE-SYNC-ID:android -->
