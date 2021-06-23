@@ -43,6 +43,55 @@
 
 ### PLATFORM FEATURES
 
+**App Hub**: Along with a new design, improved interfaces for managing
+applications, and support for organizations with multiple developers,
+the user experience when navigating between applications has been much
+improved.
+
+It is now possible to login to the App Hub with a GitHub account as an
+alternative to a Google account.
+
+For a complete reference on changes to the App Hub, please refer to the
+[changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+
+**App Management**: A new design that builds on the DHIS2 design
+principles and UI components has been introduced, in addition to many
+user experience improvements. The App Management application will now
+receive in-app notifications that there is a newer version of an
+application available on the App Hub that is compatible with the running
+DHIS2 version, along with a one-click update functionality.
+
+A complete reference of all the changes to App Management is availabe in
+the
+[changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
+
+**App Platform**: To support a continuous delivery to the App Hub the
+d2-app-scripts has receieved a new command, `publish`, that after an
+initial configuration will publish a new version of an application to
+the App Hub. This is useful in both local commandline environments, and
+in continuous integration pipelines.
+
+Please refer to the
+[changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
+for a complete list of bug fixes and features.
+
+**App Runtime**: To promote best practices when communicating with the
+API, the application runtime will now warn in _development mode_ when a
+query does not use paging, or when fields are not explicitly added.
+Promoting good development practice in terms of API use is very
+important for DHIS2 to function at scale.
+
+The
+[changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
+contains a full list of changes per version.
+
+**DHIS2 UI**: The DHIS2 UI library has additional functionality
+useful for building DHIS2 Applications, such as the DataTable
+components, accessibility enhancements, and bug fixes.
+
+For more information about specific bug fixes and features and in what
+versions they are available, refer to the
+[changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
 
 ### API FEATURES
 <!-- END-WEBSITE-SYNC-ID:dev -->
