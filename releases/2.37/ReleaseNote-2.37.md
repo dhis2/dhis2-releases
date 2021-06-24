@@ -8,7 +8,6 @@
 
 ### ANALYTICS FEATURES
 
-
 **Indicator type for single value**: This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
 
 **Dashboard default layout** will automatically configure a dashboard as users add more items. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
@@ -45,30 +44,27 @@
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows.  After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack. 
 
-**App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers,
-the user experience when navigating between applications has been much improved.
+**App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved.
 
 It is now possible to login to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
-**App Management**: A new design that builds on the DHIS2 design principles and UI components has been introduced, in addition to many
-user experience improvements. The App Management application will now receive in-app notifications that there is a newer version of an
-application available on the App Hub that is compatible with the running DHIS2 version, along with a one-click update functionality. A complete reference of all the changes to App Management is available in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
+**App Management**: A new design that builds on the DHIS2 design principles and UI components has been introduced, in addition to many user experience improvements. The App Management application will now receive in-app notifications that there is a newer version of an application available on the App Hub that is compatible with the running DHIS2 version, along with a one-click update functionality. A complete reference of all the changes to App Management is available in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
 
-**App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an
-initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
+**App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
 in continuous integration pipelines. Please refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
 
-**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a
-query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
+**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
 
 **DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility  enhancements, and bug fixes.
 
 For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
 
 ### API FEATURES
+
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
 ## DESIGN AND REQUIREMENTS GATHERING
+
 <!-- BEGIN-WEBSITE-SYNC-ID:des -->
 
 ### ANALYTICS
@@ -86,6 +82,5 @@ For more information about specific bug fixes and features and in what versions 
 **Tracker features in Capture App:** requirements for editing multiple TEIs in a line-listed format
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
-
 
 <!-- END-WEBSITE-SYNC-ID:des -->
