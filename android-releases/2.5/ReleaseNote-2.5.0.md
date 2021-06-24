@@ -2,10 +2,16 @@
 <!-- BEGIN-WEBSITE-SYNC-ID:android -->
 
 <!-- Analytics -->
-**LOCAL ANALYTICS**
+**LOCAL ANALYTICS & USE**
 
 **Offline In-App Program/Dataset Analytics:** The android app can now render analytics (charts, and tables) that have been created in DHIS2 and are compatible with Android. These visualizations can be rendered in the home screen of the App, and at the dataset level and program level. Analytics to be displayed require to be configured using the Android Settings WebApp, where administrators will be able to decide the charts and tables to be displayed for end users. 
 [ANDROAPP-2557](https://jira.dhis2.org/browse/ANDROAPP-2557)
+
+**Tasks screen / To-Do List:** Users will be able to open the Android App with a Tasks Screen integrated in the home screen. The task screen is a to-do list of tasks that require attention from the user. The user will be able to visualize the upcoming tasks and navigate them using a calendar view. Tasks can be:
+- Any schedule tracker event (with or without assignment).
+- Any event assigned to the user.
+- Data sets with expiration date or period about to expire.
+[ANDROAPP-3427](https://jira.dhis2.org/browse/ANDROAPP-3427)
 
 **DATA ENTRY USER EXPERIENCE**
 
