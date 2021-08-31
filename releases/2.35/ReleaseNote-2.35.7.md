@@ -174,4 +174,4 @@ Components:
 
 This release contains fixes for the following Common Vulnerabilites and Exposures (CVEs)
 
-* TBC
+* CVE-2021-39179
