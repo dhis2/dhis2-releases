@@ -65,9 +65,6 @@ Components: _[API] Other_, _[App] Event reports_
 **[DHIS2-11329](https://jira.dhis2.org/browse/DHIS2-11329): Can't edit dashboard with "can edit and view"**  
 Components: _[API] Other_
 
-**[DHIS2-11577](https://jira.dhis2.org/browse/DHIS2-11577): Hard deletion of event/enrollment does not add audit entry**  
-Components: _[API] Tracker_
-
 **[DHIS2-11567](https://jira.dhis2.org/browse/DHIS2-11567): High memory allocation when posting teis with enrollments**  
 Components: _[API] Tracker_
 
