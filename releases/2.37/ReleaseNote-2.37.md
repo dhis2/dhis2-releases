@@ -46,7 +46,7 @@
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
-**Org unit profile:** You can new design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API; user interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
+**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API; user interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
 
 **Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the median, and not the mean like the regular Z-score, and more resilient towards outliers in a dataset.
 
