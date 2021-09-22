@@ -30,7 +30,6 @@
 
 **Legend key for pivot tables on dashboard** will be available if a legend is applied to a pivot table to make it into a scorecard. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
-
 ### TRACKER AND EVENT FEATURES
 
 **Performance improvements:** Improvements to Tracker database lock issues (concurrency); Improved routines and pipelines for performance testing; updates to new Tracker importer
@@ -39,10 +38,9 @@
 
 **Tracker features in Capture App:** new tool for generating and interacting with managements for TEIs; expand capture app to allow users to work with enrollments and events in tracker programs; user acceptance testing
 
-
 ### PLATFORM FEATURES
 
-**Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows.  After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack. 
+**Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
@@ -59,7 +57,7 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 
 **App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
 
-**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility  enhancements, and bug fixes.
+**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes.
 
 For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
 
@@ -86,5 +84,12 @@ For more information about specific bug fixes and features and in what versions 
 **Tracker features in Capture App:** requirements for editing multiple TEIs in a line-listed format
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
+
+### Deprecation Notice
+
+- **XML** support for metadata endpoints
+- **PDF** support for metadata endpoints
+- **XLS** support for metadata endpoints
+- **CSV** support for metadata endpoints
 
 <!-- END-WEBSITE-SYNC-ID:des -->
