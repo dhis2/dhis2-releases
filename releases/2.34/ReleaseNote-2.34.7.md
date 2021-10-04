@@ -19,9 +19,6 @@ Components: _[App] Data entry_
 
 ## Bugs
 
-**[DHIS2-7712](https://jira.dhis2.org/browse/DHIS2-7712): Event reports doesn't use dimension restrictions assigned to a user account**  
-Components: _[API] Analytics_, _[API] Events_
-
 **[DHIS2-9313](https://jira.dhis2.org/browse/DHIS2-9313): ADX export of data value sets does not respect the same set of parameters as the other formats**  
 Components: _[API] Data value set_  
 
