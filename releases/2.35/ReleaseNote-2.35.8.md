@@ -2,7 +2,7 @@
 
   - [Features](#features)
   - [Bugs](#bugs)
-  - [Advisories](#advisories)
+  - [Security Advisories](#advisories)
   
 ## Features
 
