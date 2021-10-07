@@ -1,6 +1,5 @@
 # Patch 2.35.8 Release Note
 
-- [Patch 2.35.8 Release Note](#patch-2358-release-note)
   - [Features](#features)
   - [Bugs](#bugs)
   - [Advisories](#advisories)
