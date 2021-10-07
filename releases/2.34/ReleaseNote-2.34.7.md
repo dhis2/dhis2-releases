@@ -1,9 +1,8 @@
 # Patch 2.34.7 Release Note
 
-- [Patch 2.34.7 Release Note](#patch-2347-release-note)
   - [Features](#features)
   - [Bugs](#bugs)
-  - [Advisories](#advisories)
+  - [Security Advisories](#advisories)
   
 
 ## Features
