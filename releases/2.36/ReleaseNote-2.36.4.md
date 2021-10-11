@@ -1,5 +1,9 @@
 # Patch 2.36.4 Release Note
 
+  - [Features](#features)
+  - [Bugs](#bugs)
+  - [Security Advisories](#advisories)
+
 ## Features
 
 **[DHIS2-11182](https://jira.dhis2.org/browse/DHIS2-11182): Remove uneccesary use of reserved values and queries**  
@@ -90,4 +94,11 @@ Components: _[App] Tracker capture_
 
 **[DHIS2-11528](https://jira.dhis2.org/browse/DHIS2-11528): Users with spaces in their username cannot be edited**  
 Components: _[App] User_
+
+## Advisories
+
+This release contains fixes for the following Common Vulnerabilites and Exposures (CVEs)
+
+* CVE-2021-39179
+* CVE-2021-xxxxx (TBC)
 
