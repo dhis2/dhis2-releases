@@ -1,6 +1,4 @@
-🚧 UNDER CONSTRUCTION 🚧
-
-# DHIS version 2.37 Release Note
+# DHIS version 2.37 Roadmap
 
 ## DEVELOPMENT
 
@@ -84,12 +82,5 @@ For more information about specific bug fixes and features and in what versions 
 **Tracker features in Capture App:** requirements for editing multiple TEIs in a line-listed format
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
-
-### Deprecation Notice
-
-- **XML** support for metadata endpoints
-- **PDF** support for metadata endpoints
-- **XLS** support for metadata endpoints
-- **CSV** support for metadata endpoints
 
 <!-- END-WEBSITE-SYNC-ID:des -->
