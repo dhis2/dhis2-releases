@@ -63,6 +63,16 @@ For more information about specific bug fixes and features and in what versions 
 
 ### API FEATURES
 
+**Split org unit:** The new `/organisationUnits/split` endpoint allows for splitting an organisation unit into multiple organisation units. All associated metadata and tracker data will be transferred to the target organisation units. This is useful e.g. when a district splits into multiple, new districts.
+
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_split)
+
+**Merge org units**: The new `/organisationUnits/merge` endpoint allows for merging multiple organisation units into one. All associated metadata, data values and tracker data will be merged and transferred to the target organisation unit. This is useful e.g. when multiple districts merge into one district.
+
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
+
+ 
+
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
 ## DESIGN AND REQUIREMENTS GATHERING
