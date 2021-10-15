@@ -5,6 +5,7 @@
 ## API
 
 - The `/api/userCredentials` API endpoint is removed. API users should use the `/api/users` and `/api/userLookup` API endpoints instead.
+- The APIs related to charts (`/api/charts`) and report tables (`/api/reportTables`) are removed. Consumers should use the Visualization API instead (`/api/visualizations`). Other existing endpoints that make any kind of reference to Chart and Report Table will now reference Visualization.
 - Please note that from 2.38 onwards several API endpoints slightly change 
   their response root object to be in line with the majority of endpoints.
   The root object returned pre 2.38 will become the member named `response` 
