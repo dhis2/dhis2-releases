@@ -1,6 +1,4 @@
-🚧 UNDER CONSTRUCTION 🚧
-
-# DHIS version 2.37 Release Note
+# DHIS version 2.37 Roadmap
 
 ## DEVELOPMENT
 
@@ -44,7 +42,7 @@
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
-**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API; user interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
+**Org unit profile:** You can new design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API; user interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
 
 **Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the median, and not the mean like the regular Z-score, and more resilient towards outliers in a dataset.
 
@@ -62,16 +60,6 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
 
 ### API FEATURES
-
-**Split org unit:** The new `/organisationUnits/split` endpoint allows for splitting an organisation unit into multiple organisation units. All associated metadata and tracker data will be transferred to the target organisation units. This is useful e.g. when a district splits into multiple, new districts.
-
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_split)
-
-**Merge org units**: The new `/organisationUnits/merge` endpoint allows for merging multiple organisation units into one. All associated metadata, data values and tracker data will be merged and transferred to the target organisation unit. This is useful e.g. when multiple districts merge into one district.
-
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
-
- 
 
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
@@ -94,12 +82,5 @@ For more information about specific bug fixes and features and in what versions 
 **Tracker features in Capture App:** requirements for editing multiple TEIs in a line-listed format
 
 **Sync**: requirements gathering and design for improved sync between instances / servers
-
-### Deprecation Notice
-
-- **XML** support for metadata endpoints
-- **PDF** support for metadata endpoints
-- **XLS** support for metadata endpoints
-- **CSV** support for metadata endpoints
 
 <!-- END-WEBSITE-SYNC-ID:des -->
