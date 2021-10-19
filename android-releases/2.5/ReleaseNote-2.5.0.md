@@ -4,18 +4,20 @@
 <!-- Analytics -->
 **LOCAL ANALYTICS**
 
-**Offline In-App Program/Dataset Analytics:** The android app can now render analytics (charts, sigle value and tables) that have been created in DHIS2 and are compatible with Android. These visualizations can be rendered in the home screen of the App, and at the dataset level and program level. Analytics to be displayed require to be configured using the Android Settings WebApp, where administrators will be able to decide the charts and tables to be displayed for end users. Users will be able to create groups of charts and tables for easier user experience. Androif offline Analytics will support line chart, bar chart, pie chart, radar chart, tables and single value elements. All analytics are aggregated in the device using the local data. The Analyticis feature is 100% functional offline.
+**Offline In-App Program/Dataset Analytics:** The android app can now render analytics (charts, sigle value and tables) that have been created in DHIS2 and are compatible with Android. These visualizations can be rendered in the home screen of the App, and at the dataset level and program level. Analytics to be displayed require to be configured using the Android Settings WebApp, where administrators will be able to decide the charts and tables to be displayed for end users. Admin users will be able to create groups of charts and tables for easier user experience. 
+- Androif offline Analytics will support line chart, bar chart, pie chart, radar chart, tables and single value elements. 
+- All analytics are aggregated in the device using the local data. The Analyticis feature is 100% functional offline.
 [ANDROAPP-2557](https://jira.dhis2.org/browse/ANDROAPP-2557) 
 
 
 **DATA ENTRY USER EXPERIENCE**
 
-**Adjust TEI Dashboard options to program configuration:** The options offered at the TEI dahsboard will be taileored to the specific configurtion of the program.
+**Adjust TEI Dashboard options to program configuration:** The options offered at the TEI dahsboard will be taileored to the specific configuration of the program.
 - Relationships tab will not be visible if the program relatioships are not configured.
 - Create event button will be hidden When the user cannot create more events based on tracker configuration.
 - Indicators tab will be not be visible if the program has no program indicators configured.
 - Organisation Unit filter will not be visible if the user has only one Organisation Unit configured.
-[ANDROAPP-4097](https://jira.dhis2.org/browse/ANDROAPP-4097) | [ANDROAPP-3129](https://jira.dhis2.org/browse/ANDROAPP-3129)
+[ANDROAPP-4097](https://jira.dhis2.org/browse/ANDROAPP-4097) | [ANDROAPP-3129](https://jira.dhis2.org/browse/ANDROAPP-3129) | [ANDROAPP-4099](https://jira.dhis2.org/browse/ANDROAPP-4099)
 
 **Keep user prefered calendar display:** In the DHIS2 Android Capture App users can switch date selection from spinner to calendar view. In this version, the app will remember the last visualization selected by the user and use it the next time the user needs to select a date.
 [ANDROAPP-2402](https://jira.dhis2.org/browse/ANDROAPP-2402)
