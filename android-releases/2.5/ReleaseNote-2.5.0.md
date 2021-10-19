@@ -51,5 +51,7 @@
 **Export/Share QR and Bar codes:** Users will be able to display a bar or QR code in an image so that it can be shared it for printing, take a screenshot or show it in the screen for scanning.
 [ANDROAPP-3891](https://jira.dhis2.org/browse/ANDROAPP-3891)
 
+**MAINTENANCE ISSUES & BUG FIXING**
+
 
 <!-- END-WEBSITE-SYNC-ID:android -->
