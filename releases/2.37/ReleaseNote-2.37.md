@@ -48,18 +48,30 @@
 
 **Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the median, and not the mean like the regular Z-score, and more resilient towards outliers in a dataset.
 
-**App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved. It is now possible to login to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+**Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP-addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
+
+**Authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
+
+**App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved. It is now possible to log in to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+
+Screenshot | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md)
 
 **App Management app**: A new design that builds on the DHIS2 design principles and UI components has been introduced, in addition to many user experience improvements. The App Management application will now receive in-app notifications that there is a newer version of an application available on the App Hub that is compatible with the running DHIS2 version, along with a one-click update functionality. A complete reference of all the changes to App Management is available in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
+
+Screenshot | [Changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md)
 
 **App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
 in continuous integration pipelines. Please refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
 
+Screenshot |  [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
+
 **App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
 
-**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes.
+Screenshot | [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
-For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
+**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
+
+[Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
 ### API FEATURES
 
@@ -71,7 +83,9 @@ For more information about specific bug fixes and features and in what versions 
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
 
- 
+**Gist API:** A new "Gist" API is available. TODO.
+
+ [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
 
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
