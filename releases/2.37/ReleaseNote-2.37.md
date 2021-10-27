@@ -56,17 +56,19 @@ Screenshot | Docs
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
-User docs
+Docs
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
 User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html#upload-image-for-organisation-unit)
 
-**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API; user interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
+**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API. User interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
+
+User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
 
 **Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the median, and n	ot the mean like the regular Z-score, and more resilient towards outliers in a dataset.
 
-User docs | API docs
+User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#outlier-detection)
 
 **Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP-addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
 
@@ -74,7 +76,7 @@ Screenshot | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-
 
 **Authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
 
-Docs
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#about_user_userrole)
 
 **App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved. It is now possible to log in to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
@@ -111,11 +113,13 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
 
-**Gist API:** The new "Gist" API is a new metadata API which is optimized for scalability and performance. It renders a flat version of objects without nested associations to allow for efficiently rendering large payloads. The Gist API response can be accessed by appending `/gist` to the regular metadata object API paths. Collection properties, like `/userGroups/<id>/users/gist`, can be browsed in the same way as object collections, like `/userGroups/gist`. The API supports most search parameters of the regular metadata API and offers some additional features. See the docs for more info.
+**Gist API:** The new "Gist" API is a new metadata API which is optimized for scalability and performance. It renders a flat version of objects without nested associations to allow for efficiently rendering large payloads. The Gist API response can be accessed by appending `/gist` to the regular metadata object API paths. Collection properties, like `/userGroups/<id>/users/gist`, can be browsed in the same way as object collections, like `/userGroups/gist`. The API supports most parameters of the regular metadata API and offers some additional features.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
 
-**User max org unit level data output:** A new field for defining the max org unit level for data output is  
+**User max org unit level data output:** A new field for defining the _max org unit level for data output_ is introduced for users. This controls how far down in the org unit hierarchy a user can view data in analytics apps. This is useful for web portals and public access where data should be made available but only down to e.g. the district level. User interface support coming in 2.37.1.
+
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/users.html#webapi_users)  
 
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
