@@ -125,8 +125,8 @@ This document highlights the key features of the initial release of DHIS2 versio
 
  [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#webapi_validation_results) | [Jira](https://jira.dhis2.org/browse/DHIS2-7439)
 
-## RELEASE INFO
 
+## RELEASE INFO
 
 |Release Information|Link|
 | --- | --- |
