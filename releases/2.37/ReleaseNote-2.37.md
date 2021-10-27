@@ -2,11 +2,7 @@
 
 # DHIS version 2.37 Release Note
 
-## DEVELOPMENT
-
-<!-- BEGIN-WEBSITE-SYNC-ID:dev -->
-
-### ANALYTICS FEATURES
+## ANALYTICS FEATURES
 
 **Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. No new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard while offline. However, viewing as in full-screen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline. [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
@@ -44,7 +40,7 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-### TRACKER AND EVENT FEATURES
+## TRACKER AND EVENT FEATURES
 
 **Performance improvements:** Improvements to Tracker database lock issues (concurrency); Improved routines and pipelines for performance testing; updates to new Tracker importer
 
@@ -52,7 +48,7 @@ Screenshot | Docs
 
 **Tracker features in Capture App:** new tool for generating and interacting with managements for TEIs; expand capture app to allow users to work with enrollments and events in tracker programs; user acceptance testing
 
-### PLATFORM FEATURES
+## PLATFORM FEATURES
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
@@ -74,9 +70,17 @@ User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core
 
 Screenshot | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
 
+**User password email reset:** You can now reset the password for a user account by having the system send an email. The person owning the user account will be able to follow the instructions send to her by email to reset the password. Email reset requires that an SMTP server is set up and that the user account has a valid email address.
+
+Screenshot | Docs  
+
 **Authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#about_user_userrole)
+
+**Faster data statistics:**  The data statistics overview in data administration app is order of magnitude faster. The statistics 
+
+Screenshot 
 
 **App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved. It is now possible to log in to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
@@ -99,11 +103,7 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 
 [Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
-### DEVELOPER FEATURES
-
-**Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line without an external Tomcat instance. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments. To build as JAR file you can use the [run_api.sh](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/run-api.sh) script.
-
-### API FEATURES
+### PLATFORM API FEATURES
 
 **Split org unit:** The new `/organisationUnits/split` endpoint allows for splitting an organisation unit into multiple organisation units. All associated metadata and tracker data will be transferred to the target organisation units. This is useful e.g. when a district splits into multiple, new districts.
 
@@ -113,41 +113,31 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
 
-**Gist API:** The new "Gist" API is a new metadata API which is optimized for scalability and performance. It renders a flat version of objects without nested associations to allow for efficiently rendering large payloads. The Gist API response can be accessed by appending `/gist` to the regular metadata object API paths. Collection properties, like `/userGroups/<id>/users/gist`, can be browsed in the same way as object collections, like `/userGroups/gist`. The API supports most parameters of the regular metadata API and offers some additional features.
+**Gist API:** The new _Gist_ API is a new metadata API which is optimized for scalability and performance. It renders a flat version of objects without nested associations to allow for efficiently rendering large payloads. The Gist API response can be accessed by appending `/gist` to the regular metadata object API paths. Collection properties, like `/userGroups/<id>/users/gist`, can be browsed in the same way as object collections, like `/userGroups/gist`. The API supports most parameters of the regular metadata API and offers some additional features.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
+
+**Patch API:** A new patch API is available, allowing for making partial updates of metadata.
+
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
 
 **User max org unit level data output:** A new field for defining the _max org unit level for data output_ is introduced for users. This controls how far down in the org unit hierarchy a user can view data in analytics apps. This is useful for web portals and public access where data should be made available but only down to e.g. the district level. User interface support coming in 2.37.1.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/users.html#webapi_users)  
 
-<!-- END-WEBSITE-SYNC-ID:dev -->
+**Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line without an external Tomcat instance. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments. To build as JAR file you can use the [run_api.sh](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/run-api.sh) script.
 
-## DESIGN AND REQUIREMENTS GATHERING
 
-<!-- BEGIN-WEBSITE-SYNC-ID:des -->
+## RELEASE INFO
 
-### ANALYTICS
-
-**Design of the new event reports/line listing application:** we are working on the next generation of the event reports and line-listing application. The development of this application is expected to extend through the 2.37 release and we expect the first version to be released in 2.38. [DHIS2-3442](https://jira.dhis2.org/browse/DHIS2-3442)
-
-**Dashboard cascade sharing** will enable dashboard owners to share a dashboard and all of is consistent meta-data to users at one time. This will remove the burden of having to make sure all individual sharing permissions for object on the dashboard are in agreement for a user to be able to view the dashboard. [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
-
-**New series management in the data visualizer application:** There is an ever expanding functionality in the data visualizer application, and this means that we periodically have to update your menus and user experience to keep the application easy to use. Now we are working to design a new series management menu so that we can continue to expand the functionality specifically around custom series colors. [DHIS2-11132](https://jira.dhis2.org/browse/DHIS2-11132)
-
-### TRACKER
-
-**Deduplication:** design for merging of identified duplicates
-
-**Tracker features in Capture App:** requirements for editing multiple TEIs in a line-listed format
-
-**Sync**: requirements gathering and design for improved sync between instances / servers
-
-### Deprecation Notice
-
-- **XML** support for metadata endpoints
-- **PDF** support for metadata endpoints
-- **XLS** support for metadata endpoints
-- **CSV** support for metadata endpoints
-
-<!-- END-WEBSITE-SYNC-ID:des -->
+|Release Information|Link|
+| --- | --- |
+|Download release and sample database|https://www.dhis2.org/downloads|
+|Documentation|[https://docs.dhis2.org](https://docs.dhis2.org/)|
+|Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/README.md)|
+|Full list of features and bugs in this release|[Release Note](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/ReleaseNote-2.37.md)|
+|Source code on Github|https://github.com/dhis2|
+|Demo instance|https://play.dhis2.org/2.37/|
+|Docker image|`docker pull dhis2/core:2.37.0`|
+|Docker Hub images|https://hub.docker.com/repository/docker/dhis2/core|
+|Community forum|https://community.dhis2.org/|
