@@ -56,6 +56,8 @@ Screenshot | Docs
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
+User docs
+
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
 User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html#upload-image-for-organisation-unit)
@@ -85,19 +87,19 @@ Screenshot | [Changelog](https://github.com/dhis2/app-management-app/blob/master
 **App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
 in continuous integration pipelines. Please refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
 
-Screenshot |  [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
 
 **App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
 
-Screenshot | [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
 **DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
 
 [Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
-**Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments.
+### DEVELOPER FEATURES
 
-Docs
+**Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line without an external Tomcat instance. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments. To build as JAR file you can use the [run_api.sh](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/run-api.sh) script.
 
 ### API FEATURES
 
@@ -109,9 +111,11 @@ Docs
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_organisation_unit_merge)
 
-**Gist API:** A new "Gist" API is available. TODO.
+**Gist API:** The new "Gist" API is a new metadata API which is optimized for scalability and performance. It renders a flat version of objects without nested associations to allow for efficiently rendering large payloads. The Gist API response can be accessed by appending `/gist` to the regular metadata object API paths. Collection properties, like `/userGroups/<id>/users/gist`, can be browsed in the same way as object collections, like `/userGroups/gist`. The API supports most search parameters of the regular metadata API and offers some additional features. See the docs for more info.
 
- [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
+
+**User max org unit level data output:** A new field for defining the max org unit level for data output is  
 
 <!-- END-WEBSITE-SYNC-ID:dev -->
 
