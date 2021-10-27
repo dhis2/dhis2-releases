@@ -70,6 +70,10 @@ User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core
 
 Screenshot | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
 
+**Automatic cluster cache management:** When running DHIS 2 as a Tomcat cluster (many Tomcat servers), previously, the IP address of all Tomcat nodes (servers) in the cluster had to be defined in the configuration file of every DHIS 2 instance. This made dynamic scaling of cluster nodes complex and inconvenient. Now DHIS 2 will handle the cache management automatically and the cluster cache configuration is no longer needed. This makes dynamic scaling much more practical, as new nodes can be added without other nodes being made aware.
+
+[Docs](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-master/installation.html#install_cluster_configuration)
+
 **User password email reset:** You can now reset the password for a user account by having the system send an email. The person owning the user account will be able to follow the instructions send to her by email to reset the password. Email reset requires that an SMTP server is set up and that the user account has a valid email address.
 
 Screenshot | Docs  
@@ -78,30 +82,17 @@ Screenshot | Docs
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#about_user_userrole)
 
-**Faster data statistics:**  The data statistics overview in data administration app is order of magnitude faster. The statistics 
+**Faster data statistics:**  The data statistics overview in data administration app is order of magnitude faster. The statistics are now generated based on approximate counts, which offers good enough precision and usually completes in a few seconds even for the largest databases.
 
 Screenshot 
 
-**App Hub**: Along with a new design, improved interfaces for managing applications, and support for organizations with multiple developers, the user experience when navigating between applications has been much improved. It is now possible to log in to the App Hub with a GitHub account as an alternative to a Google account. For a complete reference on changes to the App Hub, please refer to the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+**App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account as in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
-Screenshot | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md)
+Screenshot | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md) |[App Hub](https://apps.dhis2.org/)
 
-**App Management app**: A new design that builds on the DHIS2 design principles and UI components has been introduced, in addition to many user experience improvements. The App Management application will now receive in-app notifications that there is a newer version of an application available on the App Hub that is compatible with the running DHIS2 version, along with a one-click update functionality. A complete reference of all the changes to App Management is available in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
+**App Management app design:** The app management app has a new design which builds on the DHIS2 design principles and UI components. It now supports in-app notifications when there is a newer version of a compatible DHIS 2 web application available on the App Hub. Apps can now updated with a single click. Read about all improvements in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
 
 Screenshot | [Changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md)
-
-**App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
-in continuous integration pipelines. Please refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
-
-[Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
-
-**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
-
-[Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
-
-**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
-
-[Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
 ### PLATFORM API FEATURES
 
@@ -124,6 +115,21 @@ in continuous integration pipelines. Please refer to the [changelog](https://git
 **User max org unit level data output:** A new field for defining the _max org unit level for data output_ is introduced for users. This controls how far down in the org unit hierarchy a user can view data in analytics apps. This is useful for web portals and public access where data should be made available but only down to e.g. the district level. User interface support coming in 2.37.1.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/users.html#webapi_users)  
+
+#### PLATFORM DEVELOPER FEATURES
+
+**App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
+in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
+
+[Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
+
+**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
+
+[Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
+
+**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
+
+[Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
 **Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line without an external Tomcat instance. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments. To build as JAR file you can use the [run_api.sh](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/run-api.sh) script.
 
