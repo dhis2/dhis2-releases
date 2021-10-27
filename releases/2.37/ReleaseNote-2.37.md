@@ -84,7 +84,9 @@ Screenshot | Docs
 
 **Faster data statistics:**  The data statistics overview in data administration app is order of magnitude faster. The statistics are now generated based on approximate counts, which offers good enough precision and usually completes in a few seconds even for the largest databases.
 
-Screenshot 
+Screenshot
+
+**Faster data value import:** For data value imports, when a data value is an exact match of an existing data value, update and audit operations are no longer happening. This significantly improves performance in particular for a data value sync scenario, where identical data is often imported multiple times. 
 
 **App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account as in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
