@@ -4,11 +4,11 @@
 
 ## ANALYTICS FEATURES
 
-**Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. No new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard while offline. However, viewing as in full-screen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline. [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
+**Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. While offline no new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard . Viewing as in full-screen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline rather on a smart phone, labtop, or PC. [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
 Screenshot | Docs
 
-**Cascading dashboard sharing:** Text.. [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
+**Cascading dashboard sharing:** makes it much easier to share dashboards with many users simply. In precvious versions of DHIS2 in order to share a dashboard the dashboards administator had to ensure that each individual dashboard item had atleast "View only" shairing setting for the users or usergroups they wished to share the dashboard with. Now in 2.37 if the dashboard administrator chooses to apply the sharing to all dashboard visualazations then those users or usergroups will recieve "View only" permission to all dahsobard items automatically.  [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
 Screenshot | Docs
 
@@ -16,31 +16,31 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-**Dashboard default layout** will automatically configure a dashboard as users add more items. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
+**Dashboard default layout** will automatically configure a dashboard as users add more items. Users creating or editing a dashboard can not choose from either adding new items to the bottom or top of the dashboard. Users can also choose a number of columns they wish the dashboard to have. This will auto configure the size and shape of all dashboard items to the number of columns selected. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
 Screenshot | Docs
 
-**Org unit drill down in charts** will be enabled as long as the org unit dimension are not in the filter. [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
+**Org unit drill down in bar and column charts** allows users to left click on a bar or column and go down or up one organization unit level. This is only possible if the org unit dimension is not in the filter. [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
 Screenshot | Docs
 
-**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 Screenshot | Docs
 
-**Select all items:** Text.. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+**Select all option in "Your Demensions" in data visualizer app:** In 2.37 you are able to easily turn on all items in Your Demensions. This is particurally useful if you have demenions that are regurally changing as it will automatically update as new demensions are added or unnecessary demensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
 Screenshot
 
-**Text wrapping in pivots:** Text .. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+**Text wrapping in pivot tables:** will automatically be applied to both long text data values as well as row and column headers. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
 Screenshot
 
-**Axis labels for multi-axis charts** [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+**Axis labels for multi-axis charts** can not been added for all axis for bar, column, and line charts in the data visualizer application.[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
 Screenshot | Docs
 
-**Last 10 years relative period** in data visualizer and maps applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+**Last 10 years relative period** has been added in the data visualizer and map applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
 Screenshot | Docs
 
@@ -48,7 +48,7 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-**Legend key for pivot tables on dashboard** will be available if a legend is applied to a pivot table to make it into a scorecard. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+**Legend key for pivot tables on dashboard** will be available if a legend is applied to a chart or a pivot table. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 Screenshot | Docs
 
