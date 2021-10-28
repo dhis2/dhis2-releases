@@ -8,6 +8,10 @@
 
 Screenshot | Docs
 
+**Cascading dashboard sharing:** Text.. [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
+
+Screenshot | Docs
+
 **Indicator type for single value**: This will add a "%, per thousand, per ten thousand, or per hundred thousand" to the single value chart type based upon the indicator factor. [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
 
 Screenshot | Docs
@@ -23,6 +27,14 @@ Screenshot | Docs
 **Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 Screenshot | Docs
+
+**Select all items:** Text.. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+
+Screenshot
+
+**Text wrapping in pivots:** Text .. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+
+Screenshot
 
 **Axis labels for multi-axis charts** [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
@@ -78,7 +90,7 @@ Screenshot | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-
 
 Screenshot | Docs  
 
-**Authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
+**New authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#about_user_userrole)
 
