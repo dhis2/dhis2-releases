@@ -100,5 +100,5 @@ Components: _[App] User_
 This release contains fixes for the following Common Vulnerabilites and Exposures (CVEs)
 
 * CVE-2021-39179
-* CVE-2021-xxxxx (TBC)
+* CVE-2021-41187
 
