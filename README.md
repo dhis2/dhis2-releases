@@ -20,6 +20,7 @@ You can find release and upgrade notes for the following releases below:
 
 You can find the release notes for each major and minor version in the specific folders:
 
+- [2.4](android-releases/2.4)
 - [2.3](android-releases/2.3)
 - [2.2](android-releases/2.2)
 - [2.1](android-releases/2.1)
