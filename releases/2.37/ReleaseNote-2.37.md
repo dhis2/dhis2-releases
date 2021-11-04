@@ -88,7 +88,7 @@ Screenshot | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-
 
 **User password email reset:** You can now reset the password for a user account by having the system send an email. The person owning the user account will be able to follow the instructions send to her by email to reset the password. Email reset requires that an SMTP server is set up and that the user account has a valid email address.
 
-Screenshot | Docs  
+Screenshot | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/users-roles-and-groups.html#reset_user_password_by_email)  
 
 **New authorities:** New authorities have been introduced. Generating min-max data element values requires the "Generate min-max values" authority. Creating data approval levels requires the "Add/Update Data Approval Level" authority. Creating data approval workflows requires the "Add/Update Data Approval Workflow" authority.
 
@@ -98,7 +98,9 @@ Screenshot | Docs
 
 Screenshot
 
-**Faster data value import:** For data value imports, when a data value is an exact match of an existing data value, update and audit operations are no longer happening. This significantly improves performance in particular for a data value sync scenario, where identical data is often imported multiple times. 
+**Faster data value import:** For data value imports, when a data value is an exact match of an existing data value, update and audit operations are no longer happening. This significantly improves performance in particular for a data value sync scenario, where identical data is often imported multiple times.
+
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html#importing_data)
 
 **App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account as in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
