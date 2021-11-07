@@ -64,6 +64,9 @@ Screenshot | Docs
 **Deduplication:** Strengthening the search/warning on registration of new TEI; Improved services for returning potential duplicates
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
+**Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions is flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
+[DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
+
 **Tracker features in Capture App:** new tool for generating and interacting with managements for TEIs; expand capture app to allow users to work with enrollments and events in tracker programs; user acceptance testing
 
 ## PLATFORM FEATURES
