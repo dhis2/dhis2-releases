@@ -54,9 +54,15 @@ Screenshot | Docs
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** Improvements to Tracker database lock issues (concurrency); Improved routines and pipelines for performance testing; updates to new Tracker importer
+**Performance improvements:** Improvements to Tracker database lock issues (concurrency); Improved routines and pipelines for performance testing; updates to new Tracker importer. Improved performance for unique value generation.
+[DHIS2-11892](https://jira.dhis2.org/browse/DHIS2-11892)
+[DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
+
+**Working lists across org units** It is not possible to use working lists in the Capture app that spans all accessible org units for a user. This can for example be useful when working with malaria cases across multiple districts.
+[DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467)
 
 **Deduplication:** Strengthening the search/warning on registration of new TEI; Improved services for returning potential duplicates
+[DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
 **Tracker features in Capture App:** new tool for generating and interacting with managements for TEIs; expand capture app to allow users to work with enrollments and events in tracker programs; user acceptance testing
 
