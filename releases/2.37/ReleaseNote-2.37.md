@@ -58,7 +58,7 @@ Screenshot | Docs
 [DHIS2-11892](https://jira.dhis2.org/browse/DHIS2-11892)
 [DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
 
-**Working lists across org units** It is not possible to use working lists in the Capture app that spans all accessible org units for a user. This can for example be useful when working with malaria cases across multiple districts.
+**Working lists across org units** It is now possible to use working lists in the Capture app that spans all accessible org units for a user. This can for example be useful when working with malaria case investigations across multiple locations.
 [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467)
 
 **Deduplication:** Strengthening the search/warning on registration of new TEI; Improved services for returning potential duplicates
