@@ -67,6 +67,12 @@ Screenshot | Docs
 **Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions is flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
 [DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
 
+**Enhancements in new tracker exporter** The new tracker endpoint /tracker now has createdBy and updatedBy fields for all object types.
+[DHIS2-10885](https://jira.dhis2.org/browse/DHIS2-10885)
+
+**Event dates in program stage notification template** When configuring program stage notification templates, it is now possible to include the event date in the notification. This can be useful when sending a message to a person, referring to a past event that the person took place in.
+[DHIS2-10831](https://jira.dhis2.org/browse/DHIS2-10831)
+
 **Tracker features in Capture App:** new tool for generating and interacting with managements for TEIs; expand capture app to allow users to work with enrollments and events in tracker programs; user acceptance testing
 
 ## PLATFORM FEATURES
