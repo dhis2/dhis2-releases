@@ -64,7 +64,7 @@ Screenshot | Docs
 **Deduplication:** A new API service is built for merging 2 given duplicate records. Duplicates merging is not yet available in the DHIS2 standard user interface, but third party apps may integrate and start using the interface.
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
-**Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions is flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
+**Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions are flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
 [DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
 
 **Enhancements in new tracker exporter** The new tracker endpoint /tracker now has createdBy and updatedBy fields for all object types. This property is always system generated and reflects the user that created or made the last change to the object.
