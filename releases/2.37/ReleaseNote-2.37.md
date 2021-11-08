@@ -54,7 +54,7 @@ Screenshot | Docs
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** Performance fixes to unique value generation allows IDs to be generated with less performance impact than before. Sequential patterns have seen the biggest improvement, and is the recommended method for ID generation in most cases.
+**Performance improvements:** Performance fixes to unique value generation allow IDs to be generated with less performance impact than before. Sequential patterns have seen the biggest improvement, and are the recommended method for ID generation in most cases.
 [DHIS2-11892](https://jira.dhis2.org/browse/DHIS2-11892) | 
 [DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
 
