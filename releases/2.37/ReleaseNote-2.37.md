@@ -70,7 +70,7 @@ Screenshot | Docs
 **Enhancements in new tracker exporter** The new tracker endpoint /tracker now has createdBy and updatedBy fields for all object types. This property is always system generated and reflects the user that created or made the last change to the object.
 [DHIS2-10885](https://jira.dhis2.org/browse/DHIS2-10885)
 
-**Event dates in program stage notification template** When configuring program stage notification templates, it is now possible to include the event date in the notification. This can be useful when sending a message to a person, referring to a past event that the person took place in.
+**Event dates in program stage notification template** When configuring program stage notification templates, it is now possible to include the event date in the notification. This can be useful when sending a message to a person, referring to a past event that the person took part in.
 [DHIS2-10831](https://jira.dhis2.org/browse/DHIS2-10831)
 
 **Notifications used in integration scenarios** Notifications can now be sent to an external http address, in addition to the previous options of being sent as an email or SMS. The notifications sent to an external http service can be useful in system to system integration scenarios.
