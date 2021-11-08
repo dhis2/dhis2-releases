@@ -75,19 +75,23 @@ All these visualizations can be organised and displayed in groups. Groups are al
 Translations set up in DHIS2 for metadata will also be shown according to the language in the user configuration.
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-2925) | [Documentation]()
 
-## Quality / Security / Performance
+## MAINTENANCE 
+
+**Quality / Security / Performance:** You can find a list of issues related to quality, security and performance opening this [jira filter](https://jira.dhis2.org/issues/?filter=12204).
+
+**Bug-fixing:** You can find a list of of the bugs fixed in this version opening this [jira filter](https://jira.dhis2.org/issues/?filter=12203).
 
 ## RELEASE INFO
 
 |Release Information|Link|
 | --- | --- |
-|Download app from Google Play or Github (*ADD GITHUB*)|[https://www.dhis2.org/app-store ](https://www.dhis2.org/app-store)| 
+|Download app from Google Play or Github |[Google Play](https://www.dhis2.org/app-store) - [Github](https://github.com/dhis2/dhis2-android-capture-app/releases)| 
 |Documentation|[https://www.dhis2.org/android-documentation](https://docs.dhis2.org/en/full/use/dhis2-android-app.html)|
-|Details about each feature on JIRA (requires login)|[2.5 Features ](*UPDATE*)|
-|Overview of bugs fixed on JIRA (requires login)|[2.5 Bugs](*UPDATE*)|
-|Demo instance (user/password)|[https://play.dhis2.org/demo/ ](https://play.dhis2.org/demo/) android / Android123|
+|Details about each feature on JIRA (requires login)|[2.5 Features ](https://jira.dhis2.org/issues/?filter=12300)|
+|Overview of bugs fixed on JIRA (requires login)|[2.5 Bugs](https://jira.dhis2.org/issues/?filter=12203)|
+|Demo instance (user/password)|[https://play.dhis2.org/demo/ ](https://play.dhis2.org/demo/) Credentials: android / Android123|
 |DHIS 2 community|[https://community.dhis2.org Mobile Community ](https://community.dhis2.org/c/subcommunities/mobile/16)|
 |Source code on Github|[https://github.com/dhis2/dhis2-android-capture-app ](https://github.com/dhis2/dhis2-android-capture-app)|
-|Source code of SDK on Github |[SDK 1.4.0 ](*UPDATE*)| 
+|Source code of SDK on Github |[https://github.com/dhis2/dhis2-android-sdk](https://github.com/dhis2/dhis2-android-sdk)| 
 
 <!-- END-WEBSITE-SYNC-ID:android -->
