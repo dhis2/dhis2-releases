@@ -54,14 +54,14 @@ Screenshot | Docs
 
 ## TRACKER AND EVENT FEATURES
 
-**Performance improvements:** Improvements to Tracker database lock issues (concurrency); Improved routines and pipelines for performance testing; updates to new Tracker importer. Improved performance for unique value generation.
+**Performance improvements:** Performance fixes to unique value generation allows IDs to be generated with less performance impact than before. Sequential patterns have seen the biggest improvement, and is the recommended method for ID generation in most cases.
 [DHIS2-11892](https://jira.dhis2.org/browse/DHIS2-11892) | 
 [DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
 
 **Working lists across org units** It is now possible to have working lists in the Capture app that spans all accessible org units for a user. This can for example be useful when working with malaria case investigations across multiple locations.
 [Screenshot](link to screenshot) | [Docs](link to docs) | [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
 
-**Deduplication:** Strengthening the search/warning on registration of new TEI; Improved services for returning potential duplicates
+**Deduplication:** A new API service is built for merging 2 given duplicate records. Duplicates merging is not yet available in the DHIS2 standard user interface, but third party apps may integrate and start using the interface.
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
 **Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions is flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
@@ -76,7 +76,7 @@ Screenshot | Docs
 **Notifications used in integration scenarios** Notifications can now be sent to an external http address, in addition to the previous options of being sent as an email or SMS. The notifications sent to an external http service can be useful in system to system integration scenarios.
 [DHIS2-10682](https://jira.dhis2.org/browse/DHIS2-10682)
 
-**Tracker features in Capture App:** Enrollment and tracker events functionality is now released for closed beta testing in the new Capture app. We hope to open for beta testing for a wider audience througout the lifetime of 2.37, and plan to release this functionality to everyone in 2.38.
+**Tracker features in Capture App:** Enrollment and tracker events functionality is now released for closed beta testing in the new Capture app. We plan to open for beta testing for a wider audience throughout the lifetime of 2.37, and plan to release this functionality to everyone in 2.38.
 
 ## PLATFORM FEATURES
 
