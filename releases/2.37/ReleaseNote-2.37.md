@@ -59,13 +59,13 @@ Screenshot | Docs
 [DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
 
 **Working lists across org units** It is now possible to have working lists in the Capture app that span all accessible org units for a user. This can for example be useful when working with malaria case investigations across multiple locations.
-[Screenshot](link to screenshot) | [Docs](link to docs) | [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
+[Screenshot](images/working-lists-across-orgunits.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-237/tracking-individual-level-data/capture.html#capture_edit_event) | [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
 
 **Deduplication:** A new API service is built for merging 2 given duplicate records. Duplicates merging is not yet available in the DHIS2 standard user interface, but third party apps may integrate and start using the interface.
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
 **Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions are flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
-[DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
+[Screenshot](images/program-rule-action-validation.png) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/metadata.html#webapi_program_rule_model) | [DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
 
 **Enhancements in new tracker exporter** The new tracker endpoint /tracker now has createdBy and updatedBy fields for all object types. This property is always system generated and reflects the user that created or made the last change to the object.
 [DHIS2-10885](https://jira.dhis2.org/browse/DHIS2-10885)
