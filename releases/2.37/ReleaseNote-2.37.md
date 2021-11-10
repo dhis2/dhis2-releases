@@ -163,6 +163,8 @@ Support for Progressive Web Applications is now built into the App Platform to b
 
 **App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
 
+[Client-side caching and request deduplication](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-usedataquery-caches-and-deduplicates-queries) is now available. 
+
 [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
 **DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. For more information about specific bug fixes and features and in what versions they are available, refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md).
