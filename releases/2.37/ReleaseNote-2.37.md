@@ -8,7 +8,7 @@
 
 Screenshot | Docs
 
-**Cascading dashboard sharing:** makes it much easier to share dashboards with many users simply. In precvious versions of DHIS2 in order to share a dashboard the dashboards administator had to ensure that each individual dashboard item had atleast "View only" shairing setting for the users or usergroups they wished to share the dashboard with. Now in 2.37 if the dashboard administrator chooses to apply the sharing to all dashboard visualazations then those users or usergroups will recieve "View only" permission to all dahsobard items automatically.  [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
+**Cascading dashboard sharing:** makes it much easier to share dashboards with many users simply. In precvious versions of DHIS2 in order to share a dashboard the dashboards administator had to ensure that each individual dashboard item had at least "View only" shairing setting for the users or usergroups they wished to share the dashboard with. Now in 2.37 if the dashboard administrator chooses to apply the sharing to all dashboard visualazations then those users or usergroups will recieve "View only" permission to all dashboard items automatically.  [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
 Screenshot | Docs
 
@@ -28,7 +28,7 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-**Select all option in "Your Demensions" in data visualizer app:** In 2.37 you are able to easily turn on all items in Your Demensions. This is particurally useful if you have demenions that are regurally changing as it will automatically update as new demensions are added or unnecessary demensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+**Select all option in "Your Dimensions" in Data Visualizer app:** In 2.37 you are able to easily turn on all items in Your Dimensions. This is particularly useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added or unnecessary dimensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
 Screenshot
 
@@ -40,7 +40,7 @@ Screenshot
 
 Screenshot | Docs
 
-**Last 10 years relative period** has been added in the data visualizer and map applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+**Last 10 years relative period** has been added in the Data Visualizer and Map applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
 Screenshot | Docs
 
