@@ -162,7 +162,7 @@ Screenshot | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-ver
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/users.html#webapi_users)  
 
-#### PLATFORM DEVELOPER FEATURES
+### PLATFORM DEVELOPER FEATURES
 
 **App Platform**: The app platform has received several new features.
 
