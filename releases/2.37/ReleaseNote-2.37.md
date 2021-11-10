@@ -28,7 +28,7 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | Docs
 
-**Select all option in "Your Dimensions" in the Data Visualizer app:** In 2.37 you are able to easily turn on all items in Your Dimensions. This is particularly useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added or unnecessary dimensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+**Select all dimension options:** In the data visualizer app, you can now chose to automatically select all options for a particular dimension. This is useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added. It also useful when you have dimensions with a very high number of options. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png)
 
@@ -48,7 +48,7 @@
 
 Screenshot | Docs
 
-**Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. This is useful to understand the meaning of each legend/color. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+**Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. In visualizer, the legend info can be enabled from Options > Legend > Show legend key. This is useful to understand the meaning of each legend/color. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs
 
