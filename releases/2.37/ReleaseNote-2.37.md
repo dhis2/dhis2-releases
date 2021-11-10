@@ -46,7 +46,7 @@
 
 **Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it and select "View profile". This will make DHIS2 much more suitable as a master facility list. The organization unit profile in 2.37 can be edited through the API to show organization unit attributes, data elements, or indicators. Details of how to do this are in the linked documentation. [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Org%20unit%20Profile.png) | [Docs](https://docs.dhis2.org/pt/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Org%20unit%20Profile.png) | [Docs](https://docs.dhis2.org/pt/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
 
 **Legend key for pivot tables on dashboard** and in the data visualizer app is now available if a legend is applied to a chart or a pivot table. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
