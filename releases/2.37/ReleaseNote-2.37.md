@@ -77,6 +77,7 @@ Screenshot | Docs
 [DHIS2-10682](https://jira.dhis2.org/browse/DHIS2-10682)
 
 **Tracker features in Capture App:** Enrollment and tracker events functionality is now released for closed beta testing in the new Capture app. We plan to open for beta testing for a wider audience throughout the lifetime of 2.37, and plan to release this functionality to everyone in 2.38.
+[Screenshot](images/new-enrollment-dashboard.png)
 
 ## PLATFORM FEATURES
 
