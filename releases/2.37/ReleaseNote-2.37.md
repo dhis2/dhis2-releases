@@ -38,7 +38,7 @@ Screenshot
 
 **Axis labels for multi-axis charts** can not been added for all axis for bar, column, and line charts in the Data Visualizer application.[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
-Screenshot | Docs
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | Docs
 
 **Last 10 years relative period** has been added in the Data Visualizer and Map applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
