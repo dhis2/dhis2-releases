@@ -48,7 +48,7 @@
 
 Screenshot | Docs
 
-**Legend key for pivot tables on dashboard** will be available if a legend is applied to a chart or a pivot table. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+**Legend key for pivot tables on dashboard** and in the data visualizer app is now available if a legend is applied to a chart or a pivot table. [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs
 
