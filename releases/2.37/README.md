@@ -33,7 +33,7 @@
 ## Audit
 
 In 2.38 we will be changing the default location of audits from the database to a logfile called `dhis-audits.log`. If you don't want this
-behavior and want to be futureproof its recommended that you add these lines to your `dhis.conf`:
+behavior and want to be futureproof it's recommended that you add these lines to your `dhis.conf`:
 
 ```
 audit.database = on
