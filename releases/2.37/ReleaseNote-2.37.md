@@ -6,7 +6,7 @@
 
 **Offline dashboards** enables users on mobile or computer to save a dashboard to be viewable offline. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. While offline no new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard . Viewing as in full-screen mode will be available. This will help those working in places with poor internet connection to continue to be able to access their analytics even when offline rather on a smart phone, labtop, or PC. [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
-Screenshot | Docs
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%201.png) [Screenshot 2] (https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%202.png) [Screenshot 3] (https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%203.png) | Docs
 
 **Cascading dashboard sharing:** makes it much easier to share dashboards with many users simply. In precvious versions of DHIS2 in order to share a dashboard the dashboards administator had to ensure that each individual dashboard item had at least "View only" shairing setting for the users or usergroups they wished to share the dashboard with. Now in 2.37 if the dashboard administrator chooses to apply the sharing to all dashboard visualazations then those users or usergroups will recieve "View only" permission to all dashboard items automatically.  [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
