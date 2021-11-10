@@ -59,7 +59,7 @@ Screenshot | Docs
 [DHIS2-11305](https://jira.dhis2.org/browse/DHIS2-11305)
 
 **Working lists across org units** It is now possible to have working lists in the Capture app that span all accessible org units for a user. This can for example be useful when working with malaria case investigations across multiple locations.
-[Screenshot](images/working-lists-across-orgunits.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-237/tracking-individual-level-data/capture.html#capture_edit_event) | [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
+[Screenshot](images/working-lists-across-orgunits.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-237/tracking-individual-level-data/capture.html#capture_edit_event) | [DHIS2-11467](https://jira.dhis2.org/browse/DHIS2-11467)
 
 **Deduplication:** A new API service is built for merging 2 given duplicate records. Duplicates merging is not yet available in the DHIS2 standard user interface, but third party apps may integrate and start using the interface.
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
