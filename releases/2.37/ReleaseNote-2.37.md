@@ -65,7 +65,7 @@ Screenshot | Docs
 [DHIS2-11394](https://jira.dhis2.org/browse/DHIS2-11394)
 
 **Program rule validation** Program rule validation has been implemented for program rule actions, and any invalid program rule action data expressions are flagged to the user while working with the rule in the maintenance app. This can for example be useful when writing expressions for data to assign to a program rule variable, to avoid syntax errors in that assignment expression.
-[Screenshot](images/program-rule-action-validation.png) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/metadata.html#webapi_program_rule_model) | [DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
+[Screenshot](images/program-rule-action-validation.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-236/configuring-the-system/programs.html#about_program_rules) | [DHIS2-10802](https://jira.dhis2.org/browse/DHIS2-10802)
 
 **Enhancements in new tracker exporter** The new tracker endpoint /tracker now has createdBy and updatedBy fields for all object types. This property is always system generated and reflects the user that created or made the last change to the object.
 [DHIS2-10885](https://jira.dhis2.org/browse/DHIS2-10885)
