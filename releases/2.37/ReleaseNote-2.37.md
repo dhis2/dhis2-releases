@@ -16,15 +16,15 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | Docs
 
-**Dashboard default layout** will automatically configure a dashboard as users add more items. Users creating or editing a dashboard can not choose from either adding new items to the bottom or top of the dashboard. Users can also choose a number of columns they wish the dashboard to have. This will auto configure the size and shape of all dashboard items to the number of columns selected. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
+**Dashboard default layout**: Dashboards supports default layouts, whchi will automatically configure a dashboard as more items are added. Users creating or editing a dashboard can now choose from either adding new items to the bottom or top of the dashboard. Users can also choose a number of columns they wish the dashboard to have. This will auto configure the size and shape of all dashboard items to the number of columns selected. [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20autolayout%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout%203.png) | Docs
 
-**Org unit drill down in bar and column charts** allows users to left click on a bar or column and go down or up one organization unit level. This is only possible if the org unit dimension is not in the filter. [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
+**Org unit drill down:**  Bar and column chart allows users to left click on a bar or column and drill down or move up one level in the organisation unit hierarchy. This is only possible if the organisation unit dimension is not specified as a filter. [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | Docs
 
-**Freeze for row and column headers in pivot tables** will allow users to scroll through large pivot tables while not losing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+**Freeze for row and column headers:** In pivot tables, the row and column headers can now be frozen, to allow users to scroll through large pivot tables while not losing the reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menu on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | Docs
 
@@ -32,19 +32,19 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png)
 
-**Text wrapping in pivot tables:** will automatically be applied to both long text data values as well as row and column headers. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+**Text wrapping:** Pivot tables now support text wrapping, which will automatically be applied to both long text data values as well as row and column headers. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png)
 
-**Axis labels for multi-axis charts** can not been added for all axis for bar, column, and line charts in the Data Visualizer application.[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+**Axis labels for multi-axis charts:** Multi-axis charts can have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs
 
-**Last 10 years relative period** has been added in the Data Visualizer and Map applications. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+**Last 10 years relative period:** A relative period for the last 10 years has been added tp the Data Visualizer and Map apps. [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | Docs
 
-**Organizational unit profile in maps application** will display key information for each organizational unit when you hover over it. This will make DHIS2 much more suitable as a master facility list. [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
+**Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. This will make DHIS2 more suitable as a master facility list. [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 Screenshot | Docs
 
