@@ -155,9 +155,15 @@ Screenshot | [Changelog](https://github.com/dhis2/app-management-app/blob/master
 **App Platform**: To support a continuous delivery to the App Hub the d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments, and
 in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for a complete list of bug fixes and features.
 
+The App Platform now has a built-in proxy server to make it easier to work against DHIS2 instances that are on a different domain. [More information](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-proxy-server-for-dhis2-api) is available on the DHIS2 developer blog.
+
+Support for Progressive Web Applications is now built into the App Platform to be leveraged by application developers, be sure to [read the article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) for a dive into what PWA is, and what it enables for DHIS2 applications.
+
 [Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
 
 **App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. Promoting good development practice in terms of API use is important for DHIS2 to function at scale. The [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) contains a full list of changes per version.
+
+[Client-side caching and request deduplication](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-usedataquery-caches-and-deduplicates-queries) is now available. 
 
 [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
