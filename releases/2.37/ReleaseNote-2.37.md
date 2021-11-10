@@ -24,11 +24,11 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-**Freeze for and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+**Freeze for row and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 Screenshot | Docs
 
-**Select all option in "Your Dimensions" in Data Visualizer app:** In 2.37 you are able to easily turn on all items in Your Dimensions. This is particularly useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added or unnecessary dimensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+**Select all option in "Your Dimensions" in the Data Visualizer app:** In 2.37 you are able to easily turn on all items in Your Dimensions. This is particularly useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added or unnecessary dimensions are removed. [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
 Screenshot
 
@@ -36,7 +36,7 @@ Screenshot
 
 Screenshot
 
-**Axis labels for multi-axis charts** can not been added for all axis for bar, column, and line charts in the data visualizer application.[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+**Axis labels for multi-axis charts** can not been added for all axis for bar, column, and line charts in the Data Visualizer application.[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
 Screenshot | Docs
 
