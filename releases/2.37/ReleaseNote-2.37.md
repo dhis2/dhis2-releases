@@ -24,7 +24,7 @@ Screenshot | Docs
 
 Screenshot | Docs
 
-**Freeze for row and column headers in pivot tables** will allow users to scroll through large pivot tables while not loosing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+**Freeze for row and column headers in pivot tables** will allow users to scroll through large pivot tables while not losing reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menue on the style tab.  [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 Screenshot | Docs
 
