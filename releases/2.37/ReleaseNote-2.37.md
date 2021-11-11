@@ -24,9 +24,9 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | Docs |[DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
-**Freeze for row and column headers:** In pivot tables, the row and column headers can now be frozen, to allow users to scroll through large pivot tables while not losing the reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menu on the style tab.
+**Freeze row and column headers:** In pivot tables, the row and column headers can now be frozen. This allows users to scroll through large pivot tables while not losing the reference to the data headers/labels. Frozen headers can be enabled from Options > Style > _Fix column headers to top of table_ and _Fix row headers to left of table_.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | Docs | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_frozen_headers.png) | Docs | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 **Select all dimension options:** In the data visualizer app, you can now chose to automatically select all options for a particular dimension. This is useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added. It also useful when you have dimensions with a very high number of options. 
 
