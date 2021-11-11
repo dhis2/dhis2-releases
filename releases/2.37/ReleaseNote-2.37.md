@@ -14,7 +14,7 @@
 
 **Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. You can view the profile by clicking on a point/facility in a map and selecting _Show more info_. This capability is intended to make DHIS 2 more suitable as a facility registry.
 
-Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 **Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps.
 
@@ -98,7 +98,7 @@ Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 **Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API. User interface support is coming in the next release.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [Maps docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
+[User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [Maps docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
 
 **Icon Library:** The DHIS2 Icon library has been integrated into the healthicons project and been redesigned by its team of volunteer in collaboration with our design team. More information about the project can be found at their website [healthicons.org](https://healthicons.org/). 
 
