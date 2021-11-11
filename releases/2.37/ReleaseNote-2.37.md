@@ -104,11 +104,11 @@
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.5/Android-2-5-Icon+library.png)
 
-**Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the median, and n	ot the mean like the regular Z-score, and more resilient towards outliers in a dataset.
+**Modified Z-score:** Outlier detection based on the modified Z-score statistical method is now available in the data quality app. The modified Z-score method is based on a value's distance from the _median_, and not the mean like the regular Z-score. This algorithm is more resilient towards the impact of outliers in a dataset.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/outlier_detection_modified_z_score.png) | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/collecting-data/data-quality.html#outlier_detection) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-validation.html#outlier-detection)
 
-**Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP-addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
+**Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/personal_access_token.png) | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
 
@@ -132,7 +132,7 @@
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html#importing_data)
 
-**App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account as in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+**App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_hub.png) | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md) | [App Hub](https://apps.dhis2.org/)
 
@@ -168,7 +168,7 @@
 
 * The d2-app-scripts has received a new command, `publish`, which can be used to publish a new version of an application to the App Hub. This is useful in both local command line environments and in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for details.
 * The app platform now has a built-in proxy server to make it easier to work against DHIS2 instances that are on a different domain. [More information](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-proxy-server-for-dhis2-api) is available on the DHIS2 developer blog.
-* Support for Progressive Web Applications is now built into the app platform. Make sure to read the [article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) to learn about what a PWA is and what it enables for DHIS2 applications.
+* Support for Progressive Web Applications (PWA) is now built into the app platform. Make sure to read the [article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) to learn about what a PWA is and what it enables for DHIS2 applications.
 
 [Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
 
@@ -176,7 +176,7 @@
 
 [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
-**DHIS2 UI**: The   UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
+**DHIS2 UI**: The UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
 
 [Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
