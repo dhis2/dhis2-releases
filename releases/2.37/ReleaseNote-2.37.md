@@ -134,7 +134,7 @@ Screenshot | Docs
 
 **App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account as in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_hub.png) | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md) |[App Hub](https://apps.dhis2.org/)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_hub.png) | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md) | [App Hub](https://apps.dhis2.org/)
 
 **App Management app design:** The app management app has a new design which builds on the DHIS2 design principles and UI components. It now supports in-app notifications when there is a newer version of a compatible DHIS 2 web application available on the App Hub. Apps can now updated with a single click. Read about all improvements in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
 
@@ -166,9 +166,9 @@ Screenshot | Docs
 
 **App Platform**: The app platform has received several new features.
 
-* The d2-app-scripts has received a new command, `publish`, that after an initial configuration will publish a new version of an application to the App Hub. This is useful in both local command line environments and in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for details.
+* The d2-app-scripts has received a new command, `publish`, which can be used to publish a new version of an application to the App Hub. This is useful in both local command line environments and in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for details.
 * The app platform now has a built-in proxy server to make it easier to work against DHIS2 instances that are on a different domain. [More information](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-proxy-server-for-dhis2-api) is available on the DHIS2 developer blog.
-* Support for Progressive Web Applications is now built into the app platform. Make sure to read the [article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) for a dive into what PWA is, and what it enables for DHIS2 applications.
+* Support for Progressive Web Applications is now built into the app platform. Make sure to read the [article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) to learn about what a PWA is and what it enables for DHIS2 applications.
 
 [Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
 
@@ -176,7 +176,7 @@ Screenshot | Docs
 
 [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
-**DHIS2 UI**: The DHIS2 UI library has additional functionality useful for building DHIS2 Applications, such as the `DataTable` components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
+**DHIS2 UI**: The DHIS2 UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
 
 [Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
