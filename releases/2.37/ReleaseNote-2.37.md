@@ -1,56 +1,54 @@
-🚧 UNDER CONSTRUCTION 🚧
-
 # DHIS version 2.37 Release Note
 
 ## ANALYTICS FEATURES
 
-**Offline dashboards:** The dashboard app now allows users to mark a dashboard to be available offline. This will store the dashboard visualizations and data locally in the web browser, both on laptops, desktop and mobile devices. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. Filters and interpretations are not supported offline. This allows users to access and view their dashboards while not being connected to the Internet, e.g. while staying or travelling in rural ares.
+**Offline dashboards:** The dashboard app now allows users on mobile or computer to mark a dashboard to be viewable offline. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. While offline no new data will be added to the dashboard, and filters and interpretations will not be available on a dashboard. Viewing as in full-screen mode will be available. This will help those working in places with poor Internet connection to continue to be able to access their analytics even when offline rather on a smart phone, laptop, or PC. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%203.png) | Docs | [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%203.png) | [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
-**Cascading dashboard sharing:** When sharing a dashboard with other users, the sharing can now cascade to items within the dashboard such as visualizations, maps, reports, data elements and indicators. This simplifies the process of sharing dashboards, as previously, the mentioned items had to be shared manually and independently.
+**Cascading dashboard sharing:** makes it much easier to share dashboards with many users simply. In previous versions of DHIS2 in order to share a dashboard the dashboards administrator had to ensure that each individual dashboard item had at least "View only" sharing setting for the users or user groups they wished to share the dashboard with. If the dashboard administrator chooses to apply the sharing to all dashboard visualizations then those users or user groups will receive "View only" permission to all dashboard items automatically.  
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%203.png) | Docs | [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%203.png) | [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
-**Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps.
+**Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | Docs | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
 
-**Dashboard default layout**: Dashboards supports default layouts, which will automatically configure a dashboard as more items are added. Users creating or editing a dashboard can now choose from either adding new items to the bottom or top of the dashboard. Users can also choose the number of columns to use for the dashboard layout. This will auto configure the size and shape of all dashboard items according to the number of specified columns.
+**Dashboard default layout**: Dashboards supports default layouts, whchi will automatically configure a dashboard as more items are added. Users creating or editing a dashboard can now choose from either adding new items to the bottom or top of the dashboard. Users can also choose a number of columns they wish the dashboard to have. This will auto configure the size and shape of all dashboard items to the number of columns selected. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20autolayout%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout%203.png) | Docs | [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20autolayout%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout%203.png) | [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
 **Org unit drill down:**  Bar and column chart allows users to left click on a bar or column and drill down or move up one level in the organisation unit hierarchy. This is only possible if the organisation unit dimension is not specified as a filter. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | Docs |[DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | [DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
-**Freeze for row and column headers:** In pivot tables, the row and column headers can now be frozen, to allow users to scroll through large pivot tables while not losing the reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menu on the style tab.
+**Freeze for row and column headers:** In pivot tables, the row and column headers can now be frozen, to allow users to scroll through large pivot tables while not losing the reference to the data labels. A user can turn these on in the data visualizer app when viewing a pivot table through the options menu on the style tab.  
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | Docs | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 **Select all dimension options:** In the data visualizer app, you can now chose to automatically select all options for a particular dimension. This is useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added. It also useful when you have dimensions with a very high number of options. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png) |[DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png) | [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
-**Text wrapping:** Pivot tables now support text wrapping, which will automatically be applied to both long text data values as well as row and column headers. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+**Text wrapping:** Pivot tables now support text wrapping, which will automatically be applied to both long text data values as well as row and column headers. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png) | [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
 **Axis labels for multi-axis charts:** Multi-axis charts can have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs |[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
-**Last 10 years relative period:** A relative period for the last 10 years has been added tp the Data Visualizer and Map apps.
+**Last 10 years relative period:** A relative period for the last 10 years has been added tp the Data Visualizer and Map apps. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | Docs |[DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
-**Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. This will make DHIS2 more suitable as a master facility list.
+**Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. This will make DHIS2 more suitable as a master facility list. 
 
-Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
+[DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 **Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. In visualizer, the legend info can be enabled from Options > Legend > Show legend key. This is useful to understand the meaning of each legend/color. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs |[DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 ## TRACKER AND EVENT FEATURES
 
@@ -110,7 +108,7 @@ Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 **Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP-addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/personal_access_token.png) | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/personal_access_token.png) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
 
 **Automatic cluster cache management:** When running DHIS 2 as a Tomcat cluster (many Tomcat servers), previously, the IP address of all Tomcat nodes (servers) in the cluster had to be defined in the configuration file of every DHIS 2 instance. This made dynamic scaling of cluster nodes complex and inconvenient. Now DHIS 2 will handle the cache management automatically and the cluster cache configuration is no longer needed. This makes dynamic scaling much more practical, as new nodes can be added without other nodes being made aware.
 
