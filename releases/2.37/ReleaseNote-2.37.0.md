@@ -1,6 +1,5 @@
 # Patch 2.37.0 Release Note
 
-- [Patch 2.37.0 Release Note](#patch-2370-release-note)
   - [Features](#features)
   - [Bugs](#bugs)
 
