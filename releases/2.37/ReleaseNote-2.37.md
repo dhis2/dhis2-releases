@@ -130,13 +130,13 @@
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html#importing_data)
 
-**App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md).
+**App Hub improvements:** The App Hub has received a fresh new design and an improved user interface for managing and navigating between applications. Organizations now supports multiple developers, and you can now log in to the App Hub with a GitHub account in addition to a Google account. Read about all improvements in the [changelog](https://github.com/dhis2/app-hub/blob/v2.23.9/CHANGELOG.md).
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_hub.png) | [Changelog](https://github.com/dhis2/app-hub/blob/master/CHANGELOG.md) | [App Hub](https://apps.dhis2.org/)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_hub.png) | [Changelog](https://github.com/dhis2/app-hub/blob/v2.23.9/CHANGELOG.md) | [App Hub](https://apps.dhis2.org/)
 
-**App Management app design:** The app management app has a new design which builds on the DHIS2 design principles and UI components. It now supports in-app notifications when there is a newer version of a compatible DHIS 2 web application available on the App Hub. Apps can now updated with a single click. Read about all improvements in the [changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md).
+**App Management app design:** The app management app has a new design which builds on the DHIS2 design principles and UI components. It now supports in-app notifications when there is a newer version of a compatible DHIS 2 web application available on the App Hub. Apps can now updated with a single click. Read about all improvements in the [changelog](https://github.com/dhis2/app-management-app/blob/v100.2.1/CHANGELOG.md).
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_management_app.png) | [Changelog](https://github.com/dhis2/app-management-app/blob/master/CHANGELOG.md)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/app_management_app.png) | [Changelog](https://github.com/dhis2/app-management-app/blob/v100.2.1/CHANGELOG.md)
 
 ### PLATFORM API FEATURES
 
@@ -164,19 +164,19 @@
 
 **App Platform**: The app platform has received several new features.
 
-* The d2-app-scripts has received a new command, `publish`, which can be used to publish a new version of an application to the App Hub. This is useful in both local command line environments and in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md) for details.
+* The d2-app-scripts has received a new command, `publish`, which can be used to publish a new version of an application to the App Hub. This is useful in both local command line environments and in continuous integration pipelines. Refer to the [changelog](https://github.com/dhis2/app-platform/blob/v8.3.0/CHANGELOG.md) for details.
 * The app platform now has a built-in proxy server to make it easier to work against DHIS2 instances that are on a different domain. [More information](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-proxy-server-for-dhis2-api) is available on the DHIS2 developer blog.
 * Support for Progressive Web Applications (PWA) is now built into the app platform. Make sure to read the [article](https://developers.dhis2.org/blog/2021/11/introducing-pwa) to learn about what a PWA is and what it enables for DHIS2 applications.
 
-[Changelog](https://github.com/dhis2/app-platform/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/dhis2/app-platform/blob/v8.3.0/CHANGELOG.md)
 
-**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. [Client-side caching and request deduplication](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-usedataquery-caches-and-deduplicates-queries) is also available. Refer to the [changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md) for details.
+**App Runtime**: To promote best practices when communicating with the API, the application runtime will now warn in _development mode_ when a query does not use paging, or when fields are not explicitly added. [Client-side caching and request deduplication](https://developers.dhis2.org/blog/2021/11/app-platform-v8#new-feature-usedataquery-caches-and-deduplicates-queries) is also available. Refer to the [changelog](https://github.com/dhis2/app-runtime/blob/v3.0.0/CHANGELOG.md) for details.
 
-[Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/dhis2/app-runtime/blob/v3.0.0/CHANGELOG.md)
 
-**DHIS2 UI**: The UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
+**DHIS2 UI**: The UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/v7.0.0/CHANGELOG.md) for details.
 
-[Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/dhis2/ui/blob/v7.0.0/CHANGELOG.md)
 
 **Jar packaging:** The DHIS 2 backend API can now be packaged as a JAR file. The JAR build contains only the web API and no web modules. The build provides an embedded Jetty web server, and is self-contained and executable, meaning it can be started directly from the command line without an external Tomcat instance. This is a step in the direction of making DHIS 2 easier to deploy and more friendly to containerized environments. To build as JAR file you can use the [run_api.sh](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/run-api.sh) script.
 
