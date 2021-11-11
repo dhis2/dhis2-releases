@@ -12,6 +12,10 @@
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%203.png) | Docs | [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
+**Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. You can view the profile by clicking on a point/facility in a map and selecting _Show more info_. This capability is intended to make DHIS 2 more suitable as a facility registry.
+
+Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
+
 **Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps.
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | Docs | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
@@ -30,27 +34,23 @@
 
 **Select all dimension options:** In the data visualizer app, you can now chose to automatically select all options for a particular dimension. This is useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added. It also useful when you have dimensions with a very high number of options. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png) |[DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png) | [DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
 **Text wrapping:** Pivot tables now support text wrapping which will automatically be applied to long text data values as well as long row and column headers. This makes the visualizer app more suitable for displaying narratives and long text data.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png)| [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_text_data_wrapping.png) |  [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_text_data_wrapping.png) |  [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
 **Axis labels for multi-axis charts:** Multi-axis charts can have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. 
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs |[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
-**Last 10 years relative period:** A relative period for the last 10 years has been added tp the Data Visualizer and Map apps.
+**Last 10 years relative period:** A relative period for the last 10 years has been added to the Data Visualizer and Map apps. This is useful to display long trends in your data.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | Docs |[DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | Docs | [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
-**Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. This will make DHIS2 more suitable as a master facility list.
+**Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. In visualizer, the legend info can be enabled from _Options_ > _Legend_ > _Show legend key_. This is useful to understand the meaning of each legend/color. 
 
-Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
-
-**Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. In visualizer, the legend info can be enabled from Options > Legend > Show legend key. This is useful to understand the meaning of each legend/color. 
-
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs |[DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs | [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 ## TRACKER AND EVENT FEATURES
 
@@ -96,7 +96,7 @@ Screenshot | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_image.png) | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html#upload-image-for-organisation-unit)
 
-**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API. User interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
+**Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API. User interface support is coming in the next release.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [Maps docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
 
