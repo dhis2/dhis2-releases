@@ -98,7 +98,7 @@ Screenshot | Docs
 
 **Org unit profile:** You can now design a profile for organisation units, which allows you to include an image and specify metadata attributes, org unit group sets/groups and data for data elements and indicators to display. The org unit profile must currently be configured through the API. User interface support is coming in the next release. The maps application lets you view the profile by right-clicking on an org unit in a map layer and clicking the Show more info button.
 
-Screenshot | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [Maps docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | [User docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_organisation_unit) | [Maps docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/org-unit-profile.html)
 
 **Icon Library:** The DHIS2 Icon library has been integrated into the healthicons project and been redesigned by its team of volunteer in collaboration with our design team. More information about the project can be found at their website [healthicons.org](https://healthicons.org/). 
 
