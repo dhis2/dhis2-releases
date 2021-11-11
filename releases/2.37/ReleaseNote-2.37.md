@@ -176,7 +176,7 @@
 
 [Changelog](https://github.com/dhis2/app-runtime/blob/master/CHANGELOG.md)
 
-**DHIS2 UI**: The DHIS2 UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
+**DHIS2 UI**: The   UI library has introduced several enhancements useful for building high quality DHIS2 Applications.  These include the new `DataTable` react components, accessibility enhancements, and bug fixes. Refer to the [changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md) for details.
 
 [Changelog](https://github.com/dhis2/ui/blob/master/CHANGELOG.md)
 
