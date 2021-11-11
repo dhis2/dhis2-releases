@@ -154,11 +154,11 @@
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html)
 
-**Patch API:** A new patch API is available, allowing for making partial updates of metadata.
+**Patch API:** A new patch API is available, allowing for partial updates of metadata. Add, remove and replace operations can be performed with a single patch request.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_partial_updates)
 
-**User max org unit level data output:** A new field for defining the _max org unit level for data output_ is introduced for users. This controls how far down in the org unit hierarchy a user can view data in analytics apps. This is useful for web portals and public access where data should be made available but only down to e.g. the district level. User interface support coming in 2.37.1.
+**User max org unit level data output:** A new field for defining the _max org unit level for data output_ is introduced for users. This controls how far down in the org unit hierarchy a user can view data in analytics apps. This is useful for web portals and public access where data should be made available but only down to e.g. the district level. User interface support is coming in 2.37.1.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/users.html#webapi_users)  
 
