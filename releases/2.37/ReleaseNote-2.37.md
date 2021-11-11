@@ -6,31 +6,31 @@
 
 **Offline dashboards:** The dashboard app now allows users to mark a dashboard to be available offline. This will store the dashboard visualizations and data locally in the web browser, both on laptops, desktop and mobile devices. When selected the dashboard will be cached on the device and the user will be able to view that dashboard while offline. Filters and interpretations are not supported offline. This allows users to access and view their dashboards while not being connected to the Internet, e.g. while staying or travelling in rural ares.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%202.png) | Docs | [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Offline%20DB%202.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/dashboards.html) | [DHIS2-10874](https://jira.dhis2.org/browse/DHIS2-10874)
 
 **Cascading dashboard sharing:** When sharing a dashboard with other users, the sharing can now cascade to items within the dashboard such as visualizations, maps, reports, data elements and indicators. This simplifies the process of sharing dashboards, as previously, the mentioned items had to be shared manually and independently.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%203.png) | Docs | [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20cascade%20sharing%203.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/dashboards.html) | [DHIS2-101](https://jira.dhis2.org/browse/DHIS2-101)
 
 **Org unit profile:** The Maps application now features an org unit profile, which displays key information for each organizational unit on a map. You can view the profile by clicking on a point/facility in a map and selecting _Show more info_. This capability is intended to make DHIS 2 more suitable as a facility registry.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | Docs | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
 **Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | Docs | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20indicator%20type%20for%20single%20value.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/data-visualizer.html) | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
 
 **Dashboard default layout**: Dashboards supports default layouts, which will automatically configure a dashboard as more items are added. Users creating or editing a dashboard can now choose from either adding new items to the bottom or top of the dashboard. Users can also choose the number of columns to use for the dashboard layout. This will auto configure the size and shape of all dashboard items according to the number of specified columns.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20autolayout%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout%203.png) | Docs | [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20autolayout%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DB%20Autolayout%203.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/dashboards.html#dashboards_setup) | [DHIS2-3600](https://jira.dhis2.org/browse/DHIS2-3600)
 
 **Org unit drill down:**  Bar and column chart allows users to left click on a bar or column and drill down or move up one level in the organisation unit hierarchy. This is only possible if the organisation unit dimension is not specified as a filter. 
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | Docs |[DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/data-visualizer.html#data-drilling) |[DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
 **Freeze row and column headers:** In pivot tables, row and column headers can now be frozen. This allows users to scroll through large pivot tables while not losing the reference to the data labels, as the row and column headers will always be visible. Frozen headers can be enabled from Options > Style > _Fix column headers to top of table_ and _Fix row headers to left of table_.
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_frozen_headers.png) | Docs | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_frozen_headers.png) | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
 **Select all dimension options:** In the data visualizer app, you can now chose to automatically select all options for a particular dimension. This is useful if you have dimensions that are regularly changing as it will automatically update as new dimensions are added. It also useful when you have dimensions with a very high number of options. 
 
@@ -40,17 +40,17 @@
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_text_data_wrapping.png) |  [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
-**Axis labels for multi-axis charts:** Multi-axis charts can have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. 
+**Axis labels for multi-axis charts:** Multi-axis charts can now have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs |[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | [DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
 **Last 10 years relative period:** A relative period for the last 10 years has been added to the Data Visualizer and Map apps. This is useful to display long trends in your data.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | Docs | [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
+[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20last%2010%20years.png) | [DHIS2-7029](https://jira.dhis2.org/browse/DHIS2-7029)
 
 **Legend info in dashboard:** In dashboards you can now view legend info for a pivot table or chart for which a legend set is applied. In visualizer, the legend info can be enabled from _Options_ > _Legend_ > _Show legend key_. This is useful to understand the meaning of each legend/color. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | Docs | [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%202.png) | [Screenshot 3](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20DV%20legends%203.png) | [DHIS2-6296](https://jira.dhis2.org/browse/DHIS2-6296)
 
 ## TRACKER AND EVENT FEATURES
 
@@ -90,7 +90,7 @@
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_data_overview.png) | [2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_org_unit_tree.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/approving-data/data-approval.html)
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_data_overview.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_org_unit_tree.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/approving-data/data-approval.html)
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
