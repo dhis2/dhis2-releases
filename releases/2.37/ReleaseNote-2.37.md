@@ -24,7 +24,7 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Bar%20chart%20drilldown%202.png) | Docs |[DHIS2-11061](https://jira.dhis2.org/browse/DHIS2-11061)
 
-**Freeze row and column headers:** In pivot tables, row and column headers can now be frozen. This allows users to scroll through large pivot tables while not losing the reference to the data headers/labels. Frozen headers can be enabled from Options > Style > _Fix column headers to top of table_ and _Fix row headers to left of table_.
+**Freeze row and column headers:** In pivot tables, row and column headers can now be frozen. This allows users to scroll through large pivot tables while not losing the reference to the data labels, as the row and column headers will always be visible. Frozen headers can be enabled from Options > Style > _Fix column headers to top of table_ and _Fix row headers to left of table_.
 
 [Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20fix%20column%20and%20row%20headers%201.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_frozen_headers.png) | Docs | [DHIS2-11057](https://jira.dhis2.org/browse/DHIS2-11057)
 
@@ -32,13 +32,13 @@
 
 [Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Select%20all%20items.png) |[DHIS2-9734](https://jira.dhis2.org/browse/DHIS2-9734)
 
-**Text wrapping:** Pivot tables now support text wrapping, which will automatically be applied to both long text data values as well as row and column headers. [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
+**Text wrapping:** Pivot tables now support text wrapping which will automatically be applied to long text data values as well as long row and column headers. This makes the visualizer app more suitable for displaying narratives and long text data.
 
-[Screenshot](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20text%20wrapping.png)| [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/pivot_table_text_data_wrapping.png) |  [DHIS2-11556](https://jira.dhis2.org/browse/DHIS2-11556)
 
 **Axis labels for multi-axis charts:** Multi-axis charts can have custom labels for all axis. This applies to bar, column and line charts in the Data Visualizer app. 
 
-[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs |[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
+[Screenshot 1](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20Axis%20labels%201.png) | [Screenshot 2](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.37/images/2.37%20axis%20lables%202.png) | Docs |[DHIS2-6672](https://jira.dhis2.org/browse/DHIS2-6672)
 
 **Last 10 years relative period:** A relative period for the last 10 years has been added tp the Data Visualizer and Map apps.
 
