@@ -110,7 +110,7 @@
 
 **Personal access tokens:** You can now create personal API access tokens for your account. API access tokens are useful for authentication of software API clients such as integration services and web portals. When authenticating with an access token, a client will only get access to the API and not the user interface. Tokens can be restricted to specific HTTP methods (e.g. GET, POST) and IP-addresses. There are to types of tokens, one for server-side clients and one for web browser-based clients. To create a token, navigate to the profile menu > Edit profile > Personal access tokens.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/personal_access_token.png) | User docs | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/personal_access_token.png) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
 
 **Automatic cluster cache management:** When running DHIS 2 as a Tomcat cluster (many Tomcat servers), previously, the IP address of all Tomcat nodes (servers) in the cluster had to be defined in the configuration file of every DHIS 2 instance. This made dynamic scaling of cluster nodes complex and inconvenient. Now DHIS 2 will handle the cache management automatically and the cluster cache configuration is no longer needed. This makes dynamic scaling much more practical, as new nodes can be added without other nodes being made aware.
 
