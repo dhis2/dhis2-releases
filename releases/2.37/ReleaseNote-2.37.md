@@ -88,7 +88,7 @@
 
 **Data Approval app:** A new data approval app is available, supporting multiple, parallel data approval workflows. After selecting a workflow, period and org unit, it allows the user to view data from all data sets associated with the workflow. The app features the new and modern DHIS 2 user experience, making data approval more efficient and user-friendly. The app is built using the new DHIS 2 front-end technology stack.
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_data_overview.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_org_unit_tree.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/approving-data/data-approval.html)
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_data_overview.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/data_approval_org_unit_tree.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-237/approving-data/approving-data.html)
 
 **Org unit image:** An image can be uploaded and associated with an organisation unit. This is useful e.g. for facility assessments and surveys, where an image should be taken of the facility and be part of the assessment.
 
