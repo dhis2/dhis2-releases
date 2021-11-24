@@ -14,6 +14,10 @@
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org_unit_profile_maps.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/maps.html#open-organisation-unit-profile) | [DHIS2-11176](https://jira.dhis2.org/browse/DHIS2-11176)
 
+**Facility map layer:** A new facility map layer is available in the Maps app, which is designed to support a *facility registry* system in DHIS 2. You can indicate which level in the org unit hierarchy represents facilities from *Settings* > *Analytics* > *Org unit level in facility map layers*. This org unit level will be automatically selected when creating a new facility map layer. This feature is useful in combination with the new org unit profile.
+
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/facility-map-layer-default-level.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/org-unit-level-facility-map-system-setting.png) | [DHIS2-11700](https://jira.dhis2.org/browse/DHIS2-11700)
+
 **Indicator type for single value**: Single indicator value visualizations will display a _%_, _per thousand_, _per ten thousand_, or _per hundred thousand_ suffix based upon the indicator factor. This applies both to the visualizer and dashboard apps.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/37/2.37_indicator_type_for_single_value.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/analysing-data/data-visualizer.html) | [DHIS2-7420](https://jira.dhis2.org/browse/DHIS2-7420)
