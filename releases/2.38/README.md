@@ -6,7 +6,7 @@
 
 - Running jobs manually using `/api/jobConfigurations/execute` changed from 
   `GET` to `POST` request
-- Program id is now mandatory for program stage. 
+- Program id is now mandatory for program stage. Affected endpoints: /programStages, /metadata
 
 ## Authorities
 
