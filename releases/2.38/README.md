@@ -6,6 +6,7 @@
 
 - Running jobs manually using `/api/jobConfigurations/execute` changed from 
   `GET` to `POST` request
+- Program id is now mandatory for program stage. Affected endpoints: /programStages, /metadata
 - Several API endpoints slightly change their response root object to be in line 
   with the majority of endpoints.
   The root object returned pre 2.38 will become the member named `response`
