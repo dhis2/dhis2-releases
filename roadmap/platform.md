@@ -39,16 +39,16 @@
 
 - Master facility list
 
-- - Org unit analytics maintenance app updates.
+  - Org unit analytics maintenance app updates.
   - Propose and approve org unit workflow.
 
 - Platform
 
-- - New DHIS 2 web app portal, replace old portal with Javascript-based portal. [Platform]
+  - New DHIS 2 web app portal, replace old portal with Javascript-based portal. [Platform]
 
 - Maintenance
 
-- - New Maintenance app (gradually rebuilt and released).
+  - New Maintenance app (gradually rebuilt and released).
   - Multiple select for org unit group sets/dimensional analytics. [Asia]
   - Multi-select option sets. [Global]
   - Enhanced time-based calculations (cumulative indicators)
@@ -57,24 +57,24 @@
 
 - Scheduling
 
-- - Run analytics for one dataset or one program
+  - Run analytics for one dataset or one program
 
 
 ### 2.40
 
 - Platform
 
-- - Renaming of apps and customization of UI labels. Custom translation bundles.
+  - Renaming of apps and customization of UI labels. Custom translation bundles.
   - New login app.
   - Remove Struts completely from the system.
 
 - Data Use/DQ
 
-- - Integrate WHO DQ app concepts into core apps (data quality, data visualizer). [MFL]
+  - Integrate WHO DQ app concepts into core apps (data quality, data visualizer). [MFL]
   - WHO annual data quality app/report. [DQ]
 
 
-### Parking Lot {#parking-lot}
+### Parking Lot
 
 - Multi-calendar & time zone support.
 - Multiple org unit hierarchies (with support from other teams)

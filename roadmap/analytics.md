@@ -4,7 +4,7 @@
 
 - New event reports/event visualizer application
 
-- - Phase one of new Event Reports/Event Visualizer (ER/EV) Application
+  - Phase one of new Event Reports/Event Visualizer (ER/EV) Application
     - Replace existing line listing functionality in old event reports.
     - Include multiple repeating events linelists
     - Include last updated by and event date
@@ -18,7 +18,7 @@
 
 - Local data use/Micro planning
 
-- - Google Earth Engine import in Maps
+  - Google Earth Engine import in Maps
   - Vector Tiles in Maps
   - Catchment area for facilities - two geometries for one org unit in Maps
   - Backend support for two geometries for one org unit
@@ -27,29 +27,29 @@
 
 - TEI ownership based analytics
 
-- - Design for ownership org unit dimension
+  - Design for ownership org unit dimension
 
 - On-the-fly indicator calculations
 
-- - Scoping and design for on-the-fly indicator calculations.
+  - Scoping and design for on-the-fly indicator calculations.
 
 
 ### 2.39
 
 - New event reports/event visualizer application
 
-- - Phase two of new Event Reports/Event Visualizer Application
+  - Phase two of new Event Reports/Event Visualizer Application
     - Incorporate cross program and relationship derived linelists
     - Reproduce appropriate chart types from old EV into new ER/EV Application
     - Develop- backend and front end for outputs for organizational unit data element type.
 
 - TEI ownership based analytics
 
-- - Ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
+  - Ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 - Data use/Micro planning
 
-- - Implementation of deckGL in Maps
+  - Implementation of deckGL in Maps
   - Flow Maps development
   - Google earth engine structures maps layers.
   - Phase two of org unit profile based upon user feedback.
@@ -61,7 +61,7 @@
 
 - On-the-fly indicator calculations
 
-- - Develop backend requirements for on-the-fly indicator calculations
+  - Develop backend requirements for on-the-fly indicator calculations
   - Finalize design of on-the-fly indicator calculations
 
 
@@ -69,14 +69,14 @@
 
 - On-the-fly indicator calculations
 
-- - On-the-fly indicator calculations in data visualizer pivot tables.
+  - On-the-fly indicator calculations in data visualizer pivot tables.
 
 - Data use/Micro planning
 
-- - Generic framework to embed custom web app outputs to dashboards
+  - Generic framework to embed custom web app outputs to dashboards
   - Possibility to view standard report directly in the dashboard
   - Services/tools to better support public web portals
 
 - Audit trail analysis
 
-- - Backend requirements for audit trail analysis
+  - Backend requirements for audit trail analysis
