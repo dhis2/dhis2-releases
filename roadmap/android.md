@@ -1,6 +1,6 @@
 ## Android
 
-### 2.38 / 2.5
+### 2.38 / 2.6
 
 **Development**
 
@@ -52,7 +52,7 @@
   - Bulk data transfer device-device
 - Trigger data entry from Maps
 
-### 2.39 / 2.6
+### 2.39 / 2.7
 
 - Stability and Performance
   - [Option to sync ASA](https://jira.dhis2.org/browse/ANDROAPP-2959)
@@ -74,7 +74,7 @@
 - EMIS
   - Bulk data entry (EMIS)
 
-### 2.40 / 2.7
+### 2.40 / 2.8
 
 - Offline Analytics
   - [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
