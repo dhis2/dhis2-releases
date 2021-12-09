@@ -2,109 +2,110 @@
 
 ### 2.38
 
-- Program Rules:
+-   Program Rules:
 
-  - Maintenance improvements for program rules
-  - Triggering of data to be saved from one stage to another
-  - Support Android team and backend for matching functionality
-  - Add support for GS1 Data Matrix
-     - GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases
+    -   Maintenance improvements for program rules
+    -   Triggering of data to be saved from one stage to another
+    -   Support Android team and backend for matching functionality
+    -   Add support for GS1 Data Matrix
+        -   GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases
 
-- Working lists:
+-   Working lists:
 
-  - UI for configuring and saving working lists
-  - Design: Data elements in working lists
-  - Design: Editable data elements from single stages
-    - These two design issues will be used to create line-listing data entry for groups of TEIs
+    -   UI for configuring and saving working lists
+    -   Design: Data elements in working lists
+    -   Design: Editable data elements from single stages
+        -   These two design issues will be used to create line-listing data entry for groups of TEIs
 
-- Deduplication:
+-   Deduplication:
 
-  - UI support for detecting and merging duplicates - simple/automatic cases
-    - Making use of the deduplication capabilities added to the back end in 2.37
+    -   UI support for detecting and merging duplicates - simple/automatic cases
+        -   Making use of the deduplication capabilities added to the back end in 2.37
 
-- Extensibility
+-   Extensibility
 
-- Plugin framework
-  - Enabling the easier introduction of external applicaation and widgets
+-   Plugin framework
 
-- Capture app with full tracker functionality
-  - Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app as the default use of Tracker programs, rather than a setting that needs to be enabled
+    -   Enabling the easier introduction of external applicaation and widgets
 
-- Stability and performance
-  - Continued additions to the core based on learning from large scale Tracker implementations
+-   Capture app with full tracker functionality
 
-  - Support Android with WEB API automatic testing
-  - Support Android with review of synchronization process
+    -   Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app as the default use of Tracker programs, rather than a setting that needs to be enabled
 
-- Analytics:
+-   Stability and performance
 
-  - Ownership org unit components and backend
+    -   Continued additions to the core based on learning from large scale Tracker implementations
 
-- LMIS
+    -   Support Android with WEB API automatic testing
+    -   Support Android with review of synchronization process
 
-  - Health commodity catalog
-    - Functionality to support the creation of health commodity catalogs for supply chain products 
-  - Support for barcode and scanning
-    - Making use of the GS1 data matrix, and full functionality through the Android application
+-   Analytics:
 
+    -   Ownership org unit components and backend
 
-- EMIS
+-   LMIS
 
-  - Data Model
-    - Confirming the recommended data model for education use cases which will enable such functionality as bulk enrollment; bulk data entry for grades and attendance; modeling of school / classes / sections, etc.  
+    -   Health commodity catalog
+        -   Functionality to support the creation of health commodity catalogs for supply chain products
+    -   Support for barcode and scanning
+        -   Making use of the GS1 data matrix, and full functionality through the Android application
+
+-   EMIS
+
+    -   Data Model
+        -   Confirming the recommended data model for education use cases which will enable such functionality as bulk enrollment; bulk data entry for grades and attendance; modeling of school / classes / sections, etc.
 
 ### 2.39
 
-- Program rules:
+-   Program rules:
 
-  - Program rules across programs
-    - Enabling the creation of program rules that can take into consideration data from more than one program
-  - Managements
-    - Functionality that triggers decision support / recommended actions based on data from an event/multiple events
-  - Integration with aggregate indicators
-    - Additional functionality to improve linkages between the indidivudal and aggregate data models
+    -   Program rules across programs
+        -   Enabling the creation of program rules that can take into consideration data from more than one program
+    -   Managements
+        -   Functionality that triggers decision support / recommended actions based on data from an event/multiple events
+    -   Integration with aggregate indicators
+        -   Additional functionality to improve linkages between the indidivudal and aggregate data models
 
-- Working lists
+-   Working lists
 
-  - Editable data elements from multiple stages
-  - Editable data elements from multiple programs
-    - Taking the design created during 2.38 to create functionality for data entry in line-listing of TEIs
+    -   Editable data elements from multiple stages
+    -   Editable data elements from multiple programs
+        -   Taking the design created during 2.38 to create functionality for data entry in line-listing of TEIs
 
-- Biometrics
+-   Biometrics
 
-  - Support for the generic biometric integration
-    - Native support for the handling of biometric data and data exchange
+    -   Support for the generic biometric integration
+        -   Native support for the handling of biometric data and data exchange
 
-- Privacy
+-   Privacy
 
-  - Solution for non-analysable attributes
-    - Functionality to make it easier to ensure that attributes designated as private will not be exposed to any analytics or display modes
-  - Data sunsets - clean out expired data
-    - Functionality to ensure that designated data will automatically be made unavailable after a certain period of time
-  - Ability to request removal of personal data
-    - Ensure the easier removal of personal data based on an individual's request
+    -   Solution for non-analysable attributes
+        -   Functionality to make it easier to ensure that attributes designated as private will not be exposed to any analytics or display modes
+    -   Data sunsets - clean out expired data
+        -   Functionality to ensure that designated data will automatically be made unavailable after a certain period of time
+    -   Ability to request removal of personal data
+        -   Ensure the easier removal of personal data based on an individual's request
 
-- EMIS
+-   EMIS
 
-  - Use of improvements to working lists and analytics in recommended configuration
-    - Updating the recommended configuration for education to make use of new working lists / line listing / analytics
+    -   Use of improvements to working lists and analytics in recommended configuration
+        -   Updating the recommended configuration for education to make use of new working lists / line listing / analytics
 
-- Analytics
+-   Analytics
 
-  - Easy integration of tracker program indicators with aggregate for categorized data
-    - Updating the functionality enabling linkages between individual and aggregate indicators
-
+    -   Easy integration of tracker program indicators with aggregate for categorized data
+        -   Updating the functionality enabling linkages between individual and aggregate indicators
 
 ### 2.40
 
-- Deduplication
+-   Deduplication
 
-  - Design and implement manual merging
-    - Building on deduplication tools to allow manual review and merging of potential duplicates
+    -   Design and implement manual merging
+        -   Building on deduplication tools to allow manual review and merging of potential duplicates
 
-- EMIS
+-   EMIS
 
-  - Full MVP for EMIS
-    - Bulk enrollment
-    - Attendance in line listing
-    - Concurrent enrollments
+    -   Full MVP for EMIS
+        -   Bulk enrollment
+        -   Attendance in line listing
+        -   Concurrent enrollments
