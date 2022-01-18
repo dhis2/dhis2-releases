@@ -30,7 +30,7 @@ args = parser.parse_args()
 
 options = {
     'server': 'https://jira.dhis2.org'}
-jira = JIRA(options,auth=(args.user, args.password))
+jira = JIRA(options,basic_auth=(args.user, args.password))
 
 release= args.version[0:4]
 outfile="../../releases/"+release+"/ReleaseNote-"+args.version+".md"
@@ -41,6 +41,9 @@ notdonefile= open(notdone,'w')
 
 
 apifile.write('# Patch '+args.version+' Release Note'+'\n\n')
+apifile.write('- [Features](#features)\n- [Bugs](#bugs)\n\n')
+
+cl = "===CLOSED\n"
 
 for type in ["Feature","Bug"]:
     #
@@ -54,7 +57,7 @@ for type in ["Feature","Bug"]:
             fallback_version += ' and not fixVersion = '+args.version[0:5]+str(prev)
     jql='project = DHIS2 AND type = '+type+' AND (fixVersion = '+args.version+fallback_version+') ORDER BY component ASC, updated DESC'
     print(jql)
-    for issue in jira.search_issues(jql,maxResults=500):
+    for issue in jira.search_issues(jql,maxResults=1000):
         cnt+=1
         comp=""
         for c in issue.fields.components:
@@ -62,11 +65,17 @@ for type in ["Feature","Bug"]:
         apifile.write('**[{}]({}): {}**  \n'.format(issue.key,issue.permalink(), issue.fields.summary.rstrip()))
         #apifile.write('>{}\n'.format(issue.fields.description))
         if issue.fields.status.name != "Done":
-            apifile.write('Components: {}  \n**{}**\n\n'.format(comp[:-2], issue.fields.status.name))
-            notdonefile.write('{}: {} - {}\n'.format(issue.fields.status.name,issue.key,issue.permalink(), issue.fields.summary.rstrip()))
+            if issue.fields.status.name != "Closed":
+                apifile.write('Components: {}\n\n'.format(comp[:-2]))
+                notdonefile.write('{}: {} - {}\n'.format(issue.fields.status.name,issue.key,issue.permalink(), issue.fields.summary.rstrip()))
+            else:
+                cl += '{}: {} - {}\n'.format(issue.fields.status.name,issue.key,issue.permalink(), issue.fields.summary.rstrip())
         else:
             apifile.write('Components: '+comp[:-2]+'\n\n')
 
 
 apifile.close()
+notdonefile.write(cl)
 notdonefile.close()
+
+print("Output to:",outfile)
