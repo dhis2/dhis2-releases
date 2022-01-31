@@ -7,8 +7,8 @@
     -   Phase one of new Event Reports/Event Visualizer (ER/EV) Application
         -   Replace existing line listing functionality in old event reports.
         -   Include multiple repeating events linelists
-        -   Include last updated by and event date
-        -   Include pivot tables functionality in old event reports.
+        -   Include 'created by' and 'last updated by' dimensions. 
+        -   Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions. 
     -   Development of TEI endpoint - Enables cross program analytics
     -   Development of relationship endpoint - Enables linelisting derived from relationships
     -   Continued design for new event reports/visualizer
@@ -21,8 +21,7 @@
     -   Google Earth Engine import in Maps
     -   Vector Tiles in Maps
     -   Catchment area for facilities - two geometries for one org unit in Maps
-    -   Backend support for two geometries for one org unit
-    -   Scoping and design of flow maps
+    -   Backend support for two geometries for one org units
     -   Develop plan and roadmap for the WHO immunization application functionality
 
 -   TEI ownership based analytics
