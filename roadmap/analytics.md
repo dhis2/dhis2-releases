@@ -5,24 +5,19 @@
 -   New event reports/event visualizer application
 
     -   Phase one of new Event Reports/Event Visualizer (ER/EV) Application
-        -   Replace existing line listing functionality in old event reports.
-        -   Include multiple repeating events linelists
-        -   Include 'created by' and 'last updated by' dimensions. 
-        -   Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions. 
-    -   Development of TEI endpoint - Enables cross program analytics
-    -   Development of relationship endpoint - Enables linelisting derived from relationships
-    -   Continued design for new event reports/visualizer
-        -   Design cross program linelisting outputs
-        -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots.
-        -   Scope and design selection and outputs/aggregations for organizational unit data element type.
+        -  [x] New user, more intuative user-interface
+        -  [x] Replace existing line listing functionality in old event reports.
+        -  [x] Include multiple repeating events linelists
+        -  [x] Include 'created by' and 'last updated by' dimensions. 
+        -  [x] Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions
 
 -   Local data use/Micro planning
 
     -   Google Earth Engine import in Maps
     -   Vector Tiles in Maps
-    -   Catchment area for facilities - two geometries for one org unit in Maps
-    -   Backend support for two geometries for one org units
-    -   Develop plan and roadmap for the WHO immunization application functionality
+    -   [x] Catchment area for facilities - two geometries for one org unit in Maps
+    -   [x] Backend support for two geometries for one org units
+    -   [x] Develop plan and roadmap for the WHO immunization application functionality
 
 -   TEI ownership based analytics
 
@@ -40,6 +35,14 @@
         -   Incorporate cross program and relationship derived linelists
         -   Reproduce appropriate chart types from old EV into new ER/EV Application
         -   Develop- backend and front end for outputs for organizational unit data element type.
+        -   Include due/scheduled date and last updated on time dimensions. 
+    -    Development of TEI endpoint - Enables cross program analytics
+    -    Development of relationship endpoint - Enables linelisting derived from relationships
+
+-  Continued design for new event reports/visualizer
+    -   Design cross program linelisting outputs
+    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots.
+    -   Scope and design selection and outputs/aggregations for organizational unit data element type.
 
 -   TEI ownership based analytics
 
