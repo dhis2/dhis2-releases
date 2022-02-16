@@ -4,7 +4,7 @@
 
 -   New event reports/event visualizer application phase one
 
-    -  [x] New user, more intuative user-interface
+    -  [x] New user, more intuitive user-interface
     -  [x] Replace existing line listing functionality in old event reports.
     -  [x] Include multiple repeating events linelists
     -  [x] Include 'created by' and 'last updated by' dimensions. 
