@@ -2,14 +2,13 @@
 
 ### 2.38
 
--   New event reports/event visualizer application
+-   New event reports/event visualizer application phase one
 
-    -   Phase one of new Event Reports/Event Visualizer (ER/EV) Application
-        -  [x] New user, more intuative user-interface
-        -  [x] Replace existing line listing functionality in old event reports.
-        -  [x] Include multiple repeating events linelists
-        -  [x] Include 'created by' and 'last updated by' dimensions. 
-        -  [x] Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions
+    -  [x] New user, more intuative user-interface
+    -  [x] Replace existing line listing functionality in old event reports.
+    -  [x] Include multiple repeating events linelists
+    -  [x] Include 'created by' and 'last updated by' dimensions. 
+    -  [x] Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions
 
 -   Local data use/Micro planning
 
