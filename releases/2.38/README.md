@@ -34,3 +34,18 @@
 
 ## Audit
 
+## Migrations (Chart and ReportTable)
+
+Depending on the DHIS2 version you're updating from, you may face migration issues/errors.
+Please, find more details at https://jira.dhis2.org/browse/DHIS2-12601
+
+These problems are very likely caused by old/legacy tables that need to be dropped before migrating to DHIS2 2.38.
+
+If you face those problems, please, execute the SQL statements below, directly in your PostgreSQL instance.
+
+DROP TABLE IF EXISTS chart CASCADE;
+DROP TABLE IF EXISTS charttranslations CASCADE;
+DROP TABLE IF EXISTS reporttable CASCADE;
+DROP TABLE IF EXISTS dashboarditem_reporttables CASCADE;
+
+Once that is finished you are ready to try again the upgrade to DHIS2 2.38.
