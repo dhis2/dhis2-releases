@@ -28,14 +28,13 @@
 
     -   [x] Enabling the easier introduction of external applicaation and widgets
 
--   [x] Capture app with full tracker functionality
+-   Capture app with full tracker functionality
 
     -   [x] Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
 
 -   Stability and performance
 
     -   [x] Continued additions to the core based on learning from large scale Tracker implementations
-
     -   [x] Support Android with WEB API automatic testing
     -   [x] Support Android with review of synchronization process
 
