@@ -50,7 +50,6 @@ function process_core {
             local app_name=$(app_name "$repo")
             if [[ " ${continuous_delivery_apps[@]} " =~ "$app_name" ]]
             then
-                echo "$app_name is a CD app"
                 app_cd_version=$(cat "$CDA" | grep $app_name | sed "s;.*$CORE_BRANCH:\([^ ]*\).*;\1;")
                 sed -i "s:${app_name}[^\"]*\":${app_name}#${app_cd_version}:" "${bundle_path}"
             else
@@ -93,10 +92,10 @@ function process_apps {
         local app_name=$(app_name "$repo")
         if [[ " ${continuous_delivery_apps[@]} " =~ "$app_name" ]]
         then
-            echo "$app_name is a CD app. Skipping."
+            echo "$app_name is a Continuous Delivery app. Skipping."
         else
             local repo_path="${TEMP}/${app_name}"
-            echo "clone $app_name"
+            # echo "clone $app_name"
             clone "${repo}" "${repo_path}" "$(app_branch_name $repo)"
             pushd "${repo_path}"
                 git checkout -b "${PATCH_BRANCH}"

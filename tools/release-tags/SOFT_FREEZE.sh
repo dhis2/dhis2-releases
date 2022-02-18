@@ -122,7 +122,7 @@ function main {
         process_core
 #    - clone bundled non-FT apps
     #    - create relevant app branches (`vXX/X.X`)
-        # process_apps
+        process_apps
 
     echo "Done."
 }
