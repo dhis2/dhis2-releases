@@ -4,10 +4,10 @@
 
 -   Program Rules:
 
-    -   Maintenance improvements for program rules
+    -   [x] Maintenance improvements for program rules
     -   Triggering of data to be saved from one stage to another
-    -   Support Android team and backend for matching functionality
-    -   Add support for GS1 Data Matrix
+    -   [x] Support Android team and backend for matching functionality
+    -   [x] Add support for GS1 Data Matrix
         -   GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases
 
 -   Working lists:
@@ -26,33 +26,33 @@
 
 -   Plugin framework
 
-    -   Enabling the easier introduction of external applicaation and widgets
+    -   [x] Enabling the easier introduction of external applicaation and widgets
 
--   Capture app with full tracker functionality
+-   [x] Capture app with full tracker functionality
 
-    -   Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app as the default use of Tracker programs, rather than a setting that needs to be enabled
+    -   [x] Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
 
 -   Stability and performance
 
-    -   Continued additions to the core based on learning from large scale Tracker implementations
+    -   [x] Continued additions to the core based on learning from large scale Tracker implementations
 
-    -   Support Android with WEB API automatic testing
-    -   Support Android with review of synchronization process
+    -   [x] Support Android with WEB API automatic testing
+    -   [x] Support Android with review of synchronization process
 
 -   Analytics:
 
-    -   Ownership org unit components and backend
+    -   [x] Ownership org unit components and backend
 
 -   LMIS
 
     -   Health commodity catalog
         -   Functionality to support the creation of health commodity catalogs for supply chain products
-    -   Support for barcode and scanning
+    -   [x] Support for barcode and scanning
         -   Making use of the GS1 data matrix, and full functionality through the Android application
 
 -   EMIS
 
-    -   Data Model
+    -   [x] Data Model
         -   Confirming the recommended data model for education use cases which will enable such functionality as bulk enrollment; bulk data entry for grades and attendance; modeling of school / classes / sections, etc.
 
 ### 2.39
