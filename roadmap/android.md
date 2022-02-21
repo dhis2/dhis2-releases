@@ -4,7 +4,8 @@
 
 -   [Support multiple users offline](https://jira.dhis2.org/browse/ANDROAPP-653)
 
--   [x] [Allow the user to "refresh" to get last updated data from server](https://jira.dhis2.org/browse/ANDROAPP-4331)
+-   Data sync
+    -  [x] [Allow the user to "refresh" to get last updated data from server](https://jira.dhis2.org/browse/ANDROAPP-4331)
 
 -   Data Entry Features and User Experience
     -  [Improve Re-Open flow in events](https://jira.dhis2.org/browse/ANDROAPP-4610)
