@@ -8,8 +8,7 @@
     -  [x] Replace existing line listing functionality in old event reports.
     -  [x] Include multiple repeating events linelists
     -  [x] Include 'created by' and 'last updated by' dimensions. 
-    -  [x] Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions
-
+    -  [x] Include enrollment date, event date, and incident date.
 -   Local data use/Micro planning
 
     -   Google Earth Engine import in Maps
