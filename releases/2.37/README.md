@@ -6,6 +6,7 @@
 
 - The `/api/userCredentials` API endpoint is removed. API users should use the `/api/users` and `/api/userLookup` API endpoints instead.
 - The APIs related to charts (`/api/charts`) and report tables (`/api/reportTables`) are removed. Consumers should use the Visualization API instead (`/api/visualizations`). Other existing endpoints that make any kind of reference to Chart and Report Table will now reference Visualization.
+- `GET /systemSettings` returning JSONP (`Accept=application/javascript`) was removed
 
 ## Authorities
 
