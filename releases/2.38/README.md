@@ -31,7 +31,6 @@
 
 ## Authorities
 
-
 ## Audit
 
 ## Migrations (Chart and ReportTable)
@@ -49,3 +48,13 @@ DROP TABLE IF EXISTS reporttable CASCADE;
 DROP TABLE IF EXISTS dashboarditem_reporttables CASCADE;
 
 Once that is finished you are ready to try again the upgrade to DHIS2 2.38.
+
+## Analytics
+
+As part of this version, we are releasing a new Event Visualizer application.
+This application requires additional event analytics attributes which reflect new database columns.
+Because of that, this release requires the re-generation of the analytics tables.
+Basically, two steps have to be executed in order to avoid errors in the analytics applications.
+
+1. Go to `Data Administration` -> `Maintenance`, check `Clear analytics tables` and click on `Perform maintenance`
+2. After step `1.` is completed, go to `Data Administration` -> `Analytics Tables` and click on `Start Export`
