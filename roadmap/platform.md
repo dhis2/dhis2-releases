@@ -4,9 +4,9 @@
 
 -   Master facility list
 
-    -   [ ] Org unit profile configuration UI.
-    -   [ ] Org unit split and merge UI.
-    -   [ ] User data output max organisation unit level.
+    -   Org unit profile configuration UI.
+    -   Org unit split and merge UI.
+    -   User data output max organisation unit level.
 
 -   Platform
 
@@ -15,11 +15,11 @@
 
 -   TEI Ownership based analytics
 
-    -   [ ] Update to org unit component to include ownership
+    -   Update to org unit component to include ownership
 
 -   Maintenance
 
-    -   [ ] Bulk metadata sharing backend API. [Maintenance app]
+    -   Bulk metadata sharing backend API. [Maintenance app]
 
 -   New Data entry application and data quality
 
@@ -27,11 +27,11 @@
 
 -   Data use
 
-    -   [ ] Add reporting start date to the organisation unit, which applies to reporting rates.
+    -   Add reporting start date to the organisation unit, which applies to reporting rates.
 
 -   System admin
 
-    -   [ ] Add request ID to log statements.
+    -   Add request ID to log statements.
 
 ### 2.39
 
