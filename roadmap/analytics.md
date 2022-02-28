@@ -11,8 +11,7 @@
     -  [x] Include enrollment date, event date, and incident date.
 -   Local data use/Micro planning
 
-    -   Google Earth Engine import in Maps
-    -   Vector Tiles in Maps
+    -   [x] Vector Tiles in Maps
     -   [x] Catchment area for facilities - two geometries for one org unit in Maps
     -   [x] Backend support for two geometries for one org units
     -   [x] Develop plan and roadmap for the WHO immunization application functionality
@@ -48,6 +47,7 @@
 
 -   Data use/Micro planning
 
+    -   Google Earth Engine import in Maps
     -   Implementation of deckGL in Maps
     -   Flow Maps development
     -   Google earth engine structures maps layers.
