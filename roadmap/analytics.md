@@ -16,7 +16,6 @@
     -   [x] Backend support for two geometries for one org units
     -   [x] Develop plan and roadmap for the WHO immunization application functionality
     -   [x] Google earth building/structurs layer in maps
-    -   
 
 -   TEI ownership based analytics
 
