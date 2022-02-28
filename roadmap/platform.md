@@ -4,36 +4,34 @@
 
 -   Master facility list
 
-    -   Org unit profile configuration UI.
-    -   Org unit split and merge UI.
-    -   User data output max organisation unit level.
+    -   [ ] Org unit profile configuration UI.
+    -   [ ] Org unit split and merge UI.
+    -   [ ] User data output max organisation unit level.
 
 -   Platform
 
-    -   App platform conversion (convert apps not using app platform).
-    -   Continuous app releases/delivery and infrastructure.
-    -   Architecture forum, develop strategy for platform infrastructure improvements.
+    -   [x] App platform conversion (convert apps not using app platform). [Data Entry][Event Reports]
+    -   [x] Improved continuous app releases/delivery and infrastructure.
 
 -   TEI Ownership based analytics
 
-    -   Update to org unit component to include ownership
+    -   [ ] Update to org unit component to include ownership
 
 -   Maintenance
 
-    -   Bulk metadata sharing backend API. [Maintenance app]
+    -   [ ] Bulk metadata sharing backend API. [Maintenance app]
 
 -   New Data entry application and data quality
 
-    -   New Data entry app. [DQ][single data entry] [Remove Struts][offline] [Filter org units]
+    -   [x] New Data entry app. [DQ][single data entry] [Remove Struts][offline] [Filter org units]
 
 -   Data use
 
-    -   Add reporting start date to the organisation unit, which applies to reporting rates.
-    -   [Update the push analysis job to utilize dashboard print and sharing features](https://jira.dhis2.org/browse/DHIS2-12101)
+    -   [ ] Add reporting start date to the organisation unit, which applies to reporting rates.
 
 -   System admin
 
-    -   Add request ID to log statements.
+    -   [ ] Add request ID to log statements.
 
 ### 2.39
 
@@ -54,6 +52,9 @@
     -   Enhanced time-based calculations (cumulative indicators)
     -   Easy integration of tracker program indicators with aggregate for over categorized data
     -   Add organizational unit aggregation levels to indicators
+
+-   Data Use
+    -   [Update the push analysis job to utilize dashboard print and sharing features](https://jira.dhis2.org/browse/DHIS2-12101)
 
 -   Scheduling
     -   Run analytics for one dataset or one program
