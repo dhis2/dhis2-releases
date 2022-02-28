@@ -11,11 +11,11 @@
     -  [x] Include enrollment date, event date, and incident date.
 -   Local data use/Micro planning
 
-    -   [x] Vector Tiles in Maps
-    -   [x] Catchment area for facilities - two geometries for one org unit in Maps
-    -   [x] Backend support for two geometries for one org units
-    -   [x] Develop plan and roadmap for the WHO immunization application functionality
-    -   [x] Google earth building/structurs layer in maps
+    -  [x] Vector Tiles in Maps
+    -  [x] Catchment area for facilities - two geometries for one org unit in Maps
+    -  [x] Backend support for two geometries for one org units
+    -  [x] Develop plan and roadmap for the WHO immunization application functionality
+    -  [x] Google earth building/structurs layer in maps
 
 -   TEI ownership based analytics
 
