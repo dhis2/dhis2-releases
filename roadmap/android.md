@@ -38,9 +38,12 @@
 
 
 ### 2.39 / 2.7
+
 **Development**
+
 -   Data Entry
     -   [Support file value type](https://jira.dhis2.org/browse/ANDROAPP-1992)
+
 -   Stability and Performance
     -   [Option to sync ASA](https://jira.dhis2.org/browse/ANDROAPP-2959)
     -   [DB trimming](https://jira.dhis2.org/browse/ANDROAPP-2912)
@@ -50,6 +53,7 @@
 -   Self reporting (TEI App)
     -   Platform for authenticating from TEI credentials
     -   TEI App
+
 -   Mobile Implementation Support
     -   [Support app distribution version control](https://jira.dhis2.org/browse/ANDROAPP-2912)
     -   [Request sync from outside the App](https://jira.dhis2.org/browse/ANDROAPP-2899)
@@ -59,13 +63,16 @@
 
 -   Offline Analytics
     -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
+
 -   Notifications & Messaging
     -   [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
     -   [DHIS2 Messaging](https://jira.dhis2.org/browse/ANDROAPP-694)
+
 -   LMIS
     -   Stock management - Fast Scanning of items (LMIS)
     -   Item Catalog (LMIS)
     -   Bluetooth temperature data monitoring (LMIS)
+
 -   EMIS
     -   Bulk data entry (EMIS)
 
@@ -77,10 +84,12 @@
 -   Self reporting (TEI App) - _Prototype_
     -   Platform for authenticating from TEI credentials (**dependency** platform)
     -   TEI App
+
 -   LMIS - Requirements / UX/UI design
     -   Stock management - Fast Scanning of items
     -   Item Catalog
     -   Bluetooth temperature data monitoring
+
 -   EMIS - Requirements / UX/UI design
     -   Bulk data entry (EMIS)
 
@@ -88,11 +97,13 @@
 
 -   Review UX/UI
     -   [Implement TEI centered UI and flow](https://jira.dhis2.org/browse/ANDROAPP-4019)
+
 -   [Task screen](https://jira.dhis2.org/browse/ANDROAPP-3427)
 -   [Support multimedia](https://jira.dhis2.org/browse/ANDROAPP-3697)
 -   NFC
     -   Read/write patient card (with config parameter for not storing patient data)
     -   Bulk data transfer device-device
+
 -   Trigger data entry from Maps
 
 
@@ -100,9 +111,11 @@
 
 -   Offline Analytics
     -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
+
 -   LMIS
     -   Stock management - Fast Scanning of items (LMIS)
     -   Item Catalog (LMIS)
     -   Bluetooth temperature data monitoring (LMIS)
+
 -   EMIS
     -   Bulk data entry (EMIS)
