@@ -10,7 +10,7 @@ The branches will be modified directly in GitHub, so make sure you sanity-check 
 source push_<xxx>
 ```
 
-### Some defenitions
+### Some definitions
 
 **Versioned application**:
 
