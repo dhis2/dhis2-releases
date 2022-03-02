@@ -5,8 +5,7 @@ echo "Updating lists of toggling apps and continuous delivery versions..."
 
 # FTA="lib/feature_toggling_apps"
 # CDA="lib/continuous_delivery_apps"
-# toggling_readme="https://raw.githubusercontent.com/dhis2/dhis2-core/master/dhis-2/dhis-web/dhis-web-apps/README.md"
-toggling_readme="https://raw.githubusercontent.com/dhis2/dhis2-core/toggle-up1/dhis-2/dhis-web/dhis-web-apps/README.md"
+toggling_readme="https://raw.githubusercontent.com/dhis2/dhis2-core/master/dhis-2/dhis-web/dhis-web-apps/README.md"
 versions=()
 
 
@@ -38,7 +37,7 @@ function process_line() {
                 then
                     echo -n "${c} " >> $FTA
                     echo -n "${c} " | sed 's/git.*\/\(.*\)\.git/\1/' >> $CDA
-                    app="$(echo "${c}" | sed 's/git.*\/\(.*\)\.git/\1/')" 
+                    app="$(echo "${c}" | sed 's/git.*\/\(.*\)\.git/\1/')"
                     contver=""
                 else
                     if [[ "$c" == "master" ]]
@@ -68,7 +67,7 @@ function process_line() {
             echo "" >> $CDA
 
         fi
-    fi 
+    fi
 
 
 }

@@ -5,7 +5,7 @@ readonly TEMP="./temp_$$"
 readonly PUSH="${PWD}/push_$$"
 readonly FTA="${SCRIPT_DIR}/resources/feature_toggling_apps"
 readonly CDA="${SCRIPT_DIR}/resources/continuous_delivery_apps"
-mkdir "${SCRIPT_DIR}/resources"
+mkdir -p "${SCRIPT_DIR}/resources"
 
 source ${SCRIPT_DIR}/lib/bash_setup.sh
 source ${SCRIPT_DIR}/lib/release_lib.sh
@@ -53,13 +53,13 @@ function process_core {
                 app_cd_version=$(cat "$CDA" | grep $app_name | sed "s;.*$CORE_BRANCH:\([^ ]*\).*;\1;")
                 sed -i "s:${app_name}[^\"]*\":${app_name}#${app_cd_version}:" "${bundle_path}"
             else
-                sed -i "s:${app_name}[^\"]*\":${app_name}#${PATCH_BRANCH}:" "${bundle_path}"
+                sed -i "s:${app_name}[^\"]*\":${app_name}#${PATCH_BRANCH}\":" "${bundle_path}"
             fi
         done
 
         # commits and tags
         git add "${bundle_path}"
-        git commit -m "chore: lock app versions to tag ${PATCH_BRANCH}"
+        git commit -m "chore: lock app versions to branch ${PATCH_BRANCH}"
         prepare_push "$PATCH_BRANCH"
 
 

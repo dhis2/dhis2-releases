@@ -23,7 +23,7 @@ function clone {
 
     if [[ "$branch" != "" ]]; then
         echo "cloning ${repo} branch ${branch} to ${path}"
-        git clone -q "${repo}" --branch ${branch} --single-branch "${path}"
+        git clone -c advice.detachedHead=false -q "${repo}" --branch ${branch} "${path}"
     else
         echo "cloning ${repo} to ${path}"
         git clone -q "${repo}" "${path}"
@@ -55,7 +55,7 @@ function app_branch_name {
     # unless it is a feature-toggling app; in which case the branch is aways master
 
 
-    if [[ " ${toggling_app_repos[@]} " =~ " $1 " ]]; then
+    if [[ " ${toggling_app_repos[*]} " =~ " $1 " ]]; then
       if [[ "$1" =~ "core-resources-app" ]]; then
         echo "FINAL"
       else
@@ -79,10 +79,6 @@ function app_branch_name {
 
 }
 
-function patch_branch_name {
-    # turns 2.31.3 into `patch/2.31.3`
-    echo "${PATCH_BRANCH_PREFIX}${REL_VERSION}"
-}
 
 function core_branch_name {
     local LHS=${REL_VERSION%%.*}
@@ -117,4 +113,15 @@ function get_new_master {
     local NEXT_SNAPSHOT="2.${NEXT_VERSION}"
 
     echo "$NEXT_SNAPSHOT"
+}
+
+function patch_branch_name {
+    # turns 2.31.3 into `patch/2.31.3`
+    echo "${PATCH_BRANCH_PREFIX}${REL_VERSION}"
+}
+
+function previous_patch_branch {
+    # turns 2.31.3 into `patch/2.31.2`
+    local LAST_REL=$(get_last_patch)
+    echo "${PATCH_BRANCH_PREFIX}${LAST_REL}"
 }
