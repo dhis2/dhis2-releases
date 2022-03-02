@@ -9,6 +9,7 @@
     -  [x] Include multiple repeating events linelists
     -  [x] Include 'created by' and 'last updated by' dimensions. 
     -  [x] Include enrollment date, event date, and incident date.
+
 -   Local data use/Micro planning
 
     -  [x] Vector Tiles in Maps
