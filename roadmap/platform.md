@@ -5,6 +5,7 @@
 - Master facility list
 
     - User data output max organisation unit level.
+
 - Platform
     - DHIS 2 version notification system.
     - Bulk metadata sharing backend API.
@@ -16,6 +17,7 @@
 - Data quality
     - Individual data integrity checks.
     - YAML-based data integrity checks.
+
 - Data store API improvements
     - Object/value filtering.
     - Field filtering.
@@ -52,14 +54,17 @@
 -   Master facility list
 
     -   Org unit analytics maintenance app updates.
+
 -   Platform
     -   New DHIS 2 web app portal, replace old portal with Javascript-based portal.
     -   New login app.
     -   Renaming of apps and customization of UI labels with custom translation bundles.
     -   Remove Struts completely from the system.
+
 -   Maintenance app
 
     -   New Maintenance app, gradually rebuilt and released.
+
 -   Data use/quality
     -   Push analytics with dashboard print and sharing access control.
     -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer).
