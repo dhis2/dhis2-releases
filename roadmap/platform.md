@@ -2,76 +2,84 @@
 
 ### 2.38
 
--   Master facility list
+- Master facility list
 
-    -   Org unit profile configuration UI.
-    -   Org unit split and merge UI.
-    -   User data output max organisation unit level.
+    - User data output max organisation unit level.
 
--   Platform
+- Platform
+    - DHIS 2 version notification system.
+    - Bulk metadata sharing backend API.
+    - Request ID in log statements.
+    - Geometry value type for metadata attributes.
+    - Log levels configurable in dhis.conf.
+    - Input identifier schemes for data values API.
 
-    -   App platform conversion (convert apps not using app platform).
-    -   Continuous app releases/delivery and infrastructure.
-    -   Architecture forum, develop strategy for platform infrastructure improvements.
+- Data quality
+    - Individual data integrity checks.
+    - YAML-based data integrity checks.
 
--   TEI Ownership based analytics
+- Data store API improvements
+    - Object/value filtering.
+    - Field filtering.
+    - Sort order.
+    - Paging.
 
-    -   Update to org unit component to include ownership
 
--   Maintenance
-
-    -   Bulk metadata sharing backend API. [Maintenance app]
-
--   New Data entry application and data quality
-
-    -   New Data entry app. [DQ][single data entry] [Remove Struts][offline] [Filter org units]
-
--   Data use
-
-    -   Add reporting start date to the organisation unit, which applies to reporting rates.
-    -   [Update the push analysis job to utilize dashboard print and sharing features](https://jira.dhis2.org/browse/DHIS2-12101)
-
--   System admin
-
-    -   Add request ID to log statements.
 
 ### 2.39
+
+- Platform
+    - New data entry web app.
+    - Improved continuous app releases/delivery and infrastructure.
+    - Reporting start date for organisation unit.
+
+- Master facility list
+    - Org unit profile configuration UI.
+    - Org unit split and merge UI.
+    - Propose and approve org unit workflow UI.
+    - Multi-select option sets in data entry and analytics.
+
+- Integration
+    - Event subscription/notification system for metadata.
+
+- Maintenance app
+    - Bulk metadata sharing.
+
+- System admin
+    - Add request ID to log statements.
+
+
+### 2.40
 
 -   Master facility list
 
     -   Org unit analytics maintenance app updates.
-    -   Propose and approve org unit workflow.
 
 -   Platform
-
-    -   New DHIS 2 web app portal, replace old portal with Javascript-based portal. [Platform]
-
--   Maintenance
-
-    -   New Maintenance app (gradually rebuilt and released).
-    -   Multiple select for org unit group sets/dimensional analytics. [Asia]
-    -   Multi-select option sets. [Global]
-    -   Enhanced time-based calculations (cumulative indicators)
-    -   Easy integration of tracker program indicators with aggregate for over categorized data
-    -   Add organizational unit aggregation levels to indicators
-
--   Scheduling
-    -   Run analytics for one dataset or one program
-
-### 2.40
-
--   Platform
-
-    -   Renaming of apps and customization of UI labels. Custom translation bundles.
+    -   New DHIS 2 web app portal, replace old portal with Javascript-based portal.
     -   New login app.
+    -   Renaming of apps and customization of UI labels with custom translation bundles.
     -   Remove Struts completely from the system.
 
--   Data Use/DQ
+-   Maintenance app
 
-    -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer). [MFL]
-    -   WHO annual data quality app/report. [DQ]
+    -   New Maintenance app, gradually rebuilt and released.
+
+-   Data use/quality
+    -   Push analytics with dashboard print and sharing access control.
+    -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer).
+    -   WHO annual data quality app/report.
+
+
+### Always Ongoing
+
+- Performance improvements.
+- Bug fixes and stability.
+- Test coverage and test automation.
+- Extensibility.
+- Developer advocacy, resources and training material.
 
 ### Parking Lot
 
 -   Multi-calendar & time zone support.
--   Multiple org unit hierarchies (with support from other teams)
+-   Multiple org unit hierarchies (with support from other teams).

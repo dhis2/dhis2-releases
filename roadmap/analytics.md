@@ -8,15 +8,15 @@
     -  [x] Replace existing line listing functionality in old event reports.
     -  [x] Include multiple repeating events linelists
     -  [x] Include 'created by' and 'last updated by' dimensions. 
-    -  [x] Include enrollment date, event date, incident date, due/scheduled date, and last updated on time dimensions
+    -  [x] Include enrollment date, event date, and incident date.
 
 -   Local data use/Micro planning
 
-    -   Google Earth Engine import in Maps
-    -   Vector Tiles in Maps
-    -   [x] Catchment area for facilities - two geometries for one org unit in Maps
-    -   [x] Backend support for two geometries for one org units
-    -   [x] Develop plan and roadmap for the WHO immunization application functionality
+    -  [x] Vector Tiles in Maps
+    -  [x] Catchment area for facilities - two geometries for one org unit in Maps
+    -  [x] Backend support for two geometries for one org units
+    -  [x] Develop plan and roadmap for the WHO immunization application functionality
+    -  [x] Google earth building/structurs layer in maps
 
 -   TEI ownership based analytics
 
@@ -49,10 +49,9 @@
 
 -   Data use/Micro planning
 
+    -   Google Earth Engine import in Maps
     -   Implementation of deckGL in Maps
     -   Flow Maps development
-    -   Google earth engine structures maps layers.
-    -   Phase two of org unit profile based upon user feedback.
     -   Design public dashboards - public facing dashboards.
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
     -   Collect user feedback, scope out, and develop roadmap for V2 of offline PWA dashboards -
@@ -62,7 +61,7 @@
 -   On-the-fly indicator calculations
 
     -   Develop backend requirements for on-the-fly indicator calculations
-    -   Finalize design of on-the-fly indicator calculations
+    -   Dsign of on-the-fly indicator calculations
 
 ### 2.40
 
