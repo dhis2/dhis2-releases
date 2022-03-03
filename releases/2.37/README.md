@@ -44,16 +44,18 @@ Affected endpoints are:
 
 ## Migrations (Chart and ReportTable)
 
-Depending on the DHIS2 version you're updating from, you may face migration issues/errors.
-Please, find more details at https://jira.dhis2.org/browse/DHIS2-12601
+Depending on the DHIS2 version you're updating from, you may face migration issues/errors related to the removal of ReportTable and Chart tables.
+The failure could be caused by tables that are still present in very old versions of DHIS2. Even though they are not in usage they might still be referenced.
+This will cause errors when the migration scripts try to remove ReportTable and Chart tables because of the constraints present in those legacy tables.
+More details related to this issue can be found at https://jira.dhis2.org/browse/DHIS2-12601
 
-These problems are very likely caused by old/legacy tables that need to be dropped before migrating to DHIS2 2.37.
+Once those problems are identified and confirmed, a few legacy tables need to be dropped before attempting the migration to DHIS2 2.37.
 
-If you face those problems, please, execute the SQL statements below, directly in your PostgreSQL instance.
+Below we list the SQL statements that need to be executed directly in your PostgreSQL instance.
 
 DROP TABLE IF EXISTS chart CASCADE;
 DROP TABLE IF EXISTS charttranslations CASCADE;
 DROP TABLE IF EXISTS reporttable CASCADE;
 DROP TABLE IF EXISTS dashboarditem_reporttables CASCADE;
 
-Once that is finished you are ready to try again the upgrade to DHIS2 2.37.
+Assuming the statements are successfully executed you will be able to try the upgrade again.
