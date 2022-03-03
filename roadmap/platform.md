@@ -3,83 +3,76 @@
 ### 2.38
 
 - Master facility list
-
-    - User data output max organisation unit level.
+    -  [x] User data output max organisation unit level
 
 - Platform
-    - DHIS 2 version notification system.
-    - Bulk metadata sharing backend API.
-    - Request ID in log statements.
-    - Geometry value type for metadata attributes.
-    - Log levels configurable in dhis.conf.
-    - Input identifier schemes for data values API.
+    -  [x] DHIS 2 version notification system
+    -  [x] Bulk metadata sharing backend API
+    -  [x] Request ID in log statements
+    -  [x] Geometry value type for metadata attributes
+    -  [x] Log levels configurable in dhis.conf
+    -  [x] Input identifier schemes for data values API
 
 - Data quality
-    - Individual data integrity checks.
-    - YAML-based data integrity checks.
+    -  [x] Individual data integrity checks
+    -  [x] YAML-based data integrity checks
 
 - Data store API improvements
-    - Object/value filtering.
-    - Field filtering.
-    - Sort order.
-    - Paging.
-
+    -  [x] Object/value filtering
+    -  [x] Field filtering
+    -  [x] Sort order
+    -  [x] Paging
 
 
 ### 2.39
 
 - Platform
-    - New data entry web app.
-    - Improved continuous app releases/delivery and infrastructure.
-    - Reporting start date for organisation unit.
+    - New data entry web app
+    - Improved continuous app releases/delivery and infrastructure
+    - Reporting start date for organisation unit
 
 - Master facility list
-    - Org unit profile configuration UI.
-    - Org unit split and merge UI.
-    - Propose and approve org unit workflow UI.
-    - Multi-select option sets in data entry and analytics.
+    - Org unit profile configuration UI
+    - Org unit split and merge UI
+    - Propose and approve org unit workflow UI
+    - Multi-select option sets in data entry and analytics
 
 - Integration
-    - Event subscription/notification system for metadata.
+    - Event subscription/notification system for metadata
 
 - Maintenance app
-    - Bulk metadata sharing.
-
-- System admin
-    - Add request ID to log statements.
+    - Bulk metadata sharing
 
 
 ### 2.40
 
 -   Master facility list
-
-    -   Org unit analytics maintenance app updates.
+    -   Org unit analytics maintenance app updates
 
 -   Platform
-    -   New DHIS 2 web app portal, replace old portal with Javascript-based portal.
-    -   New login app.
-    -   Renaming of apps and customization of UI labels with custom translation bundles.
-    -   Remove Struts completely from the system.
+    -   New DHIS 2 web app portal, replace old portal with Javascript-based portal
+    -   New login app
+    -   Renaming of apps and customization of UI labels with custom translation bundles
+    -   Remove Struts completely from the system
 
 -   Maintenance app
-
-    -   New Maintenance app, gradually rebuilt and released.
+    -   New Maintenance app, gradually rebuilt and released
 
 -   Data use/quality
-    -   Push analytics with dashboard print and sharing access control.
-    -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer).
-    -   WHO annual data quality app/report.
+    -   Push analytics with dashboard print and sharing access control
+    -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
+    -   WHO annual data quality app/report
 
 
 ### Always Ongoing
 
-- Performance improvements.
-- Bug fixes and stability.
-- Test coverage and test automation.
-- Extensibility.
-- Developer advocacy, resources and training material.
+- Performance improvements
+- Bug fixes and stability
+- Test coverage and test automation
+- Extensibility
+- Developer advocacy, resources and training material
 
 ### Parking Lot
 
--   Multi-calendar & time zone support.
--   Multiple org unit hierarchies (with support from other teams).
+-   Multi-calendar & time zone support
+-   Multiple org unit hierarchies (with support from other teams)
