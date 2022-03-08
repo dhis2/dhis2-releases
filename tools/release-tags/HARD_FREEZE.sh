@@ -99,6 +99,8 @@ function process_apps {
             clone "${repo}" "${repo_path}" "$(app_branch_name $repo)"
             pushd "${repo_path}"
                 git checkout -b "${PATCH_BRANCH}"
+                # need to push an empty commit to ensure we trigger a build
+                git commit --allow-empty -m "chore(release-prepare): cut ${PATCH_BRANCH}"
                 prepare_push "${PATCH_BRANCH}"
             popd
         fi
