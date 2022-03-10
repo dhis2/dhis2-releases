@@ -5,10 +5,10 @@
 -   New event reports/event visualizer application phase one
 
     -  [x] New, more intuitive, user-interface
-    -  [x] Replace existing line listing functionality in old event reports.
+    -  [x] Replace existing line listing functionality in old event reports
     -  [x] Include multiple repeating events linelists
-    -  [x] Include 'created by' and 'last updated by' dimensions. 
-    -  [x] Include enrollment date, event date, and incident date.
+    -  [x] Include 'created by' and 'last updated by' dimensions
+    -  [x] Include enrollment date, event date, and incident date
 
 -   Local data use/Micro planning
 
