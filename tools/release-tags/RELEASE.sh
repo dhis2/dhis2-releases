@@ -10,7 +10,7 @@ source ./lib/release_lib.sh
 readonly PATCH_BRANCH_PREFIX="patch/"
 readonly core_repo="git@github.com:dhis2/dhis2-core.git"
 readonly REL_VERSION=$1
-readonly PATCH_BRANCH=$(PATCH_BRANCH_name)
+readonly PATCH_BRANCH=$(patch_branch_name)
 
 declare app_repos
 # Array of repos that handle version compatibility by
