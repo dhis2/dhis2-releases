@@ -6,6 +6,11 @@
 
 ## TRACKER AND EVENT FEATURES
 
+**Improvements to Tracker program working lists:** The functionality for working lists for Tracker programs have been expanded to be similar to those of Event working lists, and Capture app now allows  to be configured, saved, shared, deleted and updated through the user interface. 
+
+Screenshot 1 | Screenshot 2 | Docs | [DHIS2-9275](https://jira.dhis2.org/browse/DHIS2-9275)
+
+**Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
 
 
 ## PLATFORM FEATURES
