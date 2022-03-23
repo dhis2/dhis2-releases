@@ -53,7 +53,7 @@ Assuming the statements are successfully executed you will be able to try the up
 
 ## Analytics
 
-As part of this version, we are releasing a new Event Visualizer application.
+As part of this version, we are including changes to support a new Line Listing application.
 This application requires additional event analytics attributes which reflect new database columns.
 Because of that, this release requires the re-generation of the analytics tables.
 Basically, two steps have to be executed in order to avoid errors in the analytics applications.
