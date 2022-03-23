@@ -53,9 +53,9 @@ Once those problems are identified and confirmed, a few legacy tables need to be
 
 Below we list the SQL statements that need to be executed directly in your PostgreSQL instance.
 
-DROP TABLE IF EXISTS chart CASCADE;
 DROP TABLE IF EXISTS charttranslations CASCADE;
-DROP TABLE IF EXISTS reporttable CASCADE;
+DROP TABLE IF EXISTS reporttabletranslations CASCADE;
 DROP TABLE IF EXISTS dashboarditem_reporttables CASCADE;
+DROP TABLE IF EXISTS dashboarditem_charts CASCADE;
 
 Assuming the statements are successfully executed you will be able to try the upgrade again.

@@ -44,10 +44,10 @@ Once those problems are identified and confirmed, a few legacy tables need to be
 
 Below we list the SQL statements that need to be executed directly in your PostgreSQL instance.
 
-DROP TABLE IF EXISTS chart CASCADE;
 DROP TABLE IF EXISTS charttranslations CASCADE;
-DROP TABLE IF EXISTS reporttable CASCADE;
+DROP TABLE IF EXISTS reporttabletranslations CASCADE;
 DROP TABLE IF EXISTS dashboarditem_reporttables CASCADE;
+DROP TABLE IF EXISTS dashboarditem_charts CASCADE;
 
 Assuming the statements are successfully executed you will be able to try the upgrade again.
 
@@ -55,8 +55,10 @@ Assuming the statements are successfully executed you will be able to try the up
 
 As part of this version, we are including changes to support a new Line Listing application.
 This application requires additional event analytics attributes which reflect new database columns.
-Because of that, this release requires the re-generation of the analytics tables.
-Basically, two steps have to be executed in order to avoid errors in the analytics applications.
+The new columns should be added into the analytics tables automatically.
+But if, for some reason, you face errors related to any of the new columns (`storedby`, `createdbyusername`, `createdbyname`, `createdbylastname`, `createdbydisplayname`, `lastupdatedbyusername`, `lastupdatedbyname`, `lastupdatedbylastname` or `lastupdatedbydisplayname`), please follow the steps below.
+
+Two steps have to be executed in order to avoid those errors during the analytics export job.
 
 1. Go to `Data Administration` -> `Maintenance`, check `Clear analytics tables` and click on `Perform maintenance`
 2. After step `1.` is completed, go to `Data Administration` -> `Analytics Tables` and click on `Start Export`
