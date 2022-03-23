@@ -51,7 +51,7 @@ More details related to this issue can be found at https://jira.dhis2.org/browse
 
 Once those problems are identified and confirmed, a few legacy tables need to be dropped before attempting the migration to DHIS2 2.37.
 
-Below we list the SQL statements that need to be executed directly in your PostgreSQL instance.
+Below we list the SQL statements that need to be executed directly in your PostgreSQL instance. These SQL statements are applicable if your starting DHIS 2 version is between 2.24 and 2.31 (inclusive)
 
 DROP TABLE IF EXISTS charttranslations CASCADE;
 DROP TABLE IF EXISTS reporttabletranslations CASCADE;
