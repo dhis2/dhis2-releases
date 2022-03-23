@@ -1,5 +1,9 @@
 # 2.38 Upgrade Notes
 
+## Java Support
+
+- Java version 11 (JDK or JRE version 11) is now the minimum supported version.
+
 ## Database
 
 ## API
@@ -15,7 +19,9 @@
   by doing `<root>.response` to resolve the previous root from the 2.38 
   response.
  
-  **OBS!** In case of error responses this also entails an HTTP status code 
+  > **NOTE**
+  > 
+  > In case of error responses this also entails an HTTP status code 
   change from `200 OK` to `409 Conflict`.
   
   Affected endpoints are:
