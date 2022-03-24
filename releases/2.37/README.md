@@ -23,6 +23,11 @@ audit.database = on
 audit.logger = off
 ```
 
+## Patch-specific Changes
+
+### 2.37.5
+- `GET /systemSettings` returning JSONP (`Accept=application/javascript`) was removed
+
 ## Future API changes
 Please note that from 2.38 onwards several API endpoints slightly change
 their response root object to be in line with the majority of endpoints.
