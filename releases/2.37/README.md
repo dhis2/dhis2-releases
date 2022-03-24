@@ -6,7 +6,6 @@
 
 - The `/api/userCredentials` API endpoint is removed. API users should use the `/api/users` and `/api/userLookup` API endpoints instead.
 - The APIs related to charts (`/api/charts`) and report tables (`/api/reportTables`) are removed. Consumers should use the Visualization API instead (`/api/visualizations`). Other existing endpoints that make any kind of reference to Chart and Report Table will now reference Visualization.
-- `GET /systemSettings` returning JSONP (`Accept=application/javascript`) was removed
 
 ## Authorities
 
@@ -23,6 +22,11 @@ behavior and want to be futureproof it's recommended that you add these lines to
 audit.database = on
 audit.logger = off
 ```
+
+## Patch-specific Changes
+
+### 2.37.5
+- `GET /systemSettings` returning JSONP (`Accept=application/javascript`) was removed
 
 ## Future API changes
 Please note that from 2.38 onwards several API endpoints slightly change
