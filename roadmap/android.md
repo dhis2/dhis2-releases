@@ -2,41 +2,32 @@
 
 ### 2.38 / 2.6
 
--   [Support multiple users offline](https://jira.dhis2.org/browse/ANDROAPP-653)
+-   **Implementation Support Features**
+    -   [x] [Support multiple users offline](https://jira.dhis2.org/browse/ANDROAPP-653)
+    -   [x] [Add options in settings screen for program rules configuration troubleshooting](https://jira.dhis2.org/browse/ANDROAPP-1655)
+    
+-   **Tracker Features**
+    -   [x] [Break the glass](https://jira.dhis2.org/browse/ANDROAPP-657)
+    -   [x] [Make mandatory TEI search configurable](https://jira.dhis2.org/browse/ANDROAPP-4545)
+    -   [x] [Separate offline/online search flows](https://jira.dhis2.org/browse/ANDROAPP-4023)
 
--   Data sync
-    -  [x] [Allow the user to "refresh" to get last updated data from server](https://jira.dhis2.org/browse/ANDROAPP-4331)
+-   **Offline Analytics**
+    -   [x] [Support legends for tables in analytics](https://jira.dhis2.org/browse/ANDROAPP-4500)
 
--   Data Entry Features and User Experience
-    -  [Improve Re-Open flow in events](https://jira.dhis2.org/browse/ANDROAPP-4610)
-    -  [x] [Improve "Yes Only" data element design](https://jira.dhis2.org/browse/ANDROAPP-4493)
+-   **User Experience: Data Entry and Sync Features**
     -  [x] [Scan and display GS1 Data matrix QR codes (LMIS)](https://jira.dhis2.org/browse/ANDROAPP-4329)    -  
+    -  [x] [Allow the user to "refresh data" to get last updated data from server](https://jira.dhis2.org/browse/ANDROAPP-4331)
+    -  [x] [Improve "Yes Only" data element design](https://jira.dhis2.org/browse/ANDROAPP-4493)
     -  [x] [Render Icons in enrollment forms](https://jira.dhis2.org/browse/ANDROAPP-4258)
     -  [x] [Improve prevention of duplicating unique identifiers](https://jira.dhis2.org/browse/ANDROAPP-4250)
     -  [x] [Improve design fo datasets columns span](https://jira.dhis2.org/browse/ANDROAPP-3016)
     -  [x] [Show hint of OU selected when opening the OU hierarchy](https://jira.dhis2.org/browse/ANDROAPP-2520)
-    -  [Align events navigation bottom bar](https://jira.dhis2.org/browse/ANDROAPP-3651)
-    -  [Hide save button if form is not editable](https://jira.dhis2.org/browse/ANDROAPP-4613)
-    -  [Allow discarding changes in the form](https://jira.dhis2.org/browse/ANDROAPP-4545)
-    -  [New design for warnings/errors and completion dialogs](https://jira.dhis2.org/browse/ANDROAPP-4591)
+    -  [x] [Align events navigation bottom bar](https://jira.dhis2.org/browse/ANDROAPP-3651)
+    -  [x] [Hide save button if form is not editable](https://jira.dhis2.org/browse/ANDROAPP-4613)
+    -  [x] [Improve Save and Complete flow in events](https://jira.dhis2.org/browse/ANDROAPP-4610) - [Issue 2](https://jira.dhis2.org/browse/ANDROAPP-4545)
+    -  [x] [New design for warnings/errors and completion dialogs](https://jira.dhis2.org/browse/ANDROAPP-4591)
 
--   Mobile Implementation Support
-    -   [x] [Add options in settings screen for configuration troubleshooting](https://jira.dhis2.org/browse/ANDROAPP-1655)
-
--   Offline Analytics
-    -   [Support legends for tables in analytics](https://jira.dhis2.org/browse/ANDROAPP-4500)
-
--   Tracker Features
-    -   [Break the glass](https://jira.dhis2.org/browse/ANDROAPP-657)
-    -   [Make mandatory TEI search configurable](https://jira.dhis2.org/browse/ANDROAPP-4545)
-    -   Program Rule Engine (**dependency** Tracker/Backend)  
-    
--   Stability and Performance
-    -   Automatic testing of Web API endpoints (**dependency **Tracker/Backend & QA)
-    -   Review synchronization process (**dependency **Tracker/Backend/API)
-    -   [Separate offline/online search flows](https://jira.dhis2.org/browse/ANDROAPP-4023)
-
-
+       
 ### 2.39 / 2.7
 
 **Development**
