@@ -53,7 +53,7 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
 * **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
 * **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries. Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-12330)
 
-**Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This value could uniquely identify the client/app making the request or the API request itself. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
+**Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6494)
 
