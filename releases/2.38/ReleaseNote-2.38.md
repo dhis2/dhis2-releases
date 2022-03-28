@@ -10,7 +10,17 @@
 
 Screenshot 1 | Screenshot 2 | Docs | [DHIS2-9275](https://jira.dhis2.org/browse/DHIS2-9275)
 
+**Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
+
+Screenshot 1 | Screenshot 2 | Docs | [DHIS2-5345](https://jira.dhis2.org/browse/DHIS2-5345)
+
+
+
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
+* TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.
+Screenshot 1 | Screenshot 2 | Docs | [DHIS2-10950](https://jira.dhis2.org/browse/DHIS2-10950)
+* Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.
+Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [DHIS2-11617](https://jira.dhis2.org/browse/DHIS2-11617)
 
 
 ## PLATFORM FEATURES
