@@ -13,8 +13,6 @@ Screenshot 1 | Screenshot 2 | Docs | [DHIS2-9275](https://jira.dhis2.org/browse/
 **Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
 Screenshot 1 | Screenshot 2 | Docs | [DHIS2-12137](https://jira.dhis2.org/browse/DHIS2-12137)
 
-
-
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
 
 Screenshot 1 | Screenshot 2 | Docs | [DHIS2-5345](https://jira.dhis2.org/browse/DHIS2-5345)
@@ -22,15 +20,18 @@ Screenshot 1 | Screenshot 2 | Docs | [DHIS2-5345](https://jira.dhis2.org/browse/
 **New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
 Screenshot 1 | Screenshot 2 | [DHIS2-11806](https://jira.dhis2.org/browse/DHIS2-11806)
 
+**Data/Value type for Program Rule Variable:**
+Screenshot 1 | Screenshot 2 | [DHIS2-12096](https://jira.dhis2.org/browse/DHIS2-12096)
+
+
+
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
-* TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.
-  Screenshot 1 | Screenshot 2 | Docs | [DHIS2-10946](https://jira.dhis2.org/browse/DHIS2-10946)
-* Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.
-  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [DHIS2-11861](https://jira.dhis2.org/browse/DHIS2-11861)
-* Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.
-  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [DHIS2-11953](https://jira.dhis2.org/browse/DHIS2-11953)
-* Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.
-  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [DHIS2-12141](https://jira.dhis2.org/browse/DHIS2-12141)
+* TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  Screenshot 1 | Screenshot 2 | Docs | [DHIS2-10946](https://jira.dhis2.org/browse/DHIS2-10946)
+* Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [DHIS2-11861](https://jira.dhis2.org/browse/DHIS2-11861)
+* Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [DHIS2-11953](https://jira.dhis2.org/browse/DHIS2-11953)
+* "Add new" for Completed enrollments in Enrollment Widget  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [DHIS2-12141](https://jira.dhis2.org/browse/DHIS2-12141)
+
+* Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.  Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [DHIS2-12141](https://jira.dhis2.org/browse/DHIS2-12141)
 
 
 ## PLATFORM FEATURES
