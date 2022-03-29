@@ -97,7 +97,13 @@
     -   Easy integration of tracker program indicators with aggregate for categorized data
         -   Updating the functionality enabling linkages between individual and aggregate indicators
 
+-   Deduplication
+
+    -   Duplicate detection/comparison of tracked entity instances
+
 -   Stability and performance
+
+    -   Improve search for TEI performance
 
 ### 2.40
 
