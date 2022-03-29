@@ -28,6 +28,10 @@
 
     -   [ ] Enabling the easier introduction of external applications and widgets
 
+-   Relationships:
+
+    -   [ ] New model for configuring relationship attributes and data elements(data view)
+
 -   Capture app with full tracker functionality
 
     -   [x] Adding in the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
