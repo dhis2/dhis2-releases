@@ -37,6 +37,7 @@
     -   [x] Continued additions to the core based on learning from large scale Tracker implementations
     -   [ ] Support Android with WEB API automatic testing
     -   [x] Support Android with review of synchronization process
+    -   [x] Stabilize new tracker importer/exporter
 
 -   Analytics:
 
