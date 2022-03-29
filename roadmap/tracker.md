@@ -30,7 +30,7 @@
 
 -   Capture app with full tracker functionality
 
-    -   [x] Adding in relationships and scheduling of events to the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
+    -   [x] Adding in the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
 
 -   Stability and performance
 
