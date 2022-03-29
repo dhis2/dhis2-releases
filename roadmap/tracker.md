@@ -97,6 +97,8 @@
     -   Easy integration of tracker program indicators with aggregate for categorized data
         -   Updating the functionality enabling linkages between individual and aggregate indicators
 
+-   Stability and performance
+
 ### 2.40
 
 -   Deduplication
