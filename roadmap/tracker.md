@@ -52,7 +52,7 @@
     -   Health commodity catalog
         -   Functionality to support the creation of health commodity catalogs for supply chain products
     -   [x] Support for barcode and scanning
-        -   Making use of the GS1 data matrix, and full functionality through the Android application
+        -   Making use of the GS1 data matrix
 
 -   EMIS
 
