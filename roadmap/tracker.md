@@ -5,28 +5,28 @@
 -   Program Rules:
 
     -   [x] Maintenance improvements for program rules
-    -   Triggering of data to be saved from one stage to another
+    -   [ ] Triggering of data to be saved from one stage to another
     -   [x] Support Android team and backend for matching functionality
     -   [x] Add support for GS1 Data Matrix
         -   GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases
 
 -   Working lists:
 
-    -   UI for configuring and saving working lists
-    -   Design: Data elements in working lists
-    -   Design: Editable data elements from single stages
+    -   [X] UI for configuring and saving working lists
+    -   [ ] Design: Data elements in working lists
+    -   [ ] Design: Editable data elements from single stages
         -   These two design issues will be used to create line-listing data entry for groups of TEIs
 
 -   Deduplication:
 
-    -   UI support for detecting and merging duplicates - simple/automatic cases
+    -   [ ] UI support for detecting and merging duplicates - simple/automatic cases
         -   Making use of the deduplication capabilities added to the back end in 2.37
 
 -   Extensibility
 
 -   Plugin framework
 
-    -   [x] Enabling the easier introduction of external applicaation and widgets
+    -   [ ] Enabling the easier introduction of external applications and widgets
 
 -   Capture app with full tracker functionality
 
@@ -35,7 +35,7 @@
 -   Stability and performance
 
     -   [x] Continued additions to the core based on learning from large scale Tracker implementations
-    -   [x] Support Android with WEB API automatic testing
+    -   [ ] Support Android with WEB API automatic testing
     -   [x] Support Android with review of synchronization process
 
 -   Analytics:
@@ -56,14 +56,16 @@
 
 ### 2.39
 
+-   Referrals:
+
+    -   Allow one time referrals between org units.
+
 -   Program rules:
 
     -   Program rules across programs
         -   Enabling the creation of program rules that can take into consideration data from more than one program
     -   Managements
         -   Functionality that triggers decision support / recommended actions based on data from an event/multiple events
-    -   Integration with aggregate indicators
-        -   Additional functionality to improve linkages between the indidivudal and aggregate data models
 
 -   Working lists
 
