@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 readonly SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 readonly TEMP="./temp_$$"
@@ -51,7 +51,7 @@ function process_core {
             if [[ " ${continuous_delivery_apps[@]} " =~ "$app_name" ]]
             then
                 app_cd_version=$(cat "$CDA" | grep $app_name | sed "s;.*$CORE_BRANCH:\([^ ]*\).*;\1;")
-                sed -i "s:${app_name}[^\"]*\":${app_name}#${app_cd_version}:" "${bundle_path}"
+                sed -i "s:${app_name}[^\"]*\":${app_name}#${app_cd_version}\":" "${bundle_path}"
             else
                 sed -i "s:${app_name}[^\"]*\":${app_name}#${PATCH_BRANCH}\":" "${bundle_path}"
             fi

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 echo "Updating lists of toggling apps and continuous delivery versions..."
 
 # FTA="lib/feature_toggling_apps"
@@ -47,7 +46,8 @@ function process_line() {
                         #$CDA
                         if [[ "$contver" == "" ]]
                         then
-                            contver=$(git -c 'versionsort.suffix=-'     ls-remote --exit-code --refs --sort='version:refname' --tags "${columns[0]}" '*.*.*'     | tail --lines=1     | cut --delimiter='/' --fields=3)
+                            d2app="$(echo "${columns[0]}" | sed 's/:dhis2\//:d2-ci\//')"
+                            contver=$(git -c 'versionsort.suffix=-'     ls-remote --exit-code --refs --sort='version:refname' "${d2app}" 'v[1-9][0-9][0-9].*.*' | tail --lines=1 | cut --delimiter='/' --fields=3)
                         fi
                         if [[ "$contver" =~ v[1-9][0-9][0-9]\.[0-9]+\.[0-9]+ ]]
                         then
