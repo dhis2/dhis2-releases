@@ -2,6 +2,10 @@
 
 ## ANALYTICS FEATURES
 
+**New Line Listing application:** This new application is a massive improvement to making line list of tracked entities in DHIS2 over the event reports application. The new application replicated all of the line listing fuctionalities of the event reports app, ithas a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
+* Visualizing multiple repeating events: You are now able to produce a line list where you can visualize data from a single tracked entity that is enrolled in a repeating stage. You are now able to specify how many repeated stages you would like to see data from. This is useful for many health and education programs where the same data is captured repeatibly for a single patient or student over time by allowing you to visualize this data over time. 
+* New, tracker specific period demensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
+* Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollement or the user that has last updated the data for the tracked entity.
 
 
 ## TRACKER AND EVENT FEATURES
