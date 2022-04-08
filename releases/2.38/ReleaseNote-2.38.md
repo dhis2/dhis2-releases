@@ -86,7 +86,7 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
 
 **Informative data entry errors:**
 
-When aggregate data entry is blocked, different error messages are given for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
+The API gives different error messages for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-4674)
 
