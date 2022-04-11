@@ -2,10 +2,22 @@
 
 ## ANALYTICS FEATURES
 
-**New Line Listing application:** This new application is a massive improvement to making line list of tracked entities in DHIS2 over the event reports application. The new application replicated all of the line listing fuctionalities of the event reports app, ithas a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
-* Visualizing multiple repeating events: You are now able to produce a line list where you can visualize data from a single tracked entity that is enrolled in a repeating stage. You are now able to specify how many repeated stages you would like to see data from. This is useful for many health and education programs where the same data is captured repeatibly for a single patient or student over time by allowing you to visualize this data over time. 
-* New, tracker specific period demensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
-* Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollement or the user that has last updated the data for the tracked entity.
+**New Line Listing application:** This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
+* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. 
+* New, tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
+* Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
+
+Screenshot 1 | Screenshot 2 | Docs |
+
+**Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2.38 supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
+
+Screenshot 1 | Screenshot 2 | Docs |
+
+**Support for Google's Earch Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of building can be shown by catchment or org unit boundaries. 
+
+Screenshot 1 | Screenshot 2 | Docs |
+
+**Vector tiles support in Maps:** The Maps app now users and supports vector tiles. This should result in some performance improvements and updated underlying technology. 
 
 
 ## TRACKER AND EVENT FEATURES
