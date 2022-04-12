@@ -24,38 +24,40 @@ Screenshot 1 | Screenshot 2 | Docs |
 
 **Tracker program working lists improvements:** The functionality for working lists for Tracker programs has been expanded to be similar to those of Event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
-Screenshot 1 | Screenshot 2 | Docs | [DHIS2-9275](https://jira.dhis2.org/browse/DHIS2-9275)
+Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
-Screenshot 1 | Screenshot 2 | Docs | [DHIS2-12137](https://jira.dhis2.org/browse/DHIS2-12137)
+Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
 
-Screenshot 1 | Screenshot 2 | Docs | [DHIS2-5345](https://jira.dhis2.org/browse/DHIS2-5345)
+Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
 **New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
-Screenshot 1 | Screenshot 2 | [DHIS2-11806](https://jira.dhis2.org/browse/DHIS2-11806)
+Screenshot 1 | Screenshot 2 | [Jira](https://jira.dhis2.org/browse/DHIS2-11806)
 
-**Data/Value type for Program Rule Variable:**
-Screenshot 1 | Screenshot 2 | [DHIS2-12096](https://jira.dhis2.org/browse/DHIS2-12096)
+**Support for GS1 Data Matrix:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
+Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_rules_operators_functions) | [Jira](https://jira.dhis2.org/browse/DHIS2-12353)
+
+**Data/Value type for Program Rule Variable:** For the program rule variables with Source Type "Calculated value", the Maintenance app will offer the user to assign a value type. The default value type for calculated values will be text. For all other Program Rule Variable Source Types, the value type selection should not be visible, as the variable will inherit the type from the underlying data element or tracked entity attribute.
+Screenshot 1 | Screenshot 2 | [Jira](https://jira.dhis2.org/browse/DHIS2-12096)
 
 **Programs can remain open after attribute option end date:**
 A specified program can remain open after its related attribute option is closed.
-
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
 * TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  
-Screenshot 1 | Screenshot 2 | Docs | [DHIS2-10946](https://jira.dhis2.org/browse/DHIS2-10946)
+Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10946)
 * Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [DHIS2-11861](https://jira.dhis2.org/browse/DHIS2-11861)
+Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [Jira](https://jira.dhis2.org/browse/DHIS2-11861)
 * Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [DHIS2-11953](https://jira.dhis2.org/browse/DHIS2-11953)
-* "Add new" for Completed enrollments in Enrollment Widget  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [DHIS2-12141](https://jira.dhis2.org/browse/DHIS2-12141)
+Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [Jira](https://jira.dhis2.org/browse/DHIS2-11953)
+* "Add new" for Completed enrollments in Enrollment Widget: There can only be one active enrollment at a time, but if all enrollments is completed, there will  be an option to enroll the TEI in the program again in the enrollment widget, f the program allows more than one enrollment per TEI. If program does not allow more than one enrollment, the add new button will be disabled.
+Screenshot 1 | Screenshot 2 | [Docs]  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
 * Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [DHIS2-12141](https://jira.dhis2.org/browse/DHIS2-12141)
+Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
 
 ## PLATFORM FEATURES
@@ -91,6 +93,10 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 **Group set short name:** The indicator group set and category option group sets now have short name properties, which allows for precise and UI-friendly rendering. The short names are now used as column names in resource tables instead of names.
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
+
+**Add WEB_HOOK recipient to program notifications:** WEB_HOOK will add the capability of sending notification to a specific URL provided in messageTemplate field.
+
+Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10855)
 
 **Analytics cache is flushed after analytics runs:** After any scheduled or interactively run analytics table update completes, the analytics cache is flushed.
 
