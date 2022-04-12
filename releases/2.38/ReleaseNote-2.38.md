@@ -24,14 +24,14 @@ Screenshot 1 | Screenshot 2 | Docs |
 
 **Tracker program working lists improvements:** The functionality for working lists for Tracker programs has been expanded to be similar to those of Event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
-Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
+[Screenshot 1](images/Working_list.png) | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
 Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
 
-Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
+[Screenshot 1](images/Capture_DE_description.png) | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
 **New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
 Screenshot 1 | Screenshot 2 | [Jira](https://jira.dhis2.org/browse/DHIS2-11806)
