@@ -76,7 +76,7 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
 **ADX export:** The import/export app now allows data import and export using ADX.
 
-[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html] | [Jira](https://jira.dhis2.org/browse/DHIS2-4978)
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-4978)
 
 **Configurable log level:** Logging levels can now be configured in the `dhis.conf` configuration file on the package level. This means that you can specify the log level to output for specific frameworks and modules within DHIS 2 directly in the DHIS 2 configuration file.
 
@@ -102,9 +102,7 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10855)
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12072)
 
-**Informative data entry errors:**
-
-The API gives different error messages for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
+**Informative data entry errors:** The API gives different error messages for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-4674)
 
