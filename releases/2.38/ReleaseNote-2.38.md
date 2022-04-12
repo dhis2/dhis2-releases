@@ -39,7 +39,10 @@ Screenshot 1 | Screenshot 2 | [DHIS2-11806](https://jira.dhis2.org/browse/DHIS2-
 **Data/Value type for Program Rule Variable:**
 Screenshot 1 | Screenshot 2 | [DHIS2-12096](https://jira.dhis2.org/browse/DHIS2-12096)
 
+**Programs can remain open after attribute option end date:**
+A specified program can remain open after its related attribute option is closed.
 
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
 * TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  
@@ -69,6 +72,10 @@ Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/d
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
+**ADX export:** The import/export app now allows data import and export using ADX.
+
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html] | [Jira](https://jira.dhis2.org/browse/DHIS2-4978)
+
 **Configurable log level:** Logging levels can now be configured in the `dhis.conf` configuration file on the package level. This means that you can specify the log level to output for specific frameworks and modules within DHIS 2 directly in the DHIS 2 configuration file.
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-11898)
@@ -84,6 +91,16 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 **Group set short name:** The indicator group set and category option group sets now have short name properties, which allows for precise and UI-friendly rendering. The short names are now used as column names in resource tables instead of names.
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
+
+**Analytics cache is flushed after analytics runs:** After any scheduled or interactively run analytics table update completes, the analytics cache is flushed.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-12072)
+
+**Informative data entry errors:**
+
+The API gives different error messages for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
+
+[Jira](https://jira.dhis2.org/browse/DHIS2-4674)
 
 
 ### PLATFORM API FEATURES
