@@ -9,7 +9,7 @@
 
 **Configuration troubleshooting:** This feature is for administrators. The Android App incorporates an option in the settings screen for verifying some aspects of the DHIS2 configuration.
   - Language: the user will be able to change the language of the application user interface to identify lables, buttons or prompts with errors or without translation.
-  - Program rule validation: this vlaidator will check the program rules in the device and display configuration inconsitencies. 
+  - Program rule validation: this validator will check the program rules in the device and display configuration inconsitencies. 
 
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-1655) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
