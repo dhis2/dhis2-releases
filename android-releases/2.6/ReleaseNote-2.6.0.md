@@ -16,16 +16,16 @@
 
 ## TRACKER FEATURES
 
-**Break the glass:** If the program is configured with an access level of "Protected" and a search is done outside the user scope, a dialogue requesting a reason for acess will be displayed for the user to temporarily override the ownership privilege of the proram. This means, the user will gain access to the program related data.
+**Break the glass:** If the program is configured with an access level of "Protected" and a search is done outside the user scope, a dialogue requesting a reason for acess will be displayed for the user to temporarily override the ownership privilege of the program. This means, the user will gain access to the program related data.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-657) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Make mandatory TEI search configurable:** Using the Android Settings App (v2.2.0) it is possible to configure the mandatoriness of the TEI search before creating an enrollment. If the feature is enabled, the Android App will display a "create new" button after opening a program and a search won't be required.
+**Make mandatory TEI search configurable:** Searnching TEIs before creating is not mandatory now. Using the Android Settings App (v2.2.0) it is possible to configure the user flow for creating TEIs. If the feature is enabled, the Android App will display a "create new" button after opening a program and a search will be optional.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4545) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
 
-**Separate offline/online search flows:** To improve the response time in the search results, the Android App now searches offline first and then offers searching online as a second step. Searching outside the program is also available when the attributes used in the search are program AND Tracked Entity Type (TET) attributes.
+**Separate offline/online search flows:** To improve the response time in the search results, the Android App now searches offline first and displys ther results while makes an  online search as a second step, transparent to the user. Searching outside the program is offered as a second step when  the attributes used in the search contain at least one Tracked Entity Type (TET) attribute.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4023) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
@@ -38,12 +38,12 @@
 
 ## DATA ENTRY AND SYNC FEATURES
 
-**Scan and display GS1 Data matrix QR codes (LMIS):** If a field rendering is configured as QR, the Android App will also be able to capture GS1 Data Matrix codes. Used with d2:extractDataMatrixValue(key, dataMatrixText) program rule configuration, individual GS1 values will be render in the form field.
+**Scan and display GS1 Data matrix QR codes:** If an attribute or data element rendering type is configured as QR code, the Android App will be able to read and process the string as GS1 Data Matrix codes. Combined with the use of d2 funtions in program rules, the different fields of a GS1 code can be saved into different data elements or attributes (d2:extractDataMatrixValue(key, dataMatrixText)).
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4329) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
 
-**Allow the user to "refresh data" to get last updated data from server:** A refresh button is now located to trigger a granular synchronization in the following screens:
+**Allow the user to "refresh data" to get last updated data from server:** Users can now retrieve the latest data from the server before entering new data. A refresh button is now located to trigger a granular synchronization in the following screens:
 
 * Home
 * Search
@@ -55,41 +55,41 @@
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4331) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Improve "Yes Only" data element design:** The label 'Yes' next to the checkbox or radio button is not displayed.
+**Improve "Yes Only" data element design:** The label 'Yes' next to the checkbox or radio button has not removed.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4493) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Render Icons in enrollment forms:** When an enrollment section contains one or more Tracked Entity Attributes with option sets, the app is able to display them as a matrix or sequence of images.
+**Render Icons in enrollment forms:** The icon based data entry can now be used in enrollment forms. When an enrollment section contains one or more Tracked Entity Attributes with option sets and icons assigned, the app is able to display them as a matrix or sequence based on the section rendering type. In previous sections of the App this feature was only avaialble for Data elements.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4258) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Improve prevention of duplicating unique identifiers:** When searching by unique attributes and then creating a new enrollment, the app will not copy the values of the unique attributes. The uniqueness will be checked using an online search or locally.
+**Improve Save and Complete flow in events:** New dialogue boxes are displayed when saving an enrollment or event. The 'Re-open' button is now located in the details screen and it will be available only if the user has the correct authority (‘Uncomplete events’) to reopen a completed event. The "completion" concept and dialog is now more intuitive and user friendly.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-4250) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-4610) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Improve design fo datasets columns span:** The redimendioning arrows are now fixed at the upper-left corner of the screen.
+**New design for warnings/errors and completion dialogs:** Error and Warning messages have been improved to provide the user more and better information. The new dialogues when saving, allow the user to discard changes, save and correct later or keep editing the form to correct the values depending on the configuration.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3016) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
-
-**Show hint of OU selected when opening the OU hierarchy:** If an organisation unit is selected, when the hierarchy is displayed, all the ascending (parent) OUs will be in bold.
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-2520) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
-
-**Align events navigation bottom bar:** The details tab in the event navigation bar has been improved to provide a better user experience.
-
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3651) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-4591) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
 **Hide save button if form is not editable:** If an event is expired or with view only rights, the 'save' button will be hidden.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4613) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**Improve Save and Complete flow in events:** New dialogue boxes are displayed when saving an enrollment or event. The 'Re-open' button is now located in the details screen and it will be available only if the user has the correct authority (‘Uncomplete events’) to reopen a completed event.
+**Improve design fo datasets columns span:** The redimendioning arrows are now fixed at the upper-left corner of the screen .
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-4610) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3016) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
-**New design for warnings/errors and completion dialogs:** Error and Warning messages have been improved to provide the user more and better information. The new dialogues when saving, allow the user to discard changes, save and correct later or keep editing the form to correct the values.
+**Show hint of OU selected when opening the OU hierarchy:** If an organisation unit is selected, when the hierarchy is displayed, all the ascending (parent) OUs will be in bold to help the user navigate the previous selection.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-4591) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-2520) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+
+**Improve prevention of duplicating unique identifiers:** When searching by unique attributes and then creating a new enrollment, if the search returns a result, the app will not persist the values of the unique attributes into the enrollment form. 
+
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-4250) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
+
+**Align events navigation bottom bar:** The details tab in the event navigation bar has been improved to provide a better user experience.
+
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3651) | [Screenshot]() | [Screenshot 2]() | [Documentation]()
 
 ## MAINTENANCE 
 
