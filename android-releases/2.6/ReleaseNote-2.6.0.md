@@ -79,15 +79,15 @@
 
 **Hide save button if form is not editable:** If an event is expired or with view only rights, the 'save' button will be hidden.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-4613) | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-4613) | [Documentation](https://docs.dhis2.org/en/use/android-app/program-features.html#capture_app_common_features_complete_reopen)
 
 **Align events navigation bottom bar:** The details tab in the event navigation bar has been improved to provide a better user experience.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-3651) | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-3651) | [Documentation](https://docs.dhis2.org/en/use/android-app/program-features.html#navigation-bar)
 
 **Improve "Yes Only" data element design:** The label 'Yes' next to the checkbox or radio button has been removed.
 
-[Jira](https://jira.dhis2.org/browse/ANDROAPP-4493) | [Documentation]()
+[Jira](https://jira.dhis2.org/browse/ANDROAPP-4493) | [Documentation](https://docs.dhis2.org/en/use/android-app/visual-configurations.html#capture_app_visual_render)
 
 ## MAINTENANCE 
 
