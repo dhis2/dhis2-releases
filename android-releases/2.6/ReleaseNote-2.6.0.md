@@ -30,7 +30,7 @@
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4545) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.6/Release+Feature+Cards/Android-2-6-Mandatory-TEI-Search-Config.png) | [Documentation]()
 
-**Separate offline/online search flows:** To improve the response time in the search results, the Android App now searches offline first and displys ther results while makes an  online search as a second step, transparent to the user. Searching outside the program is offered as a second step when  the attributes used in the search contain at least one Tracked Entity Type (TET) attribute.
+**Separate offline/online search flows:** To improve the response time in the search results, the Android App now searches offline first and displays the results while makes an  online search as a second step, transparent to the user. Searching outside the program is offered as a second step when the attributes used in the search contain at least one Tracked Entity Type (TET) attribute.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4023) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.6/Release+Feature+Cards/Android-2-6-Search-flow.png) | [Documentation]()
 
@@ -85,7 +85,7 @@
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-3651) | [Documentation]()
 
-**Improve "Yes Only" data element design:** The label 'Yes' next to the checkbox or radio button has not removed.
+**Improve "Yes Only" data element design:** The label 'Yes' next to the checkbox or radio button has been removed.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4493) | [Documentation]()
 
