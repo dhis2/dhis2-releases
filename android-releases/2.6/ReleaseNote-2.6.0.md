@@ -26,7 +26,7 @@
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-657) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.6/Release+Feature+Cards/Android-2-6-Break-the-glass.png) | [Documentation]()
 
-**Make mandatory TEI search configurable:** Searnching TEIs before creating is not mandatory now. Using the Android Settings App (v2.2.0) it is possible to configure the user flow for creating TEIs. If the feature is enabled, the Android App will display a "create new" button after opening a program and a search will be optional.
+**Make mandatory TEI search configurable:** Searching TEIs before creating is not mandatory now. Using the Android Settings App (v2.2.0) it is possible to configure the user flow for creating TEIs. If the feature is enabled, the Android App will display a "create new" button after opening a program and a search will be optional.
 
 [Jira](https://jira.dhis2.org/browse/ANDROAPP-4545) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.6/Release+Feature+Cards/Android-2-6-Mandatory-TEI-Search-Config.png) | [Documentation]()
 
