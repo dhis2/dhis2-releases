@@ -13,7 +13,7 @@ Screenshot 1 | Screenshot 2 | Docs |
 
 Screenshot 1 | Screenshot 2 | Docs |
 
-**Support for Google's Earch Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of building can be shown by catchment or org unit boundaries. 
+**Support for Google's Earth Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of building can be shown by catchment or org unit boundaries. 
 
 Screenshot 1 | Screenshot 2 | Docs |
 
