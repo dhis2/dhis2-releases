@@ -27,7 +27,7 @@ _Example expression in indicators: #{EX2jBdKe4Yq}.aggregationType(COUNT)_ Descri
 
 **Indicator minDate and maxDate:** A minimum and/or maximum date may be specified for fetching a data element for an indicator. This can be useful when data semantics change from time to time requiring different calculations for the same result. It allows an indicator to report consistently across these changes by changing the way the indicator is calculated through time. Don't forget, the periodOffset function (since 2.36) can also be used to include data from a different period in an indicator expression.
 
-_Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(2021-1-1).maxDate(2021-6-30)_ Description: ER Teachers Trained.minDate(2021-1-1).maxDate(2021-6-30) -> Only value between Jan. 1, 2021 and June 30, 2021 for ER Teachers Trained will be used in the indicator calculation. 
+_Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(2021-1-1).maxDate(2021-6-30)_ Description: ER Teachers Trained.minDate(2021-1-1).maxDate(2021-6-30) -> Only values between Jan. 1, 2021 and June 30, 2021 for ER Teachers Trained will be used in the indicator calculation. 
 
 _Example periodOffset expression in indicators: #{EX2jBdKe4Yq} + #{EX2jBdKe4Yq}.periodOffset(-1) + #{EX2jBdKe4Yq}.periodOffset(-2)_ Description: ER Teachers Trained + Description: ER Teachers Trained +  ER Teachers Trained.periodOffset(-1) + ER Teachers Trained.periodOffset(-2) -> Sum of the ER Teachers Trained over the last three months relative to the period selection in the analytics app being used to visualize this value. 
 
