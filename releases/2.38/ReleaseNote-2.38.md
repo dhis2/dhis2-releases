@@ -20,20 +20,21 @@ Screenshot 1 | Screenshot 2 | Docs |
 **Vector tiles support in Maps:** The Maps app now users and supports vector tiles. This should result in some performance improvements and updated underlying technology. 
 
 **Indicator aggregationType override:** An indicator may specify an aggregation type, overriding the default type assigned to a data element. For example if a data element has aggregation type SUM, an indicator may also report the value by AVERAGE, COUNT, FIRST, LAST, MIN, MAX, etc.  
+
 _Example expression in indicators: #{EX2jBdKe4Yq}.aggregationType(COUNT)_ Description: ER Teachers Trained.aggregationType(COUNT) 
 
  Docs
 
 **Indicator minDate and maxDate:** A minimum and/or maximum date may be specified for fetching a data element for an indicator. This can be useful when data semantics change from time to time requiring different calculations for the same result. It allows an indicator to report consistently across these changes by changing the way the indicator is calculated through time. Don't forget, the periodOffset function (since 2.36) can also be used to include data from a different period in an indicator expression.
-_Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(2021-1-1).maxDate(2021-6-30)_ Description: ER Teachers Trained.minDate(2021-1-1).maxDate(2021-6-30) -> Only value between Jan. 1, 2021 and June 30, 2021 for ER Teachers Trained will be used in the indicator calculation. 
 
- Docs
+_Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(2021-1-1).maxDate(2021-6-30)_ Description: ER Teachers Trained.minDate(2021-1-1).maxDate(2021-6-30) -> Only value between Jan. 1, 2021 and June 30, 2021 for ER Teachers Trained will be used in the indicator calculation. 
 
 _Example periodOffset expression in indicators: #{EX2jBdKe4Yq} + #{EX2jBdKe4Yq}.periodOffset(-1) + #{EX2jBdKe4Yq}.periodOffset(-2)_ Description: ER Teachers Trained + Description: ER Teachers Trained +  ER Teachers Trained.periodOffset(-1) + ER Teachers Trained.periodOffset(-2) -> Sum of the ER Teachers Trained over the last three months relative to the period selection in the analytics app being used to visualize this value. 
 
  Docs
 
 **Indicator subexpressions (for 2.38.1):** Indicators can count the number of organizational units where a data element compares in a specific way with a fixed value.
+
 _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi} > 100, 1, 0) )_ Description: subExpression(if(IDSR Malaria>100,1,0)) -> Counts the number of organizational units where more than 100 Malaria cases were reported within a given period defined in the analytics app being used to visualize this value.
 
  Docs
