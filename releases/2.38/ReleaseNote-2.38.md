@@ -125,6 +125,17 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10855)
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-4674)
 
+**Validation rule and Predictor tests for Data set and Program assignments:** Validation rules and predictors now have the option to calculate values differently depending on organisation unit assignments to data sets and programs. This adds to the ability introduced in 2.37 for these expressions to test for organisation unit ancestors, so they can apply differently to organisation unit subtrees, and for organisation unit groups, so they can apply differently depending on organisation unt group assignments. All these can be used to apply validation rules and predictors differently depending on the organisation unit.
+
+Docs
+
+**Predictor option to aggregate lower-level organisation unit data:** Predictors now have the option of aggregating lower-level organisation unit data, rather than always doing so. This helps when the organisation unit hierarchy is ragged or when data is collected at different organisation unit levels.
+
+Docs
+
+**Predictors run in a set order:** Predictors running in a scheduled job will run in a determined order. This allows predictors in the same job to use the results of other predictors as input.
+
+Docs
 
 ### PLATFORM API FEATURES
 
