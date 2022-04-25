@@ -28,15 +28,13 @@
 
 ### 2.39
 
--   New Line listing application
+-   Phase two of new Event Reports/Event Visualizer Application
+    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458)
+    -   Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
+    -   Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
 
-    -   Phase two of new Event Reports/Event Visualizer Application
-        -   Incorporate cross program line lists
-        -   Include due/scheduled date and last updated on time dimensions. 
-    -    Development of TEI endpoint - Enables cross program analytics
-
--  Continued design for new event reports/visualizer
-    -   Design cross program linelisting outputs
+-  Continued design for new line listing
+    -   Design relationship derived line lists
     -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots.
     -   Scope and design selection and outputs/aggregations for organizational unit data element type.
 
@@ -45,8 +43,8 @@
     -   Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
-    -   Cummulative values pivot tables 
-    -   Dashboard automatic presentation mode
+    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
+    -   Dashboard slide show presentation mode [jira](https://jira.dhis2.org/browse/DHIS2-13038)
     -   Google Earth Engine import in Maps
     -   Implementation of deckGL in Maps
     -   Design public facing dashboards
