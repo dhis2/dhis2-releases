@@ -20,7 +20,7 @@
 
 -   TEI ownership based analytics
 
-    -   Design for ownership org unit dimension
+    -   Design for ownership org unit dimension -> Will be implemented in 2.39 program indicators.
 
 -   On-the-fly indicator calculations
 
@@ -42,14 +42,14 @@
 
 -   TEI ownership based analytics
 
-    -   Ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
+    -   Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
     -   Cummulative values pivot tables 
     -   Dashboard automatic presentation mode
     -   Google Earth Engine import in Maps
     -   Implementation of deckGL in Maps
-    -   Design public dashboards - public facing dashboards.
+    -   Design public facing dashboards
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
     -   Collect user feedback, scope out, and develop roadmap for V2 of offline PWA dashboards -
         -   Full support for offline google earth engine maps
@@ -66,6 +66,7 @@
     -   Relationship derived line lists
     -   Development of relationship endpoint - Enables line listing derived from relationships
     -   Reproduce appropriate chart types from old EV into new ER/EV Application
+  
 -   On-the-fly indicator calculations
 
     -   On-the-fly indicator calculations in data visualizer pivot tables.
@@ -81,4 +82,4 @@
     -   Backend requirements for audit trail analysis
 
 ### 2.41
-Develop- backend and front end for outputs for organizational unit data element type.
+-  Develop backend and front end for outputs for organizational unit data element type.
