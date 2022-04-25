@@ -45,12 +45,10 @@
 -   Data use/Micro planning
     -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
     -   Dashboard slide show presentation mode [jira](https://jira.dhis2.org/browse/DHIS2-13038)
-    -   Google Earth Engine import in Maps
-    -   Implementation of deckGL in Maps
+    -   Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
     -   Design public facing dashboards
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
     -   Collect user feedback, scope out, and develop roadmap for V2 of offline PWA dashboards -
-        -   Full support for offline google earth engine maps
         -   Performance improvements.
 
 -   On-the-fly indicator calculations
