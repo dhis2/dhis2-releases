@@ -46,6 +46,11 @@
 -   Stability and performance
 
     -   Improve search for TEI performance
+    -   Code improvements in the importer to avoid common bugs
+    -   Improve importer caching
+    -   Improve stability and performance when importing with non-uid id schemes
+    -   Improve how FileResources are linked to improve stability and security
+    -   Extend dynamic indexing functionaility to include managing and evaluating existing indexes
     -   Support Android with WEB API automatic testing
 
 ### 2.40
