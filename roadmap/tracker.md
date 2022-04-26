@@ -1,59 +1,5 @@
 ## Tracker
 
-### 2.38
-
--   Program Rules:
-
-    -   [x] Maintenance improvements for program rules
-    -   [ ] Triggering of data to be saved from one stage to another
-    -   [x] Support Android team and backend for matching functionality
-    -   [x] Add support for GS1 Data Matrix
-        -   GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases
-
--   Working lists:
-
-    -   [X] UI for configuring and saving working lists
-    -   [ ] Design: Data elements in working lists
-    -   [ ] Design: Editable data elements from single stages
-        -   These two design issues will be used to create line-listing data entry for groups of TEIs
-
--   Extensibility
-
--   Plugin framework
-
-    -   [ ] Enabling the easier introduction of external applications and widgets
-
--   Relationships:
-
-    -   [ ] New model for configuring relationship attributes and data elements(data view)
-
--   Capture app with full tracker functionality
-
-    -   [x] Adding in the rest of the tracker functionality that was added in 2.37, and releasing the Capture app in beta form
-
--   Stability and performance
-
-    -   [x] Continued additions to the core based on learning from large scale Tracker implementations
-
-    -   [x] Support Android with review of synchronization process
-    -   [x] Stabilize new tracker importer/exporter
-
--   Analytics:
-
-    -   [x] Ownership org unit components and backend
-
--   LMIS
-
-    -   [ ] Health commodity catalog
-        -   Functionality to support the creation of health commodity catalogs for supply chain products
-    -   [x] Support for barcode and scanning
-        -   Making use of the GS1 data matrix
-
--   EMIS
-
-    -   [x] Data Model
-        -   Confirming the recommended data model for education use cases which will enable such functionality as bulk enrollment; bulk data entry for grades and attendance; modeling of school / classes / sections, etc.
-
 ### 2.39
 
 -   Feature parity in Capture app
@@ -142,3 +88,8 @@
         -   Bulk enrollment
         -   Attendance in line listing
         -   Concurrent enrollments
+
+-   LMIS
+
+    -   [ ] Health commodity catalog
+        -   Functionality to support the creation of health commodity catalogs for supply chain products
