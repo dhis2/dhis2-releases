@@ -32,11 +32,6 @@
     -   Use of improvements to working lists and analytics in recommended configuration
         -   Updating the recommended configuration for education to make use of new working lists / line listing / analytics
 
--   Analytics
-
-    -   Easy integration of tracker program indicators with aggregate for categorized data
-        -   Updating the functionality enabling linkages between individual and aggregate indicators
-
 -   Deduplication
 
     -   Duplicate detection/comparison of tracked entity instances
