@@ -38,9 +38,9 @@
     -   UI support for detecting and merging duplicates - simple/automatic cases
         -   Making use of the deduplication capabilities added to the back end in 2.37
 
--   Plugin framework
+-   Extensibility
 
-    -   Enabling the easier introduction of external applications and widgets
+    -   Plugins: Enabling the easier introduction of external applications and widgets
     -   Allow reuse of self-contained tracker components in other apps
 
 -   Stability and performance
