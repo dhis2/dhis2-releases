@@ -44,7 +44,7 @@
 
 -   Data use/Micro planning
     -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
-    -   Dashboard slide show presentation mode [jira](https://jira.dhis2.org/browse/DHIS2-13038)
+    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101)
     -   Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
     -   Design public facing dashboards
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
@@ -72,6 +72,7 @@
     -   Generic framework to embed custom web app outputs to dashboards
     -   Possibility to view standard report directly in the dashboard
     -   Services/tools to better support public web portals
+    
 
 -   Audit trail analysis
 
