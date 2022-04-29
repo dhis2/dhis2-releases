@@ -99,7 +99,7 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
 **Configurable log level:** Logging levels can now be configured in the `dhis.conf` configuration file on the package level. This means that you can specify the log level to output for specific frameworks and modules within DHIS 2 directly in the DHIS 2 configuration file.
 
-[Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-11898)
+[Docs](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-master/installation.html#log-level-configuration) | [Jira](https://jira.dhis2.org/browse/DHIS2-11898)
 
 **Account disable notifications:** When automatically disabling users through the disable users schedulded job, an email notification can be sent to the relevant user. The number of days before the notification can be defined in the job configuration. This is useful to give users a chance to log in before their account is disabled.
 
