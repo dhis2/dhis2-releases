@@ -93,7 +93,7 @@ Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/d
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
-**ADX export:** The import/export app now allows data import and export using ADX.
+**ADX export:** The import/export app now allows data import and export using the ADX data format.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-4978)
 
@@ -113,27 +113,11 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
 
-**Add WEB_HOOK recipient to program notifications:** WEB_HOOK will add the capability of sending notification to a specific URL provided in messageTemplate field.
-
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10855)
-
-**Analytics cache is flushed after analytics runs:** After any scheduled or interactively run analytics table update completes, the analytics cache is flushed.
+**Analytics cache handling:** The cache for analytics data is now automatically flushed when the analytics database tables are updated. This ensures that analytics queries read the latest data from the analytics data and reduce the time lag between analytics tables being updated and data appearing in data visualizations.  
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12072)
 
-**Informative data entry errors:** The API gives different error messages for different reasons that data entry cannot be completed. These errors also appear in the Data Entry app.
-
-[Jira](https://jira.dhis2.org/browse/DHIS2-4674)
-
-**Validation rule and Predictor tests for Data set and Program assignments:** Validation rules and predictors now have the option to calculate values differently depending on organisation unit assignments to data sets and programs. This adds to the ability introduced in 2.37 for these expressions to test for organisation unit ancestors, so they can apply differently to organisation unit subtrees, and for organisation unit groups, so they can apply differently depending on organisation unt group assignments. All these can be used to apply validation rules and predictors differently depending on the organisation unit.
-
-Docs
-
-**Predictor option to aggregate lower-level organisation unit data:** Predictors now have the option of aggregating lower-level organisation unit data, rather than always doing so. This helps when the organisation unit hierarchy is ragged or when data is collected at different organisation unit levels.
-
-Docs
-
-**Predictors run in a set order:** Predictors running in a scheduled job will run in a determined order. This allows predictors in the same job to use the results of other predictors as input.
+**Predictor job order:** Predictors running in a scheduled job will run in a determined order. This allows predictors in the same job to use the results of other predictors as input.
 
 Docs
 
@@ -149,14 +133,6 @@ Docs
 **Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
 
 Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6494)
-
-
-
-
-
-
-
-
 
 ### PLATFORM DEVELOPER FEATURES
 
