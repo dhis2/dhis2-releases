@@ -50,6 +50,13 @@ function prepare_push {
     echo "git push -q origin '$refspec'" >> $PUSH
 }
 
+function prepare_delete {
+    local refspec=$1
+
+    echo "cd $(pwd)" >> $PUSH
+    echo "git push -q origin --delete '$refspec'" >> $PUSH
+}
+
 function app_branch_name {
     # turns 2.31 or 2.31.1.12.23.3 into `v31`
     # unless it is a feature-toggling app; in which case the branch is aways master
@@ -97,12 +104,26 @@ function get_next_patch {
 }
 
 function get_last_patch {
-    # turns 2.31.1 into `2.31.2`
 
-    local BRANCH=$(core_branch_name)
-    local NEXT_PATCH=$((${REL_VERSION#$BRANCH.} - 1))
-    local NEXT_SNAPSHOT="$BRANCH.${NEXT_PATCH}"
-    echo "$NEXT_SNAPSHOT"
+    if [ ${#REL_VERSION} -gt 7 ]
+    then
+        # turns 2.31.1.1 into `2.31.1`
+        # turns 2.31.1.4 into `2.31.1.3`
+        local lastHF=$((${REL_VERSION##[^-]*\.} - 1))
+        if [ $lastHF -eq 0 ]
+        then
+            echo ${REL_VERSION%\.[^.]*}
+        else
+            echo "${REL_VERSION%\.[^.]*}.$lastHF"
+        fi
+    else
+        # turns 2.31.1 into `2.31.2`
+        local BRANCH=$(core_branch_name)
+        local NEXT_PATCH=$((${REL_VERSION#$BRANCH.} - 1))
+        local NEXT_SNAPSHOT="$BRANCH.${NEXT_PATCH}"
+        echo "$NEXT_SNAPSHOT"
+
+    fi
 }
 
 function get_new_master {
@@ -125,3 +146,17 @@ function previous_patch_branch {
     local LAST_REL=$(get_last_patch)
     echo "${PATCH_BRANCH_PREFIX}${LAST_REL}"
 }
+
+
+# REL_VERSION="2.36.9"
+# get_last_patch
+# core_branch_name
+# REL_VERSION="2.36.9.1"
+# get_last_patch
+# core_branch_name
+# REL_VERSION="2.37.0.2"
+# get_last_patch
+# core_branch_name
+# REL_VERSION="2.31.1.4"
+# get_last_patch
+# core_branch_name
