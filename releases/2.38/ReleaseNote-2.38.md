@@ -94,10 +94,6 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9897)
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-12328)
 
-**Cancel analytics table jobs:** You can now cancel (stop) analytics tables jobs while they are running. This is useful in order to stop long-running jobs without having to wait for them to complete.
-
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
-
 **ADX export:** The import/export app now allows data import and export using the ADX data format.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-4978)
@@ -108,23 +104,19 @@ Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
 **Account disable notifications:** When automatically disabling users through the disable users schedulded job, an email notification can be sent to the relevant user. The number of days before the notification can be defined in the job configuration. This is useful to give users a chance to log in before their account is disabled.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-11589)
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/maintaining-the-system/scheduling.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-11589)
 
 **Data value set input scheme:** Input schemes is now supported for the data value sets API endpoint, allowing you to import data using the code field to reference metadata.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 
 **Group set short name:** The indicator group set and category option group sets now have short name properties, which allows for precise and UI-friendly rendering. The short names are now used as column names in resource tables instead of names.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
+[Jira](https://jira.dhis2.org/browse/DHIS2-7317)
 
 **Analytics cache handling:** The cache for analytics data is now automatically flushed when the analytics database tables are updated. This ensures that analytics queries read the latest data from the analytics data and reduce the time lag between analytics tables being updated and data appearing in data visualizations.  
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12072)
-
-**Predictor job order:** Predictors running in a scheduled job will run in a determined order. This allows predictors in the same job to use the results of other predictors as input.
-
-Docs
 
 ### PLATFORM API FEATURES
 
@@ -137,7 +129,11 @@ Docs
 
 **Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6494)
+[Docs](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-238/installation.html#log-configuration) | [Jira](https://jira.dhis2.org/browse/DHIS2-6494)
+
+**Cancel analytics table jobs:** You can now cancel (stop) analytics tables jobs while they are running. This is useful in order to stop long-running jobs without having to wait for them to complete.
+
+Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
 ### PLATFORM DEVELOPER FEATURES
 
