@@ -70,18 +70,20 @@ A specified program can remain open after its related attribute option is closed
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
-**Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
-* TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  
-Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-10946)
-* Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [Jira](https://jira.dhis2.org/browse/DHIS2-11861)
-* Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [Jira](https://jira.dhis2.org/browse/DHIS2-11953)
-* "Add new" for Completed enrollments in Enrollment Widget: There can only be one active enrollment at a time, but if all enrollments is completed, there will  be an option to enroll the TEI in the program again in the enrollment widget, f the program allows more than one enrollment per TEI. If program does not allow more than one enrollment, the add new button will be disabled.
-Screenshot 1 | Screenshot 2 | [Docs]  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
+**Capture app continously released:** The Capture app will from 2.38 be released continously on the app hub. Bug fixes and new features will therefore be available to be downloaded and integrated at the time they are needed, without upgrading the rest of the application. The first updated version of the Capture will be available on the app hub shortly after the 2.38.0 release.
 
+**Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added. The new functionality can be tested by installing the updated Capture app from app hub, and opting in to using the tracker features in the Capture app. Only superusers or users with access to changing the program metadata will have the opt-in functionality available. The new tracker functionality that can be tested by opting in is listed here:
+
+* TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  
+[Jira](https://jira.dhis2.org/browse/DHIS2-10946)
+* Scheduling event widget form: Instead of reporting an event the user can select to schedule an event later. This is done with a scheduled date. The dialog will open with a suggested scheduled date, and this date is determined by a set of rules from program stage configuration and program configuration.  
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [Jira](https://jira.dhis2.org/browse/DHIS2-11861)
+* Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.  
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [Jira](https://jira.dhis2.org/browse/DHIS2-11953)
+* "Add new" for Completed enrollments in Enrollment Widget: There can only be one active enrollment at a time, but if all enrollments is completed, there will  be an option to enroll the TEI in the program again in the enrollment widget, f the program allows more than one enrollment per TEI. If program does not allow more than one enrollment, the add new button will be disabled.
+[Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 * Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.  
-Screenshot 1 | Screenshot 2 | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
 
 ## PLATFORM FEATURES
