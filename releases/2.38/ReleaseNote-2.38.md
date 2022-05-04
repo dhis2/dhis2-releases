@@ -53,16 +53,20 @@ Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-
 [Screenshot 1](images/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
 **New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
+
 [Jira](https://jira.dhis2.org/browse/DHIS2-11806)
 
 **Support for GS1 Data Matrix:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
+
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_rules_operators_functions) | [Jira](https://jira.dhis2.org/browse/DHIS2-12353)
 
 **Data/Value type for Program Rule Variable:** For the program rule variables with Source Type "Calculated value", the Maintenance app will offer the user to assign a value type. The default value type for calculated values will be text. For all other Program Rule Variable Source Types, the value type selection should not be visible, as the variable will inherit the type from the underlying data element or tracked entity attribute.
+
 [Jira](https://jira.dhis2.org/browse/DHIS2-12096)
 
 **Programs can remain open after attribute option end date:**
 A specified program can remain open after its related attribute option is closed.
+
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added:
