@@ -7,15 +7,15 @@
 * New, tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
 * Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
 
-Screenshot 1 | Screenshot 2 | Docs |
+[Screenshot 1](images/2.38 linelist 2.png) 
 
 **Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2.38 supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
 
-Screenshot 1 | Screenshot 2 | Docs |
+[Screenshot 1](images/2.38 catchment area.png) | Docs |
 
 **Support for Google's Earth Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of buildings can be shown by catchment or org unit boundaries. 
 
-Screenshot 1 | Screenshot 2 | Docs |
+[Screenshot 1](images/2.38 structures 1.png) | [Screenshot 2](images/2.38 structures 2.png) | Docs |
 
 **Vector tiles support in Maps:** The Maps app now users and supports vector tiles. This should result in some performance improvements and updated underlying technology. 
 
@@ -23,7 +23,7 @@ Screenshot 1 | Screenshot 2 | Docs |
 
 _Example expression in indicators: #{EX2jBdKe4Yq}.aggregationType(COUNT)_ Description: ER Teachers Trained.aggregationType(COUNT) 
 
- Docs
+[Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
 **Indicator minDate and maxDate:** A minimum and/or maximum date may be specified for fetching a data element for an indicator. This can be useful when data semantics change from time to time requiring different calculations for the same result. It allows an indicator to report consistently across these changes by changing the way the indicator is calculated through time. Don't forget, the periodOffset function (since 2.36) can also be used to include data from a different period in an indicator expression.
 
@@ -31,13 +31,14 @@ _Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(20
 
 _Example periodOffset expression in indicators: #{EX2jBdKe4Yq} + #{EX2jBdKe4Yq}.periodOffset(-1) + #{EX2jBdKe4Yq}.periodOffset(-2)_ Description: ER Teachers Trained + Description: ER Teachers Trained +  ER Teachers Trained.periodOffset(-1) + ER Teachers Trained.periodOffset(-2) -> Sum of the ER Teachers Trained over the last three months relative to the period selection in the analytics app being used to visualize this value. 
 
- Docs
+ [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
 **Indicator subexpressions (for 2.38.1):** Indicators can count the number of organizational units where a data element compares in a specific way with a fixed value.
 
 _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi} > 100, 1, 0) )_ Description: subExpression(if(IDSR Malaria>100,1,0)) -> Counts the number of organizational units where more than 100 Malaria cases were reported within a given period defined in the analytics app being used to visualize this value.
 
- Docs
+ [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
+
 
 ## TRACKER AND EVENT FEATURES
 
