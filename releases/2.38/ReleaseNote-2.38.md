@@ -70,7 +70,7 @@ A specified program can remain open after its related attribute option is closed
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
-**Capture app continously released:** The Capture app will from 2.38 be released continously on the app hub. Bug fixes and new features will therefore be available to be downloaded and integrated at the time they are needed, without upgrading the rest of the application. The first updated version of the Capture will be available on the app hub shortly after the 2.38.0 release.
+**Capture app continously released:** The Capture app will from 2.38 be released continously on the app hub. Bug fixes and new features will therefore be available to be downloaded and integrated at the time they are needed, without upgrading the rest of the application. The first updated version of the Capture app will be available on the app hub shortly after the 2.38.0 release. The app hub is accessed through the App management app.
 
 **Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added. The new functionality can be tested by installing the updated Capture app from app hub, and opting in to using the tracker features in the Capture app. Only superusers or users with access to changing the program metadata will have the opt-in functionality available. The new tracker functionality that can be tested by opting in is listed here:
 
