@@ -47,7 +47,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 [Screenshot 1](images/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
-Screenshot 1 | Screenshot 2 | Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
+[Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
 
