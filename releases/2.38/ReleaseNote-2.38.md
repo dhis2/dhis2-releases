@@ -3,19 +3,19 @@
 ## ANALYTICS FEATURES
 
 **New Line Listing application:** This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
-* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. [Screenshot 1](s3://content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](s3://content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
+* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
 * New, tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. [Screenshot](2.38linelisttimedemensions.png) 
 * Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
 
-[Screenshot](s3://content.dhis2.org/releases/screenshots/38/2.38_linelist_2.png) 
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_linelist_2.png) 
 
 **Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2.38 supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
 
-[Screenshot](s3://content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
 
 **Support for Google's Earth Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of buildings can be shown by catchment or org unit boundaries. 
 
-[Screenshot 1](s3://content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](s3://content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
 
 **Vector tiles support in Maps:** The Maps app now users and supports vector tiles. This should result in some performance improvements and updated underlying technology. 
 
@@ -44,14 +44,14 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 **Tracker program working lists improvements:** The functionality for working lists for Tracker programs has been expanded to be similar to those of Event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
-[Screenshot 1](s3://content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
 [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
 
-[Screenshot 1](s3://content.dhis2.org/releases/screenshots/38/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
 **New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
 
