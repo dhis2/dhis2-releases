@@ -416,7 +416,7 @@ Components: _[App] Dashboard_
 **[DHIS2-11790](https://jira.dhis2.org/browse/DHIS2-11790): Add code to create and edit dashboard**  
 Components: _[App] Dashboard_
 
-**[DHIS2-11250](https://jira.dhis2.org/browse/DHIS2-11250): Use MultiSelect from @dhis2/ui instead of <select multiple> on 'Min-max value generation' page**  
+**[DHIS2-11250](https://jira.dhis2.org/browse/DHIS2-11250): Use MultiSelect from @dhis2/ui instead of \<select multiple\> on 'Min-max value generation' page**  
 Components: _[App] Data administration_
 
 **[DHIS2-11599](https://jira.dhis2.org/browse/DHIS2-11599): Respect section config for data element grouping**  
