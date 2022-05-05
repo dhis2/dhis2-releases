@@ -90,7 +90,7 @@ A specified program can remain open after its related attribute option is closed
 
 **Version check notifications:** A new DHIS 2 version check notification service is introduced, which will send notifications in the form of DHIS 2 system inbox messages when newer versions of DHIS 2 has become available. This includes major and patch versions. This is useful to encourage sysadmins to upgrade DHIS 2 to keep their instance secure and up to date.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-9897)
+[Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/system-settings.html#system_update_notification_settings) | [Jira](https://jira.dhis2.org/browse/DHIS2-9897)
 
 **GeoJSON metadata attributes:** GeoJSON is now supported as value type for metadata attributes. This allows you to store any number of GeoJSON documents e.g. for organisation units.
 
