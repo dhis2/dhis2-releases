@@ -2,14 +2,15 @@
 
 ## ANALYTICS FEATURES
 
-**New Line Listing application:** This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
+**New Line Listing app:** This new app is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
+
 * Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
-* New, tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38linelisttimedemensions.png) 
+* New tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38linelisttimedemensions.png) 
 * Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_linelist_2.png) 
 
-**Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2.38 supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
+**Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2 now supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
 
@@ -17,15 +18,15 @@
 
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
 
-**Vector tiles support in Maps:** The Maps app now users and supports vector tiles. This should result in some performance improvements and updated underlying technology. 
+**Vector tiles support in Maps:** The Maps app now supports maps based on vector tiles. This leads to better performance and updated underlying technology. 
 
-**Indicator aggregationType override:** An indicator may specify an aggregation type, overriding the default type assigned to a data element. For example if a data element has aggregation type SUM, an indicator may also report the value by AVERAGE, COUNT, FIRST, LAST, MIN, MAX, etc.  
+**Indicator aggregation type override:** An indicator expression can now specify an aggregation type, overriding the default type assigned to a data element. For example if a data element has aggregation type SUM, an indicator may also report the value by AVERAGE or COUNT.  
 
 _Example expression in indicators: #{EX2jBdKe4Yq}.aggregationType(COUNT)_ Description: ER Teachers Trained.aggregationType(COUNT) 
 
 [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
-**Indicator minDate and maxDate:** A minimum and/or maximum date may be specified for fetching a data element for an indicator. This can be useful when data semantics change from time to time requiring different calculations for the same result. It allows an indicator to report consistently across these changes by changing the way the indicator is calculated through time. Don't forget, the periodOffset function (since 2.36) can also be used to include data from a different period in an indicator expression.
+**Indicator min and max date:** A min and/or max date may be specified for fetching a data element for an indicator. This can be useful when data semantics change from time to time requiring different calculations for the same result. It allows an indicator to report consistently across these changes by changing the way the indicator is calculated through time. The *period offset* function (since 2.36) can also be used to include data from a different period in an indicator expression.
 
 _Example minDate and maxDate expression in indicators: #{EX2jBdKe4Yq}.minDate(2021-1-1).maxDate(2021-6-30)_ Description: ER Teachers Trained.minDate(2021-1-1).maxDate(2021-6-30) -> Only values between Jan. 1, 2021 and June 30, 2021 for ER Teachers Trained will be used in the indicator calculation. 
 
@@ -33,7 +34,7 @@ _Example periodOffset expression in indicators: #{EX2jBdKe4Yq} + #{EX2jBdKe4Yq}.
 
  [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
-**Indicator subexpressions (for 2.38.1):** Indicators can count the number of organizational units where a data element compares in a specific way with a fixed value.
+**Indicator sub-expressions (for 2.38.1):** Indicators can count the number of organizational units where a data element compares in a specific way with a fixed value.
 
 _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi} > 100, 1, 0) )_ Description: subExpression(if(IDSR Malaria>100,1,0)) -> Counts the number of organizational units where more than 100 Malaria cases were reported within a given period defined in the analytics app being used to visualize this value.
 
@@ -42,37 +43,36 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 ## TRACKER AND EVENT FEATURES
 
-**Tracker program working lists improvements:** The functionality for working lists for Tracker programs has been expanded to be similar to those of Event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
+**Tracker program working list improvements:** Working lists for tracker programs has been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
-**Translation of Program Rule Actions in Tracker Capture and Capture app:** The content of program rule actions - the "Static text" that is being visualized to the users, can be translated and shown in Tracker programs.
+**Translation of program rule actions:** The content of program rule actions, the "static text" that is being visualized to the users, can be translated and shown in Tracker programs. This applies to both the Tracker Capture and Capture apps.
 [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
-**Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking an ‘i’ icon that displays after the data element name. The description is set in the Maintenance app and can be used to give more information about what to capture for the data item.
+**Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking the information icon that displays after the data element name. The description is set in the Maintenance app and can be used to provide more information about what to capture for the data item.
 
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
-**New org unit component implemented in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from d2-ui.
+**New org unit component in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from the *d2-ui* library.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-11806)
 
-**Support for GS1 Data Matrix:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding, and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
+**GS1 Data Matrix support:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_rules_operators_functions) | [Jira](https://jira.dhis2.org/browse/DHIS2-12353)
 
-**Data/Value type for Program Rule Variable:** For the program rule variables with Source Type "Calculated value", the Maintenance app will offer the user to assign a value type. The default value type for calculated values will be text. For all other Program Rule Variable Source Types, the value type selection should not be visible, as the variable will inherit the type from the underlying data element or tracked entity attribute.
+**Data/Value type for program rule variable:** For the program rule variables with source type *Calculated value*, the Maintenance app will offer the user to assign a value type. The default value type for calculated values will be text. For all other program rule variable source types, the value type selection should not be visible, as the variable will inherit the type from the underlying data element or tracked entity attribute.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12096)
 
-**Programs can remain open after attribute option end date:**
-A specified program can remain open after its related attribute option is closed.
+**Programs can remain open after attribute option end date:** A specified program can remain open after its related attribute option is closed.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#tracker_enter_programs_details) | [Jira](https://jira.dhis2.org/browse/DHIS2-12118)
 
-**Capture app continously released:** The Capture app will from 2.38 be released continously on the app hub. Bug fixes and new features will therefore be available to be downloaded and integrated at the time they are needed, without upgrading the rest of the application. The first updated version of the Capture app will be available on the app hub shortly after the 2.38.0 release. The app hub is accessed through the App management app.
+**Capture app continuously released:** The Capture app will from now on be released continuously on the App Hub. Bug fixes and new features will be made available for download and can be integrated at the time they are needed, without upgrading the entire DHIS2 application. The first updated version of the Capture app will become available on the App Hub shortly after the 2.38.0 release. The App Hub is accessed through the App management app.
 
-**Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added. The new functionality can be tested by installing the updated Capture app from app hub, and opting in to using the tracker features in the Capture app. Only superusers or users with access to changing the program metadata will have the opt-in functionality available. The new tracker functionality that can be tested by opting in is listed here:
+**Tracker features in Capture App:** In addition to the Tracker functionality that was added in 2.37 for closed beta testing, additional functionality has been added. The new functionality can be tested by installing the updated Capture app from App Hub, and opting in to using the tracker features in the Capture app. Only superusers or users with access to changing the program metadata will have the opt-in functionality available. The new tracker functionality that can be tested by opting in is listed here:
 
 * TEI profile widget: On the enrollment dashboard, you can view the tracked entity instance profile widget. Inside the profile widget you can view the key attributes values. Click the Edit button to make changes to the tracked entity instance profile. Editing the profile opens a dialog where the profile attributes can be changed.  
 [Jira](https://jira.dhis2.org/browse/DHIS2-10946)
@@ -135,7 +135,7 @@ A specified program can remain open after its related attribute option is closed
 
 **Cancel analytics table jobs:** You can now cancel (stop) analytics tables jobs while they are running. This is useful in order to stop long-running jobs without having to wait for them to complete.
 
-Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/scheduling.html#request-cancelling-a-running-jobs) | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
 ### PLATFORM DEVELOPER FEATURES
 
