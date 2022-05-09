@@ -9,6 +9,8 @@ Java 11 has been supported for DHIS 2 since version 2.35. This means that you ca
 As always, we recommend using an OpenJDK distribution of Java, due to the free and open source nature. OpenJDK 11 distributions are available on all major operating systems and is the default JDK on Ubuntu 20.04 LTS.
 
 ## Database
+- All legacy metadata attribute values tables are now removed. Those tables have `*attributevalues` postfix such as `categoryattributevalues` or `datasetattributevalues`.
+- In table `sqlview`, `not-null` constraint has been added to `type` and `cachestrategy` column. 
 
 ## API
 
