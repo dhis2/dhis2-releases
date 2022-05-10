@@ -5,9 +5,9 @@
 ## ANALYTICS FEATURES
 
 **New Line Listing app:** A new Line Listing app is developed for compatibility with DHIS 2.38 and will be released soon via the App Hub. This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features:
-* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. 
+* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student.  
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
-* New tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
+* New tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list.  
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38linelisttimedemensions.png) 
 * Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
 
@@ -85,9 +85,9 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#schedule-event-widget-form) | [Jira](https://jira.dhis2.org/browse/DHIS2-11861)
 * Quick actions in Enrollment Dashboard: The quick actions widget offers shortcuts for frequently used actions for the current enrollment, including creating an event and scheduling an event.  
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#quick-actions) | [Jira](https://jira.dhis2.org/browse/DHIS2-11953)
-* "Add new" for Completed enrollments in Enrollment Widget: There can only be one active enrollment at a time, but if all enrollments is completed, there will  be an option to enroll the TEI in the program again in the enrollment widget, f the program allows more than one enrollment per TEI. If program does not allow more than one enrollment, the add new button will be disabled.
+* "Add new" for Completed enrollments in Enrollment Widget: There can only be one active enrollment at a time, but if all enrollments is completed, there will  be an option to enroll the TEI in the program again in the enrollment widget, f the program allows more than one enrollment per TEI. If program does not allow more than one enrollment, the add new button will be disabled.  
 [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
-* Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.  
+* Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.    
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
 ---
@@ -132,13 +132,13 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 **Data store improvements:** The data store API has received numerous improvements to make it a fully-fledged data store and more useful to web apps and other clients.
 
-* **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query. 
+* **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query.  
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
-* **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries. 
+* **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries.  
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
-* **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria. 
+* **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria.  
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
-* **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries. 
+* **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries.  
 [Jira](https://jira.dhis2.org/browse/DHIS2-12330)
 
 **Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
