@@ -1,24 +1,27 @@
 # DHIS version 2.38 Release Note
 
+---
+
 ## ANALYTICS FEATURES
 
-**New Line Listing app:** This new app is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features is below:
-
-* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
-* New tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38linelisttimedemensions.png) 
+**New Line Listing app:** A new Line Listing app is developed for compatibility with DHIS 2.38 and will be released soon via the App Hub. This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features:
+* Visualizing multiple repeating events: You are now able to produce a line list that can display data from multiple repeating stage for a single tracked entity. You can specify how many repeated stages you would like to see data from. This is useful for many health and education programs by enabling the visualization of data captured repeatedly over time for a single patient or student. 
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38repeatingevent2.png)
+* New tracker specific period dimensions: In the new Line Listing application you can produce a linelist showing enrollment date, event date, and/or incident date. These can be each defined, sorted, and shown together in a single line list. 
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38linelisttimedemensions.png) 
 * Created by and Last updated by: This allows you to see the user name of the user that has either created the enrollment or the user that has last updated the data for the tracked entity.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_linelist_2.png) 
 
-**Catchment areas for org units (facilities, schools, health posts, etc.):** DHIS2 now supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
+**Catchment areas for org units (facilities, schools, health posts):** DHIS2 now supports multiple geometries (points and shapes) for all organizational units. These can be viewed in the maps app for any standard layer through an option in the org. unit selector. Practically this means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment. 
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html)
 
 **Support for Google's Earth Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of buildings can be shown by catchment or org unit boundaries. 
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) |
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) 
 
-**Vector tiles support in Maps:** The Maps app now supports maps based on vector tiles. This leads to better performance and updated underlying technology. 
+**Vector tiles support in Maps:** The Maps app now supports vector tiles. This leads to better performance improvements and updated underlying technology. 
 
 **Indicator aggregation type override:** An indicator expression can now specify an aggregation type, overriding the default type assigned to a data element. For example if a data element has aggregation type SUM, an indicator may also report the value by AVERAGE or COUNT.  
 
@@ -40,6 +43,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
  [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
+---
 
 ## TRACKER AND EVENT FEATURES
 
@@ -48,6 +52,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of program rule actions:** The content of program rule actions, the "static text" that is being visualized to the users, can be translated and shown in Tracker programs. This applies to both the Tracker Capture and Capture apps.
+
 [Jira](https://jira.dhis2.org/browse/DHIS2-12137)
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking the information icon that displays after the data element name. The description is set in the Maintenance app and can be used to provide more information about what to capture for the data item.
@@ -58,7 +63,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-11806)
 
-**GS1 Data Matrix support:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
+**Support for GS1 Data Matrix:** GS1 Data Matrix is used for pharmaceutical and health commodity bar coding and will support supply chain use cases. Given a field value formatted with the GS1 data matrix standard and a string key from the GS1 application identifiers, there is now support for program rules extracting the values from this delimited text and assigning values to their designated fields. This is implemented in Tracker Capture, Capture and the Android Capture app.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/programs.html#program_rules_operators_functions) | [Jira](https://jira.dhis2.org/browse/DHIS2-12353)
 
@@ -85,6 +90,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 * Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.  
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
+---
 
 ## PLATFORM FEATURES
 
@@ -120,14 +126,20 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12072)
 
+---
+
 ### PLATFORM API FEATURES
 
 **Data store improvements:** The data store API has received numerous improvements to make it a fully-fledged data store and more useful to web apps and other clients.
 
-* **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
-* **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
-* **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
-* **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries. Docs | [Jira](https://jira.dhis2.org/browse/DHIS2-12330)
+* **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query. 
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
+* **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries. 
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
+* **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria. 
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
+* **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries. 
+[Jira](https://jira.dhis2.org/browse/DHIS2-12330)
 
 **Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
 
@@ -137,9 +149,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/scheduling.html#request-cancelling-a-running-jobs) | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
-### PLATFORM DEVELOPER FEATURES
-
-
+---
 
 ## RELEASE INFO
 
@@ -148,9 +158,9 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 |Download release and sample database|https://www.dhis2.org/downloads|
 |Documentation|[https://docs.dhis2.org](https://docs.dhis2.org/)|
 |Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.38/README.md)|
-|Full list of features and bugs in this release|[Release Note](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.38/ReleaseNote-2.38.md)|
+|Full list of features and bugs|[Release Note](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.38/ReleaseNote-2.38.0.md)|
 |Source code on Github|https://github.com/dhis2|
 |Demo instance|https://play.dhis2.org/2.38/|
 |Docker image|`docker pull dhis2/core:2.38.0`|
-|Docker Hub images|https://hub.docker.com/repository/docker/dhis2/core|
+|Docker Hub images|https://hub.docker.com/r/dhis2/core|
 |Community forum|https://community.dhis2.org/|
