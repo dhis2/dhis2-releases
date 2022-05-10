@@ -149,6 +149,10 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/scheduling.html#request-cancelling-a-running-jobs) | [Jira](https://jira.dhis2.org/browse/DHIS2-6314)
 
+**Metadata proposal workflow:** The new metadata proposal workflow endpoint allows for a workflow of metadata changes. The stages include proposing, accepting, opposing, adjusting and rejecting a metadata change. This is useful e.g. for facility registries where changes to organisation units must be managed.
+
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/metadata.html#webapi_metadata_proposal_workflow) | [Jira](https://jira.dhis2.org/browse/DHIS2-4828)
+
 ---
 
 ## RELEASE INFO
