@@ -133,9 +133,9 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 **Data store improvements:** The data store API has received numerous improvements to make it a fully-fledged data store and more useful to web apps and other clients.
 
 * **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query.  
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
 * **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries.  
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
 * **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria.  
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
 * **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries.  
