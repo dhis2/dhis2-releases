@@ -2,29 +2,23 @@
 
 ## Java Support
 
-Starting with DHIS 2.38, Java JDK version 11 is required. This means that you cannot use Java 8 anymore when deploying DHIS 2.38 onwards.
+Starting with DHIS 2.38, Java JDK version 11 is required. This means that Java 8 is no longer supported.
 
-Java 11 has been supported for DHIS 2 since version 2.35. This means that you can upgrade your server to JDK 11 while still running DHIS 2.35 or later in preparation for the DHIS 2.38 upgrade. Java 11 has proven to be reliable and significantly faster for DHIS 2.
+Java 11 has been supported for DHIS 2 since version 2.35. This means that you can upgrade your server to JDK 11 while still running DHIS 2.35 or later in preparation for the DHIS 2.38 upgrade. Java 11 has proven to be reliable and significantly faster for DHIS 2 in production.
 
 As always, we recommend using an OpenJDK distribution of Java, due to the free and open source nature. OpenJDK 11 distributions are available on all major operating systems and is the default JDK on Ubuntu 20.04 LTS.
 
 ## Database
+
 - All legacy metadata attribute values tables are now removed. Those tables have `*attributevalues` postfix such as `categoryattributevalues` or `datasetattributevalues`.
-- In table `sqlview`, `not-null` constraint has been added to `type` and `cachestrategy` column. 
+- In table `sqlview`, `not-null` constraints have been added to the `type` and `cachestrategy` columns. 
 
 ## API
 
-- Running jobs manually using `/api/jobConfigurations/execute` changed from 
-  `GET` to `POST` request
-- Program id is now mandatory for program stage. Affected endpoints: `/programStages`, `/metadata`
-- `GET /systemSettings` returning JSONP (`Accept=application/javascript`) was removed
-- Several API endpoints slightly change their response root object to be in line 
-  with the majority of endpoints.
-  The root object returned pre 2.38 will become the member named `response`
-  of the new root object returned by 2.38. Consumers can opt to either use
-  `/api/37/...` to get the old behaviour or have to unpack to new response
-  by doing `<root>.response` to resolve the previous root from the 2.38 
-  response.
+- Running jobs manually using `/api/jobConfigurations/execute` changed from using the `GET` to the `POST` request method.
+- Program ID is now mandatory for program stage. Affected endpoints are `/programStages`, `/metadata`.
+- The `GET /systemSettings` endpoint returning JSONP (`Accept=application/javascript`) has been removed.
+- Several API endpoints slightly change their response root object to be in line with the majority of endpoints. The root object returned prior to 2.38 will become the member named `response`  of the new root object returned in 2.38. Consumers can opt to either use `/api/37/` to get the old behaviour or have to unpack to new response by doing `<root>.response` to resolve the previous root from the 2.38 response.
  
   > **NOTE**
   > 
