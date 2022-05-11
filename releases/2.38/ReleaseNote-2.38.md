@@ -21,7 +21,7 @@
 
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) 
 
-**Vector tiles support in Maps:** The Maps app now supports vector tiles. This leads to better performance improvements and updated underlying technology. 
+**Vector tiles support in Maps:** The Maps app now supports vector tiles. This leads to better performance and updated underlying technology. 
 
 **Indicator aggregation type override:** An indicator expression can now specify an aggregation type, overriding the default type assigned to a data element. For example if a data element has aggregation type SUM, an indicator may also report the value by AVERAGE or COUNT.  
 
