@@ -22,8 +22,7 @@ As always, we recommend using an OpenJDK distribution of Java, due to the free a
  
   > **NOTE**
   > 
-  > In case of error responses this also entails an HTTP status code 
-  change from `200 OK` to `409 Conflict`.
+  > In case of an error, responses will return HTTP status `409 Conflict` and not `200 OK`.
   
   Affected endpoints are:
 
@@ -35,9 +34,3 @@ As always, we recommend using an OpenJDK distribution of Java, due to the free a
   - `PUT /api/predictions` (only non `async` affected)
   - `PUT /api/relationships/{id}`
   - `PUT /api/users/{uid}` with `JSON`/`XML`
-
-## Authorities
-
-
-## Audit
-
