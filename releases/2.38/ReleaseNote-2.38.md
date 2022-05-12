@@ -17,7 +17,7 @@
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html)
 
-**Support for Google's Earth Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of buildings can be shown by catchment or org unit boundaries. 
+**Support for Google Earth Engine Building/Structures Layer:** In the maps app users can now see structure outlines as identified by Google's Open Building dataset. This data set includes 516M buildings (64% of the African continent). It is useful for population estimation, urban planning, outreach and health programs, and humanitarian response for example. The number of buildings can be shown by catchment or org unit boundaries. The performance for EE layers is greatly improved through the use of web workers.
 
 [Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_1.png) | [Screenshot 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_structures_2.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html) 
 
@@ -49,7 +49,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 **Tracker program working list improvements:** Working lists for tracker programs has been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
 **Translation of program rule actions:** The content of program rule actions, the "static text" that is being visualized to the users, can be translated and shown in Tracker programs. This applies to both the Tracker Capture and Capture apps.
 
@@ -57,7 +57,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 **Description and URLs for data elements and tracked entity attributes:** Description and URL set on these data items are displayed in a popover. This popover can be accessed by clicking the information icon that displays after the data element name. The description is set in the Maintenance app and can be used to provide more information about what to capture for the data item.
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Capture_DE_description.png) | [Jira](https://jira.dhis2.org/browse/DHIS2-5345)
 
 **New org unit component in Capture app:** The org unit component used in Capture app has been replaced with the redesigned org unit from the *d2-ui* library.
 
@@ -98,7 +98,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/system-settings.html#system_update_notification_settings) | [Jira](https://jira.dhis2.org/browse/DHIS2-9897)
 
-**GeoJSON metadata attributes:** GeoJSON is now supported as value type for metadata attributes. This allows you to store any number of GeoJSON documents e.g. for organisation units.
+**GeoJSON metadata attributes:** GeoJSON is now supported as value type for metadata attributes. This allows you to store any number of GeoJSON documents, e.g. for organisation units.
 
 [Docs]() | [Jira](https://jira.dhis2.org/browse/DHIS2-12328)
 
@@ -118,7 +118,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 
-**Group set short name:** The indicator group set and category option group sets now have short name properties, which allows for precise and UI-friendly rendering. The short names are now used as column names in resource tables instead of names.
+**Group sets short name:** The indicator group set and category option group sets now have short name properties, which allows for precise and UI-friendly rendering. The short names are now used as column names in resource tables instead of names.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-7317)
 
@@ -133,13 +133,13 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 **Data store improvements:** The data store API has received numerous improvements to make it a fully-fledged data store and more useful to web apps and other clients.
 
 * **Field filtering:** Allows you to return only specific keys and values of entries in the data store using the `fields` parameter. Works similar to fields filtering in the metadata API. The filtering takes place at the namespace level and is useful when a client needs to list many entries with specific keys/values in a single query.  
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12154)
 * **Paging:** In query responses, paging is supported and enabled by default. You can specify paging explicitly with the `page` and `pageSize` parameters. Paging is useful to work with namespaces with high numbers of entries.  
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#datastore-query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#query-api) | [Jira](https://jira.dhis2.org/browse/DHIS2-12329)
 * **Entry filtering:** Allows you to match and filter entries in a namespace based on a variety of operators, such as `eq`, `lt`, `le`, `gt`, `ge`, `like`, `null`, using the `filter` parameter. Works similar to object filtering in the metadata API. The filtering is useful when a client wants to list many entries which match one or many criteria.  
-[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#filtering-entries) | [Jira](https://jira.dhis2.org/browse/DHIS2-12331)
 * **Sorting:** Allows you to sort entries in a namespace ascending or descending based on a specific key/value using the `order` parameter.  This is useful when clients have specific requirements for sorting a list of entries.  
-[Jira](https://jira.dhis2.org/browse/DHIS2-12330)
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data-store.html#sorting-results) | [Jira](https://jira.dhis2.org/browse/DHIS2-12330)
 
 **Request logging:** Clients of the API can now submit a value with the `X-Request-ID` HTTP header which is included in all log statements. This is useful when looking at DHIS 2 logs and trying to understand which client/app made a request, for example when debugging an issue which applies to a specific installation of an Android app on a phone.
 
