@@ -116,7 +116,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/maintaining-the-system/scheduling.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-11589)
 
-**Data value set input scheme:** Input schemes is now supported for the data value sets API endpoint, allowing you to import data using the code field to reference metadata.
+**Data value set input ID scheme:** Input identifier schemes is now supported for the data value sets API endpoint, allowing you to import data using the code field to reference metadata.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/data.html) | [Jira](https://jira.dhis2.org/browse/DHIS2-9822)
 
