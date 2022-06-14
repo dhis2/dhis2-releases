@@ -28,7 +28,7 @@
 
 ### 2.39
 
--   Phase two of new Event Reports/Event Visualizer Application
+-   Phase two of new line listing Application
     -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458)
     -   Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
     -   Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
