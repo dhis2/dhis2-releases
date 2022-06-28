@@ -24,6 +24,6 @@ The following features are no longer supported.
 
 |Feature|Deprecation first announced|Support removed<br>(version)|
 |:---------|:---:|:---:|
-|New combined endpoint for analytics visualizations**: The _reportsTables_ and _charts_ endpoints have been deprecated in favour of a new and consolidated _visualizations_ endpoint.|April 2020|2.37.0|
+|New combined endpoint for analytics visualizations: The _reportsTables_ and _charts_ endpoints have been deprecated in favour of a new and consolidated _visualizations_ endpoint.|April 2020|2.37.0|
 |Remove the deprecated column "storagestatus" from the fileresource table. This property is no longer persisted.||2.31.0|
 ||||
