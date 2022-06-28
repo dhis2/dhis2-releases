@@ -25,5 +25,7 @@ The following features are no longer supported.
 |Feature|Deprecation first announced|Support removed<br>(version)|
 |:---------|:---:|:---:|
 |New combined endpoint for analytics visualizations: The _reportsTables_ and _charts_ endpoints have been deprecated in favour of a new and consolidated _visualizations_ endpoint.|April 2020|2.37.0|
+|*Mobile configuration module* is removed. It is replaced by the *SMS configuration* app. |October 2020| 2.36.0|
+|The *Event capture* app is removed. It is replaced by the *Capture* app which offers all of its features and more.|October 2018|2.32.0|
 |Remove the deprecated column "storagestatus" from the fileresource table. This property is no longer persisted.||2.31.0|
 ||||
