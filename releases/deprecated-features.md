@@ -10,7 +10,7 @@ Generally, a feature is removed after it has been deprecated in all three of the
 
 The following features are deprecated. You can still use them now, but the DHIS2 core team plans to end support in the future.
 
-|Feature|Deprecation first announced|Planned end of support|
+|Feature|Deprecation first announced|Planned end of support<br>(version)|
 |:---------|:---:|:---:|
 ||||
 ||||
@@ -21,7 +21,7 @@ The following features are deprecated. You can still use them now, but the DHIS2
 
 The following features are no longer supported.
 
-|Feature|Deprecation first announced|Support removed|
+|Feature|Deprecation first announced|Support removed<br>(version)|
 |:---------|:---:|:---:|
 ||||
 ||||
