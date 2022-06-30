@@ -71,7 +71,14 @@ A Feature Toggling application that is released to the App Hub. Specific version
 
    ```
    ./RELEASE.sh 2.36.9
+
    ```
+
+  or, for a hotfix:
+  
+  ```
+  ./RELEASE.sh 2.36.9.1
+  ```
 
 #### what it does:
 
@@ -86,30 +93,24 @@ A Feature Toggling application that is released to the App Hub. Specific version
 
 ## Hotfix Hard Freeze
    
-   Hotfix is a special case where we branch from a previous release branch. e.g. we have released 2.35.9 and now we want to release 2.35.10 as a delta to that release (avoiding other changes in the 2.35 development branch).  
+   Hotfix is a special case where we branch from a previous release branch. e.g. we have released 2.35.9 and now we want to release 2.35.9.1 as a delta to that release (avoiding other changes in the 2.35 development branch).  
    After the Hotfix Hard Freeze, the Release tag follows the normal process.
 
    ```
-   ./HOTFIX_FREEZE.sh 2.35.10
+   ./HOTFIX_FREEZE.sh 2.35.9.1
    ```
 
 #### what it does:
 
 - clones core at previous patch release tag (e.g. `2.35.9`)
-  - [ ] creates new patch branch on the core (e.g. `patch/2.35.10`)
-  - [ ] references the correct patch branches in bundled apps
-      - patch branches for the cloned, non-CD, apps (e.g. `2.35.9` to `patch/2.35.10`)
-  - [ ] updates mvn version on the core patch branch (e.g. `2.35.9` to `2.35.10-SNAPSHOT`)
-  - [ ] on core version branch: updates mvn version to subsequent patch snapshot (e.g. `2.35.10-SNAPSHOT` to `2.35.11-SNAPSHOT`)
-- clones any apps that have the same previous patch branch
-  - [ ] creates new patch branch on cloned apps
+  - [ ] creates new patch branch on the core (e.g. `patch/2.35.9.1`)
+  - *references to bundled apps will be unchanged unless the app is modified as part of the patch (unlikely)*
+  - [ ] updates mvn version on the core patch branch (e.g. `2.35.9` to `2.35.9.1-SNAPSHOT`)
 
 
-#### Additional steps :warning:
+#### Additional steps
 
-Remeber to update Jira too! Most of the issues with a Fix Version matching the hotfix version will now be included in the subsequent version instead. The fix version should therefore be modified
-   - [ ] Shift affected Fix Versions to the next patch version (e.g. where fix version is `2.35.10`, add `2.35.11` then remove `2.35.10`)
-   - [ ] For issues where the Fix Version has been changed, comments that say "tested on \<patch\>" should be changed to "tested on \<patch+1\>". [This tool](https://github.com/chrisboyke/jira_search_replace) can help.
+Add the new hotfix version to Jira.
 
 
 ## Embargoed release tag
