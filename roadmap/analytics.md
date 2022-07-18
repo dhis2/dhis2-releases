@@ -80,3 +80,4 @@
 
 ### 2.41
 -  Develop backend and front end for outputs for organizational unit data element type.
+-  BNA Chart type added to data visulazer application
