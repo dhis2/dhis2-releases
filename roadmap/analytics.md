@@ -69,6 +69,7 @@
 
 -   Data use/Micro planning
 
+    -   Set font size for single value chart type. [jira](https://jira.dhis2.org/browse/DHIS2-13485)
     -   Generic framework to embed custom web app outputs to dashboards
     -   Possibility to view standard report directly in the dashboard
     -   Services/tools to better support public web portals
