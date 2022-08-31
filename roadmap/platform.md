@@ -27,21 +27,21 @@
 ### 2.39
 
 - Platform
-    - [] New data entry web app
-    - [] Improved continuous app releases/delivery and infrastructure
-    - [] Reporting start date for organisation unit
+    - [ ] New data entry web app
+    - [ ] Improved continuous app releases/delivery and infrastructure
+    - [ ] Reporting start date for organisation unit
 
 - Master facility list
-    - [] Org unit profile configuration UI
-    - [] Org unit split and merge UI
-    - [] Propose and approve org unit workflow UI
-    - [] Multi-select option sets in data entry and analytics
+    - [ ] Org unit profile configuration UI
+    - [ ] Org unit split and merge UI
+    - [ ] Propose and approve org unit workflow UI
+    - [ ] Multi-select option sets in data entry and analytics
 
 - Integration
-    - [] Event subscription/notification system for metadata
+    - [ ] Event subscription/notification system for metadata
 
 - Maintenance app
-    - [] Bulk metadata sharing
+    - [ ] Bulk metadata sharing
 
 
 ### 2.40
