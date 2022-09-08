@@ -29,32 +29,29 @@
 ### 2.39
 
 -   Phase two of new line listing Application
-    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458)
-    -   Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
-    -   Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
+    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458) (Delayed for backend performance improvements)
+    -  [x] Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
+    -  [x] Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
 
 -  Continued design for new line listing
-    -   Design relationship derived line lists
-    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots.
-    -   Scope and design selection and outputs/aggregations for organizational unit data element type.
-
+    -   [x] Design relationship derived line lists
+    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots. (Delayed for backend performance   improvements)
+ 
 -   TEI ownership based analytics
 
-    -   Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
+    -   [x] Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
-    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
+    -   [x] Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
     -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101)
-    -   Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
-    -   Design public facing dashboards
+    -   [x] Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
+    -   [x] Design public facing dashboards
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
-    -   Collect user feedback, scope out, and develop roadmap for V2 of offline PWA dashboards -
-        -   Performance improvements.
 
 -   On-the-fly indicator calculations
 
-    -   Develop backend requirements for on-the-fly indicator calculations
-    -   Dsign of on-the-fly indicator calculations
+    -   [x] Develop backend requirements for on-the-fly indicator calculations
+    -   [x] Dsign of on-the-fly indicator calculations
 
 ### 2.40
 
