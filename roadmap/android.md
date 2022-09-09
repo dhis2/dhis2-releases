@@ -32,35 +32,35 @@
 
 -   **User Experience**
     -   [x] [Do not load the whole home list when returning to it](https://dhis2.atlassian.net/browse/ANDROAPP-4802)
-    -   [x] [Increase tappable areas in icons and buttons]()
-    -   [x] [Remove hints from fields]()
-    -   [x] [Do not offer program stages selection when there is only one option]()
-    -   [x] [Remove Share button from TEI Dashboard]()
-    -   [x] [Accordion menus confused about half of the healthcare workers]()
-    -   [x] [Add the "+" button for create events on TEI dashboard always visible]()
+    -   [x] [Increase tappable areas in icons and buttons](https://dhis2.atlassian.net/browse/ANDROAPP-4728)
+    -   [x] [Remove hints from fields](https://dhis2.atlassian.net/browse/ANDROAPP-3999)
+    -   [x] [Do not offer program stages selection when there is only one option](https://dhis2.atlassian.net/browse/ANDROAPP-3999)
+    -   [x] [Remove Share button from TEI Dashboard](https://dhis2.atlassian.net/browse/ANDROAPP-4653)
+    -   [x] [Accordion menus confused about half of the healthcare workers](https://dhis2.atlassian.net/browse/ANDROAPP-4726)
+    -   [x] [Add the "+" button for create events on TEI dashboard always visible](https://dhis2.atlassian.net/browse/ANDROAPP-4729)
 
 -   **User Experience - Data sets**
-    -   [x] [Handle Vertical/Horizontal scroll in tables when a cell is selected]()
-    -   [x] [Update legend style on tables]()
-    -   [x] [Create new component for edit text input types]()
-    -   [x] [Non visual improvements]()
+    -   [x] [Handle Vertical/Horizontal scroll in tables when a cell is selected](https://dhis2.atlassian.net/browse/ANDROAPP-4934)
+    -   [x] [Update legend style on tables](https://dhis2.atlassian.net/browse/ANDROAPP-4649)
+    -   [x] [Create new component for edit text input types](https://dhis2.atlassian.net/browse/ANDROAPP-4827)
 
 -   **Mobile Implementation Support**
-    -   [x] [Upload SMS APK]()
+    -   [x] [Upload SMS APK](https://dhis2.atlassian.net/browse/ANDROAPP-3888)
    
 -   **Local Analytics**
-    -   [x] [Implement missing aggregation functions]()
+    -   [x] [Implement missing aggregation functions](https://dhis2.atlassian.net/browse/ANDROAPP-4883)
 
 -   **Tracker Features**
-    -   [x] [App does not update org unit ownership when referring permanently]()
+    -   [x] [App does not update org unit ownership when referring permanently](https://dhis2.atlassian.net/browse/ANDROAPP-4199)
    
 -   **Sync Process**
-    -   [x] [Open home after syncing metadata]()
+    -   [x] [Open home after syncing metadata](https://dhis2.atlassian.net/browse/ANDROAPP-4765)
+    -   [x] [Do not make full sync when opening the App](https://dhis2.atlassian.net/browse/ANDROAPP-4766)
 
--   **Quality**
-    -   [x] [Refactor Data sets]()  
-    -   [x] [Non visual tasks]()
-    -   [x] []()
+-   **Quality, Performance and Stability**
+    -   [x] Data sets [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4811) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4744) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4754) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4793) [Jira issue 5](https://dhis2.atlassian.net/browse/ANDROAPP-4828) [Jira issue 6](https://dhis2.atlassian.net/browse/ANDROAPP-4830) [Jira issue 7](https://dhis2.atlassian.net/browse/ANDROAPP-4855) [Jira issue 8](https://dhis2.atlassian.net/browse/ANDROAPP-4857) [Jira issue 9](https://dhis2.atlassian.net/browse/ANDROAPP-4942)     
+    -   [x] Sync process [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4892) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4434) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4767) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4767) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4778) [Jira issue 5](https://dhis2.atlassian.net/browse/ANDROAPP-4800)
+    -   [x] Forms [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4844) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4845) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4846) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4847)
 
 
 ### 2.40 / 2.8
@@ -100,10 +100,6 @@
 
 **Design**
 
--   Self reporting (TEI App) - _Prototype_
-    -   Platform for authenticating from TEI credentials (**dependency** platform)
-    -   TEI App
-
 -   LMIS - Requirements / UX/UI design
     -   Item Catalog
     -   Bluetooth temperature data monitoring
@@ -123,3 +119,7 @@
     -   Bulk data transfer device-device
 
 -   Trigger data entry from Maps
+
+-   Self reporting (TEI App) - _Prototype_
+    -   Platform for authenticating from TEI credentials (**dependency** platform)
+    -   TEI App
