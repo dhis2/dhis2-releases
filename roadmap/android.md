@@ -31,7 +31,7 @@
 ### 2.39 / 2.7
 
 -   **User Experience**
-    -   [x] [Do not load the whole home list when returning to it]()
+    -   [x] [Do not load the whole home list when returning to it](https://dhis2.atlassian.net/browse/ANDROAPP-4802)
     -   [x] [Increase tappable areas in icons and buttons]()
     -   [x] [Remove hints from fields]()
     -   [x] [Do not offer program stages selection when there is only one option]()
@@ -39,16 +39,27 @@
     -   [x] [Accordion menus confused about half of the healthcare workers]()
     -   [x] [Add the "+" button for create events on TEI dashboard always visible]()
 
+-   **User Experience - Data sets**
+    -   [x] [Handle Vertical/Horizontal scroll in tables when a cell is selected]()
+    -   [x] [Update legend style on tables]()
+    -   [x] [Create new component for edit text input types]()
+    -   [x] [Non visual improvements]()
+
+-   **Mobile Implementation Support**
+    -   [x] [Upload SMS APK]()
+   
+-   **Local Analytics**
+    -   [x] [Implement missing aggregation functions]()
+
 -   **Tracker Features**
     -   [x] [App does not update org unit ownership when referring permanently]()
    
 -   **Sync Process**
-    -   [x] [Go to home after syncing metadata]()
+    -   [x] [Open home after syncing metadata]()
 
 -   **Quality**
-    -   [x] []()
-    -   [x] []()
-    -   [x] []()
+    -   [x] [Refactor Data sets]()  
+    -   [x] [Non visual tasks]()
     -   [x] []()
 
 
