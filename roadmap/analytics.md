@@ -45,7 +45,8 @@
     -   [x] Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
     -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101)
     -   [x] Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
-    -   [x] Design public facing dashboards
+    -   [x] Design and requirments for persisted log-in dashboards
+    -   [x] Design and requirments for dashboard sharing via web link
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
 
 -   On-the-fly indicator calculations
