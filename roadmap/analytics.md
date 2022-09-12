@@ -42,8 +42,8 @@
     -   [x] Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
-    -   [x] Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
-    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101)
+    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497) (Expected for continuous release in 2.39+)
+    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101) (Requirments gathered and design in process full feature expected in 2.40)
     -   [x] Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
     -   [x] Design and requirments for persisted log-in dashboards
     -   [x] Design and requirments for dashboard sharing via web link
@@ -52,7 +52,7 @@
 -   On-the-fly indicator calculations
 
     -   [x] Develop backend requirements for on-the-fly indicator calculations
-    -   [x] Dsign of on-the-fly indicator calculations
+    -   [x] Design of on-the-fly indicator calculations
 
 ### 2.40
 
