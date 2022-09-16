@@ -12,7 +12,7 @@ As always, we recommend using an OpenJDK distribution of Java, due to the free a
 
 - All legacy metadata attribute values tables are now removed. Those tables have `*attributevalues` postfix such as `categoryattributevalues` or `datasetattributevalues`.
 - In table `sqlview`, `not-null` constraints have been added to the `type` and `cachestrategy` columns.
-- The table `users` are removed and its data are migrated into the `userinfo` table. (This does not affect the API, which maintains backward compatibility)
+- The table `users` are removed, and its data are migrated into the `userinfo` table. (This does not affect the API, which maintains backward compatibility)
 
 ## API
 
