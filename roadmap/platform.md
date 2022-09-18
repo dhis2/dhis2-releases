@@ -39,7 +39,7 @@
     - [x] New specialized APIs for data entry use-cases
 
 - Master facility list
-    - [x] Multi-select option sets in data entry and analytics
+    - [x] Multi-select option sets in data model (data entry/analytics TBD)
 
 - Aggregate Data Exchange
     - [x] Aggregate data exchange backend functionality
