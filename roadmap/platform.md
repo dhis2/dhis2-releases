@@ -56,6 +56,7 @@
 -   Platform
     -   New DHIS 2 web app portal, replace old portal with Javascript-based portal
     -   New login app
+    -   Multi-select option sets in data entry and analytics
     -   Renaming of apps and customization of UI labels with custom translation bundles
     -   Remove Struts completely from the system
 
