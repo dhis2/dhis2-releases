@@ -72,7 +72,9 @@
     -   Set font size for single value chart type. [jira](https://jira.dhis2.org/browse/DHIS2-13485)
     -   Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
     -   Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
+    -   Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
     -   Generic framework to embed custom web app outputs to dashboards
+
     -   Possibility to view standard report directly in the dashboard
     -   Services/tools to better support public web portals
     
