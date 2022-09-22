@@ -70,6 +70,8 @@
     -   Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
     -   Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
     -   Set font size for single value chart type. [jira](https://jira.dhis2.org/browse/DHIS2-13485)
+    -   Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
+    -   Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
     -   Generic framework to embed custom web app outputs to dashboards
     -   Possibility to view standard report directly in the dashboard
     -   Services/tools to better support public web portals
@@ -82,3 +84,4 @@
 ### 2.41
 -  Develop backend and front end for outputs for organizational unit data element type.
 -  BNA Chart type added to data visulazer application
+-  Two value chart types 
