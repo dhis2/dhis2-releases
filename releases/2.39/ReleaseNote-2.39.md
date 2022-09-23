@@ -10,6 +10,20 @@
 
 ## TRACKER AND EVENT FEATURES
 
+### /tracker/events
+
+Filter events based on some of their associated enrollment or tracked entity properties using new request parameters
+
+* enrollmentEnrolledAfter - Start date for enrollment in the given program
+* enrollmentEnrolledBefore - End date for enrollment in the given program
+* enrollmentOccurredAfter - Start date for incident in the given program
+* enrollmentOccurredBefore - End date for incident in the given program
+* filterAttributes - Filters like `H9IlTX2X6SL:sw:A` for tracked entity attributes
+
+In addition to existing `order` capabilities order now by `enrollmentStatus`, `enrolledAt`,
+`occurredAt` and tracked entity attribute like `order=AuPLng5hLbE:asc`.
+
+For more details see https://dhis2.atlassian.net/browse/DHIS2-13648
 
 ---
 
