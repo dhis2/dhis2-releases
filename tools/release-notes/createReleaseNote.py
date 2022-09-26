@@ -29,7 +29,7 @@ args = parser.parse_args()
 
 
 options = {
-    'server': 'https://jira.dhis2.org'}
+    'server': 'https://dhis2.atlassian.net'}
 jira = JIRA(options,basic_auth=(args.user, args.password))
 
 release= args.version[0:4]
