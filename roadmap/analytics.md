@@ -51,8 +51,8 @@
 
 -   On-the-fly indicator calculations
 
-    -   [x] Develop backend requirements for on-the-fly indicator calculations
-    -   [x] Design of on-the-fly indicator calculations
+    -   [x] Develop backend requirements for on-the-fly indicator calculations [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   [x] Design of on-the-fly indicator calculations [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 ### 2.40
 
@@ -63,7 +63,7 @@
   
 -   On-the-fly indicator calculations
 
-    -   On-the-fly indicator calculations in data visualizer pivot tables.
+    -   On-the-fly indicator calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 -   Data use/Micro planning
 
