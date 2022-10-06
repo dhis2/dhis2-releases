@@ -1,12 +1,12 @@
 # DHIS version 2.39 Release Note
 
----
+
 
 ## ANALYTICS FEATURES
 
 
+TODO
 
----
 
 ## TRACKER AND EVENT FEATURES
 
@@ -42,18 +42,13 @@
 
 [Screenshot]() | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#search-for-tracked-entity-instances) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12678)
 
----
-
 ## PLATFORM FEATURES
 
-
-
----
+TODO
 
 ### PLATFORM API FEATURES
 
-
----
+TODO
 
 ## RELEASE INFO
 
