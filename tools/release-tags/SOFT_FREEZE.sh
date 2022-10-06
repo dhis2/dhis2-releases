@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 readonly SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 readonly TEMP="./temp_$$"
@@ -49,8 +49,8 @@ function process_core {
         do
             #echo $repo
             local app_name=$(app_name "$repo")
-            local app_branch="$(app_branch_name $repo)"            
-            sed -i "s:${app_name}[^\"]*\":${app_name}#${app_branch}\":" "${bundle_path}"
+            local app_branch="$(app_branch_name $repo)"
+            sed -i "s:/${app_name}[^\"]*\":/${app_name}#${app_branch}\":" "${bundle_path}"
         done
 
         # commits and tags

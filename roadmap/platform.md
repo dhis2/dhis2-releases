@@ -27,42 +27,55 @@
 ### 2.39
 
 - Platform
-    - New data entry web app
-    - Improved continuous app releases/delivery and infrastructure
-    - Reporting start date for organisation unit
+    - [x] New data entry web app
+    - [x] Improved continuous app releases/delivery and infrastructure
+    - [x] Improved and more performant user group management
+    - [x] GeoJSON organization unit geometry import support
+
+- Backend improvements
+    - [x] Cache invalidation with Redis (DHIS2 cluster configurations)
+    - [x] API stability improvements (39 bugs fixed)
+    - [x] Many small API functional enhancements
+    - [x] New specialized APIs for data entry use-cases
 
 - Master facility list
-    - Org unit profile configuration UI
-    - Org unit split and merge UI
-    - Propose and approve org unit workflow UI
-    - Multi-select option sets in data entry and analytics
+    - [x] Multi-select option sets in data model (data entry/analytics TBD)
 
-- Integration
-    - Event subscription/notification system for metadata
-
-- Maintenance app
-    - Bulk metadata sharing
-
+- Aggregate Data Exchange
+    - [x] Aggregate data exchange backend functionality
 
 ### 2.40
 
 -   Master facility list
-    -   Org unit analytics maintenance app updates
+    -   Reporting start date for organisation unit
+    -   Org unit profile configuration UI
+    -   Org unit split and merge UI
+    -   Propose and approve org unit workflow UI
+    -   Reporting start date for organisation unit
 
 -   Platform
     -   New DHIS 2 web app portal, replace old portal with Javascript-based portal
     -   New login app
+    -   Multi-select option sets in data entry and analytics
     -   Renaming of apps and customization of UI labels with custom translation bundles
     -   Remove Struts completely from the system
 
+-   Integration
+    -   Event subscription/notification system for metadata
+
 -   Maintenance app
     -   New Maintenance app, gradually rebuilt and released
+    -   Bulk metadata sharing
 
 -   Data use/quality
     -   Push analytics with dashboard print and sharing access control
     -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
     -   WHO annual data quality app/report
 
+### 2.41 or later
+
+- Master facility list
+    -   Org unit analytics maintenance app updates
 
 ### Always Ongoing
 

@@ -30,20 +30,56 @@
        
 ### 2.39 / 2.7
 
+-   **User Experience**
+    -   [x] [Do not load the whole home list when returning to it](https://dhis2.atlassian.net/browse/ANDROAPP-4802)
+    -   [x] [Increase tappable areas in icons and buttons](https://dhis2.atlassian.net/browse/ANDROAPP-4728)
+    -   [x] [Remove hints from fields](https://dhis2.atlassian.net/browse/ANDROAPP-3999)
+    -   [x] [Do not offer program stages selection when there is only one option](https://dhis2.atlassian.net/browse/ANDROAPP-3999)
+    -   [x] [Remove Share button from TEI Dashboard](https://dhis2.atlassian.net/browse/ANDROAPP-4653)
+    -   [x] [Accordion menus confused about half of the healthcare workers](https://dhis2.atlassian.net/browse/ANDROAPP-4726)
+    -   [x] [Add the "+" button for create events on TEI dashboard always visible](https://dhis2.atlassian.net/browse/ANDROAPP-4729)
+
+-   **User Experience - Data sets**
+    -   [x] [Handle Vertical/Horizontal scroll in tables when a cell is selected](https://dhis2.atlassian.net/browse/ANDROAPP-4934)
+    -   [x] [Update legend style on tables](https://dhis2.atlassian.net/browse/ANDROAPP-4649)
+    -   [x] [Create new component for edit text input types](https://dhis2.atlassian.net/browse/ANDROAPP-4827)
+
+-   **Mobile Implementation Support**
+    -   [x] [Upload SMS APK](https://dhis2.atlassian.net/browse/ANDROAPP-3888)
+   
+-   **Local Analytics**
+    -   [x] [Implement missing aggregation functions](https://dhis2.atlassian.net/browse/ANDROAPP-4883)
+
+-   **Tracker Features**
+    -   [x] [App does not update org unit ownership when referring permanently](https://dhis2.atlassian.net/browse/ANDROAPP-4199)
+   
+-   **Sync Process**
+    -   [x] [Open home after syncing metadata](https://dhis2.atlassian.net/browse/ANDROAPP-4765)
+    -   [x] [Do not make full sync when opening the App](https://dhis2.atlassian.net/browse/ANDROAPP-4766)
+
+-   **Quality, Performance and Stability**
+    -   [x] Data sets [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4811) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4744) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4754) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4793) [Jira issue 5](https://dhis2.atlassian.net/browse/ANDROAPP-4828) [Jira issue 6](https://dhis2.atlassian.net/browse/ANDROAPP-4830) [Jira issue 7](https://dhis2.atlassian.net/browse/ANDROAPP-4855) [Jira issue 8](https://dhis2.atlassian.net/browse/ANDROAPP-4857) [Jira issue 9](https://dhis2.atlassian.net/browse/ANDROAPP-4942)     
+    -   [x] Sync process [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4892) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4434) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4767) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4767) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4778) [Jira issue 5](https://dhis2.atlassian.net/browse/ANDROAPP-4800)
+    -   [x] Forms [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4844) [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4845) [Jira issue 3](https://dhis2.atlassian.net/browse/ANDROAPP-4846) [Jira issue 4](https://dhis2.atlassian.net/browse/ANDROAPP-4847)
+
+
+### 2.40 / 2.8
+
 **Development**
 
--   Data Entry
+-   Offline Analytics
+    -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
+
+-   Notifications & Messaging
+    -   [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
+    -   [DHIS2 Messaging](https://jira.dhis2.org/browse/ANDROAPP-694)-   Data Entry
     -   [Support file value type](https://jira.dhis2.org/browse/ANDROAPP-1992)
 
 -   Stability and Performance
-    -   [Option to sync ASA](https://jira.dhis2.org/browse/ANDROAPP-2959)
+    -   [Option to sync ASAP](https://jira.dhis2.org/browse/ANDROAPP-2959)
     -   [DB trimming](https://jira.dhis2.org/browse/ANDROAPP-2912)
     -   [Automatic deletion of synced data](https://jira.dhis2.org/browse/ANDROAPP-2957)
     -   [Light Sync - only records updated offline](https://jira.dhis2.org/browse/ANDROAPP-1702)
-
--   Self reporting (TEI App)
-    -   Platform for authenticating from TEI credentials
-    -   TEI App
 
 -   Mobile Implementation Support
     -   [Support app distribution version control](https://jira.dhis2.org/browse/ANDROAPP-2912)
@@ -52,15 +88,7 @@
     -   [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform)
     -   [Import/export db](https://jira.dhis2.org/browse/ANDROAPP-2474)
 
--   Offline Analytics
-    -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
-
--   Notifications & Messaging
-    -   [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
-    -   [DHIS2 Messaging](https://jira.dhis2.org/browse/ANDROAPP-694)
-
 -   LMIS
-    -   Stock management - Fast Scanning of items (LMIS)
     -   Item Catalog (LMIS)
     -   Bluetooth temperature data monitoring (LMIS)
 
@@ -72,12 +100,7 @@
 
 **Design**
 
--   Self reporting (TEI App) - _Prototype_
-    -   Platform for authenticating from TEI credentials (**dependency** platform)
-    -   TEI App
-
 -   LMIS - Requirements / UX/UI design
-    -   Stock management - Fast Scanning of items
     -   Item Catalog
     -   Bluetooth temperature data monitoring
 
@@ -97,16 +120,6 @@
 
 -   Trigger data entry from Maps
 
-
-### 2.40 / 2.8
-
--   Offline Analytics
-    -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
-
--   LMIS
-    -   Stock management - Fast Scanning of items (LMIS)
-    -   Item Catalog (LMIS)
-    -   Bluetooth temperature data monitoring (LMIS)
-
--   EMIS
-    -   Bulk data entry (EMIS)
+-   Self reporting (TEI App) - _Prototype_
+    -   Platform for authenticating from TEI credentials (**dependency** platform)
+    -   TEI App

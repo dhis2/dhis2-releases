@@ -13,6 +13,8 @@
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_linelist_2.png) 
 
+*Note:* Program indicators that have an analytics_period_start and/or an analytics_period_end dates defined will not be displayed in the line listing application.  
+
 **Catchment areas for org units:** DHIS2 now supports multiple geometries (points and shapes) to be stored for organisation units. This allows for displaying multiple polygons, such as catchment areas, in a map. These can be viewed in the Maps app and selected from the org unit selector. This means that system administrators can upload catchment areas for their facilities, community health posts, schools, hospitals, etc and visualize any data by catchment area.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/2.38_catchment_area.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-235/analysing-data/maps.html)

@@ -28,33 +28,31 @@
 
 ### 2.39
 
--   Phase two of new Event Reports/Event Visualizer Application
-    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458)
-    -   Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
-    -   Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
+-   Phase two of new line listing Application
+    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458) (Delayed for backend performance improvements)
+    -  [x] Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
+    -  [x] Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
 
 -  Continued design for new line listing
-    -   Design relationship derived line lists
-    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots.
-    -   Scope and design selection and outputs/aggregations for organizational unit data element type.
-
+    -   [x] Design relationship derived line lists
+    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots. (Delayed for backend performance   improvements)
+ 
 -   TEI ownership based analytics
 
-    -   Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
+    -   [x] Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
-    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497)
-    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101)
-    -   Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
-    -   Design public facing dashboards
+    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497) (Expected for continuous release in 2.39+)
+    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101) (Requirments gathered and design in process full feature expected in 2.40)
+    -   [x] Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
+    -   [x] Design and requirments for persisted log-in dashboards
+    -   [x] Design and requirments for dashboard sharing via web link
     -   Develop backend requirements for generic framework to embed custom web app outputs to dashboards
-    -   Collect user feedback, scope out, and develop roadmap for V2 of offline PWA dashboards -
-        -   Performance improvements.
 
 -   On-the-fly indicator calculations
 
-    -   Develop backend requirements for on-the-fly indicator calculations
-    -   Dsign of on-the-fly indicator calculations
+    -   [x] Develop backend requirements for on-the-fly indicator calculations [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   [x] Design of on-the-fly indicator calculations [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 ### 2.40
 
@@ -65,11 +63,18 @@
   
 -   On-the-fly indicator calculations
 
-    -   On-the-fly indicator calculations in data visualizer pivot tables.
+    -   On-the-fly indicator calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 -   Data use/Micro planning
 
+    -   Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
+    -   Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
+    -   Set font size for single value chart type. [jira](https://jira.dhis2.org/browse/DHIS2-13485)
+    -   Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
+    -   Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
+    -   Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
     -   Generic framework to embed custom web app outputs to dashboards
+
     -   Possibility to view standard report directly in the dashboard
     -   Services/tools to better support public web portals
     
@@ -80,3 +85,5 @@
 
 ### 2.41
 -  Develop backend and front end for outputs for organizational unit data element type.
+-  BNA Chart type added to data visulazer application
+-  Two value chart types 

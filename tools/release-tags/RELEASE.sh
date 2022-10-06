@@ -37,7 +37,9 @@ function process_core {
         sed -i "s:${PATCH_BRANCH}:${REL_VERSION}:" "${bundle_path}"
         # commits and tags
         git add "${bundle_path}"
-        git commit -m "chore: lock app versions to tag ${REL_VERSION}"
+        if [ -n "$(git diff --quiet --exit-code --cached)" ]; then
+            git commit -m "chore: lock app versions to tag ${REL_VERSION}"
+        fi
 
         # - update core mvn version to the pure tag (not snapshot)
         for pom in $(find . -name "pom*.xml")

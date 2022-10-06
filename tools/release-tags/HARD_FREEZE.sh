@@ -46,14 +46,14 @@ function process_core {
 
         for repo in "${app_repos[@]}"
         do
-            #echo $repo
+            # echo "repo: " $repo
             local app_name=$(app_name "$repo")
             if [[ " ${continuous_delivery_apps[@]} " =~ "$app_name" ]]
             then
                 app_cd_version=$(cat "$CDA" | grep $app_name | sed "s;.*$CORE_BRANCH:\([^ ]*\).*;\1;")
-                sed -i "s:${app_name}[^\"]*\":${app_name}#${app_cd_version}\":" "${bundle_path}"
+                sed -i "s:/${app_name}[^\"]*\":/${app_name}#${app_cd_version}\":" "${bundle_path}"
             else
-                sed -i "s:${app_name}[^\"]*\":${app_name}#${PATCH_BRANCH}\":" "${bundle_path}"
+                sed -i "s:/${app_name}[^\"]*\":/${app_name}#${PATCH_BRANCH}\":" "${bundle_path}"
             fi
         done
 
