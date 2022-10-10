@@ -18,31 +18,29 @@
  
 **Do not load the whole home list when returning to it:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4802) | [Screenshot]() | [Documentation]()
 
-**New legend style on tables:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot]() | [Documentation]()
+**New legend style on tables:** The style for legends in tables has a new design which ensures good contrast and visibility independently from the selected colour for the legend. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot]() | [Documentation]()
     
-**New text input dialog:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4827) | [Screenshot]() | [Documentation]()
-
-**Handle Vertical/Horizontal scroll in tables when a cell is selected:** I think I dont want to add this one. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4934) | [Screenshot]() | [Documentation]()
+**New text input dialog:** When the user in entering data in a dataset, the keybard opens overlaping most of the screen and the dataset table. The new text input dialog opens an input field above the keyboard which shows the Data Element name, and category options of the field being selected, ensuring the user does not lose context when navigating the tables during data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4827) | [Screenshot]() | [Documentation]()
 
 ## MOBILE IMPLEMENTATION SUPPORT
 
-**Upload SMS APK:** From this version, the app avaialble in Google Play includes the SMS functionality. In previous version, this functionality was only available in an apk available in Github. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3888) | [Screenshot]() | [Documentation]()
+**Upload SMS APK:** From this version, the app avaialble in Google Play includes the SMS functionality. In previous version, this functionality was only available on an apk available in Github. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3888) | [Screenshot]() | [Documentation]()
 
 ## LOCAL ANALITICS
 
-**Implement missing aggregation functions:** Look at the summary shared in te prioritisation workshop [Jira]([Implement missing aggregation functions](https://dhis2.atlassian.net/browse/ANDROAPP-4883)) | [Screenshot]() | [Documentation]()
-
-## TRACKER FEATURES
-
-**Manage ownership in permanent referrals:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4199) | [Screenshot]() | [Documentation]()
+**Implement missing aggregation functions:** The following aggreagation functions are supported now in local analytics: LAST, FIRST, AVERAGE_SUM_ORG_UNIT, LAST_AVERAGE_ORG_UNIT, LAST_IN_PERIOD, LAST_IN_PERIOD_AVERAGE_ORG_UNIT, FIRST_AVERAGE_ORG_UNIT [Jira]([Implement missing aggregation functions](https://dhis2.atlassian.net/browse/ANDROAPP-4883)) | [Screenshot]() | [Documentation]()
    
 ## SYNC PROCESS
-**Open home after syncing metadata:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4765) | [Screenshot]() | [Documentation]()
+**Open home after syncing metadata:** When a user logs in to the Android App for the first time, the App needs to download all the metadata and data, including the  file resources. Depending on the server and user configuration, on the server resources and on the internet connection, this process can be very long. Until this version, all these happened on the splash screen and the user had to wait during all this time on the same screen. We cannot change that process or waiting time, however we can make it more interactive and informative. In this new  version the app will remain in the splash screen during the metadata download and will open the home screen once the metadata is in the device. In the home screen, the app will inform with a loading spinner on each program when the data is downloading and when is ready. The user will be able to see how many programs are downloading data, or completed, making the waiting process more transparent and informative about its progress. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4765) | [Screenshot]() | [Documentation]()
 
-**Do not make full sync when opening the App:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4766) | [Screenshot]() | [Documentation]()
+**Do not make full sync when opening the App:** Before this version, everytime a user opened the DHIS2 Capture App, the application would launch a sync process for data and metadata, to ensure the app was in sync with the server. In most cases and locations this process was very slow. In order to facilitate the work in the most difficult cases, we have removed that sync process. When the user opens the app, if s/he didnt log out, the app will open without performing a full sync. Users have the option to sync with the server though the Refresh button any time they wish. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4766) | [Screenshot]() | [Documentation]()
 [Jira]() | [Screenshot]() | [Documentation]()
    
- ## QUALITY, PERFORMANCE AND STABILITY
+## TRACKER FEATURES
+
+**Manage ownership in permanent referrals:** Since 2.7, when a user makes a permanent referral of a TEI, the ownership will be updated accordingly.  [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4199) | [Screenshot]() | [Documentation]()
+
+## QUALITY, PERFORMANCE AND STABILITY
  **Data sets**
  - [Jira issue 1](https://dhis2.atlassian.net/browse/ANDROAPP-4811) 
  - [Jira issue 2](https://dhis2.atlassian.net/browse/ANDROAPP-4744) 
