@@ -44,7 +44,9 @@ TODO
 
 ## PLATFORM FEATURES
 
-TODO
+**New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection is always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app lacks Javascript/CSS support for custom forms (HTML only). This will be added in version 2.40. The current data entry module will be phased out and removed in version 2.41.
+
+
 
 ### PLATFORM API FEATURES
 
