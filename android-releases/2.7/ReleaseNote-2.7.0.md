@@ -3,14 +3,14 @@
 
 ## USER EXPERIENCE
 
-**Increase tappable areas in icons and buttons:** Some buttons or tappable lables of the Android App had small sensitive areas for the user to tap. The whole user interface was reviewed and the tappable areas has been increased. For example the "+" button to create a new stage or the "˅" icon to open TEI details or expand a section.
+**Increase tappable areas in icons and buttons:** Some buttons or tappable labels of the Android App had small sensitive areas for the user to tap. The whole user interface was reviewed and the tappable areas has been increased. For example the "+" button to create a new stage or the "˅" icon to open TEI details or expand a section.
 [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4728) | [Screenshot]() | [Documentation]()
 
 **Clean Data Entry forms:** The input fields had a hint message saying "Insert value here" which remained there after the values was entered. We have kept the hints when the field is empty, but they dissapear now once the value is entered by the user. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3999) | [Screenshot]() | [Documentation]()
   
 **Simplify steps to create stage:** When the user is creating a new stage and there is only one option based on the program configuration, the available program stage is selected automatically and program stage selection step is skipped. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3999) | [Screenshot]() | [Documentation]()
 
-**Hide Share button in TEI Dashbaord:** The TEI Dashbaord had a black "Share" button which was using a significant space on the screen and not align with the visual design of the app while the function is very marginally used. The button has been removed and the functioanlity to share a TEI through QR code has been located on the three vertical dot menu, at the top right corner of the screen. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4653) | [Screenshot]() | [Documentation]()
+**Hide Share button in TEI Dashbaord:** The TEI Dashboard had a black "Share" button which was using a significant space on the screen and not align with the visual design of the app while the function is very marginally used. The button has been removed and the functioanlity to share a TEI through QR code has been located on the three vertical dot menu, at the top right corner of the screen. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4653) | [Screenshot]() | [Documentation]()
    
 **Improve Section Navigation:** The accordion navigation of form sections was confusing for some some users and the next action after completing the last field of one section was not intuitive. This version of the App includes a "Next" button at the end of each section which calls the user to action. The funtion of the button is to close the current section and open the new one. [Jira]() | [Screenshot]() | [Documentation]()
 
@@ -20,11 +20,11 @@
 
 **New legend style on tables:** The style for legends in tables has a new design which ensures good contrast and visibility independently from the selected colour for the legend. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot]() | [Documentation]()
     
-**New text input dialog:** When the user in entering data in a dataset, the keybard opens overlaping most of the screen and the dataset table. The new text input dialog opens an input field above the keyboard which shows the Data Element name, and category options of the field being selected, ensuring the user does not lose context when navigating the tables during data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4827) | [Screenshot]() | [Documentation]()
+**New text input dialog:** When the user in entering data in a dataset, the keyboard opens overlaping most of the screen and the dataset table. The new text input dialog opens an input field above the keyboard which shows the Data Element name, and category options of the field being selected, ensuring the user does not lose context when navigating the tables during data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4827) | [Screenshot]() | [Documentation]()
 
 ## MOBILE IMPLEMENTATION SUPPORT
 
-**Upload SMS APK:** From this version, the app avaialble in Google Play includes the SMS functionality. In previous version, this functionality was only available on an apk available in Github. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3888) | [Screenshot]() | [Documentation]()
+**Upload SMS APK:** From this version, the app available in Google Play includes the SMS functionality. In previous versions, this functionality was only available on an apk available in Github. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3888) | [Screenshot]() | [Documentation]()
 
 ## LOCAL ANALITICS
 
