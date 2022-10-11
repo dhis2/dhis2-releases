@@ -16,9 +16,7 @@
 
 **Create stage button always visible:** When the user groups the events per program stage in a tracker program, the option to create a stage was only visible when the events of the specific program stage where expanded. In this version, the option to create a new event is always visible. When the user taps on the button, that program stage will unfold showing to the user all the already existing events of that particular program stage. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4729) | [Screenshot]() | [Documentation]() 
  
-**Do not load the whole home list when returning to it:** [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4802) | [Screenshot]() | [Documentation]()
-
-**New legend style on tables:** The style for legends in tables has a new design which ensures good contrast and visibility independently from the selected colour for the legend. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot]() | [Documentation]()
+ **New legend style on tables:** The style for legends in tables has a new design which ensures good contrast and visibility independently from the selected colour for the legend. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot]() | [Documentation]()
     
 **New text input dialog:** When the user in entering data in a dataset, the keyboard opens overlaping most of the screen and the dataset table. The new text input dialog opens an input field above the keyboard which shows the Data Element name, and category options of the field being selected, ensuring the user does not lose context when navigating the tables during data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4827) | [Screenshot]() | [Documentation]()
 
