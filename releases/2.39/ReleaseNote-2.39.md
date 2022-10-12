@@ -80,6 +80,10 @@ The same applies to object filtering, where the attribute identifier can be used
 
 Docs
 
+**Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retriaving context for a form, saving min-max limits and completing a form.
+
+Docs
+
 **API improvements:** Several incremental API improvements have been made available.
 
 * CSV data value import supports a data set parameter, allowing for completing the data set. Docs.
