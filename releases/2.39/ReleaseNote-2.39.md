@@ -66,19 +66,9 @@ Docs
 
 ### PLATFORM API FEATURES
 
-**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints. Retrieving attribute values used to be cumbersome, and can now be conveniently referred to using the metadata attribute identifier:
+**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints. Retrieving attribute values used to be cumbersome, and can now be conveniently referred to using the metadata attribute identifier: `fields=id,code,name,{attribute1-id},{attribute2-id}`. The same applies to object filtering, where the attribute identifier can be used in filters: `/api/dataElements.json?filter={attribute1-id}:eq:{value}`.
 
-```
-/api/dataElements.json?fields=id,code,name,{attribute1-id},{attribute2-id}
-```
-
-The same applies to object filtering, where the attribute identifier can be used in filters:
-
-```
-/api/dataElements.json?filter={attribute1-id}:eq:{value}
-```
-
-Docs
+Docs 1 | Docs 2
 
 **Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retriaving context for a form, saving min-max limits and completing a form.
 
