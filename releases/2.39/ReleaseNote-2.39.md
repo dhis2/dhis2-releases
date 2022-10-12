@@ -52,7 +52,7 @@ Screenshot | Demo | Docs
 
 Screenshot | Demo | Docs
 
-GeoJSON importer: TODO
+**GeoJSON importer:** A new import service supporting the GeoJSON format for geospatal data is now available. TODO
 
 Screenshot | Demo | Docs
 
