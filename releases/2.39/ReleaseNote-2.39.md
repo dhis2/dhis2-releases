@@ -46,6 +46,18 @@ TODO
 
 **New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection is always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app lacks Javascript/CSS support for custom forms (HTML only). This will be added in version 2.40. The current data entry module will be phased out and removed in version 2.41.
 
+Screenshot | Demo | Docs
+
+**User group management:** The user group management in the user app now supports adding and removing users for databases which contain a large number of users. Users can be added and removed individually and the modifications will take effect when the user group is saved.
+
+Screenshot | Demo | Docs
+
+**Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. A new web app named *Data exchange* is available from the App Hub. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators.
+
+Screenshot | Demo | App Hub
+
+
+
 
 
 ### PLATFORM API FEATURES
