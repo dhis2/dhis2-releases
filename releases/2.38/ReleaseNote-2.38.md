@@ -47,7 +47,7 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 ## TRACKER AND EVENT FEATURES
 
-**Tracker program working list improvements:** Working lists for tracker programs has been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
+**Tracker program working list improvements:** Working lists for tracker programs have been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
