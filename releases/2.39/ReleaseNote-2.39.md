@@ -58,7 +58,7 @@ Screenshot | Demo | Docs
 
 **Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. A new web app named *Data exchange* is available from the App Hub. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators.
 
-Screenshot | Demo | App Hub
+Screenshot | Demo | App Hub | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
 **Redis for cluster management:** When running DHIS 2 in a cluster (using multiple servers/nodes for a single instance), Redis can now be used for dynamic invalidation of caches across instances. This is an improvement over the Debezium-based approach introduced in 2.38 as it is more reliable and works on other database engines beyond standard PostgreSQL such as AWS RDS. The new cluster management solution allows for adding and removing nodes dynamically without any updates to the DHIS 2 configuration files of the existing nodes. The new solution requires Redis to be available, though Redis is already required for cluster configurations.
 
@@ -72,15 +72,15 @@ Docs 1 | Docs 2
 
 **Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retriaving context for a form, saving min-max limits and completing a form.
 
-Docs
+[Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-entry.html)
 
 **API improvements:** Several incremental API improvements have been made available.
 
-* CSV data value import supports a data set parameter, allowing for completing the data set. Docs.
-* In the user data store API, an admin can modify data store values for other users through a `username` query parameter. Docs.
-* The data value importer only creates an audit record if the data value was actually modified (identical values are ignored). Docs.
-* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters. Docs.
-* All geometry data for org units can be removed in a single API call, useful for integration. Docs.
+* CSV data value import supports a data set parameter, allowing for completing the data set. Docs
+* In the user data store API, an admin can modify data store values for other users through a `username` query parameter. Docs
+* The data value importer only creates an audit record if the data value was actually modified (identical values are ignored). Docs
+* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters. Docs
+* All geometry data for org units can be removed in a single API call, useful for integration. Docs
 * Metadata attribute values are now properly validated based on the value type of the associated data element.
 * Deletion of data elements is significantly faster.
 
