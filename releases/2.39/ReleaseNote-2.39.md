@@ -12,11 +12,11 @@ TODO
 
 **Continuously released Capture App:** The Capture app was released shortly after the 2.38 release on the App Hub, and is now continuously released in 2.38 and 2.39. If you are running any of these versions you will be able to continuously upgrade to the latest version of the Capture app and receive the following features and fixes. The following tracker features are all available in both the 2.38 and 2.39 versions though the App Hub.
 
-[Screenshot]()
+[Screenshot](/images/2.39_app_hub.png)
 
 **Enroll TEI in multiple programs:** A tracked entity instance (TEI) can now be enrolled in multiple programs in the Capture app.
 
-[Screenshot]() | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12141)
+[Screenshot](/images/2.39_TEI_multiple_programs) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12141)
 
 **Open data entry after erollment:** When enrolling a TEI into a program where one of the program stages is marked to be opened after enrollment, the user is taken directly to the form for adding that program stage to the enrollment. This is useful for reducing the amount of clicks and speeding up the data entry process.
 
@@ -28,11 +28,11 @@ TODO
 
 **Working lists in search screen:** In the Capture app, the search screen will now show working lists for the selected program. This is helpful when the user either wants to search for a tracked entity instance or in some cases use a targeted working list. This works well in combination with disabling the front page list and instead directing a user to the search page, but also for allowing one-click access to working lists.
 
-[Screenshot]() | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#custom-tei-working-list-for-programs-with-display-front-page-list-set-to-false) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12140)
+[Screenshot](/images/2.39_show_working_list_search.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#custom-tei-working-list-for-programs-with-display-front-page-list-set-to-false) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12140)
 
 **See previous selected org unit:** In the Capture app, a user that just deselected an org unit in the context selector will see the previously selected org unit highlighted. This is useful when working systematically through many org units.
 
-[Screenshot]() | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13472)
+[Screenshot](/images/2.39_previous_orgunit.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13472)
 
 **Preserve filters on navigation:** When filtering and sorting a working list in the Capture app, the filter selections will now persist through context switches. This is useful when a user needs to apply a filter across different org units as the org unit can be changed without losing the current filter and list settings. This works both with saved working lists and with unsaved filters.
 
@@ -40,7 +40,7 @@ Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 **Improved search in all programs:** When searching for a tracked entity instance in a specific program, the search might not yield any result in the context of the program. In this case the user can expand the search to look for a tracked entity instance in all programs. The expanded search happens without the user changing the context, and the possible expanded search results is displayed below the original program results. This allows the user to easily revise the search criteria and continue working in the context they started in, potentially expanding the search again if no results is found in the program.
 
-[Screenshot]() | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#search-for-tracked-entity-instances) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12678)
+[Screenshot](/images/2.39_search_all_programs) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#search-for-tracked-entity-instances) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12678)
 
 ## PLATFORM FEATURES
 
