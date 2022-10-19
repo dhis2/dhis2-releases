@@ -4,9 +4,21 @@
 
 ## ANALYTICS FEATURES
 
+**Legend sets for linelists:** In the linelisting application you can not apply a legend to any data item. Legeds can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status, or severity. 
 
-TODO
+[Screenshot](images/2.39%20Legend%20in%20linelists.png) [Jira](https://dhis2.atlassian.net/browse/DHIS2-75)
 
+**Scheduled/due data in linelists:** Scheduled data is not a time demension in the linelisting application. You are now able to present or filter data by scheduled data. 
+
+[Screenshot](images/2.39%20schedule%20date%20in%20linelist.png) [Jira](https://dhis2.atlassian.net/browse/DHIS2-12309)
+
+**Earth Engine Importer:** In the import export application there is now the ability to import data sets from the google earth engine. These are the same data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementation to use the data from google earth engine as they would any other data in DHIS2, for example visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
+
+[Screenshot](images/2.39%20GEE%20importer.png) [Jira](https://dhis2.atlassian.net/browse/DHIS2-11966)
+
+**Organization Unit Geometry Importer:** In the import export application there is now the ability to import associated additional geometries for organization units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organization units. 
+
+[Screenshot](images/2.39%20geometry%20importer.png) [Jira](https://dhis2.atlassian.net/browse/DHIS2-11969)
 
 ## TRACKER AND EVENT FEATURES
 
