@@ -12,11 +12,11 @@
 
 [Screenshot](images/2.39%20schedule%20date%20in%20linelist.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12309)
 
-**Earth Engine Importer:** In the import export application there is now the ability to import data sets from the google earth engine. These are the same data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementation to use the data from google earth engine as they would any other data in DHIS2, for example visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
+**Earth Engine Importer:** In the import export application there is now the ability to import data sets from the google earth engine. These are the same google earth engine data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementation to use the data from google earth engine as they would any other data in DHIS2, for example visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
 
 [Screenshot](images/2.39%20GEE%20importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11966)
 
-**Organization Unit Geometry Importer:** In the import export application there is now the ability to import associated additional geometries for organization units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organization units. 
+**Organization Unit Geometry Importer:** In the import export application there is now the ability to import associated additional geometries in GeoJSON format for organization units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organization units. 
 
 [Screenshot](images/2.39%20geometry%20importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11969)
 
