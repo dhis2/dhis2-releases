@@ -4,19 +4,19 @@
 
 ## ANALYTICS FEATURES
 
-**Legend sets for linelists:** In the linelisting application you can not apply a legend to any data item. Legeds can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status, or severity. 
+**Legend sets for linelists:** In the linelisting application you can not apply a legend to any data item. Legends can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status, or severity. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_Legend_in_linelists.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-75)
 
-**Scheduled/due data in linelists:** Scheduled data is not a time demension in the linelisting application. You are now able to present or filter data by scheduled data. 
+**Scheduled/due data in linelists:** Scheduled data is not a time dimension in the linelisting application. You are now able to present or filter data by scheduled data. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_schedule_date_in_linelist.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12309)
 
-**Earth Engine Importer:** In the import export application there is now the ability to import data sets from the google earth engine. These are the same google earth engine data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementation to use the data from google earth engine as they would any other data in DHIS2, for example visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
+**Earth Engine Importer:** In the import/export application there is now the ability to import data sets from the Google Earth Engine. These are the same Google Earth Engine data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementations to use the data from Google Earth Engine as they would any other data in DHIS2, for example to visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_GEE_importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11966)
 
-**Organization Unit Geometry Importer:** In the import export application there is now the ability to import associated additional geometries in GeoJSON format for organization units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organization units. 
+**Organisation Unit Geometry Importer:** In the import/export application there is now the ability to import associated additional geometries in GeoJSON format for organisation units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organisation units. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_geometry_importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11969)
 
@@ -28,9 +28,9 @@
 
 **Enroll TEI in multiple programs:** A tracked entity instance (TEI) can now be enrolled in multiple programs in the Capture app.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_TEI_multiple_programs) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12141)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_TEI_multiple_programs.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12141)
 
-**Open data entry after erollment:** When enrolling a TEI into a program where one of the program stages is marked to be opened after enrollment, the user is taken directly to the form for adding that program stage to the enrollment. This is useful for reducing the amount of clicks and speeding up the data entry process.
+**Open data entry after enrollment:** When enrolling a TEI into a program where one of the program stages is marked to be opened after enrollment, the user is taken directly to the form for adding that program stage to the enrollment. This is useful for reducing the amount of clicks and speeding up the data entry process.
 
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#enrollment-with-open-data-entry-form) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12611)
 
@@ -50,13 +50,13 @@
 
 Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
-**Improved search in all programs:** When searching for a tracked entity instance in a specific program, the search might not yield any result in the context of the program. In this case the user can expand the search to look for a tracked entity instance in all programs. The expanded search happens without the user changing the context, and the possible expanded search results is displayed below the original program results. This allows the user to easily revise the search criteria and continue working in the context they started in, potentially expanding the search again if no results is found in the program.
+**Improved search in all programs:** When searching for a tracked entity instance in a specific program, the search might not yield any result in the context of the program. In this case the user can expand the search to look for a tracked entity instance in all programs. The expanded search happens without the user changing the context, and the possible expanded search results are displayed below the original program results. This allows the user to easily revise the search criteria and continue working in the context they started in, potentially expanding the search again if no results are found in the program.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_search_all_programs) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#search-for-tracked-entity-instances) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12678)
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_search_all_programs.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/tracking-individual-level-data/capture.html#search-for-tracked-entity-instances) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12678)
 
 ## PLATFORM FEATURES
 
-**New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection is always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app lacks Javascript/CSS support for custom forms (HTML only). This will be added in version 2.40. The current data entry module will be phased out and removed in version 2.41.
+**New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection are always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app lacks Javascript/CSS support for custom forms (HTML only). This will be added in version 2.40. The current data entry module will be phased out and removed in version 2.41.
 
 Screenshot | Demo | Docs
 
@@ -64,15 +64,15 @@ Screenshot | Demo | Docs
 
 Screenshot | Demo | Docs
 
-**GeoJSON importer:** A new import service supporting the GeoJSON format for geospatal data is now available. TODO
+**GeoJSON importer:** A new import service supporting the GeoJSON format for geospatial data is now available. TODO
 
 Screenshot | Demo | Docs
 
-**Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. A new web app named *Data exchange* is available from the App Hub. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators.
+**Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS2 instance to another, as well as within a single instance of DHIS2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. A new web app named *Data exchange* is available from the App Hub. This is useful for transferring data from an HMIS instance to a DHIS2 data portal instance, to import aggregated numbers into a DHIS2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators.
 
 Screenshot | Demo | App Hub | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
-**Redis for cluster management:** When running DHIS 2 in a cluster (using multiple servers/nodes for a single instance), Redis can now be used for dynamic invalidation of caches across instances. This is an improvement over the Debezium-based approach introduced in 2.38 as it is more reliable and works on other database engines beyond standard PostgreSQL such as AWS RDS. The new cluster management solution allows for adding and removing nodes dynamically without any updates to the DHIS 2 configuration files of the existing nodes. The new solution requires Redis to be available, though Redis is already required for cluster configurations.
+**Redis for cluster management:** When running DHIS2 in a cluster (using multiple servers/nodes for a single instance), Redis can now be used for dynamic invalidation of caches across instances. This is an improvement over the Debezium-based approach introduced in 2.38 as it is more reliable and works on other database engines beyond standard PostgreSQL such as AWS RDS. The new cluster management solution allows for adding and removing nodes dynamically without any updates to the DHIS2 configuration files of the existing nodes. The new solution requires Redis to be available, though Redis is already required for cluster configurations.
 
 Docs
 
@@ -82,7 +82,7 @@ Docs
 
 Docs 1 | Docs 2
 
-**Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retriaving context for a form, saving min-max limits and completing a form.
+**Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retrieving context for a form, saving min-max limits and completing a form.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-entry.html)
 
