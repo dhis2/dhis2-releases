@@ -80,6 +80,10 @@ Screenshot | Demo | App Hub | [API docs](https://docs.dhis2.org/en/develop/using
 
 Docs
 
+**RapidPro integration:** The DHIS 2 - RapidPro integration is generally available. It allows for synchronization of RapidPro contacts with DHIS 2 users, transfer of aggregate data reports from RapidPro to DHIS 2 and reminders to RapidPro contacts when aggregate reports are overdue. Read more at the [GitHub](https://github.com/dhis2/integration-dhis-rapidpro) repository and contact the DHIS 2 integration team for assistance if you are interested in configuring the integration for your country or organization.
+
+[GitHub](https://github.com/dhis2/integration-dhis-rapidpro)
+
 ### PLATFORM API FEATURES
 
 **Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints. Retrieving attribute values used to be cumbersome, and can now be conveniently referred to using the metadata attribute identifier: `fields=id,name,{attribute-id}`. The same applies to object filtering, where the attribute identifier can be used in filters: `filter={attribute-id}:eq:{value}`.
