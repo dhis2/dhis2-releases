@@ -4,25 +4,21 @@
 
 ## ANALYTICS FEATURES
 
-**Legend sets for linelists:** In the linelisting application you can not apply a legend to any data item. Legeds can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status, or severity. 
+**Legend sets for line lists:** The line listing app you can now apply a legend to data items. Legends can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status or severity. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_Legend_in_linelists.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-75)
 
-**Scheduled/due data in linelists:** Scheduled data is not a time demension in the linelisting application. You are now able to present or filter data by scheduled data. 
+**Scheduled date in line lists:** Scheduled date is made available as a time dimension in the line listing app. You can now  present or filter data by scheduled date.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_schedule_date_in_linelist.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-12309)
 
-**Earth Engine Importer:** In the import export application there is now the ability to import data sets from the google earth engine. These are the same google earth engine data sets you are able to see in the maps application such as population and population by age and sex. This will allow implementation to use the data from google earth engine as they would any other data in DHIS2, for example visualize in the analytics application, use in indicator calculations, or use in validation rules and other data quality checks. 
+**Earth Engine population data import:** In the import export app you can now import data sets from Google Earth Engine. DHIS 2 already allows visualizing Earth Engine layers in the maps app. The new importer takes this further by allowing for dynamic calculation of population data sets based on org unit geometries, and subsequent import of the population data as raw data in DHIS 2. This will allow implementations to use the population data from Earth Engine in DHIS 2 visualizations and combine it with other data sets as part of indicator expressions.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_GEE_importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11966)
 
-**Organization Unit Geometry Importer:** In the import export application there is now the ability to import associated additional geometries in GeoJSON format for organization units. This allows system administrators to import catchment areas for health facilities or other additional shapes or points for organization units. 
-
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_geometry_importer.png) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11969)
-
 ## TRACKER AND EVENT FEATURES
 
-**Continuously released Capture App:** The Capture app was released shortly after the 2.38 release on the App Hub, and is now continuously released in 2.38 and 2.39. If you are running any of these versions you will be able to continuously upgrade to the latest version of the Capture app and receive the following features and fixes. The following tracker features are all available in both the 2.38 and 2.39 versions though the App Hub.
+**Continuously released Capture app:** The Capture app was released shortly after the 2.38 release on the App Hub, and is now continuously released in 2.38 and 2.39. If you are running any of these versions you will be able to continuously upgrade to the latest version of the Capture app and receive the following features and fixes. The following tracker features are all available in both the 2.38 and 2.39 versions though the App Hub.
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/2-39_app_hub.png)
 
@@ -56,19 +52,27 @@ Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 ## PLATFORM FEATURES
 
-**New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection is always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app supports custom HTML forms but lacks Javascript/CSS support, which may be added later.	 The current data entry module will be phased out and removed in version 2.41.
+**New data entry app:** A new aggregate data entry app is now available. The new app is built on the new modern technology stack and brings a number of usability improvements. The data set, org unit and period selection is always visible, making it easy to see the current selections. The org unit tree makes it easy to see which org units are open for data entry for the currently selected data set. The details of a data value, including metadata info, comments, min and max limits, data value history and audit log are available in a sidebar and can remain visible while doing data entry. Data validation rules will open and can be easily triggered in a sidebar as well. Data which is captured offline will be automatically synchronized with the server. The new data entry app supports custom HTML forms but lacks Javascript/CSS support, which may be added later. The current data entry module will be phased out and removed in version 2.41.
 
-Screenshot | Demo | Docs
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/data-entry-section-form.png) | [Scr 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/data-entry-org-unit-tree-filter.png) | [Scr 3](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/data-entry-side-panel.png) | [Scr 4](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/data-entry-validation.png) | [Demo](https://play.dhis2.org/dev/dhis-web-aggregate-data-entry/index.html#/)
 
 **User group management:** The user group management in the user app now supports adding and removing users for databases which contain a large number of users. Users can be added and removed individually and the modifications will take effect when the user group is saved.
 
 Screenshot | Demo | Docs
 
+**Org unit geometry import:** The import export app now allows for importing geometries in the *GeoJSON* format for organization units. This allows system administrators to import polygons or points for org units, such as catchment areas for health facilities.
+
+Screenshot | [Jira](https://dhis2.atlassian.net/browse/DHIS2-11969)
+
 **GeoJSON importer:** A new import service supporting the industry standard *GeoJSON* format for geospatal data is now available. The GeoJSON format is supported by most geospatial tools and services and enables integration with external systems. The new importer makes importing geometries and setting up maps a lot easier compared to the previous GML format.
 
 Screenshot | Demo | Docs
 
-**Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. A new web app named *Data exchange* is available from the App Hub. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators.
+**Multiple org unit geometries:** DHIS 2 can now store and visualize multiple geometries for org units. This is supported through a new metadata attribute GeoJSON value type. GeoJSON data can be imported through the metadata importer and stored using the new value type. This allows for example for displaying both the location (as a point) and the catchment area (as a polygon) for org units.
+
+Demo | Docs
+
+**Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as "raw" data values in the target instance. This means that data elements, indicators and program indicators can be used to generate data values in the source instance. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators. A new web app named *Data exchange* will be made available from the App Hub shortly. 
 
 Screenshot | Demo | App Hub | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
