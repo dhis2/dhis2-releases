@@ -80,9 +80,7 @@
 
 ### PLATFORM API FEATURES
 
-**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints, and attribute values can now be conveniently referred to using the metadata attribute identifier: `filter={attribute-id}:eq:{value}`.
-
-The same applies to object filtering, where the attribute identifier can be used in filters: `filter={attribute-id}:eq:{value}`.
+**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints, and attribute values can now be conveniently referred to using the metadata attribute identifier: `filter={attribute-id}:eq:{value}`. The same applies to object filtering, where the attribute identifier can be used in filters: `filter={attribute-id}:eq:{value}`.
 
 [Docs 1](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html#gist_attributeFields) | [Docs 2](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_metadata_object_filter) | [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-13158) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-11867)
 
