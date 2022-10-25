@@ -1,7 +1,5 @@
 # DHIS version 2.39 Release Note
 
-
-
 ## ANALYTICS FEATURES
 
 **Legend sets for line lists:** The line listing app you can now apply a legend to data items. Legends can be predefined or automatically generated. This allows you to make your data more easily interpretable by applying a color coding to indicate performance, status or severity. 
@@ -44,7 +42,7 @@
 
 **Preserve filters on navigation:** When filtering and sorting a working list in the Capture app, the filter selections will now persist through context switches. This is useful when a user needs to apply a filter across different org units as the org unit can be changed without losing the current filter and list settings. This works both with saved working lists and with unsaved filters.
 
-Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 **Improved search in all programs:** When searching for a tracked entity instance in a specific program, the search might not yield any result in the context of the program. In this case the user can expand the search to look for a tracked entity instance in all programs. The expanded search happens without the user changing the context, and the possible expanded search results is displayed below the original program results. This allows the user to easily revise the search criteria and continue working in the context they started in, potentially expanding the search again if no results is found in the program.
 
@@ -70,7 +68,7 @@ Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 **Aggregate data exchange:** A new service for aggregate data exchange allows for exchanging data from one DHIS 2 instance to another, as well as within a single instance of DHIS 2. The service will aggregate data in the source instance using the analytics engine, and import the data as aggregate data values in the target instance. Data exchanges can be triggered from the API, from the data exchange web app or run as a scheduled job. This is useful for transferring data from an HMIS instance to a DHIS 2 data portal instance, to import aggregated numbers into a DHIS 2 HMIS instance based on individual records in a DHIS 2 tracker instance, and to pre-compute aggregate numbers based on individual tracker records using program indicators. A new web app named *Data exchange* will be made available from the App Hub shortly. 
 
-[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-report.png) | [Scr 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-submission.png) | [Scr 3](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-submission.png) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html) | Web app coming soon
+[Screenshot 1](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-report.png) | [Scr 2](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-submission.png) | [Scr 3](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/aggregate-data-exchange-submission.png) | [API docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | Web app coming soon
 
 **Redis for cluster management:** When running DHIS 2 in a cluster (using multiple servers/nodes for a single instance), Redis can now be used for dynamic invalidation of caches across instances. This is an improvement over the Debezium-based approach introduced in 2.38 as it is more reliable and works on other database engines beyond standard PostgreSQL such as AWS RDS. The new cluster management solution allows for adding and removing nodes dynamically without any updates to the DHIS 2 configuration files of the existing nodes. The new solution requires Redis to be available, though Redis is already required for cluster configurations.
 
@@ -84,7 +82,7 @@ Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 **Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints. Retrieving attribute values used to be cumbersome, and can now be conveniently referred to using the metadata attribute identifier: `fields=id,name,{attribute-id}`. The same applies to object filtering, where the attribute identifier can be used in filters: `filter={attribute-id}:eq:{value}`.
 
-[Docs 1](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html#gist_attributeFields) | [Docs 2](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_metadata_object_filter)
+[Docs 1](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata-gist.html#gist_attributeFields) | [Docs 2](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#webapi_metadata_object_filter) | [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-13158) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-11867)
 
 **Data entry endpoints:** A collection of API endpoints optimized for the new data entry app is made available. These endpoints are also useful for custom data entry web apps. These include retrieving metadata for accessible data sets, retrieving custom data entry forms, retrieving data values for a form, retrieving context for a form, saving min-max limits and completing a form.
 
@@ -92,15 +90,13 @@ Screenshot  | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13285)
 
 **API improvements:** Several incremental API improvements have been made available.
 
-* CSV data value import supports a data set parameter, allowing for completing the data set. Docs
-* In the user data store API, an admin can modify data store values for other users through a `username` query parameter. Docs
-* The data value importer only creates an audit record if the data value was actually modified (identical values are ignored). Docs
-* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters. Docs
-* All geometry data for org units can be removed in a single API call, useful for integration. Docs
-* Metadata attribute values are now properly validated based on the value type of the associated data element.
-* Deletion of data elements is significantly faster.
-
-
+* CSV data value import supports a data set parameter, allowing for completing the data set. [Jira](https://dhis2.atlassian.net/browse/DHIS2-8083) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data.html#webapi_data_values_import_parameters)
+* In the user data store API, an admin can modify data store values for other users through a `username` query parameter. [Jira](https://dhis2.atlassian.net/browse/DHIS2-7851) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#admin-access-to-another-users-datastore)
+* The data value importer only creates an audit record if the data value was actually modified (identical values are ignored). [Jira](https://dhis2.atlassian.net/browse/DHIS2-6163)
+* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters. [Jira](https://dhis2.atlassian.net/browse/DHIS2-13421) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/audit.html#webapi_tracked_entity_data_value_audits)
+* All geometry data for org units can be removed in a single API call, which is useful for integration. [Jira](https://dhis2.atlassian.net/browse/DHIS2-13313) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#geojson-import)
+* Metadata attribute values are now properly validated based on the value type of the associated data element. [Jira](https://dhis2.atlassian.net/browse/DHIS2-5537)
+* Deletion of data elements is significantly faster. [Jira](https://dhis2.atlassian.net/browse/DHIS2-5761)
 
 ## RELEASE INFO
 
