@@ -90,11 +90,11 @@
 
 **API improvements:** Several incremental API improvements have been made available.
 
-* CSV data value import supports a data set parameter, allowing for completing the data set. [Jira](https://dhis2.atlassian.net/browse/DHIS2-8083) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data.html#webapi_data_values_import_parameters)
-* In the user data store API, an admin can modify data store values for other users through a `username` query parameter. [Jira](https://dhis2.atlassian.net/browse/DHIS2-7851) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#admin-access-to-another-users-datastore)
+* CSV data value import supports a data set parameter, allowing for completing the data set. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data.html#webapi_data_values_import_parameters) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-8083)
+* In the user data store API, an admin can modify data store values for other users through a `username` query parameter.  [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-store.html#admin-access-to-another-users-datastore) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-7851)
 * The data value importer only creates an audit record if the data value was actually modified (identical values are ignored). [Jira](https://dhis2.atlassian.net/browse/DHIS2-6163)
-* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters. [Jira](https://dhis2.atlassian.net/browse/DHIS2-13421) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/audit.html#webapi_tracked_entity_data_value_audits)
-* All geometry data for org units can be removed in a single API call, which is useful for integration. [Jira](https://dhis2.atlassian.net/browse/DHIS2-13313) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#geojson-import)
+* The tracked entity audit endpoints support org unit, start and end date and program stage query parameters.  [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/audit.html#webapi_tracked_entity_data_value_audits) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13421)
+* All geometry data for org units can be removed in a single API call, which is useful for integration. [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/metadata.html#geojson-import) | [Jira](https://dhis2.atlassian.net/browse/DHIS2-13313) 
 * Metadata attribute values are now properly validated based on the value type of the associated data element. [Jira](https://dhis2.atlassian.net/browse/DHIS2-5537)
 * Deletion of data elements is significantly faster. [Jira](https://dhis2.atlassian.net/browse/DHIS2-5761)
 
