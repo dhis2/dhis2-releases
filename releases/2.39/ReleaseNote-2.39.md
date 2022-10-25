@@ -80,7 +80,7 @@
 
 ### PLATFORM API FEATURES
 
-**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints. Retrieving attribute values used to be cumbersome, and can now be conveniently referred to using the metadata attribute identifier: `filter={attribute-id}:eq:{value}`.
+**Shorthand fields notation for attributes:** A new shorthand notation is supported for attributes and values in the metadata endpoints, and attribute values can now be conveniently referred to using the metadata attribute identifier: `filter={attribute-id}:eq:{value}`.
 
 The same applies to object filtering, where the attribute identifier can be used in filters: `filter={attribute-id}:eq:{value}`.
 
