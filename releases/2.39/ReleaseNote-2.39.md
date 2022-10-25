@@ -60,7 +60,7 @@
 
 **Multiple org unit geometries:** DHIS 2 can now store and visualize multiple geometries for org units. This is supported through a new metadata attribute GeoJSON value type. GeoJSON data can be imported through the metadata importer and stored using the new value type. This allows for example for displaying both the location (as a point) and the catchment area (as a polygon) for org units.
 
-[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/geojson-value-type-metadata-attribute.png) | [Demo](https://play.dhis2.org/dev/dhis-web-maintenance/index.html#/edit/otherSection/attribute/add) | Docs
+[Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/39/geojson-value-type-metadata-attribute.png) | [Demo](https://play.dhis2.org/dev/dhis-web-maintenance/index.html#/edit/otherSection/attribute/add)
 
 **GeoJSON geometry import:** A new import service supporting the industry standard *GeoJSON* format for geospatal data is now available. The importer allows for importing GeoJSON geometry and associate it with org units, using the org unit primary geometry field or custom metadata attributes of value type GeoJSON. The GeoJSON format is supported by most geospatial tools and services and enables integration with external systems. The new importer makes importing geometries and setting up maps a lot easier compared to the previous GML format.
 
