@@ -14,8 +14,8 @@
    - /api/trackedEntityInstances
    - /api/enrollments
    - /api/events
-   ```  
-   These endpoints have been replaced with the new tracker endpoint:  
+   ```
+   These endpoints have been replaced with the new tracker endpoint: 
    ```
    - /api/tracker/
    ```
