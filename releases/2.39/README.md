@@ -6,7 +6,7 @@
 
 ## API
 
-* **Metadata attribute validation:** Validation of metadata attributes will be executed when saving objects with attribute values in the maintenance app. Validation rules are now based on the `Attribute.ValueType`. Most of those rules are straightforward, for instance an `Attribute.valueType` = `Number` will only accept digits. On the other hand, `Phone Number` has a generic validation rule = `"^[0-9+\\(\\)#\\.\\s\\/ext-]{6,50}$"`. As a result of this new validation feature, you might get errors when editing metadata objects which now have invalid attribute values. In that case please fix the values and save the object again.
+* **Metadata attribute validation:** Validation of metadata attributes will be executed when saving objects with attribute values in the maintenance app. Validation rules are now based on the `Attribute.ValueType`. Most of those rules are straightforward. For instance value type "number" will only accept digits. On the other hand, "phone numbe" has a regular expression validation rule `"^[0-9+\\(\\)#\\.\\s\\/ext-]{6,50}$"`. As a result of this new validation feature, you might get errors when editing metadata objects which now have invalid attribute values. In that case please update the values and save the object.
 
 * **Old tracker APIs deprecated:** The old tracker API endpoints for importing tracked and event data are now deprecated. We encourage developers of apps and extensions do transition over to the new endpoints. Server-to-server sync will continue to use the old API endpoints. This includes all API calls which are made with the import strategy `SYNC`. Deprecated API endpoints (except `SYNC`) are:
    ```
