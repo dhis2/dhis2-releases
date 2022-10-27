@@ -5,17 +5,16 @@
 * The previous data approval Struts-based web module is removed, and superseded by the React-based data approval web app.
 
 ## API
-**Validations Metadata Attribute:** The validations will be applied when saving metadata objects with attribute values. Validation rules are defined according to the `Attribute.ValueType`. Most of those rules are straightforward, for instance an `Attribute.valueType` = `Number` will only accept digits. On the other hand, `Phone Number` has a generic validation rule = `"^[0-9+\\(\\)#\\.\\s\\/ext-]{6,50}$"`. As a result of this new validation feature, you might get errors when editing metadata objects which already have invalid attribute values. In that case please fix the values and save the object again.
 
+* **Metadata attribute validation:** Validation of metadata attributes will be executed when saving objects with attribute values in the maintenance app. Validation rules are now based on the `Attribute.ValueType`. Most of those rules are straightforward, for instance an `Attribute.valueType` = `Number` will only accept digits. On the other hand, `Phone Number` has a generic validation rule = `"^[0-9+\\(\\)#\\.\\s\\/ext-]{6,50}$"`. As a result of this new validation feature, you might get errors when editing metadata objects which now have invalid attribute values. In that case please fix the values and save the object again.
 
-**Old tracker APIs being deprecated:** In a future release, for all purposes except server-to-server sync, the old tracker APIs are getting deprecated. We encourage all apps and middleware/scripts do trasition over to the new endpoints as soon as possible. Server-to-server sync will still use the old endpoints for the forseeable future; this includes all calls that is made with the import strategy `SYNC`.
-APIs to be deprecated (except `SYNC`) are:
+* **Old tracker APIs deprecated:** The old tracker API endpoints for importing tracked and event data are now deprecated. We encourage developers of apps and extensions do transition over to the new endpoints. Server-to-server sync will continue to use the old API endpoints. This includes all API calls which are made with the import strategy `SYNC`. Deprecated API endpoints (except `SYNC`) are:  
 ```
 - /api/trackedEntityInstances
 - /api/enrollments
 - /api/events
-```
-These endpoints have been replaced with the new tracker endpoint
+```  
+These endpoints have been replaced with the new tracker endpoint:  
 ```
 - /api/tracker/
 ```
