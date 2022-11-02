@@ -51,7 +51,6 @@
     -   Org unit profile configuration UI
     -   Org unit split and merge UI
     -   Propose and approve org unit workflow UI
-    -   Reporting start date for organisation unit
 
 -   Platform
     -   New DHIS 2 web app portal, replace old portal with Javascript-based portal
