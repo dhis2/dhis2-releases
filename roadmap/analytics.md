@@ -56,34 +56,31 @@
 
 ### 2.40
 
--   Phase three of new line listing application 
-    -   Relationship derived line lists
+-   Tracker analytics 
+    -   Improved program indicator performance
+    -   Backend for cross program and relationship analytics
     -   Development of relationship endpoint - Enables line listing derived from relationships
-    -   Reproduce appropriate chart types from old EV into new ER/EV Application
-  
+   
 -   On-the-fly indicator calculations
 
     -   On-the-fly indicator calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 -   Data use/Micro planning
 
-    -   Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
-    -   Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
-    -   Set font size for single value chart type. [jira](https://jira.dhis2.org/browse/DHIS2-13485)
     -   Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
     -   Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
     -   Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
-    -   Generic framework to embed custom web app outputs to dashboards
-
-    -   Possibility to view standard report directly in the dashboard
-    -   Services/tools to better support public web portals
-    
-
--   Audit trail analysis
-
-    -   Backend requirements for audit trail analysis
+    -   Design for "simple" dashboard mode.
 
 ### 2.41
--  Develop backend and front end for outputs for organizational unit data element type.
--  BNA Chart type added to data visulazer application
+-   Tracker Analytics
+    -   Cross program linelists 
+    -   Tracked entity count  
 -  Two value chart types 
+
+-   Data Use
+    -   BNA Chart type added to data visulazer application
+    -   Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
+    -   Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
+    -   Possibility to view standard report directly in the dashboard
+    -   Services/tools to better support public web portals 
