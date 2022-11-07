@@ -60,6 +60,7 @@
     -   Improved program indicator performance
     -   Backend for cross program analytics
     -   Development of relationship endpoint - Enables line listing derived from relationships
+    -   Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
 -   On-the-fly calculations
 
