@@ -58,12 +58,12 @@
 
 -   Tracker analytics 
     -   Improved program indicator performance
-    -   Backend for cross program and relationship analytics
+    -   Backend for cross program analytics
     -   Development of relationship endpoint - Enables line listing derived from relationships
    
--   On-the-fly indicator calculations
+-   On-the-fly calculations
 
-    -   On-the-fly indicator calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   On-the-fly calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 -   Data use/Micro planning
 
