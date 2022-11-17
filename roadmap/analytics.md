@@ -20,30 +20,30 @@
 
 -   TEI ownership based analytics
 
-    -   Design for ownership org unit dimension -> Will be implemented in 2.39 program indicators.
+    -  [ ] Design for ownership org unit dimension -> Will be implemented in 2.39 program indicators.
 
 -   On-the-fly indicator calculations
 
-    -   Scoping and design for on-the-fly indicator calculations.
+    -  [ ] Scoping and design for on-the-fly indicator calculations.
 
 ### 2.39
 
 -   Phase two of new line listing Application
-    -   Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458) (Delayed for backend performance improvements)
+    -  [ ] Incorporate cross program line lists [jira](https://jira.dhis2.org/browse/DHIS2-7458) (Delayed for backend performance improvements)
     -  [x] Include due/scheduled date and last updated on time dimensions. [jira](https://jira.dhis2.org/browse/DHIS2-12309)
     -  [x] Legends for program data elements and indicators [jira](https://jira.dhis2.org/browse/DHIS2-75)
 
 -  Continued design for new line listing
     -   [x] Design relationship derived line lists
-    -   Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots. (Delayed for backend performance   improvements)
+    -   [ ] Scoping and designing TEI chart types: network graphs, family trees, scatter plots, box and whisker cohort scatter plots. (Delayed for backend performance improvements)
  
 -   TEI ownership based analytics
 
     -   [x] Design for ownership org unit component incorporated into all analytics apps (New EV/ER, Maps, Data Visualizer, and Maps)
 
 -   Data use/Micro planning
-    -   Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497) (Expected for continuous release in 2.39+)
-    -   Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101) (Requirments gathered and design in process full feature expected in 2.40)
+    -   [ ] Cummulative values pivot tables [jira](https://jira.dhis2.org/browse/DHIS2-5497) (Expected for continuous release in 2.39+)
+    -   [ ] Automated dashboard emails [jira](https://jira.dhis2.org/browse/DHIS2-12101) (Requirments gathered and design in process full feature expected in 2.40)
     -   [x] Google Earth Engine import in Maps [jira](https://jira.dhis2.org/browse/DHIS2-11966)
     -   [x] Design and requirments for persisted log-in dashboards
     -   [x] Design and requirments for dashboard sharing via web link
@@ -57,32 +57,32 @@
 ### 2.40
 
 -   Tracker analytics 
-    -   Improved program indicator performance
-    -   Backend for cross program analytics
-    -   Development of relationship endpoint - Enables line listing derived from relationships
-    -   Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
+    -   [ ] Improved program indicator performance
+    -   [ ] Backend for cross program analytics
+    -   [ ] Development of relationship endpoint - Enables line listing derived from relationships
+    -   [ ] Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
 -   On-the-fly calculations
 
-    -   On-the-fly calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   [ ] On-the-fly calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 -   Data use/Micro planning
 
-    -   Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
-    -   Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
-    -   Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
-    -   Cummulative values in pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
-    -   Design for "simple" dashboard mode.
+    -   [ ] Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
+    -   [ ] Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
+    -   [ ] Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
+    -   [ ] Cummulative values in pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
+    -   [ ] Design for "simple" dashboard mode.
 
 ### 2.41
 -   Tracker Analytics
-    -   Cross program linelists 
-    -   Tracked entity count  
+    -   [ ] Cross program linelists 
+    -   [ ] Tracked entity count  
 -  Two value chart types 
 
 -   Data Use
-    -   BNA Chart type added to data visulazer application
-    -   Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
-    -   Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
-    -   Possibility to view standard report directly in the dashboard
-    -   Services/tools to better support public web portals 
+    -   [ ] BNA Chart type added to data visulazer application
+    -   [ ] Persisted dashboard log-in for dashboard on public display [jira](https://dhis2.atlassian.net/browse/DHIS2-13715)
+    -   [ ] Dashboard sharing via web link [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
+    -   [ ] Possibility to view standard report directly in the dashboard
+    -   [ ] Services/tools to better support public web portals 
