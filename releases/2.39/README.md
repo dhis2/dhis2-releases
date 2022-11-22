@@ -19,3 +19,13 @@
    - /api/tracker/
    ```
    [Docs new tracker endpoint](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/new-tracker.html) | [Docs old tracker endpoints](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/tracker.html)
+
+* **Deprecated endpoints have been removed:** (see [deprecated-features](https://github.com/dhis2/dhis2-releases/blob/master/releases/deprecated-features.md) )
+
+    * XML support in metadata APIs as well as in metadata import and export has been removed.
+
+    * The `POST /api/dataAnalysis/stdDevOutlier` and `POST /api/dataAnalysis/minMaxOutlier` API endpoints are removed. These endpoints are superseded by the `/api/outlierDetection` API which offers higher performance and more sophisticated outlier detection.
+
+    * The `POST /api/dataAnalysis/followup` API endpoint for reading follow-up data values is removed. This endpoint is superseded by the `GET /api/dataAnalysis/followup` API endpoint.
+
+    * The `type` field in the `/api/analytcs` API endpoint `metadata` > `headers` response is removed. Instead use the `valueType` field.
