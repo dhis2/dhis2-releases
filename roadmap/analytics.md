@@ -83,5 +83,5 @@
 -   Data Use
     -   [ ] BNA Chart type added to data visulazer application
     -   [ ] Dashboard email push
-    -   [ ] Services/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
+    -   [ ] Services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
     -   [ ] Possibility to view standard report directly in the dashboard
