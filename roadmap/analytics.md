@@ -57,31 +57,58 @@
 ### 2.40
 
 -   Tracker analytics 
+
+    -   [ ] Tracked entity/cross program linelist backend
     -   [ ] Improved program indicator performance
-    -   [ ] Backend for cross program analytics
     -   [ ] Development of relationship endpoint - Enables line listing derived from relationships
     -   [ ] Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
--   On-the-fly calculations
+-   Data visualizer
 
     -   [ ] On-the-fly calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
-
--   Data use/Micro planning
-
     -   [ ] Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
     -   [ ] Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
     -   [ ] Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
     -   [ ] Cummulative values in pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
-    -   [ ] Design for "simple" dashboard mode.
+
+-   Dashboards 
+
+    -   [ ] Design for new push analysis - email dashboard print
+    -   [ ] Dashboard plug-in support
+    -   [ ] Services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
 
 ### 2.41
 -   Tracker Analytics
-    -   [ ] Cross program linelists 
-    -   [ ] Tracked entity count  
--  Two value chart types 
 
--   Data Use
+    -   [ ] Relationship linelists backend 
+    -   [ ] Cross program linelists 
+    -   [ ] Tracked entity count beased upon enrollement and event linelists.  
+    -   [ ] Design for ownership organizational unit demension.  
+
+-   Data visualizer
+
+    -   [ ] Two value chart types 
     -   [ ] BNA Chart type added to data visulazer application
+    -   [ ] Outlier tables (Replacing WHO DQ app)
+    -   [ ] Future periods  
+
+-   Dashboards
+
     -   [ ] Dashboard email push
-    -   [ ] Services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716) 
     -   [ ] Possibility to view standard report directly in the dashboard
+    -   [ ] Design for a "simple" dashboard presentation mode. 
+
+### 2.42
+-   Tracker Analytics
+
+    - [ ] Relationship linelists  
+    - [ ] Scoping for next phase of tracker analytics. Future of event reports and event visualizer
+
+-   Data visualizer
+
+    - [ ] Ownership organizational unit demension
+    - [ ] Custom periods. 
+
+-   Dashboards
+    
+    - [ ] Simple, presentation dashboard view. 
