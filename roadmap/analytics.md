@@ -77,6 +77,14 @@
     -   [ ] Dashboard plug-in support
     -   [ ] Services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
 
+-   Maps
+
+    - [ ] Support multiple event coorinate types (Event, enrollement, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
+    - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
+    - [ ] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
+    - [ ] Show map legend for large dashboard maps. [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
+
+
 ### 2.41
 -   Tracker Analytics
 
@@ -97,6 +105,11 @@
     -   [ ] Dashboard email push
     -   [ ] Possibility to view standard report directly in the dashboard
     -   [ ] Design for a "simple" dashboard presentation mode. 
+
+-   Maps
+    -   [ ] New tracked entity layer 
+    -   [ ] Program indicator filter in maps
+    -   [ ] Tracked entity clusters/heat maps
 
 ### 2.42
 -   Tracker Analytics
