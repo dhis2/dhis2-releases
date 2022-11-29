@@ -58,7 +58,7 @@
 
 -   Tracker analytics 
 
-    -   [ ] Tracked entity/cross program line list backend [jira](https://dhis2.atlassian.net/browse/DHIS2-13779)
+    -   [ ] TEI / Cross program line list backend [jira](https://dhis2.atlassian.net/browse/DHIS2-13779)
     -   [ ] Improved program indicator performance
     -   [ ] Show org unit hierarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
@@ -85,25 +85,26 @@
 
 
 ### 2.41
+
 -   Tracker Analytics
 
-    -   [ ] Relationship linelists backend 
-    -   [ ] Cross program linelists 
-    -   [ ] Tracked entity count beased upon enrollement and event linelists.  
-    -   [ ] Design for ownership organizational unit demension.  
+    -   [ ] Relationship line list backend 
+    -   [ ] TEI / Cross program line list frontend
+    -   [ ] Tracked entity count based upon event and enrollment line lists
+    -   [ ] Design for ownership organisation unit dimension
 
 -   Data visualizer
 
     -   [ ] Two value chart types 
-    -   [ ] BNA Chart type added to data visulazer application
+    -   [ ] BNA chart type added to Data Visualizer
     -   [ ] Outlier tables (Replacing WHO DQ app)
     -   [ ] Future periods  
 
 -   Dashboards
 
     -   [ ] Dashboard email push
-    -   [ ] Possibility to view standard report directly in the dashboard
-    -   [ ] Design for a "simple" dashboard presentation mode. 
+    -   [ ] Possibility to view standard reports directly in the dashboard
+    -   [ ] Design for a "simple" presentation mode for dashboards
 
 -   Maps
     -   [ ] New tracked entity layer 
@@ -111,16 +112,17 @@
     -   [ ] Tracked entity clusters/heat maps
 
 ### 2.42
+
 -   Tracker Analytics
 
-    - [ ] Relationship linelists  
-    - [ ] Scoping for next phase of tracker analytics. Future of event reports and event visualizer
+    - [ ] Relationship line lists frontend
+    - [ ] Scoping for next phase of tracker analytics, future of Event Reports and Event Visualizer
 
 -   Data visualizer
 
-    - [ ] Ownership organizational unit demension
-    - [ ] Custom periods. 
+    - [ ] Ownership organisation unit dimension
+    - [ ] Custom periods
 
 -   Dashboards
     
-    - [ ] Simple, presentation dashboard view. 
+    - [ ] Simple presentation dashboard mode for dashboards frontend
