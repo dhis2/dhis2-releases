@@ -58,7 +58,7 @@
 
 -   Tracker analytics 
 
-    -   [ ] Tracked entity/cross program line list backend
+    -   [ ] Tracked entity/cross program line list backend [jira](https://dhis2.atlassian.net/browse/DHIS2-13779)
     -   [ ] Improved program indicator performance
     -   [ ] Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
