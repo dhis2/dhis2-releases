@@ -58,18 +58,17 @@
 
 -   Tracker analytics 
 
-    -   [ ] Tracked entity/cross program linelist backend
+    -   [ ] Tracked entity/cross program line list backend
     -   [ ] Improved program indicator performance
-    -   [ ] Development of relationship endpoint - Enables line listing derived from relationships
     -   [ ] Show org unit heiarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
 -   Data visualizer
 
-    -   [ ] On-the-fly calculations in data visualizer pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
-    -   [ ] Apply legend as background color for single value chart type. [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
-    -   [ ] Legend for stacked column charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
-    -   [ ] Show data element and indicator icon for single value charts. [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
-    -   [ ] Cummulative values in pivot tables. [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
+    -   [ ] On-the-fly calculations in data visualizer pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   [ ] Apply legend as background color for single value chart type [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
+    -   [ ] Legend for stacked column charts [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
+    -   [ ] Show data element and indicator icon for single value charts [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
+    -   [ ] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
 -   Dashboards 
 
@@ -79,10 +78,10 @@
 
 -   Maps
 
-    - [ ] Support multiple event coorinate types (Event, enrollement, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
+    - [ ] Support multiple event coordinate types (Event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
     - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
     - [ ] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
-    - [ ] Show map legend for large dashboard maps. [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
+    - [ ] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
 
 
 ### 2.41
