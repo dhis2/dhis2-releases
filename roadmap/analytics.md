@@ -72,7 +72,7 @@
 
 -   Dashboards 
 
-    -   [ ] Dashboard plug-in support
+    -   [ ] Dashboard plug-in support [jira](https://dhis2.atlassian.net/browse/TECH-475)
     -   [ ] Design for new push analysis - email dashboard print
     -   [ ] Design for services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
 
