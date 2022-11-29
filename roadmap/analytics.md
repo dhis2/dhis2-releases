@@ -78,7 +78,7 @@
 
 -   Maps
 
-    - [ ] Support multiple event coordinate types (Event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
+    - [ ] Support multiple event coordinate types (event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
     - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
     - [ ] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
     - [ ] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
