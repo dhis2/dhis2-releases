@@ -47,34 +47,34 @@
 ### 2.40
 
 -   Master facility list
-    -   Reporting start date for organisation unit
-    -   Org unit profile configuration UI
-    -   Org unit split and merge UI
-    -   Propose and approve org unit workflow UI
+    -   [ ] Reporting start date for organisation unit
+    -   [ ] Org unit profile configuration UI
+    -   [ ] Org unit split and merge UI
+    -   [ ] Propose and approve org unit workflow UI
 
 -   Platform
-    -   New DHIS 2 web app portal, replace old portal with Javascript-based portal
-    -   New login app
-    -   Multi-select option sets in data entry and analytics
-    -   Renaming of apps and customization of UI labels with custom translation bundles
-    -   Remove Struts completely from the system
+    -   [ ] New DHIS 2 web app portal, replace old portal with Javascript-based portal
+    -   [ ] New login app
+    -   [ ] Multi-select option sets in data entry and analytics
+    -   [ ] Renaming of apps and customization of UI labels with custom translation bundles
+    -   [ ] Remove Struts completely from the system
 
 -   Integration
-    -   Event subscription/notification system for metadata
+    -   [ ] Event subscription/notification system for metadata
 
 -   Maintenance app
-    -   New Maintenance app, gradually rebuilt and released
-    -   Bulk metadata sharing
+    -   [ ] New Maintenance app, gradually rebuilt and released
+    -   [ ] Bulk metadata sharing
 
 -   Data use/quality
-    -   Push analytics with dashboard print and sharing access control
-    -   Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
-    -   WHO annual data quality app/report
+    -   [ ] Push analytics with dashboard print and sharing access control
+    -   [ ] Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
+    -   [ ] WHO annual data quality app/report
 
 ### 2.41 or later
 
 - Master facility list
-    -   Org unit analytics maintenance app updates
+    -   [ ] Org unit analytics maintenance app updates
 
 ### Always Ongoing
 
