@@ -65,33 +65,33 @@
 ### 2.40 / 2.8
 
 - Generic Features
-   - Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
+   - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
  
 - Data Entry
-   - New DataSets layout [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-2918)
-   - Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
-   - Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
-   - Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
-   - Collect hand writing signature for image Data Elements [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
-   - New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
-    - Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
+   - [ ] New DataSets layout [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-2918)
+   - [ ] Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
+   - [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
+   - [ ] Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
+   - [ ] Collect hand writing signature for image Data Elements [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
+   - [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+   - [ ] Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
 
 - Support Mobile Implementations
-     - Make max number of accounts configurable or remove it [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
-     - Give support for Android App version control from DHIS2 User Interface [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
-     - Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
-     - Promote MDM support through documentation available and explore agreements
+     - [ ] Make max number of accounts configurable or remove it [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
+     - [ ] Give support for Android App version control from DHIS2 User Interface [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
+     - [ ] Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
+     - [ ] Promote MDM support through documentation available and explore agreements
 
 
 - Web parity
-    - Align web and Android program rule engine [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
-    - Support file value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
-    - Support new Tracker working lists (filter by DE) [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
+    - [ ] Align web and Android program rule engine [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
+    - [ ] Support file value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
+    - [ ] Support new Tracker working lists (filter by DE) [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
 
 - Quality, Security, Performance
-    - Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
-    - Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-5043)
-     - Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
+    - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
+    - [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-5043)
+    - [ ] Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
 
 
 ### 2.41 / 2.9
@@ -99,53 +99,53 @@
 **Development**
 
 -   Offline Analytics
-    -   [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
+    -   [ ] [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
 
 -   Notifications & Messaging
-    -   [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
-    -   [DHIS2 Messaging](https://jira.dhis2.org/browse/ANDROAPP-694)-   Data Entry
+    -   [ ] [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
+    -   [ ] [DHIS2 Messaging](https://jira.dhis2.org/browse/ANDROAPP-694)-   Data Entry
 
 -   Stability and Performance
-    -   [Option to sync ASAP](https://jira.dhis2.org/browse/ANDROAPP-2959)
-    -   [DB trimming](https://jira.dhis2.org/browse/ANDROAPP-2912)
-    -   [Automatic deletion of synced data](https://jira.dhis2.org/browse/ANDROAPP-2957)
-    -   [Light Sync - only records updated offline](https://jira.dhis2.org/browse/ANDROAPP-1702)
+    -   [ ] [Option to sync ASAP](https://jira.dhis2.org/browse/ANDROAPP-2959)
+    -   [ ] [DB trimming](https://jira.dhis2.org/browse/ANDROAPP-2912)
+    -   [ ] [Automatic deletion of synced data](https://jira.dhis2.org/browse/ANDROAPP-2957)
+    -   [ ] [Light Sync - only records updated offline](https://jira.dhis2.org/browse/ANDROAPP-1702)
 
 -   Mobile Implementation Support
-    -   [Display sync status in multi-user accounts screen](https://dhis2.atlassian.net/browse/ANDROAPP-4981)
-    -   [Request sync from outside the App](https://jira.dhis2.org/browse/ANDROAPP-2899)
-    -   [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform)
-    -   [Import/export db](https://jira.dhis2.org/browse/ANDROAPP-2474)
-    -   Display errors in Indicators configuration [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5021)
+    -   [ ] [Display sync status in multi-user accounts screen](https://dhis2.atlassian.net/browse/ANDROAPP-4981)
+    -   [ ] [Request sync from outside the App](https://jira.dhis2.org/browse/ANDROAPP-2899)
+    -   [ ] [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform)
+    -   [ ] [Import/export db](https://jira.dhis2.org/browse/ANDROAPP-2474)
+    -   [ ] Display errors in Indicators configuration [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5021)
 
 
 - Generic Features
-    -    Multicalendar (date picker, periods, analysis)  
+    -   [ ] Multicalendar (date picker, periods, analysis)  
 
 -   LMIS
-    -   Bluetooth temperature data monitoring (LMIS)
+    -   [ ] Bluetooth temperature data monitoring (LMIS)
 
 -   EMIS
-    -   Bulk data entry (EMIS)
+    -   [ ] Bulk data entry (EMIS)
 
 **Design**
 
 -   EMIS - Requirements / UX/UI design
-    -   Bulk data entry (EMIS)
+    -   [ ] Bulk data entry (EMIS)
 
 **Innovation (based on available resources and task estimation)**
 
 -   Review UX/UI
-    -   [Implement TEI centered UI and flow](https://jira.dhis2.org/browse/ANDROAPP-4019)
+    -   [ ] [Implement TEI centered UI and flow](https://jira.dhis2.org/browse/ANDROAPP-4019)
 
--   [Task screen](https://jira.dhis2.org/browse/ANDROAPP-3427)
--   [Support multimedia](https://jira.dhis2.org/browse/ANDROAPP-3697)
+-   [ ] [Task screen](https://jira.dhis2.org/browse/ANDROAPP-3427)
+-   [ ] [Support multimedia](https://jira.dhis2.org/browse/ANDROAPP-3697)
 -   NFC
-    -   Read/write patient card (with config parameter for not storing patient data)
-    -   Bulk data transfer device-device
+    -   [ ] Read/write patient card (with config parameter for not storing patient data)
+    -   [ ] Bulk data transfer device-device
 
--   Trigger data entry from Maps
+-   [ ] Trigger data entry from Maps
 
 -   Self reporting (TEI App) - _Prototype_
-    -   Platform for authenticating from TEI credentials (**dependency** platform)
-    -   TEI App
+    -   [ ] Platform for authenticating from TEI credentials (**dependency** platform)
+    -   [ ] TEI App
