@@ -138,13 +138,13 @@
 -   Review UX/UI
     -   [ ] [Implement TEI centered UI and flow](https://jira.dhis2.org/browse/ANDROAPP-4019)
 
--   [ ] [Task screen](https://jira.dhis2.org/browse/ANDROAPP-3427)
--   [ ] [Support multimedia](https://jira.dhis2.org/browse/ANDROAPP-3697)
+-   [Task screen](https://jira.dhis2.org/browse/ANDROAPP-3427)
+-   [Support multimedia](https://jira.dhis2.org/browse/ANDROAPP-3697)
 -   NFC
     -   [ ] Read/write patient card (with config parameter for not storing patient data)
     -   [ ] Bulk data transfer device-device
 
--   [ ] Trigger data entry from Maps
+-   Trigger data entry from Maps
 
 -   Self reporting (TEI App) - _Prototype_
     -   [ ] Platform for authenticating from TEI credentials (**dependency** platform)
