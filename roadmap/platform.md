@@ -74,6 +74,8 @@
 
 - Master facility list
     -   [ ] Org unit analytics maintenance app updates
+
+- Platform
     -   [ ] Remove Struts completely from the system
 
 ### Always Ongoing
