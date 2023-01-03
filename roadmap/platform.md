@@ -57,7 +57,6 @@
     -   [ ] New login app
     -   [ ] Multi-select option sets in data entry and analytics
     -   [ ] Renaming of apps and customization of UI labels with custom translation bundles
-    -   [ ] Remove Struts completely from the system
 
 -   Integration
     -   [ ] Event subscription/notification system for metadata
@@ -75,6 +74,7 @@
 
 - Master facility list
     -   [ ] Org unit analytics maintenance app updates
+    -   [ ] Remove Struts completely from the system
 
 ### Always Ongoing
 
