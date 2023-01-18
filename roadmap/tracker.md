@@ -1,6 +1,6 @@
 ## Tracker
 
-### 2.39
+### 2.40
 
 -   Feature parity in Capture app
 
@@ -53,7 +53,7 @@
     -   Extend dynamic indexing functionaility to include managing and evaluating existing indexes
     -   Support Android with WEB API automatic testing
 
-### 2.40
+### 2.41
 
 -   Program rules
     -   Program rules across programs
