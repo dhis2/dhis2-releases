@@ -64,36 +64,34 @@
 
 ### 2.40 / 2.8
 
-- Generic Features
-    - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
- 
 - Data Entry
-    - [ ] New DataSets layout [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-2918)
-    - [ ] Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
+    - [x] Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
+    - [x] Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
+    - [x] Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
     - [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
-    - [ ] Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
+    - [ ] New DataSets layout [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-2918)
     - [ ] Collect hand writing signature for image Data Elements [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
     - [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
-    - [ ] Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
-
+    
 - Support Mobile Implementations
-    - [ ] Make max number of accounts configurable or remove it [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
+    - [x] Remove max number of offline accounts [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
     - [ ] Give support for Android App version control from DHIS2 User Interface [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
     - [ ] Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
     - [ ] Promote MDM support through documentation available and explore agreements
 
-
 - Web parity
+    - [x] Support file value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
     - [ ] Align web and Android program rule engine [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
-    - [ ] Support file value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
     - [ ] Support new Tracker working lists (filter by DE) [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
 
+- Generic Features
+    - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
+
 - Quality, Security, Performance
+    - [x] Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
     - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
     - [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-5043)
-    - [ ] Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
-
-
+    
 ### 2.41 / 2.9
 
 **Development**
