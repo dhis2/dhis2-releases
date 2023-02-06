@@ -90,7 +90,7 @@
 - Quality, Security, Performance
     - [x] Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
     - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
-    - [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-5043)
+    - [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
     
 ### 2.41 / 2.9
 
