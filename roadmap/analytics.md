@@ -96,7 +96,7 @@
 -   Data visualizer
 
     -   [ ] Two value chart types 
-    -   [ ] BNA chart type added to Data Visualizer
+    -   [ ] Include the indicator description in the data item selector. 
     -   [ ] Outlier tables (Replacing WHO DQ app)
     -   [ ] Future periods  
 
@@ -104,6 +104,7 @@
 
     -   [ ] Dashboard email push
     -   [ ] Possibility to view standard reports directly in the dashboard
+    -   [ ] Design for indicator description included in dashboard items. 
     -   [ ] Design for a "simple" presentation mode for dashboards
 
 -   Maps
