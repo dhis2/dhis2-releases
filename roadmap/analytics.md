@@ -104,7 +104,7 @@
 
     -   [ ] Dashboard email push
     -   [ ] Possibility to view standard reports directly in the dashboard
-    -   [ ] Design for indicator description included in dashboard items. 
+    -   [ ] Design for indicator description included in dashboard items. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
     -   [ ] Design for a "simple" presentation mode for dashboards
 
 -   Maps
