@@ -47,10 +47,10 @@
 ### 2.40
 
 -   Platform
-    -   [-] New DHIS 2 web app portal, replace old portal with Javascript-based portal
-    -   [-] New login app
+    -   [ ] 🛠️ New DHIS 2 web app portal, replace old portal with Javascript-based portal
+    -   [ ] 🛠️ New login app
     -   [x] Multi-select option sets in data entry and analytics
-    -   [-] Improved multi-factor authentication support
+    -   [ ] 🛠️ Improved multi-factor authentication support
     -   [ ] Deep linking for metadata and actions in the app menu
     -   [x] Improved multi-calendar support
 
@@ -63,8 +63,8 @@
     -   [x] Start work on new Maintenance app, gradually rebuilt and released
 
 -   Data use/quality
-    -   [-] WebHook support for triggering external push analytics
-    -   [-] User impersonation (to support external push analytics)
+    -   [ ] 🛠️ WebHook support for triggering external push analytics
+    -   [ ] 🛠️ User impersonation (to support external push analytics)
     -   [ ] Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
     -   [ ] WHO annual data quality app/report
 
