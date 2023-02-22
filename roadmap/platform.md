@@ -46,37 +46,45 @@
 
 ### 2.40
 
--   Master facility list
-    -   [ ] Reporting start date for organisation unit
-    -   [ ] Org unit profile configuration UI
-    -   [ ] Org unit split and merge UI
-    -   [ ] Propose and approve org unit workflow UI
-
 -   Platform
-    -   [ ] New DHIS 2 web app portal, replace old portal with Javascript-based portal
-    -   [ ] New login app
-    -   [ ] Multi-select option sets in data entry and analytics
-    -   [ ] Renaming of apps and customization of UI labels with custom translation bundles
+    -   [-] New DHIS 2 web app portal, replace old portal with Javascript-based portal
+    -   [-] New login app
+    -   [x] Multi-select option sets in data entry and analytics
+    -   [-] Improved multi-factor authentication support
+    -   [ ] Deep linking for metadata and actions in the app menu
+    -   [x] Improved multi-calendar support
 
--   Integration
-    -   [ ] Event subscription/notification system for metadata
+-   Extensibility & Integration
+    -   [x] Event subscription/notification system for metadata
+    -   [x] External service routing / API gateway
+    -   [x] OpenAPI specification
 
 -   Maintenance app
-    -   [ ] New Maintenance app, gradually rebuilt and released
-    -   [ ] Bulk metadata sharing
+    -   [x] Start work on new Maintenance app, gradually rebuilt and released
 
 -   Data use/quality
-    -   [ ] Push analytics with dashboard print and sharing access control
+    -   [-] WebHook support for triggering external push analytics
+    -   [-] User impersonation (to support external push analytics)
     -   [ ] Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
     -   [ ] WHO annual data quality app/report
+
+-   Metadata management
+    -   [ ] Metadata import audit log
+    -   [ ] Metadata merge functionality
+    -   [ ] Improved metadata dependency export
 
 ### 2.41 or later
 
 - Master facility list
+    -   [ ] Reporting start date for organisation unit
+    -   [ ] Org unit profile configuration UI
+    -   [ ] Org unit split and merge UI
+    -   [ ] Propose and approve org unit workflow UI
     -   [ ] Org unit analytics maintenance app updates
 
 - Platform
     -   [ ] Remove Struts completely from the system
+    -   [ ] Renaming of apps and customization of UI labels with custom translation bundles
 
 ### Always Ongoing
 
