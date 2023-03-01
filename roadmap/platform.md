@@ -65,8 +65,6 @@
 -   Data use/quality
     -   [ ] 🛠️ WebHook support for triggering external push analytics
     -   [ ] 🛠️ User impersonation (to support external push analytics)
-    -   [ ] Integrate WHO DQ app concepts into core apps (data quality, data visualizer)
-    -   [ ] WHO annual data quality app/report
 
 -   Metadata management
     -   [ ] Metadata import audit log
