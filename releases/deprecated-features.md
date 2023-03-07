@@ -12,7 +12,7 @@ The following features are deprecated. You can still use them now, but the DHIS2
 
 |Feature|Deprecation first announced|Planned end of support<br>(version)|
 |:---------|:---:|:---:|
-|The Data Entry app is deprecated, and replaced by the Aggregate Data Entry app|Dec 2022|2.42.0|
+|The Data Entry app is deprecated, and replaced by the Aggregate Data Entry app|Dec 2022|2.41.0|
 |The `/api/eventCharts` and `/api/eventReports` API endpoints are deprecated. Use the consolidated `/api/eventVisualizations` API instead.|April 2022|2.41.0|
 
 
