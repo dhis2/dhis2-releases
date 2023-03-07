@@ -34,7 +34,7 @@ function get_next_hotfix {
 function hotfix_branch {
 
         local LAST=${1}
-        local NEXT=${2} 
+        local NEXT=${2}
         # create the new patch branch
         git checkout "${LAST}"
         git checkout -b "${PATCH_BRANCH_PREFIX}${NEXT}"
@@ -53,10 +53,10 @@ function hotfix_branch {
 
 
 function manage_hotfixes {
-    
+
     # for the last three major versions
     echo "Ensure the latest hotfix branches are availabe:"
-    for v in $(git tag -l '2.*.*' | sed 's/\(2\.[3-9][0-9]\).*/\1/' | sort -ur | head -3)
+    for v in $(git tag -l '2.*.*' | sed 's/\(2\.[3-9][0-9]\).*/\1/' | sort -ur | head -4)
     do
         echo "DHIS2 Version ${v}:"
         # get the latest release and make sure there is a hotfix branched from it
@@ -132,7 +132,7 @@ function main {
    #input: <patch>
 #    - clone core at previous patch tag
 #       - create patch branches on core
-#          - update mvn version to patch snapshot                                   
+#          - update mvn version to patch snapshot
     process_core
     #   prune_core
 
