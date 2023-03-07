@@ -4,6 +4,11 @@
 
 * The previous data approval Struts-based web module is removed, and superseded by the React-based data approval web app.
 
+## Tracker
+
+* Relationships are now soft-deletable entities. This means that when they are deleted, they are still in the database but they are still used in validations. So if an import is trying to reference a soft-deleted relationship, the importer will return an error.
+* In previous versions Relationships were identified by their `UID` or by a combination of `Relationship Type`, `from` field and `to` field. From 2.39 Relationships are only identified by their `UID`. This is causing a potential breaking change as earlier a payload with a Relationship without a specified `UID` could be imported multiple times without errors (just a warning that updating the relationship was not possible), while now the import is throwing an error stating that a Relationship of the same type and linking the same entities already exists.
+
 ## API
 
 * **Metadata attribute validation:** Validation of metadata attributes will be executed when saving objects with attribute values in the maintenance app. Validation rules are now based on the `Attribute.ValueType`. Most of those rules are straightforward. For instance value type "number" will only accept digits. On the other hand, "phone number" has a regular expression validation rule `"^[0-9+\\(\\)#\\.\\s\\/ext-]{6,50}$"`. As a result of this new validation feature, you might get errors when editing metadata objects which now have invalid attribute values. In that case please update the values and save the object.
