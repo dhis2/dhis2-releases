@@ -70,6 +70,9 @@ Components: _[API] Metadata model_
 **[DHIS2-14733](https://dhis2.atlassian.net/browse/DHIS2-14733): Program rule fails to assign when field is not in a program stage**  
 Components: _[API] Program rules_, _[App] Tracker capture_
 
+**[DHIS2-14917](https://dhis2.atlassian.net/browse/DHIS2-14917): Rule-engine triggered by program event in old tracker can cause performance issues**  
+Components: _[API] Tracker_
+
 **[DHIS2-14828](https://dhis2.atlassian.net/browse/DHIS2-14828): href in /tracker/events is inconsistent and unused**  
 Components: _[API] Tracker_
 
