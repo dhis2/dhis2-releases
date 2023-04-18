@@ -6,7 +6,7 @@
 
 ## API
 
-* **Old tracker APIs deprecated:** In previous release old tracker API endpoints were deprecated. (see [deprecated-features](https://github.com/dhis2/dhis2-releases/blob/master/releases/deprecated-features.md) ). We encourage developers of apps and extensions do transition over to move away from old endpoints. Deprecated API endpoints are:
+* **Old tracker APIs deprecated:** In the previous release, the old tracker API endpoints were deprecated. (see [deprecated-features](https://github.com/dhis2/dhis2-releases/blob/master/releases/deprecated-features.md) ). We encourage developers of apps and extensions transition and move away from the old endpoints. The deprecated API endpoints are:
    ```
    - /api/trackedEntityInstances
    - /api/enrollments
