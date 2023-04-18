@@ -6,17 +6,21 @@
 
 ## API
 
-* **Old tracker APIs deprecated:** In the previous release, the old tracker API endpoints were deprecated. (see [deprecated-features](https://github.com/dhis2/dhis2-releases/blob/master/releases/deprecated-features.md) ). We encourage developers of apps and extensions transition and move away from the old endpoints. The deprecated API endpoints are:
+* **Old tracker APIs deprecated:** In 2.39 release, the old tracker API endpoints were deprecated. (see [deprecated-features](https://github.com/dhis2/dhis2-releases/blob/master/releases/deprecated-features.md) ). We encourage developers of apps and extensions transition and move away from the old endpoints. The deprecated API endpoints are:
    ```
    - /api/trackedEntityInstances
    - /api/enrollments
    - /api/events
    - /api/relationships
    ```
-   This endpoint should be used instead:
+   Use tracker endpoints instead:
    ```
-   - /api/tracker/
+   - /api/tracker
+   - /api/tracker/enrollments
+   - /api/tracker/events
+   - /api/tracker/trackedEntities
+   - /api/tracker/relationships
    ```
    [Docs tracker endpoint](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/tracker.html) | [Docs old tracker endpoints](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/old-tracker.html)
 
-* **Removed status field in bundleReport:** Import summaries have the following overall structure [defined here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/tracker.html#import-summary-structure). Status field in `bundleReport` property was redundant, hence it was removed. `Status` field in the root of the import summary should be used.
+* **Removed status field in bundleReport:** Import summaries have the following overall structure [defined here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/tracker.html#import-summary-structure). `status` field in `bundleReport` property was redundant, hence it was removed. `status` field in the root of the import summary should be used.
