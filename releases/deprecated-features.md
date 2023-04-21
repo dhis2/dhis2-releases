@@ -14,6 +14,7 @@ The following features are deprecated. You can still use them now, but the DHIS2
 |:---------|:---:|:---:|
 |The Data Entry app is deprecated, and replaced by the Aggregate Data Entry app|Dec 2022|2.41.0|
 |The `/api/eventCharts` and `/api/eventReports` API endpoints are deprecated. Use the consolidated `/api/eventVisualizations` API instead.|April 2022|2.41.0|
+|Request parameters for `/api/organisationUnits/{uid}` resulting in a list are deprecated. Use path based substitues as follows: <ul><li> `/api/organisationUnits/{uid}?includeChildren=true` => `/api/organisationUnits/{uid}/children`</li><li> `/api/organisationUnits/{uid}?includeDescendants=true` => `/api/organisationUnits/{uid}/descendants`</li><li> `/api/organisationUnits/{uid}?includeAncestors=true` => `/api/organisationUnits/{uid}/ancestors` </li><li> `/api/organisationUnits/{uid}?level={n}` => `/api/organisationUnits/{uid}/children?level={n}` </li></ul> | April 2023 | 2.41.0 |
 
 
 ## Removed features
