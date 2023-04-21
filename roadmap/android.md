@@ -64,40 +64,50 @@
 
 ### 2.40 / 2.8
 
-- Data Entry
+- User Experience 
+    - [x] Add loading banners when action takes long [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5012)
+    - [x] Improved offline user experience [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5032)
+    - [x] Improve display for long program stages [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
+    - [x] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
     - [x] Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
     - [x] Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
     - [x] Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
-    - [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
-    - [ ] New DataSets layout [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-2918)
-    - [ ] Collect hand writing signature for image Data Elements [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
-    - [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+    - [x] Dataset tables resizing [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5153)
+    - [x] Collect hand writing signature for image Data Elements [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
     
 - Support Mobile Implementations
     - [x] Remove max number of offline accounts [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
-    - [ ] Give support for Android App version control from DHIS2 User Interface [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
-    - [ ] Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
-    - [ ] Promote MDM support through documentation available and explore agreements
+    - [x] Give support for Android App version control from DHIS2 User Interface [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
 
 - Web parity
     - [x] Support file value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
-    - [ ] Align web and Android program rule engine [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
-    - [ ] Support new Tracker working lists (filter by DE) [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
+    - [x] Align web and Android program rule engine [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
+    - [x] Support new Tracker working lists (filter by DE) [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
 
-- Generic Features
-    - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
+
 
 - Quality, Security, Performance
     - [x] Enable opt-out for non identifyable data tracking tools [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5058)
-    - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
-    - [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
+    
+- LMIS 
+    - [x] Module for Real Stock Monitoring use case integrated [Jira]([https://dhis2.atlassian.net/browse/ANDROAPP-4498)
     
 ### 2.41 / 2.9
 
 **Development**
 
--   Offline Analytics
+- Generic Features
+    - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
+   
+-   Data entry
+    - [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
+
+- User Experience
+    - [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+
+- Offline Analytics
     -   [ ] [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
+
 
 -   Notifications & Messaging
     -   [ ] [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
@@ -110,13 +120,16 @@
     -   [ ] [Light Sync - only records updated offline](https://jira.dhis2.org/browse/ANDROAPP-1702)
 
 -   Mobile Implementation Support
+    -   [ ] Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
+    -   [ ] Promote MDM support through documentation available and explore agreements
     -   [ ] [Display sync status in multi-user accounts screen](https://dhis2.atlassian.net/browse/ANDROAPP-4981)
     -   [ ] [Request sync from outside the App](https://jira.dhis2.org/browse/ANDROAPP-2899)
     -   [ ] [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform)
     -   [ ] [Import/export db](https://jira.dhis2.org/browse/ANDROAPP-2474)
     -   [ ] Display errors in Indicators configuration [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5021)
 
-
+- Quality 
+-     - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
 - Generic Features
     -   [ ] Multicalendar (date picker, periods, analysis)  
 
