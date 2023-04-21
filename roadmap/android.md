@@ -68,7 +68,6 @@
     - [x] Add loading banners when action takes long [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5012)
     - [x] Improved offline user experience [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5032)
     - [x] Improve display for long program stages [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
-    - [x] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
     - [x] Improve visual configuration and rendering of option sets [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370)
     - [x] Make phone number and email Data Elements actioanable in the form Allow external actions for phone number, email and url value types DEs and Attributes [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
     - [x] Enable scrolling for long text with ellipsis [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
@@ -97,13 +96,15 @@
 **Development**
 
 - Generic Features
-    - [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
+    -   [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
    
 -   Data entry
-    - [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
+    -   [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
 
 - User Experience
-    - [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+    -   [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+    -   [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
+
 
 - Offline Analytics
     -   [ ] [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
