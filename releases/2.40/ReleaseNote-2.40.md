@@ -37,8 +37,50 @@
 
 ## PLATFORM FEATURES
 
+**New job for refreshing Materialized view SQL views:** SQL views of type "Materialized view" now has a new Job which can be scheduled to refresh the contents of the SQL view.
+
+[jira (Backend)](https://dhis2.atlassian.net/browse/DHIS2-14718)
+
+[jira (Frontend)](https://dhis2.atlassian.net/browse/DHIS2-15095)
+
+[docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/scheduling.html#job-parameters)
+
+**Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
+
+**Jobs can now be grouped to run in sequence:** Jobs can be grouped to run in sequence, making it easier to define dependencies between jobs, and also clarify which jobs can be run in parallel. The feature is also soon available in the Scheduler app.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14314)
+
+[docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
+
+
+
+
 
 ### PLATFORM API FEATURES
+
+**Remove ProgramTrackedEntityAttributeGroup:**  This unused entity was removed from the software, and the relevant database tables, api endpoints and references will no longer be available.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14815)
+
+**New dedicated ping endpoint:** A new endpoint for pinging the server has been added. The new endpoint does not require authentication, extend the user session and uses a low amount of resources.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14531)
+
+**Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-10886?filter=10404)
+
+**New system info endpoint:** A new endpoint has been added to return information about the current system, including version, revision, build time and system ID.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14822)
+
+**DataStore now returns sharing information:** DataStore keys can be shared in the same way Metadata is shared. With this change, sharing information is now available in the DataStore API: `/api/dataStore/<namespace>/<key>/metaData`
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14595)
+
 
 
 ## RELEASE INFO
