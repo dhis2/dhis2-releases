@@ -62,8 +62,54 @@
 
 [docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
 
+**Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
+- POST endpoints now accept the list of checks as a request body
+- Identifiers have been shortened
+- Slow tests have been excluded from wildcard name expansion
+- 25 new integrity checks
+- Integrity checks for Organisation Units with same name and parent
+- Integrity checks for Data Elements belonging to data sets with different periods types
 
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14506)
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14236)
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14495)
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14451)
 
+**Improvements to Dashboard App Security:** Previously, users with READ access to a Dashboard could see all metadata objects, even without READ access. To address this, we have removed bypass functions and added validations requiring READ access to all Dashboard objects for updating and browsing.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14404)
+
+**Description Field added for Option and Option Sets**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14102)
+
+**Graphic added to start screen of new Data Entry App**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13940)
+
+**Added “Skip generation of organisation unit ownership data” checkbox to Data Administration App to support Event and enrollment analytics based on owner org unit**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13916)
+
+**Hyphens now allowed in usernames**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13768)
+
+**Support added for application zip archives with a top-level directory**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13760)
+
+**User deletion prevented if the user has created or updated Metadata properties**
+
+[jira (missing)]()
+
+**“User Disabled” column replaced with “Status” column in User app**
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13425)
+
+**Added “Organisation unit” field in Program Indicator configuration:** Determines which organisation unit is assigned to program indicator values.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13374)
 
 
 ### PLATFORM API FEATURES
@@ -87,6 +133,8 @@
 **DataStore now returns sharing information:** DataStore keys can be shared in the same way Metadata is shared. With this change, sharing information is now available in the DataStore API: `/api/dataStore/<namespace>/<key>/metaData`
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14595)
+
+
 
 
 
