@@ -26,10 +26,17 @@
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-8165)
 
-**Add option to show value/number in thematic layers** No in thematic layers in maps you can choose to show the value directly in the map in addition to the legend. 
+**Add option to show value/number in thematic layers** Now in thematic layers in maps you can choose to show the value directly in the map in addition to the legend. 
 
 [jira](https://jira.dhis2.org/browse/DHIS2-13356)
 
+**Prefictor functions for normDistCum and normDistDen** These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST(). For a normalized distribution of given mean and standard deviation they compute the the cumulative distribution function (CDF) probability that a variable falls below or at a specified value and the probability density function (PDF) at a specified value. These functions are needed for supply chain applications to compute the probability of a stock out for normally distributed stock consumption. The stockout probability is 1 minus the cumulative distribution function (CDF). 
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14714)
+
+**Predictor by data element groups** Now you can apply a predictor to an data element group. This functionality provides a short cut if you need to make many like predictors based upon the data elements in a data element group. For example, in supply chain you have data elements for each comodity you are capturing and you need to apply the same predictor calculation to each. Now you can simply apply the predictor to the data element group of those commodity data elements to produce the values from  you need for each. 
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-14635)
 
 
 ## TRACKER AND EVENT FEATURES
