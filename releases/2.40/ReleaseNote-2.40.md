@@ -101,7 +101,7 @@
 
 **User deletion prevented if the user has created or updated Metadata properties**
 
-[jira (missing)]()
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13470?filter=10404)
 
 **“User Disabled” column replaced with “Status” column in User app**
 
