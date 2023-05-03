@@ -64,11 +64,12 @@ Supported in DHIS version 2.38 or higher, with capture version 100.20.0 or highe
 [jira](https://dhis2.atlassian.net/browse/DHIS2-9666)
 
 **Hide due date** The Capture app now supports hiding scheduled date for individual program stages. This allows hiding some non-relevant items in programs that does not need scheduling and scheduled date, providing a cleaner user interface.
+Supported in DHIS version 2.38 or higher, with capture version 100.19.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
 
 
-**Usability updates** Several non-functional usability updates are implemented to provide a better user experience and a smoother look to the Capture app in certain situattions. These changes should generally be smaller improvements that although not essential individually, together will provide a better look and user experience.
+**Usability updates** Several non-functional usability updates are implemented to provide a better user experience and a smoother look to the Capture app in certain situations. These changes should generally be smaller improvements that although not essential individually, together will provide a better look and user experience.
 They are all supported on DHIS2 version 2.38 and above, and Capture version 100.29.0 and above includes all these changes.
 [jira 1](https://dhis2.atlassian.net/browse/DHIS2-12256) | [jira 2](https://dhis2.atlassian.net/browse/DHIS2-14868) | [jira 3](https://dhis2.atlassian.net/browse/DHIS2-12337) | [jira 4](https://dhis2.atlassian.net/browse/DHIS2-13803) | [jira 5](https://dhis2.atlassian.net/browse/DHIS2-14336) | [jira 6](https://dhis2.atlassian.net/browse/DHIS2-14125)
 
