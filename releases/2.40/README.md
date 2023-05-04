@@ -35,3 +35,5 @@ The time dimension "Event date", which represents the execution date and can ass
    [Docs tracker endpoint](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/tracker.html) | [Docs old tracker endpoints](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/old-tracker.html)
 
 - **Removed status field in bundleReport:** Import summaries have the following overall structure [defined here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/tracker.html#import-summary-structure). `status` field in `bundleReport` property was redundant, hence it was removed. `status` field in the root of the import summary should be used.
+
+* **Return correct http status code for validation errors:** Status code [409](https://httpwg.org/specs/rfc9110.html#status.409) was returned for most of validation errors across all tracker endpoints. Now a more appropriate status code is returned in the reponse, [400](https://httpwg.org/specs/rfc9110.html#status.400) that represents an error in request that needs to be corrected by the user.
