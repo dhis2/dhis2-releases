@@ -159,6 +159,15 @@ They are all supported on DHIS2 version 2.38 and above, and Capture version 100.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13374)
 
+**Enabled grouping of data elements based on their category combo.** Added a new property to allow the configuration of grouping of data elements in the Data Entry app
+
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-11600)
+
+**Added option for importing indicators from CSV files*
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-10529)
+
 
 ### PLATFORM API FEATURES
 
