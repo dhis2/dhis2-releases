@@ -2,15 +2,15 @@
 
 ## USER EXPERIENCE
 
-**Resized dataset tables:** This feature allows users to resize the columns in datasets, making it easier to view and work with larger tables. Now it is possible to resize all columns by clicking on the header of the column. The resizing can be done through drag and drop. A maximum and minimum size limit is given for the columns that can be resized to ensure a good layout. Users can resize all collumns at once by clicking on the top left of the table. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5153)
+**Resized dataset tables:** This feature allows users to resize the columns in datasets, making it easier to view and work with larger tables. Now it is possible to resize all columns by clicking on the header of the column. The resizing can be done through drag and drop. A maximum and minimum size limit is given for the columns that can be resized to ensure a good layout. Users can resize all collumns at once by clicking on the top left of the table. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5153) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Resizing-tables.png)
 
-**Collected handwritten signatures for image Data Elements:** This feature allows users to collect handwritten signatures from the device. The signatures will be saved as an image data elements in the app. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986)
+**Collected handwritten signatures for image Data Elements:** This feature allows users to collect handwritten signatures from the device. The signatures will be saved as an image data elements in the app. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Handwritten-signatures.png)
 
-**Made phone number and email Data Elements actionable in the form and allowed external actions for phone number, email and URL value types:** This feature enables users to take action on phone numbers, email addresses, and URLs directly from the app, such as dialing a phone number or opening a web page from the event or enrollment data entry form. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291)
+**Made phone number and email Data Elements actionable in the form and allowed external actions for phone number, email and URL value types:** This feature enables users to take action on phone numbers, email addresses, and URLs directly from the app, such as dialing a phone number or opening a web page from the event or enrollment data entry form. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4291) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Action-buttons.png)
 
-**Improved visual configuration and rendering of option sets:** This feature improves the way option sets are displayed and configured when configured visualy by enabling render option sets with any value type as Radio buttons or check box and supporting other value types for visual data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) | [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370) 
+**Improved visual configuration and rendering of option sets:** This feature improves the way option sets are displayed and configured when configured visualy by enabling render option sets with any value type as Radio buttons or check box and supporting other value types for visual data entry. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4623) | [Jira2](https://dhis2.atlassian.net/browse/ANDROAPP-3370) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Rendering-options-configuration.png)
 
-**Added loading banners when actions take a long time to improve user experience:** This feature provides visual annimations to users when they perform actions that take longer than usual to complete, such loading maps or searching, so that they know that the system is processing their request. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5012)
+**Added loading banners when actions take a long time to improve user experience:** This feature provides visual annimations to users when they perform actions that take longer than usual to complete, such loading maps or searching, so that they know that the system is processing their request. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5012) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Loading-banners.png)
 
 **Improved offline user experience for better functionality when offline:** This feature enhances the functionality of the app when it is used offline, ensuring that menus are disabled when the online actions are not available. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5032)
 
@@ -19,13 +19,13 @@
 
 ## SUPPORT MOBILE IMPLEMENTATIONS
 
-**Provided support for Android app version control from DHIS2 user interface:** This feature enables implementation administrators to manage and control the version of the Android app from the DHIS2 user web interface, making it easier to manage app updates and ensure compatibility with the DHIS2 system. Managers will be able to upload the desired version and users will get a prompt message to update when they are not in the last updated version. The management of versions is made through a new Web App.  [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288)
+**Provided support for Android app version control from DHIS2 user interface:** This feature enables implementation administrators to manage and control the version of the Android app from the DHIS2 user web interface, making it easier to manage app updates and ensure compatibility with the DHIS2 system. Managers will be able to upload the desired version and users will get a prompt message to update when they are not in the last updated version. The management of versions is made through a new Web App.  [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-3288) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-APK-Version.png)
 
 **Removed the maximum number of offline accounts**: This feature removes the limitation on the number of offline accounts that users can create, allowing them to work with as many offline accounts as needed. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5011)
 
 ## WEB PARITY
 
-**Supported file value type:** This feature adds support for file value type in the Android app, allowing users to attach files to their data elements or attributes. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992)
+**Supported file value type:** This feature adds support for file value type in the Android app, allowing users to attach files to their data elements or attributes. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-File-value-type.png)
 
 **Aligned web and Android program rule engine:** This feature ensures that the program rule engine behaves consistently across the web and Android app, making it easier for users to create and manage program rules. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
 
@@ -33,7 +33,7 @@
 
 ## LMIS
 
-**Integrated a new module for real stock monitoring use case:** This feature adds a new module for real stock monitoring use case to the app, enabling users to manage and monitor their stock levels in real-time. Integrating a module implies that the app will open a completely new and different user interface and experience to respond to a different data entry flow. To use this modules the program will need to be configured using the new web app for program use case configuration. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4498)
+**Integrated a new module for real stock monitoring use case:** This feature adds a new module for real stock monitoring use case to the app, enabling users to manage and monitor their stock levels in real-time. Integrating a module implies that the app will open a completely new and different user interface and experience to respond to a different data entry flow. To use this modules the program will need to be configured using the new web app for program use case configuration. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4498) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-stock-management-tool.png)
 
 ## MAINTENANCE
 
