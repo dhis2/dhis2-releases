@@ -48,7 +48,7 @@ The Capture app now supports programs with an access level of "protected." This 
 
 **Saved program stage working lists for tracker programs:**
 Program stage filters have been partially supported in the Capture app since 2.39, allowing filtering and ordering of lists based on event data in tracker programs. In 2.40 these filters can also be stored and shared as working lists. The program stage working lists can be utilized for many different purposes. Some examples are creating followup lists of specific tasks, following up defaulters or systematically reviewing data.
-Supported in DHIS version 2.40 or higher, with capture version 100.X.0 or higher.
+Supported in DHIS2 version 40 or higher, with capture version 100.X.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
 
@@ -165,6 +165,11 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 ### PLATFORM API FEATURES
 
+**Embedded OpenAPI 3 Specification:**
+From version 40 onwards, working with the DHIS2 API just got a whole lot easier. The server can now provide a comprehensive OpenAPI document that covers all endpoints, allowing users to quickly and easily understand the capabilities of the API. Both JSON and YAML formats are supported, so you can choose the one that works best for you. And if you want to generate a document for a specific endpoint or a selection of root paths and tags, it's as simple as making a request to the right endpoint. So whether you're a developer, analyst, or data manager, the OpenAPI feature will help you get the most out of DHIS2.
+
+[Docs](https://docs.dhis2.org/en/develop/core-openapi-specification.html)
+
 **Remove ProgramTrackedEntityAttributeGroup:**  This unused entity was removed from the software, and the relevant database tables, api endpoints and references will no longer be available.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14815)
@@ -198,7 +203,7 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 |Upgrade notes|[Upgrade notes on GitHub](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.40/README.md)|
 |Full list of features and bugs|[Release Note](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.40/ReleaseNote-2.40.0.md)|
 |Source code on GitHub|https://github.com/dhis2|
-|Demo instance|https://play.dhis2.org/2.40.0/|
-|Docker image|`docker pull dhis2/core:2.40.0`|
+|Demo instance|https://play.dhis2.org/40.0.0/|
+|Docker image|`docker pull dhis2/core:40.0.0`|
 |Docker Hub images|https://hub.docker.com/r/dhis2/core|
 |Community forum|https://community.dhis2.org/|
