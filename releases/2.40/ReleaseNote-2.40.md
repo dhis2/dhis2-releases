@@ -1,52 +1,52 @@
 # DHIS2 version 40 Release Note
 
-
 ## ANALYTICS FEATURES
-**On-the-fly custom calculations in data visualizer:** Users can now create a custom calculation directly in the data visualizer application for pivot tables. This allow all users with access to the data visualize application to create their own calculations directly in the application instead of having to create an indicator, as many need additional calculations but to not have the authority to make a new indicator. The custom calculation is saved to the pivot table that it was created in. It does not create a new saved indicator that could be used in other tables or charts. This features is useful, for example, if users want to explore coverage calculations with various population denominators or need to make simple sums. 
+
+**On-the-fly custom calculations in Data Visualizer:** Now it's even easier to explore your data within DHIS2! With this feature, you can create your own custom calculations directly in the application for pivot tables, just like you would with basic formulas in MS Excel. This means you no longer need to have admin access or create new indicators to play around with your own personal data expressions. Plus, the custom calculation is automatically saved to the pivot table in which it was created, without cluttering up your configuration with additional saved indicators. This feature is perfect for things like exploring coverage calculations with various population denominators or making quick and simple sums.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
-**Apply legend as background color for single value chart type:** This allows legend colors to be applied to the background color of a single value chart. This makes the perforance of the value much more obvious. 
+**Enhance single value charts with legend colors:** Now, legend colors can be applied to the background of a single value chart, making the performance of the value more obvious and visually engaging. This feature helps users quickly understand the significance of the value and its relation to the legend colors.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
 
-**Legend for stacked column charts:** This allows legend to be applied to column chart making performance of indicators more obvious in column charts. 
+**Legend for stacked column charts:** Spice up your data visualizations with a new feature that allows legends to be applied to column charts! This makes it easier to see how indicators are performing at a glance.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)
 
-**Show data element and indicator icon for single value charts:** If an icon has been assigned to a data element or indicator that icon can now be shown in a single value chart that uses that data element or indicator. Icons are used to help communicate what the value represents. For example if you have an indicator measuring total malaria cases you might choose the icon of a misquito which can now be shown on the dashboard when that indicator is used in a single value chart. 
+**Show data element and indicator icon for single value charts:** Want to add some personality to your data? Now, icons can be shown in single value charts to represent the data element or indicator being used. For example, if you're tracking total malaria cases, you can choose a mosquito icon to visually communicate what the value represents. 
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
-**Linelist showing on dashboards:** Line lists have been enabled on the dashboards. They have also been enabled in the lastest releases of 2.39 and 2.38 as well. 
+**Linelist showing on dashboards:** Keep track of all your data in one place with line lists now available on dashboards! This feature has also been added to the latest releases of 2.39 and 2.38.
 
 [jira](https://dhis2.atlassian.net/browse/TECH-475)
 
-**Support multiple event coordinate types in maps:** Now in the event layer you can choose to visualize the location by event coordinate, enrollment coordinate, tracked entity coordinate, program stage data elements of type coordinates or program tracked entity attributes of type coordinate. For example, if you need to see the household location for women which is captured as a data element for those that had delivered last week at the health facility for outreach services. 
+**Support multiple event coordinate types in maps:** Visualize geographical data in new ways with multiple event coordinate types now available for use in maps. Choose to view location by event coordinate, enrollment coordinate, tracked entity coordinate, program stage data elements of type coordinates, or program tracked entity attributes of type coordinate. For example, easily see the household location for women who delivered last week at the health facility for outreach services.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-8165)
 
-**Add option to show value/number in thematic layers** Now in thematic layers in maps you can choose to show the value directly in the map in addition to the legend. 
+**Add option to show value/number in thematic layers:** Make your maps even more informative with the option to show values directly on the map in thematic layers. This addition complements the legend and provides a more complete picture of the data being presented.
 
 [jira](https://jira.dhis2.org/browse/DHIS2-13356)
 
-**Prefictor functions for normDistCum and normDistDen** These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST(). For a normalized distribution of given mean and standard deviation they compute the the cumulative distribution function (CDF) probability that a variable falls below or at a specified value and the probability density function (PDF) at a specified value. These functions are needed for supply chain applications to compute the probability of a stock out for normally distributed stock consumption. The stockout probability is 1 minus the cumulative distribution function (CDF). 
+**Prefictor functions for normDistCum and normDistDen:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14714)
 
-**Predictor by data element groups** Now you can apply a predictor to an data element group. This functionality provides a short cut if you need to make many like predictors based upon the data elements in a data element group. For example, in supply chain you have data elements for each comodity you are capturing and you need to apply the same predictor calculation to each. Now you can simply apply the predictor to the data element group of those commodity data elements to produce the values from  you need for each. 
+**Predictor by data element groups:** Streamline your work with predictors by applying them to data element groups. This time-saving feature allows you to make multiple predictors, based on the data elements in a group, from a single definition. For instance, if you're tracking data for multiple commodities in supply chain, simply apply the predictor to the data element group for each commodity to produce the necessary values.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14635)
 
 
 ## TRACKER AND EVENT FEATURES
 
-**Breaking the glass** Programs with access level "protected" are now supported in the Capture app. For protected programs, when searcing for a tracked entity instance that is found in another org unit, the user is asked to provide a reason for why they need access. This access level is useful when clinicians in one clinic should be able to access their own records, but only on exception accesses records from other clinics. This functionality was supported in the old Tracker Capture and have now been reimplemented in Capture in an improved form.
-Supported in DHIS version 2.38 or higher, with capture version 100.27.0 or higher.
+**Breaking the glass:**
+The Capture app now supports programs with an access level of "protected." This means that if you're a clinician in one clinic and need to access records from another clinic, you'll be prompted to provide a reason for why you need access. This feature is especially handy for users who need to access their own records regularly but only occasionally need access to records from other organisation units. This functionality has been re-implemented in Capture in an even better form than the old Tracker Capture. To take advantage of this feature, make sure you're using DHIS version 2.38 or higher and Capture version 100.27.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13804)
 
-**Saved program stage working lists for tracker programs**
+**Saved program stage working lists for tracker programs:**
 Program stage filters have been partially supported in the Capture app since 2.39, allowing filtering and ordering of lists based on event data in tracker programs. In 2.40 these filters can also be stored and shared as working lists. The program stage working lists can be utilized for many different purposes. Some examples are creating followup lists of specific tasks, following up defaulters or systematically reviewing data.
 Supported in DHIS version 2.40 or higher, with capture version 100.X.0 or higher.
 
