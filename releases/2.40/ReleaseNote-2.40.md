@@ -52,40 +52,39 @@ Supported in DHIS version 2.40 or higher, with capture version 100.X.0 or higher
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
 
-**Headerbar updates**
-The header bar has been updated to match other apps in DHIS2. The functionality is the same as before, but the header takes up less space, and popovers are introduced to avoid situations where the bar expands and pushes other content down from the users field of view.
-Supported in DHIS version 2.38 or higher, with capture version 100.26.0 or higher.
+**Headerbar updates:**
+The header bar in Capture app has been updated to match other apps in the system. While the functionality remains the same, the header now takes up less space, and popovers are used to avoid situations where the bar expands and pushes other content down from the user's field of view.
+This update is supported in DHIS version 2.38 or higher with Capture version 100.26.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14008)
 
-
-**Ask user to create new event when stage is complete**
-Functionality for asking a user to create a new event after completing a stage has been added to the Capture app. When the flag for asking the user to create a new stage is checked, a user completing the stage in question will be prompted to create a new event immediately. This can speed up data entry efficiency, and in some cases lead to fewer human errors in data entry. This functionality was supported in the old Tracker Capture app and have now been reimplemented in Capture in an improved form.
-Supported in DHIS version 2.38 or higher, with capture version 100.21.0 or higher.
+**Ask user to create new event when stage is complete:**
+Capture app now includes functionality for asking users to create a new event after completing a stage. If the flag for asking the user to create a new stage is checked, users will be prompted to create a new event immediately upon completing the stage. This feature can improve data entry efficiency and reduce human errors. It was previously supported in the old Tracker Capture app and has now been re-implemented in Capture in an improved form.
+This feature is supported in DHIS version 2.38 or higher with Capture version 100.21.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13801)
 
-**Create a new TEI when no results match** After searching for a tracked entity instance, and no results are found, the users are now given the option to carry over the search criteria and create a new tracked entity instance. This functionality was supported in the old Tracker Capture app and have now been reimplemented in Capture in an improved form.
-Supported in DHIS version 2.38 or higher, with capture version 100.20.0 or higher.
+**Create a new TEI when no results match:**
+After searching for a tracked entity instance in the Capture app and finding no results, users are now given the option to carry over the search criteria and create a new tracked entity instance. This feature was supported in the old Tracker Capture app and has now been re-implemented in Capture in an improved form.
+It is supported in DHIS version 2.38 or higher with Capture version 100.20.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-9666)
 
-**Hide due date** The Capture app now supports hiding scheduled date for individual program stages. This allows hiding some non-relevant items in programs that does not need scheduling and scheduled date, providing a cleaner user interface.
-Supported in DHIS version 2.38 or higher, with capture version 100.19.0 or higher.
+**Hide due date:** The Capture app now supports hiding the scheduled date for individual program stages. This feature allows program stages that do not require scheduling or a scheduled date to have those fields hidden, resulting in a cleaner and more streamlined user interface.
+This feature is supported in DHIS version 2.38 or higher with Capture version 100.19.0 or higher.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
 
+**Usability updates:** Several non-functional usability updates have been implemented in the Capture app to provide a better user experience and a smoother look in certain situations. While each change is small, together they provide a better user experience.
+These changes are all supported in DHIS2 version 2.38 and above and Capture version 100.29.0 and above includes all these changes.
 
-**Usability updates** Several non-functional usability updates are implemented to provide a better user experience and a smoother look to the Capture app in certain situations. These changes should generally be smaller improvements that although not essential individually, together will provide a better look and user experience.
-They are all supported on DHIS2 version 2.38 and above, and Capture version 100.29.0 and above includes all these changes.
 [jira 1](https://dhis2.atlassian.net/browse/DHIS2-12256) | [jira 2](https://dhis2.atlassian.net/browse/DHIS2-14868) | [jira 3](https://dhis2.atlassian.net/browse/DHIS2-12337) | [jira 4](https://dhis2.atlassian.net/browse/DHIS2-13803) | [jira 5](https://dhis2.atlassian.net/browse/DHIS2-14336) | [jira 6](https://dhis2.atlassian.net/browse/DHIS2-14125)
 
-
-**API for downloading files uploaded as tracked entity attributes** A new API is created to allow accessing the file resources that is uploaded as tracked entity attribute values. It is now possible to use files as tracked entity attributes, for example uploading a birth certificate for a child.
+**API for downloading files uploaded as tracked entity attributes** A new API has been created in DHIS2 to allow accessing the file resources that are uploaded as tracked entity attribute values. This feature enables users to use files as tracked entity attributes, such as uploading a birth certificate for a child.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13657)
 
-**API support for downloading tracked entities as CSV from /tracker** The /tracker endpoint has now gotten functionality for downloading a tracked entity instance directly into a comma separated value list. This is useful for exporting data to other systems that accepts CSV.
+**API support for downloading tracked entities as CSV from /tracker** DHIS2's `/tracker` endpoint now supports the functionality to download a tracked entity instance directly into a comma-separated value list. This feature is useful for exporting data to other systems that accept CSV.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13620)
 
