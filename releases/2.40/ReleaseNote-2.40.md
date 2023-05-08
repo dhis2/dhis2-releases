@@ -14,27 +14,27 @@
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13783)
 
-**Show data element and indicator icon for single value charts:** Want to add some personality to your data? Now, icons can be shown in single value charts to represent the data element or indicator being used. For example, if you're tracking total malaria cases, you can choose a mosquito icon to visually communicate what the value represents. 
+**Data element and indicator icons for single value charts:** Want to add some personality to your data? Now, icons can be shown in single value charts to represent the data element or indicator being used. For example, if you're tracking total malaria cases, you can choose a mosquito icon to visually communicate what the value represents. 
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
-**Linelist showing on dashboards:** Keep track of all your data in one place with line lists now available on dashboards! This feature has also been added to the latest releases of 2.39 and 2.38.
+**Linelists on dashboards:** Keep track of all your data in one place with line lists now available on dashboards! This feature has also been added to the latest releases of 2.39 and 2.38.
 
 [Jira](https://dhis2.atlassian.net/browse/TECH-475)
 
-**Support multiple event coordinate types in maps:** Visualize geographical data in new ways with multiple event coordinate types now available for use in maps. Choose to view location by event coordinate, enrollment coordinate, tracked entity coordinate, program stage data elements of type coordinates, or program tracked entity attributes of type coordinate. For example, easily see the household location for women who delivered last week at the health facility for outreach services.
+**Multiple event coordinate types in maps:** Visualize geographical data in new ways with multiple event coordinate types now available for use in maps. Choose to view location by event coordinate, enrollment coordinate, tracked entity coordinate, program stage data elements of type coordinates, or program tracked entity attributes of type coordinate. For example, easily see the household location for women who delivered last week at the health facility for outreach services.
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-8165)
 
-**Add option to show value/number in thematic layers:** Make your maps even more informative with the option to show values directly on the map in thematic layers. This addition complements the legend and provides a more complete picture of the data being presented.
+**Display values in thematic layers:** Make your maps even more informative with the option to show values directly on the map in thematic layers. This addition complements the legend and provides a more complete picture of the data being presented.
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-13356)
 
-**Prefictor functions for normDistCum and normDistDen:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.
+**New predictor functions for computing probability:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14714)
 
-**Predictor by data element groups:** Streamline your work with predictors by applying them to data element groups. This time-saving feature allows you to make multiple predictors, based on the data elements in a group, from a single definition. For instance, if you're tracking data for multiple commodities in supply chain, simply apply the predictor to the data element group for each commodity to produce the necessary values.
+**Efficiently create multiple predictors with data element groups:** Streamline your work with predictors by applying them to data element groups. This time-saving feature allows you to make multiple predictors, based on the data elements in a group, from a single definition. For instance, if you're tracking data for multiple commodities in supply chain, simply apply the predictor to the data element group for each commodity to produce the necessary values.
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14635)
 
