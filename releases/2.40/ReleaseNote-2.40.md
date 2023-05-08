@@ -126,6 +126,19 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14404)
 
+**Aggregate Data Exchange** The aggregate data exchange service offers the ability to exchange data between instances of DHIS 2, and possibly other software which supports the DHIS 2 data value set JSON format. It also allows for data exchange within a single instance of DHIS 2, for instance for aggregation of tracker data and saving the result as aggregate data.
+
+The aggregate data exchange service is suitable for use-cases such as:
+
+Data exchange between an HMIS instance to a data portal or data warehouse instance of DHIS 2.
+Data exchange between a DHIS 2 tracker instance with individual data to an aggregate HMIS instance.
+Precomputation of tracker data with program indicators saved as aggregate data values.
+Data reporting from a national HMIS to a global donor.
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13105)
+[docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
+
+
 **Description Field added for Option and Option Sets**
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-14102)
