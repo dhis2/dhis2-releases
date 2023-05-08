@@ -14,7 +14,7 @@
 
 **Added loading banners when actions take a long time to improve user experience:** This feature provides visual annimations to users when they perform actions that take longer than usual to complete, such loading maps or searching, so that they know that the system is processing their request. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5012) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Loading-banners.png)
 
-**Improved offline user experience for better functionality when offline:** This feature enhances the functionality of the app when it is used offline, ensuring that menus are disabled when the online actions are not available. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5032)
+**Improved user experience for better functionality when offline:** This feature enhances the functionality of the app when it is used offline, ensuring that menus are disabled when the online actions are not available. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5032)
 
 **Improved management of long texts:** This feature enables users to view long text in fields that are limited in size, such as a stage names or datasets headers. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080) | [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5080)
 
