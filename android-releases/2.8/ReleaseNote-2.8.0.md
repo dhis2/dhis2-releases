@@ -2,9 +2,9 @@
 
 ## USER EXPERIENCE
 
-**New sync error navigation:** This version of the app improves the navigation of sync errors on the user interface. The app will display the sync errors in a simple and clean manner allowing the user to navigate from the home screen to the exact field that is causing the error inside the event or data set. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088) | Screenshot
-
 **Resized dataset tables:** This feature allows users to resize the columns in datasets, making it easier to view and work with larger tables. Now it is possible to resize all columns by clicking on the header of the column. The resizing can be done through drag and drop. A maximum and minimum size limit is given for the columns that can be resized to ensure a good layout. Users can resize all columns at once by clicking on the top left of the table. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5153) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Resizing-tables.png)
+
+**New sync error navigation:** This version of the app improves the navigation of sync errors on the user interface. The app will display the sync errors in a simple and clean manner allowing the user to navigate from the home screen to the exact field that is causing the error inside the event or data set. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088) | Screenshot
 
 **Collected handwritten signatures for image Data Elements:** This feature allows users to collect handwritten signatures from the device. The signatures will be saved as an image data elements in the app. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4986) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Handwritten-signatures.png)
 
@@ -28,8 +28,6 @@
 ## WEB PARITY
 
 **Supported file value type:** This feature adds support for file value type in the Android app, allowing users to attach files to their data elements or attributes. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-1992) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-File-value-type.png)
-
-**Aligned web and Android program rule engine:** This feature ensures that the program rule engine behaves consistently across the web and Android app, making it easier for users to create and manage program rules. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5044)
 
 **Supported new tracker working lists (filter by DE):** This feature adds support for new tracker working lists that allow users to filter by data elements. The working lists need to be configured in web using the web Capture App. The Android app will download the working lists that are configured and saved on the server side. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-740)
 
