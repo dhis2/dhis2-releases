@@ -136,6 +136,7 @@ Precomputation of tracker data with program indicators saved as aggregate data v
 Data reporting from a national HMIS to a global donor.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13105)
+
 [docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
 **Event Hooks** The event hook API is a powerful tool that can help you automate your workflows and keep your systems in sync with each other by allowing users to subscribe to two types of events that occur within the DHIS2: metadata events and scheduler events.
@@ -144,6 +145,7 @@ To use the event hook API, you will need to enable it in your DHIS2 configuratio
 For example, you could set up an event hook that listens for changes to data elements in your metadata, and then sends a webhook to another system to update their records accordingly.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-12194)
+
 [docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/event-hooks.html)
 
 **Description Field added for Option and Option Sets**
