@@ -139,10 +139,6 @@ They are all supported on DHIS2 version 2.38 and above, and Capture version 100.
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13916)
 
-**Hyphens now allowed in usernames**
-
-[jira](https://dhis2.atlassian.net/browse/DHIS2-13768)
-
 **Support added for application zip archives with a top-level directory**
 
 [jira](https://dhis2.atlassian.net/browse/DHIS2-13760)
