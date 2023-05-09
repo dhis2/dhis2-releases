@@ -73,24 +73,6 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 ## PLATFORM FEATURES
 
-**New job for refreshing Materialized view SQL views:** SQL views of type "Materialized view" now has a new Job which can be scheduled to refresh the contents of the SQL view.  
-[Jira (Backend)](https://dhis2.atlassian.net/browse/DHIS2-14718) | [Jira (Frontend)](https://dhis2.atlassian.net/browse/DHIS2-15095) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/scheduling.html#job-parameters)
-
-**Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
-
-**Jobs can now be grouped to run in sequence:** Jobs can be grouped to run in sequence, making it easier to define dependencies between jobs, and also clarify which jobs can be run in parallel. The feature is also soon available in the Scheduler app.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14314) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
-
-**Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
-- POST endpoints now accept the list of checks as a request body
-- Identifiers have been shortened
-- Slow tests have been excluded from wildcard name expansion
-- 25 new integrity checks
-- Integrity checks for Organisation Units with same name and parent
-- Integrity checks for Data Elements belonging to data sets with different periods types  
-[Jira 1](https://dhis2.atlassian.net/browse/DHIS2-14506) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14236) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-14495) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-14451)
-
 **Aggregate Data Exchange:** The aggregate data exchange service offers the ability to exchange data between instances of DHIS 2, and possibly other software which supports the DHIS 2 data value set JSON format. It also allows for data exchange within a single instance of DHIS 2, for instance for aggregation of tracker data and saving the result as aggregate data.  
 The aggregate data exchange service is suitable for use-cases such as:  
 Data exchange between an HMIS instance to a data portal or data warehouse instance of DHIS 2.
@@ -103,6 +85,24 @@ Data reporting from a national HMIS to a global donor.
 To use the event hook API, you will need to enable it in your DHIS2 configuration file, and then configure the source and target of your event hook, such as webhooks, JMS, and Kafka; you can receive the events and take action in real-time. 
 For example, you could set up an event hook that listens for changes to data elements in your metadata, and then sends a webhook to another system to update their records accordingly.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-12194) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/event-hooks.html)
+
+**Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.  
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
+
+**Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
+- POST endpoints now accept the list of checks as a request body
+- Identifiers have been shortened
+- Slow tests have been excluded from wildcard name expansion
+- 25 new integrity checks
+- Integrity checks for Organisation Units with same name and parent
+- Integrity checks for Data Elements belonging to data sets with different periods types  
+[Jira 1](https://dhis2.atlassian.net/browse/DHIS2-14506) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14236) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-14495) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-14451)
+
+**New job for refreshing Materialized view SQL views:** SQL views of type "Materialized view" now has a new Job which can be scheduled to refresh the contents of the SQL view.  
+[Jira (Backend)](https://dhis2.atlassian.net/browse/DHIS2-14718) | [Jira (Frontend)](https://dhis2.atlassian.net/browse/DHIS2-15095) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/scheduling.html#job-parameters)
+
+**Jobs can now be grouped to run in sequence:** Jobs can be grouped to run in sequence, making it easier to define dependencies between jobs, and also clarify which jobs can be run in parallel. The feature is also soon available in the Scheduler app.  
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14314) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
 
 **Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-10886?filter=10404)
@@ -126,10 +126,10 @@ From version 40 onwards, working with the DHIS2 API just got a whole lot easier.
 **DataStore now returns sharing information:** DataStore keys can be shared in the same way Metadata is shared. With this change, sharing information is now available in the DataStore API: `/api/dataStore/<namespace>/<key>/metaData`  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14595)
 
-**(Experimental) API Routes:** We are introducing a new feature called the Route API, which enables seamless communication with external HTTP gateways or proxies. This feature allows users to extend the functionality of their apps by easily performing GET and POST requests to external services. Users can create routes, execute them, and pass query parameters and request bodies. The Route API supports authentication methods such as HTTP Basic and API Token, and also allows for custom authorities for route execution. This feature provides a simple and effective way to integrate external services into DHIS2 apps.  
+**(Preview) API Routes:** We are introducing a new feature called the Route API, which enables seamless communication with external HTTP gateways or proxies. This feature allows users to extend the functionality of their apps by easily performing GET and POST requests to external services. Users can create routes, execute them, and pass query parameters and request bodies. The Route API supports authentication methods such as HTTP Basic and API Token, and also allows for custom authorities for route execution. This feature provides a simple and effective way to integrate external services into DHIS2 apps.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-12193) | [Docs]()
 
-**(Experimental) User impersonation:** Users with the appropriate authority can now impersonate other users. This is primarily used internally in DHIS2 for generating reports at the current time, but will be enhanced in the future to support more usecases. User impersonation is by default disabled in the system.  
+**(Preview) User impersonation:** Users with the appropriate authority can now impersonate other users. This is primarily used internally in DHIS2 for generating reports at the current time, but will be enhanced in the future to support more usecases. User impersonation is by default disabled in the system.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-10661)
 
 
