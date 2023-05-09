@@ -85,7 +85,7 @@ For example, you could set up an event hook that listens for changes to data ele
 **Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
 
-**Aggregate Data Exchange App:** The aggregate data exchange app is now available for running the Data Exchange Service.
+**Aggregate Data Exchange App:** The aggregate data exchange app is now available for running the Data Exchange Service.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
 **Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
@@ -95,6 +95,7 @@ For example, you could set up an event hook that listens for changes to data ele
 - 25 new integrity checks
 - Integrity checks for Organisation Units with same name and parent
 - Integrity checks for Data Elements belonging to data sets with different periods types  
+
 [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-14506) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14236) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-14495) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-14451)
 
 **New job for refreshing Materialized view SQL views:** SQL views of type "Materialized view" now has a new Job which can be scheduled to refresh the contents of the SQL view.  
@@ -106,16 +107,16 @@ For example, you could set up an event hook that listens for changes to data ele
 **Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-10886)
 
-**Maximum/Minimum (sum org unit) aggregation:** Defines two new aggregation types that allow the maximum, or minimum, value of a data element within each organisation unit, summed across organisation units.
+**Maximum/Minimum (sum org unit) aggregation:** Defines two new aggregation types that allow the maximum, or minimum, value of a data element within each organisation unit, summed across organisation units.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14430)
 
-**Predictor normalized distribution functions:** Using the new functions normDistCum() and normDistDen(), predictors can compute either the the cumulative distribution function (CDF) or the the probability density function (PDF) of a value based on the a distribution defined by the same data element or another data element.
+**Predictor normalized distribution functions:** Using the new functions normDistCum() and normDistDen(), predictors can compute either the the cumulative distribution function (CDF) or the the probability density function (PDF) of a value based on the a distribution defined by the same data element or another data element.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
 
-**Predictions by data element group:** Allows a single predictor to operate on the category option combinations of all data elements in a data element group. For example in logistics management each data element may represent a commodity and each category option combination may represent a count related to that commodity. This allows a single predictor to compute the value of a category option combination for every commodity in a commodity group.
+**Predictions by data element group:** Allows a single predictor to operate on the category option combinations of all data elements in a data element group. For example in logistics management each data element may represent a commodity and each category option combination may represent a count related to that commodity. This allows a single predictor to compute the value of a category option combination for every commodity in a commodity group.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
 
-**Predictions by Disaggregation:** A single predictor can be used to independently predict every disaggregation of an output data element based on the same disaggregations of data in the predictor generator expression.
+**Predictions by Disaggregation:** A single predictor can be used to independently predict every disaggregation of an output data element based on the same disaggregations of data in the predictor generator expression.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-9832) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
 
 
