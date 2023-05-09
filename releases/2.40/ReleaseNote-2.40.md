@@ -105,7 +105,19 @@ For example, you could set up an event hook that listens for changes to data ele
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14314) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
 
 **Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-10886?filter=10404)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-10886)
+
+**Maximum/Minimum (sum org unit) aggregation:** Defines two new aggregation types that allow the maximum, or minimum, value of a data element within each organisation unit, summed across organisation units.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14430)
+
+**Predictor normalized distribution functions:** Using the new functions normDistCum() and normDistDen(), predictors can compute either the the cumulative distribution function (CDF) or the the probability density function (PDF) of a value based on the a distribution defined by the same data element or another data element.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
+
+**Predictions by data element group:** Allows a single predictor to operate on the category option combinations of all data elements in a data element group. For example in logistics management each data element may represent a commodity and each category option combination may represent a count related to that commodity. This allows a single predictor to compute the value of a category option combination for every commodity in a commodity group.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
+
+**Predictions by Disaggregation:** A single predictor can be used to independently predict every disaggregation of an output data element based on the same disaggregations of data in the predictor generator expression.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-9832) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
 
 
 ### PLATFORM API FEATURES
