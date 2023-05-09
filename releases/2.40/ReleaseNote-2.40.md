@@ -113,10 +113,6 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-14506) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14236) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-14495) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-14451)
 
-**Improvements to Dashboard App Security:** Previously, users with READ access to a Dashboard could see all metadata objects, even without READ access. To address this, we have removed bypass functions and added validations requiring READ access to all Dashboard objects for updating and browsing.
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14404)
-
 **Aggregate Data Exchange** The aggregate data exchange service offers the ability to exchange data between instances of DHIS 2, and possibly other software which supports the DHIS 2 data value set JSON format. It also allows for data exchange within a single instance of DHIS 2, for instance for aggregation of tracker data and saving the result as aggregate data.
 
 The aggregate data exchange service is suitable for use-cases such as:
@@ -135,41 +131,9 @@ For example, you could set up an event hook that listens for changes to data ele
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-12194) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/event-hooks.html)
 
-**Description Field added for Option and Option Sets**
+**Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.
 
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14102)
-
-**Graphic added to start screen of new Data Entry App**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13940)
-
-**Added “Skip generation of organisation unit ownership data” checkbox to Data Administration App to support Event and enrollment analytics based on owner org unit**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13916)
-
-**Support added for application zip archives with a top-level directory**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13760)
-
-**User deletion prevented if the user has created or updated Metadata properties**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13470?filter=10404)
-
-**“User Disabled” column replaced with “Status” column in User app**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13425)
-
-**Added “Organisation unit” field in Program Indicator configuration:** Determines which organisation unit is assigned to program indicator values.
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13374)
-
-**Enabled grouping of data elements based on their category combo.** Added a new property to allow the configuration of grouping of data elements in the Data Entry app
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-11600)
-
-**Added option for importing indicators from CSV files**
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-10529)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-10886?filter=10404)
 
 
 ### PLATFORM API FEATURES
@@ -187,10 +151,6 @@ From version 40 onwards, working with the DHIS2 API just got a whole lot easier.
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14531)
 
-**Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.
-
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-10886?filter=10404)
-
 **New system info endpoint:** A new endpoint has been added to return information about the current system, including version, revision, build time and system ID.
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14822)
@@ -198,6 +158,13 @@ From version 40 onwards, working with the DHIS2 API just got a whole lot easier.
 **DataStore now returns sharing information:** DataStore keys can be shared in the same way Metadata is shared. With this change, sharing information is now available in the DataStore API: `/api/dataStore/<namespace>/<key>/metaData`
 
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14595)
+
+**(Experimental) API Routes:** We are introducing a new feature called the Route API, which enables seamless communication with external HTTP gateways or proxies. This feature allows users to extend the functionality of their apps by easily performing GET and POST requests to external services. Users can create routes, execute them, and pass query parameters and request bodies. The Route API supports authentication methods such as HTTP Basic and API Token, and also allows for custom authorities for route execution. This feature provides a simple and effective way to integrate external services into DHIS2 apps.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-12193)
+[Docs]()
+
+**(Experimental) User impersonation:** Users with the appropriate authority can now impersonate other users. This is primarily used internally in DHIS2 for generating reports at the current time, but will be enhanced in the future to support more usecases. User impersonation is by default disabled in the system.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-10661)
 
 
 ## RELEASE INFO
