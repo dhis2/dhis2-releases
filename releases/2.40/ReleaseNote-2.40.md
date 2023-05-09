@@ -2,7 +2,7 @@
 
 ## ANALYTICS FEATURES
 
-**On-the-fly custom calculations in Data Visualizer:** Now it's even easier to explore your data within DHIS2! With this feature, you can create your own custom calculations directly in the application for pivot tables. This means you no longer need to have admin access or create new indicators to play around with your own personal data expressions. Plus, the custom calculation is automatically saved to the pivot table in which it was created, without cluttering up your configuration with additional saved indicators. This feature is perfect for things like exploring coverage calculations with various population denominators or making quick and simple sums.  
+**On-the-fly custom calculations in Data Visualizer:** Now it's even easier to explore your data within DHIS2! With this feature, you can create your own custom calculations directly in the Data Visualizer application for pivot tables. This means you no longer need to have admin access or create new indicators to play around with your own personal data expressions. Plus, the custom calculation is automatically saved to the pivot table in which it was created, without cluttering up your configuration with additional saved indicators. This feature is perfect for things like exploring coverage calculations with various population denominators or making quick and simple sums.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
 
 **Enhance single value charts with legend colors:** Now, legend colors can be applied to the background of a single value chart, making the performance of the value more obvious and visually engaging. This feature helps users quickly understand the significance of the value and its relation to the legend colors.  
