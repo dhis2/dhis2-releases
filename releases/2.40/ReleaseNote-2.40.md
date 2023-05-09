@@ -11,7 +11,7 @@
 **Legend for stacked column charts:** Spice up your data visualizations with a new feature that allows legends to be applied to column charts! This makes it easier to see how indicators are performing at a glance.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13783)
 
-**Data element and indicator icons for single value charts:** Want to add some personality to your data? Now, icons can be shown in single value charts to represent the data element or indicator being used. For example, if you're tracking total malaria cases, you can choose a mosquito icon to visually communicate what the value represents.  
+**Indicator icons for single value charts:** Want to add some personality to your data? Now, icons can be shown in single value charts to represent the indicator being used. For example, if you're tracking total malaria cases, you can choose a mosquito icon to visually communicate what the value represents. This feature will also be added for data elements in the near future.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
 **Linelists on dashboards:** Keep track of all your data in one place with line lists now available on dashboards! This feature has also been added to the latest releases of 2.39 and 2.38.  
