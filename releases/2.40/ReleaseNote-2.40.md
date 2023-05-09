@@ -73,14 +73,6 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 ## PLATFORM FEATURES
 
-**Aggregate Data Exchange:** The aggregate data exchange service offers the ability to exchange data between instances of DHIS 2, and possibly other software which supports the DHIS 2 data value set JSON format. It also allows for data exchange within a single instance of DHIS 2, for instance for aggregation of tracker data and saving the result as aggregate data.  
-The aggregate data exchange service is suitable for use-cases such as:  
-Data exchange between an HMIS instance to a data portal or data warehouse instance of DHIS 2.
-Data exchange between a DHIS 2 tracker instance with individual data to an aggregate HMIS instance.
-Precomputation of tracker data with program indicators saved as aggregate data values.
-Data reporting from a national HMIS to a global donor.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
-
 **Event Hooks:** The event hook API is a powerful tool that can help you automate your workflows and keep your systems in sync with each other by allowing users to subscribe to two types of events that occur within the DHIS2: metadata events and scheduler events.  
 To use the event hook API, you will need to enable it in your DHIS2 configuration file, and then configure the source and target of your event hook, such as webhooks, JMS, and Kafka; you can receive the events and take action in real-time. 
 For example, you could set up an event hook that listens for changes to data elements in your metadata, and then sends a webhook to another system to update their records accordingly.  
@@ -88,6 +80,9 @@ For example, you could set up an event hook that listens for changes to data ele
 
 **Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
+
+**Aggregate Data Exchange App:** The aggregate data exchange app is now available for running the Data Exchange Service.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
 
 **Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
 - POST endpoints now accept the list of checks as a request body
