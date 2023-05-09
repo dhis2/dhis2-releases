@@ -41,7 +41,7 @@ Program stage filters have been partially supported in the Capture app since 2.3
 Supported in DHIS2 version 40 or higher, with capture version 100.X.0 or higher.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
 
-**Headerbar updates:**
+**Headerbar improvements:**
 The header bar in Capture app has been updated to match other apps in the system. While the functionality remains the same, the header now takes up less space, and popovers are used to avoid situations where the bar expands and pushes other content down from the user's field of view.
 This update is supported in DHIS version 2.38 or higher with Capture version 100.26.0 or higher.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14008)
@@ -60,7 +60,7 @@ It is supported in DHIS version 2.38 or higher with Capture version 100.20.0 or 
 This feature is supported in DHIS version 2.38 or higher with Capture version 100.19.0 or higher.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
 
-**Usability updates:** Several non-functional usability updates have been implemented in the Capture app to provide a better user experience and a smoother look in certain situations. While each change is small, together they provide a better user experience.
+**Usability improvements:** Several non-functional usability updates have been implemented in the Capture app to provide a better user experience and a smoother look in certain situations. While each change is small, together they provide a better user experience.
 These changes are all supported in DHIS2 version 2.38 and above and Capture version 100.29.0 and above includes all these changes.  
 [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-12256) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14868) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-12337) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-13803) | [Jira 5](https://dhis2.atlassian.net/browse/DHIS2-14336) | [Jira 6](https://dhis2.atlassian.net/browse/DHIS2-14125)
 
