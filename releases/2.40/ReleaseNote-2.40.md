@@ -38,7 +38,7 @@ The Capture app now supports programs with an access level of "protected." This 
 
 **Saved program stage working lists for tracker programs:**
 Program stage filters have been partially supported in the Capture app since 2.39, allowing filtering and ordering of lists based on event data in tracker programs. In 2.40 these filters can also be stored and shared as working lists. The program stage working lists can be utilized for many different purposes. Some examples are creating followup lists of specific tasks, following up defaulters or systematically reviewing data.
-Supported in DHIS2 version 40 or higher, with capture version 100.X.0 or higher.  
+Supported in DHIS2 version 40 or higher, with capture version 100.31.0 or higher.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
 
 **Headerbar improvements:**
@@ -59,6 +59,10 @@ It is supported in DHIS version 2.38 or higher with Capture version 100.20.0 or 
 **Hide due date:** The Capture app now supports hiding the scheduled date for individual program stages. This feature allows program stages that do not require scheduling or a scheduled date to have those fields hidden, resulting in a cleaner and more streamlined user interface.
 This feature is supported in DHIS version 2.38 or higher with Capture version 100.19.0 or higher.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
+
+**Attribute option combination for tracker programs:**
+Capture app now supports attribute action combination for tracker programs. This feature was already supported in the tracker capture app, but has now been redesigned an implemented in the Capture app. It is supported in DHIS version 2.38 or above, with Capture version 100.30.0 or higher.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14465)
 
 **Usability improvements:** Several non-functional usability updates have been implemented in the Capture app to provide a better user experience and a smoother look in certain situations. While each change is small, together they provide a better user experience.
 These changes are all supported in DHIS2 version 2.38 and above and Capture version 100.29.0 and above includes all these changes.  
