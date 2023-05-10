@@ -25,12 +25,6 @@
 
 **Improved maps download:** Get all of the key information you need when you download a map. In 2.40 you can now show the map title, description, legend(s), north arrow, and overview map all in one easy to use image when you download a map.
 
-**New predictor functions for computing probability:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
-
-**Efficiently create multiple predictors with data element groups:** Streamline your work with predictors by applying them to data element groups. This time-saving feature allows you to make multiple predictors, based on the data elements in a group, from a single definition. For instance, if you're tracking data for multiple commodities in supply chain, simply apply the predictor to the data element group for each commodity to produce the necessary values.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
-
 
 ## TRACKER AND EVENT FEATURES
 
@@ -105,6 +99,12 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 **Maximum/Minimum (sum org unit) aggregation:** Defines two new aggregation types that allow the maximum, or minimum, value of a data element within each organisation unit, summed across organisation units.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14430)
+
+**New predictor functions for computing probability:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.  
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
+
+**Efficiently create multiple predictors with data element groups:** Streamline your work with predictors by applying them to data element groups. This time-saving feature allows you to make multiple predictors, based on the data elements in a group, from a single definition. For instance, if you're tracking data for multiple commodities in supply chain, simply apply the predictor to the data element group for each commodity to produce the necessary values.  
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
 
 **Predictions by Disaggregation:** A single predictor can be used to independently predict every disaggregation of an output data element based on the same disaggregations of data in the predictor generator expression.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-9832) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
