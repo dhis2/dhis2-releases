@@ -133,7 +133,7 @@ For example, you could set up an event hook that listens for changes to data ele
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-12194) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/event-hooks.html)
 
 **(Preview) API Routes:** We are introducing a new feature called the Route API, which enables seamless communication with external HTTP gateways or proxies. This feature allows users to extend the functionality of their apps by easily performing GET and POST requests to external services. Users can create routes, execute them, and pass query parameters and request bodies. The Route API supports authentication methods such as HTTP Basic and API Token, and also allows for custom authorities for route execution. This feature provides a simple and effective way to integrate external services into DHIS2 apps.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-12193) | [Docs]()
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-12193) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/route.html)
 
 **(Preview) User impersonation:** Users with the appropriate authority can now impersonate other users. This is primarily used internally in DHIS2 for generating reports at the current time, but will be enhanced in the future to support more usecases. User impersonation is by default disabled in the system.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-10661)
