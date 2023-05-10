@@ -1,12 +1,15 @@
-# Patch 2.39.0 Release - PRELIMINARY
+# Patch 2.39.0 Release Note
 
 - [Features](#features)
 - [Bugs](#bugs)
 
 ## Features
 
-**[DHIS2-11998](https://dhis2.atlassian.net/browse/DHIS2-11998): Add support for multiple geometries associated with org units in the data model and API**  
-Components: _[API] Analytics_, _[API] Metadata model_
+**[DHIS2-13105](https://dhis2.atlassian.net/browse/DHIS2-13105): Aggregate data value set exchange service**  
+Components: _[API] Analytics_, _[API] Data value set_
+
+**[DHIS2-13370](https://dhis2.atlassian.net/browse/DHIS2-13370): Data statistics endpoint to return display name**  
+Components: _[API] Analytics_
 
 **[DHIS2-13411](https://dhis2.atlassian.net/browse/DHIS2-13411): [H,G, J, K] Dimension Endpoint to retrieve data for FE in Cross Program Line Listing app**  
 Components: _[API] Analytics_
@@ -50,11 +53,26 @@ Components: _[API] Analytics_
 **[DHIS2-13115](https://dhis2.atlassian.net/browse/DHIS2-13115): [D] Add support for dimensions of type "datetime" to analytics endpoints**  
 Components: _[API] Analytics_
 
-**[DHIS2-13321](https://dhis2.atlassian.net/browse/DHIS2-13321): Data Integrity - add type of details objects to report**  
+**[DHIS2-13710](https://dhis2.atlassian.net/browse/DHIS2-13710): Explose plugin entrypoints for installed web apps**  
+Components: _[API] App management_
+
+**[DHIS2-13760](https://dhis2.atlassian.net/browse/DHIS2-13760): Support application zip archives with a top-level directory**  
+Components: _[API] App management_
+
+**[DHIS2-13321](https://dhis2.atlassian.net/browse/DHIS2-13321): Data Integrity type of details objects to report**  
 Components: _[API] Data administration_
 
 **[DHIS2-12643](https://dhis2.atlassian.net/browse/DHIS2-12643): Server-side translations for data integrity checks**  
 Components: _[API] Data administration_
+
+**[DHIS2-7851](https://dhis2.atlassian.net/browse/DHIS2-7851): Allow superuser to modify other userDataStore of other users**  
+Components: _[API] Data store_
+
+**[DHIS2-8083](https://dhis2.atlassian.net/browse/DHIS2-8083): Add data set column to CSV data value set format**  
+Components: _[API] Data value set_
+
+**[DHIS2-13101](https://dhis2.atlassian.net/browse/DHIS2-13101): Stage specific Job Progress failure behaviour**  
+Components: _[API] Job scheduler_
 
 **[DHIS2-12852](https://dhis2.atlassian.net/browse/DHIS2-12852): Allow manual execution of system jobs**  
 Components: _[API] Job scheduler_
@@ -68,14 +86,26 @@ Components: _[API] Job scheduler_
 **[DHIS2-13100](https://dhis2.atlassian.net/browse/DHIS2-13100): Show Job Progress Tracking in Logs**  
 Components: _[API] Job scheduler_
 
-**[DHIS2-13313](https://dhis2.atlassian.net/browse/DHIS2-13313): GeoJSON unpublish (clear)**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-11867](https://dhis2.atlassian.net/browse/DHIS2-11867): Shorthand API notation for attributes and values for JSON and CSV**  
-Components: _[API] Metadata import-export_
+**[DHIS2-13697](https://dhis2.atlassian.net/browse/DHIS2-13697): Removal of metadata XML import & export in UI**  
+Components: _[API] Metadata import-export_, _[App] Import-export_
 
 **[DHIS2-5537](https://dhis2.atlassian.net/browse/DHIS2-5537): Validation of metadata attribute values on import**  
 Components: _[API] Metadata import-export_
+
+**[DHIS2-11867](https://dhis2.atlassian.net/browse/DHIS2-11867): Shorthand API fields notation for attributes and values for JSON and CSV**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-13313](https://dhis2.atlassian.net/browse/DHIS2-13313): Clear/unpublish GeoJSON for org units**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-429](https://dhis2.atlassian.net/browse/DHIS2-429): New data type MULTI_TEXT - with or without aggregation in analytics**  
+Components: _[API] Metadata model_
+
+**[DHIS2-6288](https://dhis2.atlassian.net/browse/DHIS2-6288): Create a FileResource with UID**  
+Components: _[API] Metadata model_, _[API] Tracker_
+
+**[DHIS2-7882](https://dhis2.atlassian.net/browse/DHIS2-7882): Description field in option groups exist in UI but not in database**  
+Components: _[API] Metadata model_
 
 **[DHIS2-13158](https://dhis2.atlassian.net/browse/DHIS2-13158): Object filter attribute and value shorthand notation**  
 Components: _[API] Metadata model_
@@ -83,29 +113,32 @@ Components: _[API] Metadata model_
 **[DHIS2-13323](https://dhis2.atlassian.net/browse/DHIS2-13323): Render GeoJSON attributes as plain JSON in metadata API**  
 Components: _[API] Metadata model_
 
+**[DHIS2-13461](https://dhis2.atlassian.net/browse/DHIS2-13461): TrackedEntityDataValue audit ou mode parameter**  
+Components: _[API] Other_
+
+**[DHIS2-11871](https://dhis2.atlassian.net/browse/DHIS2-11871): JSON payload for programIndicators filter/description endpoints**  
+Components: _[API] Other_
+
 **[DHIS2-13421](https://dhis2.atlassian.net/browse/DHIS2-13421): api/audit/trackedEntityDataValue: add OrgUnit, period, programStage filters**  
 Components: _[API] Other_
 
 **[DHIS2-13192](https://dhis2.atlassian.net/browse/DHIS2-13192): Log patterns should have new line at the end**  
 Components: _[API] Other_
 
-**[DHIS2-11871](https://dhis2.atlassian.net/browse/DHIS2-11871): Support JSON payload for programIndicators/filter/description**  
-Components: _[API] Other_
-
 **[DHIS2-13376](https://dhis2.atlassian.net/browse/DHIS2-13376): Support for additional hotfix version identifier**  
 Components: _[API] Other_
 
-**[DHIS2-13370](https://dhis2.atlassian.net/browse/DHIS2-13370): Data statistics endpoint to return display name**  
-Components: _[API] Other_
-
-**[DHIS2-13461](https://dhis2.atlassian.net/browse/DHIS2-13461): TrackedEntityDataValue audit ou mode parameter**  
-Components: _[API] Other_
+**[DHIS2-13995](https://dhis2.atlassian.net/browse/DHIS2-13995): Renaming 'Hide program stage' action in program rules to 'Hide option to add a program stage'**  
+Components: _[API] Program rules_, _[App] Capture_, _[App] Maintenance_, _[App] Tracker capture_
 
 **[DHIS2-12364](https://dhis2.atlassian.net/browse/DHIS2-12364): Implement d2:extractDataMatrixValue(key, dataMatrixText) in Java rule engine**  
 Components: _[API] Program rules_
 
 **[DHIS2-12537](https://dhis2.atlassian.net/browse/DHIS2-12537): Update logging level from info to debug**  
 Components: _[API] Program rules_
+
+**[DHIS2-13768](https://dhis2.atlassian.net/browse/DHIS2-13768): Allow hyphens in usernames**  
+Components: _[API] Security_, _[API] User_
 
 **[DHIS2-13659](https://dhis2.atlassian.net/browse/DHIS2-13659): Generate TOTP 2FA codes in the backend**  
 Components: _[API] Security_
@@ -116,6 +149,12 @@ Components: _[API] Security_, _[API] User_
 **[DHIS2-13206](https://dhis2.atlassian.net/browse/DHIS2-13206): Allow any page to fail during data synchronization**  
 Components: _[API] Synchronization_
 
+**[DHIS2-13455](https://dhis2.atlassian.net/browse/DHIS2-13455): Refactor Event SQL to use named parameters - Complex bindings**  
+Components: _[API] Tracker_
+
+**[DHIS2-13443](https://dhis2.atlassian.net/browse/DHIS2-13443): Performance optimisation when fetching events from Event Programs**  
+Components: _[API] Tracker_
+
 **[DHIS2-12249](https://dhis2.atlassian.net/browse/DHIS2-12249): Relationship type attributes for display**  
 Components: _[API] Tracker_
 
@@ -125,13 +164,7 @@ Components: _[API] Tracker_
 **[DHIS2-10679](https://dhis2.atlassian.net/browse/DHIS2-10679): Add configurable max records limit for the tracker query endpoint**  
 Components: _[API] Tracker_
 
-**[DHIS2-13455](https://dhis2.atlassian.net/browse/DHIS2-13455): Refactor Event SQL to use named parameters - Complex bindings**  
-Components: _[API] Tracker_
-
 **[DHIS2-13468](https://dhis2.atlassian.net/browse/DHIS2-13468): Program rule on import fails for future event dates**  
-Components: _[API] Tracker_
-
-**[DHIS2-13443](https://dhis2.atlassian.net/browse/DHIS2-13443): Performance optimisation when fetching events from Event Programs**  
 Components: _[API] Tracker_
 
 **[DHIS2-11423](https://dhis2.atlassian.net/browse/DHIS2-11423): Add entity for assigned user information in events**  
@@ -152,10 +185,10 @@ Components: _[API] Tracker_
 **[DHIS2-12048](https://dhis2.atlassian.net/browse/DHIS2-12048): API that lists candidates for indexable attributes**  
 Components: _[API] Tracker_
 
-**[DHIS2-12723](https://dhis2.atlassian.net/browse/DHIS2-12723): Check username not already exists and make it immutable**  
+**[DHIS2-12586](https://dhis2.atlassian.net/browse/DHIS2-12586): Restrict UserLookup endpoint to only give visibility to "capture" org units**  
 Components: _[API] User_
 
-**[DHIS2-12586](https://dhis2.atlassian.net/browse/DHIS2-12586): Restrict UserLookup endpoint to only give visibility to "capture" org units**  
+**[DHIS2-12723](https://dhis2.atlassian.net/browse/DHIS2-12723): Check username not already exists and make it immutable**  
 Components: _[API] User_
 
 **[DHIS2-13441](https://dhis2.atlassian.net/browse/DHIS2-13441): Disable MFA for user account**  
@@ -164,25 +197,28 @@ Components: _[API] User_, _[App] User_
 **[DHIS2-13426](https://dhis2.atlassian.net/browse/DHIS2-13426): Use error codes for user invite error responses**  
 Components: _[API] User_
 
-**[DHIS2-12246](https://dhis2.atlassian.net/browse/DHIS2-12246): Add missing "built in variables" for tracker program rules execution**  
+**[DHIS2-12377](https://dhis2.atlassian.net/browse/DHIS2-12377): Event's relationships Widget: View mode - display relationships**  
+Components: _[App] Capture_
+
+**[DHIS2-12372](https://dhis2.atlassian.net/browse/DHIS2-12372): Relationship Widgets: View linked records**  
+Components: _[App] Capture_
+
+**[DHIS2-12362](https://dhis2.atlassian.net/browse/DHIS2-12362): TEI's relationships Widget: View mode - display relationships**  
 Components: _[App] Capture_
 
 **[DHIS2-13439](https://dhis2.atlassian.net/browse/DHIS2-13439): Use "Description of due date" in Schedule tab**  
+Components: _[App] Capture_
+
+**[DHIS2-13309](https://dhis2.atlassian.net/browse/DHIS2-13309): Show scheduled date in 6c. View/edit event page**  
+Components: _[App] Capture_
+
+**[DHIS2-12246](https://dhis2.atlassian.net/browse/DHIS2-12246): Add missing "built in variables" for tracker program rules execution**  
 Components: _[App] Capture_
 
 **[DHIS2-12627](https://dhis2.atlassian.net/browse/DHIS2-12627): TEI Context in page 4b.**  
 Components: _[App] Capture_
 
 **[DHIS2-12140](https://dhis2.atlassian.net/browse/DHIS2-12140): Load TEI lists only if displayFrontPageList program config is true**  
-Components: _[App] Capture_
-
-**[DHIS2-12372](https://dhis2.atlassian.net/browse/DHIS2-12372): Relationship Widgets: View linked records**  
-Components: _[App] Capture_
-
-**[DHIS2-12377](https://dhis2.atlassian.net/browse/DHIS2-12377): Event's relationships Widget: View mode - display relationships**  
-Components: _[App] Capture_
-
-**[DHIS2-12362](https://dhis2.atlassian.net/browse/DHIS2-12362): TEI's relationships Widget: View mode - display relationships**  
 Components: _[App] Capture_
 
 **[DHIS2-13612](https://dhis2.atlassian.net/browse/DHIS2-13612): Stage tooltip: use UI library, hide when no description**  
@@ -242,7 +278,7 @@ Components: _[App] Capture_, _[App] Tracker capture_
 **[DHIS2-13298](https://dhis2.atlassian.net/browse/DHIS2-13298): Add color palettes to key reporting apps**  
 Components: _[App] Data visualizer_
 
-**[DHIS2-12490](https://dhis2.atlassian.net/browse/DHIS2-12490): [J] Program indicators filter operands in event reports**  
+**[DHIS2-12490](https://dhis2.atlassian.net/browse/DHIS2-12490): [M][L][J] Program indicators filter operands in event reports**  
 Components: _[App] Event reports_
 
 **[DHIS2-13264](https://dhis2.atlassian.net/browse/DHIS2-13264): Add "legend" element into EventVisualization**  
@@ -269,42 +305,39 @@ Components: _[App] Maps_
 **[DHIS2-13311](https://dhis2.atlassian.net/browse/DHIS2-13311): Show GeoJSON attribute description**  
 Components: _[App] Maps_
 
-**[DHIS2-12155](https://dhis2.atlassian.net/browse/DHIS2-12155): Allow the default basemap to be changed for a DHIS2 instance**  
-Components: _[App] Maps_
-
-**[DHIS2-12521](https://dhis2.atlassian.net/browse/DHIS2-12521): Add 500k and 1m records as options under Systems setting for reports and SQL Views**  
-Components: _[App] Settings_
-
-**[DHIS2-12056](https://dhis2.atlassian.net/browse/DHIS2-12056): Refactor summary pages**  
-Components: _[App] User_
-
-**[DHIS2-13083](https://dhis2.atlassian.net/browse/DHIS2-13083): Include username requirements in help text**  
-Components: _[App] User_
-
-**[DHIS2-10524](https://dhis2.atlassian.net/browse/DHIS2-10524):  Adding users to a user-group when dealing with high volumes of users**  
-Components: _[App] User_
-
-**[DHIS2-12791](https://dhis2.atlassian.net/browse/DHIS2-12791): Only show "reset password" action if an email can be sent**  
-Components: _[App] User_
-
-**[DHIS2-12792](https://dhis2.atlassian.net/browse/DHIS2-12792): Show title at top of replicate user form**  
-Components: _[App] User_
-
 ## Bugs
 
-**[DHIS2-13694](https://dhis2.atlassian.net/browse/DHIS2-13694): [J,K] Event Date filter not respecting individual dates selection**  
+**[DHIS2-12367](https://dhis2.atlassian.net/browse/DHIS2-12367): Indicate when a job has collided with another job**  
+Components: _[API] Analytics_, _[API] Job scheduler_
+
+**[DHIS2-13173](https://dhis2.atlassian.net/browse/DHIS2-13173): [M][L][F][E] Param displayProperty:SHORTNAME doesn't return short name**  
 Components: _[API] Analytics_
 
 **[DHIS2-13478](https://dhis2.atlassian.net/browse/DHIS2-13478): No data shows after continuous/delta analytics run (lastyears=0)**  
 Components: _[API] Analytics_
 
-**[DHIS2-13638](https://dhis2.atlassian.net/browse/DHIS2-13638): [J]Org. Unit Group Sets are considered as filters in events/enrollments queries**  
+**[DHIS2-13429](https://dhis2.atlassian.net/browse/DHIS2-13429): All Previous Analytics data removed after partial "lastyears=2" run**  
+Components: _[API] Analytics_
+
+**[DHIS2-13479](https://dhis2.atlassian.net/browse/DHIS2-13479): Running full analytics does not remove continuous/delta table (analytics_0)**  
+Components: _[API] Analytics_
+
+**[DHIS2-13573](https://dhis2.atlassian.net/browse/DHIS2-13573): [I] NullPointer Exception in /query/events**  
+Components: _[API] Analytics_
+
+**[DHIS2-12888](https://dhis2.atlassian.net/browse/DHIS2-12888): [C] Wrong operator used for nested conditions**  
+Components: _[API] Analytics_
+
+**[DHIS2-13225](https://dhis2.atlassian.net/browse/DHIS2-13225): [F, I,J]Passing a coordinate dimension to sort order returns no rows**  
 Components: _[API] Analytics_
 
 **[DHIS2-13514](https://dhis2.atlassian.net/browse/DHIS2-13514): [J, K] Analytics Continous Job Fails for New Program**  
 Components: _[API] Analytics_
 
-**[DHIS2-13173](https://dhis2.atlassian.net/browse/DHIS2-13173): [F][E] Param displayProperty:SHORTNAME doesn't return short name**  
+**[DHIS2-13694](https://dhis2.atlassian.net/browse/DHIS2-13694): [J,K] Event Date filter not respecting individual dates selection**  
+Components: _[API] Analytics_
+
+**[DHIS2-13638](https://dhis2.atlassian.net/browse/DHIS2-13638): [J]Org. Unit Group Sets are considered as filters in events/enrollments queries**  
 Components: _[API] Analytics_
 
 **[DHIS2-13286](https://dhis2.atlassian.net/browse/DHIS2-13286): [I, J, K] OUGS are sorted by id instead of display name in event/enrollment analytics**  
@@ -325,9 +358,6 @@ Components: _[API] Analytics_
 **[DHIS2-12366](https://dhis2.atlassian.net/browse/DHIS2-12366): api/system/tasks/ANALYTICS_TABLE/uid not working**  
 Components: _[API] Analytics_, _[API] Job scheduler_
 
-**[DHIS2-12367](https://dhis2.atlassian.net/browse/DHIS2-12367): Indicate when a job has collided with another job**  
-Components: _[API] Analytics_, _[API] Job scheduler_
-
 **[DHIS2-13633](https://dhis2.atlassian.net/browse/DHIS2-13633): [I] Data Elements of type Percentage returns 0.0 for null values**  
 Components: _[API] Analytics_
 
@@ -337,19 +367,7 @@ Components: _[API] Analytics_
 **[DHIS2-13721](https://dhis2.atlassian.net/browse/DHIS2-13721): [J,K] Incorrect column names in analytics events and enrollments response**  
 Components: _[API] Analytics_
 
-**[DHIS2-13573](https://dhis2.atlassian.net/browse/DHIS2-13573): [I] NullPointer Exception in /query/events**  
-Components: _[API] Analytics_
-
-**[DHIS2-12888](https://dhis2.atlassian.net/browse/DHIS2-12888): [C] Wrong operator used for nested conditions**  
-Components: _[API] Analytics_
-
 **[DHIS2-13703](https://dhis2.atlassian.net/browse/DHIS2-13703): [J] Events analytics: sorting by "scheduleddate" fails**  
-Components: _[API] Analytics_
-
-**[DHIS2-13429](https://dhis2.atlassian.net/browse/DHIS2-13429): All Previous Analytics data removed after partial "lastyears=2" run**  
-Components: _[API] Analytics_
-
-**[DHIS2-13479](https://dhis2.atlassian.net/browse/DHIS2-13479): Running full analytics does not remove continuous/delta table (analytics_0)**  
 Components: _[API] Analytics_
 
 **[DHIS2-13563](https://dhis2.atlassian.net/browse/DHIS2-13563): [I] Filter !EQ in analytics event query filters out null**  
@@ -473,6 +491,12 @@ Components: _[API] Analytics_
 **[DHIS2-12832](https://dhis2.atlassian.net/browse/DHIS2-12832): [C] sorting by programstatus in enrollment analytics result in wrong query generated**  
 Components: _[API] Analytics_
 
+**[DHIS2-13837](https://dhis2.atlassian.net/browse/DHIS2-13837): Installed app redirects from index.action return 302 with no Location header**  
+Components: _[API] App management_
+
+**[DHIS2-13836](https://dhis2.atlassian.net/browse/DHIS2-13836): Installed app redirects to bundled app path doesn't work**  
+Components: _[API] App management_
+
 **[DHIS2-12922](https://dhis2.atlassian.net/browse/DHIS2-12922): /dhis-web-commons/menu/getModules.action returns status 500**  
 Components: _[API] App management_, _[API] Other_
 
@@ -484,6 +508,9 @@ Components: _[API] Data administration_, _[API] Job scheduler_
 
 **[DHIS2-12884](https://dhis2.atlassian.net/browse/DHIS2-12884): Flyway migration V2_38_19 migth fail if ProgramRuleVariable is misconfigured**  
 Components: _[API] Database migration_
+
+**[DHIS2-13856](https://dhis2.atlassian.net/browse/DHIS2-13856): api/dataEntry/metadata fails on empty data set**  
+Components: _[API] Data Entry_
 
 **[DHIS2-13193](https://dhis2.atlassian.net/browse/DHIS2-13193): Support use of [] and () interchangeably in DataStore fields expansion**  
 Components: _[API] Data store_
@@ -497,6 +524,9 @@ Components: _[API] Data store_
 **[DHIS2-12691](https://dhis2.atlassian.net/browse/DHIS2-12691): Data element group filter for data value sets API**  
 Components: _[API] Data value set_
 
+**[DHIS2-13360](https://dhis2.atlassian.net/browse/DHIS2-13360): DELETE events should update the lastUpdated property**  
+Components: _[API] Events_
+
 **[DHIS2-13693](https://dhis2.atlassian.net/browse/DHIS2-13693): [J] Filter !ILIKE, !LIKE in analytics event query filters out null**  
 Components: _[API] Events_
 
@@ -505,9 +535,6 @@ Components: _[API] Events_
 
 **[DHIS2-12853](https://dhis2.atlassian.net/browse/DHIS2-12853): Tracker data value history not available**  
 Components: _[API] Events_, _[API] Tracker_
-
-**[DHIS2-13360](https://dhis2.atlassian.net/browse/DHIS2-13360): DELETE events should update the lastUpdated property**  
-Components: _[API] Events_
 
 **[DHIS2-13452](https://dhis2.atlassian.net/browse/DHIS2-13452): Event data value audit represents value before modification**  
 Components: _[API] Events_
@@ -518,16 +545,16 @@ Components: _[API] Events_
 **[DHIS2-9062](https://dhis2.atlassian.net/browse/DHIS2-9062): V(orgunit_code) and d2:inOrgUnitGroup() does not work**  
 Components: _[API] Events_, _[App] Capture_
 
-**[DHIS2-13163](https://dhis2.atlassian.net/browse/DHIS2-13163): Disable built-in logging customization when given logging config by user**  
-Components: _[API] Frameworks and libraries_
-
 **[DHIS2-12986](https://dhis2.atlassian.net/browse/DHIS2-12986): Fix logging exception on startup**  
 Components: _[API] Frameworks and libraries_
 
-**[DHIS2-12094](https://dhis2.atlassian.net/browse/DHIS2-12094): [C] Newly created Continuous Analytics Job fails**  
-Components: _[API] Job scheduler_
+**[DHIS2-13163](https://dhis2.atlassian.net/browse/DHIS2-13163): Disable built-in logging customization when given logging config by user**  
+Components: _[API] Frameworks and libraries_
 
 **[DHIS2-13489](https://dhis2.atlassian.net/browse/DHIS2-13489): Job Progress Tracking: Process status should be final**  
+Components: _[API] Job scheduler_
+
+**[DHIS2-12094](https://dhis2.atlassian.net/browse/DHIS2-12094): [C] Newly created Continuous Analytics Job fails**  
 Components: _[API] Job scheduler_
 
 **[DHIS2-13030](https://dhis2.atlassian.net/browse/DHIS2-13030): Tracker sync fails because called service can't handle superuser execution (NPE)**  
@@ -542,51 +569,39 @@ Components: _[API] Job scheduler_
 **[DHIS2-13474](https://dhis2.atlassian.net/browse/DHIS2-13474): Analytics table UI in progress after crash**  
 Components: _[API] Job scheduler_, _[App] Data administration_
 
+**[DHIS2-12566](https://dhis2.atlassian.net/browse/DHIS2-12566): Data set notification completion period not included in email**  
+Components: _[API] Messaging_, _[App] Data entry_
+
 **[DHIS2-12217](https://dhis2.atlassian.net/browse/DHIS2-12217): A problem with messaging inside Tracker capture app**  
 Components: _[API] Messaging_, _[API] Tracker_
+
+**[DHIS2-13922](https://dhis2.atlassian.net/browse/DHIS2-13922): Error on event export in XML format in Zip mode**  
+Components: _[API] Metadata import-export_, _[App] Import-export_
+
+**[DHIS2-13923](https://dhis2.atlassian.net/browse/DHIS2-13923): Error on TEI export in CSV format**  
+Components: _[API] Metadata import-export_, _[App] Import-export_
+
+**[DHIS2-13178](https://dhis2.atlassian.net/browse/DHIS2-13178): Error when removing expiry days set on program**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-12828](https://dhis2.atlassian.net/browse/DHIS2-12828): Null options are returned when there are gaps in sort order**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-11435](https://dhis2.atlassian.net/browse/DHIS2-11435): Null option sort_order causes all apps to break**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-13869](https://dhis2.atlassian.net/browse/DHIS2-13869): Metadata export to uncompressed file is not getting downloaded as a file**  
+Components: _[API] Metadata import-export_, _[App] Import-export_
+
+**[DHIS2-10027](https://dhis2.atlassian.net/browse/DHIS2-10027): Phone number datatype accepts alphanumeric characters of any length**  
+Components: _[API] Metadata import-export_
+
+**[DHIS2-13056](https://dhis2.atlassian.net/browse/DHIS2-13056): Program org unit associations endpoint vulnerability**  
+Components: _[API] Metadata import-export_
 
 **[DHIS2-13709](https://dhis2.atlassian.net/browse/DHIS2-13709): Get org units at level and boundary is broken**  
 Components: _[API] Metadata import-export_
 
 **[DHIS2-13129](https://dhis2.atlassian.net/browse/DHIS2-13129): Uncompressed format data export file is downloaded without the file extension**  
 Components: _[API] Metadata import-export_, _[App] Import-export_
-
-**[DHIS2-13569](https://dhis2.atlassian.net/browse/DHIS2-13569): Error when importing metadata with existing attribute in payload**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-12829](https://dhis2.atlassian.net/browse/DHIS2-12829): [C] Fix typo in import error message**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-8381](https://dhis2.atlassian.net/browse/DHIS2-8381): Cannot mark greyed field if categoryCombo is default**  
-Components: _[API] Metadata import-export_, _[App] Maintenance_
-
-**[DHIS2-12831](https://dhis2.atlassian.net/browse/DHIS2-12831): Metadata import corrupts option sort order**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-6183](https://dhis2.atlassian.net/browse/DHIS2-6183): Metadata dependency export for programs does not capture option groups**  
-Components: _[API] Metadata import-export_, _[App] Import-export_, _[App] Maintenance_
-
-**[DHIS2-10027](https://dhis2.atlassian.net/browse/DHIS2-10027): Phone number datatype accepts alphanumeric characters of any length**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-13178](https://dhis2.atlassian.net/browse/DHIS2-13178): Error when removing expiry days set on program**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-7803](https://dhis2.atlassian.net/browse/DHIS2-7803): Import-export of metadata fails**  
-Components: _[API] Metadata import-export_, _[App] Import-export_
-
-**[DHIS2-7864](https://dhis2.atlassian.net/browse/DHIS2-7864): Inconsistent error report in metadata endpoint**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-13056](https://dhis2.atlassian.net/browse/DHIS2-13056): Program org unit associations endpoint vulnerability**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-11435](https://dhis2.atlassian.net/browse/DHIS2-11435): Null option sort_order causes all apps to break**  
-Components: _[API] Metadata import-export_
-
-**[DHIS2-13277](https://dhis2.atlassian.net/browse/DHIS2-13277): Option Groups and Program Sections give errors when exporting/importing Program**  
-Components: _[API] Metadata import-export_, _[App] Import-export_
-
-**[DHIS2-12828](https://dhis2.atlassian.net/browse/DHIS2-12828): Null options are returned when there are gaps in sort order**  
-Components: _[API] Metadata import-export_
 

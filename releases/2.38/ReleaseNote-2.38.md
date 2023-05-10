@@ -1,7 +1,5 @@
 # DHIS version 2.38 Release Note
 
----
-
 ## ANALYTICS FEATURES
 
 **New Line Listing app:** A new Line Listing app is developed for compatibility with DHIS 2.38 and will be released soon via the App Hub. This new application is a massive improvement for producing line lists of tracked entities in DHIS2 over the event reports application. The new line listing application replicated all of the line listing functionalities of the event reports app, and it has a completely new, much improved user experience that makes it much easier for users to make a line list of tracked entities. It also includes many new features. A list of some of the key new features:
@@ -47,11 +45,9 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
  [Docs](https://docs.dhis2.org/en/full/use/user-guides/dhis-core-version-236/dhis2-user-manual.html#manage_indicator)
 
----
-
 ## TRACKER AND EVENT FEATURES
 
-**Tracker program working list improvements:** Working lists for tracker programs has been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
+**Tracker program working list improvements:** Working lists for tracker programs have been expanded to be similar to those of event working lists. The Capture app now allows working lists to be configured, saved, shared, deleted and updated through the user interface. 
 
 [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/releases/screenshots/38/Working_list.png) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#capture_views) | [Jira](https://jira.dhis2.org/browse/DHIS2-9275)
 
@@ -94,8 +90,6 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 * Re-enroll an existing tracked entity instance: By having a tracked entity instance selected in the locked selector and selecting a different program, you can now re-enroll existing TEIs into other programs. The registration page will be pre-filled with any overlapping tracked entity attribute values.    
 [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/tracking-individual-level-data/capture.html#re-enroll-an-existing-tracked-entity-instance)  | [Jira](https://jira.dhis2.org/browse/DHIS2-12141)
 
----
-
 ## PLATFORM FEATURES
 
 **Version check notifications:** A new DHIS 2 version check notification service is introduced, which will send notifications in the form of DHIS 2 system inbox messages when newer versions of DHIS 2 has become available. This includes major and patch versions. This is useful to encourage sysadmins to upgrade DHIS 2 to keep their instance secure and up to date.
@@ -130,8 +124,6 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 
 [Jira](https://jira.dhis2.org/browse/DHIS2-12072)
 
----
-
 ### PLATFORM API FEATURES
 
 **Data store improvements:** The data store API has received numerous improvements to make it a fully-fledged data store and more useful to web apps and other clients.
@@ -156,8 +148,6 @@ _Example subExpression expression in indicators: subExpression( if (#{vq2q03TrNi
 **Metadata proposal workflow:** The new metadata proposal workflow endpoint allows for a workflow of metadata changes. The stages include proposing, accepting, opposing, adjusting and rejecting a metadata change. This is useful e.g. for facility registries where changes to organisation units must be managed.
 
 [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-238/metadata.html#webapi_metadata_proposal_workflow) | [Jira](https://jira.dhis2.org/browse/DHIS2-4828)
-
----
 
 ## RELEASE INFO
 
