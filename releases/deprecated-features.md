@@ -12,6 +12,7 @@ The following features are deprecated. You can still use them now, but the DHIS2
 
 |Feature|Deprecation first announced|Planned end of support<br>(version)|
 |:---------|:---:|:---:|
+|The /user/userCredentials object is merged into the user object and will be removed | May 2023|2.41.0| 
 |The old and deprecated OAuth support is removed| May 2023|2.41.0| 
 |The old tracker APIs are deprecated and replaced by `/api/tracker` endpoints |Sep 2022|2.41.0|
 |The Data Entry app is deprecated, and replaced by the Aggregate Data Entry app|Dec 2022|2.41.0|
