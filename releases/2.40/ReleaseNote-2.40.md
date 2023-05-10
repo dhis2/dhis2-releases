@@ -23,6 +23,8 @@
 **Display values in thematic layers:** Make your maps even more informative with the option to show values directly on the map in thematic layers. This addition complements the legend and provides a more complete picture of the data being presented.  
 [Jira](https://jira.dhis2.org/browse/DHIS2-13356)
 
+**Improved maps download:** Get all of the key information you need when you download a map. In 2.40 you can now show the map title, description, legend(s), north arrow, and overview map all in one easy to use image when you download a map.
+
 **New predictor functions for computing probability:** In supply chain applications, knowing the probability of a stock out is crucial. With the new predictor functions for normDistCum and normDistDen, you can compute the probability of a stock out for normally distributed stock consumption. These functions provide the equivalent of Excel NORM.DIST() and LibreOffice NORMDIST() and allow you to calculate the probability density function (PDF) and cumulative distribution function (CDF) for a given mean and standard deviation.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14714)
 
