@@ -25,6 +25,9 @@
 
 **Improved maps download:** Get all of the key information you need when you download a map. In 2.40 you can now show the map title, description, legend(s), north arrow, and overview map all in one easy to use image when you download a map.
 
+**Ownership analytics in Program Indicators:** Now you can make program indicators that are based on org unit ownership! The mean that, for example, you can count the number of patients that are recieving care at a facility even if they were not orgionally enrolled in care at that facility or officially transfered. Specifically, program indicators can be set to which organisation unit will be reported in analytics. Choices include the organisation unit for the event, enrollment, registration, organisation unit data element, or tracked entity instance ownership at the start or end of the reporting period.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-13373)
+
 
 ## TRACKER AND EVENT FEATURES
 
