@@ -77,16 +77,11 @@ These changes are all supported in DHIS2 version 2.38 and above and Capture vers
 
 ## PLATFORM FEATURES
 
-**Event Hooks:** The event hook API is a powerful tool that can help you automate your workflows and keep your systems in sync with each other by allowing users to subscribe to two types of events that occur within the DHIS2: metadata events and scheduler events.  
-To use the event hook API, you will need to enable it in your DHIS2 configuration file, and then configure the source and target of your event hook, such as webhooks, JMS, and Kafka; you can receive the events and take action in real-time. 
-For example, you could set up an event hook that listens for changes to data elements in your metadata, and then sends a webhook to another system to update their records accordingly.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-12194) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/event-hooks.html)
-
-**Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only added for aggregate data entry.  
+**Multi-select option sets for aggregate data entry:** Users can now configure `MULTI_TEXT` data elements, which allows users to select multiple options for an option set. This feature is currently only available for aggregate data entry.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14481)
 
 **Aggregate Data Exchange App:** The aggregate data exchange app is now available for running the Data Exchange Service.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-13105) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/data-exchange.html)
 
 **Improvements to Data Integrity:** The Data Integrity API has been improved to handle the growing number of checks. To avoid exceeding the maximum URL length, the following changes have been implemented:
 - POST endpoints now accept the list of checks as a request body
@@ -99,25 +94,22 @@ For example, you could set up an event hook that listens for changes to data ele
 [Jira 1](https://dhis2.atlassian.net/browse/DHIS2-14506) | [Jira 2](https://dhis2.atlassian.net/browse/DHIS2-14236) | [Jira 3](https://dhis2.atlassian.net/browse/DHIS2-14495) | [Jira 4](https://dhis2.atlassian.net/browse/DHIS2-14451)
 
 **New job for refreshing Materialized view SQL views:** SQL views of type "Materialized view" now has a new Job which can be scheduled to refresh the contents of the SQL view.  
-[Jira (Backend)](https://dhis2.atlassian.net/browse/DHIS2-14718) | [Jira (Frontend)](https://dhis2.atlassian.net/browse/DHIS2-15095) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-239/scheduling.html#job-parameters)
+[Jira (Backend)](https://dhis2.atlassian.net/browse/DHIS2-14718) | [Jira (Frontend)](https://dhis2.atlassian.net/browse/DHIS2-15095) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/scheduling.html#job-parameters)
 
-**Jobs can now be grouped to run in sequence:** Jobs can be grouped to run in sequence, making it easier to define dependencies between jobs, and also clarify which jobs can be run in parallel. The feature is also soon available in the Scheduler app.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14314) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/scheduling.html#queues)
-
-**Users can no longer be created with case-sensitive usernames:** Existing users can still have the same usernames, with different upper- and lower-case variants, but new users must have a case-insensitive unique username accross all users.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-10886)
+**Jobs can now be grouped to run in sequence:** Scheduled jobs can now be grouped to run in sequence, making it easier to define dependencies between jobs and also clarify which jobs can be run in parallel. The feature will also soon be available in the Scheduler app.  
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14314) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/scheduling.html#queues)
 
 **Maximum/Minimum (sum org unit) aggregation:** Defines two new aggregation types that allow the maximum, or minimum, value of a data element within each organisation unit, summed across organisation units.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14430)
 
 **Predictor normalized distribution functions:** Using the new functions normDistCum() and normDistDen(), predictors can compute either the the cumulative distribution function (CDF) or the the probability density function (PDF) of a value based on the a distribution defined by the same data element or another data element.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14714) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
 
 **Predictions by data element group:** Allows a single predictor to operate on the category option combinations of all data elements in a data element group. For example in logistics management each data element may represent a commodity and each category option combination may represent a count related to that commodity. This allows a single predictor to compute the value of a category option combination for every commodity in a commodity group.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-14635) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
 
 **Predictions by Disaggregation:** A single predictor can be used to independently predict every disaggregation of an output data element based on the same disaggregations of data in the predictor generator expression.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-9832) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/metadata.html#manage_predictor)
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-9832) | [Docs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/configuring-the-system/metadata.html#manage_predictor)
 
 
 ### PLATFORM API FEATURES
@@ -126,17 +118,19 @@ For example, you could set up an event hook that listens for changes to data ele
 From version 40 onwards, working with the DHIS2 API just got a whole lot easier. The server can now provide a comprehensive OpenAPI document that covers all endpoints, allowing users to quickly and easily understand the capabilities of the API. Both JSON and YAML formats are supported, so you can choose the one that works best for you. And if you want to generate a document for a specific endpoint or a selection of root paths and tags, it's as simple as making a request to the right endpoint. So whether you're a developer, analyst, or data manager, the OpenAPI feature will help you get the most out of DHIS2.  
 [Docs](https://docs.dhis2.org/en/develop/core-openapi-specification.html)
 
-**Remove ProgramTrackedEntityAttributeGroup:**  This unused entity was removed from the software, and the relevant database tables, api endpoints and references will no longer be available.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14815)
-
 **New dedicated ping endpoint:** A new endpoint for pinging the server has been added. The new endpoint does not require authentication, extend the user session and uses a low amount of resources.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14531)
 
-**New system info endpoint:** A new endpoint has been added to return information about the current system, including version, revision, build time and system ID.  
+**System info added to dataSummary endpoint:** The dataSummary endpoint now returns information about the current system, including version, revision, build time and system ID.
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14822)
 
 **DataStore now returns sharing information:** DataStore keys can be shared in the same way Metadata is shared. With this change, sharing information is now available in the DataStore API: `/api/dataStore/<namespace>/<key>/metaData`  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-14595)
+
+**(Preview) Event Hooks:** The event hook API is a powerful tool that can help you automate your workflows and keep your systems in sync with each other by allowing users to subscribe to two types of events that occur within the DHIS2: metadata events and scheduler events.  
+To use the event hook API, you will need to enable it in your DHIS2 configuration file, and then configure the source and target of your event hook, such as webhooks, JMS, and Kafka; you can receive the events and take action in real-time. 
+For example, you could set up an event hook that listens for changes to data elements in your metadata, and then sends a webhook to another system to update their records accordingly.
+[Jira](https://dhis2.atlassian.net/browse/DHIS2-12194) | [Docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-240/event-hooks.html)
 
 **(Preview) API Routes:** We are introducing a new feature called the Route API, which enables seamless communication with external HTTP gateways or proxies. This feature allows users to extend the functionality of their apps by easily performing GET and POST requests to external services. Users can create routes, execute them, and pass query parameters and request bodies. The Route API supports authentication methods such as HTTP Basic and API Token, and also allows for custom authorities for route execution. This feature provides a simple and effective way to integrate external services into DHIS2 apps.  
 [Jira](https://dhis2.atlassian.net/browse/DHIS2-12193) | [Docs]()
