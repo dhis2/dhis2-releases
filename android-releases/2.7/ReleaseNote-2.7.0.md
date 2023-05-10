@@ -20,7 +20,7 @@
 
  **New legend style on tables:** The style for legends in tables has a new design which ensures good contrast and visibility independently from the selected colour for the legend. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4649) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.7/Release+feature+cards/Android-2-7-Updated-table-legends-style-card.png) | [Documentation](https://docs.dhis2.org/en/use/android-app/visual-configurations.html#capture_app_visual_pivot_legends)
 
-**Implement missing aggregation functions:** The following aggreagation functions are supported now in local analytics: LAST, FIRST, AVERAGE_SUM_ORG_UNIT, LAST_AVERAGE_ORG_UNIT, LAST_IN_PERIOD, LAST_IN_PERIOD_AVERAGE_ORG_UNIT, FIRST_AVERAGE_ORG_UNIT [Jira]([Implement missing aggregation functions](https://dhis2.atlassian.net/browse/ANDROAPP-4883)) | [Documentation](https://docs.dhis2.org/en/use/android-app/visual-configurations.html#limitations)
+**Implement missing aggregation functions:** The following aggreagation functions are supported now in local analytics: LAST, FIRST, AVERAGE_SUM_ORG_UNIT, LAST_AVERAGE_ORG_UNIT, LAST_IN_PERIOD, LAST_IN_PERIOD_AVERAGE_ORG_UNIT, FIRST_AVERAGE_ORG_UNIT [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4883) | [Documentation](https://docs.dhis2.org/en/use/android-app/visual-configurations.html#limitations)
 
 
 ## SYNC PROCESS
