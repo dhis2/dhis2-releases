@@ -32,24 +32,26 @@
 
 ## TRACKER AND EVENT FEATURES
 
-**Breaking the glass:**
-The Capture app now supports programs with an access level of "protected." This means that if you're a clinician in one clinic and need to access records from another clinic, you'll be prompted to provide a reason for why you need access. This feature is especially handy for users who need to access their own records regularly but only occasionally need access to records from other organisation units. This functionality has been re-implemented in Capture in an even better form than the old Tracker Capture. To take advantage of this feature, make sure you're using DHIS version 2.38 or higher and Capture version 100.27.0 or higher.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13804)
+**Breaking the glass** Programs with access level "protected" are now supported in the Capture app. For protected programs, when searcing for a tracked entity instance that is found in another org unit, the user is asked to provide a reason for why they need access. This access level is useful when clinicians in one clinic should be able to access their own records, but only on exception accesses records from other clinics. This functionality was supported in the old Tracker Capture and have now been reimplemented in Capture in an improved form.
+Supported in DHIS version 2.38 or higher, with capture version 100.27.0 or higher.
+
+[Screenshot](images/break_the_glass.png) | [jira](https://dhis2.atlassian.net/browse/DHIS2-13804)
 
 **Saved program stage working lists for tracker programs:**
 Program stage filters have been partially supported in the Capture app since 2.39, allowing filtering and ordering of lists based on event data in tracker programs. In 2.40 these filters can also be stored and shared as working lists. The program stage working lists can be utilized for many different purposes. Some examples are creating followup lists of specific tasks, following up defaulters or systematically reviewing data.
 Supported in DHIS2 version 40 or higher, with capture version 100.31.0 or higher.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
+
+[jira](https://dhis2.atlassian.net/browse/DHIS2-13654)
 
 **Headerbar improvements:**
 The header bar in Capture app has been updated to match other apps in the system. While the functionality remains the same, the header now takes up less space, and popovers are used to avoid situations where the bar expands and pushes other content down from the user's field of view.
 This update is supported in DHIS version 2.38 or higher with Capture version 100.26.0 or higher.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-14008)
+[Screenshot](images/headerbar_updates.png) | [jira](https://dhis2.atlassian.net/browse/DHIS2-14008)
 
 **Ask user to create new event when stage is complete:**
 Capture app now includes functionality for asking users to create a new event after completing a stage. If the flag for asking the user to create a new stage is checked, users will be prompted to create a new event immediately upon completing the stage. This feature can improve data entry efficiency and reduce human errors. It was previously supported in the old Tracker Capture app and has now been re-implemented in Capture in an improved form.
 This feature is supported in DHIS version 2.38 or higher with Capture version 100.21.0 or higher.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13801)
+[Screenshot](images/generate_new_event.png) | [jira](https://dhis2.atlassian.net/browse/DHIS2-13801)
 
 **Create a new TEI when no results match:**
 After searching for a tracked entity instance in the Capture app and finding no results, users are now given the option to carry over the search criteria and create a new tracked entity instance. This feature was supported in the old Tracker Capture app and has now been re-implemented in Capture in an improved form.
@@ -58,7 +60,7 @@ It is supported in DHIS version 2.38 or higher with Capture version 100.20.0 or 
 
 **Hide due date:** The Capture app now supports hiding the scheduled date for individual program stages. This feature allows program stages that do not require scheduling or a scheduled date to have those fields hidden, resulting in a cleaner and more streamlined user interface.
 This feature is supported in DHIS version 2.38 or higher with Capture version 100.19.0 or higher.  
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
+[Screenshot](images/hide_due_date.png.png) | [jira](https://dhis2.atlassian.net/browse/DHIS2-13897)
 
 **Attribute option combination for tracker programs:**
 Capture app now supports attribute action combination for tracker programs. This feature was already supported in the tracker capture app, but has now been redesigned an implemented in the Capture app. It is supported in DHIS version 2.38 or above, with Capture version 100.30.0 or higher.
