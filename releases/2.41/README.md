@@ -29,6 +29,7 @@ indicate more than one UID is allowed.
 
 `/tracker/events`
 * `assignedUsers` replaces `assignedUser`
+* `attributeCategoryOptions` replaces `attributeCos`
 * `events` replaces `event`
 
 ##### Naming
