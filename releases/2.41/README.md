@@ -41,6 +41,9 @@ following query parameters and paths in favor of new ones consistently using `tr
 `/tracker/relationships`
 * `trackedEntity` replaces `tei`
 
+`/tracker/events`
+* `attributeCategoryCombo` replaces `attributeCc`
+
 The following endpoints are deprecated
 
 * `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
