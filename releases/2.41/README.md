@@ -56,3 +56,14 @@ The following endpoints are deprecated
 * `/maintenance/softDeletedEnrollmentRemoval` replaces `/maintenance/softDeletedProgramInstanceRemoval`
 * `/maintenance/softDeletedEventRemoval` replaces `/maintenance/softDeletedProgramStageInstanceRemoval`
 
+We have have deprecated keys
+
+* `trackedEntity` replaces `trackedEntityInstance`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
+in the following API response bodies
+
+* `/api/dataSummary` in the `objectCounts` object
+* `/api/system/objectCounts`
+
