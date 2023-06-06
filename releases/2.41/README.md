@@ -9,6 +9,12 @@
 
 #### Breaking Changes
 
+The following query parameters have been removed as they have never been implemented and thus had no
+effect on the response
+
+* `/tracker/trackedEntities?attachment`
+* `/tracker/event?attachment` 
+
 #### Deprecated APIs
 
 ##### Semicolon as separator for identifiers (UID)
