@@ -1,7 +1,7 @@
 # Patch 2.39.2 Release Note
 
 - [Features](#features)
-- [Bugs](#bugs)
+- [Bugs fixed](#bugs)
 
 ## Features
 
