@@ -58,30 +58,30 @@
 
 -   Tracker analytics 
 
-    -   [ ] TEI / Cross program line list backend [jira](https://dhis2.atlassian.net/browse/DHIS2-13779)
-    -   [ ] Improved program indicator performance
-    -   [ ] Show org unit hierarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
+    -   [x] TEI / Cross program line list backend [jira](https://dhis2.atlassian.net/browse/DHIS2-13779)
+    -   [x] Improved program indicator performance
+    -   [x] Show org unit hierarchy in line lists [jira](https://dhis2.atlassian.net/browse/DHIS2-1558)
    
 -   Data visualizer
 
-    -   [ ] On-the-fly calculations in data visualizer pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
-    -   [ ] Apply legend as background color for single value chart type [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
-    -   [ ] Legend for stacked column charts [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
-    -   [ ] Show data element and indicator icon for single value charts [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
+    -   [x] On-the-fly calculations in data visualizer pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-13871)
+    -   [x] Apply legend as background color for single value chart type [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
+    -   [x] Legend for stacked column charts [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
+    -   [x] Show data element and indicator icon for single value charts [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
     -   [ ] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
 -   Dashboards 
 
-    -   [ ] Dashboard plug-in support [jira](https://dhis2.atlassian.net/browse/TECH-475)
-    -   [ ] Design for new push analytics - email dashboard print
-    -   [ ] Design for services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
+    -   [x] Dashboard plug-in support [jira](https://dhis2.atlassian.net/browse/TECH-475)
+    -   [x] Design for new push analytics - email dashboard print
+    -   [x] Design for services/guidance/tools to better support public web portals [jira](https://dhis2.atlassian.net/browse/DHIS2-13716)
 
 -   Maps
 
-    - [ ] Support multiple event coordinate types (event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
+    - [x] Support multiple event coordinate types (event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
     - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
-    - [ ] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
-    - [ ] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
+    - [x] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
+    - [x] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
 
 
 ### 2.41
@@ -90,12 +90,12 @@
 
     -   [ ] Relationship line list backend 
     -   [ ] TEI / Cross program line list frontend
-    -   [ ] Tracked entity count based upon event and enrollment line lists
+    -   [ ] Design tracked entity count based upon event and enrollment line lists
     -   [ ] Design for ownership organisation unit dimension
 
 -   Data visualizer
 
-    -   [ ] Two value chart types 
+    -   [ ] Design two value chart types 
     -   [ ] Include the indicator description in the data item selector. 
     -   [ ] Outlier tables (Replacing WHO DQ app)
     -   [ ] Future periods  
