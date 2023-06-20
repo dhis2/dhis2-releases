@@ -1,7 +1,7 @@
 # Patch 2.38.4 Release Note
 
 - [Features](#features)
-- [Bugs](#bugs)
+- [Bugs fixed](#bugs)
 
 ## Features
 
