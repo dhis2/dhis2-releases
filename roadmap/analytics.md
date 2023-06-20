@@ -97,7 +97,7 @@
 
     -   [ ] Design two value chart types 
     -   [ ] Include the indicator description in the data item selector. 
-    -   [ ] Outlier tables (Replacing WHO DQ app)
+    -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
     -   [ ] Future periods  
 
 -   Dashboards
