@@ -41,7 +41,7 @@ notdonefile= open(notdone,'w')
 
 
 apifile.write('# Patch '+args.version+' Release Note'+'\n\n')
-apifile.write('- [Features](#features)\n- [Bugs](#bugs)\n\n')
+apifile.write('- [Features](#features)\n- [Bugs fixed](#bugs)\n\n')
 
 cl = "===CLOSED\n"
 
