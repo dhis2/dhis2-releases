@@ -61,6 +61,14 @@ following query parameters and paths in favor of new ones consistently using `tr
 `/tracker/ownership/override`
 * `trackedEntity` replaces `trackedEntityInstance`
 
+`/messages/`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
+`/messages/scheduled/sent`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
 The following endpoints are deprecated
 
 * `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
