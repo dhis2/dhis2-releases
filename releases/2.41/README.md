@@ -55,6 +55,12 @@ following query parameters and paths in favor of new ones consistently using `tr
 `/tracker/events`
 * `attributeCategoryCombo` replaces `attributeCc`
 
+`/tracker/ownership/transfer`
+* `trackedEntity` replaces `trackedEntityInstance`
+
+`/tracker/ownership/override`
+* `trackedEntity` replaces `trackedEntityInstance`
+
 `/messages/`
 * `enrollment` replaces `programInstance`
 * `event` replaces `programStageInstance`
