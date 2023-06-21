@@ -18,7 +18,7 @@ The following query parameters have been removed as they have never been impleme
 effect on the response
 
 * `/tracker/trackedEntities?attachment`
-* `/tracker/event?attachment` 
+* `/tracker/event?attachment`
 
 #### Deprecated APIs
 
@@ -55,6 +55,14 @@ following query parameters and paths in favor of new ones consistently using `tr
 `/tracker/events`
 * `attributeCategoryCombo` replaces `attributeCc`
 
+`/messages/`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
+`/messages/scheduled/sent`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
 The following endpoints are deprecated
 
 * `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
@@ -71,4 +79,3 @@ in the following API response bodies
 
 * `/api/dataSummary` in the `objectCounts` object
 * `/api/system/objectCounts`
-
