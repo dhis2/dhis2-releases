@@ -69,11 +69,21 @@ following query parameters and paths in favor of new ones consistently using `tr
 * `enrollment` replaces `programInstance`
 * `event` replaces `programStageInstance`
 
+`/audits/trackedEntityDataValue`
+* `events` replaces `psi`
+
+`/audits/trackedEntityAttributeValue`
+* `trackedEntities` replaces `tei`
+
+`/audits/trackedEntityInstance`
+* `trackedEntities` replaces `tei`
+
 The following endpoints are deprecated
 
 * `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
 * `/maintenance/softDeletedEnrollmentRemoval` replaces `/maintenance/softDeletedProgramInstanceRemoval`
 * `/maintenance/softDeletedEventRemoval` replaces `/maintenance/softDeletedProgramStageInstanceRemoval`
+* `/audits/trackedEntity` replaces `/audits/trackedEntityInstance`
 
 We have have deprecated keys
 
