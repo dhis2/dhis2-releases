@@ -78,10 +78,11 @@
 
 -   Maps
 
-    - [x] Support multiple event coordinate types (event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
+    - [ ] Support multiple event coordinate types (event, enrollment, registration, data element, attributes) [jira](https://dhis2.atlassian.net/browse/DHIS2-8165) 
     - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
     - [x] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
-    - [x] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
+    - [ ] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
+    - [ ] Printed maps.
 
 
 ### 2.41
@@ -96,7 +97,6 @@
 -   Data visualizer
 
     -   [ ] Design two value chart types 
-    -   [ ] Design to include the indicator description in the data item selector. 
     -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
     -   [ ] Future periods
     -   [ ] Design for indicator description included in data item selector. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
