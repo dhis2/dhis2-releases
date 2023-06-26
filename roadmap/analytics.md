@@ -99,19 +99,20 @@
     -   [ ] Design to include the indicator description in the data item selector. 
     -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
     -   [ ] Future periods
-    -   [ ]  ] Design for indicator description included in data item selector. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
+    -   [ ] Design for indicator description included in data item selector. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
 
 -   Dashboards
 
     -   [ ] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
     -   [ ] Possibility to view standard reports directly in the dashboard
     -   [ ] Design for indicator description included in dashboard items. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
-    -   [ ] Design for a "simple" presentation mode for dashboards
+    -   [ ] Design and development for a "simple" presentation mode for dashboards
 
 -   Maps
-    -   [ ] New tracked entity layer 
+    -   [ ] Design new tracked entity layer 
     -   [ ] Program indicator filter in maps
     -   [ ] Tracked entity clusters/heat maps
+    -   [ ] Explore incorporation of travel time maps
 
 ### 2.42
 
