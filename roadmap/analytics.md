@@ -82,7 +82,7 @@
     - [ ] Improved interoperability with ESRI/ArcGIS [jira](https://dhis2.atlassian.net/browse/DHIS2-9526)
     - [x] Option to show value/number in thematic layers [jira](https://jira.dhis2.org/browse/DHIS2-13356)
     - [ ] Show map legend for large dashboard maps [jira](https://dhis2.atlassian.net/browse/DHIS2-13242)
-    - [ ] Improvements to printed to maps to include north arros, inset map, download to PDF, inclusion of the description. [jira](https://dhis2.atlassian.net/browse/DHIS2-14317)
+    - [x] Improvements to printed to maps to include north arros, inset map, download to PDF, inclusion of the description. [jira](https://dhis2.atlassian.net/browse/DHIS2-14317)
 
 
 ### 2.41
