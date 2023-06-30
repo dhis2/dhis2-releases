@@ -1,6 +1,6 @@
 # Patch 2.38.4.3 Release Note
 
-This is a HOTFIX patch release to address the following critical functional and usability issues:
+This is a HOTFIX patch release to address the following critical functional and performance issues:
 
 - **[DHIS2-15500](https://dhis2.atlassian.net/browse/DHIS2-15500): Form name for TEA is not displaying on List of TEI page for a Tracker Capture Program**  
   Components: _[App] Tracker capture_
