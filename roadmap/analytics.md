@@ -89,7 +89,7 @@
 
 -   Tracker Analytics
 
-    -   [ ] Relationship line list backend 
+    -   [ ] Tracker analytics performance improvement
     -   [ ] TEI / Cross program line list frontend
     -   [ ] Design tracked entity count based upon event and enrollment line lists
     -   [ ] Design for ownership organisation unit dimension
