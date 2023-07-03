@@ -89,7 +89,8 @@
 
 -   Tracker Analytics
 
-    -   [ ] Tracker analytics performance improvement
+    -   [ ] Tracker analytics performance improvements
+    -   [ ] Tracker analytics stability improvements
     -   [ ] TEI / Cross program line list frontend
     -   [ ] Design tracked entity count based upon event and enrollment line lists
     -   [ ] Design for ownership organisation unit dimension
@@ -97,15 +98,15 @@
 -   Data visualizer
 
     -   [ ] Design two value chart types 
-    -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
+    -   [ ] Outlier tables (Replacing WHO DQ app)
     -   [ ] Future periods
-    -   [ ] Design for indicator description included in data item selector. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
+    -   [ ] Design for indicator description included in data item selector
 
 -   Dashboards
 
-    -   [ ] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
+    -   [ ] Dashboard email push
     -   [ ] Possibility to view standard reports directly in the dashboard
-    -   [ ] Design for indicator description included in dashboard items. [jira](https://dhis2.atlassian.net/browse/DHIS2-14774?atlOrigin=eyJpIjoiODAxODNlYzQwOTI1NDY0MTlmNjBhNTc1YzIxYzM0Y2YiLCJwIjoiaiJ9)
+    -   [ ] Design for indicator description included in dashboard items
     -   [ ] Design and development for a "simple" presentation mode for dashboards
 
 -   Maps
