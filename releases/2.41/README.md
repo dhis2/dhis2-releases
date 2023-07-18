@@ -78,6 +78,15 @@ following query parameters and paths in favor of new ones consistently using `tr
 `/audits/trackedEntityInstance`
 * `trackedEntities` replaces `tei`
 
+`/programNotificationInstances`
+* `enrollment` replaces `programInstance`
+* `event` replaces `programStageInstance`
+
+`/tracker/trackedEntities`
+`/tracker/enrollments`
+`/tracker/events`
+* `orgUnitMode` replaces `ouMode`
+
 The following endpoints are deprecated
 
 * `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
