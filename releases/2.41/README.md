@@ -104,3 +104,90 @@ in the following API response bodies
 
 * `/api/dataSummary` in the `objectCounts` object
 * `/api/system/objectCounts`
+
+## Database
+
+### Breaking Changes: tables and columns rename 
+
+Following Tracker's new [naming](#naming) in the API, we have some tables and columns renamed following the new convention.
+
+Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
+
+#### Tables Rename
+
+| Old Table Name              | New Table Name                 |
+| ----------------------------|:------------------------------:|
+| trackedentityinstance       | trackedentity                  |
+| programinstance             | enrollment                     |
+| programstageinstance        | event                          |
+| programstageinstancefilter  | eventfilter                    |
+| programstageinstancecomments| eventcomments                  |
+| programinstancecomments     | enrollmentcomments             |
+| trackedentityinstanceaudit  | trackedentityaudit             |
+| trackedentityinstancefilter | trackedentityfilter            |
+
+#### Columns Rename
+
+Likewise, some columns adapts to the new naming. 
+
+Columns rename for deprecated `programstageinstance`:
+
+| Table (existing or renamed) | Column Old Name                | Column New Name        |
+| ----------------------------|:------------------------------:|-----------------------:|
+| event                       | programstageinstanceid         | eventid                |
+| eventfilter                 | programstageinstancefilterid   | eventfilterid          |
+| relationshipitem            | programstageinstanceid         | eventid                |
+| trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
+| programmessage              | programstageinstanceid         | eventid                |
+| programnotificationinstance | programstageinstanceid         | eventid                |
+| eventcomments               | programstageinstanceid         | eventid                |
+| trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
+
+Columns rename for deprecated `programinstance`:
+
+| Table (existing or renamed) | Column Old Name                | Column New Name        |
+| ----------------------------|:------------------------------:|-----------------------:|
+| enrollment                  | programinstanceid              | enrollmentid           |
+| enrollmentcomments          | programinstanceid              | enrollmentid           |
+| relationshipitem            | programinstanceid              | enrollmentid           |
+| programnotificationinstance | programinstanceid              | enrollmentid           |
+| programmessage              | programinstanceid              | enrollmentid           |
+| event                       | programinstanceid              | enrollmentid           |
+
+Columns rename for deprecated `trackedentityinstance`:
+
+| Table (existing or renamed)      | Column Old Name                | Column New Name        |
+| ---------------------------------|:------------------------------:|-----------------------:|
+| trackedentity                    | trackedentityinstanceid        | trackedentityid        |
+| trackedentityaudit               | trackedentityinstance          | trackedentity          |
+| trackedentityaudit               | trackedentityinstanceauditid   | trackedentityauditid   |
+| trackedentityfilter              | trackedentityinstancefilterid  | trackedentityfilterid  |
+| enrollment                       | trackedentityinstanceid        | trackedentityid        |
+| trackedentityattributevalueaudit | trackedentityinstanceid        | trackedentityid        |
+| programmessage                   | trackedentityinstanceid        | trackedentityid        |
+| relationshipitem                 | trackedentityinstanceid        | trackedentityid        |
+| trackedentityprogramowner        | trackedentityinstanceid        | trackedentityid        |
+| programtempownershipaudit        | trackedentityinstanceid        | trackedentityid        |
+| programtempowner                 | trackedentityinstanceid        | trackedentityid        |
+| programownershiphistory          | trackedentityinstanceid        | trackedentityid        |
+
+
+#### Postgres Reference
+
+From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html):
+
+> The RENAME forms change the name of a table (or an index, sequence, view, materialized view, or foreign table), 
+> the name of an individual column in a table, or the name of a constraint of the table. 
+> When renaming a constraint that has an underlying index, the index is renamed as well. **There is no effect on the stored data.**
+
+Renaming a table or a table's column do not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
+Therefore, no downtime is expected following the migrations.
+
+We can check the transaction commit for the index creation hasn't changed after the renaming:
+
+```sql
+SELECT pg_xact_commit_timestamp(xmin)
+FROM pg_class
+WHERE relname = 'programstageinstance_pkey';
+```
+Notice if we want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
