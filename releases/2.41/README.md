@@ -26,7 +26,7 @@ effect on the response
 
 The following query parameters accepting one or more semicolon separated UIDs are deprecated in
 favor of a parameter accepting **comma separated** UIDs. This is to ensure UIDs are consistently
-separated by comma accross all DHIS2 endpoints. Names are now also consistently using plural to
+separated by comma across all DHIS2 endpoints. Names are now also consistently using plural to
 indicate more than one UID is allowed.
 
 `/tracker/trackedEntity`
@@ -94,7 +94,7 @@ The following endpoints are deprecated
 * `/maintenance/softDeletedEventRemoval` replaces `/maintenance/softDeletedProgramStageInstanceRemoval`
 * `/audits/trackedEntity` replaces `/audits/trackedEntityInstance`
 
-We have have deprecated keys
+We have deprecated keys
 
 * `trackedEntity` replaces `trackedEntityInstance`
 * `enrollment` replaces `programInstance`
@@ -130,7 +130,7 @@ Therefore, we align the database's names with the changes applied to `trackedEnt
 
 Likewise, some columns adapts to the new naming. 
 
-Columns rename for deprecated `programstageinstance`:
+Columns rename for deprecated `programstageinstance`
 
 | Table (existing or renamed) | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
@@ -143,7 +143,7 @@ Columns rename for deprecated `programstageinstance`:
 | eventcomments               | programstageinstanceid         | eventid                |
 | trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
 
-Columns rename for deprecated `programinstance`:
+Columns rename for deprecated `programinstance`
 
 | Table (existing or renamed) | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
@@ -154,7 +154,7 @@ Columns rename for deprecated `programinstance`:
 | programmessage              | programinstanceid              | enrollmentid           |
 | event                       | programinstanceid              | enrollmentid           |
 
-Columns rename for deprecated `trackedentityinstance`:
+Columns rename for deprecated `trackedentityinstance`
 
 | Table (existing or renamed)      | Column Old Name                | Column New Name        |
 | ---------------------------------|:------------------------------:|-----------------------:|
@@ -174,7 +174,7 @@ Columns rename for deprecated `trackedentityinstance`:
 
 #### Postgres Reference
 
-From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html):
+From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html)
 
 > The RENAME forms change the name of a table (or an index, sequence, view, materialized view, or foreign table), 
 > the name of an individual column in a table, or the name of a constraint of the table. 
@@ -183,7 +183,7 @@ From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql
 Renaming a table or a table's column do not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
 Therefore, no downtime is expected following the migrations.
 
-We can check the transaction commit for the index creation hasn't changed after the renaming:
+We can check the transaction commit for the index creation hasn't changed after the renaming
 
 ```sql
 SELECT pg_xact_commit_timestamp(xmin)
