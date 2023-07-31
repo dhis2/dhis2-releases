@@ -107,13 +107,15 @@ in the following API response bodies
 
 ## Database
 
-### Breaking Changes: tables and columns rename 
+### Tracker
 
-Following Tracker's new [naming](#naming) in the API, we have some tables and columns renamed following the new convention.
+#### Breaking Changes: renamed tables and columns 
+
+We have renamed some tables and columns following tracker's new [naming](#naming) in the API.
 
 Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
 
-#### Tables Rename
+#### Rename Tables
 
 | Old Table Name              | New Table Name                 |
 | ----------------------------|:------------------------------:|
@@ -126,13 +128,11 @@ Therefore, we align the database's names with the changes applied to `trackedEnt
 | trackedentityinstanceaudit  | trackedentityaudit             |
 | trackedentityinstancefilter | trackedentityfilter            |
 
-#### Columns Rename
+#### Renamed Columns
 
-Likewise, some columns adapts to the new naming. 
+The following `programstageinstance` related columns have been renamed 
 
-Columns rename for deprecated `programstageinstance`
-
-| Table (existing or renamed) | Column Old Name                | Column New Name        |
+| Table (new names)           | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
 | event                       | programstageinstanceid         | eventid                |
 | eventfilter                 | programstageinstancefilterid   | eventfilterid          |
@@ -143,9 +143,9 @@ Columns rename for deprecated `programstageinstance`
 | eventcomments               | programstageinstanceid         | eventid                |
 | trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
 
-Columns rename for deprecated `programinstance`
+The following `programinstance` related columns have been renamed 
 
-| Table (existing or renamed) | Column Old Name                | Column New Name        |
+| Table (new names)           | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
 | enrollment                  | programinstanceid              | enrollmentid           |
 | enrollmentcomments          | programinstanceid              | enrollmentid           |
@@ -154,9 +154,9 @@ Columns rename for deprecated `programinstance`
 | programmessage              | programinstanceid              | enrollmentid           |
 | event                       | programinstanceid              | enrollmentid           |
 
-Columns rename for deprecated `trackedentityinstance`
+The following `trackedentityinstance` related columns have been renamed 
 
-| Table (existing or renamed)      | Column Old Name                | Column New Name        |
+| Table (new names)                | Column Old Name                | Column New Name        |
 | ---------------------------------|:------------------------------:|-----------------------:|
 | trackedentity                    | trackedentityinstanceid        | trackedentityid        |
 | trackedentityaudit               | trackedentityinstance          | trackedentity          |
@@ -180,14 +180,14 @@ From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql
 > the name of an individual column in a table, or the name of a constraint of the table. 
 > When renaming a constraint that has an underlying index, the index is renamed as well. **There is no effect on the stored data.**
 
-Renaming a table or a table's column do not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
+Renaming a table or a table's column does not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
 Therefore, no downtime is expected following the migrations.
 
-We can check the transaction commit for the index creation hasn't changed after the renaming
+You can check that the index creation hasn't changed after the migration via the transaction commit. 
 
 ```sql
 SELECT pg_xact_commit_timestamp(xmin)
 FROM pg_class
 WHERE relname = 'programstageinstance_pkey';
 ```
-Notice if we want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
+Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
