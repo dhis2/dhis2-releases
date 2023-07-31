@@ -115,7 +115,7 @@ We have renamed some tables and columns following tracker's new [naming](#naming
 
 Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
 
-#### Rename Tables
+#### Renamed Tables
 
 | Old Table Name              | New Table Name                 |
 | ----------------------------|:------------------------------:|
