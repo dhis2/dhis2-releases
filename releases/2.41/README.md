@@ -26,7 +26,7 @@ effect on the response
 
 The following query parameters accepting one or more semicolon separated UIDs are deprecated in
 favor of a parameter accepting **comma separated** UIDs. This is to ensure UIDs are consistently
-separated by comma accross all DHIS2 endpoints. Names are now also consistently using plural to
+separated by comma across all DHIS2 endpoints. Names are now also consistently using plural to
 indicate more than one UID is allowed.
 
 `/tracker/trackedEntity`
@@ -94,7 +94,7 @@ The following endpoints are deprecated
 * `/maintenance/softDeletedEventRemoval` replaces `/maintenance/softDeletedProgramStageInstanceRemoval`
 * `/audits/trackedEntity` replaces `/audits/trackedEntityInstance`
 
-We have have deprecated keys
+We have deprecated keys
 
 * `trackedEntity` replaces `trackedEntityInstance`
 * `enrollment` replaces `programInstance`
@@ -104,3 +104,90 @@ in the following API response bodies
 
 * `/api/dataSummary` in the `objectCounts` object
 * `/api/system/objectCounts`
+
+## Database
+
+### Tracker
+
+#### Breaking Changes: renamed tables and columns 
+
+We have renamed some tables and columns following tracker's new [naming](#naming) in the API.
+
+Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
+
+#### Renamed Tables
+
+| Old Table Name              | New Table Name                 |
+| ----------------------------|:------------------------------:|
+| trackedentityinstance       | trackedentity                  |
+| programinstance             | enrollment                     |
+| programstageinstance        | event                          |
+| programstageinstancefilter  | eventfilter                    |
+| programstageinstancecomments| eventcomments                  |
+| programinstancecomments     | enrollmentcomments             |
+| trackedentityinstanceaudit  | trackedentityaudit             |
+| trackedentityinstancefilter | trackedentityfilter            |
+
+#### Renamed Columns
+
+The following `programstageinstance` related columns have been renamed 
+
+| Table (new names)           | Column Old Name                | Column New Name        |
+| ----------------------------|:------------------------------:|-----------------------:|
+| event                       | programstageinstanceid         | eventid                |
+| eventfilter                 | programstageinstancefilterid   | eventfilterid          |
+| relationshipitem            | programstageinstanceid         | eventid                |
+| trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
+| programmessage              | programstageinstanceid         | eventid                |
+| programnotificationinstance | programstageinstanceid         | eventid                |
+| eventcomments               | programstageinstanceid         | eventid                |
+| trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
+
+The following `programinstance` related columns have been renamed 
+
+| Table (new names)           | Column Old Name                | Column New Name        |
+| ----------------------------|:------------------------------:|-----------------------:|
+| enrollment                  | programinstanceid              | enrollmentid           |
+| enrollmentcomments          | programinstanceid              | enrollmentid           |
+| relationshipitem            | programinstanceid              | enrollmentid           |
+| programnotificationinstance | programinstanceid              | enrollmentid           |
+| programmessage              | programinstanceid              | enrollmentid           |
+| event                       | programinstanceid              | enrollmentid           |
+
+The following `trackedentityinstance` related columns have been renamed 
+
+| Table (new names)                | Column Old Name                | Column New Name        |
+| ---------------------------------|:------------------------------:|-----------------------:|
+| trackedentity                    | trackedentityinstanceid        | trackedentityid        |
+| trackedentityaudit               | trackedentityinstance          | trackedentity          |
+| trackedentityaudit               | trackedentityinstanceauditid   | trackedentityauditid   |
+| trackedentityfilter              | trackedentityinstancefilterid  | trackedentityfilterid  |
+| enrollment                       | trackedentityinstanceid        | trackedentityid        |
+| trackedentityattributevalueaudit | trackedentityinstanceid        | trackedentityid        |
+| programmessage                   | trackedentityinstanceid        | trackedentityid        |
+| relationshipitem                 | trackedentityinstanceid        | trackedentityid        |
+| trackedentityprogramowner        | trackedentityinstanceid        | trackedentityid        |
+| programtempownershipaudit        | trackedentityinstanceid        | trackedentityid        |
+| programtempowner                 | trackedentityinstanceid        | trackedentityid        |
+| programownershiphistory          | trackedentityinstanceid        | trackedentityid        |
+
+
+#### Postgres Reference
+
+From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html)
+
+> The RENAME forms change the name of a table (or an index, sequence, view, materialized view, or foreign table), 
+> the name of an individual column in a table, or the name of a constraint of the table. 
+> When renaming a constraint that has an underlying index, the index is renamed as well. **There is no effect on the stored data.**
+
+Renaming a table or a table's column does not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
+Therefore, no downtime is expected following the migrations.
+
+You can check that the index creation hasn't changed after the migration via the transaction commit. 
+
+```sql
+SELECT pg_xact_commit_timestamp(xmin)
+FROM pg_class
+WHERE relname = 'programstageinstance_pkey';
+```
+Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
