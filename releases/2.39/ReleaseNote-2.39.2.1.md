@@ -1,4 +1,4 @@
-# Patch 2.39.1.2 Release Note
+# Patch 2.39.2.1 Release Note
 
 This is a HOTFIX patch release to address the following critical functional and performance issues:
 
