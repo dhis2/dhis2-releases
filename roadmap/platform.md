@@ -72,17 +72,23 @@
     -   [ ] Improved metadata dependency export
 
 ### 2.41 or later
+-   Maintenance app
+    -  [ ] New version of maintenance initial release with several modules
+    
+-   New login app with customisation options
 
-- Master facility list
-    -   [ ] Reporting start date for organisation unit
-    -   [ ] Org unit profile configuration UI
-    -   [ ] Org unit split and merge UI
-    -   [ ] Propose and approve org unit workflow UI
-    -   [ ] Org unit analytics maintenance app updates
+-   Metadata management
+    -   [ ] Metadata import audit log
+    -   [ ] Metadata merge functionality
 
 - Platform
-    -   [ ] Remove Struts completely from the system
-    -   [ ] Renaming of apps and customization of UI labels with custom translation bundles
+    -   [ ] Remove Struts completely 
+    -   [ ] Aggregate Data exchange configuration UI
+    -   [ ] Job schedular configuration UI
+    -   [ ] Integrity Check Configuration UI
+    -   [ ] Accessibility improvements of UI library
+    -   [ ] Multi-calendar support for import/export app
+
 
 ### Always Ongoing
 
@@ -95,4 +101,10 @@
 ### Parking Lot
 
 -   Multi-calendar & time zone support
+-   - Master facility list
+    -   [ ] Reporting start date for organisation unit
+    -   [ ] Org unit profile configuration UI
+    -   [ ] Org unit split and merge UI
+    -   [ ] Propose and approve org unit workflow UI
+    -   [ ] Org unit analytics maintenance app updates
 -   Multiple org unit hierarchies (with support from other teams)
