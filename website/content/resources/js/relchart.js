@@ -1,5 +1,5 @@
 // Fetch the data
-fetch('/downloads/v1/versions/stable.json')
+fetch('/dhis2-releases/downloads/v1/versions/stable.json')
 .then(response => response.json())
 .then(data => {
     const traces = [];
