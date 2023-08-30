@@ -1,5 +1,7 @@
 # 2.39 Upgrade Notes
 
+> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.38/README.md), if upgrading from an earlier version**
+
 ## Web Apps
 
 * The previous data approval Struts-based web module is removed, and superseded by the React-based data approval web app.
