@@ -1,5 +1,7 @@
 # 2.38 Upgrade Notes
 
+> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.37/README.md), if upgrading from an earlier version**
+
 ## Java Support
 
 Starting with DHIS 2.38, Java JDK version 11 is required. This means that Java 8 is no longer supported.
