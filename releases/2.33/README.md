@@ -1,6 +1,6 @@
 # 2.33 Upgrade Notes
 
-> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.32/README.md), if upgrading from an earlier version**
+> :warning: **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.32/README.md), if upgrading from an earlier version**
 
 ## Browser support
 
