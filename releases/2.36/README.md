@@ -1,5 +1,7 @@
 # 2.36 Upgrade Notes
 
+> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.35/README.md), if upgrading from an earlier version**
+
 ## Database
 
 - A `shortName` column (mandatory property) has been added to the `category`, `dataelementgroupset` and `organisationunitgroupset` tables.
