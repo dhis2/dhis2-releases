@@ -1,5 +1,7 @@
 # 2.37 Upgrade Notes
 
+> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.36/README.md), if upgrading from an earlier version**
+
 ## Database
 
 ## API
