@@ -16,11 +16,21 @@ As always, we recommend using an OpenJDK distribution of Java, due to the free a
 - In table `sqlview`, `not-null` constraints have been added to the `type` and `cachestrategy` columns.
 - The table `users` are removed, and its data are migrated into the `userinfo` table. (This does not affect the API, which maintains backward compatibility)
 - For adding trigram indexes and compounding it with primitive column types, two extensions have to be created in the database. The extensions are already part of the default posgresql installation. Extensions:
-
  ```
  create extension pg_trgm;
  create extension btree_gin;
  ```
+- Starting in 2.38, PRVs have a value type (valueType field in the API, valuetype column on the DB table)  
+  Since this new field cannot be null, the system assigns valueType = TEXT to all PRVs  
+  If you happen to have PRVs of source type CALCULATED_VALUE, and they are supposed to hold a numeric value, when they are initialized by default to TEXT, some PRs are impacted.  
+  For example:
+  Suppose PRV AgeYears is used as follows in a condition of a PR
+  ```
+  #{AgeYears} > 5
+  ```
+  After the upgrade to 2.38, this PR is no longer working because #{AgeYears} is of type TEXT, so comparing it against a number gives an error (or warning)  
+  Program rule variables which are not of type TEXT must be updated with the proper valueType.  In the above example, AgeYears should have the valueType set to NUMBER.
+
 
 ## API
 
