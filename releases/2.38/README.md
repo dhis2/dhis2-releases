@@ -14,7 +14,7 @@ As always, we recommend using an OpenJDK distribution of Java, due to the free a
 - In table `sqlview`, `not-null` constraints have been added to the `type` and `cachestrategy` columns.
 - The table `users` are removed, and its data are migrated into the `userinfo` table. (This does not affect the API, which maintains backward compatibility)
 - For adding trigram indexes and compounding it with primitive column types, two extensions have to be created in the database. The extensions are already part of the default posgresql installation. Extensions:
-- In table `programrulevariable`, `not-null` column `valuetype` of type `character varying(50)` has been added with default value TEXT. . Program Rule Variables of column CALCULATED_VALUE, which store a numeric value, should be reviewed and `valuetype` property should be updated accordingly.
+- In table `programrulevariable`,  the `not-null` column `valuetype` of type `character varying(50)` has been added with default value TEXT. Program Rule Variables of column CALCULATED_VALUE, which store a numeric value, should be reviewed and `valuetype` property should be updated accordingly.
 
  ```
  create extension pg_trgm;
