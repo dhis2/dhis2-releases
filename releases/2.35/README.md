@@ -1,5 +1,7 @@
 # 2.35 Upgrade Notes
 
+> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.34/README.md), if upgrading from an earlier version**
+
 ## Database
 
 - Excessive data element operands _might_ have been created due to an issue with saving of pivot tables. This [script](https://github.com/dhis2/dhis2-utils/blob/master/resources/sql/delete_deprecated_operands.sql) could be run in order to delete deprecated `data element operands` that prevents the deletion of `data elements`. More information about this in Jira issue [DHIS2-7043](https://jira.dhis2.org/browse/DHIS2-7043).
