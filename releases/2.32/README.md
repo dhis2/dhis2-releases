@@ -1,6 +1,6 @@
 # 2.32 Upgrade Notes
 
-> **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.31/README.md), if upgrading from an earlier version**
+> :warning: **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.31/README.md), if upgrading from an earlier version**
 
 ## System Administration
 - The *Server base URL* system setting has changed from being a system setting to a `dhis.conf` property. This is done because the server base URL typically follows the server and not the database. The setting key is `server.base.url`. See install guide for details.
