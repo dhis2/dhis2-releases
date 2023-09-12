@@ -18,10 +18,12 @@ effect on the response
 
 * `/tracker/trackedEntities?attachment`
 * `/tracker/events?attachment`
+
+Following parameters were removed as including or excluding fields from the JSON response can be achieved by using the `fields` query parameter
+
 * `/tracker/trackedEntities?skipMeta`
 * `/tracker/events?skipMeta`
-
-Parameter `skipEventId` in `GET /tracker/events` endpoint was removed as include or exclude fields from the JSON response can be achieved by using the fields query parameter.
+* `/tracker/events?skipEventId`
 
 
 The `index` field of an entity in the report of a tracker import was removed.
