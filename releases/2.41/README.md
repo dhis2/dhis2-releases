@@ -19,7 +19,7 @@ effect on the response
 * `/tracker/trackedEntities?attachment`
 * `/tracker/events?attachment`
 * `/tracker/trackedEntities?skipMeta`
-* `/tracker/events?skipMeta=true`
+* `/tracker/events?skipMeta`
 
 Parameter `skipEventId` in `GET /tracker/events` endpoint was removed as include or exclude fields from the JSON response can be achieved by using the fields query parameter.
 
