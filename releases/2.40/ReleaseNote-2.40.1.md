@@ -1,4 +1,4 @@
-# Patch 2.40.1 Release Note
+# Patch 40.1.0 Release Note
 
 - [Features](#features)
 - [Bugs fixed](#bugs)
