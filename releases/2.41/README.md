@@ -183,7 +183,7 @@ The following `trackedentitycomment` related columns have been renamed
 | Table (new names)                | Column Old Name                | Column New Name        |
 | ---------------------------------|:------------------------------:|-----------------------:|
 | note                             | trackedentitycommentid         | noteid                 |
-| note                             | commenttext                    | notetext                 |
+| note                             | commenttext                    | notetext               |
 | event_comments                   | trackedentitycommentid         | noteid                 |
 | enrollment_comments              | trackedentitycommentid         | noteid                 |
 
