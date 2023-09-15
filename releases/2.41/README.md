@@ -119,6 +119,8 @@ We have renamed some tables and columns following tracker's new [naming](#naming
 
 Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
 
+Furthermore, we also align the`trackedentitycomment` and related database tables to the API naming of `note`.
+
 #### Renamed Tables
 
 | Old Table Name              | New Table Name                 |
@@ -127,10 +129,11 @@ Therefore, we align the database's names with the changes applied to `trackedEnt
 | programinstance             | enrollment                     |
 | programstageinstance        | event                          |
 | programstageinstancefilter  | eventfilter                    |
-| programstageinstancecomments| eventcomments                  |
-| programinstancecomments     | enrollmentcomments             |
 | trackedentityinstanceaudit  | trackedentityaudit             |
 | trackedentityinstancefilter | trackedentityfilter            |
+| trackedentitycomment        | note                           |
+| programstageinstancecomments| event_notes                    |
+| programinstancecomments     | enrollment_notes               |
 
 #### Renamed Columns
 
@@ -175,6 +178,14 @@ The following `trackedentityinstance` related columns have been renamed
 | programtempowner                 | trackedentityinstanceid        | trackedentityid        |
 | programownershiphistory          | trackedentityinstanceid        | trackedentityid        |
 
+The following `trackedentitycomment` related columns have been renamed 
+
+| Table (new names)                | Column Old Name                | Column New Name        |
+| ---------------------------------|:------------------------------:|-----------------------:|
+| note                             | trackedentitycommentid         | noteid                 |
+| note                             | commenttext                    | notetext                 |
+| event_comments                   | trackedentitycommentid         | noteid                 |
+| enrollment_comments              | trackedentitycommentid         | noteid                 |
 
 #### Postgres Reference
 
