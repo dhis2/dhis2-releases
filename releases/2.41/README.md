@@ -119,7 +119,7 @@ We have renamed some tables and columns following tracker's new [naming](#naming
 
 Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
 
-Furthermore, we also align the`trackedentitycomment` and related database tables to the API naming of `note`.
+Furthermore, we also align the `trackedentitycomment` and its related database tables to the API naming of `note`.
 
 #### Renamed Tables
 
