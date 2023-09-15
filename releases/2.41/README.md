@@ -17,7 +17,14 @@ The following query parameters have been removed as they have never been impleme
 effect on the response
 
 * `/tracker/trackedEntities?attachment`
-* `/tracker/event?attachment`
+* `/tracker/events?attachment`
+
+Following parameters were removed as including or excluding fields from the JSON response can be achieved by using the `fields` query parameter
+
+* `/tracker/trackedEntities?skipMeta`
+* `/tracker/events?skipMeta`
+* `/tracker/events?skipEventId`
+
 
 The `index` field of an entity in the report of a tracker import was removed.
 When importing tracker entities using `POST /tracker` endpoint, the response follow the format described [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#import-summary-structure).
