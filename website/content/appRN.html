@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Commits</title>
+    <link rel="stylesheet" href="resources/css/apprn.css"> <!-- If you decide to put the CSS in a separate file -->
+
+</head>
+<body>
+    <label for="app">App:</label>
+    <select id="app">
+        <!-- populated from js -->
+    </select>
+    <br>
+    <label for="from">From:</label>
+    <select id="from"></select>
+    <label for="to">To:</label>
+    <select id="to"></select>
+    <!-- <button onclick="fetchCommits()">Fetch Commits</button> -->
+    <button onclick="displayCommits()">Apply</button>
+    <div id="messages"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="resources/js/apprn.js"></script>
+</body>
+</html>

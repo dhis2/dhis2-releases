@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Core App Releases</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="resources/js/apps.js" defer></script>
+    <style>
+        html, body, #core-apps-plot {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            padding: 0;
+        }
+        #min-version {
+            padding: 10px;
+        }
+        
+        .title {
+            font: 16px sans-serif;
+            margin-right: 10px;
+        }
+        
+        select {
+            margin-right: 15px;
+            padding: 5px;
+            font: 16px sans-serif;
+        }
+        
+        button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            font: 16px sans-serif;
+        }
+        
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        
+    </style>
+    
+        
+    
+    
+    
+
+</head>
+<body>
+    <!-- Add these buttons to your HTML -->
+    <div id="min-version">
+        <span class="title">Filter by compatible DHIS Version:</span>
+        <select id="minDhisVersionDropdown">
+            <option value="">Select a version</option>
+            <option value="2.40">2.40</option>
+            <option value="2.39">2.39</option>
+            <option value="2.38">2.38</option>
+            <option value="2.37">2.37</option>
+            <option value="2.36">2.36</option>
+        </select>
+        <button id="clear-min-version">Clear</button>
+    </div>
+    
+  
+
+
+    <div id="core-apps-plot"></div>
+</body>
+</html>

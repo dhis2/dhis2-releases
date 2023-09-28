@@ -4,6 +4,8 @@ fetch('/dhis2-releases/downloads/v1/versions/stable.json')
 .then(data => {
     const traces = [];
 
+    let minDate = Infinity;
+    let maxDate = -Infinity;
     // Parse the data for each major version
     data.versions.forEach(version => {
         const patchVersions = [];
@@ -12,8 +14,12 @@ fetch('/dhis2-releases/downloads/v1/versions/stable.json')
         const markerBorders = []; // Array for marker colors
         const markerLineColors = []; // Array for marker line colors
 
+
+
         version.patchVersions.forEach(patch => {
             patchVersions.push(patch.version);
+            minDate = Math.min(minDate, patch.releaseDate);
+            maxDate = Math.max(maxDate, patch.releaseDate);
             dates.push(patch.releaseDate);
             hov = (patch.displayName || patch.name) + "<br>" + patch.releaseDate;
             hoverTexts.push(hov); // Use displayName if defined, otherwise use name
@@ -59,6 +65,7 @@ fetch('/dhis2-releases/downloads/v1/versions/stable.json')
         width: 1200, // Adjust the width of the chart
         hovermode: 'closest', // Show closest data on hover
         xaxis: {
+            range: [minDate, maxDate],
             rangeselector: {
                 buttons: [
                     {
@@ -110,6 +117,9 @@ fetch('/dhis2-releases/downloads/v1/versions/stable.json')
         yaxis: {
             title: 'Patch Version',
             dtick: 1 // Minor ticks every 1 unit
+        },
+        margin: {
+            l: 150 // Increase left margin to allow more space for y-axis labels
         }
     };
     
