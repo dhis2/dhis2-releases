@@ -22,10 +22,14 @@ print(apps)
 
 # Configuration
 categories_config = {
-    "feat[^:]*:": "Features",
-    "fix[^:]*:": "Bug Fixes",
-    "test[^:]*:": "Testing",
-    "ci[^:]*:": "Build Updates",
+    "feat": "Features",
+    "fix": "Bug Fixes",
+    "test": "Testing",
+    # "ci": "Build Updates",
+    # "docs": "Documentation",
+    # "refactor": "Refactoring",
+    "perf": "Performance",
+    # "chore": "Maintenance",
 }
 # apps = ["data-visualizer-app"]
 base_url = "https://api.github.com/repos/dhis2"
@@ -58,8 +62,11 @@ def fetch_and_categorize_commits(app, from_tag, to_tag):
         raw_message = commit['commit']['message']
         for line in raw_message.split('\n'):
             for pattern, category in categories_config.items():
-                if re.search(pattern, line, re.I):
-                    processed_line = re.sub('^[^:]*'+pattern, '', line, flags=re.I).strip()
+                full_pattern = '^[* ]*'+pattern+'(:|\([^:]+\):)'
+                if re.search(full_pattern, line, re.I):
+                    match = re.search(r'\(([^)]+)\):', line)
+                    replacement = match.group(1)+':' if match else ''
+                    processed_line = re.sub(full_pattern, replacement, line, flags=re.I).strip()
                     categories.setdefault(category, set()).add(processed_line)
     
     # Filter out substrings

@@ -69,7 +69,7 @@ function displayCommits() {
         const categories = appData[version];
         
         // Display a heading for the current version
-        messagesDiv.innerHTML += `<h2>${version}</h2>`;
+        messagesDiv.innerHTML += `<h2><a href="https://github.com/dhis2/${app}/releases/tag/${version}">${version}</a></h2>`;
         
         // Format and add the categorized commit messages to the output
         for (const [category, messages] of Object.entries(categories)) {
