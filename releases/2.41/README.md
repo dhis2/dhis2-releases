@@ -13,6 +13,14 @@
 
 #### Breaking Changes
 
+The following query parameters have been removed as the same behavior can be achieved using `filter` parameter
+
+* `/tracker/trackedEntities?query`
+* `/tracker/trackedEntities?attribute`
+
+The following query parameters have been removed as they were misleading and not provide any useful information
+* `/tracker/trackedEntities?includeAllAttributes`
+
 The following query parameters have been removed as they have never been implemented and thus had no
 effect on the response
 
@@ -120,7 +128,7 @@ in the following API response bodies
 
 ### Tracker
 
-#### Breaking Changes: renamed tables and columns 
+#### Breaking Changes: renamed tables and columns
 
 We have renamed some tables and columns following tracker's new [naming](#naming) in the API.
 
@@ -144,7 +152,7 @@ Furthermore, we also align the `trackedentitycomment` and its related database t
 
 #### Renamed Columns
 
-The following `programstageinstance` related columns have been renamed 
+The following `programstageinstance` related columns have been renamed
 
 | Table (new names)           | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
@@ -157,7 +165,7 @@ The following `programstageinstance` related columns have been renamed
 | eventcomments               | programstageinstanceid         | eventid                |
 | trackedentitydatavalueaudit | programstageinstanceid         | eventid                |
 
-The following `programinstance` related columns have been renamed 
+The following `programinstance` related columns have been renamed
 
 | Table (new names)           | Column Old Name                | Column New Name        |
 | ----------------------------|:------------------------------:|-----------------------:|
@@ -168,7 +176,7 @@ The following `programinstance` related columns have been renamed
 | programmessage              | programinstanceid              | enrollmentid           |
 | event                       | programinstanceid              | enrollmentid           |
 
-The following `trackedentityinstance` related columns have been renamed 
+The following `trackedentityinstance` related columns have been renamed
 
 | Table (new names)                | Column Old Name                | Column New Name        |
 | ---------------------------------|:------------------------------:|-----------------------:|
@@ -198,14 +206,14 @@ The following `trackedentitycomment` related columns have been renamed
 
 From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html)
 
-> The RENAME forms change the name of a table (or an index, sequence, view, materialized view, or foreign table), 
-> the name of an individual column in a table, or the name of a constraint of the table. 
+> The RENAME forms change the name of a table (or an index, sequence, view, materialized view, or foreign table),
+> the name of an individual column in a table, or the name of a constraint of the table.
 > When renaming a constraint that has an underlying index, the index is renamed as well. **There is no effect on the stored data.**
 
 Renaming a table or a table's column does not affect the data. For example, re-building a primary key index, which can be expensive for large tables, should not happen.
 Therefore, no downtime is expected following the migrations.
 
-You can check that the index creation hasn't changed after the migration via the transaction commit. 
+You can check that the index creation hasn't changed after the migration via the transaction commit.
 
 ```sql
 SELECT pg_xact_commit_timestamp(xmin)
