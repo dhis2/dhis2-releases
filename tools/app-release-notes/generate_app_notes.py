@@ -49,7 +49,7 @@ def fetch_tags(app):
     url = f"{base_url}/{app}/tags"
     print(url)
     response = requests.get(url, headers=headers)
-    # print(app,response.json())
+    print(app,response.json())
     return [tag['name'] for tag in response.json() if tag['name'].startswith('v100')]
 
 # Function to fetch and categorize commits between two tags
