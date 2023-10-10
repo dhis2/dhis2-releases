@@ -1,4 +1,4 @@
-name: Data Fetcher
+name: App Releases Fetcher
 
 on:
   schedule:
