@@ -27,14 +27,11 @@ jobs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
-
-    - name: touch the updated file
-      run: ls -al website/data/apphub.json website/data/app_releases.json
-      shell: bash
       
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
+        directory: website/data/
         github_token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
 
    
