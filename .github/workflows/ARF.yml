@@ -29,7 +29,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
 
     - name: touch the updated file
-      run: touch website/data/apphub.json website/data/app_releases.json
+      run: ls -al website/data/apphub.json website/data/app_releases.json
       shell: bash
       
     - name: Commit & Push changes
