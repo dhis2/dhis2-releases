@@ -1,0 +1,40 @@
+name: Data Fetcher
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '52 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run the script
+      run: python3 tools/app-release-notes/generate_app_notes.py
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
+
+    - name: touch the updated file
+      run: ls -al website/data/app_releases.json
+      shell: bash
+      
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+   
