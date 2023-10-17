@@ -38,6 +38,7 @@ The `index` field of an entity in the report of a tracker import was removed.
 When importing tracker entities using `POST /tracker` endpoint, the response follow the format described [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#import-summary-structure).
 The `index` field has been removed from the `objectsReport` as the objects are now ordered in the same way as in the request.
 The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GET /tracker/events` endpoints, so it is not anymore possible to order on this field.
+The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### Deprecated APIs
 
@@ -124,6 +125,13 @@ in the following API response bodies
 * `/api/dataSummary` in the `objectCounts` object
 * `/api/system/objectCounts`
 
+##### FollowUp spelling fix
+
+Field `followup` is deprecated and the camel case version `followUp` is used instead in the following API response bodies:
+* `/tracker/events`
+* `/tracker/relationships` in the `event` object
+
+
 ## Database
 
 ### Tracker
@@ -193,7 +201,7 @@ The following `trackedentityinstance` related columns have been renamed
 | programtempowner                 | trackedentityinstanceid        | trackedentityid        |
 | programownershiphistory          | trackedentityinstanceid        | trackedentityid        |
 
-The following `trackedentitycomment` related columns have been renamed 
+The following `trackedentitycomment` related columns have been renamed
 
 | Table (new names)                | Column Old Name                | Column New Name        |
 | ---------------------------------|:------------------------------:|-----------------------:|
