@@ -126,6 +126,13 @@ in the following API response bodies
 
 ## Database
 
+We have removed prefix `dataelement` from `category` and `categoryoption` tables as this gives us more readability.
+
+| Old Table Name                | New Table Name               |
+| ------------------------------|:----------------------------:|
+| dataelementcategoryopion      | categoryoption               |
+| dataelementcategory           | category                     |
+
 ### Tracker
 
 #### Breaking Changes: renamed tables and columns
