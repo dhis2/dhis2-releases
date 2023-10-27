@@ -93,7 +93,6 @@
     -   [ ] Tracker analytics stability improvements
     -   [ ] TEI / Cross program line list frontend
     -   [ ] Design tracked entity count based upon event and enrollment line lists
-    -   [ ] Design for ownership organisation unit dimension
 
 -   Data visualizer
 
@@ -105,15 +104,14 @@
 -   Dashboards
 
     -   [ ] Dashboard email push
-    -   [ ] Possibility to view standard reports directly in the dashboard
     -   [ ] Design for indicator description included in dashboard items
     -   [ ] Design and development for a "simple" presentation mode for dashboards
 
 -   Maps
-    -   [ ] Design new tracked entity layer 
     -   [ ] Program indicator filter in maps
     -   [ ] Tracked entity clusters/heat maps
-    -   [ ] Explore incorporation of travel time maps
+    -   [ ] Climate change data incorporated in maps
+    -   [ ] Map layer admin application
 
 ### 2.42
 
