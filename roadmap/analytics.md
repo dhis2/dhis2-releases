@@ -108,10 +108,10 @@
     -   [ ] Design and development for a "simple" presentation mode for dashboards [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
 
 -   Maps
-    -   [ ] Program indicator filter in maps
+    -   [ ] Filtering event-layer maps by attribute categories [jira](https://dhis2.atlassian.net/browse/DHIS2-12041)
     -   [ ] Provide enrollment coordinates [jira](https://dhis2.atlassian.net/browse/DHIS2-8165)
-    -   [ ] Climate change data incorporated in maps
-    -   [ ] Map layer admin application
+    -   [ ] Increased granularity/options for periodicity in Maps App for Climate layers from GEE [jira](https://dhis2.atlassian.net/browse/DHIS2-15769)
+    -   [ ] Make Google Earth Engine signup process easier [jira](https://dhis2.atlassian.net/browse/DHIS2-14262)
 
 ### 2.42
 
