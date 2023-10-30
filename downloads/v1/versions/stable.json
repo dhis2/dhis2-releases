@@ -17,6 +17,7 @@
           "name": "2.40.0",
           "displayName": "40.0.0",
           "version": 0,
+          "hotfixVersion": 0,
           "releaseDate": "2023-05-10",
           "url": "https://releases.dhis2.org/40/dhis2-stable-40.0.0.war",
           "sha256": "7b335fccc94aae91e5d0789dbadbb10d6adf967b726eedd15f97bba211f024ce",
@@ -60,6 +61,7 @@
           "name": "2.39.0",
           "displayName": "39.0.0",
           "version": 0,
+          "hotfixVersion": 0,
           "releaseDate": "2022-10-27",
           "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.0.0.war",
           "sha256": "d26f81722e416ff4a82e515aba2d78d8e07c2f66f4606944bee0b57e9f00c83b",
@@ -79,6 +81,7 @@
           "name": "2.39.1",
           "displayName": "39.1.0",
           "version": 1,
+          "hotfixVersion": 0,
           "releaseDate": "2023-02-07",
           "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.1.war",
           "sha256": "915b6dd57b820fb0f1cb4d37133fa4b67da2e73cec517551251f45c66dee6a94",
@@ -108,6 +111,7 @@
           "name": "2.39.2",
           "displayName": "39.2.0",
           "version": 2,
+          "hotfixVersion": 0,
           "releaseDate": "2023-06-07",
           "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.2.war",
           "sha256": "9b7911b607b3340f60e95686534f8ce3beccfa056e6c20777029f8af0b69a9b0",
@@ -149,7 +153,9 @@
       "patchVersions": [
         {
           "name": "2.38.0",
+          "displayName": "38.0.0",
           "version": 0,
+          "hotfixVersion": 0,
           "releaseDate": "2022-05-05",
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.0.war",
           "sha256": "2b097c37ec32abb1741870216659cab154cf3939a9169d42d10f6c846273561d",
@@ -157,7 +163,9 @@
         },
         {
           "name": "2.38.1",
+          "displayName": "38.1.0",
           "version": 1,
+          "hotfixVersion": 0,
           "releaseDate": "2022-07-04",
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.1.0.war",
           "sha256": "45290144b9ac23b28b6497371c666dd9de3bb2090a5db4eff82938460deb191a",
@@ -165,6 +173,7 @@
         },
         {
           "name": "2.38.1.1",
+          "displayName": "38.1.1",
           "version": 1,
           "hotfixVersion": 1,
           "releaseDate": "2022-08-08",
@@ -174,7 +183,9 @@
         },
         {
           "name": "2.38.2",
+          "displayName": "38.2.0",
           "version": 2,
+          "hotfixVersion": 0,
           "releaseDate": "2022-11-25",
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.2.0.war",
           "sha256": "e1ed35d0d53f06d28c46afbae1565c79b702f923a3802ba790bfd705311cbb37",
@@ -182,6 +193,7 @@
         },
         {
           "name": "2.38.2.1",
+          "displayName": "38.2.1",
           "version": 2,
           "hotfixVersion": 1,
           "releaseDate": "2022-12-05",
@@ -191,7 +203,9 @@
         },
         {
           "name": "2.38.3",
+          "displayName": "38.3.0",
           "version": 3,
+          "hotfixVersion": 0,
           "releaseDate": "2023-03-22",
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.3.war",
           "sha256": "4d085eb6e757897e922dbe7c25fbfa1539be09af662aae3612c773a7a8dbc64e",
@@ -211,6 +225,7 @@
           "name": "2.38.4",
           "displayName": "38.4.0",
           "version": 4,
+          "hotfixVersion": 0,
           "releaseDate": "2023-06-19",
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.0.war",
           "sha256": "922fb3e8bc982be065fa65ae2af699f9ea7a22e8281fb70253fa9b8f71252690",
@@ -262,14 +277,19 @@
       "patchVersions": [
         {
           "name": "2.37.0",
+          "displayName": "37.0.0",
           "version": 0,
+          "hotfixVersion": 0,
           "releaseDate": "2021-11-11",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.0.war",
-          "sha256": "32d60a7190b34763b9a880d2419672c9282ba59316957d09bf39dad765cfa237"
+          "sha256": "32d60a7190b34763b9a880d2419672c9282ba59316957d09bf39dad765cfa237",
+          "hotfix": false
         },
         {
           "name": "2.37.1",
+          "displayName": "37.1.0",
           "version": 1,
+          "hotfixVersion": 0,
           "releaseDate": "2021-12-10",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.1.war",
           "sha256": "98c097a89415700242cf521eafc830f6580b04cfbf1c3f6735363f8b730c55af",
@@ -277,7 +297,9 @@
         },
         {
           "name": "2.37.2",
+          "displayName": "37.2.0",
           "version": 2,
+          "hotfixVersion": 0,
           "releaseDate": "2021-12-17",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.2.war",
           "sha256": "89d9b4f1fbe0c70b46593d69cad44ecd370696fe32600e8f79ddb5441fb9d28f",
@@ -285,14 +307,19 @@
         },
         {
           "name": "2.37.3",
+          "displayName": "37.3.0",
           "version": 3,
+          "hotfixVersion": 0,
           "releaseDate": "2022-02-18",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.3.war",
-          "sha256": "caf73f6d8c9ec65cb29364d019a236a3fa71eda546a243b485cc6f5769a4d5df"
+          "sha256": "caf73f6d8c9ec65cb29364d019a236a3fa71eda546a243b485cc6f5769a4d5df",
+          "hotfix": false
         },
         {
           "name": "2.37.4",
+          "displayName": "37.4.0",
           "version": 4,
+          "hotfixVersion": 0,
           "releaseDate": "2022-03-11",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.4.war",
           "sha256": "516b741160f94e4d53226afa4851a4517db09b167145506a19109ed90bbe034c",
@@ -300,7 +327,9 @@
         },
         {
           "name": "2.37.5",
+          "displayName": "37.5.0",
           "version": 5,
+          "hotfixVersion": 0,
           "releaseDate": "2022-04-06",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.5.war",
           "sha256": "17c7ff862f97abe927f81a400bd0241ccbbc96b8f192969ea7d0d9578a62ed21",
@@ -308,7 +337,9 @@
         },
         {
           "name": "2.37.6",
+          "displayName": "37.6.0",
           "version": 6,
+          "hotfixVersion": 0,
           "releaseDate": "2022-04-14",
           "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.6.0.war",
           "sha256": "01f6454b211c59b4c0101358fb8f118277f0d10f03d953d5f95be9984fd90a73",
@@ -316,6 +347,7 @@
         },
         {
           "name": "2.37.6.1",
+          "displayName": "37.6.1",
           "version": 6,
           "hotfixVersion": 1,
           "releaseDate": "2022-06-01",
@@ -325,6 +357,7 @@
         },
         {
           "name": "2.37.7",
+          "displayName": "37.7.0",
           "version": 7,
           "hotfixVersion": 0,
           "releaseDate": "2022-06-10",
@@ -334,6 +367,7 @@
         },
         {
           "name": "2.37.7.1",
+          "displayName": "37.7.1",
           "version": 7,
           "hotfixVersion": 1,
           "releaseDate": "2022-06-30",
@@ -343,6 +377,7 @@
         },
         {
           "name": "2.37.8",
+          "displayName": "37.8.0",
           "version": 8,
           "hotfixVersion": 0,
           "releaseDate": "2022-09-26",
@@ -352,6 +387,7 @@
         },
         {
           "name": "2.37.8.1",
+          "displayName": "37.8.1",
           "version": 8,
           "hotfixVersion": 1,
           "releaseDate": "2022-12-05",
@@ -361,6 +397,7 @@
         },
         {
           "name": "2.37.9",
+          "displayName": "37.9.0",
           "version": 9,
           "hotfixVersion": 0,
           "releaseDate": "2022-12-22",
@@ -380,7 +417,7 @@
         },
         {
           "name": "2.37.10",
-          "displayName": "37.10",
+          "displayName": "37.10.0",
           "version": 10,
           "hotfixVersion": 0,
           "releaseDate": "2023-08-21",
