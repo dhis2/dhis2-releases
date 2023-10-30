@@ -91,25 +91,25 @@
 
     -   [ ] Tracker analytics performance improvements
     -   [ ] Tracker analytics stability improvements
-    -   [ ] TEI / Cross program line list frontend
+    -   [ ] TEI / Cross program line list frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-15454)
     -   [ ] Design tracked entity count based upon event and enrollment line lists
 
 -   Data visualizer
 
     -   [ ] Design two value chart types 
-    -   [ ] Outlier tables (Replacing WHO DQ app)
-    -   [ ] Future periods
-    -   [ ] Design for indicator description included in data item selector
+    -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
+    -   [ ] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
+    -   [ ] Design for indicator description included in data item selector.
 
 -   Dashboards
 
-    -   [ ] Dashboard email push
+    -   [ ] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
     -   [ ] Design for indicator description included in dashboard items
-    -   [ ] Design and development for a "simple" presentation mode for dashboards
+    -   [ ] Design and development for a "simple" presentation mode for dashboards [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
 
 -   Maps
     -   [ ] Program indicator filter in maps
-    -   [ ] Tracked entity clusters/heat maps
+    -   [ ] Provide enrollment coordinates [jira](https://dhis2.atlassian.net/browse/DHIS2-8165)
     -   [ ] Climate change data incorporated in maps
     -   [ ] Map layer admin application
 
