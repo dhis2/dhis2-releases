@@ -11,6 +11,7 @@
       "latestHotfixVersion": 0,
       "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.1.0.war",
       "sha256": "e9d50dbe32a920886ed8cb67c62b18b9a78e05bf3e77a4cb96f305a4c36b2a8b",
+      "jdk": 11,
       "patchVersions": [
         {
           "name": "2.40.0",
@@ -53,6 +54,7 @@
       "latestHotfixVersion": 0,
       "latestStableUrl": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.war",
       "sha256": "4430be35dc45ad42b71ecaa8feda0e598a1e6676a179cf087a28c04ffb78cd0b",
+      "jdk": 11,
       "patchVersions": [
         {
           "name": "2.39.0",
@@ -143,6 +145,7 @@
       "latestHotfixVersion": 3,
       "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.4.3.war",
       "sha256": "dc2d2c5d0de8ea5dee674cfe3497568f19791eddade0abe9980945ea926351eb",
+      "jdk": 11,
       "patchVersions": [
         {
           "name": "2.38.0",
@@ -255,6 +258,7 @@
       "latestHotfixVersion": 0,
       "latestStableUrl": "https://releases.dhis2.org/2.37/dhis2-stable-2.37.10.war",
       "sha256": "5049f10af5385f09c3932cd00e47649eb5baede2aace2ec693c12b4f5b40855c",
+      "jdk": 8,
       "patchVersions": [
         {
           "name": "2.37.0",
