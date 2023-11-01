@@ -73,13 +73,16 @@
 
 ### 2.41 or later
 -   Maintenance app
-    -  [ ] New version of maintenance initial release with several modules
+    -  [ ] New version of maintenance app initial release
     
 -   New login app with customisation options
 
 -   Metadata management
     -   [ ] Metadata import audit log
     -   [ ] Metadata merge functionality
+ 
+- Data Entry
+   -   [ ] New customisation options for aggregate data entry form
 
 - Platform
     -   [ ] Remove Struts completely 
