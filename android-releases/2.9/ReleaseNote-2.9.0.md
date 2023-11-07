@@ -2,13 +2,27 @@
 
 ## USER EXPERIENCE
 
-**Resized dataset tables:** This feature allows users to resize the columns in datasets, making it easier to view and work with larger tables. Now it is possible to resize all columns by clicking on the header of the column. The resizing can be done through drag and drop. A maximum and minimum size limit is given for the columns that can be resized to ensure a good layout. Users can resize all columns at once by clicking on the top left of the table. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5153) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.8/release+feature+cards/Android-2-8-Resizing-tables.png)
+**Disable referral in tracker programs:** When users add events in a tracker program, the DHIS2 Android Capture app offers three options: Add (for new events), Schedule (for planning future evetns) and Refer (for referrals or transfers). This third option is not used in many implementations, this new feature enables the admin user to remove that option from the menu to simplify the user experience. Referal option can be hidden using the Android Settings Webapp in general for all programs or for each specific program.   [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4445) | [Documentation]() | [Screenshot]()
 
-## SUPPORT MOBILE IMPLEMENTATIONS
+**Skip home screen if users only have access to one program:** The home screen of the DHIS2 Android App shows the list of programs and datasets available for the user, the first thing a user must do when using the app is to select the program or dataset to work with. In some implementations users have access to only one program or dataset, even when there is only one option. To reduce the number of clicks and streamline the process of data entry, from this version the App will skip the home in the cases where the user has acces to only one program or dataset and will open directly the program or datasaset screen with the event, TEI or dataset list. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5148)
 
-## WEB PARITY
+**Display program stage  description:** The description for programs stage sections was not available to the end user in previous versions of the App. To provide more context and information at the moment of data colleciton the description has now been brought to the user interface and will be displayed below the Section same. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5151) | [Documentation]() | [Screenshot]()
 
-## LMIS
+**Disable collapsible sections in forms:** Stage sections in the Android App are displayed with collapsible menus that enable the user to opne one section at a time. The purpose of this accordion-like implemementation is to help the user navigate very long forms, however sime implementations would prefer to list the sections one after the other. This new version of the application enables the admin use to decide if the sections should appear in extended mode. This configuration is made through the Android Settings Web App and will display the sections one after the other with the name the secion acting as a separator. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5393) | [Documentation]() | [Screenshot]()
+
+**[EXPERIMENTAL] TEI Header:** The TEI Header is a title that can be added to the TEI cards and dashboards in the app. The title helps identify a TEI by displaying a summary of key information. It is formed by a concatenation of Tracked Entity Atributes and fixed text. The title is configured through a Program Indicator in the maintenance app and its assigned to the tracker program in the Android settings webapp. This feature is experimentan and depending on feedback and adoption it will be refined and incorporated in the Web Capture app. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5402) | [Documentation]() | [Screenshot]()
+
+**Move working lists under the search bar:** The working lists have been moved from the filters section to the main program screen. In earlier versions the user had to open the filters to be able to see and select a working list, from this version the working lists are always visible under the search bar facilitating its selection for filtering out Tracked Entity Instances. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5453) | [Documentation]() | [Screenshot]()
+
+**New design for Dataset, Event and TEI cards:** The cards are used for listing datasets, events and TEIs. The new design offers a cleaner and more intuitive layout replacing the use of coloured icons by explicit text when relevant. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5485) | [Documentation]() | [Screenshot]()
+
+**Implement changes in TEI Dashboard details:** The TEI Dashboard has been redesigned for both prtrait and landscape view. The new design offers a cleaner and more intuitive layout replacing the use of coloured icons by explicit text when relevant and moving some secondar actions to the hidden menus.  
+
+**Data entry forms - New inputs per value type:** The inputs for all value types have been redeigned. Tappable areas and texts have been increased and selection modes are improved to offer more modern, cleaner and more intruitive user experience. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5408) | [Documentation]() | [Screenshot]() 
+
+**Other improvements for User Experience**
+- Improved org unit selector [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4566)
+- Loading spinner for deleting big databases [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4768)
 
 ## MAINTENANCE
 
