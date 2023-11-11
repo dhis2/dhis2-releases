@@ -217,6 +217,13 @@ The following `trackedentitycomment` related columns have been renamed
 | event_comments                   | trackedentitycommentid         | noteid                 |
 | enrollment_comments              | trackedentitycommentid         | noteid                 |
 
+The following `event` date columns have been renamed
+
+| Table (new names)                | Column Old Name                | Column New Name        |
+| ---------------------------------|:------------------------------:|-----------------------:|
+| event                            | duedate                        | scheduleddate          |
+| event                            | executiondate                  | occurreddate           |
+
 #### Postgres Reference
 
 From Postgres docs for [alter table](https://www.postgresql.org/docs/current/sql-altertable.html)
