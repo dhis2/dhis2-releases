@@ -217,6 +217,13 @@ The following `trackedentitycomment` related columns have been renamed
 | event_comments                   | trackedentitycommentid         | noteid                 |
 | enrollment_comments              | trackedentitycommentid         | noteid                 |
 
+The following `enrollment` date columns have been renamed
+
+| Table (new names)                | Column Old Name                | Column New Name        |
+| ---------------------------------|:------------------------------:|-----------------------:|
+| enrollment                       | enddate                        | completeddate          |
+| enrollment                       | incidentdate                   | occurreddate           |
+
 The following `event` date columns have been renamed
 
 | Table (new names)                | Column Old Name                | Column New Name        |
