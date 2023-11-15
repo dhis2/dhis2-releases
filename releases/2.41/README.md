@@ -40,6 +40,23 @@ The `index` field has been removed from the `objectsReport` as the objects are n
 The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GET /tracker/events` endpoints, so it is not anymore possible to order on this field.
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
+#### ACL tracker export breaking changes
+1. API Request with Organization Unit Modes
+    * An API request utilizing one of the organization unit modes, namely `ALL`, `ACCESSIBLE`, or `CAPTURE`, will result in a `BadRequestException` if an additional organization unit is specified in the request.
+
+2. Organization Unit Mode ALL Authorization
+    * The organization unit mode `ALL` is restricted to users with either `ALL` or `F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS` authorities. Superusers will receive system-wide data, irrespective of their user scope. Non-superusers will only receive results within their search scope. Unauthorized users will receive a `BadRequestException`.
+
+3. Validity of `/events` Requests
+    * A request to `/events` is considered valid if the supplied organization unit is within the user's search scope, irrespective of the program access level. In a manner similar to how `/trackedEntities` and `/enrollments` currently operate.
+
+4. Tracker Exporter Endpoint Responses
+    * For each tracker exporter endpoint, utilizing modes such as `CAPTURE`, `ACCESSIBLE`, or `DESCENDANTS` will result in a response containing elements from the requested org unit and all org units in its subhierarchy. However, in `CHILDREN` mode, the response will comprise elements from the requested org unit and its immediate children only.
+
+5. Exporting `/enrollments` on Protected and Closed Programs
+    * When exporting `/enrollments` from protected and closed programs, the resulting enrollments will be sourced exclusively from the user's capture scope. Similarly to the way `/trackedEntities` and `/events` already work.
+
+
 #### Deprecated APIs
 
 ##### Semicolon as separator for identifiers (UID)
