@@ -42,22 +42,22 @@ The `followup` field has been renamed to `followUp` in the response for `GET /tr
 
 #### ACL tracker export breaking changes
 1. Validity of `/events` Requests
-    * A request to `/events` is now considered valid if the supplied organization unit is within the user's search scope, regardless of the program access level. This aligns with the current behavior of `/trackedEntities` and `/enrollments`. In previous versions, specifying a protected or closed program or omitting the program in the request, coupled with an organization unit outside the user's capture scope, would result in an exception.
-    * Additionally, in `/events`, a request using the `ACCESSIBLE` mode without specifying a program will now return all events in the user's search scope (in `OPEN` or `AUDITED` programs) and all events in the user's capture scope (in `PROTECTED` or `CLOSED` programs). Formerly, it would only return events from the user's capture scope.
+    * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` is now considered valid if the supplied organization unit is within the user's search scope, regardless of the program access level. This aligns with the current behavior of `/trackedEntities` and `/enrollments`. In previous versions, specifying a protected or closed program or omitting the program in the request, coupled with an organization unit outside the user's capture scope, would result in an exception. 
+    * [TECH-1663](https://dhis2.atlassian.net/browse/TECH-1663): Additionally, in `/events`, a request using the `ACCESSIBLE` mode without specifying a program will now return all events in the user's search scope (in `OPEN` or `AUDITED` programs) and all events in the user's capture scope (in `PROTECTED` or `CLOSED` programs). Formerly, it would only return events from the user's capture scope.
 
 2. API Request with Organisation Unit Modes
-    * An API request utilizing one of the organization unit modes (`ALL`, `ACCESSIBLE`, or `CAPTURE`) will now result in a `BadRequestException` if an additional organization unit is specified in the request. In previous versions, such a request would tolerate the presence of an organization unit, even if it wouldn't be used when fetching results from the database. However, the request would return an exception if the provided organization unit wasn't within the user's scope.
+    * [TECH-1585](https://dhis2.atlassian.net/browse/TECH-1585): An API request utilizing one of the organization unit modes (`ALL`, `ACCESSIBLE`, or `CAPTURE`) will now result in a `BadRequestException` if an additional organization unit is specified in the request. In previous versions, such a request would tolerate the presence of an organization unit, even if it wouldn't be used when fetching results from the database. However, the request would return an exception if the provided organization unit wasn't within the user's scope.
 
 3. Default Organisation Unit Modes
-    * When neither the organization unit nor the organization unit mode is specified in the request, the default mode will be `ACCESSIBLE`. In contrast, older versions of `/trackedEntities` and `/enrollments` would return an exception when neither was specified. The SELECTED mode will continue being the default when an organization unit is specified.
+    * [TECH-1588](https://dhis2.atlassian.net/browse/TECH-1588): When neither the organization unit nor the organization unit mode is specified in the request, the default mode will be `ACCESSIBLE`. In contrast, older versions of `/trackedEntities` and `/enrollments` would return an exception when neither was specified. The SELECTED mode will continue being the default when an organization unit is specified.
 
 4. Organization Unit Mode ALL Authorization
-    * In `/enrollments`, the organization unit mode `ALL` is now restricted to users with either `ALL` or `F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS` authorities, consistent with the other two endpoints. Previously, any user could use the `ALL` mode, even if it might not return any results based on the user scope.
+    * [TECH-1589](https://dhis2.atlassian.net/browse/TECH-1589): In `/enrollments`, the organization unit mode `ALL` is now restricted to users with either `ALL` or `F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS` authorities, consistent with the other two endpoints. Previously, any user could use the `ALL` mode, even if it might not return any results based on the user scope.
     
-    * In all three endpoints, superusers will receive system-wide data, regardless of their user scope. Non-superusers will only receive results within their search scope. Unauthorized users will now receive a `BadRequestException`. Until now, even superusers would only receive data within the boundaries of their user scope.
+    * [TECH-1634](https://dhis2.atlassian.net/browse/TECH-1634): In all three endpoints, superusers will receive system-wide data, regardless of their user scope. Non-superusers will only receive results within their search scope. Unauthorized users will now receive a `BadRequestException`. Until now, even superusers would only receive data within the boundaries of their user scope.
 
 5. Tracker Exporter Endpoint Responses
-    * A request to `/events` with the organization unit mode `CHILDREN` will now produce a response comprising elements from the requested organization unit and its immediate children. Previously, it did not include events from the supplied organization unit.
+    * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` with the organization unit mode `CHILDREN` will now produce a response comprising elements from the requested organization unit and its immediate children. Previously, it did not include events from the supplied organization unit.
 
 #### Deprecated APIs
 
