@@ -52,9 +52,9 @@
       "releaseDate": "2022-10-27",
       "supported": true,
       "latestPatchVersion": 3,
-      "latestHotfixVersion": 0,
-      "latestStableUrl": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.war",
-      "sha256": "4430be35dc45ad42b71ecaa8feda0e598a1e6676a179cf087a28c04ffb78cd0b",
+      "latestHotfixVersion": 1,
+      "latestStableUrl": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.1.war",
+      "sha256": "f3a1ce76b2791b7922a85262eeb4833e04cb8b5af79daf40b6513f95ac91a5c9",
       "jdk": 11,
       "patchVersions": [
         {
@@ -136,6 +136,16 @@
           "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.war",
           "sha256": "4430be35dc45ad42b71ecaa8feda0e598a1e6676a179cf087a28c04ffb78cd0b",
           "hotfix": false
+        },
+        {
+          "name": "2.39.3.1",
+          "displayName": "39.3.1",
+          "version": 3,
+          "hotfixVersion": 1,
+          "releaseDate": "2023-11-16",
+          "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.3.1.war",
+          "sha256": "f3a1ce76b2791b7922a85262eeb4833e04cb8b5af79daf40b6513f95ac91a5c9",
+          "hotfix": true
         }
       ]
     },
