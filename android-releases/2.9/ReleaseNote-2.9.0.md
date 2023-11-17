@@ -26,7 +26,7 @@
 
 ## MAINTENANCE
 
-**Bug fixing:** You can find the list of bugs fixed [here](https://dhis2.atlassian.net/issues/?filter=10402).
+**Bug fixing:** You can find the list of bugs fixed [here](https://dhis2.atlassian.net/issues/?filter=10510).
 
 
 
