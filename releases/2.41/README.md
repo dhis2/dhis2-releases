@@ -53,11 +53,13 @@ The `followup` field has been renamed to `followUp` in the response for `GET /tr
 
 4. Organization Unit Mode ALL Authorization
     * [TECH-1589](https://dhis2.atlassian.net/browse/TECH-1589): In `/enrollments`, the organization unit mode `ALL` is now restricted to users with either `ALL` or `F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS` authorities, consistent with the other two endpoints. Previously, any user could use the `ALL` mode, even if it might not return any results based on the user scope.
-    
+
     * [TECH-1634](https://dhis2.atlassian.net/browse/TECH-1634): In all three endpoints, superusers will receive system-wide data, regardless of their user scope. Non-superusers will only receive results within their search scope. Unauthorized users will now receive a `BadRequestException`. Until now, even superusers would only receive data within the boundaries of their user scope.
 
 5. Tracker Exporter Endpoint Responses
     * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` with the organization unit mode `CHILDREN` will now produce a response comprising elements from the requested organization unit and its immediate children. Previously, it did not include events from the supplied organization unit.
+
+    * [TECH-1656] (https://dhis2.atlassian.net/browse/TECH-1656) A request to `/trackedEntities` will now result in a `ForbiddenException` if the user lacks access to the requested program or tracked entity type. In the past, this scenario would trigger an `IllegalQueryException`.
 
 #### Deprecated APIs
 
