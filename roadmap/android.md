@@ -91,19 +91,34 @@
 - LMIS 
     - [x] Module for Real Stock Monitoring use case integrated [Jira]([https://dhis2.atlassian.net/browse/ANDROAPP-4498)
     
-### 2.41 / 2.9
+### 2.40 / 2.9
 
 **Development**
+
+- User Experience
+    -   [x] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
+    -   [x] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
+    -   [x] Disable referral in tracker programs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4445)
+    -   [x] Skip home screen if users only have access to one program [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5148)
+    -   [x] Display program stage description [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5151)
+    -   [x] Disable collapsible sections in forms [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5393)
+    -   [x] Move working lists under the search bar [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5453)
+    -   [x] New design for Dataset, Event and TEI cards [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5485)
+    -   [x] Implement changes in TEI Dashboard details [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4019)
+    -   [x] Data entry forms - New inputs per value type [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5408)
+    -   [x] [EXPERIMENTAL] TEI Header [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5402)
+
+  - Smaller improvements focussing on user experience like a new org unit selector [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4566) | | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.9/release+feature+cards/Android-2-9-Org-unit-selector.png), or adding a loading spinner during the deletion of big databases. [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4768) | [Screenshot](https://s3.eu-west-1.amazonaws.com/content.dhis2.org/dhis2-android/release+notes+2.9/release+feature+cards/Android-2-9-loading-when-deleting-data.png)
+
+
+
+### 2.41 / 2.10
 
 - Generic Features
     -   [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
    
 -   Data entry
     -   [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
-
-- User Experience
-    -   [ ] New design for Age value type input [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4727)
-    -   [ ] Improve user experience when working with high number of TEIs [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5031)
 
 
 - Offline Analytics
