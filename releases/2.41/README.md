@@ -131,7 +131,8 @@ Field `followup` is deprecated and the camel case version `followUp` is used ins
 * `/tracker/events`
 * `/tracker/relationships` in the `event` object
 
-
+### Metadata
+The property `DataDimensionType` is now mandatory for `CategoryOptionGroup` and `CategoryOptionGroupSet`. Existing records with `null` value would need to be manually updated with either `DISAGGREGATION` or `ATTRIBUTE`.
 ## Database
 
 We have removed prefix `dataelement` from `category` and `categoryoption` tables as this gives us more readability.
