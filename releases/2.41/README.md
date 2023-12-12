@@ -41,6 +41,7 @@ The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GE
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### ACL tracker export breaking changes
+** Unless explicitly specified otherwise, the subsequent breaking changes are applicable exclusively to versions 2.41 and beyond.
 1. Validity of `/events` and `/tracker/events` requests
     * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` and `/tracker/events` is now considered valid if the supplied organization unit is within the user's search scope, regardless of the program access level. This aligns with the current behavior of `/trackedEntities` and `/enrollments`. In previous versions, specifying a protected or closed program or omitting the program in the request, coupled with an organization unit outside the user's capture scope, would result in an exception. This change is effective from version 2.38 onwards.
     * [TECH-1663](https://dhis2.atlassian.net/browse/TECH-1663): Additionally, in `/events` and `/tracker/events`, a request using the `ACCESSIBLE` mode without specifying a program will now return all events in the user's search scope (in `OPEN` or `AUDITED` programs) and all events in the user's capture scope (in `PROTECTED` or `CLOSED` programs). Formerly, it would only return events from the user's capture scope. This change is also effective from version 2.38 onwards.
