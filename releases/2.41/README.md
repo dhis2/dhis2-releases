@@ -64,6 +64,8 @@ The `followup` field has been renamed to `followUp` in the response for `GET /tr
 
     * [TECH-1658](https://dhis2.atlassian.net/browse/TECH-1658) The endpoints `/tracker/trackedEntities` and `/tracker/enrollments` now throw a `400|Bad Request` in the event of inconsistent parameters involving the program field or any combination thereof. Previously, this scenario would result in an `409|Conflict`.
 
+    * [TECH-1589](https://dhis2.atlassian.net/browse/TECH-1589): When accessing the `/tracker/enrollments endpoint`, a `403|Forbidden` status will be triggered if the user lacks authorization for the specified program, tracked entity type, or either the tracked entity's or program's tracked entity type. Previously a `409|Conflict` was triggered instead.
+
 #### Deprecated APIs
 
 ##### Semicolon as separator for identifiers (UID)
