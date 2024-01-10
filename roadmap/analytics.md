@@ -89,23 +89,23 @@
 
 -   Tracker Analytics
 
-    -   [ ] Tracker analytics performance improvements
-    -   [ ] Tracker analytics stability improvements
-    -   [ ] TEI / Cross program line list frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-15454)
+    -   [x] Tracker analytics performance improvements
+    -   [x] Tracker analytics stability improvements
+    -   [x] TEI / Cross program line list frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-15454)
     -   [ ] Design tracked entity count based upon event and enrollment line lists
 
 -   Data visualizer
 
     -   [ ] Design two value chart types 
     -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
-    -   [ ] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
-    -   [ ] Design for indicator description included in data item selector.
+    -   [x] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
+    -   [x] Design for indicator description included in data item selector.
 
 -   Dashboards
 
-    -   [ ] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
+    -   [x] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
     -   [ ] Design for indicator description included in dashboard items
-    -   [ ] Design and development for a "simple" presentation mode for dashboards [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
+    -   [x] Design and development for a "simple" presentation mode for dashboards [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
 
 -   Maps
     -   [ ] Filtering event-layer maps by attribute categories [jira](https://dhis2.atlassian.net/browse/DHIS2-12041)
@@ -117,14 +117,18 @@
 
 -   Tracker Analytics
 
-    - [ ] Relationship line lists frontend
+    - [ ] Single value (counts) from enrollement and events in linelists.  
     - [ ] Scoping for next phase of tracker analytics, future of Event Reports and Event Visualizer
 
 -   Data visualizer
 
     - [ ] Ownership organisation unit dimension
-    - [ ] Custom periods
+    - [ ] Multiple option sets selection for data elements 
+    - [ ] Indicator description included in data item selector.
+    - [ ] Two value chart types 
 
 -   Dashboards
     
     - [ ] Simple presentation dashboard mode for dashboards frontend
+    - [ ] Redesign for sorting and organizing many dashboards 
+    - [ ] Improved dashboard usability  
