@@ -76,9 +76,13 @@ function app_branch_name {
         local LHS=${RHS%%.*}
         echo "${LHS}.x"
       else
-        local RHS=${REL_VERSION#*.}
-        local LHS=${RHS%%.*}
-        echo "v${LHS}"
+        if [[ "$1" =~ "scheduler-app" ]]; then
+          echo "100.x"
+        else
+          local RHS=${REL_VERSION#*.}
+          local LHS=${RHS%%.*}
+          echo "v${LHS}"
+        fi
 
       fi
 
