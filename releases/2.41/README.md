@@ -77,6 +77,10 @@ in a future release.
 }
 ```
 
+Query parameter `paging` replaces `skipPaging`. Note that `paging` is the inverse of `skipPaging`.
+This means if you want to disable pagination use `paging=false` instead of `skipPaging=true`.
+Pagination remains on by default.
+
 This aligns pagination in Tracker with other DHIS2 endpoints.
 
 ##### Semicolon as separator for identifiers (UID)
