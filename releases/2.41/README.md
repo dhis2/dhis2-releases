@@ -13,12 +13,13 @@
 
 #### Breaking Changes
 
-The following query parameters have been removed as the same behavior can be achieved using `filter` parameter
+The following query parameters have been removed as the same behavior can be achieved using the `filter` parameter
 
 * `/tracker/trackedEntities?query`
 * `/tracker/trackedEntities?attribute`
 
-The following query parameters have been removed as they were misleading and not provide any useful information
+The following query parameters have been removed as they were misleading and did not provide any useful information
+
 * `/tracker/trackedEntities?includeAllAttributes`
 
 The following query parameters have been removed as they have never been implemented and thus had no
@@ -41,6 +42,42 @@ The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GE
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### Deprecated APIs
+
+##### Pagination
+
+In the tracker exporter endpoints, the pagination-related fields
+
+```json
+{
+  "page": 3,
+  "pageSize": 2,
+  "total": 373570,
+  "pageCount": 186785,
+  "instances": [
+  ]
+}
+```
+
+have been deprecated in favor of a `pager` object. Both the flat pagination fields shown above and
+the nested `pager` are returned as of 2.41 if pagination is enabled. The flat fields will be removed
+in a future release.
+
+```json
+{
+  "pager": {
+    "page": 3,
+    "pageSize": 2,
+    "total": 373570,
+    "pageCount": 186785,
+  },
+  "page": 3,
+  "pageSize": 2,
+  "total": 373570,
+  "pageCount": 186785,
+}
+```
+
+This aligns pagination in Tracker with other DHIS2 endpoints.
 
 ##### Semicolon as separator for identifiers (UID)
 
