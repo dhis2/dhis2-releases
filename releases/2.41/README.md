@@ -71,7 +71,17 @@ The `followup` field has been renamed to `followUp` in the response for `GET /tr
 
 ##### Pagination
 
-In the tracker exporter endpoints, the pagination-related fields
+In the tracker endpoints
+
+* `/tracker/trackedEntities`
+* `/tracker/enrollments`
+* `/tracker/events`
+* `/tracker/relationships`
+* `/programNotificationInstances`
+* `/programNotificationTemplates/filter`
+* `/potentialDuplicates`
+
+the pagination-related fields
 
 ```json
 {
@@ -102,6 +112,10 @@ in a future release.
   "pageCount": 186785,
 }
 ```
+
+The actual data previously returned in `instances` is returned in a key named after the plural of
+the returned entity itself. For example `/tracker/trackedEntities` returns tracked entities in key
+`trackedEntities` while `/potentialDuplicates` returns potential duplicates in key `potentialDuplicates`.
 
 Query parameter `paging` replaces `skipPaging`. Note that `paging` is the inverse of `skipPaging`.
 This means if you want to disable pagination use `paging=false` instead of `skipPaging=true`.
