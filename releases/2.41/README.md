@@ -41,6 +41,32 @@ The `index` field has been removed from the `objectsReport` as the objects are n
 The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GET /tracker/events` endpoints, so it is not anymore possible to order on this field.
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
+#### ACL tracker export breaking changes
+** Unless explicitly specified otherwise, the subsequent breaking changes are applicable exclusively to versions 2.41 and beyond.
+1. Validity of `/events` and `/tracker/events` requests
+    * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` and `/tracker/events` is now considered valid if the supplied organization unit is within the user's search scope, regardless of the program access level. This aligns with the current behavior of `/tracker/trackedEntities` and `/tracker/enrollments`. In previous versions, specifying a protected or closed program or omitting the program in the request, coupled with an organization unit outside the user's capture scope, would result in an exception. This change is effective from version 2.38 onwards.
+    * [TECH-1663](https://dhis2.atlassian.net/browse/TECH-1663): Additionally, in `/events` and `/tracker/events`, a request using the `ACCESSIBLE` mode without specifying a program will now return all events in the user's search scope (in `OPEN` or `AUDITED` programs) and all events in the user's capture scope (in `PROTECTED` or `CLOSED` programs). Formerly, it would only return events from the user's capture scope. This change is also effective from version 2.38 onwards.
+
+2. API Request with Organisation Unit Modes
+    * [TECH-1585](https://dhis2.atlassian.net/browse/TECH-1585): An API request utilizing one of the organization unit modes (`ALL`, `ACCESSIBLE`, or `CAPTURE`) will now result in a `400|Bad Request` if an additional organization unit is specified in the request. In previous versions, such a request would tolerate the presence of an organization unit, even if it wouldn't be used when fetching results from the database. However, the request would return an exception if the provided organization unit wasn't within the user's scope.
+
+3. Default Organisation Unit Modes
+    * [TECH-1588](https://dhis2.atlassian.net/browse/TECH-1588): When neither the organization unit nor the organization unit mode is specified in the request, the default mode will be `ACCESSIBLE`. In contrast, older versions of `/trackedEntities` and `/enrollments` would return an exception when neither was specified. The SELECTED mode will continue being the default when an organization unit is specified.
+
+4. Organization Unit Mode ALL Authorization
+    * [TECH-1589](https://dhis2.atlassian.net/browse/TECH-1589): In `/enrollments` and `/tracker/enrollments`, the organization unit mode `ALL` is now restricted to users with either `ALL` or `F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS` authorities, consistent with the other two endpoints. Previously, any user could use the `ALL` mode, even if it might not return any results based on the user scope. This change is effective from version 2.38 onwards.
+
+    * [TECH-1634](https://dhis2.atlassian.net/browse/TECH-1634) [TECH-1668](https://dhis2.atlassian.net/browse/TECH-1668): In all three endpoints, superusers and users with authorization "Search Tracked Entity Instance in All Org Units" will receive system-wide data, regardless of their user scope. Unauthorized users will now receive a `400|Bad Request`. Up until now, even superusers would only receive data within the boundaries of their user scope.
+
+5. Tracker Exporter Endpoint Responses
+    * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` and `/tracker/events` with the organization unit mode `CHILDREN` will now produce a response comprising elements from the requested organization unit and its immediate children. This adjustment aligns the behavior with that of `/tracker/trackedEntities` and `/tracker/enrollments`. Previously, it did not include events from the supplied organization unit, only its children were present in the response. This change is effective from version 2.38 onwards.
+
+    * [TECH-1656](https://dhis2.atlassian.net/browse/TECH-1656) A request to `/tracker/trackedEntities` will now result in a `403|Forbidden` if the user lacks access to the requested program or tracked entity type. In the past, this scenario would trigger an `409|Conflict`.
+
+    * [TECH-1658](https://dhis2.atlassian.net/browse/TECH-1658) The endpoints `/tracker/trackedEntities` and `/tracker/enrollments` now throw a `400|Bad Request` in the event of inconsistent parameters involving the program field or any combination thereof. Previously, this scenario would result in an `409|Conflict`.
+
+    * [TECH-1589](https://dhis2.atlassian.net/browse/TECH-1589): When accessing the `/tracker/enrollments endpoint`, a `403|Forbidden` status will be triggered if the user lacks authorization for the specified program, tracked entity type, or either the tracked entity's or program's tracked entity type. Previously a `409|Conflict` was triggered instead.
+
 #### Deprecated APIs
 
 ##### Pagination
