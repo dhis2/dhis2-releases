@@ -205,10 +205,10 @@
       "version": 38,
       "releaseDate": "2022-05-05",
       "supported": true,
-      "latestPatchVersion": 5,
-      "latestHotfixVersion": 1,
-      "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.1.war",
-      "sha256": "e0bf72baa7ec7a4567014586ff7d1f4d80ae48a582093321bc64f2965e417c29",
+      "latestPatchVersion": 6,
+      "latestHotfixVersion": 0,
+      "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.6.war",
+      "sha256": "3819fe625d51cc4dbee5754216d0b75a28566f98dadb37ebbe07a2ec5c9e9087",
       "jdk": 11,
       "patchVersions": [
         {
@@ -327,7 +327,7 @@
           "version": 5,
           "hotfixVersion": 0,
           "releaseDate": "2023-11-10",
-          "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.0.war",
+          "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.war",
           "sha256": "e1814bfc920b21dbf9f0879b61a3dac88c1ebf7562417c14a52e45a0458316c9",
           "hotfix": false
         },
@@ -340,6 +340,16 @@
           "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.5.1.war",
           "sha256": "e0bf72baa7ec7a4567014586ff7d1f4d80ae48a582093321bc64f2965e417c29",
           "hotfix": true
+        },
+        {
+          "name": "2.38.6",
+          "displayName": "38.6.0",
+          "version": 6,
+          "hotfixVersion": 0,
+          "releaseDate": "2024-01-25",
+          "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.6.war",
+          "sha256": "3819fe625d51cc4dbee5754216d0b75a28566f98dadb37ebbe07a2ec5c9e9087",
+          "hotfix": false
         }
       ]
     },
