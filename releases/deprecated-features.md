@@ -12,8 +12,8 @@ The following features are deprecated. You can still use them now, but the DHIS2
 
 |Feature|Deprecation first announced|Planned end of support<br>(version)|
 |:---------|:---:|:---:|
-|The /user/userCredentials object is merged into the user object and will be removed | May 2023|2.41.0| 
-|The old and deprecated OAuth support will be removed| May 2023|2.41.0| 
+|The /user/userCredentials object is merged into the user object and will be removed | May 2023|2.42.0| 
+|The old and deprecated OAuth support will be removed| May 2023|2.42.0| 
 |The old tracker APIs are deprecated and replaced by `/api/tracker` endpoints |Sep 2022|2.41.0|
 |The Data Entry app is deprecated, and replaced by the Aggregate Data Entry app|Dec 2022|2.41.0|
 |The `/api/eventCharts` and `/api/eventReports` API endpoints are deprecated. Use the consolidated `/api/eventVisualizations` API instead.|April 2022|2.41.0|
@@ -27,7 +27,7 @@ The following features are no longer supported.
 
 |Feature|Deprecation first announced|Support removed<br>(version)|
 |:---------|:---:|:---:|
-|The old and deprecated OAuth support will be removed| May 2023|2.41.0|
+|The old and deprecated OAuth support will be removed| May 2023|2.42.0|
 |Cache invalidation based on Debezium.| June 2023|2.41.0|
 |XML support in metadata APIs as well as in metadata import and export has been removed.|April 2022|2.39.0|
 |The `POST /api/dataAnalysis/stdDevOutlier` and `POST /api/dataAnalysis/minMaxOutlier` API endpoints are removed. These endpoints are superseded by the `/api/outlierDetection` API which offers higher performance and more sophisticated outlier detection. |April 2021|2.39.0|
