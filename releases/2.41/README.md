@@ -25,6 +25,9 @@ The following query can be executed before upgrading to verify which TEAs will b
 
 The query will also show the update statement (it's not needed to run the update, the system will do automatically on next system startup).
 
+> Note:
+> You can also use this script to identify the TEAs that you need to correct if you *do not* want the type to be automatically changed.
+
 ``` SQL
 CREATE or replace FUNCTION can_be_casted(s text, type text) RETURNS bool AS
 $$
