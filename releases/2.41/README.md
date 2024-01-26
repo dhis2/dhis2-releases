@@ -9,6 +9,64 @@
 
 - **Breaking change in Dashboard App**: in 2.40 and older versions, Users can view Dashboard content even without `METADATA_READ` permission to all metadata objects linked to DashboardItems. That is possible because of a loophole in our web api which allows any User to see details of any metadata object if the `uid` is known. This loophole has been causing issues for a long time so we decided to remove it in 2.41. As a result, many Users will not be able to view Dashboards because they don't have enough `METADATA_READ` permission of the Dashboard content. In order to fix it, the System Administrator or the Dashboard owner can make use of the feature [Cascade sharing for Dashboard](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#cascade-sharing-for-dashboard) to grant required permissions to affected Users.
 
+### Analytics
+
+#### Tracked Entity Attribute Update Script Enhancement
+
+In this release, a Flyway script has been introduced to enhance the DHIS system. The script is designed to update the valueType of all Tracked Entity Attributes (TEAs) whose values are incompatible with the declared attribute type.
+
+Specifically, the script will update the type of these attributes to "TEXT." For instance, if a TEA is declared as a NUMBER, but its value is a text string, the script will modify the attribute type to TEXT.
+
+This enhancement ensures data integrity and alignment between attribute types and their actual values which is especially needed in Analytics.
+
+##### Verifying which attributes will be affected:
+
+The following query can be executed before upgrading to verify which TEAs will be affected.
+
+The query will also show the update statement 
+
+``` SQL
+CREATE or replace FUNCTION can_be_casted(s text, type text) RETURNS bool AS
+$$
+BEGIN
+    execute 'SELECT $1::' || type || ';' USING s;
+    return true;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN false;
+END;
+$$ LANGUAGE plpgsql STRICT;
+
+select uid,
+       valuetype,
+       description,
+       'update trackedentityattribute set valuetype=''TEXT'' where uid = ''' || uid || ''';' as suggested_fix_statement
+from (select tea.uid,
+                   tea.valuetype,
+                   tea.description,
+                   teav.value,
+                   case
+                       when tea.valuetype in ('NUMBER', 'UNIT_INTERVAL', 'PERCENTAGE') then can_be_casted(teav.value, 'double precision')
+                       when tea.valuetype like '%INTEGER%' then can_be_casted(teav.value, 'integer')
+                       when tea.valuetype in ('DATE', 'DATETIME', 'AGE') then can_be_casted(teav.value, 'timestamp')
+                       end as safe_to_cast
+            from trackedentityattribute tea
+                     join trackedentityattributevalue teav
+                          on tea.trackedentityattributeid = teav.trackedentityattributeid) as t1
+      where safe_to_cast = false
+group by uid, valuetype, description;
+
+DROP function if exists can_be_casted(s text, type text);
+```
+> [!NOTE]
+> It's unnecessary to manually run the update since the system will do it automatically on the next system startup.
+
+> [!NOTE]
+> You can also use this migration to identify the TEAs you need to correct if you *do not* want the type to be automatically changed.
+
+> [!IMPORTANT]
+> The first time the new version boots up, the script will be automatically executed (the first startup after upgrading might be slightly slower because of this script running).
+
 ### Tracker
 
 #### Breaking Changes
