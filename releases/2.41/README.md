@@ -13,20 +13,17 @@
 
 #### Tracked Entity Attribute Update Script Enhancement
 
-In this release, a Flyway script has been introduced to enhance the DHIS system. The script is designed to update the valueType of all Tracked Entity Attributes (TEAs) whose values are not compatible with the declared attribute type.
+In this release, a Flyway script has been introduced to enhance the DHIS system. The script is designed to update the valueType of all Tracked Entity Attributes (TEAs) whose values are incompatible with the declared attribute type.
 
 Specifically, the script will update the type of these attributes to "TEXT." For instance, if a TEA is declared as a NUMBER, but its value is a text string, the script will modify the attribute type to TEXT.
 
-This enhancement ensures data integrity and alignment between attribute types and their actual values which is expecially needed in Analytics.
+This enhancement ensures data integrity and alignment between attribute types and their actual values which is especially needed in Analytics.
 
 ##### Verifying which attributes will be affected:
 
 The following query can be executed before upgrading to verify which TEAs will be affected.
 
-The query will also show the update statement (it's not needed to run the update, the system will do automatically on next system startup).
-
-> Note:
-> You can also use this script to identify the TEAs that you need to correct if you *do not* want the type to be automatically changed.
+The query will also show the update statement 
 
 ``` SQL
 CREATE or replace FUNCTION can_be_casted(s text, type text) RETURNS bool AS
@@ -61,10 +58,14 @@ group by uid, valuetype, description;
 
 DROP function if exists can_be_casted(s text, type text);
 ```
+> [!NOTE]
+> It's unnecessary to manually run the update since the system will do it automatically on the next system startup.
 
-##### Usage:
+> [!NOTE]
+> You can also use this migration to identify the TEAs you need to correct if you *do not* want the type to be automatically changed.
 
-The first time the new version boots up, the script will be automatically executed (the first startup after upgrading might be slightly slower because of this script running).
+> [!IMPORTANT]
+> The first time the new version boots up, the script will be automatically executed (the first startup after upgrading might be slightly slower because of this script running).
 
 ### Tracker
 
