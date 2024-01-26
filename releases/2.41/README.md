@@ -61,7 +61,7 @@ DROP function if exists can_be_casted(s text, type text);
 
 ##### Usage:
 
-The first time the new version boots up, the script will be automatically executed.
+The first time the new version boots up, the script will be automatically executed (the first startup after upgrading might be slightly slower because of this script running).
 
 ### Tracker
 
