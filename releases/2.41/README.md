@@ -80,12 +80,6 @@ The following query parameters have been removed as they were misleading and did
 
 * `/tracker/trackedEntities?includeAllAttributes`
 
-The following query parameters have been removed as they have never been implemented and thus had no
-effect on the response
-
-* `/tracker/trackedEntities?attachment`
-* `/tracker/events?attachment`
-
 Following parameters were removed as including or excluding fields from the JSON response can be achieved by using the `fields` query parameter
 
 * `/tracker/trackedEntities?skipMeta`
