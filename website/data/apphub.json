@@ -116,6 +116,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/aac2e47c-1443-4dd7-a047-dbb528192686",
+          "caption": "",
+          "created": 1673554928415,
+          "description": "",
+          "id": "aac2e47c-1443-4dd7-a047-dbb528192686",
+          "lastUpdated": 1673554928415,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/5afd2704-7cca-404b-9377-b66720cc38e6",
           "caption": "",
           "created": 1673554914299,
@@ -131,15 +140,6 @@
           "description": "",
           "id": "2932b75a-0a45-48be-82d7-e78e2e219ac1",
           "lastUpdated": 1673554932838,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/aac2e47c-1443-4dd7-a047-dbb528192686",
-          "caption": "",
-          "created": 1673554928415,
-          "description": "",
-          "id": "aac2e47c-1443-4dd7-a047-dbb528192686",
-          "lastUpdated": 1673554928415,
           "logo": false
         }
       ],
@@ -273,12 +273,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/4b115e05-12ec-4660-aa6d-e2b04f69c8be",
           "caption": "",
-          "created": 1624314674393,
+          "created": 1624315022401,
           "description": "",
-          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
-          "lastUpdated": 1624314674393,
+          "id": "4b115e05-12ec-4660-aa6d-e2b04f69c8be",
+          "lastUpdated": 1624315022401,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
+          "caption": "",
+          "created": 1624314977424,
+          "description": "",
+          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
+          "lastUpdated": 1624314977424,
           "logo": false
         },
         {
@@ -300,21 +309,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/4b115e05-12ec-4660-aa6d-e2b04f69c8be",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
           "caption": "",
-          "created": 1624315022401,
+          "created": 1624314674393,
           "description": "",
-          "id": "4b115e05-12ec-4660-aa6d-e2b04f69c8be",
-          "lastUpdated": 1624315022401,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "caption": "",
-          "created": 1624314977424,
-          "description": "",
-          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "lastUpdated": 1624314977424,
+          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "lastUpdated": 1624314674393,
           "logo": false
         }
       ],
@@ -380,21 +380,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
-          "caption": "",
-          "created": 1685105856008,
-          "description": "",
-          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
-          "lastUpdated": 1685105856008,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/a5438dca-45e8-4c32-9027-ef76dfb88ca8",
           "caption": "",
           "created": 1685105890042,
           "description": "",
           "id": "a5438dca-45e8-4c32-9027-ef76dfb88ca8",
           "lastUpdated": 1685105890042,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "caption": "",
+          "created": 1685105856008,
+          "description": "",
+          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "lastUpdated": 1685105856008,
           "logo": false
         }
       ],
@@ -865,12 +865,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/82152e2d-fb7d-46a4-a5c7-e89deef3584f",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
           "caption": "",
-          "created": 1600683929001,
+          "created": 1600683931880,
           "description": "",
-          "id": "82152e2d-fb7d-46a4-a5c7-e89deef3584f",
-          "lastUpdated": 1600683929001,
+          "id": "ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
+          "lastUpdated": 1600683931880,
           "logo": false
         },
         {
@@ -883,12 +883,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/82152e2d-fb7d-46a4-a5c7-e89deef3584f",
           "caption": "",
-          "created": 1600683931880,
+          "created": 1600683929001,
           "description": "",
-          "id": "ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
-          "lastUpdated": 1600683931880,
+          "id": "82152e2d-fb7d-46a4-a5c7-e89deef3584f",
+          "lastUpdated": 1600683929001,
           "logo": false
         },
         {
@@ -909,11 +909,22 @@
       "status": "APPROVED",
       "id": "9099e396-ec68-4038-a5c9-e60650f49935",
       "created": 1588595335510,
-      "lastUpdated": 1671182238703,
+      "lastUpdated": 1708001760560,
       "name": "Bottleneck Analysis App",
       "description": "Analysis of bottleneck through analytics with chart, table and map visualization, and noting down root causes and possible solutions",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1708001760560,
+          "demoUrl": "https://hisp.apps.dhis2.org/training",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/hisp-tanzania/bottleneck-analysis-app_1.4.1.zip",
+          "id": "88de9997-3670-4f65-b92d-3bbbfc3ad867",
+          "lastUpdated": 1708001760560,
+          "maxDhisVersion": "2.40",
+          "minDhisVersion": "2.38",
+          "version": "1.4.1",
+          "channel": "stable"
+        },
         {
           "created": 1671182238703,
           "demoUrl": "https://hisp.apps.dhis2.org/training/api/apps/Bottleneck-Analysis-App/index.html#/",
@@ -1009,48 +1020,48 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/80123da8-3d25-49aa-8395-921d0dafbfcc",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
           "caption": "",
-          "created": 1588595338994,
+          "created": 1708002032675,
           "description": "",
-          "id": "80123da8-3d25-49aa-8395-921d0dafbfcc",
-          "lastUpdated": 1588595338994,
+          "id": "6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
+          "lastUpdated": 1708002032675,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/1fc9e83e-36dc-46ca-b47c-8f87f5136c12",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/3198906a-ff43-4159-9515-026ea03e0bec",
           "caption": "",
-          "created": 1588595337990,
+          "created": 1708002032399,
           "description": "",
-          "id": "1fc9e83e-36dc-46ca-b47c-8f87f5136c12",
-          "lastUpdated": 1588595337990,
+          "id": "3198906a-ff43-4159-9515-026ea03e0bec",
+          "lastUpdated": 1708002032399,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/dd621a94-0c23-472c-bd38-d921a2a143b7",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/d3d328b1-6870-4cf0-8931-0958bc790660",
           "caption": "",
-          "created": 1588595336786,
+          "created": 1708002032527,
           "description": "",
-          "id": "dd621a94-0c23-472c-bd38-d921a2a143b7",
-          "lastUpdated": 1588595336786,
+          "id": "d3d328b1-6870-4cf0-8931-0958bc790660",
+          "lastUpdated": 1708002032527,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/8bdff6dd-63b0-4c29-b724-54bcc13a8ea1",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
           "caption": "",
-          "created": 1588595337488,
+          "created": 1708002032628,
           "description": "",
-          "id": "8bdff6dd-63b0-4c29-b724-54bcc13a8ea1",
-          "lastUpdated": 1588595337488,
+          "id": "136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
+          "lastUpdated": 1708002032628,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/4d4e14f0-6c22-4817-ae28-350239df0deb",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/fc86862f-1e9b-4940-aafb-df0ad5dd6d79",
           "caption": "",
-          "created": 1588595336110,
+          "created": 1708002032298,
           "description": "",
-          "id": "4d4e14f0-6c22-4817-ae28-350239df0deb",
-          "lastUpdated": 1588595336110,
+          "id": "fc86862f-1e9b-4940-aafb-df0ad5dd6d79",
+          "lastUpdated": 1708002032298,
           "logo": false
         }
       ],
@@ -4211,6 +4222,42 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/36480ce2-087c-4ebb-ae79-f84eefc1f93b",
+          "caption": "",
+          "created": 1605919887440,
+          "description": "",
+          "id": "36480ce2-087c-4ebb-ae79-f84eefc1f93b",
+          "lastUpdated": 1605919887440,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/7dd74ffd-e941-4e0d-b8ba-7306acc5c1a6",
+          "caption": "",
+          "created": 1605920539338,
+          "description": "",
+          "id": "7dd74ffd-e941-4e0d-b8ba-7306acc5c1a6",
+          "lastUpdated": 1605920539338,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/5991aff9-031a-4c7f-b3b5-dbc0891e307b",
+          "caption": "",
+          "created": 1605920546123,
+          "description": "",
+          "id": "5991aff9-031a-4c7f-b3b5-dbc0891e307b",
+          "lastUpdated": 1605920546123,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/5b6e980c-0c32-4141-830c-116c25f354b6",
+          "caption": "",
+          "created": 1605920552202,
+          "description": "",
+          "id": "5b6e980c-0c32-4141-830c-116c25f354b6",
+          "lastUpdated": 1605920552202,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/cb3a7746-e37d-4db7-86e8-d04025915163",
           "caption": "",
           "created": 1605920569796,
@@ -4235,42 +4282,6 @@
           "description": "",
           "id": "c62e4aee-3734-4e93-a98c-fb369b9aa7d5",
           "lastUpdated": 1605920379367,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/5b6e980c-0c32-4141-830c-116c25f354b6",
-          "caption": "",
-          "created": 1605920552202,
-          "description": "",
-          "id": "5b6e980c-0c32-4141-830c-116c25f354b6",
-          "lastUpdated": 1605920552202,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/5991aff9-031a-4c7f-b3b5-dbc0891e307b",
-          "caption": "",
-          "created": 1605920546123,
-          "description": "",
-          "id": "5991aff9-031a-4c7f-b3b5-dbc0891e307b",
-          "lastUpdated": 1605920546123,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/36480ce2-087c-4ebb-ae79-f84eefc1f93b",
-          "caption": "",
-          "created": 1605919887440,
-          "description": "",
-          "id": "36480ce2-087c-4ebb-ae79-f84eefc1f93b",
-          "lastUpdated": 1605919887440,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/7dd74ffd-e941-4e0d-b8ba-7306acc5c1a6",
-          "caption": "",
-          "created": 1605920539338,
-          "description": "",
-          "id": "7dd74ffd-e941-4e0d-b8ba-7306acc5c1a6",
-          "lastUpdated": 1605920539338,
           "logo": false
         }
       ],
@@ -5337,24 +5348,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/6c5be955-63ff-4eea-a826-d104f3ea477b",
-          "caption": "",
-          "created": 1682674049587,
-          "description": "",
-          "id": "6c5be955-63ff-4eea-a826-d104f3ea477b",
-          "lastUpdated": 1682674049587,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/930e312d-0c10-4e65-9f6a-eba2a83a4bd1",
-          "caption": "",
-          "created": 1682674045206,
-          "description": "",
-          "id": "930e312d-0c10-4e65-9f6a-eba2a83a4bd1",
-          "lastUpdated": 1682674045206,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/80c1fd02-10c5-4515-bebe-3db21f683ef9",
           "caption": "",
           "created": 1682674040389,
@@ -5379,6 +5372,24 @@
           "description": "",
           "id": "a4ec95f6-cfbf-43bc-8e28-09086e68ff28",
           "lastUpdated": 1682674026179,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/930e312d-0c10-4e65-9f6a-eba2a83a4bd1",
+          "caption": "",
+          "created": 1682674045206,
+          "description": "",
+          "id": "930e312d-0c10-4e65-9f6a-eba2a83a4bd1",
+          "lastUpdated": 1682674045206,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/6c5be955-63ff-4eea-a826-d104f3ea477b",
+          "caption": "",
+          "created": 1682674049587,
+          "description": "",
+          "id": "6c5be955-63ff-4eea-a826-d104f3ea477b",
+          "lastUpdated": 1682674049587,
           "logo": false
         }
       ],
@@ -5755,21 +5766,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/86b51970-c96b-4a3a-8abe-c26397f4c4a5",
           "caption": "",
-          "created": 1655741575764,
+          "created": 1655741575829,
           "description": "",
-          "id": "ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
-          "lastUpdated": 1655741575764,
+          "id": "86b51970-c96b-4a3a-8abe-c26397f4c4a5",
+          "lastUpdated": 1655741575829,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/d3eb1c59-175a-483a-b3f7-557b7640afe2",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/88c88a5b-6198-46be-9d7f-9bee6d4d2552",
           "caption": "",
-          "created": 1655741575670,
+          "created": 1655741575783,
           "description": "",
-          "id": "d3eb1c59-175a-483a-b3f7-557b7640afe2",
-          "lastUpdated": 1655741575670,
+          "id": "88c88a5b-6198-46be-9d7f-9bee6d4d2552",
+          "lastUpdated": 1655741575783,
           "logo": false
         },
         {
@@ -5800,30 +5811,30 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/d3eb1c59-175a-483a-b3f7-557b7640afe2",
+          "caption": "",
+          "created": 1655741575670,
+          "description": "",
+          "id": "d3eb1c59-175a-483a-b3f7-557b7640afe2",
+          "lastUpdated": 1655741575670,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
+          "caption": "",
+          "created": 1655741575764,
+          "description": "",
+          "id": "ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
+          "lastUpdated": 1655741575764,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
           "caption": "",
           "created": 1655741575846,
           "description": "",
           "id": "5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
           "lastUpdated": 1655741575846,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/86b51970-c96b-4a3a-8abe-c26397f4c4a5",
-          "caption": "",
-          "created": 1655741575829,
-          "description": "",
-          "id": "86b51970-c96b-4a3a-8abe-c26397f4c4a5",
-          "lastUpdated": 1655741575829,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/88c88a5b-6198-46be-9d7f-9bee6d4d2552",
-          "caption": "",
-          "created": 1655741575783,
-          "description": "",
-          "id": "88c88a5b-6198-46be-9d7f-9bee6d4d2552",
-          "lastUpdated": 1655741575783,
           "logo": false
         }
       ],
@@ -5999,6 +6010,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
+          "caption": "",
+          "created": 1588595316607,
+          "description": "",
+          "id": "b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
+          "lastUpdated": 1588595316607,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/3debdab7-de35-4649-ba0f-823d2a971bad",
           "caption": "",
           "created": 1599243143733,
@@ -6014,15 +6034,6 @@
           "description": "",
           "id": "7991aa92-d2a7-46ba-a6e0-1b807a8031d4",
           "lastUpdated": 1599243698713,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
-          "caption": "",
-          "created": 1588595316607,
-          "description": "",
-          "id": "b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
-          "lastUpdated": 1588595316607,
           "logo": false
         }
       ],
@@ -6068,24 +6079,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/823cb928-3b0b-4ace-b795-7e43ca510a3b",
-          "caption": "",
-          "created": 1634123703598,
-          "description": "",
-          "id": "823cb928-3b0b-4ace-b795-7e43ca510a3b",
-          "lastUpdated": 1634123703598,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2b15d295-401a-4263-b302-e4945a195d66",
-          "caption": "",
-          "created": 1634123697499,
-          "description": "",
-          "id": "2b15d295-401a-4263-b302-e4945a195d66",
-          "lastUpdated": 1634123697499,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/ac513af6-fd60-4e4b-bed3-9100f107c211",
           "caption": "",
           "created": 1634123696264,
@@ -6122,12 +6115,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/cb0e957b-bf7d-4826-8f1b-dbe0f074fbc3",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/d8caf867-aa1b-4a08-b7ba-e257dd986603",
           "caption": "",
-          "created": 1634123709690,
+          "created": 1634123689094,
           "description": "",
-          "id": "cb0e957b-bf7d-4826-8f1b-dbe0f074fbc3",
-          "lastUpdated": 1634123709690,
+          "id": "d8caf867-aa1b-4a08-b7ba-e257dd986603",
+          "lastUpdated": 1634123689094,
           "logo": false
         },
         {
@@ -6140,12 +6133,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/4230f576-f039-47da-a3f1-e610efcd6420",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
           "caption": "",
-          "created": 1634123710101,
+          "created": 1634123711214,
           "description": "",
-          "id": "4230f576-f039-47da-a3f1-e610efcd6420",
-          "lastUpdated": 1634123710101,
+          "id": "3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
+          "lastUpdated": 1634123711214,
           "logo": false
         },
         {
@@ -6158,30 +6151,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/4230f576-f039-47da-a3f1-e610efcd6420",
           "caption": "",
-          "created": 1634123711214,
+          "created": 1634123710101,
           "description": "",
-          "id": "3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
-          "lastUpdated": 1634123711214,
+          "id": "4230f576-f039-47da-a3f1-e610efcd6420",
+          "lastUpdated": 1634123710101,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/d8caf867-aa1b-4a08-b7ba-e257dd986603",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/cb0e957b-bf7d-4826-8f1b-dbe0f074fbc3",
           "caption": "",
-          "created": 1634123689094,
+          "created": 1634123709690,
           "description": "",
-          "id": "d8caf867-aa1b-4a08-b7ba-e257dd986603",
-          "lastUpdated": 1634123689094,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/9b625847-eee3-4d9b-9b11-d33e26e2bb16",
-          "caption": "",
-          "created": 1634123705245,
-          "description": "",
-          "id": "9b625847-eee3-4d9b-9b11-d33e26e2bb16",
-          "lastUpdated": 1634123705245,
+          "id": "cb0e957b-bf7d-4826-8f1b-dbe0f074fbc3",
+          "lastUpdated": 1634123709690,
           "logo": false
         },
         {
@@ -6194,12 +6178,39 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/9b625847-eee3-4d9b-9b11-d33e26e2bb16",
+          "caption": "",
+          "created": 1634123705245,
+          "description": "",
+          "id": "9b625847-eee3-4d9b-9b11-d33e26e2bb16",
+          "lastUpdated": 1634123705245,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/35d41499-05b4-4768-9bc2-120e29338e9d",
           "caption": "",
           "created": 1634123704787,
           "description": "",
           "id": "35d41499-05b4-4768-9bc2-120e29338e9d",
           "lastUpdated": 1634123704787,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/823cb928-3b0b-4ace-b795-7e43ca510a3b",
+          "caption": "",
+          "created": 1634123703598,
+          "description": "",
+          "id": "823cb928-3b0b-4ace-b795-7e43ca510a3b",
+          "lastUpdated": 1634123703598,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2b15d295-401a-4263-b302-e4945a195d66",
+          "caption": "",
+          "created": 1634123697499,
+          "description": "",
+          "id": "2b15d295-401a-4263-b302-e4945a195d66",
+          "lastUpdated": 1634123697499,
           "logo": false
         }
       ],
@@ -6300,93 +6311,66 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/d3f72817-9589-4b67-b24c-6fde88c54144",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/af0d7630-82ba-42ec-a392-24978b4bd5d6",
           "caption": "",
-          "created": 1702462022829,
+          "created": 1702461801148,
           "description": "",
-          "id": "d3f72817-9589-4b67-b24c-6fde88c54144",
-          "lastUpdated": 1702462022829,
+          "id": "af0d7630-82ba-42ec-a392-24978b4bd5d6",
+          "lastUpdated": 1702461801148,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/fb1dd1b8-6cd3-4a66-a03f-0d20555499c2",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/dcbef667-630c-409e-9fc1-62f017fe76ce",
           "caption": "",
-          "created": 1702462050729,
+          "created": 1702461856467,
           "description": "",
-          "id": "fb1dd1b8-6cd3-4a66-a03f-0d20555499c2",
-          "lastUpdated": 1702462050729,
+          "id": "dcbef667-630c-409e-9fc1-62f017fe76ce",
+          "lastUpdated": 1702461856467,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/17797540-c0b8-443e-9c36-96aeda77a78d",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/5e1f161b-a93e-41e8-900e-e8787a18fc2a",
           "caption": "",
-          "created": 1702461841664,
+          "created": 1702461814263,
           "description": "",
-          "id": "17797540-c0b8-443e-9c36-96aeda77a78d",
-          "lastUpdated": 1702461841664,
+          "id": "5e1f161b-a93e-41e8-900e-e8787a18fc2a",
+          "lastUpdated": 1702461814263,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/0881462a-ebdc-46a0-993e-393325f6054a",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/7712bbd1-f855-44d1-8c80-8662d7a35395",
           "caption": "",
-          "created": 1702461885912,
+          "created": 1702461773153,
           "description": "",
-          "id": "0881462a-ebdc-46a0-993e-393325f6054a",
-          "lastUpdated": 1702461885912,
+          "id": "7712bbd1-f855-44d1-8c80-8662d7a35395",
+          "lastUpdated": 1702461773153,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/6663d39d-494c-47cb-ba20-50e508ed8c2f",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/2dbfaaa1-f49b-47a5-903b-14c22d752818",
           "caption": "",
-          "created": 1702462034285,
+          "created": 1702461787479,
           "description": "",
-          "id": "6663d39d-494c-47cb-ba20-50e508ed8c2f",
-          "lastUpdated": 1702462034285,
+          "id": "2dbfaaa1-f49b-47a5-903b-14c22d752818",
+          "lastUpdated": 1702461787479,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/20a8be36-1950-4936-a0bc-06ccdc202f9a",
           "caption": "",
-          "created": 1702462045680,
+          "created": 1702462063146,
           "description": "",
-          "id": "8ed0428c-14b1-45ef-a29d-63116fd6fde1",
-          "lastUpdated": 1702462045680,
+          "id": "20a8be36-1950-4936-a0bc-06ccdc202f9a",
+          "lastUpdated": 1702462063146,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/b7e6b972-e852-4368-8038-913a4cc40d9a",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/0f436c11-6a3f-401d-8766-e532d8fb14bc",
           "caption": "",
-          "created": 1702462057142,
+          "created": 1702462040272,
           "description": "",
-          "id": "b7e6b972-e852-4368-8038-913a4cc40d9a",
-          "lastUpdated": 1702462057142,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/a1ac544e-b861-4477-9c6a-da5bc276ddff",
-          "caption": "",
-          "created": 1702461894893,
-          "description": "",
-          "id": "a1ac544e-b861-4477-9c6a-da5bc276ddff",
-          "lastUpdated": 1702461894893,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/41f42632-98b6-42c1-88fd-40de62ca3355",
-          "caption": "",
-          "created": 1702461948732,
-          "description": "",
-          "id": "41f42632-98b6-42c1-88fd-40de62ca3355",
-          "lastUpdated": 1702461948732,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/71637570-809c-4463-a851-649b84e012e4",
-          "caption": "",
-          "created": 1702461965318,
-          "description": "",
-          "id": "71637570-809c-4463-a851-649b84e012e4",
-          "lastUpdated": 1702461965318,
+          "id": "0f436c11-6a3f-401d-8766-e532d8fb14bc",
+          "lastUpdated": 1702462040272,
           "logo": false
         },
         {
@@ -6399,12 +6383,93 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/0f436c11-6a3f-401d-8766-e532d8fb14bc",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/71637570-809c-4463-a851-649b84e012e4",
           "caption": "",
-          "created": 1702462040272,
+          "created": 1702461965318,
           "description": "",
-          "id": "0f436c11-6a3f-401d-8766-e532d8fb14bc",
-          "lastUpdated": 1702462040272,
+          "id": "71637570-809c-4463-a851-649b84e012e4",
+          "lastUpdated": 1702461965318,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/41f42632-98b6-42c1-88fd-40de62ca3355",
+          "caption": "",
+          "created": 1702461948732,
+          "description": "",
+          "id": "41f42632-98b6-42c1-88fd-40de62ca3355",
+          "lastUpdated": 1702461948732,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/a1ac544e-b861-4477-9c6a-da5bc276ddff",
+          "caption": "",
+          "created": 1702461894893,
+          "description": "",
+          "id": "a1ac544e-b861-4477-9c6a-da5bc276ddff",
+          "lastUpdated": 1702461894893,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/b7e6b972-e852-4368-8038-913a4cc40d9a",
+          "caption": "",
+          "created": 1702462057142,
+          "description": "",
+          "id": "b7e6b972-e852-4368-8038-913a4cc40d9a",
+          "lastUpdated": 1702462057142,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "caption": "",
+          "created": 1702462045680,
+          "description": "",
+          "id": "8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "lastUpdated": 1702462045680,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/6663d39d-494c-47cb-ba20-50e508ed8c2f",
+          "caption": "",
+          "created": 1702462034285,
+          "description": "",
+          "id": "6663d39d-494c-47cb-ba20-50e508ed8c2f",
+          "lastUpdated": 1702462034285,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/0881462a-ebdc-46a0-993e-393325f6054a",
+          "caption": "",
+          "created": 1702461885912,
+          "description": "",
+          "id": "0881462a-ebdc-46a0-993e-393325f6054a",
+          "lastUpdated": 1702461885912,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/17797540-c0b8-443e-9c36-96aeda77a78d",
+          "caption": "",
+          "created": 1702461841664,
+          "description": "",
+          "id": "17797540-c0b8-443e-9c36-96aeda77a78d",
+          "lastUpdated": 1702461841664,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/fb1dd1b8-6cd3-4a66-a03f-0d20555499c2",
+          "caption": "",
+          "created": 1702462050729,
+          "description": "",
+          "id": "fb1dd1b8-6cd3-4a66-a03f-0d20555499c2",
+          "lastUpdated": 1702462050729,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/d3f72817-9589-4b67-b24c-6fde88c54144",
+          "caption": "",
+          "created": 1702462022829,
+          "description": "",
+          "id": "d3f72817-9589-4b67-b24c-6fde88c54144",
+          "lastUpdated": 1702462022829,
           "logo": false
         },
         {
@@ -6435,15 +6500,6 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/20a8be36-1950-4936-a0bc-06ccdc202f9a",
-          "caption": "",
-          "created": 1702462063146,
-          "description": "",
-          "id": "20a8be36-1950-4936-a0bc-06ccdc202f9a",
-          "lastUpdated": 1702462063146,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/243757b5-bddd-4708-ae19-bef57f524cd4",
           "caption": "",
           "created": 1702461957398,
@@ -6459,51 +6515,6 @@
           "description": "",
           "id": "40e49d89-452e-4686-8706-59607beb4751",
           "lastUpdated": 1702461867816,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/af0d7630-82ba-42ec-a392-24978b4bd5d6",
-          "caption": "",
-          "created": 1702461801148,
-          "description": "",
-          "id": "af0d7630-82ba-42ec-a392-24978b4bd5d6",
-          "lastUpdated": 1702461801148,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/dcbef667-630c-409e-9fc1-62f017fe76ce",
-          "caption": "",
-          "created": 1702461856467,
-          "description": "",
-          "id": "dcbef667-630c-409e-9fc1-62f017fe76ce",
-          "lastUpdated": 1702461856467,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/5e1f161b-a93e-41e8-900e-e8787a18fc2a",
-          "caption": "",
-          "created": 1702461814263,
-          "description": "",
-          "id": "5e1f161b-a93e-41e8-900e-e8787a18fc2a",
-          "lastUpdated": 1702461814263,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/2dbfaaa1-f49b-47a5-903b-14c22d752818",
-          "caption": "",
-          "created": 1702461787479,
-          "description": "",
-          "id": "2dbfaaa1-f49b-47a5-903b-14c22d752818",
-          "lastUpdated": 1702461787479,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/7712bbd1-f855-44d1-8c80-8662d7a35395",
-          "caption": "",
-          "created": 1702461773153,
-          "description": "",
-          "id": "7712bbd1-f855-44d1-8c80-8662d7a35395",
-          "lastUpdated": 1702461773153,
           "logo": false
         }
       ],
@@ -6759,30 +6770,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/44870959-a4a4-4b77-9f2a-493f31de44e8",
-          "caption": "",
-          "created": 1694208963931,
-          "description": "",
-          "id": "44870959-a4a4-4b77-9f2a-493f31de44e8",
-          "lastUpdated": 1694208963931,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
           "caption": "",
           "created": 1694208998892,
           "description": "",
           "id": "bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
           "lastUpdated": 1694208998892,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/511323d2-daae-4c30-89b0-35a8ce177b35",
-          "caption": "",
-          "created": 1694208972480,
-          "description": "",
-          "id": "511323d2-daae-4c30-89b0-35a8ce177b35",
-          "lastUpdated": 1694208972480,
           "logo": false
         },
         {
@@ -6795,21 +6788,39 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/786e7871-6c95-4317-b8dc-ab475edd28ae",
-          "caption": "",
-          "created": 1694208980640,
-          "description": "",
-          "id": "786e7871-6c95-4317-b8dc-ab475edd28ae",
-          "lastUpdated": 1694208980640,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
           "caption": "",
           "created": 1694208992137,
           "description": "",
           "id": "7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
           "lastUpdated": 1694208992137,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/511323d2-daae-4c30-89b0-35a8ce177b35",
+          "caption": "",
+          "created": 1694208972480,
+          "description": "",
+          "id": "511323d2-daae-4c30-89b0-35a8ce177b35",
+          "lastUpdated": 1694208972480,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/44870959-a4a4-4b77-9f2a-493f31de44e8",
+          "caption": "",
+          "created": 1694208963931,
+          "description": "",
+          "id": "44870959-a4a4-4b77-9f2a-493f31de44e8",
+          "lastUpdated": 1694208963931,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/786e7871-6c95-4317-b8dc-ab475edd28ae",
+          "caption": "",
+          "created": 1694208980640,
+          "description": "",
+          "id": "786e7871-6c95-4317-b8dc-ab475edd28ae",
+          "lastUpdated": 1694208980640,
           "logo": false
         }
       ],
@@ -6866,21 +6877,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/7b37e1de-00f1-49a2-87d3-825c710291a1/6ae06d1a-54da-49a7-879d-5dc15c2bf776",
-          "caption": "",
-          "created": 1588595400099,
-          "description": "",
-          "id": "6ae06d1a-54da-49a7-879d-5dc15c2bf776",
-          "lastUpdated": 1588595400099,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/7b37e1de-00f1-49a2-87d3-825c710291a1/1e848d8e-a495-45ac-8c49-6139356db48e",
           "caption": "",
           "created": 1588595401113,
           "description": "",
           "id": "1e848d8e-a495-45ac-8c49-6139356db48e",
           "lastUpdated": 1588595401113,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/7b37e1de-00f1-49a2-87d3-825c710291a1/6ae06d1a-54da-49a7-879d-5dc15c2bf776",
+          "caption": "",
+          "created": 1588595400099,
+          "description": "",
+          "id": "6ae06d1a-54da-49a7-879d-5dc15c2bf776",
+          "lastUpdated": 1588595400099,
           "logo": false
         }
       ],
@@ -6958,21 +6969,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/2def5309-1028-41e3-9951-86b9a093d356/85301edd-104e-480c-9d71-19eb6ceb2618",
-          "caption": "",
-          "created": 1588595405295,
-          "description": "",
-          "id": "85301edd-104e-480c-9d71-19eb6ceb2618",
-          "lastUpdated": 1588595405295,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/2def5309-1028-41e3-9951-86b9a093d356/12b7cdaf-86c5-4fcc-ac05-39b800c45998",
           "caption": "",
           "created": 1588595405988,
           "description": "",
           "id": "12b7cdaf-86c5-4fcc-ac05-39b800c45998",
           "lastUpdated": 1588595405988,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/2def5309-1028-41e3-9951-86b9a093d356/85301edd-104e-480c-9d71-19eb6ceb2618",
+          "caption": "",
+          "created": 1588595405295,
+          "description": "",
+          "id": "85301edd-104e-480c-9d71-19eb6ceb2618",
+          "lastUpdated": 1588595405295,
           "logo": false
         }
       ],
@@ -7071,21 +7082,21 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/da91bed1-06d4-49a2-a0b0-231c87c42665/6f0d85b5-e4ea-4b19-be46-284e52d4af9c",
+          "caption": "",
+          "created": 1588595463894,
+          "description": "",
+          "id": "6f0d85b5-e4ea-4b19-be46-284e52d4af9c",
+          "lastUpdated": 1588595463894,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/da91bed1-06d4-49a2-a0b0-231c87c42665/1aec2ef6-f7cd-4a12-9422-caf1dd3500e3",
           "caption": "",
           "created": 1588595463330,
           "description": "",
           "id": "1aec2ef6-f7cd-4a12-9422-caf1dd3500e3",
           "lastUpdated": 1588595463330,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/da91bed1-06d4-49a2-a0b0-231c87c42665/ddc287ff-e3e5-4895-bc1c-d7d6461622e4",
-          "caption": "",
-          "created": 1588595461484,
-          "description": "",
-          "id": "ddc287ff-e3e5-4895-bc1c-d7d6461622e4",
-          "lastUpdated": 1588595461484,
           "logo": false
         },
         {
@@ -7098,12 +7109,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/da91bed1-06d4-49a2-a0b0-231c87c42665/6f0d85b5-e4ea-4b19-be46-284e52d4af9c",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/da91bed1-06d4-49a2-a0b0-231c87c42665/ddc287ff-e3e5-4895-bc1c-d7d6461622e4",
           "caption": "",
-          "created": 1588595463894,
+          "created": 1588595461484,
           "description": "",
-          "id": "6f0d85b5-e4ea-4b19-be46-284e52d4af9c",
-          "lastUpdated": 1588595463894,
+          "id": "ddc287ff-e3e5-4895-bc1c-d7d6461622e4",
+          "lastUpdated": 1588595461484,
           "logo": false
         },
         {
@@ -7124,11 +7135,22 @@
       "status": "APPROVED",
       "id": "6e3af2e6-6dac-49b8-baa1-40019a684252",
       "created": 1588595351666,
-      "lastUpdated": 1664194575607,
+      "lastUpdated": 1708002432529,
       "name": "Interactive Scorecard",
       "description": "The scorecard app is a performance monitoring tool that allows users to track the comparative performance of indicators over time and against different organization units and/or levels. With easy to use colour coded outputs, the scorecard is meant to allow users to make data-driven decisions using the performance outlined on via the scorecard app\u2019s outputs. The Scorecard is an application developed to operate and installed in DHIS 2 instance taking advantage of existing indicators for configurations to track. The Scorecard app must be installed in the DHIS 2 system by the user with administrative privilege and configure data entry and report based on in-country needs. Once installed, any user who has access to that particular instance of DHIS 2 will be able to create scorecards, view existing scorecards or edit scorecards developed by other users provided that they have shared that scorecard (privilege to read and write) with the logged-on user.",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1708002432529,
+          "demoUrl": "https://hisp.apps.dhis2.org/training",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/hisp-tanzania/interactive-scorecard_2.6.2.zip",
+          "id": "278a1ac9-ba76-4d52-b5ab-1df41a20fd6c",
+          "lastUpdated": 1708002432529,
+          "maxDhisVersion": "2.40",
+          "minDhisVersion": "2.38",
+          "version": "2.6.2",
+          "channel": "stable"
+        },
         {
           "created": 1664194575607,
           "demoUrl": "https://hisp.apps.dhis2.org/training/api/apps/Interactive-Scorecard/index.html",
@@ -7202,15 +7224,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/071b5848-a7fd-47af-80b4-faf4dc8b4322",
-          "caption": "",
-          "created": 1664195193572,
-          "description": "",
-          "id": "071b5848-a7fd-47af-80b4-faf4dc8b4322",
-          "lastUpdated": 1664195193572,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/dba1f708-30d9-43e6-8a25-c267072ad2e0",
           "caption": "",
           "created": 1664195166625,
@@ -7235,6 +7248,15 @@
           "description": "",
           "id": "18a77617-5b28-4b40-a8c3-15cf496d409c",
           "lastUpdated": 1664195193542,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/071b5848-a7fd-47af-80b4-faf4dc8b4322",
+          "caption": "",
+          "created": 1664195193572,
+          "description": "",
+          "id": "071b5848-a7fd-47af-80b4-faf4dc8b4322",
+          "lastUpdated": 1664195193572,
           "logo": false
         },
         {
@@ -7289,15 +7311,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/2d22fe3d-4c84-48ba-abb2-4d286d875591",
-          "caption": "",
-          "created": 1588595310553,
-          "description": "",
-          "id": "2d22fe3d-4c84-48ba-abb2-4d286d875591",
-          "lastUpdated": 1588595310553,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/3fdc770b-f1ac-47c0-a267-f27a067f64f0",
           "caption": "",
           "created": 1588595309259,
@@ -7307,12 +7320,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/89c90ff3-9633-4340-92e0-6a124bad98ec",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/246baee8-e65d-4d0e-b4ba-7406909d9e45",
           "caption": "",
-          "created": 1588595309945,
+          "created": 1588595312213,
           "description": "",
-          "id": "89c90ff3-9633-4340-92e0-6a124bad98ec",
-          "lastUpdated": 1588595309945,
+          "id": "246baee8-e65d-4d0e-b4ba-7406909d9e45",
+          "lastUpdated": 1588595312213,
           "logo": false
         },
         {
@@ -7325,12 +7338,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/246baee8-e65d-4d0e-b4ba-7406909d9e45",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/2d22fe3d-4c84-48ba-abb2-4d286d875591",
           "caption": "",
-          "created": 1588595312213,
+          "created": 1588595310553,
           "description": "",
-          "id": "246baee8-e65d-4d0e-b4ba-7406909d9e45",
-          "lastUpdated": 1588595312213,
+          "id": "2d22fe3d-4c84-48ba-abb2-4d286d875591",
+          "lastUpdated": 1588595310553,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/73cfe371-ddc4-494b-9f3e-0e9e9fc8f32a/89c90ff3-9633-4340-92e0-6a124bad98ec",
+          "caption": "",
+          "created": 1588595309945,
+          "description": "",
+          "id": "89c90ff3-9633-4340-92e0-6a124bad98ec",
+          "lastUpdated": 1588595309945,
           "logo": false
         }
       ],
@@ -8560,6 +8582,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
+          "caption": "",
+          "created": 1652994561288,
+          "description": "",
+          "id": "f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
+          "lastUpdated": 1652994561288,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/24935512-6f65-4796-a14c-9d8a82f360df",
           "caption": "",
           "created": 1652994561399,
@@ -8575,15 +8606,6 @@
           "description": "",
           "id": "5e39cf11-0286-4027-a9dd-15cbd1b9ca81",
           "lastUpdated": 1652994561274,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
-          "caption": "",
-          "created": 1652994561288,
-          "description": "",
-          "id": "f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
-          "lastUpdated": 1652994561288,
           "logo": false
         }
       ],
@@ -8810,15 +8832,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/805298b9-7d13-48bf-bbba-18888ef3757d",
-          "caption": "",
-          "created": 1697504285398,
-          "description": "",
-          "id": "805298b9-7d13-48bf-bbba-18888ef3757d",
-          "lastUpdated": 1697504285398,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/40a44551-73f7-42c7-a277-88a00d53d6cb",
           "caption": "",
           "created": 1697503972239,
@@ -8834,6 +8847,15 @@
           "description": "",
           "id": "fb18728e-2e96-40e8-bda3-d3c3b2e04b61",
           "lastUpdated": 1697504303732,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/805298b9-7d13-48bf-bbba-18888ef3757d",
+          "caption": "",
+          "created": 1697504285398,
+          "description": "",
+          "id": "805298b9-7d13-48bf-bbba-18888ef3757d",
+          "lastUpdated": 1697504285398,
           "logo": false
         },
         {
@@ -8976,15 +8998,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/8b20d2f3-259c-4265-bf31-d25f9924e8bd",
-          "caption": "",
-          "created": 1635942595996,
-          "description": "",
-          "id": "8b20d2f3-259c-4265-bf31-d25f9924e8bd",
-          "lastUpdated": 1635942595996,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/a30fe1d2-c00f-4739-94b8-0c2b6110f0a7",
           "caption": "",
           "created": 1635942477891,
@@ -9000,6 +9013,15 @@
           "description": "",
           "id": "35eda38c-f72d-4534-beef-e96fbf2974b3",
           "lastUpdated": 1635942403835,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/8b20d2f3-259c-4265-bf31-d25f9924e8bd",
+          "caption": "",
+          "created": 1635942595996,
+          "description": "",
+          "id": "8b20d2f3-259c-4265-bf31-d25f9924e8bd",
+          "lastUpdated": 1635942595996,
           "logo": false
         }
       ],
@@ -9107,15 +9129,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/d514fa86-7179-49c9-8cae-51c7de55124a",
-          "caption": "",
-          "created": 1691591729556,
-          "description": "",
-          "id": "d514fa86-7179-49c9-8cae-51c7de55124a",
-          "lastUpdated": 1691591729556,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/649bc26a-21b6-4fa2-a764-910a6f16c1a8",
           "caption": "",
           "created": 1691591628488,
@@ -9125,21 +9138,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
-          "caption": "",
-          "created": 1691591802821,
-          "description": "",
-          "id": "7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
-          "lastUpdated": 1691591802821,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/798e3280-2fbd-4a0f-86d9-ada44af8b27f",
           "caption": "",
           "created": 1691591743846,
           "description": "",
           "id": "798e3280-2fbd-4a0f-86d9-ada44af8b27f",
           "lastUpdated": 1691591743846,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/d514fa86-7179-49c9-8cae-51c7de55124a",
+          "caption": "",
+          "created": 1691591729556,
+          "description": "",
+          "id": "d514fa86-7179-49c9-8cae-51c7de55124a",
+          "lastUpdated": 1691591729556,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
+          "caption": "",
+          "created": 1691591802821,
+          "description": "",
+          "id": "7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
+          "lastUpdated": 1691591802821,
           "logo": false
         }
       ],
@@ -9862,11 +9884,22 @@
       "status": "APPROVED",
       "id": "e3ed6990-ee21-4a88-82c5-c59eb7f3fab1",
       "created": 1588595484583,
-      "lastUpdated": 1664195685797,
+      "lastUpdated": 1708002533027,
       "name": "Scorecard Dashboard Widget",
       "description": "Wdiget for placing Interactive scorecards on your dashboard",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1708002533027,
+          "demoUrl": "https://hisp.apps.dhis2.org/training",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/hisp-tanzania/scorecard-dashboard-widget_2.6.2.zip",
+          "id": "fbff7f4e-7b66-4722-95aa-9926af7e91c8",
+          "lastUpdated": 1708002533027,
+          "maxDhisVersion": "2.40",
+          "minDhisVersion": "2.38",
+          "version": "2.6.2",
+          "channel": "stable"
+        },
         {
           "created": 1664195685797,
           "demoUrl": "https://hisp.apps.dhis2.org/training/dhis-web-dashboard/#/GeItLrOkOSJ",
@@ -9927,21 +9960,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/e3ed6990-ee21-4a88-82c5-c59eb7f3fab1/e9183cbf-f26f-4224-b07d-feed2fd61417",
-          "caption": "",
-          "created": 1664195762122,
-          "description": "",
-          "id": "e9183cbf-f26f-4224-b07d-feed2fd61417",
-          "lastUpdated": 1664195762122,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/e3ed6990-ee21-4a88-82c5-c59eb7f3fab1/01c732d4-3686-484a-b555-8848abebb352",
           "caption": "",
           "created": 1664195762131,
           "description": "",
           "id": "01c732d4-3686-484a-b555-8848abebb352",
           "lastUpdated": 1664195762131,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/e3ed6990-ee21-4a88-82c5-c59eb7f3fab1/e9183cbf-f26f-4224-b07d-feed2fd61417",
+          "caption": "",
+          "created": 1664195762122,
+          "description": "",
+          "id": "e9183cbf-f26f-4224-b07d-feed2fd61417",
+          "lastUpdated": 1664195762122,
           "logo": false
         }
       ],
@@ -10009,15 +10042,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
-          "caption": "",
-          "created": 1588595391858,
-          "description": "",
-          "id": "4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
-          "lastUpdated": 1588595391858,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f1aed69f-0392-4d6a-bf78-7ad08a151699",
           "caption": "",
           "created": 1588595391313,
@@ -10027,12 +10051,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/d882d909-9e06-4371-9124-9297ea2fd975",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
           "caption": "",
-          "created": 1588595389759,
+          "created": 1588595391858,
           "description": "",
-          "id": "d882d909-9e06-4371-9124-9297ea2fd975",
-          "lastUpdated": 1588595389759,
+          "id": "4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
+          "lastUpdated": 1588595391858,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f09160a7-23c2-48dc-8950-38e443922985",
+          "caption": "",
+          "created": 1588595390846,
+          "description": "",
+          "id": "f09160a7-23c2-48dc-8950-38e443922985",
+          "lastUpdated": 1588595390846,
           "logo": false
         },
         {
@@ -10045,12 +10078,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f09160a7-23c2-48dc-8950-38e443922985",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/d882d909-9e06-4371-9124-9297ea2fd975",
           "caption": "",
-          "created": 1588595390846,
+          "created": 1588595389759,
           "description": "",
-          "id": "f09160a7-23c2-48dc-8950-38e443922985",
-          "lastUpdated": 1588595390846,
+          "id": "d882d909-9e06-4371-9124-9297ea2fd975",
+          "lastUpdated": 1588595389759,
           "logo": false
         }
       ],
@@ -10096,21 +10129,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/77678c20-4b1b-4f72-bee0-4dd8f19adce1",
-          "caption": "",
-          "created": 1588595534036,
-          "description": "",
-          "id": "77678c20-4b1b-4f72-bee0-4dd8f19adce1",
-          "lastUpdated": 1588595534036,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/d159d8e7-dc71-4cc1-8b7c-044a71acea18",
           "caption": "",
           "created": 1588595533310,
           "description": "",
           "id": "d159d8e7-dc71-4cc1-8b7c-044a71acea18",
           "lastUpdated": 1588595533310,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/77678c20-4b1b-4f72-bee0-4dd8f19adce1",
+          "caption": "",
+          "created": 1588595534036,
+          "description": "",
+          "id": "77678c20-4b1b-4f72-bee0-4dd8f19adce1",
+          "lastUpdated": 1588595534036,
           "logo": false
         }
       ],
@@ -10175,11 +10208,22 @@
       "status": "APPROVED",
       "id": "0efc14dc-bf0b-474d-8a02-82c27d891b23",
       "created": 1623143074305,
-      "lastUpdated": 1623143074305,
+      "lastUpdated": 1708003105443,
       "name": "Standalone Action Tracker",
       "description": "An action tracker is a management tool that helps improve effective coverage of priority interventions at the district and community level, covering various interventions such as maternal, newborn, and child health (MNCH), HIV, and nutrition. This process ensures appropriate equity analysis at the sub-national level with the aim of identifying underserved populations and the specific bottlenecks they face in accessing life-saving healthcare. Alongside Bottleneck analysis that analyses hindrances to achieving desired coverage, action tracking allows program implementers to register and track actions based on suggested solutions from root causes, or the ones which are not originating from Bottleneck analysis.\nStand Alone Action tracker is an application developed to operate and installed in DHIS 2 instance and aimed to operate without the existence of set up Bottleneck Analysis. Stand Alone Action tracker must be installed in DHIS 2 system by the user with administrative privilege and configure data entry and report based on in-country needs. Users at sub-national levels will be using an action tracker to register actions and track the status of their implementation of tasks based on the roles they are assigned in the application and the DHIS 2 system in general. The application is developed using DHIS 2 tracker implementation, which gives the possibility of migrating registered actions and their implementations from stand-alone action tracker to Bottleneck Analysis (BNA) linked action tracker. Stand Alone Action Tracker differs from BNA linked Action tracker by allowing to set some fields from BNA linked action tracker as optional, that gives the possibility of registration and tracking of tasks that are not necessarily obtained from Bottleneck Analysis of interventions.",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1708003105443,
+          "demoUrl": "https://hisp.apps.dhis2.org/training",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/hisp-tanzania/standalone-action-tracker_2.0.0.zip",
+          "id": "c7ed1fc2-32ca-4d3d-b629-d6965c8c5edd",
+          "lastUpdated": 1708003105443,
+          "maxDhisVersion": "2.40",
+          "minDhisVersion": "2.38",
+          "version": "2.0.0",
+          "channel": "stable"
+        },
         {
           "created": 1623143074305,
           "demoUrl": "https://dhis2academy.hisptz.com/unicefappsdev/api/apps/action-tracker-standalone/index.html",
@@ -10218,24 +10262,6 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/8991b4dd-b736-4575-80a9-fcef28faec29",
-          "caption": "",
-          "created": 1623666942826,
-          "description": "",
-          "id": "8991b4dd-b736-4575-80a9-fcef28faec29",
-          "lastUpdated": 1623666942826,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/2839dbae-5556-49ab-9582-8a1eba9b00da",
-          "caption": "",
-          "created": 1623666918173,
-          "description": "",
-          "id": "2839dbae-5556-49ab-9582-8a1eba9b00da",
-          "lastUpdated": 1623666918173,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/c77d6105-2353-407e-b526-e4634f5a0b6a",
           "caption": "",
           "created": 1623666951215,
@@ -10245,12 +10271,30 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/8991b4dd-b736-4575-80a9-fcef28faec29",
+          "caption": "",
+          "created": 1623666942826,
+          "description": "",
+          "id": "8991b4dd-b736-4575-80a9-fcef28faec29",
+          "lastUpdated": 1623666942826,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/32210abf-0033-4f06-8a12-08b4345fb661",
           "caption": "",
           "created": 1623666927435,
           "description": "",
           "id": "32210abf-0033-4f06-8a12-08b4345fb661",
           "lastUpdated": 1623666927435,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/2839dbae-5556-49ab-9582-8a1eba9b00da",
+          "caption": "",
+          "created": 1623666918173,
+          "description": "",
+          "id": "2839dbae-5556-49ab-9582-8a1eba9b00da",
+          "lastUpdated": 1623666918173,
           "logo": false
         }
       ],
@@ -10446,12 +10490,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/3ec1d546-7062-4f0d-9ab2-1d5744d46b84",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/583a4a55-8196-4f86-9141-25fbc266bfd4",
           "caption": "",
-          "created": 1621876051597,
+          "created": 1621876057073,
           "description": "",
-          "id": "3ec1d546-7062-4f0d-9ab2-1d5744d46b84",
-          "lastUpdated": 1621876051597,
+          "id": "583a4a55-8196-4f86-9141-25fbc266bfd4",
+          "lastUpdated": 1621876057073,
           "logo": false
         },
         {
@@ -10464,21 +10508,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/583a4a55-8196-4f86-9141-25fbc266bfd4",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/b228873f-4810-43b7-93d0-c1aeb489c0da",
           "caption": "",
-          "created": 1621876057073,
+          "created": 1621876012960,
           "description": "",
-          "id": "583a4a55-8196-4f86-9141-25fbc266bfd4",
-          "lastUpdated": 1621876057073,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/e341bc93-7e5a-4853-828f-d869ab6eb5ef",
-          "caption": "",
-          "created": 1621876042800,
-          "description": "",
-          "id": "e341bc93-7e5a-4853-828f-d869ab6eb5ef",
-          "lastUpdated": 1621876042800,
+          "id": "b228873f-4810-43b7-93d0-c1aeb489c0da",
+          "lastUpdated": 1621876012960,
           "logo": false
         },
         {
@@ -10491,12 +10526,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/b228873f-4810-43b7-93d0-c1aeb489c0da",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/3ec1d546-7062-4f0d-9ab2-1d5744d46b84",
           "caption": "",
-          "created": 1621876012960,
+          "created": 1621876051597,
           "description": "",
-          "id": "b228873f-4810-43b7-93d0-c1aeb489c0da",
-          "lastUpdated": 1621876012960,
+          "id": "3ec1d546-7062-4f0d-9ab2-1d5744d46b84",
+          "lastUpdated": 1621876051597,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/e341bc93-7e5a-4853-828f-d869ab6eb5ef",
+          "caption": "",
+          "created": 1621876042800,
+          "description": "",
+          "id": "e341bc93-7e5a-4853-828f-d869ab6eb5ef",
+          "lastUpdated": 1621876042800,
           "logo": false
         }
       ],
@@ -11143,6 +11187,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/f6f103b9-30b4-4da3-9060-3723766e1ba3",
+          "caption": "",
+          "created": 1691592879950,
+          "description": "",
+          "id": "f6f103b9-30b4-4da3-9060-3723766e1ba3",
+          "lastUpdated": 1691592879950,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/c90a4e38-fd2a-4e92-af59-d20d299b42ae",
           "caption": "",
           "created": 1691592846781,
@@ -11167,15 +11220,6 @@
           "description": "",
           "id": "77a8baf6-5124-46fd-97fd-5b7192ff1d9d",
           "lastUpdated": 1691592867369,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/f6f103b9-30b4-4da3-9060-3723766e1ba3",
-          "caption": "",
-          "created": 1691592879950,
-          "description": "",
-          "id": "f6f103b9-30b4-4da3-9060-3723766e1ba3",
-          "lastUpdated": 1691592879950,
           "logo": false
         }
       ],
@@ -11230,21 +11274,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/1cafe599-4487-4366-8f05-af4662f24b8a",
-          "caption": "",
-          "created": 1685105752879,
-          "description": "",
-          "id": "1cafe599-4487-4366-8f05-af4662f24b8a",
-          "lastUpdated": 1685105752879,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/df65d65e-d441-4749-b3ac-da74ac0ffa3f",
           "caption": "",
           "created": 1685105759402,
           "description": "",
           "id": "df65d65e-d441-4749-b3ac-da74ac0ffa3f",
           "lastUpdated": 1685105759402,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/1cafe599-4487-4366-8f05-af4662f24b8a",
+          "caption": "",
+          "created": 1685105752879,
+          "description": "",
+          "id": "1cafe599-4487-4366-8f05-af4662f24b8a",
+          "lastUpdated": 1685105752879,
           "logo": false
         }
       ],
@@ -11400,6 +11444,33 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/e5433118-2a1f-4d95-a074-e6838ecd7dfb",
+          "caption": "",
+          "created": 1614711838149,
+          "description": "",
+          "id": "e5433118-2a1f-4d95-a074-e6838ecd7dfb",
+          "lastUpdated": 1614711838149,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/40184d86-acbd-4f46-a172-c50a36b108ec",
+          "caption": "",
+          "created": 1614711829905,
+          "description": "",
+          "id": "40184d86-acbd-4f46-a172-c50a36b108ec",
+          "lastUpdated": 1614711829905,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/66311af4-021d-40c0-b639-b06c5d32ee6e",
+          "caption": "",
+          "created": 1614711821968,
+          "description": "",
+          "id": "66311af4-021d-40c0-b639-b06c5d32ee6e",
+          "lastUpdated": 1614711821968,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/c60d54a4-741d-4ee3-83cc-38782651abcc",
           "caption": "",
           "created": 1614711804457,
@@ -11424,33 +11495,6 @@
           "description": "",
           "id": "96c96fe3-9e1c-47db-8310-ecd7860bae05",
           "lastUpdated": 1614711845429,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/40184d86-acbd-4f46-a172-c50a36b108ec",
-          "caption": "",
-          "created": 1614711829905,
-          "description": "",
-          "id": "40184d86-acbd-4f46-a172-c50a36b108ec",
-          "lastUpdated": 1614711829905,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/66311af4-021d-40c0-b639-b06c5d32ee6e",
-          "caption": "",
-          "created": 1614711821968,
-          "description": "",
-          "id": "66311af4-021d-40c0-b639-b06c5d32ee6e",
-          "lastUpdated": 1614711821968,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/e5433118-2a1f-4d95-a074-e6838ecd7dfb",
-          "caption": "",
-          "created": 1614711838149,
-          "description": "",
-          "id": "e5433118-2a1f-4d95-a074-e6838ecd7dfb",
-          "lastUpdated": 1614711838149,
           "logo": false
         }
       ],
@@ -11496,21 +11540,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/fde09f7e-b478-4181-a10b-9c2ec4484997",
-          "caption": "",
-          "created": 1588595468550,
-          "description": "",
-          "id": "fde09f7e-b478-4181-a10b-9c2ec4484997",
-          "lastUpdated": 1588595468550,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/13d37121-4c06-4d35-919c-4dc5aceb29a8",
           "caption": "",
           "created": 1588595467542,
           "description": "",
           "id": "13d37121-4c06-4d35-919c-4dc5aceb29a8",
           "lastUpdated": 1588595467542,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/fde09f7e-b478-4181-a10b-9c2ec4484997",
+          "caption": "",
+          "created": 1588595468550,
+          "description": "",
+          "id": "fde09f7e-b478-4181-a10b-9c2ec4484997",
+          "lastUpdated": 1588595468550,
           "logo": false
         },
         {
@@ -11627,21 +11671,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who/b5010eb7-6097-4f46-a85a-a73358e024ba/0a9e1244-bbc9-4791-85c4-d09f561650f5",
-          "caption": "",
-          "created": 1588595475132,
-          "description": "",
-          "id": "0a9e1244-bbc9-4791-85c4-d09f561650f5",
-          "lastUpdated": 1588595475132,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who/b5010eb7-6097-4f46-a85a-a73358e024ba/499d3582-d61c-4437-ab46-6f98be5e0e45",
           "caption": "",
           "created": 1588595474572,
           "description": "",
           "id": "499d3582-d61c-4437-ab46-6f98be5e0e45",
           "lastUpdated": 1588595474572,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who/b5010eb7-6097-4f46-a85a-a73358e024ba/0a9e1244-bbc9-4791-85c4-d09f561650f5",
+          "caption": "",
+          "created": 1588595475132,
+          "description": "",
+          "id": "0a9e1244-bbc9-4791-85c4-d09f561650f5",
+          "lastUpdated": 1588595475132,
           "logo": false
         }
       ],
