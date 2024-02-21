@@ -68,7 +68,7 @@
     -   [x] Apply legend as background color for single value chart type [jira](https://dhis2.atlassian.net/browse/DHIS2-13702)
     -   [x] Legend for stacked column charts [jira](https://dhis2.atlassian.net/browse/DHIS2-13783)  
     -   [x] Show data element and indicator icon for single value charts [jira](https://dhis2.atlassian.net/browse/DHIS2-10496)
-    -   [ ] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
+    -   [x] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
 
 -   Dashboards 
 
@@ -92,19 +92,19 @@
     -   [x] Tracker analytics performance improvements
     -   [x] Tracker analytics stability improvements
     -   [x] TEI / Cross program line list frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-15454)
-    -   [ ] Design tracked entity count based upon event and enrollment line lists
+    -   [x] Design tracked entity count based upon event and enrollment line lists
 
 -   Data visualizer
 
     -   [ ] Design two value chart types 
-    -   [ ] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
+    -   [x] Outlier tables (Replacing WHO DQ app) [jira](https://dhis2.atlassian.net/browse/DHIS2-13858)
     -   [x] Cummulative values in pivot tables [jira](https://dhis2.atlassian.net/browse/DHIS2-5497)
-    -   [x] Design for indicator description included in data item selector.
+    -   [x] Design for indicator description included in data item selector [jira](https://dhis2.atlassian.net/browse/ROADMAP-148).
 
 -   Dashboards
 
     -   [x] Dashboard email push [jira](https://dhis2.atlassian.net/browse/DHIS2-15367)
-    -   [ ] Design for indicator description included in dashboard items
+    -   [x] Design for indicator description included in dashboard items
     -   [x] Design and development for a "simple" presentation mode for dashboards [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
 
 -   Maps
