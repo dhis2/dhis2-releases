@@ -183,10 +183,17 @@ This aligns pagination in Tracker with other DHIS2 endpoints.
 
 ##### Semicolon as separator for identifiers (UID)
 
+Fields or query parameter accepting multiple values like UIDs are now consistently separated by
+comma `,` instead of semicolon `;`. This is to ensure UIDs are consistently separated by comma
+across all DHIS2 endpoints.
+
+The following fields are affected
+* `event.attributeCategoryOptions` (as well as an event returned as part of a relationship
+`from`/`to`)
+
 The following query parameters accepting one or more semicolon separated UIDs are deprecated in
-favor of a parameter accepting **comma separated** UIDs. This is to ensure UIDs are consistently
-separated by comma across all DHIS2 endpoints. Names are now also consistently using plural to
-indicate more than one UID is allowed.
+favor of a parameter accepting **comma separated** UIDs. Names are now also consistently using
+plural to indicate more than one UID is allowed.
 
 `/tracker/trackedEntity`
 * `assignedUsers` replaces `assignedUser`
