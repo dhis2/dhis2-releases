@@ -278,7 +278,8 @@ Field `followup` is deprecated and the camel case version `followUp` is used ins
 * `/tracker/relationships` in the `event` object
 
 ### Metadata
-The property `DataDimensionType` is now mandatory for `CategoryOptionGroup` and `CategoryOptionGroupSet`. Existing records with `null` value would need to be manually updated with either `DISAGGREGATION` or `ATTRIBUTE`.
+1. The property `DataDimensionType` is now mandatory for `CategoryOptionGroup` and `CategoryOptionGroupSet`. Existing records with `null` value would need to be manually updated with either `DISAGGREGATION` or `ATTRIBUTE`.
+2. The `mergeMode` parameter is removed from In Metadata Import Export app and also from the endpoint `api/metadata`. This means when updating objects, all existing property values will be overwritten even if the new values are `null`. Please use [JSON Patch API](#webapi_partial_updates) in case you want do partial update to an object. 
 ## Database
 
 We have removed prefix `dataelement` from `category` and `categoryoption` tables as this gives us more readability.
