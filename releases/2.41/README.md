@@ -5,7 +5,7 @@
 ## API
 ### Sharing
 
-- **Legacy Sharing properties are removed**: from 2.36 a new `sharing` property has been introduced in order to replace the legacy sharing properties userAccesses, userGroupAccesses, publicAccess, externalAccess. In order to keep the web api backward compability we have been supported both new and legacy properties our web api and all related features. However, in order to implement new features and keep the code base clean we need to remove the legacy format in 2.41. So from this version, you will not get those properties returned from our web api : `userAccesses`, `userGroupAccesses`, `publicAccess`, `externalAccess`. Instead, those properties can be accessed in new `sharing` properties as documented [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#new-sharing-object).
+- **Legacy Sharing properties are removed**: from 2.36 a new `sharing` property has been introduced in order to replace the legacy sharing properties userAccesses, userGroupAccesses, publicAccess, externalAccess. In order to keep the web api backward compatibility we have been supported both new and legacy properties our web api and all related features. However, in order to implement new features and keep the code base clean we need to remove the legacy format in 2.41. So from this version, you will not get those properties returned from our web api : `userAccesses`, `userGroupAccesses`, `publicAccess`, `externalAccess`. Instead, those properties can be accessed in new `sharing` properties as documented [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#new-sharing-object).
 
 - **Breaking change in Dashboard App**: in 2.40 and older versions, Users can view Dashboard content even without `METADATA_READ` permission to all metadata objects linked to DashboardItems. That is possible because of a loophole in our web api which allows any User to see details of any metadata object if the `uid` is known. This loophole has been causing issues for a long time so we decided to remove it in 2.41. As a result, many Users will not be able to view Dashboards because they don't have enough `METADATA_READ` permission of the Dashboard content. In order to fix it, the System Administrator or the Dashboard owner can make use of the feature [Cascade sharing for Dashboard](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#cascade-sharing-for-dashboard) to grant required permissions to affected Users.
 
@@ -91,7 +91,6 @@ Following parameters were removed as including or excluding fields from the JSON
 * `/tracker/trackedEntities?skipMeta`
 * `/tracker/events?skipMeta`
 * `/tracker/events?skipEventId`
-
 
 The `index` field of an entity in the report of a tracker import was removed.
 When importing tracker entities using `POST /tracker` endpoint, the response follow the format described [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#import-summary-structure).
@@ -188,14 +187,13 @@ comma `,` instead of semicolon `;`. This is to ensure UIDs are consistently sepa
 across all DHIS2 endpoints.
 
 The following fields are affected
-* `event.attributeCategoryOptions` (as well as an event returned as part of a relationship
-`from`/`to`)
+* `event.attributeCategoryOptions` (as well as an event returned as part of a relationship `from/to)
 
 The following query parameters accepting one or more semicolon separated UIDs are deprecated in
 favor of a parameter accepting **comma separated** UIDs. Names are now also consistently using
 plural to indicate more than one UID is allowed.
 
-`/tracker/trackedEntity`
+`/tracker/trackedEntities`
 * `assignedUsers` replaces `assignedUser`
 * `orgUnits` replaces `orgUnit`
 * `trackedEntities` replaces `trackedEntity`
