@@ -14,14 +14,16 @@
 #### Unlogged tables
 Analytics unlogged tables are now enabled (`on`) by default. If enabled, this might boost the analytics table export process significantly. But this comes with a cost: "unlogged" tables cannot be replicated. It means that clustering won't be possible. Also, analytics tables will be automatically truncated if PostgreSQL is suddenly reset (abrupt reset/crash). If you cannot afford the costs mentioned above, you should disable it (set to `off`). It should be set in `dhis.conf`, ie: `analytics.table.unlogged = off`
 
-#### Resource tables (may break some existing scripts out there)
+#### Resource tables (***may break*** some existing scripts out there)
 An underscore ("_") historically prefixes the analytics resource tables.
 But in this release, this has changed. Now, the resource tables will be prefixed by "rs_". ie.:
 
 `_categorystructure` -> `rs_categorystructure`
 
 In the example above, before this release, the respective resource table used to be named `_categorystructure`.
-Now, it's named `rs_categorystructure`.
+Starting from this release, it will be named `rs_categorystructure`.
+
+Because of this change some custom scripts, relying on those tables, might break. So, be aware of that.
 
 #### Tracked Entity Attribute Update Script Enhancement
 
