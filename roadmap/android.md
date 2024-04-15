@@ -112,18 +112,42 @@
 
 
 
-### 2.41 / 2.10
+### 2.41 / 3.0
 
-- Generic Features
-    -   [ ] Support custom icons [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5123)
-   
+- User experience
+    -   [x] Support custom icons  [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-207)
+    -   [x] Support for customized tracker terminology [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas?selectedIssue=ROADMAP-201)
+    -   [x] Support for multiselect value type [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-72&issueViewSection=comments)
+    -   [x] Improvements in forms layout [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas?selectedIssue=ROADMAP-204)
+    -   [x] Improve TEI search User Experience [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas?selectedIssue=ROADMAP-203)
+    -   [x] Improve TEI dashboard User Experience [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas?selectedIssue=ROADMAP-205)
+    -   [x] New Inputs for value types [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-293)
+    -   [x] Improvements in tracker programs data entry flow [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-294)
+    -   [x] Improve app behaviour when working in offline mode [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-295)
+ 
+- Offline Analytics
+    -   [x] Line listing support [Jira](https://dhis2.atlassian.net/browse/ROADMAP-206)
+    -   [x] Configurable basemap layer [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-209&issueViewSection=deliver)
+
+
+-   Mobile Implementation Support
+    -   [x] Import/export database [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-210)
+    -   [x] Improve end-user config error feedback [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-296)
+             
+-   Maintenance/Performance
+    -   [x] Improve app navigation performance for high number of TEIs [Jira](https://dhis2.atlassian.net/jira/polaris/projects/ROADMAP/ideas/view/4066207?selectedIssue=ROADMAP-208) 
+       
+
+### 2.42 / 3.1
+
+- Work in progress...
+
+<!--
 -   Data entry
     -   [ ] Support external barcode scanner [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5048)
 
-
 - Offline Analytics
     -   [ ] [Evolve based on use and feedback from the community](https://jira.dhis2.org/browse/ANDROAPP-2557)
-
 
 -   Notifications & Messaging
     -   [ ] [Push notifications](https://jira.dhis2.org/browse/ANDROAPP-2962)
@@ -136,16 +160,15 @@
     -   [ ] [Light Sync - only records updated offline](https://jira.dhis2.org/browse/ANDROAPP-1702)
 
 -   Mobile Implementation Support
-    -   [ ] Support user navigate from sync error to affected data [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5088)
+    -   [ ] [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform
     -   [ ] Promote MDM support through documentation available and explore agreements
     -   [ ] [Display sync status in multi-user accounts screen](https://dhis2.atlassian.net/browse/ANDROAPP-4981)
     -   [ ] [Request sync from outside the App](https://jira.dhis2.org/browse/ANDROAPP-2899)
-    -   [ ] [Improve error log and expose in the Android Settings webapp](https://jira.dhis2.org/browse/ANDROAPP-1655) +[Issue 2](https://jira.dhis2.org/browse/ANDROAPP-1140) (**dependency** platform)
-    -   [ ] [Import/export db](https://jira.dhis2.org/browse/ANDROAPP-2474)
     -   [ ] Display errors in Indicators configuration [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-5021)
 
 - Quality 
--     - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
+    - [ ] Optimize performance of Sync Process [Jira](https://dhis2.atlassian.net/browse/ANDROSDK-1609)
+
 - Generic Features
     -   [ ] Multicalendar (date picker, periods, analysis)  
 
@@ -176,3 +199,5 @@
 -   Self reporting (TEI App) - _Prototype_
     -   [ ] Platform for authenticating from TEI credentials (**dependency** platform)
     -   [ ] TEI App
+-->
+
