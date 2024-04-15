@@ -71,26 +71,25 @@
     -   [ ] Metadata merge functionality
     -   [ ] Improved metadata dependency export
 
-### 2.41 or later
+### 2.41
 -   Maintenance app
     -  [ ] New version of maintenance app initial release
     
 -   New login app with customisation options
 
 -   Metadata management
-    -   [ ] Metadata import audit log
     -   [ ] Metadata merge functionality
  
 - Data Entry
    -   [ ] New customisation options for aggregate data entry form
 
 - Platform
-    -   [ ] Remove Struts completely 
     -   [ ] Aggregate Data exchange configuration UI
     -   [ ] Job schedular configuration UI
     -   [ ] Integrity Check Configuration UI
     -   [ ] Accessibility improvements of UI library
     -   [ ] Multi-calendar support for import/export app
+    -   [ ] Multi-platform Expression parser 
 
 
 ### Always Ongoing
