@@ -1,4 +1,4 @@
-## Tracker
+## Capture (Tracker, Events)
 
 ### 2.41
 -   Feature parity in Capture app
