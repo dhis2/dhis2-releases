@@ -1,13 +1,70 @@
-# 2.41 Upgrade Notes
+# DHIS2 Version 41 Upgrade Notes
 
-> :warning: **Please ensure you have read the upgrade notes from the [PREVIOUS RELEASE](../2.40/README.md), if upgrading from an earlier version**
 
-## API
+Welcome to the upgrade notes for DHIS2 version 41. 
+
+> **It is important to be familiar with the contents of these notes *before* attempting an upgrade.**
+> 
+> :warning: **Please ensure you have also read the upgrade notes from the [PREVIOUS RELEASE](../2.40/README.md), if upgrading from an earlier version**
+
+
+To help you navigate the document, here's a detailed table of contents.
+
+## Table of Contents
+
+  - [Prerequisites](#prerequisites)
+  - [API Changes](#api-changes)
+    - [Sharing](#sharing)
+    - [Analytics](#analytics)
+      - [Unlogged tables](#unlogged-tables)
+      - [Resource tables (***may break*** some existing scripts out there)](#resource-tables-may-break-some-existing-scripts-out-there)
+      - [Tracked Entity Attribute Update Script Enhancement](#tracked-entity-attribute-update-script-enhancement)
+        - [Verifying which attributes will be affected:](#verifying-which-attributes-will-be-affected)
+    - [Tracker](#tracker)
+      - [Breaking Changes](#breaking-changes)
+      - [ACL tracker export breaking changes](#acl-tracker-export-breaking-changes)
+      - [Deprecated APIs](#deprecated-apis)
+        - [Pagination](#pagination)
+        - [Semicolon as separator for identifiers (UID)](#semicolon-as-separator-for-identifiers-uid)
+        - [Naming](#naming)
+          - [Deprecated Endpoints](#deprecated-endpoints)
+          - [Deprecated Keys in API Response Bodies](#deprecated-keys-in-api-response-bodies)
+        - [FollowUp spelling fix](#followup-spelling-fix)
+    - [Metadata](#metadata)
+  - [Database](#database)
+    - [Tracker](#tracker-1)
+      - [Breaking Changes: renamed tables and columns](#breaking-changes-renamed-tables-and-columns)
+      - [Renamed Tables](#renamed-tables)
+      - [Renamed Columns](#renamed-columns)
+      - [Postgres Reference](#postgres-reference)
+  - [Deprecations and Removals](#deprecations-and-removals)
+
+
+<!--
+1. [Functional Changes](#functional-changes)
+2. [Performance Enhancements](#performance-enhancements)
+3. [Security](#security) 
+4.  [Known Issues](#known-issues)
+5.  [Additional Notes](#additional-notes) 
+-->
+
+---
+## Prerequisites
+
+> **Important**
+> Version 41 of DHIS2 **now requires Java 17** runtime environment.
+
+
+## API Changes
 ### Sharing
 
-- **Legacy Sharing properties are removed**: from 2.36 a new `sharing` property has been introduced in order to replace the legacy sharing properties userAccesses, userGroupAccesses, publicAccess, externalAccess. In order to keep the web api backward compatibility we have been supported both new and legacy properties our web api and all related features. However, in order to implement new features and keep the code base clean we need to remove the legacy format in 2.41. So from this version, you will not get those properties returned from our web api : `userAccesses`, `userGroupAccesses`, `publicAccess`, `externalAccess`. Instead, those properties can be accessed in new `sharing` properties as documented [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#new-sharing-object).
+- **Legacy Sharing properties are removed**: from 2.36 a new `sharing` property has been introduced in order to replace the legacy sharing properties userAccesses, userGroupAccesses, publicAccess, externalAccess. In order to keep the web api backward compatibility we have been supported both new and legacy properties our web api and all related features. However, in order to implement new features and keep the code base clean we need to remove the legacy format in 2.41. So from this version, you will not get those properties returned from our web api :
+  
+  `userAccesses`, `userGroupAccesses`, `publicAccess`, `externalAccess`
 
-- **Breaking change in Dashboard App**: in 2.40 and older versions, Users can view Dashboard content even without `METADATA_READ` permission to all metadata objects linked to DashboardItems. That is possible because of a loophole in our web api which allows any User to see details of any metadata object if the `uid` is known. This loophole has been causing issues for a long time so we decided to remove it in 2.41. As a result, many Users will not be able to view Dashboards because they don't have enough `METADATA_READ` permission of the Dashboard content. In order to fix it, the System Administrator or the Dashboard owner can make use of the feature [Cascade sharing for Dashboard](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#cascade-sharing-for-dashboard) to grant required permissions to affected Users.
+  Instead, those properties can be accessed in new `sharing` properties as documented [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#new-sharing-object).
+
+- **Breaking change in Dashboard App**: in 2.40 and older versions, Users can view Dashboard content even without `METADATA_READ` permission to all metadata objects linked to DashboardItems. That is possible because of a loophole in our web api which allows any User to see details of any metadata object if the `uid` is known. This loophole has been causing issues for a long time so it has been removed in 2.41. As a result, many Users will not be able to view Dashboards because they don't have enough `METADATA_READ` permission of the Dashboard content. In order to fix it, the System Administrator or the Dashboard owner can make use of the feature [Cascade sharing for Dashboard](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#cascade-sharing-for-dashboard) to grant required permissions to affected Users.
 
 ### Analytics
 
@@ -15,7 +72,7 @@
 Analytics unlogged tables are now enabled (`on`) by default. If enabled, this might boost the analytics table export process significantly. But this comes with a cost: "unlogged" tables cannot be replicated. It means that clustering won't be possible. Also, analytics tables will be automatically truncated if PostgreSQL is suddenly reset (abrupt reset/crash). If you cannot afford the costs mentioned above, you should disable it (set to `off`). It should be set in `dhis.conf`, ie: `analytics.table.unlogged = off`
 
 #### Resource tables (***may break*** some existing scripts out there)
-An underscore ("_") historically prefixes the analytics resource tables.
+An underscore (`_`) historically prefixes the analytics resource tables.
 But in this release, this has changed. Now, the resource tables will be prefixed by "rs_". ie.:
 
 `_categorystructure` -> `rs_categorystructure`
@@ -72,13 +129,13 @@ group by uid, valuetype, description;
 
 DROP function if exists can_be_casted(s text, type text);
 ```
-> [!NOTE]
+> **Note**
 > It's unnecessary to manually run the update since the system will do it automatically on the next system startup.
 
-> [!NOTE]
+> **Note**
 > You can also use this migration to identify the TEAs you need to correct if you *do not* want the type to be automatically changed.
 
-> [!IMPORTANT]
+> **Important**
 > The first time the new version boots up, the script will be automatically executed (the first startup after upgrading might be slightly slower because of this script running).
 
 ### Tracker
@@ -113,7 +170,9 @@ The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GE
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### ACL tracker export breaking changes
-** Unless explicitly specified otherwise, the subsequent breaking changes are applicable exclusively to versions 2.41 and beyond.
+
+Unless explicitly specified otherwise, the subsequent breaking changes are applicable exclusively to versions 2.41 and beyond.
+
 1. Validity of `/events` and `/tracker/events` requests
     * [TECH-1630](https://dhis2.atlassian.net/browse/TECH-1630): A request to `/events` and `/tracker/events` is now considered valid if the supplied organization unit is within the user's search scope, regardless of the program access level. This aligns with the current behavior of `/tracker/trackedEntities` and `/tracker/enrollments`. In previous versions, specifying a protected or closed program or omitting the program in the request, coupled with an organization unit outside the user's capture scope, would result in an exception. This change is effective from version 2.38 onwards.
     * [TECH-1663](https://dhis2.atlassian.net/browse/TECH-1663): Additionally, in `/events` and `/tracker/events`, a request using the `ACCESSIBLE` mode without specifying a program will now return all events in the user's search scope (in `OPEN` or `AUDITED` programs) and all events in the user's capture scope (in `PROTECTED` or `CLOSED` programs). Formerly, it would only return events from the user's capture scope. This change is also effective from version 2.38 onwards.
@@ -169,20 +228,21 @@ have been deprecated in favor of a `pager` object. Both the flat pagination fiel
 the nested `pager` are returned as of 2.41 if pagination is enabled. The flat fields will be removed
 in a future release.
 
-```json
-{
-  "pager": {
-    "page": 3,
-    "pageSize": 2,
-    "total": 373570,
-    "pageCount": 186785,
-  },
-  "page": 3,
-  "pageSize": 2,
-  "total": 373570,
-  "pageCount": 186785,
-}
-```
+> **Example**
+>  ```json
+>  {
+>  "pager": {
+>  "page": 3,    
+>  "pageSize": 2,
+>      "total": 373570,
+>      "pageCount": 186785,
+>    },
+>    "page": 3,
+>    "pageSize": 2,
+>    "total": 373570,
+>    "pageCount": 186785,
+>  }
+>  ```
 
 The actual data previously returned in `instances` is returned in a key named after the plural of
 the returned entity itself. For example `/tracker/trackedEntities` returns tracked entities in key
@@ -207,81 +267,66 @@ The following query parameters accepting one or more semicolon separated UIDs ar
 favor of a parameter accepting **comma separated** UIDs. Names are now also consistently using
 plural to indicate more than one UID is allowed.
 
-`/tracker/trackedEntities`
-* `assignedUsers` replaces `assignedUser`
-* `orgUnits` replaces `orgUnit`
-* `trackedEntities` replaces `trackedEntity`
+| Endpoint                  | Deprecated Parameter | New Parameter            |
+|---------------------------|----------------------|--------------------------|
+| `/tracker/trackedEntities`| `assignedUser`       | `assignedUsers`          |
+| `/tracker/trackedEntities`| `orgUnit`            | `orgUnits`               |
+| `/tracker/trackedEntities`| `trackedEntity`      | `trackedEntities`        |
+| `/tracker/enrollments`    | `orgUnit`            | `orgUnits`               |
+| `/tracker/enrollments`    | `enrollment`         | `enrollments`            |
+| `/tracker/events`         | `assignedUser`       | `assignedUsers`          |
+| `/tracker/events`         | `attributeCos`       | `attributeCategoryOptions`|
+| `/tracker/events`         | `event`              | `events`                 |
 
-`/tracker/enrollments`
-* `orgUnits` replaces `orgUnit`
-* `enrollments` replaces `enrollment`
-
-`/tracker/events`
-* `assignedUsers` replaces `assignedUser`
-* `attributeCategoryOptions` replaces `attributeCos`
-* `events` replaces `event`
+Please refer to the new parameters when working with the DHIS2 API on these specific endpoints.
 
 ##### Naming
 
-Tracker names have changed over time. In order to provide a consistent API we have deprecated the
-following query parameters and paths in favor of new ones consistently using `trackedEntity`,
-`enrollment` and `event`.
+Tracker names have changed over time. In order to provide a consistent API we have deprecated the following query parameters and paths in favor of new ones consistently using `trackedEntity`, `enrollment` and `event`.
 
-`/tracker/relationships`
-* `trackedEntity` replaces `tei`
+The table below summarizes the API changes in terminology from old tracker names to new ones:
 
-`/tracker/events`
-* `attributeCategoryCombo` replaces `attributeCc`
+| Endpoint                          | Deprecated Parameter/Path    | New Parameter/Path   |
+|-----------------------------------|------------------------------|----------------------|
+| `/tracker/relationships`          | `tei`                        | `trackedEntity`      |
+| `/tracker/events`                 | `attributeCc`                | `attributeCategoryCombo` |
+| `/tracker/ownership/transfer`     | `trackedEntityInstance`      | `trackedEntity`      |
+| `/tracker/ownership/override`     | `trackedEntityInstance`      | `trackedEntity`      |
+| `/messages/`                      | `programInstance`            | `enrollment`         |
+| `/messages/`                      | `programStageInstance`       | `event`              |
+| `/messages/scheduled/sent`        | `programInstance`            | `enrollment`         |
+| `/messages/scheduled/sent`        | `programStageInstance`       | `event`              |
+| `/audits/trackedEntityDataValue`  | `psi`                        | `events`             |
+| `/audits/trackedEntityAttributeValue` | `tei`                   | `trackedEntities`    |
+| `/audits/trackedEntityInstance`   | `tei`                        | `trackedEntities`    |
+| `/programNotificationInstances`   | `programInstance`            | `enrollment`         |
+| `/programNotificationInstances`   | `programStageInstance`       | `event`              |
+| `/tracker/trackedEntities`        | `ouMode`                     | `orgUnitMode`        |
+| `/tracker/enrollments`            | `ouMode`                     | `orgUnitMode`        |
+| `/tracker/events`                 | `ouMode`                     | `orgUnitMode`        |
 
-`/tracker/ownership/transfer`
-* `trackedEntity` replaces `trackedEntityInstance`
+###### Deprecated Endpoints
 
-`/tracker/ownership/override`
-* `trackedEntity` replaces `trackedEntityInstance`
+| Deprecated Endpoint                                     | New Endpoint                                              |
+|---------------------------------------------------------|-----------------------------------------------------------|
+| `/maintenance/softDeletedTrackedEntityInstanceRemoval`  | `/maintenance/softDeletedTrackedEntityRemoval`            |
+| `/maintenance/softDeletedProgramInstanceRemoval`        | `/maintenance/softDeletedEnrollmentRemoval`               |
+| `/maintenance/softDeletedProgramStageInstanceRemoval`   | `/maintenance/softDeletedEventRemoval`                    |
+| `/audits/trackedEntityInstance`                         | `/audits/trackedEntity`                                   |
 
-`/messages/`
-* `enrollment` replaces `programInstance`
-* `event` replaces `programStageInstance`
+###### Deprecated Keys in API Response Bodies
 
-`/messages/scheduled/sent`
-* `enrollment` replaces `programInstance`
-* `event` replaces `programStageInstance`
+| Deprecated Key              | New Key                | Affected API Response                    |
+|-----------------------------|------------------------|------------------------------------------|
+| `trackedEntityInstance`     | `trackedEntity`        | `/api/dataSummary` in `objectCounts`     |
+| `programInstance`           | `enrollment`           | `/api/dataSummary` in `objectCounts`     |
+| `programStageInstance`      | `event`                | `/api/dataSummary` in `objectCounts`     |
+| `trackedEntityInstance`     | `trackedEntity`        | `/api/system/objectCounts`               |
+| `programInstance`           | `enrollment`           | `/api/system/objectCounts`               |
+| `programStageInstance`      | `event`                | `/api/system/objectCounts`               |
 
-`/audits/trackedEntityDataValue`
-* `events` replaces `psi`
+Users are encouraged to familiarize themselves with the new terminology to ensure consistency in API usage moving forward.
 
-`/audits/trackedEntityAttributeValue`
-* `trackedEntities` replaces `tei`
-
-`/audits/trackedEntityInstance`
-* `trackedEntities` replaces `tei`
-
-`/programNotificationInstances`
-* `enrollment` replaces `programInstance`
-* `event` replaces `programStageInstance`
-
-`/tracker/trackedEntities`
-`/tracker/enrollments`
-`/tracker/events`
-* `orgUnitMode` replaces `ouMode`
-
-The following endpoints are deprecated
-
-* `/maintenance/softDeletedTrackedEntityRemoval` replaces `/maintenance/softDeletedTrackedEntityInstanceRemoval`
-* `/maintenance/softDeletedEnrollmentRemoval` replaces `/maintenance/softDeletedProgramInstanceRemoval`
-* `/maintenance/softDeletedEventRemoval` replaces `/maintenance/softDeletedProgramStageInstanceRemoval`
-* `/audits/trackedEntity` replaces `/audits/trackedEntityInstance`
-
-We have deprecated keys
-
-* `trackedEntity` replaces `trackedEntityInstance`
-* `enrollment` replaces `programInstance`
-* `event` replaces `programStageInstance`
-
-in the following API response bodies
-
-* `/api/dataSummary` in the `objectCounts` object
-* `/api/system/objectCounts`
 
 ##### FollowUp spelling fix
 
@@ -410,3 +455,5 @@ FROM pg_class
 WHERE relname = 'programstageinstance_pkey';
 ```
 Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
+
+## Deprecations and Removals
