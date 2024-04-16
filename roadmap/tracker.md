@@ -8,14 +8,16 @@
 -   Usability / User facing features
     -   [X] Multiselect for data elements
     -   [X] Growth charts
+         -   [x] Head circumferenec for age
+         -   [X] Length/height for age
+         -   [X] Weight for age
+         -   [X] Weight for length/height
     -   [X] Ownership transfer between org units
     -   [X] Allow one time referrals between org units
-    -   [X] Enhanced change log
-    -   [X] verbose enabled for error details
-      
--   Working lists
     -   [X] Enhanced functionality for program stage and tei working lists
-    -   [X] Images in working lists
+        -   [x] Images in working lists
+    -   [X] Enhanced change log
+    -   [X] Verbose enabled for error details
 
 -   Extensibility
     -   [x] Plugins: Enabling the easier introduction of external applications and widgets
