@@ -52,6 +52,7 @@ To help you navigate the document, here's a detailed table of contents.
 ## Prerequisites
 
 > **Important**
+> 
 > Version 41 of DHIS2 **now requires Java 17** runtime environment.
 
 
