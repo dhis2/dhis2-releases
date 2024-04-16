@@ -8,7 +8,7 @@
 -   Usability / User facing features
     -   [X] Multiselect for data elements
     -   [X] Growth charts
-         -   [x] Head circumferenec for age
+         -   [x] Head circumference for age
          -   [X] Length/height for age
          -   [X] Weight for age
          -   [X] Weight for length/height
