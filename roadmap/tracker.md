@@ -1,7 +1,7 @@
 ## Capture (Tracker, Events)
 
 ### 2.41
--   Feature parity in Capture app
+-   Feature parity in Capture app with old Tracker Capture
     -   [x] Relationship support
         -   [x] Support new model for configuring attributes to display in relationships
 
