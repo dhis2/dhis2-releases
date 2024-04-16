@@ -165,9 +165,13 @@ Following parameters were removed as including or excluding fields from the JSON
 * `/tracker/events?skipEventId`
 
 The `index` field of an entity in the report of a tracker import was removed.
+
 When importing tracker entities using `POST /tracker` endpoint, the response follow the format described [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#import-summary-structure).
+
 The `index` field has been removed from the `objectsReport` as the objects are now ordered in the same way as in the request.
+
 The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GET /tracker/events` endpoints, so it is not anymore possible to order on this field.
+
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### ACL tracker export breaking changes
