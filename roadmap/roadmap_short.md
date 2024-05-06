@@ -43,8 +43,6 @@ Search form improved for cleaner, intuitive experience. Buttons now explicit for
 DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
 
 
-### TEAM-UNASSIGNED
-
 ### Tracker
 
 #### Android Capture
