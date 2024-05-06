@@ -13,7 +13,7 @@ Android App now notifies users when actions requiring internet connection are ta
 Improved tracker program user flow with confirmation dialog for TEI deletion, redesigned scheduling event dialog, streamlined org. unit selection for single access pre-filled, and program rule "Hide program stage" alignment with Capture web.  
 
 ##### [New Inputs for value types in Android App [ROADMAP-293]](https://dhis2.atlassian.net/issues/ROADMAP-293)  
-Redesigned inputs for all value types in v41, improving data entry. Signature input and complete legend description enhance the experience. New fields have default settings, and admins have the option to opt-out via the Android Settings web app.  
+Redesigned inputs for all value types in v2.10, improving data entry. Signature input and complete legend description enhance the experience. New fields have default settings, and admins have the option to opt-out via the Android Settings web app.  
 
 ##### [Import/export App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
 Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
