@@ -10,6 +10,38 @@ Improved tracker program user flow with confirmation dialog for TEI deletion, re
 ##### [New Inputs for value types in Android App [ROADMAP-293]](https://dhis2.atlassian.net/issues/ROADMAP-293)  
 Redesigned inputs for all value types in v41, improving data entry. Signature input and complete legend description enhance the experience. New fields have default settings, and admins have the option to opt-out via the Android Settings web app.  
 
+### TEAM-UNASSIGNED
+
+#### Android Capture
+##### [Improve App behaviour when working in offline mode  [ROADMAP-295]](https://dhis2.atlassian.net/issues/ROADMAP-295)  
+Android App now notifies users when actions requiring internet connection are tapped without connectivity. Improves behavior of non-responsive parts like sync buttons when no connection is available.  
+##### [Import/export App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
+Users can export encrypted local database for troubleshooting. Admins can import to replicate exact environment for diagnosing sync issues, ensuring data integrity. Access to database requires user credentials for security.  
+##### [Configurable basemap layer [ROADMAP-209]](https://dhis2.atlassian.net/issues/ROADMAP-209)  
+DHIS2 Android App now supports custom map layers configured in Maps Web App. These layers are downloaded and displayed alongside default ones, enhancing mapping capabilities.  
+##### [Improve app navigation performance for high number of TEIs  [ROADMAP-208]](https://dhis2.atlassian.net/issues/ROADMAP-208)  
+Implementations are more and more demanding in terms of offline need of individual records. This version of the app has been reviewed to optimize performance when there are big numbers of TEIs downloaded locally.  
+##### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
+DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
+##### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
+Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
+##### [Improve TEI dashboard user experience [ROADMAP-205]](https://dhis2.atlassian.net/issues/ROADMAP-205)  
+TEI dashboard's bottom part, displaying program stages, revamped for a cleaner look. Events list now offers more space, less non-critical info. Plus, create event button relocated to top (timeline view).  
+##### [Improvements in forms layout [ROADMAP-204]](https://dhis2.atlassian.net/issues/ROADMAP-204)  
+In this version, event/enrollment details like event date, org unit, coordinates, and category combinations are integrated within the form. They're readily accessible as the first section, collapsed after filling for efficient data collection.  
+##### [Improve TEI search user experience [ROADMAP-203]](https://dhis2.atlassian.net/issues/ROADMAP-203)  
+Search form improved for cleaner, intuitive experience. Buttons now explicit for search/creation. TEI search with barcodes streamlined: Unique result opens TEI Dashboard; multiple results show TEI list; no results prompt creation or external search.  
+##### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
+DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
+
+#### Global (App Shell)
+##### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
+Serve the app shell independent of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  
+
+#### Capture (web)
+##### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
+Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
+
 ### Platform
 
 #### Maintenance
