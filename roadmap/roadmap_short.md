@@ -15,6 +15,9 @@ Improved tracker program user flow with confirmation dialog for TEI deletion, re
 ##### [New Inputs for value types in Android App [ROADMAP-293]](https://dhis2.atlassian.net/issues/ROADMAP-293)  
 Redesigned inputs for all value types in v41, improving data entry. Signature input and complete legend description enhance the experience. New fields have default settings, and admins have the option to opt-out via the Android Settings web app.  
 
+##### [Import/export App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
+Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
+
 ##### [Configurable basemap layer [ROADMAP-209]](https://dhis2.atlassian.net/issues/ROADMAP-209)  
 DHIS2 Android App now supports custom map layers configured in Maps Web App. These layers are downloaded and displayed alongside default ones, enhancing mapping capabilities.  
 
@@ -40,12 +43,22 @@ Search form improved for cleaner, intuitive experience. Buttons now explicit for
 DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
 
 
-### Platform
+### TEAM-UNASSIGNED
+
+### Tracker
 
 #### Android Capture
-##### [Import/export App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
-Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
+##### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72)  
+Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
+*Components: Android Capture, Capture (web)*  
 
+
+#### Capture (web)
+##### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
+Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
+
+
+### Platform
 
 #### Global (App Shell)
 ##### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
@@ -89,21 +102,6 @@ The Data Exchange app has been updated to allow for creation and editing of the 
 #### Data Administration
 ##### [Integrity Check Configuration UI [ROADMAP-41]](https://dhis2.atlassian.net/issues/ROADMAP-41)  
 The Integrity check app has been given an extensive update, allowing individual check runs, separating longer checks, and providing informative recommendations.  
-
-
-### TEAM-UNASSIGNED
-
-### Tracker
-
-#### Android Capture
-##### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72)  
-Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
-*Components: Android Capture, Capture (web)*  
-
-
-#### Capture (web)
-##### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
-Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
 
 
 ### Analytics
