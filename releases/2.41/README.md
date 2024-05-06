@@ -461,4 +461,8 @@ WHERE relname = 'programstageinstance_pkey';
 ```
 Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
 
+### Sql Views and Custom Scripts
+Given the new database naming conventions, if you run **custom SQL scripts** or have created **SQL 
+views**, you might need to adapt to the breaking changes previously described.
+
 ## Deprecations and Removals
