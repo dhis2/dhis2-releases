@@ -138,15 +138,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/2932b75a-0a45-48be-82d7-e78e2e219ac1",
-          "caption": "",
-          "created": 1673554932838,
-          "description": "",
-          "id": "2932b75a-0a45-48be-82d7-e78e2e219ac1",
-          "lastUpdated": 1673554932838,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/aac2e47c-1443-4dd7-a047-dbb528192686",
           "caption": "",
           "created": 1673554928415,
@@ -162,6 +153,15 @@
           "description": "",
           "id": "5afd2704-7cca-404b-9377-b66720cc38e6",
           "lastUpdated": 1673554914299,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/saudigitus-hisp-mozambique/d3b6518e-734b-4ad8-aac3-d74a76101ed2/2932b75a-0a45-48be-82d7-e78e2e219ac1",
+          "caption": "",
+          "created": 1673554932838,
+          "description": "",
+          "id": "2932b75a-0a45-48be-82d7-e78e2e219ac1",
+          "lastUpdated": 1673554932838,
           "logo": false
         }
       ],
@@ -295,30 +295,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/835094e5-4813-48be-b676-bccd6bd4df67",
-          "caption": "",
-          "created": 1624314967152,
-          "description": "",
-          "id": "835094e5-4813-48be-b676-bccd6bd4df67",
-          "lastUpdated": 1624314967152,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "caption": "",
-          "created": 1624314977424,
-          "description": "",
-          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "lastUpdated": 1624314977424,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/4b115e05-12ec-4660-aa6d-e2b04f69c8be",
           "caption": "",
           "created": 1624315022401,
           "description": "",
           "id": "4b115e05-12ec-4660-aa6d-e2b04f69c8be",
           "lastUpdated": 1624315022401,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "caption": "",
+          "created": 1624314674393,
+          "description": "",
+          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "lastUpdated": 1624314674393,
           "logo": false
         },
         {
@@ -331,12 +322,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
           "caption": "",
-          "created": 1624314674393,
+          "created": 1624314977424,
           "description": "",
-          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
-          "lastUpdated": 1624314674393,
+          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
+          "lastUpdated": 1624314977424,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/835094e5-4813-48be-b676-bccd6bd4df67",
+          "caption": "",
+          "created": 1624314967152,
+          "description": "",
+          "id": "835094e5-4813-48be-b676-bccd6bd4df67",
+          "lastUpdated": 1624314967152,
           "logo": false
         }
       ],
@@ -393,12 +393,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/a5438dca-45e8-4c32-9027-ef76dfb88ca8",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
           "caption": "",
-          "created": 1685105890042,
+          "created": 1685105856008,
           "description": "",
-          "id": "a5438dca-45e8-4c32-9027-ef76dfb88ca8",
-          "lastUpdated": 1685105890042,
+          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "lastUpdated": 1685105856008,
           "logo": false
         },
         {
@@ -411,12 +411,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/a5438dca-45e8-4c32-9027-ef76dfb88ca8",
           "caption": "",
-          "created": 1685105856008,
+          "created": 1685105890042,
           "description": "",
-          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
-          "lastUpdated": 1685105856008,
+          "id": "a5438dca-45e8-4c32-9027-ef76dfb88ca8",
+          "lastUpdated": 1685105890042,
           "logo": false
         }
       ],
@@ -918,6 +918,15 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
+          "caption": "",
+          "created": 1600683931880,
+          "description": "",
+          "id": "ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
+          "lastUpdated": 1600683931880,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/5757bb9f-e7fc-4be4-b03a-9fb56bbdb60a",
           "caption": "",
           "created": 1600683933014,
@@ -933,15 +942,6 @@
           "description": "",
           "id": "02cb89f0-6f10-486d-9870-7dd2e9e0b1bf",
           "lastUpdated": 1600683932885,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
-          "caption": "",
-          "created": 1600683931880,
-          "description": "",
-          "id": "ed6e3553-0d22-45d3-abc6-4b5e5eaa0e5a",
-          "lastUpdated": 1600683931880,
           "logo": false
         }
       ],
@@ -1064,21 +1064,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
-          "caption": "",
-          "created": 1708002032628,
-          "description": "",
-          "id": "136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
-          "lastUpdated": 1708002032628,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/fc86862f-1e9b-4940-aafb-df0ad5dd6d79",
           "caption": "",
           "created": 1708002032298,
           "description": "",
           "id": "fc86862f-1e9b-4940-aafb-df0ad5dd6d79",
           "lastUpdated": 1708002032298,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/d3d328b1-6870-4cf0-8931-0958bc790660",
+          "caption": "",
+          "created": 1708002032527,
+          "description": "",
+          "id": "d3d328b1-6870-4cf0-8931-0958bc790660",
+          "lastUpdated": 1708002032527,
           "logo": false
         },
         {
@@ -1091,12 +1091,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/d3d328b1-6870-4cf0-8931-0958bc790660",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
           "caption": "",
-          "created": 1708002032527,
+          "created": 1708002032628,
           "description": "",
-          "id": "d3d328b1-6870-4cf0-8931-0958bc790660",
-          "lastUpdated": 1708002032527,
+          "id": "136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
+          "lastUpdated": 1708002032628,
           "logo": false
         },
         {
@@ -1554,11 +1554,22 @@
       "status": "APPROVED",
       "id": "92b75fd0-34cc-451c-942f-3dd0f283bcbd",
       "created": 1646225950625,
-      "lastUpdated": 1714873513794,
+      "lastUpdated": 1715478323388,
       "name": "Capture",
       "description": "The Capture app serves as a replacement for the Event Capture app and Tracker Capture apps.\n\nIn the Capture app you register events that occurred at a particular time and place. These events can either be recorded as one-off events for a given place and time, or they can be linked to a person or similar entity through an enrollment in a program.",
       "coreApp": true,
       "versions": [
+        {
+          "created": 1715478323388,
+          "demoUrl": "",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/dhis2/capture_100.68.8.zip",
+          "id": "9d16b9b8-209b-423d-9ee9-8d549d689860",
+          "lastUpdated": 1715478323388,
+          "maxDhisVersion": "",
+          "minDhisVersion": "2.38",
+          "version": "100.68.8",
+          "channel": "stable"
+        },
         {
           "created": 1714873513794,
           "demoUrl": "",
