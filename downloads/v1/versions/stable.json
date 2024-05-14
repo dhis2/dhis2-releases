@@ -8,9 +8,9 @@
       "releaseDate": "2023-05-10",
       "supported": true,
       "latestPatchVersion": 3,
-      "latestHotfixVersion": 0,
-      "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.3.0.war",
-      "sha256": "e80a483eebcc0a77c114bf8af24ad2eb2957b02d1d75dc2603cdc57aea98e692",
+      "latestHotfixVersion": 1,
+      "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.3.1.war",
+      "sha256": "67f4684ea6a18714c7b743ce8392ba634dbb9f7d1c9e5da55bf69aef9e17bcc7",
       "jdk": 11,
       "patchVersions": [
         {
@@ -82,6 +82,16 @@
           "url": "https://releases.dhis2.org/40/dhis2-stable-40.3.0.war",
           "sha256": "e80a483eebcc0a77c114bf8af24ad2eb2957b02d1d75dc2603cdc57aea98e692",
           "hotfix": false
+        },
+        {
+          "name": "2.40.3.1",
+          "displayName": "40.3.1",
+          "version": 3,
+          "hotfixVersion": 1,
+          "releaseDate": "2024-05-14",
+          "url": "https://releases.dhis2.org/40/dhis2-stable-40.3.1.war",
+          "sha256": "67f4684ea6a18714c7b743ce8392ba634dbb9f7d1c9e5da55bf69aef9e17bcc7",
+          "hotfix": true
         }
       ]
     }
