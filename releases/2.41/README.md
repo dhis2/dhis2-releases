@@ -172,6 +172,8 @@ The `index` field has been removed from the `objectsReport` as the objects are n
 
 The `orgUnitName` field has been removed from `GET /tracker/enrollments` and `GET /tracker/events` endpoints, so it is not anymore possible to order on this field.
 
+The `trackedEntityType` field has been removed from `GET /tracker/enrollments` endpoint.
+
 The `followup` field has been renamed to `followUp` in the response for `GET /tracker/events` CSV endpoint.
 
 #### ACL tracker export breaking changes
