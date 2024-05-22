@@ -68,7 +68,7 @@ Serve the app shell independent of individual applications.  The global shell wi
 Introducing a complete rebuild of the Maintenance App in v41. The update includes advanced filtering options, bulk sharing capabilities, and a sleeker user interface. New modules will be continuously introduced as they are developed.  
 
 #### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
-In v41, merging of indicator and indicator types is enabled, updating all references to the source indicator and facilitating metadata cleanup operations.  
+In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.  
 
 
 ### Login
@@ -77,8 +77,6 @@ In v41, a new login app built on React is introduced. This app provides customiz
 
 
 ### Data Entry
-#### [Data Entry App support for legacy custom forms [ROADMAP-45]](https://dhis2.atlassian.net/issues/ROADMAP-45)  
-Exploring a solution for legacy custom forms not being supported by the new aggregate data entry app.  
 
 #### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
 The new aggregate data entry app now supports configuration options that allow you to change the appearance of your data entry form without creating a custom form.  
