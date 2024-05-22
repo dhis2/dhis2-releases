@@ -1,5 +1,16 @@
 # DHIS2 version 40 Release Note
 
+#### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
+DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
+
+#### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72)  
+Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
+*Components: Android Capture, Capture (web)*  
+
+#### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
+DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
+
+
 ## Android
 
 ### Android Capture
@@ -24,9 +35,6 @@ DHIS2 Android App now supports custom map layers configured in Maps Web App. The
 #### [Improve app navigation performance for high number of TEIs  [ROADMAP-208]](https://dhis2.atlassian.net/issues/ROADMAP-208)  
 Implementations are more and more demanding in terms of offline need of individual records. This version of the app has been reviewed to optimize performance when there are big numbers of TEIs downloaded locally.  
 
-#### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
-DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
-
 #### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
 Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
 
@@ -39,17 +47,7 @@ In this version, event/enrollment details like event date, org unit, coordinates
 #### [Improve TEI search user experience [ROADMAP-203]](https://dhis2.atlassian.net/issues/ROADMAP-203)  
 Search form improved for cleaner, intuitive experience. Buttons now explicit for search/creation. TEI search with barcodes streamlined: Unique result opens TEI Dashboard; multiple results show TEI list; no results prompt creation or external search.  
 
-#### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
-DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
-
-
 ## Tracker
-
-### Android Capture
-#### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72)  
-Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
-*Components: Android Capture, Capture (web)*  
-
 
 ### Capture (web)
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
