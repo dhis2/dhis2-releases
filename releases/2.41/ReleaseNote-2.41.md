@@ -1,5 +1,8 @@
 # DHIS2 version 40 Release Note
 
+## DHIS2
+Features that spann accross multiple products are described in this section.
+
 #### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
 DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
 
