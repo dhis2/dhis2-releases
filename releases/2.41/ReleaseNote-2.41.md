@@ -4,40 +4,31 @@
 - Capture app parity
 - Tracked Entity cross programs line list
 - Line list available in android offline analytics
-
-## Platform
-
-### Global (App Shell)
-#### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
-Serve the app shell independent of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  
+## 
 
 ### Login
 #### [New, customizable version of the Login App [ROADMAP-46]](https://dhis2.atlassian.net/issues/ROADMAP-46)  
 In v41, a new login app built on React is introduced. This app provides customizable configuration options, allowing easy customization of the login experience to match your specific context.  
 
-### Scheduler
-#### [Scheduled job queues configuration UI [ROADMAP-43]](https://dhis2.atlassian.net/issues/ROADMAP-43)  
-In v41, the Job Scheduler app now allows configuration of grouping jobs to run in sequence or in parallel. This functionality, previously added in v40 via the API, can now be easily configured through the app interface.  
-
-#### [Scheduler app declarative architecture [ROADMAP-37]](https://dhis2.atlassian.net/issues/ROADMAP-37)  
-Introducing a new simple scheduler based on the current database state, running asynchronously to execute task configurations. This eliminates issues with the previous "black box" approach, ensuring the job triggers as specified in the configuration.  
-
-### Data Exchange
-#### [Aggregate Data Exchange configuration UI [ROADMAP-42]](https://dhis2.atlassian.net/issues/ROADMAP-42)  
-The Data Exchange app has been updated to allow for creation and editing of the data exchanges directly within the app. Making it much easier to set up exchanges and transfer data or convert tracker data into the aggregate model.  
-
-### Data Administration
-#### [Integrity Check Configuration UI [ROADMAP-41]](https://dhis2.atlassian.net/issues/ROADMAP-41)  
-The Integrity check app has been given an extensive update, allowing individual check runs, separating longer checks, and providing informative recommendations.  
+### Maintenance
+#### [Maintenance App redesign MVP [ROADMAP-47]](https://dhis2.atlassian.net/issues/ROADMAP-47)  
+Introducing the first preview of the completely new Maintenance App. In v41 we are releasing the data element sections with new modules continuously introduced as they are developed. The updated features include advanced filtering options, bulk sharing capabilities, and a sleeker user interface.   
 
 ### System wide features 
 #### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72) [[DHIS2-16211]](https://dhis2.atlassian.net/browse/DHIS2-16211)
 Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
 *Components: Android Capture, Capture (web)*  
 
+### Aggregated Data Entry
+#### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
+We are adding more configuration options to the aggregate data entry form to allow you to customise the look and feel of the data entry form without building a custom HTML form. We have started with the option to pivot categories as rows and have data elements as columns or move a category to a row. You can now also add rich text fields before and after a section.
+
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
 DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
+
+#### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
+Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
 
 #### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
 DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
@@ -54,17 +45,11 @@ Improved tracker program user flow with confirmation dialog for TEI deletion, re
 #### [New Inputs for value types in Android App [ROADMAP-293]](https://dhis2.atlassian.net/issues/ROADMAP-293)  
 Redesigned inputs for all value types in v2.10, improving data entry. Signature input and complete legend description enhance the experience. New fields have default settings, and admins have the option to opt-out via the Android Settings web app.  
 
-#### [Import/export App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
-Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
-
 #### [Configurable basemap layer [ROADMAP-209]](https://dhis2.atlassian.net/issues/ROADMAP-209)  
 DHIS2 Android App now supports custom map layers configured in Maps Web App. These layers are downloaded and displayed alongside default ones, enhancing mapping capabilities.  
 
 #### [Improve app navigation performance for high number of TEIs  [ROADMAP-208]](https://dhis2.atlassian.net/issues/ROADMAP-208)  
 Implementations are more and more demanding in terms of offline need of individual records. This version of the app has been reviewed to optimize performance when there are big numbers of TEIs downloaded locally.  
-
-#### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
-Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
 
 #### [Improve TEI dashboard user experience [ROADMAP-205]](https://dhis2.atlassian.net/issues/ROADMAP-205)  
 TEI dashboard's bottom part, displaying program stages, revamped for a cleaner look. Events list now offers more space, less non-critical info. Plus, create event button relocated to top (timeline view).  
@@ -75,23 +60,17 @@ In this version, event/enrollment details like event date, org unit, coordinates
 #### [Improve TEI search user experience [ROADMAP-203]](https://dhis2.atlassian.net/issues/ROADMAP-203)  
 Search form improved for cleaner, intuitive experience. Buttons now explicit for search/creation. TEI search with barcodes streamlined: Unique result opens TEI Dashboard; multiple results show TEI list; no results prompt creation or external search.  
 
+#### [Import/export Android App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
+Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
 
 ### Capture (web)
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
 Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
 
 
-### Maintenance
-#### [Maintenance App redesign MVP [ROADMAP-47]](https://dhis2.atlassian.net/issues/ROADMAP-47)  
-Introducing the first preview of the completely new Maintenance App. In v41 we are releasing the data element sections with new modules continuously introduced as they are developed. The updated features include advanced filtering options, bulk sharing capabilities, and a sleeker user interface.   
-
 #### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
 In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.  
 
-
-### Aggregated Data Entry
-#### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
-We are adding more configuration options to the aggregate data entry form to allow you to customise the look and feel of the data entry form without building a custom HTML form. We have started with the option to pivot categories as rows and have data elements as columns or move a category to a row. You can now also add rich text fields before and after a section.
 
 
 ### Maps
@@ -111,7 +90,25 @@ Data Visualizer application now supports the "cumulative values" setting for piv
 #### [Outlier tables in Data Visualizer [ROADMAP-146]](https://dhis2.atlassian.net/issues/ROADMAP-146)  
 The Data Visualizer application in v41 introduces support for outlier tables as a visualization type. This enhanced functionality replaces and improves upon the legacy outlier tables that were previously available in the WHO Data Quality application.  
 
-
 ### Line Listing
 #### [Tracked Entity / cross program line lists [ROADMAP-143]](https://dhis2.atlassian.net/issues/ROADMAP-143)  
 The Line Listing app now supports the creation of line lists for tracked entities; including the ability to filter on data from different programs that tracked entity is enrolled in.  
+
+### Global (App Shell)
+#### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
+Serve the app shell independent of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  
+
+### Scheduler
+#### [Scheduled job queues configuration UI [ROADMAP-43]](https://dhis2.atlassian.net/issues/ROADMAP-43)  
+In v41, the Job Scheduler app now allows configuration of grouping jobs to run in sequence or in parallel. This functionality, previously added in v40 via the API, can now be easily configured through the app interface.  
+#### [Scheduler app declarative architecture [ROADMAP-37]](https://dhis2.atlassian.net/issues/ROADMAP-37)  
+Introducing a new simple scheduler based on the current database state, running asynchronously to execute task configurations. This eliminates issues with the previous "black box" approach, ensuring the job triggers as specified in the configuration.  
+
+### Data Exchange
+#### [Aggregate Data Exchange configuration UI [ROADMAP-42]](https://dhis2.atlassian.net/issues/ROADMAP-42)  
+The Data Exchange app has been updated to allow for creation and editing of the data exchanges directly within the app. Making it much easier to set up exchanges and transfer data or convert tracker data into the aggregate model.  
+
+### Data Administration
+#### [Integrity Check Configuration UI [ROADMAP-41]](https://dhis2.atlassian.net/issues/ROADMAP-41)  
+The Integrity check app has been given an extensive update, allowing individual check runs, separating longer checks, and providing informative recommendations.  
+
