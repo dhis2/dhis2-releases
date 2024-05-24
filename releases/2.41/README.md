@@ -1,10 +1,10 @@
 # DHIS2 Version 41 Upgrade Notes
 
 
-Welcome to the upgrade notes for DHIS2 version 41. 
+Welcome to the upgrade notes for DHIS2 version 41.
 
 > **It is important to be familiar with the contents of these notes *before* attempting an upgrade.**
-> 
+>
 > :warning: **Please ensure you have also read the upgrade notes from the [PREVIOUS RELEASE](../2.40/README.md), if upgrading from an earlier version**
 
 
@@ -43,16 +43,16 @@ To help you navigate the document, here's a detailed table of contents.
 <!--
 1. [Functional Changes](#functional-changes)
 2. [Performance Enhancements](#performance-enhancements)
-3. [Security](#security) 
+3. [Security](#security)
 4.  [Known Issues](#known-issues)
-5.  [Additional Notes](#additional-notes) 
+5.  [Additional Notes](#additional-notes)
 -->
 
 ---
 ## Prerequisites
 
 > **Important**
-> 
+>
 > Version 41 of DHIS2 **now requires Java 17** runtime environment.
 
 
@@ -60,7 +60,7 @@ To help you navigate the document, here's a detailed table of contents.
 ### Sharing
 
 - **Legacy Sharing properties are removed**: from 2.36 a new `sharing` property has been introduced in order to replace the legacy sharing properties userAccesses, userGroupAccesses, publicAccess, externalAccess. In order to keep the web api backward compatibility we have been supported both new and legacy properties our web api and all related features. However, in order to implement new features and keep the code base clean we need to remove the legacy format in 2.41. So from this version, you will not get those properties returned from our web api :
-  
+
   `userAccesses`, `userGroupAccesses`, `publicAccess`, `externalAccess`
 
   Instead, those properties can be accessed in new `sharing` properties as documented [here](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-237/sharing.html#new-sharing-object).
@@ -95,7 +95,7 @@ This enhancement ensures data integrity and alignment between attribute types an
 
 The following query can be executed before upgrading to verify which TEAs will be affected.
 
-The query will also show the update statement 
+The query will also show the update statement
 
 ``` SQL
 CREATE or replace FUNCTION can_be_casted(s text, type text) RETURNS bool AS
@@ -341,7 +341,7 @@ Field `followup` is deprecated and the camel case version `followUp` is used ins
 
 ### Metadata
 1. The property `DataDimensionType` is now mandatory for `CategoryOptionGroup` and `CategoryOptionGroupSet`. Existing records with `null` value would need to be manually updated with either `DISAGGREGATION` or `ATTRIBUTE`.
-2. The `mergeMode` parameter is removed from In Metadata Import Export app and also from the endpoint `api/metadata`. This means when updating objects, all existing property values will be overwritten even if the new values are `null`. Please use [JSON Patch API](#webapi_partial_updates) in case you want do partial update to an object. 
+2. The `mergeMode` parameter is removed from In Metadata Import Export app and also from the endpoint `api/metadata`. This means when updating objects, all existing property values will be overwritten even if the new values are `null`. Please use [JSON Patch API](#webapi_partial_updates) in case you want do partial update to an object.
 ## Database
 
 We have removed prefix `dataelement` from `category` and `categoryoption` tables as this gives us more readability.
@@ -356,6 +356,8 @@ We have removed prefix `dataelement` from `category` and `categoryoption` tables
 #### Breaking Changes: renamed tables and columns
 
 We have renamed some tables and columns following tracker's new [naming](#naming) in the API.
+
+Given the new database naming conventions, if you run **custom SQL scripts** or have created **SQL views**, you might need to adapt to the breaking changes described in the current section.
 
 Therefore, we align the database's names with the changes applied to `trackedEntityInstance`, `programInstance`, and `programStageInstance`.
 
@@ -460,9 +462,5 @@ FROM pg_class
 WHERE relname = 'programstageinstance_pkey';
 ```
 Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
-
-### Sql Views and Custom Scripts
-Given the new database naming conventions, if you run **custom SQL scripts** or have created **SQL 
-views**, you might need to adapt to the breaking changes previously described.
 
 ## Deprecations and Removals
