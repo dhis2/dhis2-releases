@@ -3,7 +3,7 @@
 ## Highlights
 - Capture app parity
 - Tracked Entity cross programs line list
-- Line list available in android offline analytics
+- Line lists are now available in android offline analytics
 ## 
 
 ### Login
