@@ -13,6 +13,8 @@ Starting from this version, the Android App will support the selection of multip
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
 DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
 
+#### [Tracked Entity / cross program line lists [ROADMAP-143]](https://dhis2.atlassian.net/issues/ROADMAP-143)  
+The Line Listing app now supports the creation of line lists for tracked entities; including the ability to filter on data from different programs that tracked entity is enrolled in.
 
 ### Android Capture
 #### [Improve end-user config error feedback [ROADMAP-296]](https://dhis2.atlassian.net/issues/ROADMAP-296)  
