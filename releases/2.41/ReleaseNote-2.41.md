@@ -99,7 +99,7 @@ More authority over periodicity in the google earth engine layers of the Maps ap
 
   
 ### Dashboard
-#### [Dashboard email push [ROADMAP-149]](https://dhis2.atlassian.net/issues/ROADMAP-149)  
+#### [Dashboard email push [ROADMAP-149]](https://dhis2.atlassian.net/issues/ROADMAP-149) (Scheduled for 41.1) 
 Replace the legacy push analytics service with more modern functionality which uses the same visualization engine as the web-based visualization apps.  Allow dashboards to be rendered on the server and sent to a user's email, respecting sharing settings.  
 
 
