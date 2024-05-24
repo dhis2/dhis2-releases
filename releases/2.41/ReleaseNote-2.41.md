@@ -6,7 +6,7 @@ Features that span accross multiple products are described in this section.
 #### [Support for customized tracker terminology [ROADMAP-201]](https://dhis2.atlassian.net/issues/ROADMAP-201)  
 DHIS2 now allows customizing tracker terminology like "event" and "enrollment" for end users' familiarity. Admins can configure it per program via the Maintenance App, and the Android Capture App reflects these custom terms.  
 
-#### [Optionsets multiselect support for individual data [ROADMAP-72](https://dhis2.atlassian.net/issues/ROADMAP-72) [DHIS2-16211]](https://dhis2.atlassian.net/browse/DHIS2-16211)
+#### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72) [[DHIS2-16211]](https://dhis2.atlassian.net/browse/DHIS2-16211)
 Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
 *Components: Android Capture, Capture (web)*  
 
