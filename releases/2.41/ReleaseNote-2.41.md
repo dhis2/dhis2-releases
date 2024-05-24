@@ -1,4 +1,4 @@
-# DHIS2 version 40 Release Note
+# DHIS2 version 41 Release Note
 
 ## DHIS2
 Features that span accross multiple products are described in this section.
