@@ -14,8 +14,6 @@ Starting from this version, the Android App will support the selection of multip
 DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
 
 
-## Android
-
 ### Android Capture
 #### [Improve end-user config error feedback [ROADMAP-296]](https://dhis2.atlassian.net/issues/ROADMAP-296)  
 The Android Capture app now provides clear and explicit error messages for configuration issues, enabling effective communication between users and administrators to promptly resolve empty screen problems caused by empty forms or lack of access.  
@@ -50,19 +48,14 @@ In this version, event/enrollment details like event date, org unit, coordinates
 #### [Improve TEI search user experience [ROADMAP-203]](https://dhis2.atlassian.net/issues/ROADMAP-203)  
 Search form improved for cleaner, intuitive experience. Buttons now explicit for search/creation. TEI search with barcodes streamlined: Unique result opens TEI Dashboard; multiple results show TEI list; no results prompt creation or external search.  
 
-## Tracker
 
 ### Capture (web)
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
 Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
 
-
-## Platform
-
 ### Global (App Shell)
 #### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
 Serve the app shell independent of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  
-
 
 ### Maintenance
 #### [Maintenance App redesign MVP [ROADMAP-47]](https://dhis2.atlassian.net/issues/ROADMAP-47)  
@@ -78,9 +71,9 @@ In v41, a new login app built on React is introduced. This app provides customiz
 
 
 ### Data Entry
-
 #### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
 We are adding more configuration options to the aggregate data entry form to allow you to customise the look and feel of the data entry form without building a custom HTML form. We have started with the option to pivot categories as rows and have data elements as columns or move a category to a row. You can now also add rich text fields before and after a section.
+
 
 ### Scheduler
 #### [Scheduled job queues configuration UI [ROADMAP-43]](https://dhis2.atlassian.net/issues/ROADMAP-43)  
@@ -100,16 +93,11 @@ The Data Exchange app has been updated to allow for creation and editing of the 
 The Integrity check app has been given an extensive update, allowing individual check runs, separating longer checks, and providing informative recommendations.  
 
 
-## Analytics
-
 ### Maps
 #### [Increased granularity/options for periodicity in Maps App for Climate layers from GEE [ROADMAP-154]](https://dhis2.atlassian.net/issues/ROADMAP-154)  
 More authority over periodicity in the google earth engine layers of the Maps app  
 
-#### [Filtering event-layer maps by attribute categories [ROADMAP-152]](https://dhis2.atlassian.net/issues/ROADMAP-152)  
   
-
-
 ### Dashboard
 #### [Dashboard email push [ROADMAP-149]](https://dhis2.atlassian.net/issues/ROADMAP-149)  
 Replace the legacy push analytics service with more modern functionality which uses the same visualization engine as the web-based visualization apps.  Allow dashboards to be rendered on the server and sent to a user's email, respecting sharing settings.  
