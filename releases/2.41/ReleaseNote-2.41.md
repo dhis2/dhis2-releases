@@ -66,7 +66,7 @@ Serve the app shell independent of individual applications.  The global shell wi
 
 ### Maintenance
 #### [Maintenance App redesign MVP [ROADMAP-47]](https://dhis2.atlassian.net/issues/ROADMAP-47)  
-Introducing a complete rebuild of the Maintenance App in v41. The update includes advanced filtering options, bulk sharing capabilities, and a sleeker user interface. New modules will be continuously introduced as they are developed.  
+Introducing the first preview of the completely new Maintenance App. In v41 we are releasing the data element sections with new modules continuously introduced as they are developed. The updated features include advanced filtering options, bulk sharing capabilities, and a sleeker user interface.   
 
 #### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
 In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.  
@@ -80,8 +80,7 @@ In v41, a new login app built on React is introduced. This app provides customiz
 ### Data Entry
 
 #### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
-The new aggregate data entry app now supports configuration options that allow you to change the appearance of your data entry form without creating a custom form.  
-
+We are adding more configuration options to the aggregate data entry form to allow you to customise the look and feel of the data entry form without building a custom HTML form. We have started with the option to pivot categories as rows and have data elements as columns or move a category to a row. You can now also add rich text fields before and after a section.
 
 ### Scheduler
 #### [Scheduled job queues configuration UI [ROADMAP-43]](https://dhis2.atlassian.net/issues/ROADMAP-43)  
