@@ -64,12 +64,45 @@ Search form improved for cleaner, intuitive experience. Buttons now explicit for
 Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
 
 ### Capture (web)
+
+#### Capture App Feature Parity with Tracker Capture
+From v41, Capture and Tracker Capture are considered feature equal. This means that the software development team is not adding any further functionality to Tracker Capture, only fixing critical/security bugs if discovered. 
+
+Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
+The features that need specific backend versions are the following:
+Referrals functionality (2.39 and above)
+Changelog, previously audit log (v41 and above)
+Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions too)
+
+#### Relationship support
+Support new model for configuring attributes to display in relationships
+
+#### Multiselect for data elements
+
+#### Growth chart widget for individual tracked entities based on WHO z-scores
+- Head circumference for age
+- Length/height for age
+- Weight for age
+- Weight for length/height
+
+#### Ownership transfer between org units
+
+#### Allow one time referrals between org units
+
+#### Images in working lists
+Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
+
+#### Enhanced change log
+- Verbose enabled for error details
+
+#### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
+In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.
+
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
 Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
 
+#### API harmonization: Harmonized names and parameters in /tracker API
 
-#### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
-In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.  
 
 
 
