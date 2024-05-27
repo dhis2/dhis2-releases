@@ -19,6 +19,8 @@ From v41, the software development team is not adding any further functionality 
 
 
 ### Tracked Entity cross programs line list
+The Line Listing app now supports the creation of line lists for tracked entities which allows for creating a list of tracked entities that are registed or enrolled in multiple programs. This includes the ability to add and filter on data from different programs that tracked entity is enrolled in and/or view attributes of tracked entities that are shared across programs. 
+
 ### Line lists are now available in android offline analytics
 ## 
 
