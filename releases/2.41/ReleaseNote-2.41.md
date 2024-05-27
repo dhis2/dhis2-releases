@@ -1,28 +1,11 @@
 # DHIS2 version 41 Release Note
 
 ## Highlights
-### Capture App feature parity with Tracker Capture
-From v41, Capture app has full feature parity with the Tracker Capture app (plus more!). DHIS2 V41 is therefore a great version to test out Capture and Tracker Capture side by side and begin the transition to the Capture app. 
+### -> Capture App has full feature parity with Tracker Capture app (plus more!)
 
-Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
-The features that need specific backend versions are the following:
-- Referrals functionality (2.39 and above)
-- Changelog, previously audit log (v41 and above)
-- Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions too)
+### -> Line Listing App supports lsiting Tracked Entities that are enrolled in multiple programs
 
-There are also several features that are only available in the Capture app which we hope will encourage you to test it out. These include:
-- Working lists: The ability to configure, save, and share working lists in the UI itself (Rather than through API as in Tracker Capture), including program stage working lists.
-- Scheduling: The ability to use program rules to calculate the next scheduled date (assigned to a data element) which can then be used as the default date when scheduling. (Docs)
-- Configure widgets and layout: Similar to Tracker Capture, but done in the data store, meaning it will be the same for all users and stay consistent, with the possibility to have a different layout for the Enrollment Dashboard and the Program stage event workspace.
-
-From v41, the software development team is not adding any further functionality to the old Tracker Capture app, only fixing critical/security bugs if discovered. The Capture app will be the focus for all upcoming features and improvements related to both longitudinal and events based data. 
-
-
-### Tracked Entity cross programs line list
-The Line Listing app now supports the creation of line lists for tracked entities which allows for creating a list of tracked entities that are registed or enrolled in multiple programs. This includes the ability to add and filter on data from different programs that tracked entity is enrolled in and/or view attributes of tracked entities that are shared across programs. 
-
-### Line lists are now available in android offline analytics
-## 
+### -> Android Capture App analytics supports now linelists that are updated while offline  
 
 ### Login
 #### [New, customizable version of the Login App [ROADMAP-46]](https://dhis2.atlassian.net/issues/ROADMAP-46)  
@@ -34,12 +17,49 @@ Introducing the first preview of the completely new Maintenance App. In v41 we a
 
 ### System wide features 
 #### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72) [[DHIS2-16211]](https://dhis2.atlassian.net/browse/DHIS2-16211)
-Starting from this version, the Android App will support the selection of multiple options for both aggregated and individual multi-select data elements.  
-*Components: Android Capture, Capture (web)*  
+Dhis2 will support from this version support the selection of multiple options for datasets for both aggregated and individual multi-select data elements. They will also be available for analysis through indicators and program indicators.  
 
 ### Aggregated Data Entry
 #### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
 We are adding more configuration options to the aggregate data entry form to allow you to customise the look and feel of the data entry form without building a custom HTML form. We have started with the option to pivot categories as rows and have data elements as columns or move a category to a row. You can now also add rich text fields before and after a section.
+
+### Capture (web)
+
+#### Capture App Feature Parity with Tracker Capture
+From v41, Capture and Tracker Capture are considered feature equal. This means that the software development team is not adding any further functionality to Tracker Capture, only fixing critical/security bugs if discovered. 
+
+Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
+The features that need specific backend versions are the following:
+Referrals functionality (2.39 and above)
+Changelog, previously audit log (v41 and above)
+Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions too)
+
+#### Relationship support
+Support new model for configuring attributes to display in relationships
+
+#### Growth chart widget for individual tracked entities based on WHO z-scores
+- Head circumference for age
+- Length/height for age
+- Weight for age
+- Weight for length/height
+
+#### Ownership transfer between org units
+
+#### Allow one time referrals between org units
+
+#### Images in working lists
+Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
+
+#### Enhanced change log
+- Verbose enabled for error details
+
+#### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
+In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.
+
+#### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
+Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
+
+#### API harmonization: Harmonized names and parameters in /tracker API
 
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
@@ -81,48 +101,6 @@ Search form improved for cleaner, intuitive experience. Buttons now explicit for
 #### [Import/export Android App DB  [ROADMAP-210]](https://dhis2.atlassian.net/issues/ROADMAP-210)  
 Users can export an encrypted local database for troubleshooting, allowing admins to import the exact environment. This aids in diagnosing sync issues and ensuring data integrity. Access to the exported database requires credentials for security.  
 
-### Capture (web)
-
-#### Capture App Feature Parity with Tracker Capture
-From v41, Capture and Tracker Capture are considered feature equal. This means that the software development team is not adding any further functionality to Tracker Capture, only fixing critical/security bugs if discovered. 
-
-Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
-The features that need specific backend versions are the following:
-Referrals functionality (2.39 and above)
-Changelog, previously audit log (v41 and above)
-Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions too)
-
-#### Relationship support
-Support new model for configuring attributes to display in relationships
-
-#### Multiselect for data elements
-
-#### Growth chart widget for individual tracked entities based on WHO z-scores
-- Head circumference for age
-- Length/height for age
-- Weight for age
-- Weight for length/height
-
-#### Ownership transfer between org units
-
-#### Allow one time referrals between org units
-
-#### Images in working lists
-Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
-
-#### Enhanced change log
-- Verbose enabled for error details
-
-#### [Indicator and Indicator types Metadata Merging [ROADMAP-39]](https://dhis2.atlassian.net/issues/ROADMAP-39)  
-In v41, merging of indicator and indicator types is enabled via the API, updating all references to the source indicator and facilitating metadata cleanup operations.
-
-#### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
-Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
-
-#### API harmonization: Harmonized names and parameters in /tracker API
-
-
-
 
 ### Maps
 #### [Vector tiles as external layers [DHIS2-11960]](https://dhis2.atlassian.net/browse/DHIS2-11960)
@@ -142,7 +120,8 @@ The Data Visualizer application in v41 introduces support for outlier tables as 
 
 ### Line Listing
 #### [Tracked Entity / cross program line lists [ROADMAP-143]](https://dhis2.atlassian.net/issues/ROADMAP-143)  
-The Line Listing app now supports the creation of line lists for tracked entities; including the ability to filter on data from different programs that tracked entity is enrolled in.  
+The Line Listing app now supports the creation of line lists for tracked entities which allows for creating a list of tracked entities that are registed or enrolled in multiple programs. This includes the ability to add and filter on data from different programs that tracked entity is enrolled in and/or view attributes of tracked entities that are shared across programs. 
+
 
 ### Global (App Shell)
 #### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
