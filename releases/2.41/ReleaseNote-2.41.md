@@ -1,9 +1,25 @@
 # DHIS2 version 41 Release Note
 
 ## Highlights
-- Capture app parity
-- Tracked Entity cross programs line list
-- Line lists are now available in android offline analytics
+### Capture App feature parity with Tracker Capture
+From v41, Capture app has full feature parity with the Tracker Capture app (plus more!). DHIS2 V41 is therefore a great version to test out Capture and Tracker Capture side by side and begin the transition to the Capture app. 
+
+Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
+The features that need specific backend versions are the following:
+- Referrals functionality (2.39 and above)
+- Changelog, previously audit log (v41 and above)
+- Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions too)
+
+There are also several features that are only available in the Capture app which we hope will encourage you to test it out. These include:
+- Working lists: The ability to configure, save, and share working lists in the UI itself (Rather than through API as in Tracker Capture), including program stage working lists.
+- Scheduling: The ability to use program rules to calculate the next scheduled date (assigned to a data element) which can then be used as the default date when scheduling. (Docs)
+- Configure widgets and layout: Similar to Tracker Capture, but done in the data store, meaning it will be the same for all users and stay consistent, with the possibility to have a different layout for the Enrollment Dashboard and the Program stage event workspace.
+
+From v41, the software development team is not adding any further functionality to the old Tracker Capture app, only fixing critical/security bugs if discovered. The Capture app will be the focus for all upcoming features and improvements related to both longitudinal and events based data. 
+
+
+### Tracked Entity cross programs line list
+### Line lists are now available in android offline analytics
 ## 
 
 ### Login
