@@ -1,6 +1,7 @@
 # DHIS2 version 41 Release Note
 
 ## Highlights
+### Mention quality and stability efforts
 ### Capture App feature parity with Tracker Capture
 From v41, Capture app has full feature parity with the Tracker Capture app (plus more!). DHIS2 V41 is therefore a great version to test out Capture and Tracker Capture side by side and begin the transition to the Capture app. 
 
