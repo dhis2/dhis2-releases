@@ -74,9 +74,6 @@ In v41, merging of indicator and indicator types is enabled via the API, updatin
 
 
 ### Maps
-#### [Increased granularity/options for periodicity in Maps App for Climate layers from GEE [ROADMAP-154]](https://dhis2.atlassian.net/issues/ROADMAP-154)  
-More authority over periodicity in the google earth engine layers of the Maps app  
-
 #### [Vector tiles as external layers [DHIS2-11960]](https://dhis2.atlassian.net/browse/DHIS2-11960)
 Vector files can not be imported into DHIS2 and displated in the maps app. This allows for much more flexibility in displaying geographic data from other sources in the maps app. 
   
