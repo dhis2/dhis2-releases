@@ -6,6 +6,7 @@ This repository contains information about the DHIS 2 releases. It includes upgr
 
 You can find release and upgrade notes for the following releases below:
 
+- [2.41](releases/2.41/)
 - [2.40](releases/2.40/)
 - [2.39](releases/2.39/)
 - [2.38](releases/2.38/)
@@ -24,6 +25,7 @@ You can find release and upgrade notes for the following releases below:
 
 You can find the release notes for each major and minor version in the specific folders:
 
+- [2.9](android-releases/2.9)
 - [2.8](android-releases/2.8)
 - [2.7](android-releases/2.7)
 - [2.6](android-releases/2.6)
