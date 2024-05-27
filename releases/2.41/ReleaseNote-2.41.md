@@ -1,11 +1,14 @@
 # DHIS2 version 41 Release Note
 
 ## Highlights
-### -> Capture App has full feature parity with Tracker Capture app (plus more!)
 
-### -> Line Listing App supports lsiting Tracked Entities that are enrolled in multiple programs
+- Capture App now has all of the features of Tracker Capture, and more!
 
-### -> Android Capture App analytics supports now linelists that are updated while offline  
+- Line Listing App supports listing Tracked Entities that are enrolled in multiple programs
+
+- Android Capture App analytics now supports linelists that are updated while offline  
+
+## Updates by component
 
 ### Login
 #### [New, customizable version of the Login App [ROADMAP-46]](https://dhis2.atlassian.net/issues/ROADMAP-46)  
