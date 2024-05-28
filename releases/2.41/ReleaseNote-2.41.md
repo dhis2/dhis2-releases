@@ -47,20 +47,21 @@ There are also several features that are only available in the Capture app which
 - Configure widgets and layout: Similar to Tracker Capture, but done in the data store, meaning it will be the same for all users and stay consistent, with the possibility to have a different layout for the Enrollment Dashboard and the Program stage event workspace.
 
 
-#### Relationship support
-There is now support in the Capture app for configuring attributes to display in relationships, in order to provide additional information about the relationship and the linked items.
-
+#### [Relationship improvements](https://dhis2.atlassian.net/browse/DHIS2-12361)
+- The relationships widget is updated for the Capture app with various improvements.
+- When creating a tracked entity through a relationship, tracked entity attributes configured with “inherit” will be prefilled with values from the source tracked entity in order to reduce data entry burden and improve data quality [Jira](https://dhis2.atlassian.net/browse/DHIS2-16123)
+  
 #### Growth chart widget for individual tracked entities based on WHO z-scores
+The Capture App now includes a growth chart widget for individual tracked entities, based on the WHO z-scores for:
 - Head circumference for age
 - Length/height for age
 - Weight for age
 - Weight for length/height
 
-#### Ownership transfer between org units
-In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
-
-#### Allow one time referrals between org units
-One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
+#### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
+The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports:
+- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
+- **Allow one time referrals between org units** One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
 #### Images in working lists
 Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
