@@ -91,8 +91,8 @@ As a part of the platform strategy to support greater customizability and extern
 #### [API harmonization: Harmonized names and parameters in /tracker API](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.41/README.md#tracker)
 We have completed a full review of the /tracker API and made significant changes in order to harmonize names and parameters for consistency and ease of use. These improvements include some breaking changes that should be noted and addressed. See details in the v41 README, as well as the documentation.
 
-#### [Verbose logging](https://dhis2.atlassian.net/browse/DHIS2-12544)
-You can now append &verbose=TRUE to the end of a query in order receive better information for debugging and testing
+#### [Verbose logging for program rule debugging](https://dhis2.atlassian.net/browse/DHIS2-12544)
+You can now append &verbose=TRUE to the end of a query in order receive better information for debugging and testing program rules in the Capture app.
 
 ### Android Capture 3.0
 #### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
