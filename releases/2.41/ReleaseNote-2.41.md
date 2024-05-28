@@ -58,18 +58,22 @@ The Capture App now includes a growth chart widget for individual tracked entiti
 - Weight for age
 - Weight for length/height
 
-#### Working lists improvements
-- You are now able to download working lists in the Capture app as JSON, XML or CSV files [Jira](https://dhis2.atlassian.net/browse/DHIS2-13233)
-- Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up [Jira](https://dhis2.atlassian.net/browse/DHIS2-14799)
+#### [Download working lists](https://dhis2.atlassian.net/browse/DHIS2-13233)
+You are now able to download working lists in the Capture app as JSON, XML or CSV files
+
+#### [Mark tracked entities for follow up](https://dhis2.atlassian.net/browse/DHIS2-14799)
+Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up
 
 #### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
-The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports:
-- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields. [Jira](https://dhis2.atlassian.net/browse/DHIS2-16322)
+The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports 
+- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields
 - **Allow one time referrals between org units** One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
-#### Images
-- Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc. [Jira](https://dhis2.atlassian.net/browse/DHIS2-15391)
-- Uploaded images can now be previewed in both the event page and profile widget [Jira](https://dhis2.atlassian.net/browse/DHIS2-15392)
+#### [Images displayed in working lists](https://dhis2.atlassian.net/browse/DHIS2-15391)
+Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; inventory management; lab equipment monitoring; etc.
+
+#### [Image preview](https://dhis2.atlassian.net/browse/DHIS2-15392)
+Uploaded images can now be previewed in both the event page and profile widget
 
 #### [Custom Icons](https://dhis2.atlassian.net/browse/DHIS2-14272)
 DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library, to allow for context-specific icons such as those used by the Ministry of Health or NGO, as well as expand the availability of icons for non-health-related areas. These icons are available across the web and Android, and are configured via Maintenance DHIS2 Web App.
@@ -82,6 +86,9 @@ As a part of the platform strategy to support greater customizability and extern
 
 #### [API harmonization: Harmonized names and parameters in /tracker API](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.41/README.md#tracker)
 We have completed a full review of the /tracker API and made significant changes in order to harmonize names and parameters for consistency and ease of use. These improvements include some breaking changes that should be noted and addressed. See details in the v41 README, as well as the documentation.
+
+#### [Verbose logging]
+You can now append &verbose=TRUE to the end of a query in order receive better information for debugging and testing
 
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
