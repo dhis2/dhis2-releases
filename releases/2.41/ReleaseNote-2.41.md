@@ -165,20 +165,24 @@ The Integrity check app has been given an extensive update, allowing individual 
 
 #### [New "Form Field" and "Enrollment Dashboard" plugin types in the Capture App [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)
 **Experimental feature**
+
 Additional plugin types can now be bundled in DHIS2 web apps, allowing Capture App functionality to be easily extended.  These widgets can be installed in the App Management App and can be configured for different programs in the Data Store.
 
 #### [Expanded support for all HTTP methods in the Routes API [DHIS2-16921]](https://dhis2.atlassian.net/browse/DHIS2-16921)
 The Routes API, introduced in DHIS2 v40, has been expanded to support all HTTP methods.  It was previously restricted to only forward GET requests to upstream targets.
 
 #### [Partial and rolling updates in Data Store and User Data Store APIs [DHIS2-17469]](https://dhis2.atlassian.net/browse/DHIS2-17469)
-**Experimental featuer**
+**Experimental feature**
+
 It is now possible to apply partial updates to keys in the Data Store and User Data Store.  When applying a partial updates, items can be appended to array type keys.  It is also possible to optionally specify a maximum size in the "roll" parameter which will discard items from the beginning of the array if its size exceeds the maximum after the new item has been appended.  This is an experimental feature which may be updated in future DHIS2 releases.
 
 #### [Query aliases to shorten long API request URLs [ROADMAP-217]](https://dhis2.atlassian.net/issues/ROADMAP-217)
 **Experimental feature** 
+
 To work around issues with too-long DHIS2 API request URIs, causing `HTTP 414 URI Too Long` errors, it is now possible to create short-lived query aliases.  A query alias is a shortened API path which is mapped to a specific longer path on the DHIS2 server.  Query aliases can be deterministically created and then reused until they expire.  This is an experimental feature which will be expanded, supported by the App Runtime, and leveraged in DHIS2 frontend apps such as the Data Visualizer in future releases.
 
 #### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
 **Experimental feature** 
+
 A global app shell can be optionally installed, which will be served independently of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  This is an optional and experimental feature which will be expanded in future releases.
 
