@@ -20,7 +20,10 @@ Introducing the first preview of the completely new Maintenance App. In v41 we a
 
 ### System wide features 
 #### [Optionsets multiselect support for individual data [ROADMAP-72]](https://dhis2.atlassian.net/issues/ROADMAP-72) [[DHIS2-16211]](https://dhis2.atlassian.net/browse/DHIS2-16211)
-Dhis2 will support from this version support the selection of multiple options for datasets for both aggregated and individual multi-select data elements. They will also be available for analysis through indicators and program indicators.  
+Dhis2 will support from this version support the selection of multiple options for datasets for both aggregated and individual multi-select data elements. They will also be available for analysis through indicators and program indicators.
+
+#### [Custom Icons](https://dhis2.atlassian.net/browse/DHIS2-14272) 
+DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library, to allow for context-specific icons such as those used by the Ministry of Health or NGO, as well as expand the availability of icons for non-health-related areas. These icons are available across the web and Android, and are configured via Maintenance DHIS2 Web App.
 
 ### Aggregated Data Entry
 #### [Custom Forms Functionality [ROADMAP-44]](https://dhis2.atlassian.net/issues/ROADMAP-44)  
@@ -61,6 +64,9 @@ One time referrals are now supported in the Capture app, allowing for a selected
 
 #### Images in working lists
 Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
+
+#### Custom Icons
+DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library, to allow for context-specific icons such as those used by the Ministry of Health or NGO, as well as expand the availability of icons for non-health-related areas. These icons are available across the web and Android, and are configured via Maintenance DHIS2 Web App.
 
 #### Enhanced change log
 The changelog now supports verbose readout in order to provide greater detail when troubleshooting.
