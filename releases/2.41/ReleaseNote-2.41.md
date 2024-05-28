@@ -77,9 +77,6 @@ Image attributes can now be displayed in working lists, to easier enable identif
 #### [Image preview](https://dhis2.atlassian.net/browse/DHIS2-15392)
 Uploaded images can now be previewed in both the event page and profile widget
 
-#### [Custom Icons](https://dhis2.atlassian.net/browse/DHIS2-14272)
-DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library, to allow for context-specific icons such as those used by the Ministry of Health or NGO, as well as expand the availability of icons for non-health-related areas. These icons are available across the web and Android, and are configured via Maintenance DHIS2 Web App.
-
 #### [Enhanced change log](https://dhis2.atlassian.net/browse/DHIS2-16764)
 Various improvements to the changelog, including sorting and filtering in order to provide important information about when a value was created, changed or deleted and by which user.
 
@@ -93,9 +90,6 @@ We have completed a full review of the /tracker API and made significant changes
 You can now append &verbose=TRUE to the end of a query in order receive better information for debugging and testing
 
 ### Android Capture 3.0
-#### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
-DHIS2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
-
 #### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
 Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
 
