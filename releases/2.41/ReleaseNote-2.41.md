@@ -45,7 +45,7 @@ There are also several features that are only available in the Capture app which
 
 
 #### Relationship support
-Support new model for configuring attributes to display in relationships
+There is now support in the Capture app for configuring attributes to display in relationships, in order to provide additional information about the relationship and the linked items.
 
 #### Growth chart widget for individual tracked entities based on WHO z-scores
 - Head circumference for age
@@ -54,20 +54,22 @@ Support new model for configuring attributes to display in relationships
 - Weight for length/height
 
 #### Ownership transfer between org units
+In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
 
 #### Allow one time referrals between org units
+One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
 #### Images in working lists
 Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
 
 #### Enhanced change log
-- Verbose enabled for error details
+The changelog now supports verbose readout in order to provide greater detail when troubleshooting.
 
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
-Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
+As a part of the platform strategy to support greater customizability and external development, we have added extension points to the Capture App allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard. For an example of this in action, see the new growth charts and documentation, which were built using these same extension points. 
 
 #### API harmonization: Harmonized names and parameters in /tracker API
-
+We have completed a full review of the /tracker API and made significant changes in order to harmonize names and parameters for consistency and ease of use. These improvements include some breaking changes that should be noted and addressed. See details in the v41 README, as well as the documentation.
 
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
