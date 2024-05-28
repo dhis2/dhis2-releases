@@ -62,7 +62,7 @@ The Capture App now includes a growth chart widget for individual tracked entiti
 - Weight for length/height
 
 #### [Download working lists](https://dhis2.atlassian.net/browse/DHIS2-13233)
-You are now able to download working lists in the Capture app as JSON, XML or CSV files
+You are now able to download working lists in the Capture app as JSON or CSV files
 
 #### [Mark tracked entities for follow up](https://dhis2.atlassian.net/browse/DHIS2-14799)
 Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up
