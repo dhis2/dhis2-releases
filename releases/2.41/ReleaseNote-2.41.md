@@ -54,7 +54,7 @@ The relationships widget is updated for the Capture app with various improvement
 #### [Inheritable attributes for relationships](https://dhis2.atlassian.net/browse/DHIS2-16123) 
 When creating a tracked entity through a relationship, tracked entity attributes configured with “inherit” will be prefilled with values from the source tracked entity in order to reduce data entry burden and improve data quality
   
-#### Growth chart widget for individual tracked entities based on WHO z-scores
+#### [Growth chart widget based on WHO Child Growth Standards](https://apps.dhis2.org/app/09f48f78-b67c-4efa-90ad-9ac2fed53bb8)
 The Capture App now includes a growth chart widget for individual tracked entities, based on the WHO z-scores for:
 - Head circumference for age
 - Length/height for age
