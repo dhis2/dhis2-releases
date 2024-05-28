@@ -29,7 +29,7 @@ We are adding more configuration options to the aggregate data entry form to all
 ### Capture (web)
 
 #### Capture App Feature Parity with Tracker Capture
-From v41, Capture and Tracker Capture are considered feature equal. This means that the software development team is not adding any further functionality to Tracker Capture, only fixing critical/security bugs if discovered. 
+From v41, Capture and Tracker Capture are considered feature equal. This means that the software development team is not adding any further functionality to Tracker Capture, only fixing critical/security bugs if discovered. The Tracker Capture app and old tracker endpoint are now deprecated, and will not be bundled into v42.
 
 Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
 
@@ -67,6 +67,7 @@ Image attributes can now be displayed in working lists, to easier enable identif
 Add extension points to the Capture App, allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard.  
 
 #### API harmonization: Harmonized names and parameters in /tracker API
+
 
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
