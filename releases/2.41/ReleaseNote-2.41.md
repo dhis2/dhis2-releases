@@ -70,7 +70,7 @@ Individual tracked entities in working lists can now be marked for follow-up, an
 #### [Related Stages Widget](https://dhis2.atlassian.net/browse/DHIS2-16291)
 The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience.
 
-#### [Ownership transfer between org units](https://dhis2.atlassian.net/browse/DHIS2-16939)
+#### [Ownership transfer between org units](https://dhis2.atlassian.net/browse/DHIS2-16322)
 In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields
 
 #### [Allow one time referrals between org units] 
