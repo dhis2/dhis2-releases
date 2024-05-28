@@ -6,7 +6,9 @@
 
 - Line Listing App supports listing Tracked Entities that are enrolled in multiple programs
 
-- Android Capture App analytics now supports linelists that are updated while offline  
+- Android Capture App analytics now supports linelists that are updated while offline
+
+- More than [450 bugs fixed](https://dhis2.atlassian.net/issues/?jql=project%20%3D%20DHIS2%20AND%20status%20%3D%20Done%20AND%20type%20%3D%20Bug%20AND%20fixversion%20IN%20%282.41%2C%202.41.0%29%0AORDER%20BY%20created%20ASC), thanks to extensive testing by the DHIS2 core team and beta testing partners
 
 ## Updates by component
 
@@ -92,7 +94,7 @@ You can now append &verbose=TRUE to the end of a query in order receive better i
 
 ### Android Capture 3.0
 #### [Custom icons [ROADMAP-207]](https://dhis2.atlassian.net/issues/ROADMAP-207)  
-DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
+DHIS2 now allows uploading custom icons, expanding beyond the built-in library. Ideal for non-health-related or specialized icon needs. Android App displays these icons, configured via Maintenance DHIS2 Web App.  
 
 #### [Line listing analytics in Android [ROADMAP-206]](https://dhis2.atlassian.net/issues/ROADMAP-206)  
 Android App now supports offline line listing analytics. Created in DHIS2 web app, configured in Android Settings Web App (ASWA). Displayable on home screen and event/tracker programs; searchable by period, Org. unit, or custom columns.  
@@ -151,11 +153,6 @@ The Data Visualizer application in v41 introduces support for outlier tables as 
 #### [Tracked Entity / cross program line lists [ROADMAP-143]](https://dhis2.atlassian.net/issues/ROADMAP-143)  
 The Line Listing app now supports the creation of line lists for tracked entities which allows for creating a list of tracked entities that are registed or enrolled in multiple programs. This includes the ability to add and filter on data from different programs that tracked entity is enrolled in and/or view attributes of tracked entities that are shared across programs. 
 
-
-### Global (App Shell)
-#### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
-Serve the app shell independent of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  
-
 ### Scheduler
 #### [Scheduled job queues configuration UI [ROADMAP-43]](https://dhis2.atlassian.net/issues/ROADMAP-43)  
 In v41, the Job Scheduler app now allows configuration of grouping jobs to run in sequence or in parallel. This functionality, previously added in v40 via the API, can now be easily configured through the app interface.  
@@ -169,4 +166,25 @@ The Data Exchange app has been updated to allow for creation and editing of the 
 ### Data Administration
 #### [Integrity Check Configuration UI [ROADMAP-41]](https://dhis2.atlassian.net/issues/ROADMAP-41)  
 The Integrity check app has been given an extensive update, allowing individual check runs, separating longer checks, and providing informative recommendations.  
+
+### Extensibility
+
+#### [New "Form Field" and "Enrollment Dashboard" plugin types in the Capture App [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)
+**Experimental feature**
+Additional plugin types can now be bundled in DHIS2 web apps, allowing Capture App functionality to be easily extended.  These widgets can be installed in the App Management App and can be configured for different programs in the Data Store.
+
+#### [Expanded support for all HTTP methods in the Routes API [DHIS2-16921]](https://dhis2.atlassian.net/browse/DHIS2-16921)
+The Routes API, introduced in DHIS2 v40, has been expanded to support all HTTP methods.  It was previously restricted to only forward GET requests to upstream targets.
+
+#### [Partial and rolling updates in Data Store and User Data Store APIs [DHIS2-17469]](https://dhis2.atlassian.net/browse/DHIS2-17469)
+**Experimental featuer**
+It is now possible to apply partial updates to keys in the Data Store and User Data Store.  When applying a partial updates, items can be appended to array type keys.  It is also possible to optionally specify a maximum size in the "roll" parameter which will discard items from the beginning of the array if its size exceeds the maximum after the new item has been appended.  This is an experimental feature which may be updated in future DHIS2 releases.
+
+#### [Query aliases to shorten long API request URLs [ROADMAP-217]](https://dhis2.atlassian.net/issues/ROADMAP-217)
+**Experimental feature** 
+To work around issues with too-long DHIS2 API request URIs, causing `HTTP 414 URI Too Long` errors, it is now possible to create short-lived query aliases.  A query alias is a shortened API path which is mapped to a specific longer path on the DHIS2 server.  Query aliases can be deterministically created and then reused until they expire.  This is an experimental feature which will be expanded, supported by the App Runtime, and leveraged in DHIS2 frontend apps such as the Data Visualizer in future releases.
+
+#### [Global App Shell [ROADMAP-190]](https://dhis2.atlassian.net/issues/ROADMAP-190)  
+**Experimental feature** 
+A global app shell can be optionally installed, which will be served independently of individual applications.  The global shell will ensure consistent headerbar and command pallet as well as other common global functionality such as alerts, session management, and more.  This is an optional and experimental feature which will be expanded in future releases.
 
