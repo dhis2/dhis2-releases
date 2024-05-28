@@ -67,14 +67,15 @@ The referral widget has been updated and renamed the "Related Stages Widget" in 
 - **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
 - **Allow one time referrals between org units** One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
-#### Images in working lists
-Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc.
+#### Images
+- Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; health commodity management; lab equipment monitoring; etc. [Jira](https://dhis2.atlassian.net/browse/DHIS2-15391)
+- Uploaded images can now be previewed in both the event page and profile widget [Jira](https://dhis2.atlassian.net/browse/DHIS2-15392)
 
-#### Custom Icons
+#### [Custom Icons](https://dhis2.atlassian.net/browse/DHIS2-14272)
 DHIS2 2 now allows uploading custom icons, expanding beyond the built-in library, to allow for context-specific icons such as those used by the Ministry of Health or NGO, as well as expand the availability of icons for non-health-related areas. These icons are available across the web and Android, and are configured via Maintenance DHIS2 Web App.
 
-#### Enhanced change log
-The changelog now supports verbose readout in order to provide greater detail when troubleshooting.
+#### [Enhanced change log](https://dhis2.atlassian.net/browse/DHIS2-16764)
+Various improvements to the changelog, including sorting and filtering in order to provide important information about when a value was created, changed or deleted and by which user.
 
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
 As a part of the platform strategy to support greater customizability and external development, we have added extension points to the Capture App allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard. For an example of this in action, see the new growth charts and documentation, which were built using these same extension points. 
