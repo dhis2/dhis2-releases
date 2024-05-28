@@ -39,7 +39,6 @@ From v41, Capture and Tracker Capture are considered feature equal. This means t
 Since the Capture app is on continuous release, you can also use this app from 2.38 and above. There are certain features that have needed new backend dependencies, but if those are not required for you, you can use the app management app and update the app to newer versions on 2.38 and above.
 
 The features that need specific backend versions are the following:
-- Referrals functionality
 - Changelog, previously audit log (v41 and above)
 - Image thumbnails in working lists, forms, and widgets (Currently v41, but will soon be supported for lower versions)
 
