@@ -67,7 +67,7 @@ You are now able to download working lists in the Capture app as JSON, XML or CS
 #### [Mark tracked entities for follow up](https://dhis2.atlassian.net/browse/DHIS2-14799)
 Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up
 
-#### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
+#### [Related Stages Widget](https://dhis2.atlassian.net/browse/DHIS2-16291)
 The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience.
 
 #### [Ownership transfer between org units](https://dhis2.atlassian.net/browse/DHIS2-16939)
