@@ -68,9 +68,13 @@ You are now able to download working lists in the Capture app as JSON, XML or CS
 Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up
 
 #### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
-The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports 
-- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields
-- **Allow one time referrals between org units** One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
+The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience.
+
+#### [Ownership transfer between org units](https://dhis2.atlassian.net/browse/DHIS2-16939)
+In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields
+
+#### [Allow one time referrals between org units] 
+One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
 #### [Images displayed in working lists](https://dhis2.atlassian.net/browse/DHIS2-15391)
 Image attributes can now be displayed in working lists, to easier enable identification of tracked entities for use cases such as patient identification; inventory management; lab equipment monitoring; etc.
