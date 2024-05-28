@@ -64,7 +64,7 @@ The Capture App now includes a growth chart widget for individual tracked entiti
 
 #### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
 The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports:
-- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
+- **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields. [Jira](https://dhis2.atlassian.net/browse/DHIS2-16322)
 - **Allow one time referrals between org units** One time referrals are now supported in the Capture app, allowing for a selected org unit to access an enrollment without overwriting the ownership field.
 
 #### Images
@@ -80,7 +80,7 @@ Various improvements to the changelog, including sorting and filtering in order 
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
 As a part of the platform strategy to support greater customizability and external development, we have added extension points to the Capture App allowing DHIS2 application developers to inject custom plugins in the data entry form as well as the enrollment dashboard. For an example of this in action, see the new growth charts and documentation, which were built using these same extension points. 
 
-#### API harmonization: Harmonized names and parameters in /tracker API
+#### [API harmonization: Harmonized names and parameters in /tracker API](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.41/README.md#tracker)
 We have completed a full review of the /tracker API and made significant changes in order to harmonize names and parameters for consistency and ease of use. These improvements include some breaking changes that should be noted and addressed. See details in the v41 README, as well as the documentation.
 
 ### Android Capture 3.0
