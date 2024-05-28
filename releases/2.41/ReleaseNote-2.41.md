@@ -58,6 +58,10 @@ The Capture App now includes a growth chart widget for individual tracked entiti
 - Weight for age
 - Weight for length/height
 
+#### Working lists improvements
+- You are now able to download working lists in the Capture app as JSON, XML or CSV files [Jira](https://dhis2.atlassian.net/browse/DHIS2-13233)
+- Individual tracked entities in working lists can now be marked for follow-up, and filtered to provide a list of all designated for follow-up [Jira](https://dhis2.atlassian.net/browse/DHIS2-14799)
+
 #### [Related Stages Widget (referrals)](https://dhis2.atlassian.net/browse/DHIS2-16291)
 The referral widget has been updated and renamed the "Related Stages Widget" in the Capture app with additional functionality and improved user experience. It now supports:
 - **Ownership transfer between org units** In order to support referall workflows and correct attribution of analytics, we have completed the ownership transfer of enrollments between org units. The ownership transfer overwrites the ownership field of an enrollment, while preserving the enrolling org unit and event org unit fields.
