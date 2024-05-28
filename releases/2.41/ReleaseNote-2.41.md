@@ -81,7 +81,7 @@ Image attributes can now be displayed in working lists, to easier enable identif
 #### [Image preview](https://dhis2.atlassian.net/browse/DHIS2-15392)
 Uploaded images can now be previewed in both the event page and profile widget
 
-#### [Enhanced change log](https://dhis2.atlassian.net/browse/DHIS2-16764)
+#### [Enhanced changelog](https://dhis2.atlassian.net/browse/DHIS2-16764)
 Various improvements to the changelog, including sorting and filtering in order to provide important information about when a value was created, changed or deleted and by which user.
 
 #### [Formfield and dashboard plugins in the Capture app [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)  
