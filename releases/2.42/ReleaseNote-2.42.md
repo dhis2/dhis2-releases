@@ -33,3 +33,13 @@ guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/
 Tracker and event program data can no longer be synchronized via the [metadata
 synchronization](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/exchanging-data/metadata-synchronization.html#about-data-and-metadata-synchronization).
 
+#### Deprecated APIs
+
+The table below summarizes the deprecated API parameters:
+
+| Endpoint                   | Deprecated Parameter   | New Parameter        |
+|----------------------------|------------------------|----------------------|
+| `/tracker/trackedEntities` | `programStatus`        | `enrollmentStatus`   |
+| `/tracker/enrollments`     | `programStatus`        | `status`             |
+| `/tracker/events`          | `programStatus`        | `enrollmentStatus`   |
+
