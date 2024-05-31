@@ -8,7 +8,7 @@
 
 - Android Capture App analytics now supports linelists that are updated while offline
 
-- More than [500 bugs fixed](https://dhis2.atlassian.net/issues/?filter=10647), thanks to extensive testing by the DHIS2 core team and beta testing partners
+- More than [500 bugs fixed](https://dhis2.atlassian.net/issues/?filter=10647), thanks to the strong focus on maintenance and targeted bug-fixing activities for this release
 
 ## Updates by component
 
