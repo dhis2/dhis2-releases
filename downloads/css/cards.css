@@ -102,6 +102,7 @@
     border: none;
     cursor: pointer;
     display: inline-block;
+    text-decoration: none;
 }
 
 .dc-download-info {
