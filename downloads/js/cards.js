@@ -5,14 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.error('Error loading releases:', error));
 });
 
+// Populate the releases
 function populateReleases(releases) {
+    // Get the container for the releases
     const releasesContainer = document.getElementById('releases-container');
 
+    // Iterate over each release
     releases.forEach(release => {
+        // If the release is supported
         if (release.supported) {
+            // Iterate over each patch version of the release
             release.patchVersions.forEach(patchVersion => {
+                // If the patch version is the latest one
                 if (patchVersion.version === release.latestPatchVersion) {
+                    // If the latest hotfix version is the same as the hotfix version of the patch
                     if ((release.latestHotfixVersion || 0) === (patchVersion.hotfixVersion || 0)) {
+                        // Create a card for the release and append it to the container
                         const cardElement = createReleaseCard(release, patchVersion);
                         releasesContainer.appendChild(cardElement);
                     }
@@ -22,20 +30,20 @@ function populateReleases(releases) {
     });
 }
 
+
+// Create an HTML element with a given tag, class name, and content
 function createElement(tag, className, content) {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (content) element.textContent = content;
-    return element;
+    const element = document.createElement(tag); // Create the element
+    if (className) element.className = className; // Set the class name if provided
+    if (content) element.textContent = content; // Set the content if provided
+    return element; // Return the created element
 }
 
-// Below is the full `createReleaseCard` function example.
-// It does not contain all the specifics of your template, like the SVG path data and external links paths.
-// You will have to provide the exact path data for your SVG elements.
+// Create a card for a release
 function createReleaseCard(release, patchVersion) {
-    // We assume you will provide SVG path data and external link paths according to your requirements
-    // This example illustrates how you can structure the function
+    // Create a div with the class 'download-card'
     const cardElement = createElement('div', 'download-card');
+    // Set the inner HTML of the card with the release and patch version details
     cardElement.innerHTML = `
         <div class="dc-title">
             <span class="dc-title-version">DHIS2 version ${patchVersion.displayName || patchVersion.name}</span>
@@ -65,8 +73,6 @@ function createReleaseCard(release, patchVersion) {
             <span class="dc-docker-code">docker pull dhis2/core:${patchVersion.name}</span>
         </div>`;
 
-    // Add SVG markup for "Latest version" and "Hotfix" badges where '<!-- SVG latest -->' and '<!-- SVG hotfix -->' comments are
-    // Make sure to include the actual SVG markup or use `addSVG` function to do it programmatically
 
-    return cardElement;
+    return cardElement; // Return the created card
 }
