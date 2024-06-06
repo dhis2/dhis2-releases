@@ -8,11 +8,11 @@
   grid-gap: 20px; /* Adjust the gap as needed */
   padding: 20px; /* Optional padding around the grid */
   margin:auto;
-  background:#f8fafc;
+  background:#fff;
 }
 
 .download-card {
-    background: #fff;
+    background: #D8F7F7;
     color: #051841;
     border: 1px solid #e8edf2;
     border-radius: 5px;
@@ -54,7 +54,7 @@
 }
 
 .dc-badge-latest {
-    background: #c5e3fc;
+    background: #a2d1f9;
     background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" ><path d="M5.61074 5.711L1.27044 6.34208L1.18641 6.36141C0.83929 6.47257 0.717776 6.92632 0.993337 7.19492L4.13374 10.255L3.39244 14.5786L3.38491 14.6589C3.37927 15.0263 3.77555 15.2857 4.11791 15.1057L7.99874 13.064L11.8816 15.1057L11.9556 15.1377C12.3033 15.2566 12.6724 14.9598 12.607 14.5786L11.8647 10.255L15.0061 7.19492L15.0628 7.12989C15.2782 6.83593 15.1098 6.39741 14.729 6.34208L10.3877 5.711L8.44811 1.77872C8.2647 1.40709 7.73478 1.40709 7.55137 1.77872L5.61074 5.711Z" fill="%231565C0" /></svg>');
     background-repeat: no-repeat;
     background-position-x: 5px;
@@ -65,7 +65,7 @@
 
 
 .dc-badge-hotfix {
-    background: #fdedd6;
+    background: #ffd18f;
     background-image: url('data:image/svg+xml,<svg width="14" height="10" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="2" cy="2.5" r="2" fill="%23E68225" /></svg>');
     background-repeat: no-repeat;
     background-position-x: 5px;
@@ -261,7 +261,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fefefe;
+    background: #fff;
     font-family: "SF Display Regular", Helvetica, Arial, sans-serif;
     font-weight: 400;
     line-height: 1.4;
@@ -298,7 +298,7 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100%;
-    background:#f8fafc;
+    background: #fff;
     font-family: Inter, sans-serif;
     color: #051841;
     font-size: 16px;
