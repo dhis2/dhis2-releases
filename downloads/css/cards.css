@@ -12,13 +12,28 @@
 }
 
 .download-card {
-    background: #f7ffff;
+    background: linear-gradient(150deg, #d7e5fc 0%, #f7ffff 100%);
     color: #051841;
     border: 1px solid #e8edf2;
     border-radius: 5px;
     padding: 24px;
     min-width: 500px;
 }
+
+
+.android-card {
+    background: linear-gradient(150deg, #d7e5fc 0%, #f7ffff 100%);
+    color: #051841;
+    border: 1px solid #e8edf2;
+    border-radius: 5px;
+    padding: 24px;
+    width: 500px;
+}
+
+.download-card:hover,.android-card:hover {
+    background-image: linear-gradient(150deg, #e9defa 0%, #fbfcdb 100%);
+}
+
 
 /* Media query for when the container width goes below 1050px */
 @media (max-width: 1050px) {
