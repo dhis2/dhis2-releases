@@ -1,4 +1,4 @@
-# DHIS2 version 41 Release Note
+# DHIS2 version 41 and Android Capture 3.0 Release Note
 
 ## Highlights
 
