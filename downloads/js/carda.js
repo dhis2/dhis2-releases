@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('v1/versions/stable.json')
+    fetch('v1/versions/android.json')
     .then(response => response.json())
     .then(releasesData => populateReleases(releasesData.captureAppVersions))
     .catch(error => console.error('Error loading releases:', error));

@@ -28,6 +28,7 @@
     border-radius: 5px;
     padding: 24px;
     width: 500px;
+    margin: 0 auto;
 }
 
 .download-card:hover,.android-card:hover {
