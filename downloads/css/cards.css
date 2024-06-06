@@ -8,6 +8,7 @@
   grid-gap: 20px; /* Adjust the gap as needed */
   padding: 20px; /* Optional padding around the grid */
   margin:auto;
+  background:#f8fafc;
 }
 
 .download-card {
