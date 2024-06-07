@@ -141,7 +141,7 @@
 }
 
 .dc-download-button {
-    background: #0040a0;
+    background: rgba(5, 24, 65, .85);
     font-size: 1.125rem;
     color: #fff;
     border-radius: 5px;
