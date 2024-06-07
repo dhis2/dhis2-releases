@@ -49,7 +49,7 @@ function createReleaseCard(release, patchVersion) {
  
     cardElement.innerHTML = `
         <div class="dc-title">
-            <span class="dc-title-version">DHIS2 version ${patchVersion.name}</span>    
+            <span class="dc-title-version">DHIS2 v${patchVersion.displayName || patchVersion.name}</span>    
         </div>
         <div class="dc-download">
             <a class="dc-download-button" href="https://databases.dhis2.org/sierra-leone/${dbver}/dhis2-db-sierra-leone.sql.gz">Sample database ${dbver}</a>

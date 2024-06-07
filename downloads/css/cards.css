@@ -13,9 +13,9 @@
 
 .wrapperdb {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 20px; /* Adjust the gap as needed */
-  padding: 20px; /* Optional padding around the grid */
+  padding: 0px; /* Optional padding around the grid */
   margin:auto;
   background:#fff;
 }
@@ -37,7 +37,7 @@
     border: 1px solid #e8edf2;
     border-radius: 5px;
     padding: 14px;
-    width: 300px;
+    width: 260px;
     margin: 0 auto;
 }
 
