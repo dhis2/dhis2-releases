@@ -53,7 +53,7 @@ function createReleaseCard(release) {
         <span><a href="${release.releaseNotes}">Feature overview</a></span>
         </div>
 
-        <div class="dc-download">
+        <div class="dc-download-android">
             <a href="${release.download.gitHub}">
             <img src="img/GitHub_Lockup_Light.png" alt="Download on GitHub" class="dc-download-badge-gh">
             </a>

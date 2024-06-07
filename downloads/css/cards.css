@@ -126,6 +126,14 @@
 
 .dc-download {
     display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.dc-download-android {
+    display: inline-flex;
     flex-direction: row;
     gap: 8px;
     margin-bottom: 16px;
@@ -133,7 +141,7 @@
 }
 
 .dc-download-button {
-    background: #021e47;
+    background: #0040a0;
     font-size: 1.125rem;
     color: #fff;
     border-radius: 5px;
