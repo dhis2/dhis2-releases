@@ -54,6 +54,9 @@ function createReleaseCard(release) {
         </div>
 
         <div class="dc-download">
+            <a href="${release.download.gitHub}">
+            <img src="img/GitHub_Lockup_Light.png" alt="Download on GitHub" class="dc-download-badge-gh">
+            </a>
             <a href="${release.download.googlePlay}">
             <img src="img/google-play-badge.png" alt="Download on Google Play" class="dc-download-badge">
             </a>
@@ -64,10 +67,7 @@ function createReleaseCard(release) {
                 <span><strong>DHIS2 compatibility:</strong> minimum ${release.dhis2CoreVersion.minVersion}, <strong>recommended ${release.dhis2CoreVersion.recommendedVersion}</strong></span>
             </div>
         </div>
-        <div class="dc-docker">
-            <span>or download from
-                <a href="${release.download.gitHub}">GitHub</a>
-        </div>`;
+        `;
 
 
     return cardElement; // Return the created card

@@ -27,7 +27,7 @@
     border: 1px solid #e8edf2;
     border-radius: 5px;
     padding: 24px;
-    width: 500px;
+    width: 580px;
     margin: 0 auto;
 }
 
@@ -79,6 +79,19 @@
     padding-right:10px;
 }
 
+.dc-download-badge-gh {
+    height: 79px;
+    background:black;
+    padding:10px;
+    border: 2px solid #868686;
+    border-radius: 10px;
+    top:1px;
+}
+
+.dc-download-badge, .dc-download-badge-gh {
+    position:relative;
+    float:left;
+}
 
 .dc-badge-hotfix {
     background: #ffd18f;
@@ -113,9 +126,10 @@
 
 .dc-download {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
-    margin-bottom: 16px
+    margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .dc-download-button {
@@ -271,7 +285,7 @@ html {
 *,
 ::after,
 ::before {
-    box-sizing: inherit
+    box-sizing: inherit;
 }
 
 body {
