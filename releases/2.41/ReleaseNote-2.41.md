@@ -170,9 +170,6 @@ The Integrity check app has been given an extensive update, allowing individual 
 #### [New "Form Field" and "Enrollment Dashboard" plugin types in the Capture App [ROADMAP-191]](https://dhis2.atlassian.net/issues/ROADMAP-191)
 *(experimental)* Additional plugin types can now be bundled in DHIS2 web apps, allowing Capture App functionality to be easily extended.  These widgets can be installed in the App Management App and can be configured for different programs in the Data Store.
 
-#### [Expanded support for all HTTP methods in the Routes API [DHIS2-16921]](https://dhis2.atlassian.net/browse/DHIS2-16921)
-The Routes API, introduced in DHIS2 v40, has been expanded to support all HTTP methods.  It was previously restricted to only forward GET requests to upstream targets.
-
 #### [Partial and rolling updates in Data Store and User Data Store APIs [DHIS2-17469]](https://dhis2.atlassian.net/browse/DHIS2-17469)
 *(experimental)* It is now possible to apply partial updates to keys in the Data Store and User Data Store.  When applying a partial updates, items can be appended to array type keys.  It is also possible to optionally specify a maximum size in the "roll" parameter which will discard items from the beginning of the array if its size exceeds the maximum after the new item has been appended.  This is an experimental feature which may be updated in future DHIS2 releases.
 
