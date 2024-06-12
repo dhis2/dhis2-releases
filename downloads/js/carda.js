@@ -50,14 +50,14 @@ function createReleaseCard(release) {
 
         <span>Released ${release.releaseDate}</span>
 
-        <span><a href="${release.releaseNotes}">Feature overview</a></span>
+        <span><a href="${release.releaseNotes}" target="_blank" rel="noopener noreferrer">Feature overview</a></span>
         </div>
 
         <div class="dc-download-android">
-            <a href="${release.download.gitHub}">
+            <a href="${release.download.gitHub}" target="_blank" rel="noopener noreferrer">
             <img src="img/GitHub_Lockup_Light.png" alt="Download on GitHub" class="dc-download-badge-gh">
             </a>
-            <a href="${release.download.googlePlay}">
+            <a href="${release.download.googlePlay}" target="_blank" rel="noopener noreferrer">
             <img src="img/google-play-badge.png" alt="Download on Google Play" class="dc-download-badge">
             </a>
             <div class="dc-download-info">
