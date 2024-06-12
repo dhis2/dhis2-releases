@@ -49,10 +49,11 @@ height: 2px;
     background: #add8e6e3;
     border-radius: 50%;
     border: 2px solid #008dff;
+    box-shadow: 2px 2px 5px -1px #4b4c4c; 
 }
 
-.release-circle:hover {
-    box-shadow: 0 0 10px 0 #22d0fc; 
+.release:hover .release-circle {
+    background: #51c3e9; 
 
     
 }
