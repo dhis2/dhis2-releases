@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 releaseElement.addEventListener('click', () => {
                     details.style.display = 'block';
-                    details.innerHTML = `<h2>${release.name}</h2><p>Target release date: ${formattedDate}</p><p>See the list of fixes so far for <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.name}%20ORDER%20BY%20created%20DESC">this patch on Jira</a></p>`;
+                    details.innerHTML = `<h2>${release.name}</h2><p>Target release date: ${formattedDate}</p><p>See the list of fixes so far for <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.name}%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">this patch on Jira</a></p>`;
                 });
 
                 timeline.appendChild(releaseElement);
