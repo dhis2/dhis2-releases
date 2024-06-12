@@ -1,15 +1,13 @@
 import json
 import argparse
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, List
 
 
 def create_new_patch_version(new_release: Dict[str, Any]) -> Dict[str, Any]:
-    major_version: int = new_release['major_version']
-    minor_version: int = new_release['minor_version']
-    patch_version: int = new_release['patch_version']
-    old_version_format: str = f"2.{major_version}.{minor_version}"
-    new_version_format: str = f"{major_version}.{minor_version}.{patch_version}"
-    hotfix: bool = patch_version > 0
+    major_version, minor_version, patch_version = new_release['major_version'], new_release['minor_version'], new_release['patch_version']
+    old_version_format = f"2.{major_version}.{minor_version}"
+    new_version_format = f"{major_version}.{minor_version}.{patch_version}"
+    hotfix = patch_version > 0
 
     return {
         "name": old_version_format,
@@ -25,8 +23,8 @@ def create_new_patch_version(new_release: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def create_new_version(new_release: Dict[str, Any], new_patch_version: Dict[str, Any]) -> Dict[str, Any]:
-    major_version: int = new_release['major_version']
-    version_name: str = f"2.{major_version}"
+    major_version = new_release['major_version']
+    version_name = f"2.{major_version}"
 
     return {
         "name": version_name,
@@ -68,46 +66,37 @@ def update_support_status(data: Dict[str, Any]) -> None:
     for i, version in enumerate(data['versions']):
         version['supported'] = i < 4
 
-    print(f"Support status updated for the last 4 versions")
+    print("Support status updated for the last 4 versions")
 
 
 def update_dhis2_releases(data: Dict[str, Any], new_release: Dict[str, Any]) -> Dict[str, Any]:
-    major_version: int = new_release['major_version']
-    new_patch_version: Dict[str, Any] = create_new_patch_version(new_release)
-    version_name: str = f"2.{major_version}"
-
-    version_exists: bool = False
+    major_version = new_release['major_version']
+    new_patch_version = create_new_patch_version(new_release)
+    version_name = f"2.{major_version}"
 
     for version in data['versions']:
-        if version['name'] == version_name:
-            version_exists = True
+        version['latest'] = version['name'] == version_name
+        if version['latest']:
             update_existing_version(version, new_release, new_patch_version)
-        else:
-            version['latest'] = False
-
-    if not version_exists:
-        new_version: Dict[str, Any] = create_new_version(new_release, new_patch_version)
-
-        # Check if the DHIS2 major release version already exists
-        if not any(v['name'] == new_version['name'] for v in data['versions']):
-            # Insert new versions at the beginning of the list
-            data['versions'].insert(0, new_version)
-            print(f"Added new version {new_version['displayName']}")
+            break
+    else:
+        new_version = create_new_version(new_release, new_patch_version)
+        data['versions'].insert(0, new_version)
+        print(f"Added new version {new_version['displayName']}")
 
     update_support_status(data)
     return data
 
 
 def parse_version(version: str) -> Tuple[int, ...]:
-    version_parts: List[str] = version.split('.')
-    if len(version_parts) != 3:
+    parts = version.split('.')
+    if len(parts) != 3:
         raise ValueError(f"Invalid version format: {version}")
-
-    return tuple(map(int, version_parts[:3]))
+    return tuple(map(int, parts))
 
 
 if __name__ == "__main__":
-    parser: argparse.ArgumentParser = argparse.ArgumentParser(description='Update DHIS2 versions JSON file.')
+    parser = argparse.ArgumentParser(description='Update DHIS2 versions JSON file.')
     parser.add_argument('--version', required=True, help='The DHIS2 version (e.g., 40.1.3)')
     parser.add_argument('--url', required=True, help='The URL to the WAR file')
     parser.add_argument('--sha256', required=True, help='The SHA256 hash of the WAR file')
@@ -115,11 +104,11 @@ if __name__ == "__main__":
     parser.add_argument('--release-date', required=True, help='The release date of the new version (e.g., 2024-06-07)')
     parser.add_argument('--json-file', required=True, help='The path to the JSON file to update')
 
-    args: argparse.Namespace = parser.parse_args()
+    args = parser.parse_args()
 
     major_version, minor_version, patch_version = parse_version(args.version)
 
-    new_release: Dict[str, Any] = {
+    new_release = {
         "major_version": major_version,
         "minor_version": minor_version,
         "patch_version": patch_version,
@@ -130,9 +119,9 @@ if __name__ == "__main__":
     }
 
     with open(args.json_file, 'r') as file:
-        data: Dict[str, Any] = json.load(file)
+        data = json.load(file)
 
-    updated_data: Dict[str, Any] = update_dhis2_releases(data, new_release)
+    updated_data = update_dhis2_releases(data, new_release)
 
     with open(args.json_file, 'w') as file:
         json.dump(updated_data, file, indent=4)
