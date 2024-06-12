@@ -62,9 +62,9 @@ function createReleaseCard(release, patchVersion) {
             <span>Released ${release.releaseDate}</span>
         </div>
         <div class="dc-outbound-links">
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${patchVersion.name}.md">${patchVersion.displayName} release notes</a>
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/README.md">${release.displayName} upgrade notes</a>
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${release.name}.md">Feature overview</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${patchVersion.name}.md" target="_blank" rel="noopener noreferrer">${patchVersion.displayName} release notes</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/README.md" target="_blank" rel="noopener noreferrer">${release.displayName} upgrade notes</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${release.name}.md" target="_blank" rel="noopener noreferrer">Feature overview</a>
         </div>
         <div class="dc-download">
             <a class="dc-download-button" href="${patchVersion.url}">Download ${patchVersion.displayName || patchVersion.name}</a>
@@ -75,7 +75,7 @@ function createReleaseCard(release, patchVersion) {
         </div>
         <div class="dc-docker">
             <span>Download from
-                <a href="https://hub.docker.com/r/dhis2/core/tags?page=1&ordering=last_updated&name=${patchVersion.displayName || patchVersion.name}">Docker</a> with
+                <a href="https://hub.docker.com/r/dhis2/core/tags?page=1&ordering=last_updated&name=${patchVersion.displayName || patchVersion.name}" target="_blank" rel="noopener noreferrer">Docker</a> with
             </span>
             <span class="dc-docker-code">docker pull dhis2/core:${patchVersion.name}</span>
         </div>`;
