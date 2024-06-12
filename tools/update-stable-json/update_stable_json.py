@@ -44,20 +44,21 @@ def create_new_version(new_release: Dict[str, Any], new_patch_version: Dict[str,
 
 
 def update_existing_version(version: Dict[str, Any], new_release: Dict[str, Any], new_patch_version: Dict[str, Any]) -> None:
-    version['latest'] = True
-    version['supported'] = True
-    version['latestPatchVersion'] = new_release['minor_version']
-    version['latestHotfixVersion'] = new_release['patch_version']
-    version['latestStableUrl'] = new_release['url']
-    version['releaseDate'] = new_release['release_date']
-    version['sha256'] = new_release['sha256']
-    version['fileSize'] = new_release['file_size']
+    version.update({
+        "latest": True,
+        "supported": True,
+        "latestPatchVersion": new_release['minor_version'],
+        "latestHotfixVersion": new_release['patch_version'],
+        "latestStableUrl": new_release['url'],
+        "releaseDate": new_release['release_date'],
+        "sha256": new_release['sha256'],
+        "fileSize": new_release['file_size']
+    })
 
-    # Check if the DHIS2 release version already exists
-    for patch_version in version['patchVersions']:
-        if patch_version['displayName'] == new_patch_version['displayName']:
-            print(f"Patch version {new_patch_version['displayName']} already exists.")
-            exit()
+    if any(pv['displayName'] == new_patch_version['displayName'] for pv in version['patchVersions']):
+        print(f"Patch version {new_patch_version['displayName']} already exists.")
+        exit()
+
     version['patchVersions'].append(new_patch_version)
     print(f"Added new patch version {new_patch_version['displayName']} to version {version['displayName']}")
 
