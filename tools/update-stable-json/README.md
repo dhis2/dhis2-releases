@@ -5,11 +5,10 @@ Updates the [stable.json](/downloads/v1/versions/stable.json) file that contains
 ### Usage
 
 ```shell
-python3 update_stable_json.py \
+./update_stable_json.py \
   --version 42.0.0 \
-  --url https://releases.dhis2.org/42/dhis2-stable-42.0.0.war \
-  --sha256 'abc123' \
-  --file-size "290.0 MB" \
+  --war-url https://releases.dhis2.org/42/dhis2-stable-42.0.0.war \
+  --war-path dhis.war \
   --release-date $(date +%F) \
   --json-file stable.json
 ```

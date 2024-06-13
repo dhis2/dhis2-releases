@@ -9,6 +9,7 @@ from update_stable_json import (
     parse_version
 )
 
+
 @pytest.fixture
 def sample_data():
     return {
@@ -43,6 +44,7 @@ def sample_data():
         ]
     }
 
+
 @pytest.fixture
 def new_release():
     return {
@@ -51,9 +53,10 @@ def new_release():
         "patch_version": 1,
         "release_date": "2024-06-07",
         "url": "https://releases.dhis2.org/42/dhis2-stable-42.1.1.war",
-        "sha256": "asd123",
+        "sha256": "z78de1a96afc6136c8415ab0035feb6b4f8c5cc4dff8d4f0e5b9878q",
         "file_size": "290.0 MB"
     }
+
 
 def test_create_new_patch_version(new_release):
     new_patch_version = create_new_patch_version(new_release)
@@ -62,6 +65,7 @@ def test_create_new_patch_version(new_release):
     assert new_patch_version['version'] == 1
     assert new_patch_version['hotfixVersion'] == 1
     assert new_patch_version['hotfix'] == True
+
 
 def test_create_new_version(new_release):
     new_patch_version = create_new_patch_version(new_release)
@@ -77,6 +81,7 @@ def test_create_new_version(new_release):
     assert new_version['jdk'] == 17  # Assuming major version 42 uses JDK 17
     assert new_version['patchVersions'] == [new_patch_version]
 
+
 def test_update_existing_version(sample_data, new_release):
     existing_version = sample_data['versions'][0]
     new_patch_version = create_new_patch_version(new_release)
@@ -91,6 +96,7 @@ def test_update_existing_version(sample_data, new_release):
     assert existing_version['fileSize'] == new_release['file_size']
     assert len(existing_version['patchVersions']) == 2
 
+
 def test_update_support_status(sample_data):
     update_support_status(sample_data)
     for i, version in enumerate(sample_data['versions']):
@@ -98,6 +104,7 @@ def test_update_support_status(sample_data):
             assert version['supported'] == True
         else:
             assert version['supported'] == False
+
 
 def test_update_dhis2_releases(sample_data, new_release):
     updated_data = update_dhis2_releases(sample_data, new_release)
@@ -110,6 +117,7 @@ def test_update_dhis2_releases(sample_data, new_release):
     assert updated_data['versions'][0]['releaseDate'] == new_release['release_date']
     assert updated_data['versions'][0]['sha256'] == new_release['sha256']
     assert updated_data['versions'][0]['fileSize'] == new_release['file_size']
+
 
 def test_parse_version():
     version = "42.1.1"

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import argparse
 import hashlib
@@ -116,7 +118,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Update DHIS2 versions JSON file.')
     parser.add_argument('--version', required=True, help='The DHIS2 version (e.g., 40.1.3)')
     parser.add_argument('--war-url', required=True, help='The URL to the WAR file')
-    parser.add_argument('--war-path', required=True, help='The path to the WAR file')
+    parser.add_argument('--war-path', required=True, help='The local filesystem path to the WAR file')
     parser.add_argument('--release-date', required=True, help='The release date of the new version (e.g., 2024-06-07)')
     parser.add_argument('--json-file', required=True, help='The path to the JSON file to update')
 
