@@ -1,5 +1,7 @@
 import json
 import pytest
+import os
+
 from update_stable_json import (
     create_new_patch_version,
     create_new_version,
@@ -9,40 +11,11 @@ from update_stable_json import (
     parse_version
 )
 
-
 @pytest.fixture
 def sample_data():
-    return {
-        "versions": [
-            {
-                "name": "2.41",
-                "displayName": "v41",
-                "latest": True,
-                "version": 41,
-                "releaseDate": "2024-05-29",
-                "supported": True,
-                "latestPatchVersion": 0,
-                "latestHotfixVersion": 0,
-                "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.0.0.war",
-                "sha256": "f78de1a96afc6136c8415ab0035feb6b4f8c5cc4dff8d4f0e5b9878d",
-                "jdk": 17,
-                "patchVersions": [
-                    {
-                        "name": "2.41.0",
-                        "displayName": "41.0.0",
-                        "version": 0,
-                        "hotfixVersion": 0,
-                        "releaseDate": "2024-05-29",
-                        "url": "https://releases.dhis2.org/41/dhis2-stable-41.0.0.war",
-                        "sha256": "f78de1a96afc6136c8415ab0035feb6b4f8c5cc4dff8d4f0e5b9878d",
-                        "hotfix": False,
-                        "fileSize": "284.3 MB"
-                    }
-                ],
-                "fileSize": "284.3 MB"
-            }
-        ]
-    }
+    with open(os.path.join(os.path.dirname(__file__), 'sample.json'), 'r') as file:
+        data = json.load(file)
+    return data
 
 
 @pytest.fixture
