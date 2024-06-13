@@ -1,6 +1,8 @@
 import json
 import argparse
-from typing import Dict, Any, Tuple, List
+import hashlib
+import os
+from typing import Dict, Any, Tuple
 
 
 def create_new_patch_version(new_release: Dict[str, Any]) -> Dict[str, Any]:
@@ -96,12 +98,25 @@ def parse_version(version: str) -> Tuple[int, ...]:
     return tuple(map(int, parts))
 
 
+def sha256sum(filename):
+    h = hashlib.sha256()
+    b = bytearray(128*1024)
+    mv = memoryview(b)
+    with open(filename, 'rb', buffering=0) as f:
+        while n := f.readinto(mv):
+            h.update(mv[:n])
+    return h.hexdigest()
+
+
+def get_file_size(path):
+    return os.path.getsize(path) / (1024 * 1024)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Update DHIS2 versions JSON file.')
     parser.add_argument('--version', required=True, help='The DHIS2 version (e.g., 40.1.3)')
-    parser.add_argument('--url', required=True, help='The URL to the WAR file')
-    parser.add_argument('--sha256', required=True, help='The SHA256 hash of the WAR file')
-    parser.add_argument('--file-size', required=True, help='The size of the WAR file')
+    parser.add_argument('--war-url', required=True, help='The URL to the WAR file')
+    parser.add_argument('--war-path', required=True, help='The path to the WAR file')
     parser.add_argument('--release-date', required=True, help='The release date of the new version (e.g., 2024-06-07)')
     parser.add_argument('--json-file', required=True, help='The path to the JSON file to update')
 
@@ -114,9 +129,9 @@ if __name__ == "__main__":
         "minor_version": minor_version,
         "patch_version": patch_version,
         "release_date": args.release_date,
-        "url": args.url,
-        "sha256": args.sha256,
-        "file_size": args.file_size
+        "url": args.war_url,
+        "sha256": sha256sum(args.war_path),
+        "file_size": f"{get_file_size(args.war_path):.2f} MB"
     }
 
     with open(args.json_file, 'r') as file:
