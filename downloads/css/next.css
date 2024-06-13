@@ -1,5 +1,9 @@
-* {
-    font-family: Inter, sans-serif
+body {
+    font-family: Inter, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .timeline-container {
