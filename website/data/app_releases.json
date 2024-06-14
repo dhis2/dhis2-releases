@@ -227,8 +227,8 @@
     },
     "v100.1.0": {
       "Bug Fixes": [
-        "use getWithDataTest and findWithDataTest",
         "add start:nobrowser script",
+        "use getWithDataTest and findWithDataTest",
         "add cypress data test prefix to cypress.json"
       ],
       "Features": [
@@ -237,6 +237,16 @@
     }
   },
   "capture-app": {
+    "v100.68.25": {
+      "Bug Fixes": [
+        "[DHIS2-16488] Allow programs with no TET write access (#3610)"
+      ]
+    },
+    "v100.68.24": {
+      "Bug Fixes": [
+        "translations: sync translations from transifex (master)"
+      ]
+    },
     "v100.68.23": {
       "Bug Fixes": [
         "translations: sync translations from transifex (master)"
@@ -284,8 +294,8 @@
     },
     "v100.68.14": {
       "Bug Fixes": [
-        "[DHIS2-15920] skip duplicates reviews (#3629)",
-        "[DHIS2-17102] edit event navigation (#3592)"
+        "[DHIS2-17102] edit event navigation (#3592)",
+        "[DHIS2-15920] skip duplicates reviews (#3629)"
       ]
     },
     "v100.68.13": {
@@ -340,11 +350,11 @@
     },
     "v100.68.3": {
       "Bug Fixes": [
-        "[DHIS2-16931] Working list hides delete button (#3603)",
-        "[DHIS2-17044] missing singular translation (#3598)",
+        "[DHIS2-17096] show/hide option groups in profile widget (#3593)",
         "[DHIS2-17177] Registration page stuck after failed save (#3595)",
-        "[DHIS2-17161] Do not update attribute values from enrollment Widget (#3601)",
-        "[DHIS2-17096] show/hide option groups in profile widget (#3593)"
+        "[DHIS2-17044] missing singular translation (#3598)",
+        "[DHIS2-16931] Working list hides delete button (#3603)",
+        "[DHIS2-17161] Do not update attribute values from enrollment Widget (#3601)"
       ]
     },
     "v100.68.2": {
@@ -364,8 +374,8 @@
     },
     "v100.67.12": {
       "Bug Fixes": [
-        "[DHIS2-14938] trigger error on complete (#3594)",
-        "[DHIS2-16999] filter assign rule effects in the view event page (#3597)"
+        "[DHIS2-16999] filter assign rule effects in the view event page (#3597)",
+        "[DHIS2-14938] trigger error on complete (#3594)"
       ]
     },
     "v100.67.11": {
@@ -377,33 +387,23 @@
       "Bug Fixes": [
         "translations: sync translations from transifex (master)"
       ]
-    },
-    "v100.67.9": {
-      "Bug Fixes": [
-        "translations: sync translations from transifex (master)"
-      ]
-    },
-    "v100.67.8": {
-      "Bug Fixes": [
-        "[DHIS2-17084] Filter Relationship Types for write access (#3580)"
-      ]
     }
   },
   "dashboard-app": {
     "v100.2.2": {
       "Bug Fixes": [
-        "avoid re-rendering an item when adding the same again (DHIS2-17016) (#2935)",
         "dimension list design (DHIS2-16270) (#2861)",
+        "avoid reading from undefined error (DHIS2-17334) (#2970)",
+        "avoid re-rendering an item when adding the same again (DHIS2-17016) (#2935)",
         "merge to master",
-        "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#2971)",
-        "avoid reading from undefined error (DHIS2-17334) (#2970)"
+        "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#2971)"
       ]
     },
     "v100.2.1": {
       "Bug Fixes": [
+        "translations: sync translations from transifex (dev)",
         "short name was not being shown in visualizations (#2959)",
         "in paragraphs were removed in dashboard item description (#2962)",
-        "translations: sync translations from transifex (dev)",
         "merge to master"
       ]
     },
@@ -417,18 +417,18 @@
     },
     "v100.1.0": {
       "Bug Fixes": [
-        "show tag/tooltip only when a filter other than ou/pe is used (#2941)",
-        "merge to master",
         "translations: sync translations from transifex (dev) (#2920)",
         "show tag/tooltip about not applied filters for Outlier table (DHIS2-13858) (#2937)",
+        "merge to master",
+        "show tag/tooltip only when a filter other than ou/pe is used (#2941)",
         "use interpretations component from Analytics (DHIS2-15441) (#2430)"
       ],
       "Features": [
         "support outlier table plugin (DHIS2-16751) (#2912)"
       ],
       "Testing": [
-        "disable flaky test (#2940)",
-        "use 41 test instance"
+        "use 41 test instance",
+        "disable flaky test (#2940)"
       ]
     },
     "v100.0.4": {
@@ -499,14 +499,14 @@
     },
     "v100.0.8": {
       "Bug Fixes": [
+        "add scroll on workflow selector [DHIS2-15415]",
         "update v38 fixtures",
+        "add scroll for workflows [DHIS2-15415]",
+        "translations: sync translations from transifex (master)",
+        "prevent failing jest test",
         "remove v37 e2e",
         "update v39 fixtures",
-        "update jest mock [DHIS2-15415]",
-        "prevent failing jest test",
-        "add scroll on workflow selector [DHIS2-15415]",
-        "add scroll for workflows [DHIS2-15415]",
-        "translations: sync translations from transifex (master)"
+        "update jest mock [DHIS2-15415]"
       ]
     },
     "v100.0.7": {
@@ -581,11 +581,11 @@
     },
     "v100.3.8": {
       "Bug Fixes": [
-        "warning border style to yellow",
-        "tests: update tests",
-        "help: add warning style reference to help",
-        "prevent unnecessary renders when form has errors (#358)",
         "prevent setting warning as undefined",
+        "help: add warning style reference to help",
+        "warning border style to yellow",
+        "prevent unnecessary renders when form has errors (#358)",
+        "tests: update tests",
         "validator: limits as warning instead of error (#357)"
       ]
     },
@@ -616,11 +616,11 @@
     },
     "v100.3.3": {
       "Testing": [
-        "publish cypress test results to reportportal (#349)",
-        "use import instead of require",
-        "update API_KEY name and merge parallel launches",
         "debug merging launches",
-        "cleaning PR"
+        "update API_KEY name and merge parallel launches",
+        "cleaning PR",
+        "publish cypress test results to reportportal (#349)",
+        "use import instead of require"
       ],
       "Bug Fixes": [
         "handle non-standard server time zone ids [DHIS2-15511] (#344)"
@@ -633,32 +633,32 @@
     },
     "v100.3.1": {
       "Testing": [
-        "use imperative validate: use real query keys instead of mocked ones",
-        "use delete data value mutation: cover with tests",
-        "use imperative validate: cover request failure",
+        "use imperative validate: cover response transformation",
+        "metadata selectors: add jest tests for all untested selectors",
+        "use set form completion mutation: cover with tests",
+        "use update limits: cover with tests",
+        "cover <CategoryComboTableBody/> & cartesian",
         "cartesian: cover with tests (DHIS2-14386)",
+        "use imperative validate: cover request failure",
+        "use delete limits: cover with tests",
+        "use set data value mutation: cover with tests",
+        "use delete data value mutation: cover with tests",
+        "use imperative validate: use real query keys instead of mocked ones",
         "category combo table body: cover with tests",
         "cover hooks in data-value-mutations.js (#314)",
-        "use update limits: cover with tests",
         "cover useImperativeValidate with tests (#321)",
-        "cover <CategoryComboTableBody/> & cartesian",
-        "metadata selectors: add jest tests for all untested selectors",
-        "use imperative validate: cover response transformation",
-        "use set data value mutation: cover with tests",
         "cover remaining metadata selectors",
-        "use set form completion mutation: cover with tests",
-        "use delete limits: cover with tests",
         "use upload file data value mutation: cover with tests"
       ],
       "Bug Fixes": [
-        "include attribute options in completion post [DHIS2-15032] (#311)",
-        "translations: sync translations from transifex (development)",
         "use FetchError class from app-runtime [DHIS2-15085] (#316)",
-        "cartesian: return empty array when no vectors provided",
-        "cover useSetFormCompletionMutation with tests (#315)",
-        "lock forms when organisation unit is closed [BETA-25] (#317)",
         "rollback failed complete [DHIS2-15033] (#312)",
-        "use set form completion mutation: handle optimistic update errors correctly"
+        "use set form completion mutation: handle optimistic update errors correctly",
+        "lock forms when organisation unit is closed [BETA-25] (#317)",
+        "cover useSetFormCompletionMutation with tests (#315)",
+        "cartesian: return empty array when no vectors provided",
+        "translations: sync translations from transifex (development)",
+        "include attribute options in completion post [DHIS2-15032] (#311)"
       ],
       "Features": [
         "merge development into master"
@@ -666,34 +666,34 @@
     },
     "v100.3.0": {
       "Features": [
-        "lock-status: add expiry to footer bar",
+        "nice UI",
         "lock-status: check lockDate (wip)",
-        "form expiry info and data input periods [DHIS2-14600] [DHIS2-14218] (#300)",
-        "nice UI"
+        "lock-status: add expiry to footer bar",
+        "form expiry info and data input periods [DHIS2-14600] [DHIS2-14218] (#300)"
       ],
       "Bug Fixes": [
-        "use suggested text",
-        "expiry date calculation",
-        "adjust for different time locales",
-        "include username in string for i18n",
-        "handle undefined data set",
-        "only update status from backend once",
         "don't show expiration if excepted by user authorities",
-        "align inputPeriod check with backend [DHIS2-14218]",
-        "cover useSetFormCompletionMutation with tests (#315)",
-        "remove conditional chaining",
-        "use relative time with absolute time in tooltip",
+        "include username in string for i18n",
+        "error when no period is selected",
         "use set form completion mutation: handle optimistic update errors correctly",
-        "error when no period is selected"
+        "use relative time with absolute time in tooltip",
+        "expiry date calculation",
+        "handle undefined data set",
+        "use suggested text",
+        "cover useSetFormCompletionMutation with tests (#315)",
+        "only update status from backend once",
+        "adjust for different time locales",
+        "remove conditional chaining",
+        "align inputPeriod check with backend [DHIS2-14218]"
       ],
       "Testing": [
+        "use set form completion mutation: cover with tests",
+        "use update limits: cover with tests",
+        "use delete limits: cover with tests",
+        "use set data value mutation: cover with tests",
         "use delete data value mutation: cover with tests",
         "cover hooks in data-value-mutations.js (#314)",
-        "use update limits: cover with tests",
-        "use set data value mutation: cover with tests",
-        "use upload file data value mutation: cover with tests",
-        "use set form completion mutation: cover with tests",
-        "use delete limits: cover with tests"
+        "use upload file data value mutation: cover with tests"
       ]
     },
     "v100.2.4": {
@@ -718,79 +718,79 @@
     },
     "v100.2.0": {
       "Bug Fixes": [
-        "highlighted field store: correct wrong initial state",
-        "deps: update tanstack-query monorepo to v4.19.1",
-        "handle remove periods calculation for end-of-month [DHIS2-14007] (#238)",
-        "minor cleanup",
-        "deps: update tanstack-query monorepo to v4.19.0",
-        "deps: update tanstack-query monorepo to v4.24.4",
-        "deps: update tanstack-query monorepo to v4.24.6",
-        "deps: update dependency reselect to v4.1.7",
-        "deps: update dependency chart.js to v3.9.1",
-        "remove unnecessary overflow",
-        "total-cell: clear total value when printing empty form (#298)",
-        "deps: update dependency zustand to v4.1.5",
-        "option-set: remove unnecessary sort",
-        "data value store: set correct default when data value set falsy",
-        "deps: update tanstack-query monorepo to v4.16.1",
-        "use periods: reverse order & add first/last periods of next/prev year if in current year",
-        "use multi-calendar-dates to address periods that don't start on Jan 1st",
-        "deps: update tanstack-query monorepo to v4.20.2",
-        "print: fix print-styles for selects",
-        "update ui version",
-        "data-test attribute and linting errors",
-        "metadata error handling",
-        "clear selections with only dataset [DHIS2-14039] (#243)",
         "options-sort: fix undefined check",
-        "deps: update tanstack-query monorepo to v4.18.0",
-        "deps: update dependency query-string to v7.1.2",
-        "deps: update dependency re-reselect to v4.0.1",
+        "highlighted field store: correct wrong initial state",
         "address period issues that occurred after new year 2022/2023",
-        "deps: update dependency @tanstack/react-query-devtools to v4.24.13",
-        "optionSet: sort selected options",
-        "deps: update dependency idb-keyval to v6.2.0",
-        "deps: update dependency final-form to v4.20.9",
-        "use periods: check if lastPeriodOfPrevYear exists",
-        "deps: update dependency react-router-dom to v5.3.4",
-        "deps: update dependency zustand to v4.1.4",
-        "translations: sync translations from transifex (development)",
-        "option-set: fix clear button",
-        "clean up audit styling [TECH-1469] [TECH-1470] (#237)",
+        "use periods: reverse order & add first/last periods of next/prev year if in current year",
+        "option-set: remove unnecessary sort",
+        "ensure biweeks allow entry over entire year [TECH-1308] (#242)",
+        "deps: update dependency html-react-parser to v1.4.14",
+        "deps: update tanstack-query monorepo to v4.19.1",
+        "clear selections with only dataset [DHIS2-14039] (#243)",
         "deps: update dependency query-string to v7.1.3",
-        "implement PR feedback by @tomzemp from 2023-03-02",
-        "data value store: return boolean from isComplete selector",
-        "metadata and user info error handling (#294)",
+        "deps: update dependency react-router-dom to v5.3.4",
+        "deps: update tanstack-query monorepo to v4.24.4",
+        "optionset: re-add input spread to button",
+        "deps: update tanstack-query monorepo to v4.18.0",
+        "deps: update dependency react-chartjs-2 to v4.3.1",
+        "deps: update tanstack-query monorepo to v4.16.1",
+        "clean up audit styling [TECH-1469] [TECH-1470] (#237)",
+        "multi-select: update max-width",
+        "deps: update dependency chart.js to v3.9.1",
+        "option-set: fix clear button",
         "implement PR feedback by @tomzemp from 2023-03-04",
+        "deps: update dependency re-reselect to v4.0.1",
+        "deps: update tanstack-query monorepo to v4.24.6",
+        "metadata error handling",
+        "translations: sync translations from transifex (development)",
+        "use multi-calendar-dates to address periods that don't start on Jan 1st",
+        "deps: update dependency final-form to v4.20.9",
+        "deps: update dependency query-string to v7.1.2",
+        "deps: update dependency @tanstack/react-query-devtools to v4.24.14",
+        "deps: update dependency idb-keyval to v6.2.0",
+        "update ui version",
+        "deps: update tanstack-query monorepo to v4.20.4",
+        "deps: update dependency classnames to v2.3.2",
+        "deps: update tanstack-query monorepo to v4.23.0",
+        "deps: update dependency zustand to v4.1.5",
+        "deps: update tanstack-query monorepo to v4.20.2",
+        "data-test attribute and linting errors",
+        "deps: update dependency reselect to v4.1.7",
+        "deps: update tanstack-query monorepo to v4.19.0",
+        "deps: update dependency zustand to v4.1.4",
         "deps: update tanstack-query monorepo to v4.24.9",
+        "use periods: check if lastPeriodOfPrevYear exists",
+        "handle remove periods calculation for end-of-month [DHIS2-14007] (#238)",
+        "total-cell: clear total value when printing empty form (#298)",
+        "data value store: return boolean from isComplete selector",
+        "remove unnecessary overflow",
+        "print: fix print-styles for selects",
+        "data value store: set correct default when data value set falsy",
+        "minor cleanup",
+        "optionSet: sort selected options",
+        "metadata and user info error handling (#294)",
+        "deps: update tanstack-query monorepo to v4.17.1",
         "deps: update tanstack-query monorepo to v4.24.10",
         "adjust disabled org unit style",
-        "deps: update dependency classnames to v2.3.2",
-        "ensure biweeks allow entry over entire year [TECH-1308] (#242)",
-        "deps: bump platform and runtime deps [TECH-1462] (#236)",
-        "multi-select: update max-width",
-        "deps: update dependency html-react-parser to v1.4.14",
-        "deps: update tanstack-query monorepo to v4.17.1",
-        "deps: update tanstack-query monorepo to v4.23.0",
-        "optionset: re-add input spread to button",
-        "deps: update dependency @tanstack/react-query-devtools to v4.24.14",
-        "deps: update tanstack-query monorepo to v4.20.4",
-        "deps: update dependency react-chartjs-2 to v4.3.1"
+        "implement PR feedback by @tomzemp from 2023-03-02",
+        "deps: update dependency @tanstack/react-query-devtools to v4.24.13",
+        "deps: bump platform and runtime deps [TECH-1462] (#236)"
       ],
       "Features": [
-        "zustand: create wrapper",
         "option-set: add multi text support (#290)",
+        "zustand: create wrapper",
         "optionset: add support for multi-text optionSet"
       ],
       "Testing": [
-        "unsaved data store: cover with tests",
-        "validation store: cover with tests",
-        "data value store: cover store with tests",
-        "cover stores with tests (and fix some minor issues)",
         "data value store: cover with test & establish testing pattern",
-        "entry form store: cover with tests",
-        "highlighted field store: cover with tests",
+        "cover stores with tests (and fix some minor issues)",
         "get cell id: cover with tests",
-        "sync errors store: cover with tests"
+        "highlighted field store: cover with tests",
+        "data value store: cover store with tests",
+        "sync errors store: cover with tests",
+        "validation store: cover with tests",
+        "unsaved data store: cover with tests",
+        "entry form store: cover with tests"
       ]
     },
     "v100.1.2": {
@@ -800,131 +800,131 @@
     },
     "v100.1.1": {
       "Bug Fixes": [
-        "translations: sync translations from transifex (development)",
-        "update periods height [DHIS2-14006]"
+        "update periods height [DHIS2-14006]",
+        "translations: sync translations from transifex (development)"
       ]
     },
     "v100.1.0": {
       "Bug Fixes": [
-        "add missing error-summary file",
+        "dates: ensure that server or client time is used when appropriate",
         "error-summary: use yellow800 for icon color",
-        "update variable name [TECH-1465] (#231)",
-        "entry-field: cleanup highlighted-field properly",
-        "use selector to get coc",
-        "print styles [TECH-1312] (#217)",
-        "reset error when pristine",
-        "dates: use server time when appropriate",
-        "deps: update deps",
-        "global filter field size (#221)",
-        "contextual-help: add help-legend for sync-errors",
-        "offline-error-types, show alertbar once",
-        "resolveAlertProps",
-        "ensure offline units are fetched correctly for users deep in the hierarchy (#226)",
-        "file-input: reset lastSyncedValue",
-        "ensure we use a local date string",
+        "remove 403 as temporal error",
         "review",
-        "headerbar: use smarter delay for headerbar-status",
-        "use prefetched units when user org unit is not the highest level",
-        "move handlerHeaderBarStatus to dataworkspace due to re-render issues",
+        "use retry to pause mutations",
+        "always retry offline-trigger errors",
+        "resolveAlertProps",
+        "add missing error-summary file",
+        "set highlighted field null",
+        "reset error when pristine",
+        "remove unnecessary clear highlightedfield",
+        "init lastSyncedValue, fix file-field",
+        "handle network-error alert",
+        "fix temporal error handling",
+        "bottom-bar: add failed to save summary",
+        "onlineStatus: sync header-bar status to onlineManager status",
         "tooltip: fix tooltip flickering",
-        "fix disabled cell styling [TECH-1466] (#234)",
-        "highlighted fields performance (#155)",
-        "ensure deepest level is never lower than root level",
-        "use zustand store for highlighted-field",
+        "deps: update dependency @dhis2/ui to v8.5.3 (#225)",
+        "update useHighlightedField",
+        "headerbar: use smarter delay for headerbar-status",
+        "handle invalid parameters in URL [TECH-1382] [TECH-1384] (#208)",
+        "deps: pin dependencies",
+        "dates: use server time when appropriate",
+        "errors-store: add getNumberOfErrors",
+        "or between shortcuts [DHIS2-13955]",
+        "deps: update dependency @dhis2/app-runtime to v3.5.0 (#224)",
+        "ensure offline units are fetched correctly for users deep in the hierarchy (#226)",
+        "inner-wrapper: properly clear error if last-synced",
         "rerun validation on main bar button click",
-        "make useDataValueParams and useApiAttributeParams stable",
-        "copy FetchError from data-service",
-        "getCellId",
-        "import locales so app has access to them (#207)",
+        "validation button: disable validation run when offline [TECH-1377] (#178)",
+        "basic information: display client date in tooltip",
+        "highlighted fields performance (#155)",
+        "use selector to get coc",
+        "deps: update deps",
+        "manage unsaved comments and limits when moving cells",
+        "contextual-help: add help-legend for sync-errors",
+        "true-only checkbox lastSynced comparison",
+        "option-set input lastSyncedValue",
         "filter-field: do not reset highlighted when focused",
         "stop tooltip flickering [DHIS2-13954]",
-        "onlineStatus: sync header-bar status to onlineManager status",
-        "bottom-bar: add failed to save summary",
-        "manage unsaved limits when moving cells",
-        "section-filter: do not reset highlighted on focus",
-        "allow for unit paths starting at the real root instead of user root (#197)",
-        "handle inconsistent formats from api for orgUnits [DHIS2-13888] (#210)",
-        "try to use cjs import fetcherror",
-        "filter-field: hide clear-button when no filter (#222)",
-        "translations: sync translations from transifex (development)",
-        "use highlightedfieldstore",
-        "manage unsaved comments when moving cells",
-        "persist: persist mutations that are network-errors",
-        "fix some crashes",
-        "clear sync-status when value changes (#182)",
-        "deps: update dependency @dhis2/ui to v8.5.3 (#225)",
-        "remove unnecessary clear highlightedfield",
-        "basic information: display client date in tooltip",
-        "update Add limits styling [DHIS2-13958]",
-        "remove custom styles for data details button",
-        "fix breaking tests around side bar, basic info and follow up button",
-        "true-only checkbox lastSynced comparison",
-        "use date limit: prevent recomputing on every re-render",
-        "refactor validation-tooltip to child of wrapper",
-        "update useHighlightedField",
-        "allow the webapi to return a single object instead of wrapped array",
-        "inner-wrapper: properly clear error if last-synced",
-        "use-value-store: add optional-chaining for safety",
-        "deps: pin dependencies",
-        "data-workspace: show loader if in flight, regardless of cached data",
-        "or between shortcuts [DHIS2-13955]",
-        "option-set input lastSyncedValue",
-        "address pr comments",
-        "onlineManager: make sure to go online when navigator goes online",
-        "always retry offline-trigger errors",
-        "set networkmode offlineFirst",
-        "remove defaultOnSuccess for queries",
-        "use a stable date string instead of an instable date instance (#201)",
-        "handle invalid parameters in URL [TECH-1382] [TECH-1384] (#208)",
-        "minor cleanup",
-        "deps: update dependency @dhis2/app-runtime to v3.5.0 (#224)",
-        "handle temporal mutation errors (#206)",
-        "adjust client time to server timezone when computing date ranges (#165)",
-        "shouldRollbackError",
-        "errors-store: add getNumberOfErrors",
-        "remove 403 as temporal error",
-        "manage unsaved comments and limits when moving cells",
-        "audit history: update processing, clean up [TECH-1281] (#131)",
-        "fix temporal error handling",
-        "cleanup on umount only",
-        "adjust synced cell style (#199)",
-        "tooltip: show all errors in tooltip",
-        "clear highlight when field is umounted",
-        "validation button: disable validation run when offline [TECH-1377] (#178)",
-        "data-value-set: disable when mutating",
         "add missing files",
-        "make bottom bar buttons small [DHIS2-13956]",
+        "move handlerHeaderBarStatus to dataworkspace due to re-render issues",
+        "try to use cjs import fetcherror",
+        "manage unsaved limits when moving cells",
+        "handle temporal mutation errors (#206)",
+        "make useDataValueParams and useApiAttributeParams stable",
+        "filter-field: hide clear-button when no filter (#222)",
+        "adjust client time to server timezone when computing date ranges (#165)",
+        "remove defaultOnSuccess for queries",
+        "use date limit: prevent recomputing on every re-render",
+        "minor cleanup",
+        "use a stable date string instead of an instable date instance (#201)",
+        "handle inconsistent formats from api for orgUnits [DHIS2-13888] (#210)",
         "misc cleanup",
-        "init lastSyncedValue, fix file-field",
-        "use retry to pause mutations",
+        "tooltip: show all errors in tooltip",
+        "file-input: reset lastSyncedValue",
+        "cleanup on umount only",
+        "clear highlight when field is umounted",
+        "onlineManager: make sure to go online when navigator goes online",
+        "use zustand store for highlighted-field",
+        "print styles [TECH-1312] (#217)",
+        "ensure we use a local date string",
+        "set networkmode offlineFirst",
+        "section-filter: do not reset highlighted on focus",
+        "copy FetchError from data-service",
+        "remove custom styles for data details button",
+        "global filter field size (#221)",
+        "use prefetched units when user org unit is not the highest level",
         "error-summary: count errors in selection",
+        "import locales so app has access to them (#207)",
+        "allow for unit paths starting at the real root instead of user root (#197)",
+        "make bottom bar buttons small [DHIS2-13956]",
+        "data-workspace: show loader if in flight, regardless of cached data",
+        "allow the webapi to return a single object instead of wrapped array",
+        "fix some crashes",
+        "manage unsaved comments when moving cells",
+        "getCellId",
+        "entry-field: cleanup highlighted-field properly",
+        "update Add limits styling [DHIS2-13958]",
+        "fix breaking tests around side bar, basic info and follow up button",
+        "refactor validation-tooltip to child of wrapper",
+        "clear sync-status when value changes (#182)",
+        "data-value-set: disable when mutating",
+        "use highlightedfieldstore",
+        "use-value-store: add optional-chaining for safety",
+        "translations: sync translations from transifex (development)",
+        "audit history: update processing, clean up [TECH-1281] (#131)",
         "always apply long delay when showing/hiding",
-        "handle network-error alert",
-        "dates: ensure that server or client time is used when appropriate",
+        "offline-error-types, show alertbar once",
+        "persist: persist mutations that are network-errors",
+        "ensure deepest level is never lower than root level",
+        "address pr comments",
         "error-details optional chaining",
+        "update variable name [TECH-1465] (#231)",
+        "adjust synced cell style (#199)",
+        "fix disabled cell styling [TECH-1466] (#234)",
         "preserve input-component format",
-        "set highlighted field null"
+        "shouldRollbackError"
       ],
       "Testing": [
-        "fix tests",
+        "fix test description",
         "update tests",
         "add authority tests to comment and limit tests",
         "move query-key test",
-        "add test to getPreFetchedChildren",
-        "fix test description"
+        "fix tests",
+        "add test to getPreFetchedChildren"
       ],
       "Features": [
-        "respect F_DATAVALUE_ADD user authority",
-        "sync error handling (#218)",
-        "error-indicator: add error indicator",
-        "get current date: set milliseconds to 0",
-        "custom forms: notify user about pre-fetching failure",
-        "sync-errors: add sync-errors store",
         "headerbar: integrate offline-status-message",
+        "client server date: add DRY utils",
+        "get current date: set milliseconds to 0",
+        "sync error handling (#218)",
         "sync-error: add sync error to field",
-        "headerbar: integrate offline-status message (#233)",
+        "sync-errors: add sync-errors store",
         "notify user about failures of critical requests",
-        "client server date: add DRY utils"
+        "custom forms: notify user about pre-fetching failure",
+        "respect F_DATAVALUE_ADD user authority",
+        "error-indicator: add error indicator",
+        "headerbar: integrate offline-status message (#233)"
       ]
     }
   },
@@ -941,8 +941,8 @@
     },
     "v100.4.0": {
       "Features": [
-        "upgrade cypress to version",
-        "upgrade cypress version"
+        "upgrade cypress version",
+        "upgrade cypress to version"
       ]
     },
     "v100.3.1": {
@@ -1032,9 +1032,9 @@
     },
     "v100.0.2": {
       "Bug Fixes": [
+        "updated cypress fixtures [DHIS2-14061]",
         "always use outputIdScheme=UID for data preview [DHIS2-14061]",
-        "always use outputIdScheme=UID [DHIS2-14061]",
-        "updated cypress fixtures [DHIS2-14061]"
+        "always use outputIdScheme=UID [DHIS2-14061]"
       ]
     },
     "v100.0.1": {
@@ -1046,27 +1046,27 @@
   "data-visualizer-app": {
     "v100.5.5": {
       "Bug Fixes": [
+        "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3051)",
+        "dimension chip design updates (DHIS2-16272) (#2934)",
         "non-existing AO blocks new AOs from being created (DHIS2-13167) (#3056)",
-        "numbers are misaligned in pivot table (DHIS2-16900) (#3072)",
         "translations: sync translations from transifex (dev)",
         "merge to master",
-        "dimension chip design updates (DHIS2-16272) (#2934)",
-        "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3051)"
+        "numbers are misaligned in pivot table (DHIS2-16900) (#3072)"
       ]
     },
     "v100.5.4": {
       "Bug Fixes": [
-        "avoid flashing when ou levels are used (DHIS2-17136) (#3032)",
         "fix a crash when row totals is enabled (DHIS2-17297) (#3042)",
         "translations: sync translations from transifex (dev)",
-        "merge to master"
+        "merge to master",
+        "avoid flashing when ou levels are used (DHIS2-17136) (#3032)"
       ]
     },
     "v100.5.3": {
       "Bug Fixes": [
         "try locking highcharts to 10.2.0",
-        "plugin flashes when interacting with Interpretations modal (#3017)",
         "translations: sync translations from transifex (dev)",
+        "plugin flashes when interacting with Interpretations modal (#3017)",
         "merge to master"
       ],
       "Testing": [
@@ -1075,33 +1075,33 @@
     },
     "v100.5.2": {
       "Bug Fixes": [
-        "wait for different SVG for single value",
-        "add classnames and update json instructions file for outlier tables (#3000)",
-        "change urlReg to urlGlob and correct glob pattern for outlier tables",
         "remove query param section from url glob",
-        "correct typo in visualisation type"
+        "correct typo in visualisation type",
+        "add classnames and update json instructions file for outlier tables (#3000)",
+        "wait for different SVG for single value",
+        "change urlReg to urlGlob and correct glob pattern for outlier tables"
       ]
     },
     "v100.5.1": {
       "Bug Fixes": [
         "fix period filter and loading spinner when filtering in dashboard (#3002)",
-        "ensure only the first period item is used",
         "enable the loading spinner when props change",
+        "ensure only the first period item is used",
         "merge to master"
       ]
     },
     "v100.5.0": {
       "Testing": [
-        "hover over list to prevent it from being stale",
-        "don't expect subtitle to be visible by default",
         "refactor data.cy.js to independent test cases",
-        "adapt tests to new database (#2975)"
+        "adapt tests to new database (#2975)",
+        "hover over list to prevent it from being stale",
+        "don't expect subtitle to be visible by default"
       ],
       "Bug Fixes": [
-        "push-analytics: add push analytics instructions (#2985)",
         "translations: sync translations from transifex (dev)",
-        "fetch displayTitle and displaySubtitle for translations DHIS2-16216 (#2929)",
-        "add custom errors for analytics requests (#2874)"
+        "push-analytics: add push analytics instructions (#2985)",
+        "add custom errors for analytics requests (#2874)",
+        "fetch displayTitle and displaySubtitle for translations DHIS2-16216 (#2929)"
       ],
       "Features": [
         "add class-names for push-analytics (#2966)",
@@ -1111,33 +1111,33 @@
     "v100.4.0": {
       "Bug Fixes": [
         "dependency updates (#2243)",
-        "hide icon from visualization when option is toggled",
+        "avoid visualization flashing when changing options",
         "fetch data element icon and pass it in extraOptions",
-        "set disabledOptions on AO loading and vis type switching",
-        "update cli-app-scripts and analytics deps",
-        "translations: sync translations from transifex (dev)",
-        "fix bug which cause current to loose props",
         "avoid crash when visualization object is empty (ie. New)",
         "do not pass a boolean for icons when saving",
-        "avoid visualization flashing when changing options"
+        "fix bug which cause current to loose props",
+        "hide icon from visualization when option is toggled",
+        "translations: sync translations from transifex (dev)",
+        "set disabledOptions on AO loading and vis type switching",
+        "update cli-app-scripts and analytics deps"
       ],
       "Features": [
+        "handle disabled and helpText props for disabled options",
+        "disable option when cumulativeValues is checked in PT DHiS2-15728",
+        "disabled options based on cumulativeValues in PT DHIS2-15728",
+        "v100.4.0",
         "implement data icon option for SV visualization (DHIS2-10496) (#2236)",
         "support non-gregorian fixed periods (#2233)",
-        "remove disabled before passing object to visualization generator",
-        "disabled options based on cumulativeValues in PT DHIS2-15728",
-        "disable legend option when cumulative values is enabled",
-        "handle disabled and helpText props for disabled options",
-        "cumulative values in PT (DHIS2-5497) (#2746)",
-        "disable option when cumulativeValues is checked in PT DHiS2-15728",
         "single value background color change based upon legend (DHIS2-13702) (#2223)",
-        "v100.4.0",
+        "disable legend option when cumulative values is enabled",
+        "remove disabled before passing object to visualization generator",
+        "cumulative values in PT (DHIS2-5497) (#2746)",
         "handle disabled option in Redux store"
       ],
       "Testing": [
-        "refactor clickCheckbox to check/uncheckCheckbox",
-        "enhance tests, options and sorting",
         "fix test failing due to change in single value behaviour",
+        "enhance tests, options and sorting",
+        "refactor clickCheckbox to check/uncheckCheckbox",
         "add tests for cumulativeValues option in PT",
         "use current year instead of hardcode it",
         "add helper functions for totals options"
@@ -1146,8 +1146,8 @@
     "v100.3.1": {
       "Bug Fixes": [
         "v100.3.1",
-        "legend sets fail to load in table with data dimension in the row (DHIS2-12830) (#2753)",
-        "color set update (DHIS2-16108) (#2906)"
+        "color set update (DHIS2-16108) (#2906)",
+        "legend sets fail to load in table with data dimension in the row (DHIS2-12830) (#2753)"
       ]
     },
     "v100.3.0": {
@@ -1155,15 +1155,15 @@
         "send test results to report portal dashboard"
       ],
       "Bug Fixes": [
-        "visualization deleted when saving it after copy DHIS2-15722 (#2778)",
-        "translate dimension labels in PT DHIS2-15750 (#2783)",
-        "disable Save when vis not in unsaved/dirty state DHIS2-15373 (#2758)",
         "allow closing the interpretations modal when accessed via URL (DHIS2-15721) (#2748)",
-        "translations: sync translations from transifex (dev)",
-        "change legend type description to fit SV (DHIS2-15120) (#2757)",
-        "prevent state update when modal is closing",
+        "visualization deleted when saving it after copy DHIS2-15722 (#2778)",
         "only update interpretations list when in DOM",
-        "limit max value shifts to min value fields in PT (DHIS2-10235) (#2756)"
+        "limit max value shifts to min value fields in PT (DHIS2-10235) (#2756)",
+        "translations: sync translations from transifex (dev)",
+        "disable Save when vis not in unsaved/dirty state DHIS2-15373 (#2758)",
+        "prevent state update when modal is closing",
+        "change legend type description to fit SV (DHIS2-15120) (#2757)",
+        "translate dimension labels in PT DHIS2-15750 (#2783)"
       ],
       "Features": [
         "100.3.0",
@@ -1172,38 +1172,38 @@
     },
     "v100.2.0": {
       "Features": [
-        "100.2.0 (#2741)",
+        "use hover menu components from analytics for options menu",
+        "use Toolbar and ToolbarSidebar from analytics (#2358)",
         "use UpdateButton and HoverMenubar from analytics",
         "use interpretations button from analytics",
         "update download menu to use hovermenu components from analytics",
-        "use Toolbar and ToolbarSidebar from analytics (#2358)",
-        "use hover menu components from analytics for options menu"
+        "100.2.0 (#2741)"
       ],
       "Testing": [
-        "more tests for custom calculations (DHIS2-13871) (#2287)",
-        "prevent test names from being dynamic (#2576)",
-        "comment out icon tests for currently unsupported types",
-        "add Cypress tests for SV icon (DHIS2-10496) (#2372)",
-        "rename AO-title to titlebar (DHIS2-15063) (#2435)",
         "extend timeout after delete has been triggered (#2499)",
-        "skip legend test while data element icons are unsupported"
+        "skip legend test while data element icons are unsupported",
+        "rename AO-title to titlebar (DHIS2-15063) (#2435)",
+        "prevent test names from being dynamic (#2576)",
+        "more tests for custom calculations (DHIS2-13871) (#2287)",
+        "add Cypress tests for SV icon (DHIS2-10496) (#2372)",
+        "comment out icon tests for currently unsupported types"
       ],
       "Bug Fixes": [
-        "remove divider from plain data source submenu",
+        "adjust e2e element slectors",
         "adjust data test name",
+        "ensure `MenuSectionHeader` is `dense` when in `HoverMenuBar`",
+        "remove divider from plain data source submenu",
+        "observe size changes for legend positioning",
         "inject style in props passed to VisualizationPlugin (DHIS2-15126) (#2322)",
         "adjust closeFileMenuWithClick command",
-        "ensure `MenuSectionHeader` is `dense` when in `HoverMenuBar`",
         "translations: sync translations from transifex (dev)",
-        "tweak viz type selector styles to match toolbar",
-        "observe size changes for legend positioning",
-        "adjust e2e element slectors"
+        "tweak viz type selector styles to match toolbar"
       ]
     },
     "v100.1.4": {
       "Testing": [
-        "prevent items in transfer from being stale when filtering (#2321)",
-        "extend timeout for loading visualizations (#2368)"
+        "extend timeout for loading visualizations (#2368)",
+        "prevent items in transfer from being stale when filtering (#2321)"
       ],
       "Bug Fixes": [
         "image paths and apply d2 style",
@@ -1212,11 +1212,11 @@
     },
     "v100.1.3": {
       "Bug Fixes": [
-        "case E7113 throws same msg as E7114 (#2278)",
+        "single value size and position issues (analytics@25.1.10) (#2359)",
+        "bump cli-app-scripts to 10.3.8 for LIBS-499 fix (#2285)",
         "v100.1.1",
         "deps: platform deps for login redirect [DHIS2-15319] (#2300)",
-        "single value size and position issues (analytics@25.1.10) (#2359)",
-        "bump cli-app-scripts to 10.3.8 for LIBS-499 fix (#2285)"
+        "case E7113 throws same msg as E7114 (#2278)"
       ]
     },
     "v100.1.2": {
@@ -1231,33 +1231,33 @@
     },
     "v100.1.0": {
       "Features": [
-        "plugin: send installation status [DHIS2-15097] (#2273)",
         "implement data icon option for SV visualization (DHIS2-10496) (#2236)",
         "support non-gregorian fixed periods (#2233)",
-        "single value background color change based upon legend (DHIS2-13702) (#2223)",
+        "plugin: send installation status [DHIS2-15097] (#2273)",
         "100.1.0 (#2286)",
+        "single value background color change based upon legend (DHIS2-13702) (#2223)",
         "custom calculations (DHIS2-13871) (#2232)"
       ],
       "Testing": [
-        "add extended timeout for file open modal (#2284)",
-        "fix test failing due to change in single value behaviour"
+        "fix test failing due to change in single value behaviour",
+        "add extended timeout for file open modal (#2284)"
       ],
       "Bug Fixes": [
-        "remove old i18n initialisation (#2241)",
-        "dependency updates (#2243)",
-        "hide icon from visualization when option is toggled",
-        "fetch data element icon and pass it in extraOptions",
-        "set height on chart container when not defined (#2246) (#2250)",
-        "plugin sends installation status (#2277)",
-        "remove translucent layer by using app-scripts 10.3.4 (DHIS2-15008) (#2251)",
-        "update cli-app-scripts and analytics deps",
+        "inject CSS UI variables in plugin (#2270)",
         "deps: bump cli-app-scripts for precaching improvement",
-        "translations: sync translations from transifex (master) (#2192)",
-        "update cli-app-scripts and analytics (#2247)",
-        "nightly workflow has to run on default branch which is currently dev (#2269)",
-        "do not pass a boolean for icons when saving",
+        "remove old i18n initialisation (#2241)",
+        "set height on chart container when not defined (#2246) (#2250)",
         "target window.parent for postRobot communication (#2256)",
-        "inject CSS UI variables in plugin (#2270)"
+        "translations: sync translations from transifex (master) (#2192)",
+        "fetch data element icon and pass it in extraOptions",
+        "plugin sends installation status (#2277)",
+        "update cli-app-scripts and analytics (#2247)",
+        "do not pass a boolean for icons when saving",
+        "hide icon from visualization when option is toggled",
+        "remove translucent layer by using app-scripts 10.3.4 (DHIS2-15008) (#2251)",
+        "dependency updates (#2243)",
+        "update cli-app-scripts and analytics deps",
+        "nightly workflow has to run on default branch which is currently dev (#2269)"
       ]
     },
     "v100.0.3": {
@@ -1300,26 +1300,26 @@
         "persist sorting information in AO (DHIS2-14955) (#382)"
       ],
       "Testing": [
+        "add Cypress tests for sorting in AO",
         "enable test for sorting data loaded from AO",
-        "verify values are sorted correctly",
         "add another test for sorting/saving",
         "refactor after PR review",
-        "add Cypress tests for sorting in AO"
+        "verify values are sorted correctly"
       ],
       "Bug Fixes": [
-        "reset sorting when a different AO is loaded",
-        "fix merge conflict",
-        "avoid re-renders and double requests when sorting in dashboard",
-        "avoid extra analytics request when loading a new AO",
-        "reset local sorting state when column is removed",
         "format sorting correctly when saving DHIS2-15836",
-        "pass correct dimension name in download for sorting",
+        "reset sorting when a different AO is loaded",
         "fix sorting on a \"repeated\" dimension column",
         "respect user defined sorting in download DHIS2-15248",
-        "use correct property name and case",
-        "fix merging conflict",
+        "pass correct dimension name in download for sorting",
         "use correct default for sorting direction",
-        "show empty cell for missing boolean values as well (#466)"
+        "show empty cell for missing boolean values as well (#466)",
+        "reset local sorting state when column is removed",
+        "fix merging conflict",
+        "fix merge conflict",
+        "use correct property name and case",
+        "avoid extra analytics request when loading a new AO",
+        "avoid re-renders and double requests when sorting in dashboard"
       ]
     },
     "v100.16.2": {
@@ -1350,10 +1350,10 @@
         "add skip rounding option (DHIS2-15629) (#424)"
       ],
       "Bug Fixes": [
-        "add option for skipRounding",
-        "handle showHierarchy separately from requestable options",
-        "add feature toggle for skipRounding option",
         "add skipRounding option DHIS2-15629",
+        "add feature toggle for skipRounding option",
+        "handle showHierarchy separately from requestable options",
+        "add option for skipRounding",
         "enable skip rounding option for all versions"
       ],
       "Testing": [
@@ -1386,31 +1386,31 @@
     },
     "v100.12.0": {
       "Testing": [
-        "add missing selector to non-suffixed chips",
-        "add report portal attributes (#471)",
-        "update latest changes on master to use the new chip assertion format",
-        "dynamic offset for years (#477)",
-        "update the helper fn assertChipContainsText and use it where chip suffixes are evaluated",
         "send jest test results only when env is setup (#469)",
         "update the helper fn assertChipContainsText and use it everywhere that chip suffixes are evaluated",
-        "copy/paste typo",
-        "stop using 'chip-primary', which isn't needed"
+        "stop using 'chip-primary', which isn't needed",
+        "dynamic offset for years (#477)",
+        "update latest changes on master to use the new chip assertion format",
+        "update the helper fn assertChipContainsText and use it where chip suffixes are evaluated",
+        "add missing selector to non-suffixed chips",
+        "add report portal attributes (#471)",
+        "copy/paste typo"
       ],
       "Features": [
-        "updated chip design (DHIS2-15897) (#478)",
-        "update layout chip design"
+        "update layout chip design",
+        "updated chip design (DHIS2-15897) (#478)"
       ],
       "Bug Fixes": [
-        "chip line height",
-        "dimension item suffix color",
         "adjust input option design (#464)",
-        "chip: add comma delimiter",
+        "chip line height",
         "dimension-item: adjust design to match new layout chip",
-        "layout-chip: prevent suffix shrinking",
-        "chip label padding",
-        "dimension item height",
+        "chip: add comma delimiter",
         "dimension and layout item button height",
-        "chip icon margin"
+        "dimension item suffix color",
+        "chip label padding",
+        "chip icon margin",
+        "layout-chip: prevent suffix shrinking",
+        "dimension item height"
       ]
     },
     "v100.11.4": {
@@ -1442,12 +1442,12 @@
       ],
       "Bug Fixes": [
         "always display 'no event' for enrollment",
-        "add custom styling to undefined cells",
         "add tooltip to undefined cells",
-        "change background image for undefined cell",
-        "remove background color for undefined cell",
         "update color according to spec change",
-        "return empty value for undefined boolean cells"
+        "change background image for undefined cell",
+        "add custom styling to undefined cells",
+        "return empty value for undefined boolean cells",
+        "remove background color for undefined cell"
       ],
       "Testing": [
         "add tests for undefined values",
@@ -1462,13 +1462,13 @@
     },
     "v100.10.5": {
       "Bug Fixes": [
-        "replace id with uid after backend adjusted the response",
-        "store metadata for option set options on load (DHIS2-16181)",
         "handle options with non-unique codes across optionsets (DHIS2-15771) (#426)",
+        "store metadata for option set options on load (DHIS2-16181)",
+        "replace id with uid after backend adjusted the response",
+        "lookup option set options labels correctly DHIS2-15771",
         "update optionSet options metadata on selection in the modal",
-        "fix plain download with name",
         "fix name for option set options shown in chip tooltip (DHIS2-16181)",
-        "lookup option set options labels correctly DHIS2-15771"
+        "fix plain download with name"
       ],
       "Testing": [
         "add test for option set options label",
@@ -1482,13 +1482,13 @@
     },
     "v100.10.3": {
       "Bug Fixes": [
-        "ensure variable names matches function argument",
-        "ensure `loading` remains `false` when lazy loading additional items",
         "increment based on correct property `pager.page` not `data.page`",
         "ensure scrollbox actually scrolls instead of the container",
-        "your- and program-dimensions list lazy loading (#453)",
+        "make scrollbox scrollable without fixed height",
         "return `fetching` from useProgramDataDimensions for lazy loading",
-        "make scrollbox scrollable without fixed height"
+        "your- and program-dimensions list lazy loading (#453)",
+        "ensure variable names matches function argument",
+        "ensure `loading` remains `false` when lazy loading additional items"
       ]
     },
     "v100.10.2": {
@@ -1498,10 +1498,10 @@
     },
     "v100.10.1": {
       "Bug Fixes": [
-        "allow opening interpretations for AOs without a time dimension (DHIS2-15781)",
-        "correctly center the table spinner (DHIS2-13947, DHIS2-13946)",
         "various hackathon issues",
+        "correctly center the table spinner (DHIS2-13947, DHIS2-13946)",
         "take legend-key into account when computing pagination max-width (DHIS2-15465)",
+        "allow opening interpretations for AOs without a time dimension (DHIS2-15781)",
         "upgrade @dhis2/analytics to latest"
       ]
     }
@@ -1537,24 +1537,24 @@
   "maps-app": {
     "v100.5.5": {
       "Bug Fixes": [
-        "translations: sync translations from transifex (dev) (#3237)",
         "use improved rich text editor from analytics (DHIS2-15522) (#3236)",
         "unclear 'show no data' (#3204)",
-        "https://dhis2.atlassian.net/browse/DHIS2-15799",
-        "merge dev to master"
+        "merge dev to master",
+        "translations: sync translations from transifex (dev) (#3237)",
+        "https://dhis2.atlassian.net/browse/DHIS2-15799"
       ]
     },
     "v100.5.4": {
       "Bug Fixes": [
         "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3195)",
-        "users losing work when opening as chart (#3196)",
-        "merge to master"
+        "merge to master",
+        "users losing work when opening as chart (#3196)"
       ]
     },
     "v100.5.3": {
       "Bug Fixes": [
-        "dashboard filters were not being applied to maps (#3185)",
         "translations: sync translations from transifex (dev)",
+        "dashboard filters were not being applied to maps (#3185)",
         "merge to master"
       ]
     },
@@ -1573,46 +1573,46 @@
     },
     "v100.5.0": {
       "Bug Fixes": [
-        "position tooltip right over the thumbnail title",
-        "make logic match prev code",
-        "prevent data table effects from running code when no table (#3147)",
-        "isPushAnalytics url param",
-        "improve geojson layer error responses and cypress tests (#3149)",
-        "final fixes for geojson (#3154)",
-        "onLayerAdded wasnt defined for SplitViews",
-        "add class to map container when no map id is set",
-        "check full instanceUrl and handle not response.ok in geojson loader (#3142)",
-        "prevent enabling download button while loading mask is showing",
-        "make `dhis2-map-new` class independent of downloadMode",
-        "tab length should only take the space of the title",
-        "limit stroke width to 0-10",
-        "the feature.id is set in maps-gl so use the properties.id instead find correct data",
-        "rename error to loadError to avoid name clash with building footprint ee layer (#3144)",
-        "check download param when navigating to new",
+        "various fixes after release testing (#3151)",
         "use more understandable error messages",
+        "improve geojson layer error responses and cypress tests (#3149)",
+        "the feature.id is set in maps-gl so use the properties.id instead find correct data",
+        "make logic match prev code",
+        "values that are strings but numeric in quality were not filtering",
+        "position tooltip right over the thumbnail title",
+        "make `dhis2-map-new` class independent of downloadMode",
+        "set minimum point size of 1",
+        "reduce the padding to make room for the scrollbar (#3148)",
+        "add class-names for push-analytics",
+        "check download param when navigating to new",
+        "add class to map container when no map id is set",
+        "upgrade maps-gl for the rounded line join and caps",
+        "rename error to loadError to avoid name clash with building footprint ee layer (#3144)",
         "show no data message when geojson feature has no data (#3145)",
         "reset error when switching which layer shows data table",
-        "ensure isDownload is a bool to avoid prop-types error",
-        "translations: sync translations from transifex (dev) (#3132)",
-        "reduce the padding to make room for the scrollbar (#3148)",
-        "set map bounds after all layers are added to the map",
+        "prevent data table effects from running code when no table (#3147)",
+        "set point radius  to size that was set in the style settings",
+        "check full instanceUrl and handle not response.ok in geojson loader (#3142)",
+        "limit stroke width to 0-10",
+        "final fixes for geojson (#3154)",
         "add tooltip on layer thumbnails",
-        "improve hover states and add consistent spacing [UX-161] (#3121)",
-        "set minimum point size of 1",
-        "highlight features when data table has filter",
-        "map plugin - do not load async layers multiple times (#3143)",
-        "add class-names for push-analytics",
+        "set map bounds after all layers are added to the map",
         "navigating by the changing url ignored download mode and interpretation id parameters (#3125)",
-        "values that are strings but numeric in quality were not filtering",
-        "various fixes after release testing (#3151)",
-        "upgrade maps-gl for the rounded line join and caps",
-        "set point radius  to size that was set in the style settings"
+        "translations: sync translations from transifex (dev) (#3132)",
+        "prevent enabling download button while loading mask is showing",
+        "tab length should only take the space of the title",
+        "improve hover states and add consistent spacing [UX-161] (#3121)",
+        "map plugin - do not load async layers multiple times (#3143)",
+        "onLayerAdded wasnt defined for SplitViews",
+        "highlight features when data table has filter",
+        "ensure isDownload is a bool to avoid prop-types error",
+        "isPushAnalytics url param"
       ],
       "Features": [
+        "add push analytics instructions",
         "merge to master 2.41.0 features and fixes",
         "add ability to add GeoJSON URL external layers (#3127)",
-        "when rendering for push analytics, disable download button until map is rendered (#3072)",
-        "add push analytics instructions"
+        "when rendering for push analytics, disable download button until map is rendered (#3072)"
       ]
     },
     "v100.4.1": {
@@ -1644,18 +1644,18 @@
     },
     "v100.2.2": {
       "Bug Fixes": [
-        "do not show geojson or arcgis layers since they are not supported yet (#3036)",
-        "do not show unsupported geojson or arcgis external layers (#3036)"
+        "do not show unsupported geojson or arcgis external layers (#3036)",
+        "do not show geojson or arcgis layers since they are not supported yet (#3036)"
       ]
     },
     "v100.2.1": {
       "Bug Fixes": [
-        "external layers were getting an endless spinner when being added to map [DHIS2-16078] (#3023)",
-        "ensure layer type is supported and remove the unsupported Google basemaps",
-        "translations: sync translations from transifex (dev)",
-        "sorting of layers by drag and drop was not working [DHIS2-16024] (#3021)",
         "external basemaps were not showing [DHIS2-15953] (#3017)",
-        "release candidate 100.2.1"
+        "release candidate 100.2.1",
+        "external layers were getting an endless spinner when being added to map [DHIS2-16078] (#3023)",
+        "translations: sync translations from transifex (dev)",
+        "ensure layer type is supported and remove the unsupported Google basemaps",
+        "sorting of layers by drag and drop was not working [DHIS2-16024] (#3021)"
       ]
     },
     "v100.2.0": {
@@ -1664,27 +1664,27 @@
         "upgrade toolbar (DHIS2-15667) (#2936)"
       ],
       "Bug Fixes": [
-        "accept both lowercase and camelCase interpretationId in url(#2937)",
-        "translations: sync translations from transifex (dev)"
+        "translations: sync translations from transifex (dev)",
+        "accept both lowercase and camelCase interpretationId in url(#2937)"
       ]
     },
     "v100.1.7": {
       "Bug Fixes": [
-        "use programIndicators endpoint respecting sharing settings (#2950)",
-        "show warning if event filter is not supported (#2952)",
-        "set default basemap for interpretation map (DHIS2-15788) (#2944)",
-        "post a data statistics view when map is open or saved (#2951)",
+        "draw layers with opacity (#2948)",
         "use display name for data sets (#2947)",
-        "hide see position from context meny for split view maps",
+        "show warning if event filter is not supported (#2952)",
         "hide \"show longitude/latitude\" from context menu for split view maps (DHIS2-15798) (#2945)",
-        "draw layers with opacity (#2948)"
+        "set default basemap for interpretation map (DHIS2-15788) (#2944)",
+        "use programIndicators endpoint respecting sharing settings (#2950)",
+        "post a data statistics view when map is open or saved (#2951)",
+        "hide see position from context meny for split view maps"
       ]
     },
     "v100.1.6": {
       "Bug Fixes": [
+        "set period for each split view map (#2721)",
         "upgrade landcover dataset (#2732)",
         "keep layer visibility when period is changed (#2705)",
-        "set period for each split view map (#2721)",
         "translations: sync translations from transifex (dev)",
         "Set rendering strategy to single if not relative period (#2703)"
       ]
@@ -1716,10 +1716,10 @@
     },
     "v100.1.0": {
       "Bug Fixes": [
-        "bumps cli-app-scripts to 10.3.8 for LIBS-499 fix (#2592)",
-        "remove fallback coordinate field (DHIS2-8165) (#2575)",
         "bump cli-app-scripts for precaching improvement",
-        "use window.parent"
+        "bumps cli-app-scripts to 10.3.8 for LIBS-499 fix (#2592)",
+        "use window.parent",
+        "remove fallback coordinate field (DHIS2-8165) (#2575)"
       ],
       "Features": [
         "plugin: send installation status [DHIS2-15097] (#2580)"
