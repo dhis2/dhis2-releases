@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
             endDate.setMonth(endDate.getMonth() + 3);
             const totalDuration = endDate - startDate;
 
+            const locale = getLocaleFromURL(); // Get the current locale
+            const loc = localizationMap[locale]; // Get localized texts based on the locale
+        
+           
 
             // Adding tick marks for each month
             for (let i = 1; i <= 3; i++) {
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const tickLabel = document.createElement('div');
                 tickLabel.className = 'tick-label';
-                tickLabel.textContent = tickDate.toLocaleString('default', { month: 'short' });
+                tickLabel.textContent = tickDate.toLocaleString(locale, { month: 'short' });
 
                 tickMark.appendChild(tickLabel);
                 timeline.appendChild(tickMark);
@@ -48,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // make release.date human readable
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                const formattedDate = releaseDate.toLocaleDateString('en-US', options);
+                const formattedDate = releaseDate.toLocaleDateString(locale, options);
 
 
                 releaseElement.addEventListener('click', () => {
                     details.style.display = 'block';
-                    details.innerHTML = `<h2>${release.name}</h2><p>Target release date: ${formattedDate}</p><p>See the list of fixes so far for <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.name}%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">this patch on Jira</a></p>`;
+                    details.innerHTML = `<h2>${release.name}</h2><p>${loc.targetReleaseDate}: ${formattedDate}</p><p>${loc.jiraLink01} <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.version}%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">${loc.jiraLink02}</a></p>`;
                 });
 
                 timeline.appendChild(releaseElement);

@@ -39,47 +39,48 @@ function createElement(tag, className, content) {
     return element; // Return the created element
 }
 
-// Create a card for a release
+
 function createReleaseCard(release, patchVersion) {
+    const locale = getLocaleFromURL(); // Get the current locale
+    const texts = localizationMap[locale]; // Get localized texts based on the locale
+
+    // Localize dates
+    release.releaseDate = new Date(release.releaseDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+    patchVersion.releaseDate = new Date(patchVersion.releaseDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+
     // Create a div with the class 'download-card'
-    const cardElement = createElement('div', 'download-card');
-    // Set the inner HTML of the card with the release and patch version details
-    
-    // change release.releaseDate and patchVersion.releaseDate to human readable date without the day of the week
+    const cardElement = document.createElement('div');
+    cardElement.className = 'download-card';
 
-    release.releaseDate = new Date(release.releaseDate).toLocaleDateString('en-UK', { year: 'numeric', month: 'long', day: 'numeric' });
-    patchVersion.releaseDate = new Date(patchVersion.releaseDate).toLocaleDateString('en-UK', { year: 'numeric', month: 'long', day: 'numeric' });
-
+    // Set the inner HTML of the card with localized content
     cardElement.innerHTML = `
         <div class="dc-title">
             <span class="dc-title-version">DHIS2 version ${patchVersion.displayName || patchVersion.name}</span>
-            ${release.latest ? '<span class="dc-badge dc-badge-latest"><i class="svg-icon svg-icon-latest"><!-- SVG latest --></i>Latest version</span>' : ''}
-            ${(patchVersion.hotfix || patchVersion.hotfixVersion) ? '<span class="dc-badge dc-badge-hotfix"><i class="svg-icon svg-icon-hotfix"><!-- SVG hotfix --></i>Hotfix</span>' : ''}
+            ${release.latest ? `<span class="dc-badge dc-badge-latest"><i class="svg-icon svg-icon-latest"><!-- SVG latest --></i>${texts.latestVersion}</span>` : ''}
+            ${(patchVersion.hotfix || patchVersion.hotfixVersion) ? `<span class="dc-badge dc-badge-hotfix"><i class="svg-icon svg-icon-hotfix"><!-- SVG hotfix --></i>${texts.hotfix}</span>` : ''}
         </div>
         <div class="dc-subtitle">
-
-            <span>Latest patch ${patchVersion.releaseDate}</span>
-            <span>Released ${release.releaseDate}</span>
+            <span>${texts.latestPatch} ${patchVersion.releaseDate}</span>
+            <span>${texts.released} ${release.releaseDate}</span>
         </div>
         <div class="dc-outbound-links">
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${patchVersion.name}.md" target="_blank" rel="noopener noreferrer">${patchVersion.displayName} release notes</a>
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/README.md" target="_blank" rel="noopener noreferrer">${release.displayName} upgrade notes</a>
-            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${release.name}.md" target="_blank" rel="noopener noreferrer">Feature overview</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${patchVersion.name}.md" target="_blank" rel="noopener noreferrer">${patchVersion.displayName} ${texts.releaseNotes}</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/README.md" target="_blank" rel="noopener noreferrer">${release.displayName} ${texts.upgradeNotes}</a>
+            <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${release.name}.md" target="_blank" rel="noopener noreferrer">${texts.featureOverview}</a>
         </div>
         <div class="dc-download">
-            <a class="dc-download-button" href="${patchVersion.url}">Download ${patchVersion.displayName || patchVersion.name}</a>
+            <a class="dc-download-button" href="${patchVersion.url}">${texts.download} ${patchVersion.displayName || patchVersion.name}</a>
             <div class="dc-download-info">
                 <span class="dc-download-size">${release.fileSize}</span>
-                <span class="dc-download-hash" title="${patchVersion.sha256}">SHA256SUM</span>
+                <span class="dc-download-hash" title="${patchVersion.sha256}">${texts.sha256sum}</span>
             </div>
         </div>
         <div class="dc-docker">
-            <span>Download from
-                <a href="https://hub.docker.com/r/dhis2/core/tags?page=1&ordering=last_updated&name=${patchVersion.displayName || patchVersion.name}" target="_blank" rel="noopener noreferrer">Docker</a> with
+            <span>${texts.downloadFromDocker}
+                <a href="https://hub.docker.com/r/dhis2/core/tags?page=1&ordering=last_updated&name=${patchVersion.displayName || patchVersion.name}" target="_blank" rel="noopener noreferrer">Docker</a> ${texts.with}
             </span>
             <span class="dc-docker-code">docker pull dhis2/core:${patchVersion.name}</span>
         </div>`;
-
 
     return cardElement; // Return the created card
 }

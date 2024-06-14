@@ -44,6 +44,9 @@ function createReleaseCard(release, patchVersion) {
     // Create a div with the class 'download-card'
     const cardElement = createElement('div', 'download-card-db');
     // Set the inner HTML of the card with the release and patch version details
+    const locale = getLocaleFromURL(); // Get the current locale
+    const loc = localizationMap[locale]; // Get localized texts based on the locale
+
 
     dbver = "2."+release.version+"."+patchVersion.version
  
@@ -52,7 +55,7 @@ function createReleaseCard(release, patchVersion) {
             <span class="dc-title-version">DHIS2 v${patchVersion.displayName || patchVersion.name}</span>    
         </div>
         <div class="dc-download">
-            <a class="dc-download-button" href="https://databases.dhis2.org/sierra-leone/${dbver}/dhis2-db-sierra-leone.sql.gz">Sample database ${dbver}</a>
+            <a class="dc-download-button" href="https://databases.dhis2.org/sierra-leone/${dbver}/dhis2-db-sierra-leone.sql.gz">${loc.sampleDatabase} ${dbver}</a>
             <div class="dc-download-info">
             <span class="dc-download-size">dhis2-db-sierra-leone.sql.gz</span>
             </div>

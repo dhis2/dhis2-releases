@@ -31,44 +31,40 @@ function createElement(tag, className, content) {
     return element; // Return the created element
 }
 
+
+
 // Create a card for a release
 function createReleaseCard(release) {
-    // Create a div with the class 'download-card'
     const cardElement = createElement('div', 'android-card');
-    // Set the inner HTML of the card with the release and patch version details
-    
-    // change release.releaseDate to human readable date without the day of the week
+    const locale = getLocaleFromURL(); // Get the user locale
+    release.releaseDate = new Date(release.releaseDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
 
-    release.releaseDate = new Date(release.releaseDate).toLocaleDateString('en-UK', { year: 'numeric', month: 'long', day: 'numeric' });
+    const loc = localizationMap[locale]; // Get the localized strings based on locale
 
     cardElement.innerHTML = `
         <div class="dc-title">
             <span class="dc-title-version">Android Capture ${release.appVersion}</span>
-            ${release.latest ? '<span class="dc-badge dc-badge-latest"><i class="svg-icon svg-icon-latest"><!-- SVG latest --></i>Latest version</span>' : ''}
+            ${release.latest ? `<span class="dc-badge dc-badge-latest"><i class="svg-icon svg-icon-latest"><!-- SVG latest --></i>${loc.latestVersion}</span>` : ''}
         </div>
         <div class="dc-subtitle">
-
-        <span>Released ${release.releaseDate}</span>
-
-        <span><a href="${release.releaseNotes}" target="_blank" rel="noopener noreferrer">Feature overview</a></span>
+            <span>${loc.released} ${release.releaseDate}</span>
+            <span><a href="${release.releaseNotes}" target="_blank" rel="noopener noreferrer">${loc.featureOverview}</a></span>
         </div>
-
         <div class="dc-download-android">
             <a href="${release.download.gitHub}" target="_blank" rel="noopener noreferrer">
-            <img src="img/GitHub_Lockup_Light.png" alt="Download on GitHub" class="dc-download-badge-gh">
+                <img src="img/GitHub_Lockup_Light.png" alt="${loc.downloadOnGitHub}" class="dc-download-badge-gh">
             </a>
             <a href="${release.download.googlePlay}" target="_blank" rel="noopener noreferrer">
-            <img src="img/google-play-badge.png" alt="Download on Google Play" class="dc-download-badge">
+                <img src="img/google-play-badge.png" alt="${loc.downloadOnGooglePlay}" class="dc-download-badge">
             </a>
             <div class="dc-download-info">
-                <span><strong>Android compatibility:</strong> minimum ${release.androidOSVersion.minVersion}, <strong>recommended ${release.androidOSVersion.recommendedVersion}</strong></span>
+                <span><strong>${loc.androidCompatibility}</strong> ${loc.minimum} ${release.androidOSVersion.minVersion}, <strong>${loc.recommended} ${release.androidOSVersion.recommendedVersion}</strong></span>
             </div>
             <div class="dc-download-info">
-                <span><strong>DHIS2 compatibility:</strong> minimum ${release.dhis2CoreVersion.minVersion}, <strong>recommended ${release.dhis2CoreVersion.recommendedVersion}</strong></span>
+                <span><strong>${loc.dhis2Compatibility}</strong> ${loc.minimum} ${release.dhis2CoreVersion.minVersion}, <strong>${loc.recommended} ${release.dhis2CoreVersion.recommendedVersion}</strong></span>
             </div>
         </div>
-        `;
+    `;
 
-
-    return cardElement; // Return the created card
+    return cardElement;
 }
