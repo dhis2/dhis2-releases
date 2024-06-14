@@ -59,7 +59,6 @@ def test_update_existing_version(sample_data, new_release):
     existing_version = sample_data['versions'][0]
     new_patch_version = create_new_patch_version(new_release)
     update_existing_version(existing_version, new_release, new_patch_version)
-    assert existing_version['latest'] == True
     assert existing_version['supported'] == True
     assert existing_version['latestPatchVersion'] == 1
     assert existing_version['latestHotfixVersion'] == 1
@@ -90,6 +89,26 @@ def test_update_dhis2_releases(sample_data, new_release):
     assert updated_data['versions'][0]['releaseDate'] == new_release['release_date']
     assert updated_data['versions'][0]['sha256'] == new_release['sha256']
     assert updated_data['versions'][0]['fileSize'] == new_release['file_size']
+
+def test_create_new_version_sets_latest_true(sample_data, new_release):
+    updated_data = update_dhis2_releases(sample_data, new_release)
+    new_version_name = f"2.{new_release['major_version']}"
+
+    assert any(version['name'] == new_version_name and version['latest'] for version in updated_data['versions'])
+
+    for version in updated_data['versions']:
+        if version['name'] != new_version_name:
+            assert not version['latest']
+
+def test_update_existing_version_does_not_modify_latest(sample_data, new_release):
+    existing_version = sample_data['versions'][0]
+    new_patch_version = create_new_patch_version(new_release)
+
+    original_latest_flag = existing_version['latest']
+
+    update_existing_version(existing_version, new_release, new_patch_version)
+
+    assert existing_version['latest'] == original_latest_flag
 
 
 def test_parse_version():

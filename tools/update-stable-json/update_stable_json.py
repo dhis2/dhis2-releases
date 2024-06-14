@@ -49,7 +49,6 @@ def create_new_version(new_release: Dict[str, Any], new_patch_version: Dict[str,
 
 def update_existing_version(version: Dict[str, Any], new_release: Dict[str, Any], new_patch_version: Dict[str, Any]) -> None:
     version.update({
-        "latest": True,
         "supported": True,
         "latestPatchVersion": new_release['minor_version'],
         "latestHotfixVersion": new_release['patch_version'],
@@ -73,6 +72,14 @@ def update_support_status(data: Dict[str, Any]) -> None:
 
     print("Support status updated for the last 4 versions")
 
+def update_latest_status(data: Dict[str, Any]) -> None:
+    latest_version = max(data['versions'], key=lambda v: v['version'])
+
+    for version in data['versions']:
+        version['latest'] = version['name'] == latest_version['name']
+
+    print("Latest status updated")
+
 
 def update_dhis2_releases(data: Dict[str, Any], new_release: Dict[str, Any]) -> Dict[str, Any]:
     major_version = new_release['major_version']
@@ -80,14 +87,14 @@ def update_dhis2_releases(data: Dict[str, Any], new_release: Dict[str, Any]) -> 
     version_name = f"2.{major_version}"
 
     for version in data['versions']:
-        version['latest'] = version['name'] == version_name
-        if version['latest']:
+        if version['name'] == version_name:
             update_existing_version(version, new_release, new_patch_version)
             break
     else:
         new_version = create_new_version(new_release, new_patch_version)
-        data['versions'].insert(0, new_version)
         print(f"Added new version {new_version['displayName']}")
+        data['versions'].insert(0, new_version)
+        update_latest_status(data)
 
     update_support_status(data)
     return data
