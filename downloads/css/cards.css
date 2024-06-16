@@ -89,6 +89,46 @@
     gap: 4px
 }
 
+.dc-download-hash:hover {
+    cursor:pointer;
+}
+
+
+.dc-download-hash::after {
+  font: var(--fa-font-solid);
+  content: ' \f06e';
+}
+
+.dc-download-hash.expanded::after {
+  font: var(--fa-font-solid);
+  content: ' \f070';
+}
+
+.dc-hash {
+    position: absolute;
+    display:none;
+    background:#fff;
+    border: 1px solid #e8edf2;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dc-hash:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 25%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: #ffffff;
+	border-top: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-top: -8px;
+}
+
 .dc-badge-latest {
     background: #a2d1f9;
     background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" ><path d="M5.61074 5.711L1.27044 6.34208L1.18641 6.36141C0.83929 6.47257 0.717776 6.92632 0.993337 7.19492L4.13374 10.255L3.39244 14.5786L3.38491 14.6589C3.37927 15.0263 3.77555 15.2857 4.11791 15.1057L7.99874 13.064L11.8816 15.1057L11.9556 15.1377C12.3033 15.2566 12.6724 14.9598 12.607 14.5786L11.8647 10.255L15.0061 7.19492L15.0628 7.12989C15.2782 6.83593 15.1098 6.39741 14.729 6.34208L10.3877 5.711L8.44811 1.77872C8.2647 1.40709 7.73478 1.40709 7.55137 1.77872L5.61074 5.711Z" fill="%231565C0" /></svg>');
@@ -145,7 +185,7 @@
 }
 
 .dc-download {
-    display: inline-flex;
+    _display: inline-flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 16px;
@@ -170,10 +210,11 @@
     cursor: pointer;
     display: inline-block;
     text-decoration: none
+;    margin-bottom:5px;
 }
 
 .dc-download-info {
-    display: flex;
+    _display: flex;
     gap: 8px
 }
 

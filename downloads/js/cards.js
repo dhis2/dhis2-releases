@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.error('Error loading releases:', error));
 });
 
+
+function toggleHash(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === 'none' || element.style.display === '') {
+        element.style.display = 'block';
+    } else {
+        element.style.display = 'none';
+    }
+    lid = id.replace("hash", "label");
+    var label = document.getElementById(lid);
+    label.classList.toggle('expanded');
+}
+
+
 // Populate the releases
 function populateReleases(releases) {
     // Get the container for the releases
@@ -29,7 +43,6 @@ function populateReleases(releases) {
         }
     });
 }
-
 
 // Create an HTML element with a given tag, class name, and content
 function createElement(tag, className, content) {
@@ -70,7 +83,14 @@ function createReleaseCard(release, patchVersion) {
             <a class="dc-download-button" href="${patchVersion.url}">Download ${patchVersion.displayName || patchVersion.name}</a>
             <div class="dc-download-info">
                 <span class="dc-download-size">${release.fileSize}</span>
-                <span class="dc-download-hash" title="${patchVersion.sha256}">SHA256SUM</span>
+                <!-- create a span for the sha256sum label, and another span that is hidden until the label is clicked  -->
+                <span class="dc-download-hash" id="label${patchVersion.name}" onClick="toggleHash('hash${patchVersion.name}');" >SHA256SUM</span>
+                <span class="dc-hash" id="hash${patchVersion.name}">${patchVersion.sha256}</span>
+
+
+                
+
+
             </div>
         </div>
         <div class="dc-docker">
@@ -83,3 +103,4 @@ function createReleaseCard(release, patchVersion) {
 
     return cardElement; // Return the created card
 }
+
