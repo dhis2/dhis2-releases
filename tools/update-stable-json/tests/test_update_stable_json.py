@@ -63,7 +63,6 @@ def test_update_existing_version(sample_data, new_release):
     assert existing_version['latestPatchVersion'] == 1
     assert existing_version['latestHotfixVersion'] == 1
     assert existing_version['latestStableUrl'] == new_release['url']
-    assert existing_version['releaseDate'] == new_release['release_date']
     assert existing_version['sha256'] == new_release['sha256']
     assert existing_version['fileSize'] == new_release['file_size']
     assert len(existing_version['patchVersions']) == 2

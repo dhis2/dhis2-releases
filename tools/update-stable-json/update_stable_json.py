@@ -53,7 +53,6 @@ def update_existing_version(version: Dict[str, Any], new_release: Dict[str, Any]
         "latestPatchVersion": new_release['minor_version'],
         "latestHotfixVersion": new_release['patch_version'],
         "latestStableUrl": new_release['url'],
-        "releaseDate": new_release['release_date'],
         "sha256": new_release['sha256'],
         "fileSize": new_release['file_size']
     })
