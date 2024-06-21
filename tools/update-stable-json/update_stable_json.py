@@ -149,5 +149,6 @@ if __name__ == "__main__":
 
     with open(args.json_file, 'w') as file:
         json.dump(updated_data, file, indent=4)
+        file.write("\n")  # add newline at the end of the file
 
     print("DHIS2 versions updated successfully")
