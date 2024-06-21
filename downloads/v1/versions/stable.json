@@ -1,9 +1,36 @@
 {
     "versions": [
         {
+            "name": "2.50",
+            "displayName": "v50",
+            "latest": true,
+            "version": 50,
+            "releaseDate": "2024-06-21",
+            "supported": true,
+            "latestPatchVersion": 0,
+            "latestHotfixVersion": 0,
+            "latestStableUrl": "https://releases.dhis2.org/50/dhis2-stable-50.0.0.war",
+            "sha256": "8c169f8eed1b5af45e15179a15c44bd560445df766639c7e9d947077d2af415c",
+            "jdk": 17,
+            "patchVersions": [
+                {
+                    "name": "2.50.0",
+                    "displayName": "50.0.0",
+                    "version": 0,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2024-06-21",
+                    "url": "https://releases.dhis2.org/50/dhis2-stable-50.0.0.war",
+                    "sha256": "8c169f8eed1b5af45e15179a15c44bd560445df766639c7e9d947077d2af415c",
+                    "hotfix": false,
+                    "fileSize": "270.82 MB"
+                }
+            ],
+            "fileSize": "270.82 MB"
+        },
+        {
             "name": "2.41",
             "displayName": "v41",
-            "latest": true,
+            "latest": false,
             "version": 41,
             "releaseDate": "2024-05-29",
             "supported": true,
@@ -297,14 +324,15 @@
                     "fileSize": "287.5 MB"
                 }
             ],
-            "fileSize": "287.5 MB"
+            "fileSize": "287.5 MB",
+            "latest": false
         },
         {
             "name": "2.38",
             "displayName": "v38",
             "version": 38,
             "releaseDate": "2022-05-05",
-            "supported": true,
+            "supported": false,
             "latestPatchVersion": 6,
             "latestHotfixVersion": 0,
             "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.6.war",
@@ -473,7 +501,8 @@
                     "fileSize": "304.7 MB"
                 }
             ],
-            "fileSize": "304.7 MB"
+            "fileSize": "304.7 MB",
+            "latest": false
         },
         {
             "name": "2.37",
@@ -657,7 +686,8 @@
                     "fileSize": "317.8 MB"
                 }
             ],
-            "fileSize": "317.8 MB"
+            "fileSize": "317.8 MB",
+            "latest": false
         },
         {
             "name": "2.36",
@@ -846,7 +876,8 @@
                     "fileSize": "295.9 MB"
                 }
             ],
-            "fileSize": "295.9 MB"
+            "fileSize": "295.9 MB",
+            "latest": false
         },
         {
             "name": "2.35",
@@ -984,7 +1015,8 @@
                     "fileSize": "275.8 MB"
                 }
             ],
-            "fileSize": "275.8 MB"
+            "fileSize": "275.8 MB",
+            "latest": false
         },
         {
             "name": "2.34",
@@ -1076,7 +1108,8 @@
                     "fileSize": "300.6 MB"
                 }
             ],
-            "fileSize": "301.0 MB"
+            "fileSize": "301.0 MB",
+            "latest": false
         },
         {
             "name": "2.33",
@@ -1167,7 +1200,8 @@
                     "fileSize": "279.6 MB"
                 }
             ],
-            "fileSize": "280.1 MB"
+            "fileSize": "280.1 MB",
+            "latest": false
         },
         {
             "name": "2.32",
@@ -1242,7 +1276,8 @@
                     "fileSize": "271.5 MB"
                 }
             ],
-            "fileSize": "272.8 MB"
+            "fileSize": "272.8 MB",
+            "latest": false
         },
         {
             "name": "2.31",
@@ -1333,7 +1368,8 @@
                     "fileSize": "254.8 MB"
                 }
             ],
-            "fileSize": "256.7 MB"
+            "fileSize": "256.7 MB",
+            "latest": false
         },
         {
             "name": "2.30",
@@ -1343,7 +1379,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.30/dhis.war",
             "patchVersions": [],
-            "fileSize": "245.3 MB"
+            "fileSize": "245.3 MB",
+            "latest": false
         },
         {
             "name": "2.29",
@@ -1353,7 +1390,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.29/dhis.war",
             "patchVersions": [],
-            "fileSize": "203.5 MB"
+            "fileSize": "203.5 MB",
+            "latest": false
         },
         {
             "name": "2.28",
@@ -1363,7 +1401,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.28/dhis.war",
             "patchVersions": [],
-            "fileSize": "184.2 MB"
+            "fileSize": "184.2 MB",
+            "latest": false
         },
         {
             "name": "2.27",
@@ -1373,7 +1412,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.27/dhis.war",
             "patchVersions": [],
-            "fileSize": "176.3 MB"
+            "fileSize": "176.3 MB",
+            "latest": false
         },
         {
             "name": "2.26",
@@ -1383,7 +1423,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.26/dhis.war",
             "patchVersions": [],
-            "fileSize": "173.7 MB"
+            "fileSize": "173.7 MB",
+            "latest": false
         },
         {
             "name": "2.25",
@@ -1393,7 +1434,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.25/dhis.war",
             "patchVersions": [],
-            "fileSize": "160.5 MB"
+            "fileSize": "160.5 MB",
+            "latest": false
         },
         {
             "name": "2.24",
@@ -1403,7 +1445,8 @@
             "latestPatchVersion": null,
             "latestStableUrl": "https://releases.dhis2.org/2.24/dhis.war",
             "patchVersions": [],
-            "fileSize": "137.3 MB"
+            "fileSize": "137.3 MB",
+            "latest": false
         }
     ]
 }
