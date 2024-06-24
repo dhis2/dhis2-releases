@@ -47,5 +47,5 @@ The table below summarizes the deprecated API endpoints:
 
 | Deprecated Endpoint                   | Endpoint to use instead                     |
 |---------------------------------------|---------------------------------------------|
-| `/audits/trackedEntityDataValue`      | `/tracker/trackedEntities/{uid}/changeLogs` |
-| `/audits/trackedEntityAttributeValue` | `/tracker/events/{uid}/changeLogs`          |
+| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          | 
+| `/audits/trackedEntityAttributeValue` | `/tracker/trackedEntities/{uid}/changeLogs` |
