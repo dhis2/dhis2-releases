@@ -43,3 +43,9 @@ The table below summarizes the deprecated API parameters:
 | `/tracker/enrollments`     | `programStatus`        | `status`             |
 | `/tracker/events`          | `programStatus`        | `enrollmentStatus`   |
 
+The table below summarizes the deprecated API endpoints:
+
+| Deprecated Endpoint                   | Endpoint to use instead                     |
+|---------------------------------------|---------------------------------------------|
+| `/audits/trackedEntityDataValue`      | `/tracker/trackedEntities/{uid}/changeLogs` |
+| `/audits/trackedEntityAttributeValue` | `/tracker/events/{uid}/changeLogs`          |
