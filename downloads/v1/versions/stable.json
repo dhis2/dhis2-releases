@@ -8,9 +8,9 @@
             "releaseDate": "2024-05-29",
             "supported": true,
             "latestPatchVersion": 0,
-            "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.0.0.war",
-            "sha256": "f78de1a96afc6136c8415ab0035feb6b4f8c5cc4dff8d4f0e5b9878d",
+            "latestHotfixVersion": 1,
+            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.0.1.war",
+            "sha256": "e1799cf7f69a073d3587b0643d840c0538ee52b04266639f314de537d68f8d12",
             "jdk": 17,
             "patchVersions": [
                 {
@@ -23,9 +23,20 @@
                     "sha256": "f78de1a96afc6136c8415ab0035feb6b4f8c5cc4dff8d4f0e5b9878d",
                     "hotfix": false,
                     "fileSize": "284.3 MB"
+                },
+                {
+                    "name": "2.41.0.1",
+                    "displayName": "41.0.1",
+                    "version": 0,
+                    "hotfixVersion": 1,
+                    "releaseDate": "2024-06-25",
+                    "url": "https://releases.dhis2.org/41/dhis2-stable-41.0.1.war",
+                    "sha256": "e1799cf7f69a073d3587b0643d840c0538ee52b04266639f314de537d68f8d12",
+                    "hotfix": true,
+                    "fileSize": "284.27 MB"
                 }
             ],
-            "fileSize": "284.3 MB"
+            "fileSize": "284.27 MB"
         },
         {
             "name": "2.40",
@@ -305,10 +316,10 @@
             "version": 38,
             "releaseDate": "2022-05-05",
             "supported": true,
-            "latestPatchVersion": 6,
+            "latestPatchVersion": 7,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.6.war",
-            "sha256": "3819fe625d51cc4dbee5754216d0b75a28566f98dadb37ebbe07a2ec5c9e9087",
+            "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.7.war",
+            "sha256": "cb9d956731454babd57df4d50dab6f5eaca5ef33af14ffde1e99d6aa2b27dd5b",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -471,9 +482,20 @@
                     "sha256": "3819fe625d51cc4dbee5754216d0b75a28566f98dadb37ebbe07a2ec5c9e9087",
                     "hotfix": false,
                     "fileSize": "304.7 MB"
+                },
+                {
+                    "name": "2.38.7",
+                    "displayName": "38.7.0",
+                    "version": 7,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2024-06-25",
+                    "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.7.war",
+                    "sha256": "cb9d956731454babd57df4d50dab6f5eaca5ef33af14ffde1e99d6aa2b27dd5b",
+                    "hotfix": false,
+                    "fileSize": "300.51 MB"
                 }
             ],
-            "fileSize": "304.7 MB"
+            "fileSize": "300.51 MB"
         },
         {
             "name": "2.37",
