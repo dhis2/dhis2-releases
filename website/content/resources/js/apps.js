@@ -10,8 +10,9 @@ fetch('../data/apphub.json')
         const apps = data.result || [];
         // console.log(apps);
         //const coreApps = apps.filter(app => app.coreApp);
-        // filter apps by developer.organisation = "DHIS2"
-        const coreApps = apps.filter(app => app.developer.organisation === "DHIS2");
+        // filter apps by developer.organisation = "DHIS2" or "UiO"
+        const coreApps = apps.filter(app => app.developer.organisation === "DHIS2" || app.developer.organisation === "UiO");
+        // const coreApps = apps.filter(app => app.developer.organisation === "DHIS2");
 
         let minDate = Infinity;
         let maxDate = -Infinity;

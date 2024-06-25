@@ -10,12 +10,14 @@ import os
 # get the list of apps from the apphub
 # https://apps.dhis2.org/api/v2/apps?pageSize=1000
 apphub = requests.get("https://apps.dhis2.org/api/v2/apps?pageSize=1000").json()
+
+
 # save to a file
 with open("website/data/apphub.json", "w") as f:
     json.dump(apphub, f, indent=2)
 
 # filter the list of apps to only those that have developer.organisation == "DHIS2"
-apps = [app["sourceUrl"].strip('/').split('/')[-1] for app in apphub["result"] if app["developer"]["organisation"] == "DHIS2" and app["sourceUrl"] != '']
+apps = [app for app in apphub["result"] if app["developer"]["organisation"] in ["DHIS2","UiO"] and app["sourceUrl"] != '']
 # appnames = [app["name"] for app in apphub["result"] if (app["developer"]["organisation"] == "DHIS2" and not app["sourceUrl"])]
 print(apps)
 # print(appnames)
@@ -80,7 +82,8 @@ def fetch_and_categorize_commits(app, from_tag, to_tag):
     return categories
 
 # Iterate over the apps and fetch the categorized commit messages
-for app in apps:
+for appie in apps:
+    app = appie["sourceUrl"].strip('/').split('/')[-1]
     tags = fetch_tags(app)
     app_output = {}
     for i in range(len(tags) - 1):
@@ -91,7 +94,21 @@ for app in apps:
         for category, messages in categories.items():
             version_output[category] = list(messages)
         app_output[to_tag] = version_output
+
+        # update the apphub object with the release notes
+        # find the versions object and identify the index of the version
+        versions = appie.get("versions", [])
+        print(app, versions, to_tag.replace("v",""))
+        for v in versions:
+            if v["version"] == to_tag.replace("v",""):
+                # add the release notes to the versions object
+                v["releaseNotes"] = version_output
+
+
     output[app] = app_output
+
+with open("website/data/apphub.json", "w") as f:
+    json.dump(apphub, f, indent=2)
 
 # Write the output to a JSON file
 with open(output_file, 'w') as f:
