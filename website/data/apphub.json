@@ -306,15 +306,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "caption": "",
-          "created": 1624314977424,
-          "description": "",
-          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
-          "lastUpdated": 1624314977424,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/835094e5-4813-48be-b676-bccd6bd4df67",
           "caption": "",
           "created": 1624314967152,
@@ -324,12 +315,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
           "caption": "",
-          "created": 1624314674393,
+          "created": 1624314977424,
           "description": "",
-          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
-          "lastUpdated": 1624314674393,
+          "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
+          "lastUpdated": 1624314977424,
           "logo": false
         },
         {
@@ -348,6 +339,15 @@
           "description": "",
           "id": "f5d184cf-550d-4a6f-be5b-d931d3743a33",
           "lastUpdated": 1624315046627,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "caption": "",
+          "created": 1624314674393,
+          "description": "",
+          "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+          "lastUpdated": 1624314674393,
           "logo": false
         }
       ],
@@ -415,12 +415,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/9d3a74db-fc57-492d-9990-3b4b25576280",
           "caption": "",
-          "created": 1685105856008,
+          "created": 1685105784709,
           "description": "",
-          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
-          "lastUpdated": 1685105856008,
+          "id": "9d3a74db-fc57-492d-9990-3b4b25576280",
+          "lastUpdated": 1685105784709,
           "logo": false
         },
         {
@@ -433,12 +433,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/9d3a74db-fc57-492d-9990-3b4b25576280",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/dff273fc-909e-48af-b151-c4d7e9c8a12c/683e6871-3c2a-4499-8b02-852a6fe3cd39",
           "caption": "",
-          "created": 1685105784709,
+          "created": 1685105856008,
           "description": "",
-          "id": "9d3a74db-fc57-492d-9990-3b4b25576280",
-          "lastUpdated": 1685105784709,
+          "id": "683e6871-3c2a-4499-8b02-852a6fe3cd39",
+          "lastUpdated": 1685105856008,
           "logo": false
         }
       ],
@@ -483,8 +483,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "DHIS2-15586: update installed state for non-core apps",
-              "DHIS2-13915: show spinner when an app is being installed"
+              "DHIS2-13915: show spinner when an app is being installed",
+              "DHIS2-15586: update installed state for non-core apps"
             ]
           }
         },
@@ -516,8 +516,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "parse error message properly for manual installs (#541)",
-              "DHIS2-15304: display correct error message when session is expired"
+              "DHIS2-15304: display correct error message when session is expired",
+              "parse error message properly for manual installs (#541)"
             ]
           }
         },
@@ -693,8 +693,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "support core and custom app management when app hub is not available [DHIS2-13112] (#485)",
-              "correct logic"
+              "correct logic",
+              "support core and custom app management when app hub is not available [DHIS2-13112] (#485)"
             ]
           }
         },
@@ -1074,6 +1074,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/5757bb9f-e7fc-4be4-b03a-9fb56bbdb60a",
+          "caption": "",
+          "created": 1600683933014,
+          "description": "",
+          "id": "5757bb9f-e7fc-4be4-b03a-9fb56bbdb60a",
+          "lastUpdated": 1600683933014,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/82152e2d-fb7d-46a4-a5c7-e89deef3584f",
           "caption": "",
           "created": 1600683929001,
@@ -1098,15 +1107,6 @@
           "description": "",
           "id": "02cb89f0-6f10-486d-9870-7dd2e9e0b1bf",
           "lastUpdated": 1600683932885,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/cec546be-9102-4aed-a5ee-91d066fa3e6b/5757bb9f-e7fc-4be4-b03a-9fb56bbdb60a",
-          "caption": "",
-          "created": 1600683933014,
-          "description": "",
-          "id": "5757bb9f-e7fc-4be4-b03a-9fb56bbdb60a",
-          "lastUpdated": 1600683933014,
           "logo": false
         }
       ],
@@ -1229,15 +1229,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
-          "caption": "",
-          "created": 1708002032628,
-          "description": "",
-          "id": "136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
-          "lastUpdated": 1708002032628,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/d3d328b1-6870-4cf0-8931-0958bc790660",
           "caption": "",
           "created": 1708002032527,
@@ -1247,12 +1238,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/3198906a-ff43-4159-9515-026ea03e0bec",
           "caption": "",
-          "created": 1708002032675,
+          "created": 1708002032399,
           "description": "",
-          "id": "6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
-          "lastUpdated": 1708002032675,
+          "id": "3198906a-ff43-4159-9515-026ea03e0bec",
+          "lastUpdated": 1708002032399,
           "logo": false
         },
         {
@@ -1265,12 +1256,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/3198906a-ff43-4159-9515-026ea03e0bec",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
           "caption": "",
-          "created": 1708002032399,
+          "created": 1708002032675,
           "description": "",
-          "id": "3198906a-ff43-4159-9515-026ea03e0bec",
-          "lastUpdated": 1708002032399,
+          "id": "6fbb9228-ba2b-4625-8fcb-4f29a4b50001",
+          "lastUpdated": 1708002032675,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/9099e396-ec68-4038-a5c9-e60650f49935/136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
+          "caption": "",
+          "created": 1708002032628,
+          "description": "",
+          "id": "136b3b9b-1d6f-4feb-b18b-4686f3fe87a0",
+          "lastUpdated": 1708002032628,
           "logo": false
         }
       ],
@@ -1347,21 +1347,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/fd8449e3-b95d-4902-bd79-d944cb7cf6b3/1fd8594e-7225-4de3-b205-d608a2d5e260",
-          "caption": "",
-          "created": 1588595409348,
-          "description": "",
-          "id": "1fd8594e-7225-4de3-b205-d608a2d5e260",
-          "lastUpdated": 1588595409348,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/fd8449e3-b95d-4902-bd79-d944cb7cf6b3/c1e5890b-c248-4a6d-85d6-e95e8dc6929b",
           "caption": "",
           "created": 1588595408755,
           "description": "",
           "id": "c1e5890b-c248-4a6d-85d6-e95e8dc6929b",
           "lastUpdated": 1588595408755,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/fd8449e3-b95d-4902-bd79-d944cb7cf6b3/1fd8594e-7225-4de3-b205-d608a2d5e260",
+          "caption": "",
+          "created": 1588595409348,
+          "description": "",
+          "id": "1fd8594e-7225-4de3-b205-d608a2d5e260",
+          "lastUpdated": 1588595409348,
           "logo": false
         }
       ],
@@ -2256,11 +2256,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "[DHIS2-17044] missing singular translation (#3598)",
               "[DHIS2-17161] Do not update attribute values from enrollment Widget (#3601)",
+              "[DHIS2-16931] Working list hides delete button (#3603)",
+              "[DHIS2-17044] missing singular translation (#3598)",
               "[DHIS2-17096] show/hide option groups in profile widget (#3593)",
-              "[DHIS2-17177] Registration page stuck after failed save (#3595)",
-              "[DHIS2-16931] Working list hides delete button (#3603)"
+              "[DHIS2-17177] Registration page stuck after failed save (#3595)"
             ]
           }
         },
@@ -5337,15 +5337,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/devotta-as/09f48f78-b67c-4efa-90ad-9ac2fed53bb8/85c5a26b-f679-4dbd-a3a7-d3b4fd3bc5e8",
-          "caption": "",
-          "created": 1717407819497,
-          "description": "",
-          "id": "85c5a26b-f679-4dbd-a3a7-d3b4fd3bc5e8",
-          "lastUpdated": 1717407819497,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/devotta-as/09f48f78-b67c-4efa-90ad-9ac2fed53bb8/49837135-0a7a-46c8-8f64-7549eb81bbd1",
           "caption": "",
           "created": 1717407841311,
@@ -5370,6 +5361,15 @@
           "description": "",
           "id": "8b843459-2acf-4523-81eb-7345f0baacc5",
           "lastUpdated": 1717407854498,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/devotta-as/09f48f78-b67c-4efa-90ad-9ac2fed53bb8/85c5a26b-f679-4dbd-a3a7-d3b4fd3bc5e8",
+          "caption": "",
+          "created": 1717407819497,
+          "description": "",
+          "id": "85c5a26b-f679-4dbd-a3a7-d3b4fd3bc5e8",
+          "lastUpdated": 1717407819497,
           "logo": false
         }
       ],
@@ -5556,21 +5556,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/856eca9f-93c9-4b90-bf51-cdbf134c79b5",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/1ba001d9-370c-46cd-9316-1ea5d6d19db7",
           "caption": "",
-          "created": 1710703088451,
+          "created": 1708610713391,
           "description": "",
-          "id": "856eca9f-93c9-4b90-bf51-cdbf134c79b5",
-          "lastUpdated": 1710703088451,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/7b8b291c-be67-4d93-896b-2a95bddf0c43",
-          "caption": "",
-          "created": 1708610713427,
-          "description": "",
-          "id": "7b8b291c-be67-4d93-896b-2a95bddf0c43",
-          "lastUpdated": 1708610713427,
+          "id": "1ba001d9-370c-46cd-9316-1ea5d6d19db7",
+          "lastUpdated": 1708610713391,
           "logo": false
         },
         {
@@ -5583,12 +5574,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/1ba001d9-370c-46cd-9316-1ea5d6d19db7",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/7b8b291c-be67-4d93-896b-2a95bddf0c43",
           "caption": "",
-          "created": 1708610713391,
+          "created": 1708610713427,
           "description": "",
-          "id": "1ba001d9-370c-46cd-9316-1ea5d6d19db7",
-          "lastUpdated": 1708610713391,
+          "id": "7b8b291c-be67-4d93-896b-2a95bddf0c43",
+          "lastUpdated": 1708610713427,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/effb986c-a3c7-485e-a2f6-5e54ff9df7c3/856eca9f-93c9-4b90-bf51-cdbf134c79b5",
+          "caption": "",
+          "created": 1710703088451,
+          "description": "",
+          "id": "856eca9f-93c9-4b90-bf51-cdbf134c79b5",
+          "lastUpdated": 1710703088451,
           "logo": false
         }
       ],
@@ -5698,30 +5698,12 @@
       "owner": "d9429d66-4b08-42a1-9e50-e62fe7307cd3",
       "images": [
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/a5a88de3-1a4f-4fc4-b05b-8b0013ec5d9d",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/734cacbc-a750-475b-8cc9-a2f4dc5505a9",
           "caption": "",
-          "created": 1605920491341,
+          "created": 1605920563304,
           "description": "",
-          "id": "a5a88de3-1a4f-4fc4-b05b-8b0013ec5d9d",
-          "lastUpdated": 1605920491341,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/cb3a7746-e37d-4db7-86e8-d04025915163",
-          "caption": "",
-          "created": 1605920569796,
-          "description": "",
-          "id": "cb3a7746-e37d-4db7-86e8-d04025915163",
-          "lastUpdated": 1605920569796,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/c62e4aee-3734-4e93-a98c-fb369b9aa7d5",
-          "caption": "",
-          "created": 1605920379367,
-          "description": "",
-          "id": "c62e4aee-3734-4e93-a98c-fb369b9aa7d5",
-          "lastUpdated": 1605920379367,
+          "id": "734cacbc-a750-475b-8cc9-a2f4dc5505a9",
+          "lastUpdated": 1605920563304,
           "logo": false
         },
         {
@@ -5761,12 +5743,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/734cacbc-a750-475b-8cc9-a2f4dc5505a9",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/c62e4aee-3734-4e93-a98c-fb369b9aa7d5",
           "caption": "",
-          "created": 1605920563304,
+          "created": 1605920379367,
           "description": "",
-          "id": "734cacbc-a750-475b-8cc9-a2f4dc5505a9",
-          "lastUpdated": 1605920563304,
+          "id": "c62e4aee-3734-4e93-a98c-fb369b9aa7d5",
+          "lastUpdated": 1605920379367,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/a5a88de3-1a4f-4fc4-b05b-8b0013ec5d9d",
+          "caption": "",
+          "created": 1605920491341,
+          "description": "",
+          "id": "a5a88de3-1a4f-4fc4-b05b-8b0013ec5d9d",
+          "lastUpdated": 1605920491341,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/independent/05f4cb50-c685-4bb2-a5bb-3a273b51bc8f/cb3a7746-e37d-4db7-86e8-d04025915163",
+          "caption": "",
+          "created": 1605920569796,
+          "description": "",
+          "id": "cb3a7746-e37d-4db7-86e8-d04025915163",
+          "lastUpdated": 1605920569796,
           "logo": false
         }
       ],
@@ -5827,9 +5827,9 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "translations: sync translations from transifex (dev) (#3001)",
+              "fetch visualization always when caching (DHIS2-17509) (#2986)",
               "merge to master",
-              "fetch visualization always when caching (DHIS2-17509) (#2986)"
+              "translations: sync translations from transifex (dev) (#3001)"
             ]
           }
         },
@@ -5846,10 +5846,10 @@
           "releaseNotes": {
             "Bug Fixes": [
               "avoid re-rendering an item when adding the same again (DHIS2-17016) (#2935)",
-              "avoid reading from undefined error (DHIS2-17334) (#2970)",
               "dimension list design (DHIS2-16270) (#2861)",
               "merge to master",
-              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#2971)"
+              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#2971)",
+              "avoid reading from undefined error (DHIS2-17334) (#2970)"
             ]
           }
         },
@@ -5865,10 +5865,10 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
+              "translations: sync translations from transifex (dev)",
               "in paragraphs were removed in dashboard item description (#2962)",
               "short name was not being shown in visualizations (#2959)",
-              "translations: sync translations from transifex (dev)"
+              "merge to master"
             ]
           }
         },
@@ -5903,11 +5903,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "show tag/tooltip only when a filter other than ou/pe is used (#2941)",
-              "merge to master",
-              "show tag/tooltip about not applied filters for Outlier table (DHIS2-13858) (#2937)",
               "translations: sync translations from transifex (dev) (#2920)",
-              "use interpretations component from Analytics (DHIS2-15441) (#2430)"
+              "show tag/tooltip only when a filter other than ou/pe is used (#2941)",
+              "use interpretations component from Analytics (DHIS2-15441) (#2430)",
+              "merge to master",
+              "show tag/tooltip about not applied filters for Outlier table (DHIS2-13858) (#2937)"
             ],
             "Features": [
               "support outlier table plugin (DHIS2-16751) (#2912)"
@@ -6343,14 +6343,14 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "prevent failing jest test",
               "translations: sync translations from transifex (master)",
-              "update v39 fixtures",
-              "update jest mock [DHIS2-15415]",
               "remove v37 e2e",
-              "add scroll for workflows [DHIS2-15415]",
+              "update v39 fixtures",
+              "add scroll on workflow selector [DHIS2-15415]",
+              "prevent failing jest test",
               "update v38 fixtures",
-              "add scroll on workflow selector [DHIS2-15415]"
+              "update jest mock [DHIS2-15415]",
+              "add scroll for workflows [DHIS2-15415]"
             ]
           }
         },
@@ -6630,12 +6630,12 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "validator: limits as warning instead of error (#357)",
-              "help: add warning style reference to help",
-              "tests: update tests",
-              "prevent setting warning as undefined",
               "prevent unnecessary renders when form has errors (#358)",
-              "warning border style to yellow"
+              "prevent setting warning as undefined",
+              "tests: update tests",
+              "help: add warning style reference to help",
+              "warning border style to yellow",
+              "validator: limits as warning instead of error (#357)"
             ]
           }
         },
@@ -6683,9 +6683,9 @@
           "channel": "stable",
           "releaseNotes": {
             "Testing": [
-              "use org variables + add RP attributes",
               "fix ci",
-              "publish jest test results to reportportal (#352)"
+              "publish jest test results to reportportal (#352)",
+              "use org variables + add RP attributes"
             ],
             "Bug Fixes": [
               "optimistically update lastUpdatedBy on complete [TECH-1440] (#320)"
@@ -6720,11 +6720,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Testing": [
-              "use import instead of require",
-              "debug merging launches",
-              "cleaning PR",
               "publish cypress test results to reportportal (#349)",
-              "update API_KEY name and merge parallel launches"
+              "use import instead of require",
+              "update API_KEY name and merge parallel launches",
+              "debug merging launches",
+              "cleaning PR"
             ],
             "Bug Fixes": [
               "handle non-standard server time zone ids [DHIS2-15511] (#344)"
@@ -6760,31 +6760,31 @@
           "releaseNotes": {
             "Testing": [
               "cover useImperativeValidate with tests (#321)",
-              "use delete limits: cover with tests",
-              "cartesian: cover with tests (DHIS2-14386)",
               "use imperative validate: cover request failure",
-              "use delete data value mutation: cover with tests",
+              "use delete limits: cover with tests",
+              "use set form completion mutation: cover with tests",
+              "use upload file data value mutation: cover with tests",
+              "use set data value mutation: cover with tests",
               "use imperative validate: cover response transformation",
               "use imperative validate: use real query keys instead of mocked ones",
-              "use update limits: cover with tests",
-              "cover <CategoryComboTableBody/> & cartesian",
-              "metadata selectors: add jest tests for all untested selectors",
-              "use upload file data value mutation: cover with tests",
-              "cover remaining metadata selectors",
+              "use delete data value mutation: cover with tests",
               "category combo table body: cover with tests",
-              "use set data value mutation: cover with tests",
+              "metadata selectors: add jest tests for all untested selectors",
+              "cartesian: cover with tests (DHIS2-14386)",
               "cover hooks in data-value-mutations.js (#314)",
-              "use set form completion mutation: cover with tests"
+              "cover <CategoryComboTableBody/> & cartesian",
+              "use update limits: cover with tests",
+              "cover remaining metadata selectors"
             ],
             "Bug Fixes": [
-              "use set form completion mutation: handle optimistic update errors correctly",
+              "translations: sync translations from transifex (development)",
               "rollback failed complete [DHIS2-15033] (#312)",
-              "cover useSetFormCompletionMutation with tests (#315)",
-              "include attribute options in completion post [DHIS2-15032] (#311)",
               "lock forms when organisation unit is closed [BETA-25] (#317)",
+              "include attribute options in completion post [DHIS2-15032] (#311)",
               "use FetchError class from app-runtime [DHIS2-15085] (#316)",
               "cartesian: return empty array when no vectors provided",
-              "translations: sync translations from transifex (development)"
+              "use set form completion mutation: handle optimistic update errors correctly",
+              "cover useSetFormCompletionMutation with tests (#315)"
             ],
             "Features": [
               "merge development into master"
@@ -6809,28 +6809,28 @@
               "lock-status: add expiry to footer bar"
             ],
             "Bug Fixes": [
+              "use relative time with absolute time in tooltip",
+              "handle undefined data set",
+              "include username in string for i18n",
+              "adjust for different time locales",
+              "remove conditional chaining",
+              "use suggested text",
               "error when no period is selected",
               "use set form completion mutation: handle optimistic update errors correctly",
-              "adjust for different time locales",
-              "align inputPeriod check with backend [DHIS2-14218]",
-              "only update status from backend once",
-              "handle undefined data set",
-              "remove conditional chaining",
               "cover useSetFormCompletionMutation with tests (#315)",
-              "expiry date calculation",
-              "use suggested text",
-              "include username in string for i18n",
               "don't show expiration if excepted by user authorities",
-              "use relative time with absolute time in tooltip"
+              "only update status from backend once",
+              "align inputPeriod check with backend [DHIS2-14218]",
+              "expiry date calculation"
             ],
             "Testing": [
               "use delete limits: cover with tests",
-              "use delete data value mutation: cover with tests",
-              "use update limits: cover with tests",
+              "use set form completion mutation: cover with tests",
               "use upload file data value mutation: cover with tests",
               "use set data value mutation: cover with tests",
+              "use delete data value mutation: cover with tests",
               "cover hooks in data-value-mutations.js (#314)",
-              "use set form completion mutation: cover with tests"
+              "use update limits: cover with tests"
             ]
           }
         },
@@ -6910,79 +6910,79 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "print: fix print-styles for selects",
-              "ensure biweeks allow entry over entire year [TECH-1308] (#242)",
-              "deps: update tanstack-query monorepo to v4.16.1",
-              "deps: update dependency @tanstack/react-query-devtools to v4.24.14",
-              "deps: update dependency @tanstack/react-query-devtools to v4.24.13",
-              "deps: update tanstack-query monorepo to v4.24.9",
-              "multi-select: update max-width",
-              "deps: update tanstack-query monorepo to v4.20.2",
-              "deps: update tanstack-query monorepo to v4.19.1",
-              "deps: update dependency idb-keyval to v6.2.0",
               "clean up audit styling [TECH-1469] [TECH-1470] (#237)",
-              "deps: update dependency zustand to v4.1.4",
-              "deps: update tanstack-query monorepo to v4.18.0",
-              "deps: update dependency query-string to v7.1.3",
-              "deps: update dependency chart.js to v3.9.1",
-              "deps: update dependency re-reselect to v4.0.1",
-              "data-test attribute and linting errors",
-              "metadata error handling",
-              "clear selections with only dataset [DHIS2-14039] (#243)",
-              "data value store: set correct default when data value set falsy",
-              "implement PR feedback by @tomzemp from 2023-03-02",
-              "deps: update dependency react-router-dom to v5.3.4",
-              "highlighted field store: correct wrong initial state",
-              "deps: update tanstack-query monorepo to v4.17.1",
-              "deps: bump platform and runtime deps [TECH-1462] (#236)",
-              "implement PR feedback by @tomzemp from 2023-03-04",
-              "use periods: reverse order & add first/last periods of next/prev year if in current year",
-              "optionset: re-add input spread to button",
-              "total-cell: clear total value when printing empty form (#298)",
-              "deps: update tanstack-query monorepo to v4.24.10",
-              "option-set: remove unnecessary sort",
-              "options-sort: fix undefined check",
-              "translations: sync translations from transifex (development)",
-              "address period issues that occurred after new year 2022/2023",
-              "use periods: check if lastPeriodOfPrevYear exists",
-              "handle remove periods calculation for end-of-month [DHIS2-14007] (#238)",
-              "deps: update dependency zustand to v4.1.5",
-              "metadata and user info error handling (#294)",
-              "update ui version",
-              "deps: update dependency react-chartjs-2 to v4.3.1",
-              "deps: update tanstack-query monorepo to v4.19.0",
               "deps: update tanstack-query monorepo to v4.24.4",
-              "deps: update dependency final-form to v4.20.9",
-              "optionSet: sort selected options",
+              "deps: update tanstack-query monorepo to v4.23.0",
+              "data-test attribute and linting errors",
+              "deps: bump platform and runtime deps [TECH-1462] (#236)",
+              "handle remove periods calculation for end-of-month [DHIS2-14007] (#238)",
+              "deps: update dependency chart.js to v3.9.1",
               "deps: update tanstack-query monorepo to v4.24.6",
               "remove unnecessary overflow",
-              "adjust disabled org unit style",
-              "option-set: fix clear button",
-              "deps: update dependency classnames to v2.3.2",
-              "deps: update tanstack-query monorepo to v4.20.4",
-              "deps: update tanstack-query monorepo to v4.23.0",
-              "deps: update dependency reselect to v4.1.7",
-              "deps: update dependency html-react-parser to v1.4.14",
-              "deps: update dependency query-string to v7.1.2",
-              "data value store: return boolean from isComplete selector",
               "minor cleanup",
-              "use multi-calendar-dates to address periods that don't start on Jan 1st"
+              "total-cell: clear total value when printing empty form (#298)",
+              "deps: update dependency zustand to v4.1.5",
+              "deps: update dependency final-form to v4.20.9",
+              "deps: update dependency idb-keyval to v6.2.0",
+              "deps: update dependency query-string to v7.1.2",
+              "metadata error handling",
+              "deps: update tanstack-query monorepo to v4.16.1",
+              "use multi-calendar-dates to address periods that don't start on Jan 1st",
+              "print: fix print-styles for selects",
+              "use periods: reverse order & add first/last periods of next/prev year if in current year",
+              "deps: update dependency query-string to v7.1.3",
+              "deps: update dependency react-router-dom to v5.3.4",
+              "deps: update dependency reselect to v4.1.7",
+              "deps: update dependency classnames to v2.3.2",
+              "deps: update tanstack-query monorepo to v4.19.1",
+              "deps: update dependency @tanstack/react-query-devtools to v4.24.13",
+              "clear selections with only dataset [DHIS2-14039] (#243)",
+              "deps: update dependency html-react-parser to v1.4.14",
+              "metadata and user info error handling (#294)",
+              "option-set: remove unnecessary sort",
+              "update ui version",
+              "options-sort: fix undefined check",
+              "translations: sync translations from transifex (development)",
+              "highlighted field store: correct wrong initial state",
+              "optionset: re-add input spread to button",
+              "implement PR feedback by @tomzemp from 2023-03-02",
+              "use periods: check if lastPeriodOfPrevYear exists",
+              "deps: update dependency zustand to v4.1.4",
+              "deps: update tanstack-query monorepo to v4.17.1",
+              "option-set: fix clear button",
+              "data value store: return boolean from isComplete selector",
+              "deps: update tanstack-query monorepo to v4.20.2",
+              "optionSet: sort selected options",
+              "address period issues that occurred after new year 2022/2023",
+              "deps: update dependency re-reselect to v4.0.1",
+              "deps: update tanstack-query monorepo to v4.19.0",
+              "deps: update tanstack-query monorepo to v4.18.0",
+              "data value store: set correct default when data value set falsy",
+              "implement PR feedback by @tomzemp from 2023-03-04",
+              "deps: update tanstack-query monorepo to v4.20.4",
+              "deps: update dependency @tanstack/react-query-devtools to v4.24.14",
+              "deps: update dependency react-chartjs-2 to v4.3.1",
+              "adjust disabled org unit style",
+              "deps: update tanstack-query monorepo to v4.24.10",
+              "deps: update tanstack-query monorepo to v4.24.9",
+              "multi-select: update max-width",
+              "ensure biweeks allow entry over entire year [TECH-1308] (#242)"
             ],
             "Features": [
-              "option-set: add multi text support (#290)",
               "optionset: add support for multi-text optionSet",
-              "zustand: create wrapper"
+              "zustand: create wrapper",
+              "option-set: add multi text support (#290)"
             ],
             "Testing": [
               "entry form store: cover with tests",
+              "get cell id: cover with tests",
+              "highlighted field store: cover with tests",
               "data value store: cover with test & establish testing pattern",
               "unsaved data store: cover with tests",
-              "highlighted field store: cover with tests",
-              "data value store: cover store with tests",
-              "validation store: cover with tests",
               "sync errors store: cover with tests",
-              "get cell id: cover with tests",
-              "cover stores with tests (and fix some minor issues)"
+              "cover stores with tests (and fix some minor issues)",
+              "data value store: cover store with tests",
+              "validation store: cover with tests"
             ]
           }
         },
@@ -7014,8 +7014,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "update periods height [DHIS2-14006]",
-              "translations: sync translations from transifex (development)"
+              "translations: sync translations from transifex (development)",
+              "update periods height [DHIS2-14006]"
             ]
           }
         },
@@ -7031,125 +7031,125 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "file-input: reset lastSyncedValue",
-              "contextual-help: add help-legend for sync-errors",
-              "deps: pin dependencies",
-              "handle network-error alert",
-              "fix some crashes",
-              "always apply long delay when showing/hiding",
-              "errors-store: add getNumberOfErrors",
-              "adjust client time to server timezone when computing date ranges (#165)",
-              "use prefetched units when user org unit is not the highest level",
-              "set highlighted field null",
-              "ensure we use a local date string",
-              "data-workspace: show loader if in flight, regardless of cached data",
-              "handle invalid parameters in URL [TECH-1382] [TECH-1384] (#208)",
-              "dates: ensure that server or client time is used when appropriate",
-              "filter-field: hide clear-button when no filter (#222)",
-              "basic information: display client date in tooltip",
-              "headerbar: use smarter delay for headerbar-status",
-              "handle inconsistent formats from api for orgUnits [DHIS2-13888] (#210)",
-              "always retry offline-trigger errors",
-              "option-set input lastSyncedValue",
-              "deps: update dependency @dhis2/app-runtime to v3.5.0 (#224)",
-              "update Add limits styling [DHIS2-13958]",
-              "offline-error-types, show alertbar once",
-              "global filter field size (#221)",
-              "add missing error-summary file",
-              "translations: sync translations from transifex (development)",
-              "deps: update dependency @dhis2/ui to v8.5.3 (#225)",
-              "highlighted fields performance (#155)",
-              "stop tooltip flickering [DHIS2-13954]",
-              "fix disabled cell styling [TECH-1466] (#234)",
-              "allow the webapi to return a single object instead of wrapped array",
-              "true-only checkbox lastSynced comparison",
-              "update useHighlightedField",
-              "init lastSyncedValue, fix file-field",
-              "adjust synced cell style (#199)",
-              "bottom-bar: add failed to save summary",
-              "remove 403 as temporal error",
-              "use highlightedfieldstore",
-              "refactor validation-tooltip to child of wrapper",
-              "misc cleanup",
-              "filter-field: do not reset highlighted when focused",
-              "inner-wrapper: properly clear error if last-synced",
-              "review",
-              "section-filter: do not reset highlighted on focus",
-              "use selector to get coc",
-              "onlineStatus: sync header-bar status to onlineManager status",
-              "dates: use server time when appropriate",
-              "use-value-store: add optional-chaining for safety",
-              "persist: persist mutations that are network-errors",
-              "onlineManager: make sure to go online when navigator goes online",
-              "preserve input-component format",
               "set networkmode offlineFirst",
-              "deps: update deps",
-              "move handlerHeaderBarStatus to dataworkspace due to re-render issues",
-              "try to use cjs import fetcherror",
-              "manage unsaved comments and limits when moving cells",
-              "update variable name [TECH-1465] (#231)",
-              "remove custom styles for data details button",
-              "tooltip: show all errors in tooltip",
-              "use date limit: prevent recomputing on every re-render",
-              "clear highlight when field is umounted",
-              "error-summary: use yellow800 for icon color",
-              "rerun validation on main bar button click",
-              "minor cleanup",
+              "refactor validation-tooltip to child of wrapper",
               "add missing files",
               "remove defaultOnSuccess for queries",
-              "data-value-set: disable when mutating",
-              "validation button: disable validation run when offline [TECH-1377] (#178)",
-              "audit history: update processing, clean up [TECH-1281] (#131)",
-              "handle temporal mutation errors (#206)",
-              "import locales so app has access to them (#207)",
-              "manage unsaved comments when moving cells",
-              "manage unsaved limits when moving cells",
-              "ensure offline units are fetched correctly for users deep in the hierarchy (#226)",
-              "make bottom bar buttons small [DHIS2-13956]",
-              "remove unnecessary clear highlightedfield",
-              "or between shortcuts [DHIS2-13955]",
-              "shouldRollbackError",
-              "error-details optional chaining",
+              "manage unsaved comments and limits when moving cells",
               "use a stable date string instead of an instable date instance (#201)",
-              "error-summary: count errors in selection",
-              "address pr comments",
+              "deps: update deps",
+              "always retry offline-trigger errors",
               "make useDataValueParams and useApiAttributeParams stable",
-              "tooltip: fix tooltip flickering",
-              "clear sync-status when value changes (#182)",
-              "reset error when pristine",
+              "handle inconsistent formats from api for orgUnits [DHIS2-13888] (#210)",
+              "translations: sync translations from transifex (development)",
+              "dates: ensure that server or client time is used when appropriate",
+              "rerun validation on main bar button click",
+              "fix some crashes",
+              "use prefetched units when user org unit is not the highest level",
+              "misc cleanup",
+              "use highlightedfieldstore",
+              "review",
+              "allow the webapi to return a single object instead of wrapped array",
+              "manage unsaved limits when moving cells",
               "print styles [TECH-1312] (#217)",
-              "fix temporal error handling",
-              "fix breaking tests around side bar, basic info and follow up button",
-              "use retry to pause mutations",
-              "allow for unit paths starting at the real root instead of user root (#197)",
-              "ensure deepest level is never lower than root level",
-              "copy FetchError from data-service",
-              "getCellId",
-              "cleanup on umount only",
-              "use zustand store for highlighted-field",
+              "true-only checkbox lastSynced comparison",
+              "tooltip: fix tooltip flickering",
               "resolveAlertProps",
-              "entry-field: cleanup highlighted-field properly"
+              "error-details optional chaining",
+              "inner-wrapper: properly clear error if last-synced",
+              "allow for unit paths starting at the real root instead of user root (#197)",
+              "data-workspace: show loader if in flight, regardless of cached data",
+              "use date limit: prevent recomputing on every re-render",
+              "entry-field: cleanup highlighted-field properly",
+              "filter-field: do not reset highlighted when focused",
+              "preserve input-component format",
+              "use selector to get coc",
+              "manage unsaved comments when moving cells",
+              "option-set input lastSyncedValue",
+              "handle invalid parameters in URL [TECH-1382] [TECH-1384] (#208)",
+              "make bottom bar buttons small [DHIS2-13956]",
+              "contextual-help: add help-legend for sync-errors",
+              "highlighted fields performance (#155)",
+              "basic information: display client date in tooltip",
+              "handle temporal mutation errors (#206)",
+              "address pr comments",
+              "ensure offline units are fetched correctly for users deep in the hierarchy (#226)",
+              "shouldRollbackError",
+              "copy FetchError from data-service",
+              "onlineStatus: sync header-bar status to onlineManager status",
+              "persist: persist mutations that are network-errors",
+              "minor cleanup",
+              "adjust synced cell style (#199)",
+              "errors-store: add getNumberOfErrors",
+              "fix temporal error handling",
+              "error-summary: use yellow800 for icon color",
+              "ensure deepest level is never lower than root level",
+              "ensure we use a local date string",
+              "reset error when pristine",
+              "bottom-bar: add failed to save summary",
+              "clear highlight when field is umounted",
+              "remove unnecessary clear highlightedfield",
+              "update variable name [TECH-1465] (#231)",
+              "stop tooltip flickering [DHIS2-13954]",
+              "remove custom styles for data details button",
+              "onlineManager: make sure to go online when navigator goes online",
+              "set highlighted field null",
+              "remove 403 as temporal error",
+              "init lastSyncedValue, fix file-field",
+              "adjust client time to server timezone when computing date ranges (#165)",
+              "file-input: reset lastSyncedValue",
+              "cleanup on umount only",
+              "offline-error-types, show alertbar once",
+              "use zustand store for highlighted-field",
+              "fix breaking tests around side bar, basic info and follow up button",
+              "add missing error-summary file",
+              "fix disabled cell styling [TECH-1466] (#234)",
+              "handle network-error alert",
+              "update Add limits styling [DHIS2-13958]",
+              "always apply long delay when showing/hiding",
+              "use-value-store: add optional-chaining for safety",
+              "deps: update dependency @dhis2/app-runtime to v3.5.0 (#224)",
+              "error-summary: count errors in selection",
+              "tooltip: show all errors in tooltip",
+              "data-value-set: disable when mutating",
+              "filter-field: hide clear-button when no filter (#222)",
+              "move handlerHeaderBarStatus to dataworkspace due to re-render issues",
+              "validation button: disable validation run when offline [TECH-1377] (#178)",
+              "headerbar: use smarter delay for headerbar-status",
+              "dates: use server time when appropriate",
+              "try to use cjs import fetcherror",
+              "deps: pin dependencies",
+              "getCellId",
+              "update useHighlightedField",
+              "global filter field size (#221)",
+              "section-filter: do not reset highlighted on focus",
+              "or between shortcuts [DHIS2-13955]",
+              "import locales so app has access to them (#207)",
+              "audit history: update processing, clean up [TECH-1281] (#131)",
+              "deps: update dependency @dhis2/ui to v8.5.3 (#225)",
+              "use retry to pause mutations",
+              "clear sync-status when value changes (#182)"
             ],
             "Testing": [
-              "move query-key test",
               "update tests",
               "add test to getPreFetchedChildren",
-              "add authority tests to comment and limit tests",
               "fix tests",
-              "fix test description"
+              "move query-key test",
+              "fix test description",
+              "add authority tests to comment and limit tests"
             ],
             "Features": [
-              "headerbar: integrate offline-status message (#233)",
-              "headerbar: integrate offline-status-message",
-              "respect F_DATAVALUE_ADD user authority",
-              "notify user about failures of critical requests",
               "client server date: add DRY utils",
+              "sync-errors: add sync-errors store",
+              "headerbar: integrate offline-status-message",
+              "sync-error: add sync error to field",
+              "get current date: set milliseconds to 0",
+              "respect F_DATAVALUE_ADD user authority",
               "sync error handling (#218)",
               "custom forms: notify user about pre-fetching failure",
               "error-indicator: add error indicator",
-              "sync-error: add sync error to field",
-              "sync-errors: add sync-errors store",
-              "get current date: set milliseconds to 0"
+              "notify user about failures of critical requests",
+              "headerbar: integrate offline-status message (#233)"
             ]
           }
         },
@@ -7236,20 +7236,20 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "update fixtures for cypress tests",
+              "add missing transations",
               "move testing libraty to dev dependencies",
               "minor fixes",
-              "add missing transations"
+              "update fixtures for cypress tests"
             ],
             "Features": [
-              "show sharing button only if the user can share the exchange",
+              "add sharing button which opens a sharing dialog in configurations",
               "upgrade app platform and ui library",
               "add tests for edit overview page",
+              "update version of dhis2 app runtime",
               "upgrade node version for ci",
               "add sharing settings",
-              "update version of dhis2 app runtime",
-              "add sharing button to data exchange configurations",
-              "add sharing button which opens a sharing dialog in configurations"
+              "show sharing button only if the user can share the exchange",
+              "add sharing button to data exchange configurations"
             ]
           }
         },
@@ -7313,8 +7313,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Features": [
-              "upgrade cypress to version",
-              "upgrade cypress version"
+              "upgrade cypress version",
+              "upgrade cypress to version"
             ]
           }
         },
@@ -7602,8 +7602,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "always use outputIdScheme=UID [DHIS2-14061]",
               "updated cypress fixtures [DHIS2-14061]",
+              "always use outputIdScheme=UID [DHIS2-14061]",
               "always use outputIdScheme=UID for data preview [DHIS2-14061]"
             ]
           }
@@ -7695,30 +7695,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/36ee07e1-1edb-46ef-b039-8a4a0c8e02f0",
-          "caption": "",
-          "created": 1710241173209,
-          "description": "",
-          "id": "36ee07e1-1edb-46ef-b039-8a4a0c8e02f0",
-          "lastUpdated": 1710241173209,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/e6f38d6d-c506-44ea-a4a4-65b65e4f01d5",
           "caption": "",
           "created": 1710241173277,
           "description": "",
           "id": "e6f38d6d-c506-44ea-a4a4-65b65e4f01d5",
           "lastUpdated": 1710241173277,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/31a5881f-29e8-406f-997d-85ae5cf8bd8b",
-          "caption": "",
-          "created": 1710241173250,
-          "description": "",
-          "id": "31a5881f-29e8-406f-997d-85ae5cf8bd8b",
-          "lastUpdated": 1710241173250,
           "logo": false
         },
         {
@@ -7731,12 +7713,30 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/31a5881f-29e8-406f-997d-85ae5cf8bd8b",
+          "caption": "",
+          "created": 1710241173250,
+          "description": "",
+          "id": "31a5881f-29e8-406f-997d-85ae5cf8bd8b",
+          "lastUpdated": 1710241173250,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/4b82c517-fcf1-43c7-948f-4ef14fde10d3",
           "caption": "",
           "created": 1710241173228,
           "description": "",
           "id": "4b82c517-fcf1-43c7-948f-4ef14fde10d3",
           "lastUpdated": 1710241173228,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-rwanda/73f87a14-d71c-40b8-8363-0d956745ba06/36ee07e1-1edb-46ef-b039-8a4a0c8e02f0",
+          "caption": "",
+          "created": 1710241173209,
+          "description": "",
+          "id": "36ee07e1-1edb-46ef-b039-8a4a0c8e02f0",
+          "lastUpdated": 1710241173209,
           "logo": false
         }
       ],
@@ -7879,21 +7879,21 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/80c1fd02-10c5-4515-bebe-3db21f683ef9",
+          "caption": "",
+          "created": 1682674040389,
+          "description": "",
+          "id": "80c1fd02-10c5-4515-bebe-3db21f683ef9",
+          "lastUpdated": 1682674040389,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/6c5be955-63ff-4eea-a826-d104f3ea477b",
           "caption": "",
           "created": 1682674049587,
           "description": "",
           "id": "6c5be955-63ff-4eea-a826-d104f3ea477b",
           "lastUpdated": 1682674049587,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/a4ec95f6-cfbf-43bc-8e28-09086e68ff28",
-          "caption": "",
-          "created": 1682674026179,
-          "description": "",
-          "id": "a4ec95f6-cfbf-43bc-8e28-09086e68ff28",
-          "lastUpdated": 1682674026179,
           "logo": false
         },
         {
@@ -7906,21 +7906,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/80c1fd02-10c5-4515-bebe-3db21f683ef9",
-          "caption": "",
-          "created": 1682674040389,
-          "description": "",
-          "id": "80c1fd02-10c5-4515-bebe-3db21f683ef9",
-          "lastUpdated": 1682674040389,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/371d01e5-99b5-43c7-a582-8253b992dcc5",
           "caption": "",
           "created": 1682674033748,
           "description": "",
           "id": "371d01e5-99b5-43c7-a582-8253b992dcc5",
           "lastUpdated": 1682674033748,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/239b58bb-0e3a-4183-b9b4-29956328c2a1/a4ec95f6-cfbf-43bc-8e28-09086e68ff28",
+          "caption": "",
+          "created": 1682674026179,
+          "description": "",
+          "id": "a4ec95f6-cfbf-43bc-8e28-09086e68ff28",
+          "lastUpdated": 1682674026179,
           "logo": false
         }
       ],
@@ -8011,9 +8011,9 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "bump analytics with fix for DHIS2-16904 (#3124)",
+              "bump analytics to 26.7.5 for period translations",
               "bump analytics for testing",
-              "bump analytics to 26.7.5 for period translations"
+              "bump analytics with fix for DHIS2-16904 (#3124)"
             ]
           }
         },
@@ -8045,8 +8045,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "use improved rich text editor from analytics (DHIS2-15522)",
               "separator for hundreds, thousands and millions missing in Pie charts (DHIS2-16172) (#3093)",
+              "use improved rich text editor from analytics (DHIS2-15522)",
               "merge to master"
             ]
           }
@@ -8063,12 +8063,12 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3051)",
+              "translations: sync translations from transifex (dev)",
               "non-existing AO blocks new AOs from being created (DHIS2-13167) (#3056)",
               "dimension chip design updates (DHIS2-16272) (#2934)",
-              "numbers are misaligned in pivot table (DHIS2-16900) (#3072)",
               "merge to master",
-              "translations: sync translations from transifex (dev)"
+              "numbers are misaligned in pivot table (DHIS2-16900) (#3072)",
+              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3051)"
             ]
           }
         },
@@ -8084,10 +8084,10 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
               "fix a crash when row totals is enabled (DHIS2-17297) (#3042)",
+              "translations: sync translations from transifex (dev)",
               "avoid flashing when ou levels are used (DHIS2-17136) (#3032)",
-              "translations: sync translations from transifex (dev)"
+              "merge to master"
             ]
           }
         },
@@ -8103,10 +8103,10 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
               "try locking highcharts to 10.2.0",
               "plugin flashes when interacting with Interpretations modal (#3017)",
-              "translations: sync translations from transifex (dev)"
+              "translations: sync translations from transifex (dev)",
+              "merge to master"
             ],
             "Testing": [
               "add cypress tests for Outlier table DHIS2-17162 (#3008)"
@@ -8125,11 +8125,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "remove query param section from url glob",
-              "change urlReg to urlGlob and correct glob pattern for outlier tables",
-              "add classnames and update json instructions file for outlier tables (#3000)",
               "correct typo in visualisation type",
-              "wait for different SVG for single value"
+              "add classnames and update json instructions file for outlier tables (#3000)",
+              "remove query param section from url glob",
+              "wait for different SVG for single value",
+              "change urlReg to urlGlob and correct glob pattern for outlier tables"
             ]
           }
         },
@@ -8145,10 +8145,10 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
               "ensure only the first period item is used",
               "enable the loading spinner when props change",
-              "fix period filter and loading spinner when filtering in dashboard (#3002)"
+              "fix period filter and loading spinner when filtering in dashboard (#3002)",
+              "merge to master"
             ]
           }
         },
@@ -8165,9 +8165,9 @@
           "releaseNotes": {
             "Testing": [
               "hover over list to prevent it from being stale",
+              "don't expect subtitle to be visible by default",
               "refactor data.cy.js to independent test cases",
-              "adapt tests to new database (#2975)",
-              "don't expect subtitle to be visible by default"
+              "adapt tests to new database (#2975)"
             ],
             "Bug Fixes": [
               "add custom errors for analytics requests (#2874)",
@@ -8195,35 +8195,35 @@
             "Bug Fixes": [
               "fix bug which cause current to loose props",
               "update cli-app-scripts and analytics deps",
-              "avoid crash when visualization object is empty (ie. New)",
+              "translations: sync translations from transifex (dev)",
+              "avoid visualization flashing when changing options",
               "do not pass a boolean for icons when saving",
+              "fetch data element icon and pass it in extraOptions",
+              "avoid crash when visualization object is empty (ie. New)",
               "hide icon from visualization when option is toggled",
               "dependency updates (#2243)",
-              "avoid visualization flashing when changing options",
-              "translations: sync translations from transifex (dev)",
-              "set disabledOptions on AO loading and vis type switching",
-              "fetch data element icon and pass it in extraOptions"
+              "set disabledOptions on AO loading and vis type switching"
             ],
             "Features": [
-              "handle disabled and helpText props for disabled options",
-              "handle disabled option in Redux store",
-              "single value background color change based upon legend (DHIS2-13702) (#2223)",
-              "support non-gregorian fixed periods (#2233)",
-              "cumulative values in PT (DHIS2-5497) (#2746)",
-              "disable legend option when cumulative values is enabled",
-              "v100.4.0",
-              "disabled options based on cumulativeValues in PT DHIS2-15728",
               "implement data icon option for SV visualization (DHIS2-10496) (#2236)",
+              "cumulative values in PT (DHIS2-5497) (#2746)",
+              "handle disabled and helpText props for disabled options",
+              "disable option when cumulativeValues is checked in PT DHiS2-15728",
+              "single value background color change based upon legend (DHIS2-13702) (#2223)",
+              "v100.4.0",
               "remove disabled before passing object to visualization generator",
-              "disable option when cumulativeValues is checked in PT DHiS2-15728"
+              "disabled options based on cumulativeValues in PT DHIS2-15728",
+              "support non-gregorian fixed periods (#2233)",
+              "handle disabled option in Redux store",
+              "disable legend option when cumulative values is enabled"
             ],
             "Testing": [
-              "fix test failing due to change in single value behaviour",
               "use current year instead of hardcode it",
+              "fix test failing due to change in single value behaviour",
               "refactor clickCheckbox to check/uncheckCheckbox",
-              "add helper functions for totals options",
               "add tests for cumulativeValues option in PT",
-              "enhance tests, options and sorting"
+              "enhance tests, options and sorting",
+              "add helper functions for totals options"
             ]
           }
         },
@@ -8260,15 +8260,15 @@
               "send test results to report portal dashboard"
             ],
             "Bug Fixes": [
-              "visualization deleted when saving it after copy DHIS2-15722 (#2778)",
-              "only update interpretations list when in DOM",
-              "translate dimension labels in PT DHIS2-15750 (#2783)",
-              "disable Save when vis not in unsaved/dirty state DHIS2-15373 (#2758)",
-              "limit max value shifts to min value fields in PT (DHIS2-10235) (#2756)",
-              "change legend type description to fit SV (DHIS2-15120) (#2757)",
               "allow closing the interpretations modal when accessed via URL (DHIS2-15721) (#2748)",
+              "visualization deleted when saving it after copy DHIS2-15722 (#2778)",
+              "prevent state update when modal is closing",
               "translations: sync translations from transifex (dev)",
-              "prevent state update when modal is closing"
+              "translate dimension labels in PT DHIS2-15750 (#2783)",
+              "only update interpretations list when in DOM",
+              "change legend type description to fit SV (DHIS2-15120) (#2757)",
+              "limit max value shifts to min value fields in PT (DHIS2-10235) (#2756)",
+              "disable Save when vis not in unsaved/dirty state DHIS2-15373 (#2758)"
             ],
             "Features": [
               "100.3.0",
@@ -8288,32 +8288,32 @@
           "channel": "stable",
           "releaseNotes": {
             "Features": [
+              "100.2.0 (#2741)",
+              "use Toolbar and ToolbarSidebar from analytics (#2358)",
               "use UpdateButton and HoverMenubar from analytics",
               "use interpretations button from analytics",
-              "use Toolbar and ToolbarSidebar from analytics (#2358)",
-              "100.2.0 (#2741)",
-              "update download menu to use hovermenu components from analytics",
-              "use hover menu components from analytics for options menu"
+              "use hover menu components from analytics for options menu",
+              "update download menu to use hovermenu components from analytics"
             ],
             "Testing": [
-              "comment out icon tests for currently unsupported types",
-              "skip legend test while data element icons are unsupported",
-              "add Cypress tests for SV icon (DHIS2-10496) (#2372)",
-              "rename AO-title to titlebar (DHIS2-15063) (#2435)",
-              "prevent test names from being dynamic (#2576)",
               "more tests for custom calculations (DHIS2-13871) (#2287)",
-              "extend timeout after delete has been triggered (#2499)"
+              "extend timeout after delete has been triggered (#2499)",
+              "prevent test names from being dynamic (#2576)",
+              "comment out icon tests for currently unsupported types",
+              "rename AO-title to titlebar (DHIS2-15063) (#2435)",
+              "add Cypress tests for SV icon (DHIS2-10496) (#2372)",
+              "skip legend test while data element icons are unsupported"
             ],
             "Bug Fixes": [
-              "remove divider from plain data source submenu",
-              "inject style in props passed to VisualizationPlugin (DHIS2-15126) (#2322)",
-              "observe size changes for legend positioning",
               "adjust data test name",
               "translations: sync translations from transifex (dev)",
-              "tweak viz type selector styles to match toolbar",
-              "adjust closeFileMenuWithClick command",
+              "inject style in props passed to VisualizationPlugin (DHIS2-15126) (#2322)",
+              "remove divider from plain data source submenu",
+              "observe size changes for legend positioning",
+              "ensure `MenuSectionHeader` is `dense` when in `HoverMenuBar`",
               "adjust e2e element slectors",
-              "ensure `MenuSectionHeader` is `dense` when in `HoverMenuBar`"
+              "adjust closeFileMenuWithClick command",
+              "tweak viz type selector styles to match toolbar"
             ]
           }
         },
@@ -8329,8 +8329,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Testing": [
-              "prevent items in transfer from being stale when filtering (#2321)",
-              "extend timeout for loading visualizations (#2368)"
+              "extend timeout for loading visualizations (#2368)",
+              "prevent items in transfer from being stale when filtering (#2321)"
             ],
             "Bug Fixes": [
               "image paths and apply d2 style",
@@ -8350,11 +8350,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
+              "case E7113 throws same msg as E7114 (#2278)",
               "single value size and position issues (analytics@25.1.10) (#2359)",
-              "bump cli-app-scripts to 10.3.8 for LIBS-499 fix (#2285)",
               "v100.1.1",
-              "deps: platform deps for login redirect [DHIS2-15319] (#2300)",
-              "case E7113 throws same msg as E7114 (#2278)"
+              "bump cli-app-scripts to 10.3.8 for LIBS-499 fix (#2285)",
+              "deps: platform deps for login redirect [DHIS2-15319] (#2300)"
             ]
           }
         },
@@ -8402,32 +8402,32 @@
           "channel": "stable",
           "releaseNotes": {
             "Features": [
+              "implement data icon option for SV visualization (DHIS2-10496) (#2236)",
+              "100.1.0 (#2286)",
               "plugin: send installation status [DHIS2-15097] (#2273)",
               "single value background color change based upon legend (DHIS2-13702) (#2223)",
-              "support non-gregorian fixed periods (#2233)",
-              "100.1.0 (#2286)",
-              "implement data icon option for SV visualization (DHIS2-10496) (#2236)",
-              "custom calculations (DHIS2-13871) (#2232)"
+              "custom calculations (DHIS2-13871) (#2232)",
+              "support non-gregorian fixed periods (#2233)"
             ],
             "Testing": [
-              "fix test failing due to change in single value behaviour",
-              "add extended timeout for file open modal (#2284)"
+              "add extended timeout for file open modal (#2284)",
+              "fix test failing due to change in single value behaviour"
             ],
             "Bug Fixes": [
-              "remove translucent layer by using app-scripts 10.3.4 (DHIS2-15008) (#2251)",
-              "deps: bump cli-app-scripts for precaching improvement",
-              "update cli-app-scripts and analytics deps",
-              "translations: sync translations from transifex (master) (#2192)",
+              "target window.parent for postRobot communication (#2256)",
               "set height on chart container when not defined (#2246) (#2250)",
               "update cli-app-scripts and analytics (#2247)",
-              "dependency updates (#2243)",
-              "do not pass a boolean for icons when saving",
-              "hide icon from visualization when option is toggled",
+              "update cli-app-scripts and analytics deps",
+              "translations: sync translations from transifex (master) (#2192)",
+              "deps: bump cli-app-scripts for precaching improvement",
               "inject CSS UI variables in plugin (#2270)",
               "remove old i18n initialisation (#2241)",
-              "target window.parent for postRobot communication (#2256)",
               "nightly workflow has to run on default branch which is currently dev (#2269)",
+              "do not pass a boolean for icons when saving",
               "fetch data element icon and pass it in extraOptions",
+              "remove translucent layer by using app-scripts 10.3.4 (DHIS2-15008) (#2251)",
+              "hide icon from visualization when option is toggled",
+              "dependency updates (#2243)",
               "plugin sends installation status (#2277)"
             ]
           }
@@ -8657,30 +8657,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/88c88a5b-6198-46be-9d7f-9bee6d4d2552",
           "caption": "",
-          "created": 1655741575764,
+          "created": 1655741575783,
           "description": "",
-          "id": "ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
-          "lastUpdated": 1655741575764,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/e041aaf4-e895-4a20-b477-6d41234bc398",
-          "caption": "",
-          "created": 1655741575771,
-          "description": "",
-          "id": "e041aaf4-e895-4a20-b477-6d41234bc398",
-          "lastUpdated": 1655741575771,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
-          "caption": "",
-          "created": 1655741575846,
-          "description": "",
-          "id": "5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
-          "lastUpdated": 1655741575846,
+          "id": "88c88a5b-6198-46be-9d7f-9bee6d4d2552",
+          "lastUpdated": 1655741575783,
           "logo": false
         },
         {
@@ -8693,21 +8675,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/88c88a5b-6198-46be-9d7f-9bee6d4d2552",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
           "caption": "",
-          "created": 1655741575783,
+          "created": 1655741575846,
           "description": "",
-          "id": "88c88a5b-6198-46be-9d7f-9bee6d4d2552",
-          "lastUpdated": 1655741575783,
+          "id": "5f2e8926-e85b-4fe0-99d1-2c3d2ce4578c",
+          "lastUpdated": 1655741575846,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/d3eb1c59-175a-483a-b3f7-557b7640afe2",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
           "caption": "",
-          "created": 1655741575670,
+          "created": 1655741575764,
           "description": "",
-          "id": "d3eb1c59-175a-483a-b3f7-557b7640afe2",
-          "lastUpdated": 1655741575670,
+          "id": "ccef42e0-3ad7-47a5-9a23-eda2a1b8aef7",
+          "lastUpdated": 1655741575764,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ce08bc32-2cda-496c-b0ef-be735c1c9cf0",
+          "caption": "",
+          "created": 1655741575720,
+          "description": "",
+          "id": "ce08bc32-2cda-496c-b0ef-be735c1c9cf0",
+          "lastUpdated": 1655741575720,
           "logo": false
         },
         {
@@ -8720,12 +8711,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/ce08bc32-2cda-496c-b0ef-be735c1c9cf0",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/d3eb1c59-175a-483a-b3f7-557b7640afe2",
           "caption": "",
-          "created": 1655741575720,
+          "created": 1655741575670,
           "description": "",
-          "id": "ce08bc32-2cda-496c-b0ef-be735c1c9cf0",
-          "lastUpdated": 1655741575720,
+          "id": "d3eb1c59-175a-483a-b3f7-557b7640afe2",
+          "lastUpdated": 1655741575670,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/upc-who/450e6234-618e-4063-9113-66c90e20ca16/e041aaf4-e895-4a20-b477-6d41234bc398",
+          "caption": "",
+          "created": 1655741575771,
+          "description": "",
+          "id": "e041aaf4-e895-4a20-b477-6d41234bc398",
+          "lastUpdated": 1655741575771,
           "logo": false
         }
       ],
@@ -8912,12 +8912,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/7991aa92-d2a7-46ba-a6e0-1b807a8031d4",
           "caption": "",
-          "created": 1588595316607,
+          "created": 1599243698713,
           "description": "",
-          "id": "b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
-          "lastUpdated": 1588595316607,
+          "id": "7991aa92-d2a7-46ba-a6e0-1b807a8031d4",
+          "lastUpdated": 1599243698713,
           "logo": false
         },
         {
@@ -8930,12 +8930,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/7991aa92-d2a7-46ba-a6e0-1b807a8031d4",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bluesquare/2c3510dd-d471-4c9d-9f3d-fd4a8601fab9/b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
           "caption": "",
-          "created": 1599243698713,
+          "created": 1588595316607,
           "description": "",
-          "id": "7991aa92-d2a7-46ba-a6e0-1b807a8031d4",
-          "lastUpdated": 1599243698713,
+          "id": "b41b88a3-a8b0-4ff3-b422-1eca73f2effc",
+          "lastUpdated": 1588595316607,
           "logo": false
         }
       ],
@@ -9003,42 +9003,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/b87eca78-c445-45c0-bdd2-7a7e2acc2c81",
-          "caption": "",
-          "created": 1711455074495,
-          "description": "",
-          "id": "b87eca78-c445-45c0-bdd2-7a7e2acc2c81",
-          "lastUpdated": 1711455074495,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/cd65e814-620c-4f5f-904e-588d77924e15",
-          "caption": "",
-          "created": 1711455074537,
-          "description": "",
-          "id": "cd65e814-620c-4f5f-904e-588d77924e15",
-          "lastUpdated": 1711455074537,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/8edb4cab-84e8-499e-96c6-c17720b974be",
-          "caption": "",
-          "created": 1711455074176,
-          "description": "",
-          "id": "8edb4cab-84e8-499e-96c6-c17720b974be",
-          "lastUpdated": 1711455074176,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/e3a24d5d-fce4-4aff-8631-fc5379955d09",
-          "caption": "",
-          "created": 1711455074516,
-          "description": "",
-          "id": "e3a24d5d-fce4-4aff-8631-fc5379955d09",
-          "lastUpdated": 1711455074516,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/b4eb92f8-1977-4e7b-9f5c-05d21338a644",
           "caption": "",
           "created": 1711455074527,
@@ -9054,6 +9018,42 @@
           "description": "",
           "id": "4106b71c-076a-489c-8a5b-c169efd8e56e",
           "lastUpdated": 1711455074648,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/e3a24d5d-fce4-4aff-8631-fc5379955d09",
+          "caption": "",
+          "created": 1711455074516,
+          "description": "",
+          "id": "e3a24d5d-fce4-4aff-8631-fc5379955d09",
+          "lastUpdated": 1711455074516,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/cd65e814-620c-4f5f-904e-588d77924e15",
+          "caption": "",
+          "created": 1711455074537,
+          "description": "",
+          "id": "cd65e814-620c-4f5f-904e-588d77924e15",
+          "lastUpdated": 1711455074537,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/b87eca78-c445-45c0-bdd2-7a7e2acc2c81",
+          "caption": "",
+          "created": 1711455074495,
+          "description": "",
+          "id": "b87eca78-c445-45c0-bdd2-7a7e2acc2c81",
+          "lastUpdated": 1711455074495,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/56a29894-9eb2-453a-8013-21f6d7ef254b/8edb4cab-84e8-499e-96c6-c17720b974be",
+          "caption": "",
+          "created": 1711455074176,
+          "description": "",
+          "id": "8edb4cab-84e8-499e-96c6-c17720b974be",
+          "lastUpdated": 1711455074176,
           "logo": false
         }
       ],
@@ -9099,57 +9099,30 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2652583a-3089-47e5-a84f-786c8f06c22c",
+          "caption": "",
+          "created": 1634123711019,
+          "description": "",
+          "id": "2652583a-3089-47e5-a84f-786c8f06c22c",
+          "lastUpdated": 1634123711019,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
+          "caption": "",
+          "created": 1634123711214,
+          "description": "",
+          "id": "3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
+          "lastUpdated": 1634123711214,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/d8caf867-aa1b-4a08-b7ba-e257dd986603",
           "caption": "",
           "created": 1634123689094,
           "description": "",
           "id": "d8caf867-aa1b-4a08-b7ba-e257dd986603",
           "lastUpdated": 1634123689094,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/af7d2f4d-7b3d-4ca2-be99-6d00edf8cd3f",
-          "caption": "",
-          "created": 1634123681667,
-          "description": "",
-          "id": "af7d2f4d-7b3d-4ca2-be99-6d00edf8cd3f",
-          "lastUpdated": 1634123681667,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/95d3513f-d1be-48b6-acd6-f00d14173f0f",
-          "caption": "",
-          "created": 1634123692245,
-          "description": "",
-          "id": "95d3513f-d1be-48b6-acd6-f00d14173f0f",
-          "lastUpdated": 1634123692245,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/ac513af6-fd60-4e4b-bed3-9100f107c211",
-          "caption": "",
-          "created": 1634123696264,
-          "description": "",
-          "id": "ac513af6-fd60-4e4b-bed3-9100f107c211",
-          "lastUpdated": 1634123696264,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2b15d295-401a-4263-b302-e4945a195d66",
-          "caption": "",
-          "created": 1634123697499,
-          "description": "",
-          "id": "2b15d295-401a-4263-b302-e4945a195d66",
-          "lastUpdated": 1634123697499,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/823cb928-3b0b-4ace-b795-7e43ca510a3b",
-          "caption": "",
-          "created": 1634123703598,
-          "description": "",
-          "id": "823cb928-3b0b-4ace-b795-7e43ca510a3b",
-          "lastUpdated": 1634123703598,
           "logo": false
         },
         {
@@ -9162,12 +9135,66 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/0d542045-297f-4534-8e9d-9003d777a0fe",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/823cb928-3b0b-4ace-b795-7e43ca510a3b",
           "caption": "",
-          "created": 1634123705167,
+          "created": 1634123703598,
           "description": "",
-          "id": "0d542045-297f-4534-8e9d-9003d777a0fe",
-          "lastUpdated": 1634123705167,
+          "id": "823cb928-3b0b-4ace-b795-7e43ca510a3b",
+          "lastUpdated": 1634123703598,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2b15d295-401a-4263-b302-e4945a195d66",
+          "caption": "",
+          "created": 1634123697499,
+          "description": "",
+          "id": "2b15d295-401a-4263-b302-e4945a195d66",
+          "lastUpdated": 1634123697499,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/ac513af6-fd60-4e4b-bed3-9100f107c211",
+          "caption": "",
+          "created": 1634123696264,
+          "description": "",
+          "id": "ac513af6-fd60-4e4b-bed3-9100f107c211",
+          "lastUpdated": 1634123696264,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/af7d2f4d-7b3d-4ca2-be99-6d00edf8cd3f",
+          "caption": "",
+          "created": 1634123681667,
+          "description": "",
+          "id": "af7d2f4d-7b3d-4ca2-be99-6d00edf8cd3f",
+          "lastUpdated": 1634123681667,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/34597d8e-ace0-4e2a-8ef1-f559223ec877",
+          "caption": "",
+          "created": 1634123689478,
+          "description": "",
+          "id": "34597d8e-ace0-4e2a-8ef1-f559223ec877",
+          "lastUpdated": 1634123689478,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/84f869af-60d5-4bdd-b209-baf76d8e5ddb",
+          "caption": "",
+          "created": 1634123689506,
+          "description": "",
+          "id": "84f869af-60d5-4bdd-b209-baf76d8e5ddb",
+          "lastUpdated": 1634123689506,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/95d3513f-d1be-48b6-acd6-f00d14173f0f",
+          "caption": "",
+          "created": 1634123692245,
+          "description": "",
+          "id": "95d3513f-d1be-48b6-acd6-f00d14173f0f",
+          "lastUpdated": 1634123692245,
           "logo": false
         },
         {
@@ -9189,48 +9216,21 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/0d542045-297f-4534-8e9d-9003d777a0fe",
+          "caption": "",
+          "created": 1634123705167,
+          "description": "",
+          "id": "0d542045-297f-4534-8e9d-9003d777a0fe",
+          "lastUpdated": 1634123705167,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/4230f576-f039-47da-a3f1-e610efcd6420",
           "caption": "",
           "created": 1634123710101,
           "description": "",
           "id": "4230f576-f039-47da-a3f1-e610efcd6420",
           "lastUpdated": 1634123710101,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/2652583a-3089-47e5-a84f-786c8f06c22c",
-          "caption": "",
-          "created": 1634123711019,
-          "description": "",
-          "id": "2652583a-3089-47e5-a84f-786c8f06c22c",
-          "lastUpdated": 1634123711019,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
-          "caption": "",
-          "created": 1634123711214,
-          "description": "",
-          "id": "3057c0e8-6e38-41d3-8c6d-fd4f90ff441f",
-          "lastUpdated": 1634123711214,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/84f869af-60d5-4bdd-b209-baf76d8e5ddb",
-          "caption": "",
-          "created": 1634123689506,
-          "description": "",
-          "id": "84f869af-60d5-4bdd-b209-baf76d8e5ddb",
-          "lastUpdated": 1634123689506,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/maha-mapping-and-analytics-for-health-activities/4817d5fb-410d-4557-a9d3-0a523ed3efa3/34597d8e-ace0-4e2a-8ef1-f559223ec877",
-          "caption": "",
-          "created": 1634123689478,
-          "description": "",
-          "id": "34597d8e-ace0-4e2a-8ef1-f559223ec877",
-          "lastUpdated": 1634123689478,
           "logo": false
         }
       ],
@@ -9342,39 +9342,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/af0d7630-82ba-42ec-a392-24978b4bd5d6",
           "caption": "",
-          "created": 1702462045680,
+          "created": 1702461801148,
           "description": "",
-          "id": "8ed0428c-14b1-45ef-a29d-63116fd6fde1",
-          "lastUpdated": 1702462045680,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/2dbfaaa1-f49b-47a5-903b-14c22d752818",
-          "caption": "",
-          "created": 1702461787479,
-          "description": "",
-          "id": "2dbfaaa1-f49b-47a5-903b-14c22d752818",
-          "lastUpdated": 1702461787479,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/5e1f161b-a93e-41e8-900e-e8787a18fc2a",
-          "caption": "",
-          "created": 1702461814263,
-          "description": "",
-          "id": "5e1f161b-a93e-41e8-900e-e8787a18fc2a",
-          "lastUpdated": 1702461814263,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/dcbef667-630c-409e-9fc1-62f017fe76ce",
-          "caption": "",
-          "created": 1702461856467,
-          "description": "",
-          "id": "dcbef667-630c-409e-9fc1-62f017fe76ce",
-          "lastUpdated": 1702461856467,
+          "id": "af0d7630-82ba-42ec-a392-24978b4bd5d6",
+          "lastUpdated": 1702461801148,
           "logo": false
         },
         {
@@ -9432,12 +9405,30 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/40e49d89-452e-4686-8706-59607beb4751",
+          "caption": "",
+          "created": 1702461867816,
+          "description": "",
+          "id": "40e49d89-452e-4686-8706-59607beb4751",
+          "lastUpdated": 1702461867816,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/b7e6b972-e852-4368-8038-913a4cc40d9a",
           "caption": "",
           "created": 1702462057142,
           "description": "",
           "id": "b7e6b972-e852-4368-8038-913a4cc40d9a",
           "lastUpdated": 1702462057142,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "caption": "",
+          "created": 1702462045680,
+          "description": "",
+          "id": "8ed0428c-14b1-45ef-a29d-63116fd6fde1",
+          "lastUpdated": 1702462045680,
           "logo": false
         },
         {
@@ -9495,6 +9486,33 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/7712bbd1-f855-44d1-8c80-8662d7a35395",
+          "caption": "",
+          "created": 1702461773153,
+          "description": "",
+          "id": "7712bbd1-f855-44d1-8c80-8662d7a35395",
+          "lastUpdated": 1702461773153,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/2dbfaaa1-f49b-47a5-903b-14c22d752818",
+          "caption": "",
+          "created": 1702461787479,
+          "description": "",
+          "id": "2dbfaaa1-f49b-47a5-903b-14c22d752818",
+          "lastUpdated": 1702461787479,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/5e1f161b-a93e-41e8-900e-e8787a18fc2a",
+          "caption": "",
+          "created": 1702461814263,
+          "description": "",
+          "id": "5e1f161b-a93e-41e8-900e-e8787a18fc2a",
+          "lastUpdated": 1702461814263,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/bd1db9aa-1531-4eed-83fc-a9cf133fa337",
           "caption": "",
           "created": 1702461981336,
@@ -9522,30 +9540,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/40e49d89-452e-4686-8706-59607beb4751",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/dcbef667-630c-409e-9fc1-62f017fe76ce",
           "caption": "",
-          "created": 1702461867816,
+          "created": 1702461856467,
           "description": "",
-          "id": "40e49d89-452e-4686-8706-59607beb4751",
-          "lastUpdated": 1702461867816,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/af0d7630-82ba-42ec-a392-24978b4bd5d6",
-          "caption": "",
-          "created": 1702461801148,
-          "description": "",
-          "id": "af0d7630-82ba-42ec-a392-24978b4bd5d6",
-          "lastUpdated": 1702461801148,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dure-technologies-avenir-health/dc4376f9-bfb2-4cfd-9f1c-9a03fef90e2a/7712bbd1-f855-44d1-8c80-8662d7a35395",
-          "caption": "",
-          "created": 1702461773153,
-          "description": "",
-          "id": "7712bbd1-f855-44d1-8c80-8662d7a35395",
-          "lastUpdated": 1702461773153,
+          "id": "dcbef667-630c-409e-9fc1-62f017fe76ce",
+          "lastUpdated": 1702461856467,
           "logo": false
         }
       ],
@@ -9688,21 +9688,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/e6d72c82-0492-458c-b8ed-351d4bc26f5c",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/dd53b20d-52fa-48e8-96f7-0c3f0eebe76a",
           "caption": "",
-          "created": 1714374528374,
+          "created": 1714374533093,
           "description": "",
-          "id": "e6d72c82-0492-458c-b8ed-351d4bc26f5c",
-          "lastUpdated": 1714374528374,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/82078cc5-eefa-405d-8148-c77003da41f2",
-          "caption": "",
-          "created": 1714374523434,
-          "description": "",
-          "id": "82078cc5-eefa-405d-8148-c77003da41f2",
-          "lastUpdated": 1714374523434,
+          "id": "dd53b20d-52fa-48e8-96f7-0c3f0eebe76a",
+          "lastUpdated": 1714374533093,
           "logo": false
         },
         {
@@ -9715,12 +9706,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/dd53b20d-52fa-48e8-96f7-0c3f0eebe76a",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/82078cc5-eefa-405d-8148-c77003da41f2",
           "caption": "",
-          "created": 1714374533093,
+          "created": 1714374523434,
           "description": "",
-          "id": "dd53b20d-52fa-48e8-96f7-0c3f0eebe76a",
-          "lastUpdated": 1714374533093,
+          "id": "82078cc5-eefa-405d-8148-c77003da41f2",
+          "lastUpdated": 1714374523434,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/88283141-b2b4-45d0-bfe8-61dfdc946781/e6d72c82-0492-458c-b8ed-351d4bc26f5c",
+          "caption": "",
+          "created": 1714374528374,
+          "description": "",
+          "id": "e6d72c82-0492-458c-b8ed-351d4bc26f5c",
+          "lastUpdated": 1714374528374,
           "logo": false
         }
       ],
@@ -9777,15 +9777,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
-          "caption": "",
-          "created": 1694208992137,
-          "description": "",
-          "id": "7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
-          "lastUpdated": 1694208992137,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/02edd661-8ba6-4b55-8d2e-578becf2c057",
           "caption": "",
           "created": 1694209005909,
@@ -9795,21 +9786,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/44870959-a4a4-4b77-9f2a-493f31de44e8",
           "caption": "",
-          "created": 1694208998892,
+          "created": 1694208963931,
           "description": "",
-          "id": "bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
-          "lastUpdated": 1694208998892,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/786e7871-6c95-4317-b8dc-ab475edd28ae",
-          "caption": "",
-          "created": 1694208980640,
-          "description": "",
-          "id": "786e7871-6c95-4317-b8dc-ab475edd28ae",
-          "lastUpdated": 1694208980640,
+          "id": "44870959-a4a4-4b77-9f2a-493f31de44e8",
+          "lastUpdated": 1694208963931,
           "logo": false
         },
         {
@@ -9822,12 +9804,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/44870959-a4a4-4b77-9f2a-493f31de44e8",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/786e7871-6c95-4317-b8dc-ab475edd28ae",
           "caption": "",
-          "created": 1694208963931,
+          "created": 1694208980640,
           "description": "",
-          "id": "44870959-a4a4-4b77-9f2a-493f31de44e8",
-          "lastUpdated": 1694208963931,
+          "id": "786e7871-6c95-4317-b8dc-ab475edd28ae",
+          "lastUpdated": 1694208980640,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
+          "caption": "",
+          "created": 1694208992137,
+          "description": "",
+          "id": "7cce2b47-e44a-4f20-b475-4d5d5a0c2f81",
+          "lastUpdated": 1694208992137,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-vietnam/29342375-f1e8-47cb-9031-491e2990d5ac/bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
+          "caption": "",
+          "created": 1694208998892,
+          "description": "",
+          "id": "bde815be-bbe2-479d-bd7f-ff2aa45e1e17",
+          "lastUpdated": 1694208998892,
           "logo": false
         }
       ],
@@ -10189,15 +10189,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/18a77617-5b28-4b40-a8c3-15cf496d409c",
-          "caption": "",
-          "created": 1664195193542,
-          "description": "",
-          "id": "18a77617-5b28-4b40-a8c3-15cf496d409c",
-          "lastUpdated": 1664195193542,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/071b5848-a7fd-47af-80b4-faf4dc8b4322",
           "caption": "",
           "created": 1664195193572,
@@ -10231,6 +10222,15 @@
           "description": "",
           "id": "fff231ee-5172-4921-8c97-cc75e0b52fbc",
           "lastUpdated": 1664195193519,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/6e3af2e6-6dac-49b8-baa1-40019a684252/18a77617-5b28-4b40-a8c3-15cf496d409c",
+          "caption": "",
+          "created": 1664195193542,
+          "description": "",
+          "id": "18a77617-5b28-4b40-a8c3-15cf496d409c",
+          "lastUpdated": 1664195193542,
           "logo": false
         }
       ],
@@ -10326,11 +10326,22 @@
       "status": "APPROVED",
       "id": "a4cd3827-e717-4e09-965d-ab05df2591e5",
       "created": 1652863407618,
-      "lastUpdated": 1719226321352,
+      "lastUpdated": 1719414314324,
       "name": "Line Listing",
       "description": "Line list events and enrollments. Make useful, flexible line lists with features like listing from repeatable stages, tracker-specific periods, and more metadata dimensions.\n\nThis app replaces the legacy Event Reports app, offering all the line listing features and more in a redesigned, easy-to-use interface.",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1719414314324,
+          "demoUrl": "",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/dhis2/line-listing_101.1.0.zip",
+          "id": "4d6896d0-e046-4584-b53c-82f64f7e3172",
+          "lastUpdated": 1719414314324,
+          "maxDhisVersion": "",
+          "minDhisVersion": "2.39",
+          "version": "101.1.0",
+          "channel": "stable"
+        },
         {
           "created": 1719226321352,
           "demoUrl": "",
@@ -10431,8 +10442,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#509)",
-              "translations: sync translations from transifex (master)"
+              "translations: sync translations from transifex (master)",
+              "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#509)"
             ]
           }
         },
@@ -10453,24 +10464,24 @@
             "Testing": [
               "enable test for sorting data loaded from AO",
               "add Cypress tests for sorting in AO",
-              "refactor after PR review",
               "add another test for sorting/saving",
+              "refactor after PR review",
               "verify values are sorted correctly"
             ],
             "Bug Fixes": [
-              "respect user defined sorting in download DHIS2-15248",
-              "fix merging conflict",
-              "reset sorting when a different AO is loaded",
-              "show empty cell for missing boolean values as well (#466)",
-              "use correct default for sorting direction",
-              "format sorting correctly when saving DHIS2-15836",
-              "use correct property name and case",
+              "reset local sorting state when column is removed",
               "avoid extra analytics request when loading a new AO",
+              "pass correct dimension name in download for sorting",
+              "fix merging conflict",
+              "respect user defined sorting in download DHIS2-15248",
+              "use correct property name and case",
+              "fix sorting on a \"repeated\" dimension column",
+              "show empty cell for missing boolean values as well (#466)",
               "avoid re-renders and double requests when sorting in dashboard",
               "fix merge conflict",
-              "fix sorting on a \"repeated\" dimension column",
-              "pass correct dimension name in download for sorting",
-              "reset local sorting state when column is removed"
+              "use correct default for sorting direction",
+              "format sorting correctly when saving DHIS2-15836",
+              "reset sorting when a different AO is loaded"
             ]
           }
         },
@@ -10556,15 +10567,15 @@
               "add skip rounding option (DHIS2-15629) (#424)"
             ],
             "Bug Fixes": [
-              "add option for skipRounding",
-              "handle showHierarchy separately from requestable options",
               "enable skip rounding option for all versions",
               "add skipRounding option DHIS2-15629",
-              "add feature toggle for skipRounding option"
+              "add option for skipRounding",
+              "add feature toggle for skipRounding option",
+              "handle showHierarchy separately from requestable options"
             ],
             "Testing": [
-              "add test for skipRounding and fix other tests",
-              "remove version toggle for tests"
+              "remove version toggle for tests",
+              "add test for skipRounding and fix other tests"
             ]
           }
         },
@@ -10647,31 +10658,31 @@
           "channel": "stable",
           "releaseNotes": {
             "Testing": [
-              "copy/paste typo",
-              "add report portal attributes (#471)",
-              "dynamic offset for years (#477)",
-              "update latest changes on master to use the new chip assertion format",
-              "stop using 'chip-primary', which isn't needed",
               "send jest test results only when env is setup (#469)",
+              "stop using 'chip-primary', which isn't needed",
+              "update latest changes on master to use the new chip assertion format",
+              "add report portal attributes (#471)",
               "update the helper fn assertChipContainsText and use it everywhere that chip suffixes are evaluated",
-              "add missing selector to non-suffixed chips",
-              "update the helper fn assertChipContainsText and use it where chip suffixes are evaluated"
+              "update the helper fn assertChipContainsText and use it where chip suffixes are evaluated",
+              "dynamic offset for years (#477)",
+              "copy/paste typo",
+              "add missing selector to non-suffixed chips"
             ],
             "Features": [
-              "update layout chip design",
-              "updated chip design (DHIS2-15897) (#478)"
+              "updated chip design (DHIS2-15897) (#478)",
+              "update layout chip design"
             ],
             "Bug Fixes": [
-              "chip label padding",
-              "dimension item suffix color",
               "dimension item height",
-              "chip icon margin",
-              "dimension-item: adjust design to match new layout chip",
-              "chip: add comma delimiter",
-              "chip line height",
-              "adjust input option design (#464)",
               "layout-chip: prevent suffix shrinking",
-              "dimension and layout item button height"
+              "chip line height",
+              "dimension item suffix color",
+              "dimension-item: adjust design to match new layout chip",
+              "adjust input option design (#464)",
+              "dimension and layout item button height",
+              "chip icon margin",
+              "chip label padding",
+              "chip: add comma delimiter"
             ]
           }
         },
@@ -10757,17 +10768,17 @@
               "distinguish non-existent repetitions from empty values in line lists (DHIS2-15767) (#427)"
             ],
             "Bug Fixes": [
-              "always display 'no event' for enrollment",
+              "change background image for undefined cell",
               "remove background color for undefined cell",
               "add tooltip to undefined cells",
-              "change background image for undefined cell",
-              "update color according to spec change",
+              "return empty value for undefined boolean cells",
               "add custom styling to undefined cells",
-              "return empty value for undefined boolean cells"
+              "always display 'no event' for enrollment",
+              "update color according to spec change"
             ],
             "Testing": [
-              "change tooltip label",
               "add tests for undefined values",
+              "change tooltip label",
               "change test cell to match test.e2e data"
             ]
           }
@@ -10800,17 +10811,17 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
+              "fix plain download with name",
               "handle options with non-unique codes across optionsets (DHIS2-15771) (#426)",
+              "store metadata for option set options on load (DHIS2-16181)",
               "update optionSet options metadata on selection in the modal",
               "fix name for option set options shown in chip tooltip (DHIS2-16181)",
-              "fix plain download with name",
-              "replace id with uid after backend adjusted the response",
-              "store metadata for option set options on load (DHIS2-16181)",
-              "lookup option set options labels correctly DHIS2-15771"
+              "lookup option set options labels correctly DHIS2-15771",
+              "replace id with uid after backend adjusted the response"
             ],
             "Testing": [
-              "add test for option set options label",
-              "add test for option set options in chip tooltip"
+              "add test for option set options in chip tooltip",
+              "add test for option set options label"
             ]
           }
         },
@@ -10839,18 +10850,7 @@
           "maxDhisVersion": "",
           "minDhisVersion": "2.38",
           "version": "100.10.3",
-          "channel": "stable",
-          "releaseNotes": {
-            "Bug Fixes": [
-              "ensure scrollbox actually scrolls instead of the container",
-              "ensure `loading` remains `false` when lazy loading additional items",
-              "make scrollbox scrollable without fixed height",
-              "return `fetching` from useProgramDataDimensions for lazy loading",
-              "increment based on correct property `pager.page` not `data.page`",
-              "ensure variable names matches function argument",
-              "your- and program-dimensions list lazy loading (#453)"
-            ]
-          }
+          "channel": "stable"
         },
         {
           "created": 1698745270188,
@@ -11395,11 +11395,28 @@
       "status": "APPROVED",
       "id": "ad3a9d16-e56f-48a9-a9ed-b906d5646e74",
       "created": 1681889205193,
-      "lastUpdated": 1718266551843,
+      "lastUpdated": 1719414120079,
       "name": "Maps",
       "description": "Visualise data using maps. Maps can be added to dashboards, and can also be downloaded.",
       "coreApp": true,
       "versions": [
+        {
+          "created": 1719414120079,
+          "demoUrl": "",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/dhis2/maps_100.5.6.zip",
+          "id": "2c6985b5-de51-40e1-9d40-b1169062d37e",
+          "lastUpdated": 1719414120079,
+          "maxDhisVersion": "",
+          "minDhisVersion": "2.40",
+          "version": "100.5.6",
+          "channel": "stable",
+          "releaseNotes": {
+            "Bug Fixes": [
+              "support \"week\", \"bi-week\" and months in period translations (#3269)",
+              "https://jira.dhis2.org/browse/DHIS2-16904 and missing months translations"
+            ]
+          }
+        },
         {
           "created": 1718266551843,
           "demoUrl": "",
@@ -11412,11 +11429,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "https://dhis2.atlassian.net/browse/DHIS2-15799",
-              "unclear 'show no data' (#3204)",
-              "translations: sync translations from transifex (dev) (#3237)",
               "merge dev to master",
-              "use improved rich text editor from analytics (DHIS2-15522) (#3236)"
+              "https://dhis2.atlassian.net/browse/DHIS2-15799",
+              "use improved rich text editor from analytics (DHIS2-15522) (#3236)",
+              "translations: sync translations from transifex (dev) (#3237)",
+              "unclear 'show no data' (#3204)"
             ]
           }
         },
@@ -11432,9 +11449,9 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
+              "users losing work when opening as chart (#3196)",
               "system / user setting for display name not respected in Org Unit tree (DHIS2-15000) (#3195)",
-              "merge to master",
-              "users losing work when opening as chart (#3196)"
+              "merge to master"
             ]
           }
         },
@@ -11450,9 +11467,9 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
               "dashboard filters were not being applied to maps (#3185)",
-              "translations: sync translations from transifex (dev)"
+              "translations: sync translations from transifex (dev)",
+              "merge to master"
             ]
           }
         },
@@ -11469,8 +11486,8 @@
           "releaseNotes": {
             "Bug Fixes": [
               "paragraph newlines in map description were being removed (#3182)",
-              "merge to master",
-              "translations: sync translations from transifex (dev)"
+              "translations: sync translations from transifex (dev)",
+              "merge to master"
             ]
           }
         },
@@ -11486,8 +11503,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "merge to master",
-              "like and unlike interpretation caused flashing in panel and thread [DHIS2-15825] (#3156)"
+              "like and unlike interpretation caused flashing in panel and thread [DHIS2-15825] (#3156)",
+              "merge to master"
             ]
           }
         },
@@ -11503,46 +11520,46 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "prevent enabling download button while loading mask is showing",
-              "check full instanceUrl and handle not response.ok in geojson loader (#3142)",
-              "improve geojson layer error responses and cypress tests (#3149)",
+              "values that are strings but numeric in quality were not filtering",
+              "final fixes for geojson (#3154)",
               "navigating by the changing url ignored download mode and interpretation id parameters (#3125)",
+              "position tooltip right over the thumbnail title",
+              "check full instanceUrl and handle not response.ok in geojson loader (#3142)",
+              "prevent enabling download button while loading mask is showing",
+              "tab length should only take the space of the title",
+              "the feature.id is set in maps-gl so use the properties.id instead find correct data",
+              "set map bounds after all layers are added to the map",
+              "add tooltip on layer thumbnails",
+              "set minimum point size of 1",
+              "rename error to loadError to avoid name clash with building footprint ee layer (#3144)",
+              "improve hover states and add consistent spacing [UX-161] (#3121)",
+              "limit stroke width to 0-10",
+              "upgrade maps-gl for the rounded line join and caps",
+              "ensure isDownload is a bool to avoid prop-types error",
+              "onLayerAdded wasnt defined for SplitViews",
+              "make `dhis2-map-new` class independent of downloadMode",
+              "reset error when switching which layer shows data table",
+              "improve geojson layer error responses and cypress tests (#3149)",
+              "highlight features when data table has filter",
+              "translations: sync translations from transifex (dev) (#3132)",
+              "add class-names for push-analytics",
+              "prevent data table effects from running code when no table (#3147)",
+              "various fixes after release testing (#3151)",
+              "map plugin - do not load async layers multiple times (#3143)",
+              "set point radius  to size that was set in the style settings",
+              "add class to map container when no map id is set",
               "make logic match prev code",
               "reduce the padding to make room for the scrollbar (#3148)",
-              "map plugin - do not load async layers multiple times (#3143)",
-              "various fixes after release testing (#3151)",
-              "show no data message when geojson feature has no data (#3145)",
-              "rename error to loadError to avoid name clash with building footprint ee layer (#3144)",
               "use more understandable error messages",
-              "add tooltip on layer thumbnails",
-              "set point radius  to size that was set in the style settings",
-              "reset error when switching which layer shows data table",
-              "add class-names for push-analytics",
-              "isPushAnalytics url param",
-              "position tooltip right over the thumbnail title",
-              "set map bounds after all layers are added to the map",
-              "add class to map container when no map id is set",
-              "onLayerAdded wasnt defined for SplitViews",
-              "limit stroke width to 0-10",
-              "tab length should only take the space of the title",
-              "set minimum point size of 1",
-              "upgrade maps-gl for the rounded line join and caps",
-              "highlight features when data table has filter",
-              "ensure isDownload is a bool to avoid prop-types error",
-              "values that are strings but numeric in quality were not filtering",
-              "improve hover states and add consistent spacing [UX-161] (#3121)",
-              "make `dhis2-map-new` class independent of downloadMode",
-              "the feature.id is set in maps-gl so use the properties.id instead find correct data",
-              "final fixes for geojson (#3154)",
-              "prevent data table effects from running code when no table (#3147)",
               "check download param when navigating to new",
-              "translations: sync translations from transifex (dev) (#3132)"
+              "show no data message when geojson feature has no data (#3145)",
+              "isPushAnalytics url param"
             ],
             "Features": [
+              "merge to master 2.41.0 features and fixes",
               "add push analytics instructions",
-              "add ability to add GeoJSON URL external layers (#3127)",
               "when rendering for push analytics, disable download button until map is rendered (#3072)",
-              "merge to master 2.41.0 features and fixes"
+              "add ability to add GeoJSON URL external layers (#3127)"
             ]
           }
         },
@@ -11574,8 +11591,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Features": [
-              "replace data table with UI data table (#3015)",
-              "merge dev to master"
+              "merge dev to master",
+              "replace data table with UI data table (#3015)"
             ]
           }
         },
@@ -11612,8 +11629,8 @@
               "translations: sync translations from transifex (dev)"
             ],
             "Testing": [
-              "add report portal attributes",
-              "send jest test results only when env is setup (#3078)"
+              "send jest test results only when env is setup (#3078)",
+              "add report portal attributes"
             ]
           }
         },
@@ -11629,8 +11646,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "do not show geojson or arcgis layers since they are not supported yet (#3036)",
-              "do not show unsupported geojson or arcgis external layers (#3036)"
+              "do not show unsupported geojson or arcgis external layers (#3036)",
+              "do not show geojson or arcgis layers since they are not supported yet (#3036)"
             ]
           }
         },
@@ -11646,12 +11663,12 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "ensure layer type is supported and remove the unsupported Google basemaps",
-              "sorting of layers by drag and drop was not working [DHIS2-16024] (#3021)",
-              "release candidate 100.2.1",
               "translations: sync translations from transifex (dev)",
               "external basemaps were not showing [DHIS2-15953] (#3017)",
-              "external layers were getting an endless spinner when being added to map [DHIS2-16078] (#3023)"
+              "release candidate 100.2.1",
+              "external layers were getting an endless spinner when being added to map [DHIS2-16078] (#3023)",
+              "ensure layer type is supported and remove the unsupported Google basemaps",
+              "sorting of layers by drag and drop was not working [DHIS2-16024] (#3021)"
             ]
           }
         },
@@ -11667,8 +11684,8 @@
           "channel": "stable",
           "releaseNotes": {
             "Features": [
-              "merge to master Sept 27",
-              "upgrade toolbar (DHIS2-15667) (#2936)"
+              "upgrade toolbar (DHIS2-15667) (#2936)",
+              "merge to master Sept 27"
             ],
             "Bug Fixes": [
               "accept both lowercase and camelCase interpretationId in url(#2937)",
@@ -11688,14 +11705,14 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
-              "post a data statistics view when map is open or saved (#2951)",
-              "draw layers with opacity (#2948)",
-              "hide \"show longitude/latitude\" from context menu for split view maps (DHIS2-15798) (#2945)",
-              "use programIndicators endpoint respecting sharing settings (#2950)",
               "hide see position from context meny for split view maps",
+              "hide \"show longitude/latitude\" from context menu for split view maps (DHIS2-15798) (#2945)",
+              "show warning if event filter is not supported (#2952)",
+              "draw layers with opacity (#2948)",
+              "post a data statistics view when map is open or saved (#2951)",
               "set default basemap for interpretation map (DHIS2-15788) (#2944)",
-              "use display name for data sets (#2947)",
-              "show warning if event filter is not supported (#2952)"
+              "use programIndicators endpoint respecting sharing settings (#2950)",
+              "use display name for data sets (#2947)"
             ]
           }
         },
@@ -11711,11 +11728,11 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
+              "translations: sync translations from transifex (dev)",
+              "Set rendering strategy to single if not relative period (#2703)",
               "keep layer visibility when period is changed (#2705)",
               "set period for each split view map (#2721)",
-              "upgrade landcover dataset (#2732)",
-              "Set rendering strategy to single if not relative period (#2703)",
-              "translations: sync translations from transifex (dev)"
+              "upgrade landcover dataset (#2732)"
             ]
           }
         },
@@ -11811,10 +11828,10 @@
           "channel": "stable",
           "releaseNotes": {
             "Bug Fixes": [
+              "use window.parent",
               "remove fallback coordinate field (DHIS2-8165) (#2575)",
-              "bump cli-app-scripts for precaching improvement",
               "bumps cli-app-scripts to 10.3.8 for LIBS-499 fix (#2592)",
-              "use window.parent"
+              "bump cli-app-scripts for precaching improvement"
             ],
             "Features": [
               "plugin: send installation status [DHIS2-15097] (#2580)"
@@ -12036,21 +12053,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2-global-implementation-team/8b8af6e7-3a63-415a-931e-8b5d17af462f/467b1d0e-4e09-436b-bae6-a72d9b983b7b",
-          "caption": "",
-          "created": 1701259322734,
-          "description": "",
-          "id": "467b1d0e-4e09-436b-bae6-a72d9b983b7b",
-          "lastUpdated": 1701259322734,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2-global-implementation-team/8b8af6e7-3a63-415a-931e-8b5d17af462f/6ada53c9-76b4-42cb-a63a-2b30b27632b1",
           "caption": "",
           "created": 1701259322547,
           "description": "",
           "id": "6ada53c9-76b4-42cb-a63a-2b30b27632b1",
           "lastUpdated": 1701259322547,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2-global-implementation-team/8b8af6e7-3a63-415a-931e-8b5d17af462f/467b1d0e-4e09-436b-bae6-a72d9b983b7b",
+          "caption": "",
+          "created": 1701259322734,
+          "description": "",
+          "id": "467b1d0e-4e09-436b-bae6-a72d9b983b7b",
+          "lastUpdated": 1701259322734,
           "logo": false
         }
       ],
@@ -12308,12 +12325,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/fd5f3f76-e306-477e-bcb6-3a28cdc784dd/845cfbb1-d0b1-4fc3-adfa-a832b2f019fd",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/fd5f3f76-e306-477e-bcb6-3a28cdc784dd/786f85e1-e538-475f-9fba-2f09f1312ee3",
           "caption": "",
-          "created": 1716922017154,
+          "created": 1716922017416,
           "description": "",
-          "id": "845cfbb1-d0b1-4fc3-adfa-a832b2f019fd",
-          "lastUpdated": 1716922017154,
+          "id": "786f85e1-e538-475f-9fba-2f09f1312ee3",
+          "lastUpdated": 1716922017416,
           "logo": false
         },
         {
@@ -12326,21 +12343,21 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/fd5f3f76-e306-477e-bcb6-3a28cdc784dd/845cfbb1-d0b1-4fc3-adfa-a832b2f019fd",
+          "caption": "",
+          "created": 1716922017154,
+          "description": "",
+          "id": "845cfbb1-d0b1-4fc3-adfa-a832b2f019fd",
+          "lastUpdated": 1716922017154,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/fd5f3f76-e306-477e-bcb6-3a28cdc784dd/ea22b58e-ab21-4e8e-85b5-1edd9b399e32",
           "caption": "",
           "created": 1716922084615,
           "description": "",
           "id": "ea22b58e-ab21-4e8e-85b5-1edd9b399e32",
           "lastUpdated": 1716922084615,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/fd5f3f76-e306-477e-bcb6-3a28cdc784dd/786f85e1-e538-475f-9fba-2f09f1312ee3",
-          "caption": "",
-          "created": 1716922017416,
-          "description": "",
-          "id": "786f85e1-e538-475f-9fba-2f09f1312ee3",
-          "lastUpdated": 1716922017416,
           "logo": false
         }
       ],
@@ -12516,12 +12533,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/24935512-6f65-4796-a14c-9d8a82f360df",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
           "caption": "",
-          "created": 1652994561399,
+          "created": 1652994561288,
           "description": "",
-          "id": "24935512-6f65-4796-a14c-9d8a82f360df",
-          "lastUpdated": 1652994561399,
+          "id": "f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
+          "lastUpdated": 1652994561288,
           "logo": false
         },
         {
@@ -12534,12 +12551,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/crosscut/de19ff76-3459-4ec1-a881-5b8644cd6c51/24935512-6f65-4796-a14c-9d8a82f360df",
           "caption": "",
-          "created": 1652994561288,
+          "created": 1652994561399,
           "description": "",
-          "id": "f5684472-5a50-4ec0-9ab8-7a59ba40d34f",
-          "lastUpdated": 1652994561288,
+          "id": "24935512-6f65-4796-a14c-9d8a82f360df",
+          "lastUpdated": 1652994561399,
           "logo": false
         }
       ],
@@ -12788,6 +12805,24 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/fb18728e-2e96-40e8-bda3-d3c3b2e04b61",
+          "caption": "",
+          "created": 1697504303732,
+          "description": "",
+          "id": "fb18728e-2e96-40e8-bda3-d3c3b2e04b61",
+          "lastUpdated": 1697504303732,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/f273cd47-0cb5-4b22-ad31-38081b142233",
+          "caption": "",
+          "created": 1714666075253,
+          "description": "",
+          "id": "f273cd47-0cb5-4b22-ad31-38081b142233",
+          "lastUpdated": 1714666075253,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/85a68e13-6621-45a1-8a7b-8967fa0808d4",
           "caption": "",
           "created": 1697503958478,
@@ -12803,24 +12838,6 @@
           "description": "",
           "id": "40a44551-73f7-42c7-a277-88a00d53d6cb",
           "lastUpdated": 1697503972239,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/f273cd47-0cb5-4b22-ad31-38081b142233",
-          "caption": "",
-          "created": 1714666075253,
-          "description": "",
-          "id": "f273cd47-0cb5-4b22-ad31-38081b142233",
-          "lastUpdated": 1714666075253,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/population-services-international/cf9b8ff8-58f2-488a-b3e6-8274288ca22c/fb18728e-2e96-40e8-bda3-d3c3b2e04b61",
-          "caption": "",
-          "created": 1697504303732,
-          "description": "",
-          "id": "fb18728e-2e96-40e8-bda3-d3c3b2e04b61",
-          "lastUpdated": 1697504303732,
           "logo": false
         }
       ],
@@ -12963,21 +12980,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/35eda38c-f72d-4534-beef-e96fbf2974b3",
-          "caption": "",
-          "created": 1635942403835,
-          "description": "",
-          "id": "35eda38c-f72d-4534-beef-e96fbf2974b3",
-          "lastUpdated": 1635942403835,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/8b20d2f3-259c-4265-bf31-d25f9924e8bd",
           "caption": "",
           "created": 1635942595996,
           "description": "",
           "id": "8b20d2f3-259c-4265-bf31-d25f9924e8bd",
           "lastUpdated": 1635942595996,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/bao-systems/1e3245fd-0f0e-404c-9e95-371de244da56/35eda38c-f72d-4534-beef-e96fbf2974b3",
+          "caption": "",
+          "created": 1635942403835,
+          "description": "",
+          "id": "35eda38c-f72d-4534-beef-e96fbf2974b3",
+          "lastUpdated": 1635942403835,
           "logo": false
         }
       ],
@@ -13085,21 +13102,21 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
+          "caption": "",
+          "created": 1691591802821,
+          "description": "",
+          "id": "7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
+          "lastUpdated": 1691591802821,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/798e3280-2fbd-4a0f-86d9-ada44af8b27f",
           "caption": "",
           "created": 1691591743846,
           "description": "",
           "id": "798e3280-2fbd-4a0f-86d9-ada44af8b27f",
           "lastUpdated": 1691591743846,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/649bc26a-21b6-4fa2-a764-910a6f16c1a8",
-          "caption": "",
-          "created": 1691591628488,
-          "description": "",
-          "id": "649bc26a-21b6-4fa2-a764-910a6f16c1a8",
-          "lastUpdated": 1691591628488,
           "logo": false
         },
         {
@@ -13112,12 +13129,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/e342279c-ada6-4ada-b569-0830fc249aeb/649bc26a-21b6-4fa2-a764-910a6f16c1a8",
           "caption": "",
-          "created": 1691591802821,
+          "created": 1691591628488,
           "description": "",
-          "id": "7f4d79dc-a9f5-490d-9fb1-2ece5357b1b2",
-          "lastUpdated": 1691591802821,
+          "id": "649bc26a-21b6-4fa2-a764-910a6f16c1a8",
+          "lastUpdated": 1691591628488,
           "logo": false
         }
       ],
@@ -13129,11 +13146,28 @@
       "status": "APPROVED",
       "id": "b7e619e4-5b9f-4b8b-a4ff-9874f197ae39",
       "created": 1637239230286,
-      "lastUpdated": 1717899082760,
+      "lastUpdated": 1719386783076,
       "name": "Reports",
       "description": "Generate reports.",
       "coreApp": false,
       "versions": [
+        {
+          "created": 1719386783076,
+          "demoUrl": "",
+          "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/dhis2/reports_100.0.57.zip",
+          "id": "be17f59f-f4f1-4136-bc8b-c493a9413c26",
+          "lastUpdated": 1719386783076,
+          "maxDhisVersion": "",
+          "minDhisVersion": "2.33",
+          "version": "100.0.57",
+          "channel": "stable",
+          "releaseNotes": {
+            "Bug Fixes": [
+              "fall back to periodType name if translation isn't present",
+              "missing labels in report period selector [DHIS2-16199]"
+            ]
+          }
+        },
         {
           "created": 1717899082760,
           "demoUrl": "",
@@ -13591,12 +13625,7 @@
           "maxDhisVersion": "",
           "minDhisVersion": "2.33",
           "version": "100.0.28",
-          "channel": "stable",
-          "releaseNotes": {
-            "Bug Fixes": [
-              "translations: sync translations from transifex (master)"
-            ]
-          }
+          "channel": "stable"
         },
         {
           "created": 1662429515562,
@@ -14187,6 +14216,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/92599d0c-50f2-4cb9-8c2a-6aacfc193a70",
+          "caption": "",
+          "created": 1588595390276,
+          "description": "",
+          "id": "92599d0c-50f2-4cb9-8c2a-6aacfc193a70",
+          "lastUpdated": 1588595390276,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f1aed69f-0392-4d6a-bf78-7ad08a151699",
           "caption": "",
           "created": 1588595391313,
@@ -14196,12 +14234,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f09160a7-23c2-48dc-8950-38e443922985",
           "caption": "",
-          "created": 1588595391858,
+          "created": 1588595390846,
           "description": "",
-          "id": "4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
-          "lastUpdated": 1588595391858,
+          "id": "f09160a7-23c2-48dc-8950-38e443922985",
+          "lastUpdated": 1588595390846,
           "logo": false
         },
         {
@@ -14214,21 +14252,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/92599d0c-50f2-4cb9-8c2a-6aacfc193a70",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
           "caption": "",
-          "created": 1588595390276,
+          "created": 1588595391858,
           "description": "",
-          "id": "92599d0c-50f2-4cb9-8c2a-6aacfc193a70",
-          "lastUpdated": 1588595390276,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-colombia/fcc75ac0-afdf-48ca-a016-545e7ee4bbf2/f09160a7-23c2-48dc-8950-38e443922985",
-          "caption": "",
-          "created": 1588595390846,
-          "description": "",
-          "id": "f09160a7-23c2-48dc-8950-38e443922985",
-          "lastUpdated": 1588595390846,
+          "id": "4a9c29ce-ab0f-4d63-9ac2-59ea339c3131",
+          "lastUpdated": 1588595391858,
           "logo": false
         }
       ],
@@ -14296,12 +14325,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/571922a6-3f2b-46bc-b85d-fe2de3f3a6ba",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/ff5e406c-c960-46dc-8d0f-83d1a18fedf9",
           "caption": "",
-          "created": 1714399127712,
+          "created": 1714399123967,
           "description": "",
-          "id": "571922a6-3f2b-46bc-b85d-fe2de3f3a6ba",
-          "lastUpdated": 1714399127712,
+          "id": "ff5e406c-c960-46dc-8d0f-83d1a18fedf9",
+          "lastUpdated": 1714399123967,
           "logo": false
         },
         {
@@ -14314,12 +14343,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/ff5e406c-c960-46dc-8d0f-83d1a18fedf9",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/2a402e83-a8ad-456e-ab74-8eb5d224b989",
           "caption": "",
-          "created": 1714399123967,
+          "created": 1714399134858,
           "description": "",
-          "id": "ff5e406c-c960-46dc-8d0f-83d1a18fedf9",
-          "lastUpdated": 1714399123967,
+          "id": "2a402e83-a8ad-456e-ab74-8eb5d224b989",
+          "lastUpdated": 1714399134858,
           "logo": false
         },
         {
@@ -14332,12 +14361,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/2a402e83-a8ad-456e-ab74-8eb5d224b989",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/4045330c-5e97-4abb-ae0a-84d14d1a39b5/571922a6-3f2b-46bc-b85d-fe2de3f3a6ba",
           "caption": "",
-          "created": 1714399134858,
+          "created": 1714399127712,
           "description": "",
-          "id": "2a402e83-a8ad-456e-ab74-8eb5d224b989",
-          "lastUpdated": 1714399134858,
+          "id": "571922a6-3f2b-46bc-b85d-fe2de3f3a6ba",
+          "lastUpdated": 1714399127712,
           "logo": false
         }
       ],
@@ -14383,21 +14412,21 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/d159d8e7-dc71-4cc1-8b7c-044a71acea18",
-          "caption": "",
-          "created": 1588595533310,
-          "description": "",
-          "id": "d159d8e7-dc71-4cc1-8b7c-044a71acea18",
-          "lastUpdated": 1588595533310,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/77678c20-4b1b-4f72-bee0-4dd8f19adce1",
           "caption": "",
           "created": 1588595534036,
           "description": "",
           "id": "77678c20-4b1b-4f72-bee0-4dd8f19adce1",
           "lastUpdated": 1588595534036,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-uganda/6f3fa83d-1328-4d58-afe7-ea2c47c0018f/d159d8e7-dc71-4cc1-8b7c-044a71acea18",
+          "caption": "",
+          "created": 1588595533310,
+          "description": "",
+          "id": "d159d8e7-dc71-4cc1-8b7c-044a71acea18",
+          "lastUpdated": 1588595533310,
           "logo": false
         }
       ],
@@ -14516,6 +14545,15 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/8991b4dd-b736-4575-80a9-fcef28faec29",
+          "caption": "",
+          "created": 1623666942826,
+          "description": "",
+          "id": "8991b4dd-b736-4575-80a9-fcef28faec29",
+          "lastUpdated": 1623666942826,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/51a771b0-4e1b-47bb-ba82-9e24a0d2611e",
           "caption": "",
           "created": 1623666957721,
@@ -14531,15 +14569,6 @@
           "description": "",
           "id": "c77d6105-2353-407e-b526-e4634f5a0b6a",
           "lastUpdated": 1623666951215,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-tanzania/0efc14dc-bf0b-474d-8a02-82c27d891b23/8991b4dd-b736-4575-80a9-fcef28faec29",
-          "caption": "",
-          "created": 1623666942826,
-          "description": "",
-          "id": "8991b4dd-b736-4575-80a9-fcef28faec29",
-          "lastUpdated": 1623666942826,
           "logo": false
         },
         {
@@ -14891,15 +14920,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/871cb50e-6dcc-4516-887b-6e6b6fbc0941",
-          "caption": "",
-          "created": 1717412956428,
-          "description": "",
-          "id": "871cb50e-6dcc-4516-887b-6e6b6fbc0941",
-          "lastUpdated": 1717412956428,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/9cdd6aab-e563-495b-86fc-f81ae5fa69e9",
           "caption": "",
           "created": 1717412959913,
@@ -14909,21 +14929,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/b53b4ce1-2dc1-4aec-9a0a-12d78b203dcc",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/726a1866-bf92-4556-a6ad-f5fd8d26f96a",
           "caption": "",
-          "created": 1717412908782,
+          "created": 1717412865663,
           "description": "",
-          "id": "b53b4ce1-2dc1-4aec-9a0a-12d78b203dcc",
-          "lastUpdated": 1717412908782,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/c52ffbf5-ba5e-4265-b7bf-7178e5319af4",
-          "caption": "",
-          "created": 1717412889454,
-          "description": "",
-          "id": "c52ffbf5-ba5e-4265-b7bf-7178e5319af4",
-          "lastUpdated": 1717412889454,
+          "id": "726a1866-bf92-4556-a6ad-f5fd8d26f96a",
+          "lastUpdated": 1717412865663,
           "logo": false
         },
         {
@@ -14936,12 +14947,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/726a1866-bf92-4556-a6ad-f5fd8d26f96a",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/871cb50e-6dcc-4516-887b-6e6b6fbc0941",
           "caption": "",
-          "created": 1717412865663,
+          "created": 1717412956428,
           "description": "",
-          "id": "726a1866-bf92-4556-a6ad-f5fd8d26f96a",
-          "lastUpdated": 1717412865663,
+          "id": "871cb50e-6dcc-4516-887b-6e6b6fbc0941",
+          "lastUpdated": 1717412956428,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/c52ffbf5-ba5e-4265-b7bf-7178e5319af4",
+          "caption": "",
+          "created": 1717412889454,
+          "description": "",
+          "id": "c52ffbf5-ba5e-4265-b7bf-7178e5319af4",
+          "lastUpdated": 1717412889454,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/eirikhaugstulen/85d156b7-6e3f-43f0-be57-395449393f7d/b53b4ce1-2dc1-4aec-9a0a-12d78b203dcc",
+          "caption": "",
+          "created": 1717412908782,
+          "description": "",
+          "id": "b53b4ce1-2dc1-4aec-9a0a-12d78b203dcc",
+          "lastUpdated": 1717412908782,
           "logo": false
         }
       ],
@@ -15053,12 +15082,12 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/7ed94369-e0a9-4766-ae44-1da246069de2",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/85ad4f99-3e46-4ee5-81a8-d6653590991d",
           "caption": "",
-          "created": 1621876032291,
+          "created": 1621876061923,
           "description": "",
-          "id": "7ed94369-e0a9-4766-ae44-1da246069de2",
-          "lastUpdated": 1621876032291,
+          "id": "85ad4f99-3e46-4ee5-81a8-d6653590991d",
+          "lastUpdated": 1621876061923,
           "logo": false
         },
         {
@@ -15071,24 +15100,6 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/d2909dcb-af69-481e-802e-490f2a5d5f74",
-          "caption": "",
-          "created": 1718271678652,
-          "description": "",
-          "id": "d2909dcb-af69-481e-802e-490f2a5d5f74",
-          "lastUpdated": 1718271678652,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/b228873f-4810-43b7-93d0-c1aeb489c0da",
-          "caption": "",
-          "created": 1621876012960,
-          "description": "",
-          "id": "b228873f-4810-43b7-93d0-c1aeb489c0da",
-          "lastUpdated": 1621876012960,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/3ec1d546-7062-4f0d-9ab2-1d5744d46b84",
           "caption": "",
           "created": 1621876051597,
@@ -15098,12 +15109,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/85ad4f99-3e46-4ee5-81a8-d6653590991d",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/7ed94369-e0a9-4766-ae44-1da246069de2",
           "caption": "",
-          "created": 1621876061923,
+          "created": 1621876032291,
           "description": "",
-          "id": "85ad4f99-3e46-4ee5-81a8-d6653590991d",
-          "lastUpdated": 1621876061923,
+          "id": "7ed94369-e0a9-4766-ae44-1da246069de2",
+          "lastUpdated": 1621876032291,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/d2909dcb-af69-481e-802e-490f2a5d5f74",
+          "caption": "",
+          "created": 1718271678652,
+          "description": "",
+          "id": "d2909dcb-af69-481e-802e-490f2a5d5f74",
+          "lastUpdated": 1718271678652,
           "logo": false
         },
         {
@@ -15113,6 +15133,15 @@
           "description": "",
           "id": "e341bc93-7e5a-4853-828f-d869ab6eb5ef",
           "lastUpdated": 1621876042800,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl-lushomo/10a3a7e0-79e5-451f-9766-bf0625e9659d/b228873f-4810-43b7-93d0-c1aeb489c0da",
+          "caption": "",
+          "created": 1621876012960,
+          "description": "",
+          "id": "b228873f-4810-43b7-93d0-c1aeb489c0da",
+          "lastUpdated": 1621876012960,
           "logo": false
         }
       ],
@@ -15843,6 +15872,15 @@
           "logo": false
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/77a8baf6-5124-46fd-97fd-5b7192ff1d9d",
+          "caption": "",
+          "created": 1691592867369,
+          "description": "",
+          "id": "77a8baf6-5124-46fd-97fd-5b7192ff1d9d",
+          "lastUpdated": 1691592867369,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/936dc9be-95db-4ce5-8777-1483cd062fa8",
           "caption": "",
           "created": 1691592857253,
@@ -15858,15 +15896,6 @@
           "description": "",
           "id": "c90a4e38-fd2a-4e92-af59-d20d299b42ae",
           "lastUpdated": 1691592846781,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/hisp-wca/4b4e4fbf-8652-4516-b6a0-d11654ed9662/77a8baf6-5124-46fd-97fd-5b7192ff1d9d",
-          "caption": "",
-          "created": 1691592867369,
-          "description": "",
-          "id": "77a8baf6-5124-46fd-97fd-5b7192ff1d9d",
-          "lastUpdated": 1691592867369,
           "logo": false
         }
       ],
@@ -15932,21 +15961,21 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/afb99d17-d80a-432d-a625-a30c1419df7b",
-          "caption": "",
-          "created": 1685105644095,
-          "description": "",
-          "id": "afb99d17-d80a-432d-a625-a30c1419df7b",
-          "lastUpdated": 1685105644095,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/1cafe599-4487-4366-8f05-af4662f24b8a",
           "caption": "",
           "created": 1685105752879,
           "description": "",
           "id": "1cafe599-4487-4366-8f05-af4662f24b8a",
           "lastUpdated": 1685105752879,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/7df6f344-0487-469c-abe6-53c6e729abcf/afb99d17-d80a-432d-a625-a30c1419df7b",
+          "caption": "",
+          "created": 1685105644095,
+          "description": "",
+          "id": "afb99d17-d80a-432d-a625-a30c1419df7b",
+          "lastUpdated": 1685105644095,
           "logo": false
         }
       ],
@@ -16135,6 +16164,15 @@
           "logo": true
         },
         {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/96c96fe3-9e1c-47db-8310-ecd7860bae05",
+          "caption": "",
+          "created": 1614711845429,
+          "description": "",
+          "id": "96c96fe3-9e1c-47db-8310-ecd7860bae05",
+          "lastUpdated": 1614711845429,
+          "logo": false
+        },
+        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/92d2bb77-41be-4307-abb7-77d3cc6a4b4d",
           "caption": "",
           "created": 1713887342883,
@@ -16144,30 +16182,12 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/4d472d2e-00b2-4e93-9584-9e8eec65e9ba",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/40184d86-acbd-4f46-a172-c50a36b108ec",
           "caption": "",
-          "created": 1713887446559,
+          "created": 1614711829905,
           "description": "",
-          "id": "4d472d2e-00b2-4e93-9584-9e8eec65e9ba",
-          "lastUpdated": 1713887446559,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/569b2dd4-7ec2-4947-a7cc-35370430d5b2",
-          "caption": "",
-          "created": 1713887559996,
-          "description": "",
-          "id": "569b2dd4-7ec2-4947-a7cc-35370430d5b2",
-          "lastUpdated": 1713887559996,
-          "logo": false
-        },
-        {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/78f25a52-6176-4b45-a93b-1a4c91c596c7",
-          "caption": "",
-          "created": 1713887680072,
-          "description": "",
-          "id": "78f25a52-6176-4b45-a93b-1a4c91c596c7",
-          "lastUpdated": 1713887680072,
+          "id": "40184d86-acbd-4f46-a172-c50a36b108ec",
+          "lastUpdated": 1614711829905,
           "logo": false
         },
         {
@@ -16180,21 +16200,30 @@
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/96c96fe3-9e1c-47db-8310-ecd7860bae05",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/78f25a52-6176-4b45-a93b-1a4c91c596c7",
           "caption": "",
-          "created": 1614711845429,
+          "created": 1713887680072,
           "description": "",
-          "id": "96c96fe3-9e1c-47db-8310-ecd7860bae05",
-          "lastUpdated": 1614711845429,
+          "id": "78f25a52-6176-4b45-a93b-1a4c91c596c7",
+          "lastUpdated": 1713887680072,
           "logo": false
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/40184d86-acbd-4f46-a172-c50a36b108ec",
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/569b2dd4-7ec2-4947-a7cc-35370430d5b2",
           "caption": "",
-          "created": 1614711829905,
+          "created": 1713887559996,
           "description": "",
-          "id": "40184d86-acbd-4f46-a172-c50a36b108ec",
-          "lastUpdated": 1614711829905,
+          "id": "569b2dd4-7ec2-4947-a7cc-35370430d5b2",
+          "lastUpdated": 1713887559996,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/who-eyeseetea-sl/1bf66488-93b5-41c8-abfe-1b03b2521a2d/4d472d2e-00b2-4e93-9584-9e8eec65e9ba",
+          "caption": "",
+          "created": 1713887446559,
+          "description": "",
+          "id": "4d472d2e-00b2-4e93-9584-9e8eec65e9ba",
+          "lastUpdated": 1713887446559,
           "logo": false
         }
       ],
@@ -16598,15 +16627,6 @@
           "logo": true
         },
         {
-          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/13d37121-4c06-4d35-919c-4dc5aceb29a8",
-          "caption": "",
-          "created": 1588595467542,
-          "description": "",
-          "id": "13d37121-4c06-4d35-919c-4dc5aceb29a8",
-          "lastUpdated": 1588595467542,
-          "logo": false
-        },
-        {
           "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/6ffbd609-3f14-4446-b4b1-550d9f887253",
           "caption": "",
           "created": 1588595468086,
@@ -16622,6 +16642,15 @@
           "description": "",
           "id": "fde09f7e-b478-4181-a10b-9c2ec4484997",
           "lastUpdated": 1588595468550,
+          "logo": false
+        },
+        {
+          "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/uio/d660b802-08a2-4678-8fc7-52e76d751b67/13d37121-4c06-4d35-919c-4dc5aceb29a8",
+          "caption": "",
+          "created": 1588595467542,
+          "description": "",
+          "id": "13d37121-4c06-4d35-919c-4dc5aceb29a8",
+          "lastUpdated": 1588595467542,
           "logo": false
         }
       ],
