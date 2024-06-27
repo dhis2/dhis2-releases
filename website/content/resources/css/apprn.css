@@ -107,6 +107,7 @@ div.results > div:nth-of-type(odd) {
 }
 
 .toggle-switch {
+    margin-left:20px;
     width: 40px;
     height: 20px;
     background-color: #ccc;
@@ -152,4 +153,8 @@ div.results > div:nth-of-type(odd) {
 }
 .gitHubList h1,.gitHubList h3 {
     margin:0 0 0 20px
+}
+
+#tf, #tv {
+    display:flex;
 }

@@ -18,11 +18,20 @@
     <button onclick="findApps()">Show releases</button>
     <!-- add a toggle to switch between commit-based view and release-based view -->
     <div class="toggle-container">
+    <div id="tv">
         <input type="checkbox" id="toggle-view" class="toggle-input">
         <label for="toggle-view" class="toggle-label">
             <span class="toggle-switch"></span>
         </label>
-        <span id="view-mode">Commit-based</span>
+        <span class="view-mode">GitHub release text</span>
+    </div>  
+    <div id="tf">
+        <input type="checkbox" id="toggle-full" class="toggle-input">
+        <label for="toggle-full" class="toggle-label">
+            <span class="toggle-switch"></span>
+        </label>
+        <span class="full-mode">Show all commits</span>
+    </div>
     </div>
 
 

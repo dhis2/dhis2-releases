@@ -13,16 +13,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dateFormat: "d M Y" // Change this to your desired format
     });
 
+    // get the state of the full-view toggle
+    const fullInput = document.getElementById('toggle-full');
+    fullInput.addEventListener('change', function() {
+        findApps();
+    });
+
     const toggleInput = document.getElementById('toggle-view');
-    const viewMode = document.getElementById('view-mode');
+    // const viewMode = document.getElementById('view-mode');
     toggleInput.addEventListener('change', function() {
         if (toggleInput.checked) {
-            viewMode.textContent = 'Release-based';
+            // hide the full-view toggle
+            document.getElementById('tf').style.display = 'none';
         } else {
-            viewMode.textContent = 'Commit-based';
+            document.getElementById('tf').style.display = 'flex';
         }
         findApps();
     });
+
+
 });
 
 async function fetchAppData() {
@@ -37,7 +46,7 @@ function printReleaseNotes(releaseNotes, container) {
     const sortedKeys = [...orderedKeys, ...remainingKeys];
 
     // remove "GitHub" key if it exists
-    keysToRemove = ['GitHub'];
+    keysToRemove = ['GitHub', "Maintenance"];
 
     keysToRemove.forEach(key => {
         const index = sortedKeys.indexOf(key);
@@ -46,19 +55,32 @@ function printReleaseNotes(releaseNotes, container) {
         }
     });
 
+    fullInput = document.getElementById('toggle-full').checked;
 
     sortedKeys.forEach(key => {
         if (releaseNotes[key]) {
             const heading = document.createElement('h3');
             heading.textContent = key;
-            container.appendChild(heading);
 
             const list = document.createElement('ul');
             releaseNotes[key].forEach(note => {
+                // if the note contains one of the jira patterns (e.g. DHIS2-1234, TECH-1234, ANDROID-1234), or "transifex", include it
+                const jiraPattern = /(DHIS2|TECH|ANDROID|)-\d+/;
+                if (!jiraPattern.test(note) && !note.toLowerCase().includes('transifex')) {
+                    if (!fullInput) {
+                        return;
+                    }
+                }              
+
                 const listItem = document.createElement('li');
                 listItem.textContent = note;
                 list.appendChild(listItem);
             });
+            // if the list is empty, don't include it
+            if (list.children.length === 0) {
+                return;
+            }   
+            container.appendChild(heading);
             container.appendChild(list);
         }
     });
