@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReAR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="resources/css/apprn.css">
+    <script src="resources/js/rear.js" defer></script>
+</head>
+<body>
+    <h1>ReAR - Recent App Releases</h1>
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date">
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date">
+    <button onclick="findApps()">Find Apps</button>
+    <!-- add a toggle to switch between commit-based view and release-based view -->
+    <div class="toggle-container">
+        <input type="checkbox" id="toggle-view" class="toggle-input">
+        <label for="toggle-view" class="toggle-label">
+            <span class="toggle-switch"></span>
+        </label>
+        <span id="view-mode">Commit-based</span>
+    </div>
+
+
+    <div class="results" id="results"></div>
+</body>
+</html>
