@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const releaseDate = new Date(release.date);
                 const offsetPercentage = ((releaseDate - startDate) / totalDuration) * 100;
 
+                // if the offset is more than 100%, skip this release
+                if (offsetPercentage > 100) {
+                    return;
+                }
                 const releaseElement = document.createElement('div');
                 releaseElement.className = 'release';
                 releaseElement.style.left = `${offsetPercentage}%`;
