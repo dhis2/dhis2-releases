@@ -67,6 +67,15 @@ function displayCommits() {
     for (let i = toIndex; i < fromIndex; i++) {
         const version = Object.keys(appData)[i];
         const categories = appData[version];
+
+
+        // remove "GitHub" and "Maintenance" categories if they exists
+        const keysToRemove = ['GitHub', "Maintenance"];
+        keysToRemove.forEach(key => {
+            if (categories[key]) {
+                delete categories[key];
+            }
+        });
         
         // Display a heading for the current version
         messagesDiv.innerHTML += `<h2><a href="https://github.com/dhis2/${app}/releases/tag/${version}">${version}</a></h2>`;

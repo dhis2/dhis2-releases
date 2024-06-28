@@ -45,7 +45,7 @@ function printReleaseNotes(releaseNotes, container) {
     const remainingKeys = allKeys.filter(key => !orderedKeys.includes(key));
     const sortedKeys = [...orderedKeys, ...remainingKeys];
 
-    // remove "GitHub" key if it exists
+    // remove "GitHub" and "Maintenance" keys if they exists
     keysToRemove = ['GitHub', "Maintenance"];
 
     keysToRemove.forEach(key => {
@@ -73,7 +73,7 @@ function printReleaseNotes(releaseNotes, container) {
                 }              
 
                 const listItem = document.createElement('li');
-                listItem.textContent = note;
+                listItem.innerHTML = note.replace(/(DHIS2-[0-9]+|LIBS-[0-9]+|TECH-[0-9]+|ANDROID-[0-9]+)/g, '<a href="https://dhis2.atlassian.net/browse/$1" target="_blank">$1</a>');
                 list.appendChild(listItem);
             });
             // if the list is empty, don't include it

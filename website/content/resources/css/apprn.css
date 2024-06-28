@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    _background-color: #f4f4f4;
     margin: 0;
     padding: 10px;
 }
@@ -86,8 +86,12 @@ a:hover {
     padding:20px;
 }
 
+div.results > div {
+    border-top: 1px solid #d3d8dc;
+}
+
 div.results > div:nth-of-type(odd) {
-    background: white;
+    _background: white;
 }
 
 .toggle-container {
@@ -157,4 +161,9 @@ div.results > div:nth-of-type(odd) {
 
 #tf, #tv {
     display:flex;
+}
+
+.description {
+    color: #555;
+    line-height:1.3em;
 }
