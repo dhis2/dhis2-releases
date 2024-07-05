@@ -38,4 +38,4 @@ The following features are no longer supported.
 |*Mobile configuration module* is removed. It is replaced by the *SMS configuration* app. |October 2020| 2.36.0|
 |The *Event capture* app is removed. It is replaced by the *Capture* app which offers all of its features and more.|October 2018|2.32.0|
 |Remove the deprecated column "storagestatus" from the fileresource table. This property is no longer persisted.||2.31.0|
-||||
+|Legacy access objects: `UserGroupAccess`, `UserAccesses`, `publicAccess` are replaced with `sharing.users`, `sharing.userGroups` and `sharing.public`.| 2021 | 2.41 |
