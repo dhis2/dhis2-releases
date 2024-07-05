@@ -1,0 +1,26 @@
+name: Upload stable.json to S3
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+    paths:
+      - 'downloads/v1/versions/stable.json'
+
+jobs:
+  upload:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Upload stable.json to S3
+        uses: prewk/s3-cp-action@v2
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: eu-west-1
+          source: './downloads/v1/versions/stable.json'
+          dest: 's3://releases.dhis2.org/v1/versions/stable.json'
