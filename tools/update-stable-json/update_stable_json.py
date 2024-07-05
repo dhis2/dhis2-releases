@@ -9,9 +9,9 @@ from typing import Dict, Any, Tuple
 
 def create_new_patch_version(new_release: Dict[str, Any]) -> Dict[str, Any]:
     major_version, minor_version, patch_version = new_release['major_version'], new_release['minor_version'], new_release['patch_version']
-    old_version_format = f"2.{major_version}.{minor_version}"
-    new_version_format = f"{major_version}.{minor_version}.{patch_version}"
     hotfix = patch_version > 0
+    new_version_format = f"{major_version}.{minor_version}.{patch_version}"
+    old_version_format = f"2.{new_version_format}" if hotfix else f"2.{major_version}.{minor_version}"
 
     return {
         "name": old_version_format,
