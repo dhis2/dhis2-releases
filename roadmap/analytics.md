@@ -130,6 +130,7 @@
     - [ ] Simple presentation dashboard mode for dashboards frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
 
 - General
-      - [x] User orgunit in analytics dictates org units user has access to visualize data. [jira](https://dhis2.atlassian.net/browse/DHIS2-13498)
+  
+      - [x] User orgunit in analytics dictates org units user has access to visualize data. [jira](https://dhis2.atlassian.net/browse/DHIS2-13498) 
       - [ ] Development of next phase of tracker analytics, future of Event Reports and Event Visualizer
       - [ ] Combine user orgunit with levels/groups in the orgunit selector [jira 1](https://dhis2.atlassian.net/browse/DHIS2-15933) [jira 2](https://dhis2.atlassian.net/browse/DHIS2-15950)
