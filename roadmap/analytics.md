@@ -115,20 +115,21 @@
 
 ### 2.42
 
--   Tracker Analytics
+-   Line Listing 
 
-    - [ ] Single value (counts) from enrollement and events in linelists.  
-    - [ ] Scoping for next phase of tracker analytics, future of Event Reports and Event Visualizer
+    - [ ] Remember last used selections in LL [jira](https://dhis2.atlassian.net/browse/DHIS2-13498)
 
 -   Data visualizer
 
-    - [ ] Ownership organisation unit dimension
-    - [ ] Multiple option sets selection for data elements 
-    - [ ] Indicator description included in data item selector.
-    - [ ] Two value chart types 
+    - [ ] Multiple option sets selection for data elements [jira](https://dhis2.atlassian.net/browse/DHIS2-7290)
+    - [ ] Improve title/subtitle for relative periods in visualizations [jira](https://dhis2.atlassian.net/browse/DHIS2-17841)
+    - [ ] Support download as xlsx [jira](https://dhis2.atlassian.net/browse/DHIS2-13907)
 
 -   Dashboards
     
-    - [ ] Simple presentation dashboard mode for dashboards frontend
-    - [ ] Redesign for sorting and organizing many dashboards 
-    - [ ] Improved dashboard usability  
+    - [ ] Simple presentation dashboard mode for dashboards frontend [jira](https://dhis2.atlassian.net/browse/DHIS2-13038)
+
+- General
+      - [x] User orgunit in analytics dictates org units user has access to visualize data. [jira](https://dhis2.atlassian.net/browse/DHIS2-13498)
+      - [ ] Development of next phase of tracker analytics, future of Event Reports and Event Visualizer
+      - [ ] Combine user orgunit with levels/groups in the orgunit selector [jira 1](https://dhis2.atlassian.net/browse/DHIS2-15933) [jira 2](https://dhis2.atlassian.net/browse/DHIS2-15950)
