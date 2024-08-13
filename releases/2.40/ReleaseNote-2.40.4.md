@@ -382,3 +382,87 @@ Components: _[App] Dashboard_
 **[DHIS2-16904](https://dhis2.atlassian.net/browse/DHIS2-16904): "Week" and "Bi-week" not translated in period selector in Analytics app**  
 Components: _[App] Data visualizer_, _[App] Line Listing_, _[App] Maps_
 
+**[DHIS2-17297](https://dhis2.atlassian.net/browse/DHIS2-17297): Data Visualizer crashes when using totals with a certain layout**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-13167](https://dhis2.atlassian.net/browse/DHIS2-13167): Non-existing AO blocks new AOs from being created**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-16900](https://dhis2.atlassian.net/browse/DHIS2-16900): Numbers are misaligned in pivot table**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-16172](https://dhis2.atlassian.net/browse/DHIS2-16172): Separator for hundreds, thousands and millions is missing in the Pie charts**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-15841](https://dhis2.atlassian.net/browse/DHIS2-15841): Download of pivot table in excel contains a period or comma at the end of each value**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-15570](https://dhis2.atlassian.net/browse/DHIS2-15570): Visualisation flashes / multiple requests fired when opening an interpretation or adding/changing/removing comments, likes**  
+Components: _[App] Data visualizer_
+
+**[DHIS2-16429](https://dhis2.atlassian.net/browse/DHIS2-16429): Interpretations reply input focus shadow is cut off**  
+Components: _[App] Data visualizer_, _[App] Line Listing_, _[App] Maps_
+
+**[DHIS2-15816](https://dhis2.atlassian.net/browse/DHIS2-15816): Data Element filters not displayed after saving a favorite in Event Reports**  
+Components: _[App] Event reports_
+
+**[DHIS2-17368](https://dhis2.atlassian.net/browse/DHIS2-17368): Event Visualizer App uses deprecated PATCH endpoint for renaming**  
+Components: _[App] Event visualizer_
+
+**[DHIS2-12655](https://dhis2.atlassian.net/browse/DHIS2-12655): Inconsistent captions in Import/Export app**  
+Components: _[App] Import-export_
+
+**[DHIS2-16015](https://dhis2.atlassian.net/browse/DHIS2-16015): TEI export shows Event programs**  
+Components: _[App] Import-export_
+
+**[DHIS2-17151](https://dhis2.atlassian.net/browse/DHIS2-17151): Import/Export app crashes if you click "Job summary" while doing a TE import**  
+Components: _[App] Import-export_
+
+**[DHIS2-17071](https://dhis2.atlassian.net/browse/DHIS2-17071): GeoJSON import app error when no attribute is present in DHIS2**  
+Components: _[App] Import-export_, _[App] Maps_
+
+**[DHIS2-16018](https://dhis2.atlassian.net/browse/DHIS2-16018): Favourite link is missing the app name**  
+Components: _[App] Line Listing_
+
+**[DHIS2-17412](https://dhis2.atlassian.net/browse/DHIS2-17412): Enrollment line list: Filter for program stage not working**  
+Components: _[App] Line Listing_
+
+**[DHIS2-17267](https://dhis2.atlassian.net/browse/DHIS2-17267): Missing boolean values says 'Not answered'**  
+Components: _[App] Line Listing_
+
+**[DHIS2-16144](https://dhis2.atlassian.net/browse/DHIS2-16144): adding geojson_url overlay gets added as basemap**  
+Components: _[App] Maintenance_
+
+**[DHIS2-16252](https://dhis2.atlassian.net/browse/DHIS2-16252): Translation/labels missing for Aggregation types**  
+Components: _[App] Maintenance_
+
+**[DHIS2-15799](https://dhis2.atlassian.net/browse/DHIS2-15799): Unclear option "Show no data" in thematic style tab**  
+Components: _[App] Maps_
+
+**[DHIS2-15794](https://dhis2.atlassian.net/browse/DHIS2-15794): User loses their work if they choose to view map as a chart**  
+Components: _[App] Maps_
+
+**[DHIS2-16810](https://dhis2.atlassian.net/browse/DHIS2-16810): When editing the url, download mode and interpretationId are ignored**  
+Components: _[App] Maps_
+
+**[DHIS2-12469](https://dhis2.atlassian.net/browse/DHIS2-12469): Data Set Reports give error while downloading PDF or XLS**  
+Components: _[App] Reports_
+
+**[DHIS2-17378](https://dhis2.atlassian.net/browse/DHIS2-17378): 500 on some report generations with JFreeChart**  
+Components: _[App] Reports_
+
+**[DHIS2-17363](https://dhis2.atlassian.net/browse/DHIS2-17363): TRUE_ONLY element doesn't save it's state**  
+Components: _[App] Tracker capture_
+
+**[DHIS2-17450](https://dhis2.atlassian.net/browse/DHIS2-17450): Revert DHIS2-17363 TRUE_ONLY element doesn't save it's state**  
+Components: _[App] Tracker capture_
+
+**[DHIS2-17301](https://dhis2.atlassian.net/browse/DHIS2-17301): One program stage can't properly handle multiple "Prevent adding new events to stage" actions**  
+Components: _[App] Tracker capture_
+
+**[DHIS2-16858](https://dhis2.atlassian.net/browse/DHIS2-16858): User creation form shows variables in input values**  
+Components: _[App] User_
+
+**[DHIS2-16600](https://dhis2.atlassian.net/browse/DHIS2-16600): Cannot update user linked to OpenID Connect**  
+Components: _[App] User_
+
