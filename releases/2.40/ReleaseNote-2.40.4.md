@@ -65,6 +65,21 @@ Components: _[App] Capture_
 **[DHIS2-15914](https://dhis2.atlassian.net/browse/DHIS2-15914): Render newlines properly in data visualizer right-side panel**  
 Components: _[App] Data visualizer_
 
+**[DHIS2-13724](https://dhis2.atlassian.net/browse/DHIS2-13724): Option for skip analytics for program stage data element in maintenance UI**  
+Components: _[App] Maintenance_
+
+**[DHIS2-16111](https://dhis2.atlassian.net/browse/DHIS2-16111): Allow FeatureCollection layers to be styled**  
+Components: _[App] Maps_
+
+**[DHIS2-16106](https://dhis2.atlassian.net/browse/DHIS2-16106): Support date ranges and period reducers**  
+Components: _[App] Maps_
+
+**[DHIS2-16102](https://dhis2.atlassian.net/browse/DHIS2-16102): New ERA5 precipitation layer**  
+Components: _[App] Maps_
+
+**[DHIS2-16101](https://dhis2.atlassian.net/browse/DHIS2-16101): New ERA5 temperature layer**  
+Components: _[App] Maps_
+
 ## Bugs
 
 **[DHIS2-16440](https://dhis2.atlassian.net/browse/DHIS2-16440): aggregateDataExchanges patch requires you to provide authentication details**  
@@ -220,7 +235,13 @@ Components: _[API] Tracker (deprecated)_, _[App] Maintenance_
 **[DHIS2-17288](https://dhis2.atlassian.net/browse/DHIS2-17288): [DATA EXCHANGE APP]: internal url is not undefined**  
 Components: _[App] Aggregate Data Exchange_
 
+**[DHIS2-17399](https://dhis2.atlassian.net/browse/DHIS2-17399): Unable to save events with multiple categories**  
+Components: _[App] Capture_
+
 **[DHIS2-15633](https://dhis2.atlassian.net/browse/DHIS2-15633): Change ‘comment’ to 'note'**  
+Components: _[App] Capture_
+
+**[DHIS2-15379](https://dhis2.atlassian.net/browse/DHIS2-15379): Data elements of Long text/Text value type is misaligned in TET profile**  
 Components: _[App] Capture_
 
 **[DHIS2-17536](https://dhis2.atlassian.net/browse/DHIS2-17536): Cannot delete single event relationship**  
@@ -229,16 +250,10 @@ Components: _[App] Capture_
 **[DHIS2-17115](https://dhis2.atlassian.net/browse/DHIS2-17115): Plugin config titles are not translateable**  
 Components: _[App] Capture_
 
-**[DHIS2-17399](https://dhis2.atlassian.net/browse/DHIS2-17399): Unable to save events with multiple categories**  
-Components: _[App] Capture_
-
 **[DHIS2-16919](https://dhis2.atlassian.net/browse/DHIS2-16919): Program stage WL without a orgUnit selected redirects to broken event URL**  
 Components: _[App] Capture_
 
 **[DHIS2-16488](https://dhis2.atlassian.net/browse/DHIS2-16488): Incorrect behavior in Capture when user has TET data:read**  
-Components: _[App] Capture_
-
-**[DHIS2-15379](https://dhis2.atlassian.net/browse/DHIS2-15379): Data elements of Long text/Text value type is misaligned in TET profile**  
 Components: _[App] Capture_
 
 **[DHIS2-17054](https://dhis2.atlassian.net/browse/DHIS2-17054): Feedback widget always shows "undefined" when expression is empty**  
@@ -349,13 +364,13 @@ Components: _[App] Capture_
 **[DHIS2-12007](https://dhis2.atlassian.net/browse/DHIS2-12007): Text string improvements**  
 Components: _[App] Capture_
 
+**[DHIS2-12499](https://dhis2.atlassian.net/browse/DHIS2-12499): ShortName doesn't display in dashboards**  
+Components: _[App] Dashboard_
+
 **[DHIS2-15000](https://dhis2.atlassian.net/browse/DHIS2-15000): System / user setting for display name not respected in Org Unit tree**  
 Components: _[App] Dashboard_, _[App] Data visualizer_, _[App] Line Listing_, _[App] Maps_
 
 **[DHIS2-17509](https://dhis2.atlassian.net/browse/DHIS2-17509): Offline mode does not show data in plugins**  
-Components: _[App] Dashboard_
-
-**[DHIS2-12499](https://dhis2.atlassian.net/browse/DHIS2-12499): ShortName doesn't display in dashboards**  
 Components: _[App] Dashboard_
 
 **[DHIS2-17016](https://dhis2.atlassian.net/browse/DHIS2-17016): When adding the same item to a dashboard, the other "copies" re-render**  
@@ -364,6 +379,6 @@ Components: _[App] Dashboard_
 **[DHIS2-17137](https://dhis2.atlassian.net/browse/DHIS2-17137): Dashboard visualization spinner loads forever when resizing horizontally**  
 Components: _[App] Dashboard_
 
-**[DHIS2-17297](https://dhis2.atlassian.net/browse/DHIS2-17297): Data Visualizer crashes when using totals with a certain layout**  
-Components: _[App] Data visualizer_
+**[DHIS2-16904](https://dhis2.atlassian.net/browse/DHIS2-16904): "Week" and "Bi-week" not translated in period selector in Analytics app**  
+Components: _[App] Data visualizer_, _[App] Line Listing_, _[App] Maps_
 
