@@ -57,7 +57,7 @@ for type in ["Feature","Bug"]:
             fallback_version += ' and not fixVersion = '+args.version[0:5]+str(prev)
     jql='project = DHIS2 AND type = '+type+' AND (fixVersion = '+args.version+fallback_version+') ORDER BY component ASC, updated DESC'
     print(jql)
-    for issue in jira.search_issues(jql,maxResults=1000):
+    for issue in jira.search_issues(jql,maxResults=0):
         cnt+=1
         comp=""
         for c in issue.fields.components:
