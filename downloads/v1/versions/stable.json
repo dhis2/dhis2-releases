@@ -199,7 +199,7 @@
             "latestPatchVersion": 6,
             "latestHotfixVersion": 0,
             "latestStableUrl": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.6.war",
-            "sha256": "828be72ae703b40c7e087255353c8798faa661c7398755b5168c9aba757b8230",
+            "sha256": "637a8220eb372038afe199b10b2aec48d188d9950610ddff8b7e7ca15971dd41",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -347,7 +347,7 @@
                     "hotfixVersion": 0,
                     "releaseDate": "2024-08-12",
                     "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39.6.war",
-                    "sha256": "828be72ae703b40c7e087255353c8798faa661c7398755b5168c9aba757b8230",
+                    "sha256": "637a8220eb372038afe199b10b2aec48d188d9950610ddff8b7e7ca15971dd41",
                     "hotfix": false,
                     "fileSize": "296.2 MB"
                 }
