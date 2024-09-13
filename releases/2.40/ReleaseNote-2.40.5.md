@@ -50,6 +50,9 @@ Components: _[App] Capture_
 **[DHIS2-16125](https://dhis2.atlassian.net/browse/DHIS2-16125): Stages and events Widget: Hide program stage under certain circumstances**  
 Components: _[App] Capture_
 
+**[DHIS2-17630](https://dhis2.atlassian.net/browse/DHIS2-17630): Option to disable mobile log in**  
+Components: _[App] Login_
+
 **[DHIS2-17629](https://dhis2.atlassian.net/browse/DHIS2-17629): [LOGIN APP]: read hash routes + append on redirect**  
 Components: _[App] Login_
 
