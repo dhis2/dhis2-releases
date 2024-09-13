@@ -163,6 +163,9 @@ Components: _[App] Line Listing_
 **[DHIS2-16208](https://dhis2.atlassian.net/browse/DHIS2-16208): When downloading a multilingual line list as excel file/.csv , the option sets are not rendered in the correct language in the translation**  
 Components: _[App] Line Listing_
 
+**[DHIS2-17929](https://dhis2.atlassian.net/browse/DHIS2-17929): DHIS2 LDAP Issue**  
+Components: _[App] Login_
+
 **[DHIS2-6011](https://dhis2.atlassian.net/browse/DHIS2-6011): Irrelevant error message while deleting legends**  
 Components: _[App] Maintenance_
 
