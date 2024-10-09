@@ -345,7 +345,7 @@ function createFilterSection() {
 
     const nonCoreLabel = document.createElement('label');
     nonCoreLabel.htmlFor = 'non-core-app-filter';
-    nonCoreLabel.textContent = 'Non-Core';
+    nonCoreLabel.textContent = 'Optional';
 
     coreFilterContainer.appendChild(coreCheckbox);
     coreFilterContainer.appendChild(coreLabel);
