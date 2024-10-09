@@ -335,7 +335,7 @@ function createFilterSection() {
 
     const coreLabel = document.createElement('label');
     coreLabel.htmlFor = 'core-app-filter';
-    coreLabel.innerHTML = '<i class="fa fa-sun"></i> Core (bundled)';
+    coreLabel.innerHTML = '<i class="fa fa-sun"></i> Core (bundled*)';
 
     const nonCoreCheckbox = document.createElement('input');
     nonCoreCheckbox.type = 'checkbox';
