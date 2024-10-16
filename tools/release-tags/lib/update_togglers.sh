@@ -5,7 +5,7 @@ echo "Updating lists of toggling apps and continuous delivery versions..."
 
 # FTA="lib/feature_toggling_apps"
 # CDA="lib/continuous_delivery_apps"
-toggling_readme="https://raw.githubusercontent.com/dhis2/dhis2-core/master/dhis-2/dhis-web-apps/README.md"
+toggling_readme="https://raw.githubusercontent.com/dhis2/dhis2-core/master/dhis-2/dhis-web-server/README.md"
 versions=()
 
 
