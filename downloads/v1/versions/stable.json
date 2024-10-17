@@ -381,7 +381,7 @@
             "displayName": "v38",
             "version": 38,
             "releaseDate": "2022-05-05",
-            "supported": true,
+            "supported": false,
             "latestPatchVersion": 7,
             "latestHotfixVersion": 0,
             "latestStableUrl": "https://releases.dhis2.org/2.38/dhis2-stable-2.38.7.war",
