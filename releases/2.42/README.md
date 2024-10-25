@@ -24,7 +24,8 @@ To help you navigate the document, here's a detailed table of contents.
 
 #### Breaking Changes
 
-In the endpoint `/analytics/trackedEntities/query`, the `header` column `trackedentityinstanceuid` (part of the response object) was replaced by `trackedentity`.
+* In the endpoint `/analytics/trackedEntities/query`, the `header` column `trackedentityinstanceuid` (part of the response object) was replaced by `trackedentity`.
+* To enable the export and analysis of analytics data for organizational units, users need to have "Data Output and Analysis" permissions granted.
 
 ### Tracker
 
