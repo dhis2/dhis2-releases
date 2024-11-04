@@ -25,7 +25,9 @@ To help you navigate the document, here's a detailed table of contents.
 #### Breaking Changes
 
 * In the endpoint `/analytics/trackedEntities/query`, the `header` column `trackedentityinstanceuid` (part of the response object) was replaced by `trackedentity`.
-* To enable the export and analysis of analytics data for organizational units, users need to have "Data Output and Analysis" permissions granted.
+* For analytics operations the authenticated user must have permission to export and analyze data for the designated organization units.
+  In previous versions, this permission requirement was disregarded. If no organization unit permissions are explicitly granted,
+  data capture and maintenance rights will be applied instead.
 
 ### Tracker
 
