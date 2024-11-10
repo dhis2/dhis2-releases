@@ -293,33 +293,33 @@ Tracker names have changed over time. In order to provide a consistent API we ha
 
 The table below summarizes the API changes in terminology from old tracker names to new ones:
 
-| Endpoint                          | Deprecated Parameter/Path    | New Parameter/Path   |
-|-----------------------------------|------------------------------|----------------------|
-| `/tracker/relationships`          | `tei`                        | `trackedEntity`      |
-| `/tracker/events`                 | `attributeCc`                | `attributeCategoryCombo` |
-| `/tracker/ownership/transfer`     | `trackedEntityInstance`      | `trackedEntity`      |
-| `/tracker/ownership/override`     | `trackedEntityInstance`      | `trackedEntity`      |
-| `/messages/`                      | `programInstance`            | `enrollment`         |
-| `/messages/`                      | `programStageInstance`       | `event`              |
-| `/messages/scheduled/sent`        | `programInstance`            | `enrollment`         |
-| `/messages/scheduled/sent`        | `programStageInstance`       | `event`              |
-| `/audits/trackedEntityDataValue`  | `psi`                        | `events`             |
-| `/audits/trackedEntityAttributeValue` | `tei`                   | `trackedEntities`    |
-| `/audits/trackedEntityInstance`   | `tei`                        | `trackedEntities`    |
-| `/programNotificationInstances`   | `programInstance`            | `enrollment`         |
-| `/programNotificationInstances`   | `programStageInstance`       | `event`              |
-| `/tracker/trackedEntities`        | `ouMode`                     | `orgUnitMode`        |
-| `/tracker/enrollments`            | `ouMode`                     | `orgUnitMode`        |
-| `/tracker/events`                 | `ouMode`                     | `orgUnitMode`        |
+| Endpoint                              | Deprecated Parameter/Path    | New Parameter/Path       |
+|---------------------------------------|------------------------------|--------------------------|
+| `/tracker/relationships`              | `tei`                        | `trackedEntity`          |
+| `/tracker/events`                     | `attributeCc`                | `attributeCategoryCombo` |
+| `/tracker/ownership/transfer`         | `trackedEntityInstance`      | `trackedEntity`          |
+| `/tracker/ownership/override`         | `trackedEntityInstance`      | `trackedEntity`          |
+| `/messages/`                          | `programInstance`            | `enrollment`             |
+| `/messages/`                          | `programStageInstance`       | `event`                  |
+| `/messages/scheduled/sent`            | `programInstance`            | `enrollment`             |
+| `/messages/scheduled/sent`            | `programStageInstance`       | `event`                  |
+| `/audits/trackedEntityDataValue`      | `psi`                        | `events`                 |
+| `/audits/trackedEntityAttributeValue` | `tei`                        | `trackedEntities`        |
+| `/audits/trackedEntityInstance`       | `tei`                        | `trackedEntities`        |
+| `/programNotificationInstances`       | `programInstance`            | `enrollment`             |
+| `/programNotificationInstances`       | `programStageInstance`       | `event`                  |
+| `/tracker/trackedEntities`            | `ouMode`                     | `orgUnitMode`            |
+| `/tracker/enrollments`                | `ouMode`                     | `orgUnitMode`            |
+| `/tracker/events`                     | `ouMode`                     | `orgUnitMode`            |
 
 ###### Deprecated Endpoints
 
-| Deprecated Endpoint                                     | New Endpoint                                              |
-|---------------------------------------------------------|-----------------------------------------------------------|
-| `/maintenance/softDeletedTrackedEntityInstanceRemoval`  | `/maintenance/softDeletedTrackedEntityRemoval`            |
-| `/maintenance/softDeletedProgramInstanceRemoval`        | `/maintenance/softDeletedEnrollmentRemoval`               |
-| `/maintenance/softDeletedProgramStageInstanceRemoval`   | `/maintenance/softDeletedEventRemoval`                    |
-| `/audits/trackedEntityInstance`                         | `/audits/trackedEntity`                                   |
+| Deprecated Endpoint                                     | New Endpoint                                   |
+|---------------------------------------------------------|------------------------------------------------|
+| `/maintenance/softDeletedTrackedEntityInstanceRemoval`  | `/maintenance/softDeletedTrackedEntityRemoval` |
+| `/maintenance/softDeletedProgramInstanceRemoval`        | `/maintenance/softDeletedEnrollmentRemoval`    |
+| `/maintenance/softDeletedProgramStageInstanceRemoval`   | `/maintenance/softDeletedEventRemoval`         |
+| `/audits/trackedEntityInstance`                         | `/audits/trackedEntity`                        |
 
 ###### Deprecated Keys in API Response Bodies
 
@@ -350,7 +350,7 @@ We have removed prefix `dataelement` from `category` and `categoryoption` tables
 
 | Old Table Name                | New Table Name               |
 | ------------------------------|:----------------------------:|
-| dataelementcategoryopion      | categoryoption               |
+| dataelementcategoryoption     | categoryoption               |
 | dataelementcategory           | category                     |
 
 ### Tracker
