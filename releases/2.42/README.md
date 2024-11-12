@@ -11,6 +11,7 @@ To help you navigate the document, here's a detailed table of contents.
 ## Table of Contents
 
   - [API Changes](#api-changes)
+    - [Platform](#platform)
     - [Tracker](#tracker)
     - [Analytics](#analytics)
       - [Breaking Changes](#breaking-changes)
@@ -19,6 +20,12 @@ To help you navigate the document, here's a detailed table of contents.
       - [Breaking Changes: renamed tables and columns](#breaking-changes-renamed-tables-and-columns)
 ---
 ## API Changes
+
+### Platform
+
+#### DataElement
+
+Updating the `valueType` of a `DataElement` is prohibited if there is any existing data associated with that `DataElement`. See [Jira issue](https://dhis2.atlassian.net/browse/DHIS2-18152).
 
 ### Analytics
 
