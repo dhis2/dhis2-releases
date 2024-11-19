@@ -1,3 +1,6 @@
+*The new <strong>DHIS2 Android App</strong> allows offline data capture across all DHIS2 data models. Data and metadata are automatically synchronized whenever there is internet access, always keeping the most relevant data for the logged user in the device.
+The app is compatible and we support <strong>41</strong>, <strong>40</strong>, <strong>2.39</strong>.*
+
 
 ## NEW FUNCTIONALITY AND WEB PARITY
 
@@ -22,11 +25,13 @@ To prevent accidental deletions and enhance user control, a new confirmation dia
 
 [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-6039) | [Documentation](https://docs.dhis2.org/en/use/android-app/program-features.html#capture_app_programs_unique_qrBar_search)
 
-**Support of biometric dialog:** An enhancement to the biometric authentication feature has been made in 3.1.0. When there is only one account configured, the user can configure biometric authentication (fingerprint or face ID).
+**Support of biometric dialog:** An enhancement to the biometric user authentication feature has been made in 3.1: When only one DHIS2 user account is configured on the Android device – and the device supports biometrics (such as fingerprint or face ID) – the user can configure biometric authentication for quick login to the Android app.
 
 [Jira](https://dhis2.atlassian.net/browse/ANDROAPP-4676) | [Documentation](https://docs.dhis2.org/en/use/android-app/android-specific-features.html#capture_app_generic_biometrics_login)
 
 **Line Listing improvements:** This version of the Android App introduces support for the Category Option Dimension in line listings. This enhancement enables users to apply category options directly within line listings to filter data according to precise criteria, improving data exploration and decision-making processes. This feature greatly enhances the versatility and utility of line listings, empowering users to perform more sophisticated reporting.
+
+In this version, the line lists for Tracked Entities are supported, which is a significant enhancement in functionality.
 
 Additionally, it has been improved the text alignment within the Line Listing tables to support left alignment. This enhancement ensures better readability and a cleaner presentation of data, making it easier for users to review and analyze their information quickly.
 
@@ -57,5 +62,7 @@ Additionally, it has been improved the text alignment within the Line Listing ta
 ##### **DETAILS**
 You can find the list of all new features and all bugs fixed in 3.1.0 [here.](https://dhis2.atlassian.net/projects/ANDROAPP/versions/10851/tab/release-report-all-issues)
 
+Remember to check the [documentation](https://www.dhis2.org/android-documentation) for detailed information of the features included in the App and how to configure DHIS2 to use it.
 
+Please create a [Jira](https://dhis2.atlassian.net) Issue if you find a bug. [Project: Android App for DHIS2 | Component: AndroidApp].
 
