@@ -48,7 +48,7 @@ The following endpoints have been removed
 * `/relationships`
 
 Please follow [this migration
-guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker-deprecated.html#webapi_tracker_migration).
+guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/tracker-deprecated.html#webapi_tracker_migration).
 
 Tracker and event program data can no longer be synchronized via the [metadata
 synchronization](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/exchanging-data/metadata-synchronization.html#about-data-and-metadata-synchronization).
