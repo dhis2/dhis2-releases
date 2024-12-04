@@ -95,6 +95,9 @@ WHERE programmessageemailaddressid IN (SELECT id FROM pm_ids);
 DELETE FROM programmessage_phonenumbers
 WHERE programmessagephonenumberid IN (SELECT id FROM pm_ids);
 
+DELETE FROM programnotificationinstance
+WHERE eventid IN (SELECT eventid FROM event_ids);
+
 DELETE FROM event_notes
 WHERE eventid IN (SELECT eventid FROM event_ids);
 
@@ -156,9 +159,6 @@ WHERE programmessageemailaddressid IN (SELECT id FROM pm_ids);
 
 DELETE FROM programmessage_phonenumbers
 WHERE programmessagephonenumberid IN (SELECT id FROM pm_ids);
-
-DELETE FROM programnotificationinstance
-WHERE eventid IN (SELECT eventid FROM event_ids);
 
 DELETE FROM event_notes
 WHERE eventid IN (SELECT eventid FROM event_ids);
