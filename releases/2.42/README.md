@@ -18,6 +18,8 @@ To help you navigate the document, here's a detailed table of contents.
   - [Database](#database)
     - [Analytics](#analytics-1)
       - [Breaking Changes: renamed tables and columns](#breaking-changes-renamed-tables-and-columns)
+    - [Tracker](#tracker-1)
+        - [Data inconsistencies](#data-inconsistencies)
 ---
 ## API Changes
 
@@ -118,3 +120,21 @@ In release 41 we had some changes regarding the naming convention. Some terms we
 | analytics_event_*                     | tegeometry                    | teigeometry        |
 | analytics_enrollment_*                | pi                            | enrollment         |
 | analytics_enrollment_*                | pigeometry                    | engeometry         |
+
+### Tracker
+
+#### Data inconsistencies
+
+Some database migrations aim to make the schema as strict as possible and fully aligned with the data model.
+To ensure these migrations succeed, any inconsistencies in the database must be resolved beforehand.
+If a migration fails during the upgrade process, carefully review the logs
+and follow the provided instructions to address and fix the inconsistencies.
+
+`not null` constraints added
+
+| Table name                  |        Column name        |
+|-----------------------------|:-------------------------:|
+| event                       | organisationunitid        |
+| enrollment                  | organisationunitid        |
+
+For more information [migration notes](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.42/migration-notes.md).
