@@ -373,7 +373,6 @@ BEGIN
         DELETE FROM trackedentitydatavalueaudit
         WHERE eventid IN (SELECT eventid FROM event_ids);
 
-
         DELETE FROM programmessage
         WHERE eventid IN (SELECT eventid FROM event_ids);
 
@@ -394,7 +393,6 @@ BEGIN
 
         DELETE FROM trackedentityattributevalueaudit
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
       
         DELETE FROM trackedentityprogramowner
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
@@ -411,7 +409,7 @@ BEGIN
         DELETE FROM enrollment
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 		
-		WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
+        WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
 
         RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
 
