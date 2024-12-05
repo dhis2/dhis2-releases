@@ -373,8 +373,6 @@ BEGIN
         DELETE FROM trackedentitydatavalueaudit
         WHERE eventid IN (SELECT eventid FROM event_ids);
 
-        DELETE FROM eventchangelog
-        WHERE eventid IN (SELECT eventid FROM event_ids);
 
         DELETE FROM programmessage
         WHERE eventid IN (SELECT eventid FROM event_ids);
