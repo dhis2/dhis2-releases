@@ -11,7 +11,7 @@ To help you navigate the document, here's a detailed table of contents.
   - [Inconsistent data](#inconsistent-data)
     - [Tracker](#tracker)
 	   - [Null Organisation Unit](#null-organisation-unit)
-       - [Null TrackedEntityType](#null-tracked-entity-type)
+       - [Null Tracked Entity Type](#null-tracked-entity-type)
 ---
 ## Inconsistent-data
 
