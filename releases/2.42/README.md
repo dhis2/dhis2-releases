@@ -38,6 +38,15 @@ Updating the `valueType` of a `DataElement` is prohibited if there is any existi
 
 ### Tracker
 
+#### Database inconsistencies
+
+Some database migrations aim to make the schema as strict as possible and fully aligned with the data model.
+To ensure these migrations succeed, any inconsistencies in the database must be resolved beforehand.
+If a migration fails during the upgrade process, carefully review the logs 
+and follow the provided instructions to address and fix the inconsistencies.
+
+For more information [migration notes](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.42/migration-notes.md).
+
 #### Breaking Changes
 
 The following endpoints have been removed
