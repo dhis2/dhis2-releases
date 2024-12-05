@@ -10,7 +10,8 @@ To help you navigate the document, here's a detailed table of contents.
 
   - [Inconsistent data](#inconsistent-data)
     - [Tracker](#tracker)
-      - [Null Organisation Unit](#null-organisation-unit)
+	   - [Null Organisation Unit](#null-organisation-unit)
+       - [Null TrackedEntityType](#null-tracked-entity-type)
 ---
 ## Inconsistent-data
 
@@ -244,3 +245,167 @@ where en.organisationunitid is null
 and en.uid = '{ENROLLMENT_UID}'
 AND en.programid in (select programid from program where type = 'WITH_REGISTRATION');
 ```
+
+### Null TrackedEntityType
+
+The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to have a specific type, such as person, place, equipment, or area. However, this constraint was not enforced at the database level, leading to inconsistent data. To ensure data integrity moving forward, we need to enforce this requirement by making the `trackedentitytypeid` column in the `trackedentity` table non-nullable.
+
+#### Checking for Null Values
+
+To check for any NULL values in this column, you can use the following SQL script. If it returns a value greater than 0, it indicates the presence of inconsistent data in the system.
+
+##### For 2.41 Instances:
+
+```sql
+SELECT COUNT(1)
+FROM trackedentity
+WHERE trackedentitytypeid IS NULL;
+```
+##### For <= 2.40 Instances:
+
+
+```sql
+SELECT COUNT(1)
+FROM trackedentityinstance
+WHERE trackedentitytypeid IS NULL;
+```
+
+#### Fixing Null Values
+
+Starting from version v42, NULL value is no longer allowed for the trackedentitytypeid column. To proceed with the upgrade, all inconsistencies must be resolved, which involves completely removing any invalid records. ([Delete trackedentity](#deleting-inconsistent-trackedentities))
+
+##### Deleting inconsistent trackedentities
+
+The following script can be used to remove all TrackedEntity records with a NULL value in the trackedentitytypeid column.
+
+```plsql
+DO $$
+BEGIN
+WITH te AS (
+    SELECT trackedentityid
+    FROM trackedentity
+    WHERE trackedentitytypeid IS NULL
+),
+
+enrollment_ids AS (
+    SELECT enrollmentid
+    FROM enrollment
+    WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+),
+
+event_ids AS (
+    SELECT eventid
+    FROM event
+    WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+),
+
+te_pm AS (
+    SELECT id
+    FROM programmessage
+    WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+),
+pi_pm AS (
+    SELECT id
+    FROM programmessage
+    WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+),
+event_pm AS (
+    SELECT id
+    FROM programmessage
+    WHERE eventid IN (SELECT eventid FROM event_ids)
+)
+
+DELETE FROM programmessage_deliverychannels
+WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
+
+DELETE FROM programmessage_emailaddresses
+WHERE programmessageemailaddressid IN (SELECT id FROM te_pm);
+
+DELETE FROM programmessage_phonenumbers
+WHERE programmessagephonenumberid IN (SELECT id FROM te_pm);
+
+DELETE FROM programmessage_deliverychannels
+WHERE programmessagedeliverychannelsid IN (SELECT id FROM pi_pm);
+
+DELETE FROM programmessage_emailaddresses
+WHERE programmessageemailaddressid IN (SELECT id FROM pi_pm);
+
+DELETE FROM programmessage_phonenumbers
+WHERE programmessagephonenumberid IN (SELECT id FROM pi_pm);
+
+DELETE FROM programmessage_deliverychannels
+WHERE programmessagedeliverychannelsid IN (SELECT id FROM event_pm);
+
+DELETE FROM programmessage_emailaddresses
+WHERE programmessageemailaddressid IN (SELECT id FROM event_pm);
+
+DELETE FROM programmessage_phonenumbers
+WHERE programmessagephonenumberid IN (SELECT id FROM event_pm);
+
+
+DELETE FROM event_notes
+WHERE eventid IN (SELECT eventid FROM event_ids);
+
+DELETE FROM enrollment_notes
+WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+DELETE FROM note
+WHERE noteid NOT IN (SELECT noteid FROM event_notes
+                     UNION ALL
+                     SELECT noteid FROM enrollment_notes);
+
+
+DELETE FROM trackedentitydatavalueaudit
+WHERE eventid IN (SELECT eventid FROM event_ids);
+
+DELETE FROM eventchangelog
+WHERE eventid IN (SELECT eventid FROM event_ids);
+
+DELETE FROM programmessage
+WHERE eventid IN (SELECT eventid FROM event_ids);
+
+
+DELETE FROM programmessage
+WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+DELETE FROM event
+WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+
+DELETE FROM programmessage
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM relationshipitem
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM trackedentityattributevalue
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM trackedentityattributevalueaudit
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM trackedentitychangelog
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM trackedentityprogramowner
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM programtempowner
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM programtempownershipaudit
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM programownershiphistory
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM enrollment
+WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+DELETE FROM trackedentity
+WHERE trackedentitytypeid IS NULL;
+
+END;
+$$;
+```
+
