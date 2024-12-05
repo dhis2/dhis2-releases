@@ -280,130 +280,145 @@ The following script can be used to remove all TrackedEntity records with a NULL
 
 ```plsql
 DO $$
+DECLARE
+    invalid_count INT; 
+    deleted_count INT := 0;
 BEGIN
-WITH te AS (
-    SELECT trackedentityid
+    SELECT COUNT(trackedentityid)
+    INTO invalid_count
     FROM trackedentity
-    WHERE trackedentitytypeid IS NULL
-),
+    WHERE trackedentitytypeid IS NULL;
 
-enrollment_ids AS (
-    SELECT enrollmentid
-    FROM enrollment
-    WHERE trackedentityid IN (SELECT trackedentityid FROM te)
-),
+    RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid is null): %', invalid_count;
 
-event_ids AS (
-    SELECT eventid
-    FROM event
-    WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-),
+    IF invalid_count > 0 THEN
+        WITH te AS (
+            SELECT trackedentityid
+            FROM trackedentity
+            WHERE trackedentitytypeid IS NULL
+        ),
+        
+        enrollment_ids AS (
+            SELECT enrollmentid
+            FROM enrollment
+            WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+        ),
+        
+        event_ids AS (
+            SELECT eventid
+            FROM event
+            WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+        ),
+        
+        te_pm AS (
+            SELECT id
+            FROM programmessage
+            WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+        ),
+        
+        pi_pm AS (
+            SELECT id
+            FROM programmessage
+            WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+        ),
+        
+        event_pm AS (
+            SELECT id
+            FROM programmessage
+            WHERE eventid IN (SELECT eventid FROM event_ids)
+        )
+        
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
 
-te_pm AS (
-    SELECT id
-    FROM programmessage
-    WHERE trackedentityid IN (SELECT trackedentityid FROM te)
-),
-pi_pm AS (
-    SELECT id
-    FROM programmessage
-    WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-),
-event_pm AS (
-    SELECT id
-    FROM programmessage
-    WHERE eventid IN (SELECT eventid FROM event_ids)
-)
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM te_pm);
 
-DELETE FROM programmessage_deliverychannels
-WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM te_pm);
 
-DELETE FROM programmessage_emailaddresses
-WHERE programmessageemailaddressid IN (SELECT id FROM te_pm);
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM pi_pm);
 
-DELETE FROM programmessage_phonenumbers
-WHERE programmessagephonenumberid IN (SELECT id FROM te_pm);
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM pi_pm);
 
-DELETE FROM programmessage_deliverychannels
-WHERE programmessagedeliverychannelsid IN (SELECT id FROM pi_pm);
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM pi_pm);
 
-DELETE FROM programmessage_emailaddresses
-WHERE programmessageemailaddressid IN (SELECT id FROM pi_pm);
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM event_pm);
 
-DELETE FROM programmessage_phonenumbers
-WHERE programmessagephonenumberid IN (SELECT id FROM pi_pm);
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM event_pm);
 
-DELETE FROM programmessage_deliverychannels
-WHERE programmessagedeliverychannelsid IN (SELECT id FROM event_pm);
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM event_pm);
 
-DELETE FROM programmessage_emailaddresses
-WHERE programmessageemailaddressid IN (SELECT id FROM event_pm);
+        DELETE FROM event_notes
+        WHERE eventid IN (SELECT eventid FROM event_ids);
 
-DELETE FROM programmessage_phonenumbers
-WHERE programmessagephonenumberid IN (SELECT id FROM event_pm);
+        DELETE FROM enrollment_notes
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
 
+        DELETE FROM note
+        WHERE noteid NOT IN (SELECT noteid FROM event_notes
+                             UNION ALL
+                             SELECT noteid FROM enrollment_notes);
 
-DELETE FROM event_notes
-WHERE eventid IN (SELECT eventid FROM event_ids);
+        DELETE FROM trackedentitydatavalueaudit
+        WHERE eventid IN (SELECT eventid FROM event_ids);
 
-DELETE FROM enrollment_notes
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+        DELETE FROM eventchangelog
+        WHERE eventid IN (SELECT eventid FROM event_ids);
 
-DELETE FROM note
-WHERE noteid NOT IN (SELECT noteid FROM event_notes
-                     UNION ALL
-                     SELECT noteid FROM enrollment_notes);
+        DELETE FROM programmessage
+        WHERE eventid IN (SELECT eventid FROM event_ids);
 
+        DELETE FROM programmessage
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
 
-DELETE FROM trackedentitydatavalueaudit
-WHERE eventid IN (SELECT eventid FROM event_ids);
+        DELETE FROM event
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
 
-DELETE FROM eventchangelog
-WHERE eventid IN (SELECT eventid FROM event_ids);
+        DELETE FROM programmessage
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM programmessage
-WHERE eventid IN (SELECT eventid FROM event_ids);
+        DELETE FROM relationshipitem
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
+        DELETE FROM trackedentityattributevalue
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM programmessage
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+        DELETE FROM trackedentityattributevalueaudit
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM event
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+        DELETE FROM trackedentitychangelog
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
+        DELETE FROM trackedentityprogramowner
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM programmessage
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+        DELETE FROM programtempowner
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM relationshipitem
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+        DELETE FROM programtempownershipaudit
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM trackedentityattributevalue
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+        DELETE FROM programownershiphistory
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM trackedentityattributevalueaudit
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+        DELETE FROM enrollment
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-DELETE FROM trackedentitychangelog
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+        DELETE FROM trackedentity
+        WHERE trackedentitytypeid IS NULL
+        RETURNING trackedentityid INTO deleted_count;
 
-DELETE FROM trackedentityprogramowner
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-DELETE FROM programtempowner
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-DELETE FROM programtempownershipaudit
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-DELETE FROM programownershiphistory
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-DELETE FROM enrollment
-WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-DELETE FROM trackedentity
-WHERE trackedentitytypeid IS NULL;
+        RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
+    ELSE
+        RAISE NOTICE 'No invalid TrackedEntities found for deletion.';
+    END IF;
 
 END;
 $$;
