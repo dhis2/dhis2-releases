@@ -281,53 +281,55 @@ The following script can be used to remove all TrackedEntity records with a NULL
 ```plsql
 DO $$
 DECLARE
-    invalid_count INT; 
-    deleted_count INT := 0;
+    invalid_count INT;  -- Variable to store the count of invalid TrackedEntities
+    deleted_count INT := 0;  -- Variable to keep track of deleted TrackedEntity count
 BEGIN
+    CREATE TEMP TABLE te AS (
+        SELECT trackedentityid
+        FROM trackedentity
+        WHERE trackedentitytypeid IS NULL
+    );
+
+    CREATE TEMP TABLE enrollment_ids AS (
+        SELECT enrollmentid
+        FROM enrollment
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+    );
+
+    CREATE TEMP TABLE event_ids AS (
+        SELECT eventid
+        FROM event
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+    );
+
+    CREATE TEMP TABLE te_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+    );
+
+    CREATE TEMP TABLE pi_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+    );
+
+    CREATE TEMP TABLE event_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE eventid IN (SELECT eventid FROM event_ids)
+    );
+
     SELECT COUNT(trackedentityid)
     INTO invalid_count
     FROM trackedentity
     WHERE trackedentitytypeid IS NULL;
 
-    RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid is null): %', invalid_count;
+    RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid IS NULL): %', invalid_count;
 
+    -- If there are any invalid TrackedEntities, proceed with deletion
     IF invalid_count > 0 THEN
-        WITH te AS (
-            SELECT trackedentityid
-            FROM trackedentity
-            WHERE trackedentitytypeid IS NULL
-        ),
-        
-        enrollment_ids AS (
-            SELECT enrollmentid
-            FROM enrollment
-            WHERE trackedentityid IN (SELECT trackedentityid FROM te)
-        ),
-        
-        event_ids AS (
-            SELECT eventid
-            FROM event
-            WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-        ),
-        
-        te_pm AS (
-            SELECT id
-            FROM programmessage
-            WHERE trackedentityid IN (SELECT trackedentityid FROM te)
-        ),
-        
-        pi_pm AS (
-            SELECT id
-            FROM programmessage
-            WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-        ),
-        
-        event_pm AS (
-            SELECT id
-            FROM programmessage
-            WHERE eventid IN (SELECT eventid FROM event_ids)
-        )
-        
+
         DELETE FROM programmessage_deliverychannels
         WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
 
@@ -362,9 +364,11 @@ BEGIN
         WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
 
         DELETE FROM note
-        WHERE noteid NOT IN (SELECT noteid FROM event_notes
-                             UNION ALL
-                             SELECT noteid FROM enrollment_notes);
+        WHERE noteid NOT IN (
+            SELECT noteid FROM event_notes
+            UNION ALL
+            SELECT noteid FROM enrollment_notes
+        );
 
         DELETE FROM trackedentitydatavalueaudit
         WHERE eventid IN (SELECT eventid FROM event_ids);
@@ -393,9 +397,7 @@ BEGIN
         DELETE FROM trackedentityattributevalueaudit
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
-        DELETE FROM trackedentitychangelog
-        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
+      
         DELETE FROM trackedentityprogramowner
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
@@ -410,15 +412,16 @@ BEGIN
 
         DELETE FROM enrollment
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-
-        DELETE FROM trackedentity
-        WHERE trackedentitytypeid IS NULL
-        RETURNING trackedentityid INTO deleted_count;
+		
+		WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
 
         RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
+
     ELSE
         RAISE NOTICE 'No invalid TrackedEntities found for deletion.';
     END IF;
+
+    DROP TABLE IF EXISTS te, enrollment_ids, event_ids, te_pm, pi_pm, event_pm;
 
 END;
 $$;
