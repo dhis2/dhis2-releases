@@ -246,7 +246,7 @@ and en.uid = '{ENROLLMENT_UID}'
 AND en.programid in (select programid from program where type = 'WITH_REGISTRATION');
 ```
 
-### Null TrackedEntityType
+### Null Tracked Entity Type
 
 The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to have a specific type, such as person, place, equipment, or area. However, this constraint was not enforced at the database level, leading to inconsistent data. To ensure data integrity moving forward, we need to enforce this requirement by making the `trackedentitytypeid` column in the `trackedentity` table non-nullable.
 
