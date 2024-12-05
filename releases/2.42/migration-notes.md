@@ -74,56 +74,73 @@ The following script can be used to remove all the events that have a 'NULL' val
 
 ```plsql
 DO $$
+DECLARE
+  event_ids_temp RECORD;
+  pm_ids_temp RECORD;
 BEGIN
-WITH event_ids AS (
-    SELECT eventid
-    FROM event
-    WHERE organisationunitid IS NULL
-),
-     pm_ids AS (
-         SELECT id
-         FROM programmessage
-         WHERE eventid IN (SELECT eventid FROM event_ids)
-     )
+  -- Create temporary table for event_ids
+  CREATE TEMP TABLE temp_event_ids AS
+  SELECT eventid
+  FROM event
+  WHERE organisationunitid IS NULL;
 
-DELETE FROM programmessage_deliverychannels
-WHERE programmessagedeliverychannelsid IN (SELECT id FROM pm_ids);
+  -- Create temporary table for pm_ids
+  CREATE TEMP TABLE temp_pm_ids AS
+  SELECT id
+  FROM programmessage
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM programmessage_emailaddresses
-WHERE programmessageemailaddressid IN (SELECT id FROM pm_ids);
+  -- Delete from programmessage_deliverychannels
+  DELETE FROM programmessage_deliverychannels
+  WHERE programmessagedeliverychannelsid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM programmessage_phonenumbers
-WHERE programmessagephonenumberid IN (SELECT id FROM pm_ids);
+  -- Delete from programmessage_emailaddresses
+  DELETE FROM programmessage_emailaddresses
+  WHERE programmessageemailaddressid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM programnotificationinstance
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from programmessage_phonenumbers
+  DELETE FROM programmessage_phonenumbers
+  WHERE programmessagephonenumberid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM event_notes
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from programnotificationinstance
+  DELETE FROM programnotificationinstance
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM note
-WHERE noteid NOT IN (
-    SELECT noteid
-    FROM event_notes
-    UNION ALL
-    SELECT noteid
-    FROM enrollment_notes
-);
+  -- Delete from event_notes
+  DELETE FROM event_notes
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM relationshipitem
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from note
+  DELETE FROM note
+  WHERE noteid NOT IN (
+      SELECT noteid
+      FROM event_notes
+      UNION ALL
+      SELECT noteid
+      FROM enrollment_notes
+  );
 
-DELETE FROM trackedentitydatavalueaudit
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from relationshipitem
+  DELETE FROM relationshipitem
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM programmessage
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from trackedentitydatavalueaudit
+  DELETE FROM trackedentitydatavalueaudit
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM event
-WHERE organisationunitid IS NULL;
+  -- Delete from programmessage
+  DELETE FROM programmessage
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
+
+  -- Delete from event
+  DELETE FROM event
+  WHERE organisationunitid IS NULL;
+
+  -- Clean up temporary tables
+  DROP TABLE temp_event_ids;
+  DROP TABLE temp_pm_ids;
 END;
-$$;
-```
+$$;```
 
 ##### Deleting inconsistent enrollments
 
@@ -134,77 +151,87 @@ and the migration script is updating the value in `organisationunitid` column.
 ```plsql
 DO $$
 BEGIN
-WITH enrollment_ids AS (
-    SELECT enrollmentid
-    FROM enrollment
-    WHERE organisationunitid IS NULL
-    AND programid in (select programid from program where type = 'WITH_REGISTRATION')
-),
-     event_ids AS (
-         SELECT eventid
-         FROM event
-         WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-     ),
-     pm_ids AS (
-         SELECT id
-         FROM programmessage
-         WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
-     )
+  -- Create temporary tables for storing IDs
+  CREATE TEMP TABLE temp_enrollment_ids AS
+  SELECT enrollmentid
+  FROM enrollment
+  WHERE organisationunitid IS NULL
+  AND programid IN (SELECT programid FROM program WHERE type = 'WITH_REGISTRATION');
 
-DELETE FROM programmessage_deliverychannels
-WHERE programmessagedeliverychannelsid IN (SELECT id FROM pm_ids);
+  CREATE TEMP TABLE temp_event_ids AS
+  SELECT eventid
+  FROM event
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
 
-DELETE FROM programmessage_emailaddresses
-WHERE programmessageemailaddressid IN (SELECT id FROM pm_ids);
+  CREATE TEMP TABLE temp_pm_ids AS
+  SELECT id
+  FROM programmessage
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
 
-DELETE FROM programmessage_phonenumbers
-WHERE programmessagephonenumberid IN (SELECT id FROM pm_ids);
+  -- Delete from programmessage related tables
+  DELETE FROM programmessage_deliverychannels
+  WHERE programmessagedeliverychannelsid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM event_notes
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  DELETE FROM programmessage_emailaddresses
+  WHERE programmessageemailaddressid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM enrollment_notes
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+  DELETE FROM programmessage_phonenumbers
+  WHERE programmessagephonenumberid IN (SELECT id FROM temp_pm_ids);
 
-DELETE FROM note
-WHERE noteid NOT IN (
-    SELECT noteid
-    FROM event_notes
-    UNION ALL
-    SELECT noteid
-    FROM enrollment_notes
-);
+  -- Delete from notes related tables
+  DELETE FROM event_notes
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM programnotificationinstance
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  DELETE FROM enrollment_notes
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
 
-DELETE FROM programnotificationinstance
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+  DELETE FROM note
+  WHERE noteid NOT IN (
+      SELECT noteid
+      FROM event_notes
+      UNION ALL
+      SELECT noteid
+      FROM enrollment_notes
+  );
 
-DELETE FROM relationshipitem
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from program notification instances
+  DELETE FROM programnotificationinstance
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM trackedentitydatavalueaudit
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  DELETE FROM programnotificationinstance
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
 
-DELETE FROM programmessage
-WHERE eventid IN (SELECT eventid FROM event_ids);
+  -- Delete from relationship items
+  DELETE FROM relationshipitem
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM relationshipitem
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+  -- Delete from tracked entity data value audit
+  DELETE FROM trackedentitydatavalueaudit
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM programmessage
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+  -- Delete from program messages
+  DELETE FROM programmessage
+  WHERE eventid IN (SELECT eventid FROM temp_event_ids);
 
-DELETE FROM event
-WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+  DELETE FROM relationshipitem
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
 
-DELETE FROM enrollment
-WHERE organisationunitid IS NULL
-AND programid in (select programid from program where type = 'WITH_REGISTRATION');
+  DELETE FROM programmessage
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
+
+  DELETE FROM event
+  WHERE enrollmentid IN (SELECT enrollmentid FROM temp_enrollment_ids);
+
+  DELETE FROM enrollment
+  WHERE organisationunitid IS NULL
+  AND programid IN (SELECT programid FROM program WHERE type = 'WITH_REGISTRATION');
+
+  DROP TABLE temp_enrollment_ids;
+  DROP TABLE temp_event_ids;
+  DROP TABLE temp_pm_ids;
+ 
 END;
-$$;
-```
+$$;```
 
 ##### Assign organisation unit to event
 
