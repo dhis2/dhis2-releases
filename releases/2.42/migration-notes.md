@@ -179,7 +179,8 @@ BEGIN
   DROP TABLE temp_event_ids;
   DROP TABLE temp_pm_ids;
 END;
-$$;```
+$$;
+```
 
 ##### Deleting inconsistent enrollments
 
