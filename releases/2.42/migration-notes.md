@@ -65,8 +65,47 @@ WHERE organisationunitid IS NULL;
 In version v42 `NULL` values on these columns are not allowed anymore, 
 and in order to upgrade all the inconsistencies must be resolved.
 So there are 2 options to fix the data:
-- Completely remove the record. ([Delete events](#deleting-inconsistent-events) and [Delete enrollments](#deleting-inconsistent-enrollments))
 - Change the `NULL` value to a valid and meaningful organisation unit. ([Assign organisation unit to event](#assign-organisation-unit-to-event) and [Assign organisation unit to enrollment](#assign-organisation-unit-to-enrollment))
+- Completely remove the record. ([Delete events](#deleting-inconsistent-events) and [Delete enrollments](#deleting-inconsistent-enrollments))
+
+##### Assign organisation unit to event
+
+To assign an organisation unit to an event with a `NULL` value in
+column `organisationunitid` is a sensitive operation as the organisation unit
+defines which users can access such event (through the search and capture scope).
+The first step is to find a "reference" event that should be in the same scope
+as the one to be updated.
+The following script assign the organisation unit of the "reference" event 
+to the event with `NULL` organisation unit.
+Substitute {REFERENCE_UID} with the `uid` of the reference event and
+{EVENT_UID} with the `uid` of the event to be updated.
+
+```sql
+update event ev
+set organisationunitid = (select organisationunitid from event where uid = '{REFERENCE_UID}')
+where ev.organisationunitid is null
+and ev.uid = '{EVENT_UID}';
+```
+
+##### Assign organisation unit to enrollment
+
+To assign an organisation unit to an enrollment with a `NULL` value in
+column `organisationunitid` is a sensitive operation as the organisation unit
+defines which users can access such enrollment (through the search and capture scope).
+The first step is to find a "reference" enrollment that should be in the same scope
+as the one to be updated.
+The following script assign the organisation unit of the "reference" enrollment
+to the enrollment with `NULL` organisation unit.
+Substitute {REFERENCE_UID} with the `uid` of the reference enrollment and
+{ENROLLMENT_UID} with the `uid` of the enrollment to be updated.
+
+```sql
+update enrollment en
+set organisationunitid = (select organisationunitid from enrollment where uid = '{REFERENCE_UID}')
+where en.organisationunitid is null
+and en.uid = '{ENROLLMENT_UID}'
+AND en.programid in (select programid from program where type = 'WITH_REGISTRATION');
+```
 
 ##### Deleting inconsistent events
 
@@ -232,42 +271,3 @@ BEGIN
  
 END;
 $$;```
-
-##### Assign organisation unit to event
-
-To assign an organisation unit to an event with a `NULL` value in
-column `organisationunitid` is a sensitive operation as the organisation unit
-defines which users can access such event (through the search and capture scope).
-The first step is to find a "reference" event that should be in the same scope
-as the one to be updated.
-The following script assign the organisation unit of the "reference" event 
-to the event with `NULL' organisation unit.
-Substitute {REFERENCE_UID} with the `uid` of the reference event and
-{EVENT_UID} with the the `uid` of the event to be updated.
-
-```sql
-update event ev
-set organisationunitid = (select organisationunitid from event where uid = '{REFERENCE_UID}')
-where ev.organisationunitid is null
-and ev.uid = '{EVENT_UID}';
-```
-
-##### Assign organisation unit to enrollment
-
-To assign an organisation unit to an enrollment with a `NULL` value in
-column `organisationunitid` is a sensitive operation as the organisation unit
-defines which users can access such enrollment (through the search and capture scope).
-The first step is to find a "reference" enrollment that should be in the same scope
-as the one to be updated.
-The following script assign the organisation unit of the "reference" enrollment
-to the enrollment with `NULL' organisation unit.
-Substitute {REFERENCE_UID} with the `uid` of the reference enrollment and
-{ENROLLMENT_UID} with the the `uid` of the enrollment to be updated.
-
-```sql
-update enrollment en
-set organisationunitid = (select organisationunitid from enrollment where uid = '{REFERENCE_UID}')
-where en.organisationunitid is null
-and en.uid = '{ENROLLMENT_UID}'
-AND en.programid in (select programid from program where type = 'WITH_REGISTRATION');
-```
