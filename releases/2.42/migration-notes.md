@@ -10,7 +10,7 @@ To help you navigate the document, here's a detailed table of contents.
 
   - [Inconsistent data](#inconsistent-data)
     - [Tracker](#tracker)
-       - [Null Organisation Unit](#null-organisation-unit)
+	   - [Null Organisation Unit](#null-organisation-unit)
        - [Null Tracked Entity Type](#null-tracked-entity-type)
 ---
 ## Inconsistent-data
@@ -263,7 +263,6 @@ WHERE trackedentitytypeid IS NULL;
 ```
 ##### For <= 2.40 Instances:
 
-
 ```sql
 SELECT COUNT(1)
 FROM trackedentityinstance
@@ -272,11 +271,7 @@ WHERE trackedentitytypeid IS NULL;
 
 #### Fixing Null Values
 
-Starting from version v42, NULL value is no longer allowed for the trackedentitytypeid column. To proceed with the upgrade, all inconsistencies must be resolved, which involves completely removing any invalid records. ([Delete trackedentity](#deleting-inconsistent-trackedentities))
-
-##### Deleting inconsistent trackedentities
-
-The following script can be used to remove all TrackedEntity records with a NULL value in the trackedentitytypeid column.
+Starting from version v42, NULL values are no longer allowed in the trackedentitytypeid column. The migration attempted to address the invalid data, but it was unsuccessful. Therefore, to proceed with the upgrade the following script can be used to remove all TrackedEntity records with a NULL value in the trackedentitytypeid column.
 
 ```plsql
 DO $$
