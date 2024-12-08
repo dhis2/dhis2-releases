@@ -67,9 +67,9 @@ def update_existing_version(version: Dict[str, Any], new_release: Dict[str, Any]
 
 def update_support_status(data: Dict[str, Any]) -> None:
     for i, version in enumerate(data['versions']):
-        version['supported'] = i < 4
+        version['supported'] = i < 3
 
-    print("Support status updated for the last 4 versions")
+    print("Support status updated for the last 3 versions")
 
 def update_latest_status(data: Dict[str, Any]) -> None:
     latest_version = max(data['versions'], key=lambda v: v['version'])
