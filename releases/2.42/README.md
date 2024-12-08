@@ -55,6 +55,26 @@ guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/tra
 Tracker and event program data can no longer be synchronized via the [metadata
 synchronization](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/exchanging-data/metadata-synchronization.html#about-data-and-metadata-synchronization).
 
+The two change log endpoints have also been removed:
+| Removed Endpoint                      | Endpoint to use instead                     | Documentation                       |
+|---------------------------------------|---------------------------------------------|---------------------------------------------|
+| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          |[Event change logs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_event_data_value_change_logs)|
+| `/audits/trackedEntityAttributeValue` | `/tracker/trackedEntities/{uid}/changeLogs` |[Tracked entity attribute change logs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_attribute_change_logs)|
+
+Data from the `trackedentityattributevalueaudit` and `trackedentitydatavalueaudit` tables, which were used by now-removed endpoints, has been migrated to the new `trackedentitychangelog` and `eventchangelog` tables. 
+These new tables better align with updated requirements and will be used by the new change log endpoints.
+
+As part of the migration, only valid change log data was transferred. 
+Records were migrated if they met the following criteria:
+- For event change logs, the record contains a valid `eventid` and `dataelementid`.
+- For attribute change logs, the record contains a valid `trackedentityid` and `attributeid`.
+- For both, the change log type is one of `CREATE`, `UPDATE`, or `DELETE`.
+
+Records that did not meet these conditions were not migrated and remain in the original tables. 
+The `trackedentityattributevalueaudit` and `trackedentitydatavalueaudit` tables will not be deleted, but they are no longer maintained or used by the system. 
+Administrators can decide how to handle these tables, but the remaining data lacks the essential information needed for use as change logs in the new framework.
+
+
 #### Deprecated APIs
 
 The table below summarizes the deprecated API parameters:
@@ -64,13 +84,6 @@ The table below summarizes the deprecated API parameters:
 | `/tracker/trackedEntities` | `programStatus`        | `enrollmentStatus`   |
 | `/tracker/enrollments`     | `programStatus`        | `status`             |
 | `/tracker/events`          | `programStatus`        | `enrollmentStatus`   |
-
-The table below summarizes the deprecated API endpoints:
-
-| Deprecated Endpoint                   | Endpoint to use instead                     |
-|---------------------------------------|---------------------------------------------|
-| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          | 
-| `/audits/trackedEntityAttributeValue` | `/tracker/trackedEntities/{uid}/changeLogs` |
 
 ## Database
 
