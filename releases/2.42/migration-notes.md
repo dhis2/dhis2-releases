@@ -281,21 +281,31 @@ The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to
 
 #### Checking for Null Values
 
-To check for any NULL values in this column, you can use the following SQL script. If it returns a value greater than 0, it indicates the presence of inconsistent data in the system.
+To check for any NULL values in this column, you can use the following SQL script. If it returns a value greater than 0, it indicates the presence of inconsistent data which migration was not able to fix.
 
 ##### For 2.41 Instances:
 
 ```sql
 SELECT COUNT(1)
-FROM trackedentity
-WHERE trackedentitytypeid IS NULL;
+FROM trackedentity te
+WHERE te.trackedentitytypeid IS NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM enrollment e
+    WHERE e.trackedentityid = te.trackedentityid
+  );
 ```
 ##### For <= 2.40 Instances:
 
 ```sql
 SELECT COUNT(1)
-FROM trackedentityinstance
-WHERE trackedentitytypeid IS NULL;
+FROM trackedentityinstance te
+WHERE te.trackedentitytypeid IS NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM programinstance pi
+    WHERE pi.trackedentityinstanceid = te.trackedentityinstanceid
+  );
 ```
 
 #### Fixing Null Values
@@ -320,8 +330,8 @@ UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM t
 ```
 
 
-##### Deleting invalid trackedenetities
-The script below can be used to remove all trackedentity records where the trackedentitytypeid column is null. Use this script with caution, as it may result in permanent data loss. 
+##### Deleting invalid tracked enetities
+The script below can be used to remove all trackedentity records where the trackedentitytypeid column is null and migration was not able to fix it. Use this script with caution, as it may result in permanent data loss.
 
 ```plsql
 DO $$
@@ -368,7 +378,11 @@ BEGIN
     SELECT COUNT(trackedentityid)
     INTO invalid_count
     FROM trackedentity
-    WHERE trackedentitytypeid IS NULL;
+    WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
+            SELECT 1
+            FROM enrollment
+            WHERE enrollment.trackedentityid = trackedentity.trackedentityid
+        );
 
     RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid IS NULL): %', invalid_count;
 
