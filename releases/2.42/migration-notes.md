@@ -11,6 +11,7 @@ To help you navigate the document, here's a detailed table of contents.
   - [Inconsistent data](#inconsistent-data)
     - [Tracker](#tracker)
       - [Null Organisation Unit](#null-organisation-unit)
+      - [Null Tracked Entity Type](#null-tracked-entity-type)
 ---
 ## Inconsistent-data
 
@@ -270,6 +271,213 @@ BEGIN
   DROP TABLE temp_event_ids;
   DROP TABLE temp_pm_ids;
  
+END;
+$$;
+```
+
+### Null Tracked Entity Type
+
+The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to have a specific type, such as person, place, equipment, or area. However, this constraint was not enforced at the database level, leading to inconsistent data. To ensure data integrity moving forward, we need to enforce this requirement by making the `trackedentitytypeid` column in the `trackedentity` table non-nullable.
+
+#### Checking for Null Values
+
+To check for any NULL values in this column, you can use the following SQL script. If it returns a value greater than 0, it indicates the presence of inconsistent data which migration was not able to fix.
+
+##### For 2.41 Instances:
+
+```sql
+SELECT COUNT(1)
+FROM trackedentity te
+WHERE te.trackedentitytypeid IS NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM enrollment e
+    WHERE e.trackedentityid = te.trackedentityid
+  );
+```
+##### For <= 2.40 Instances:
+
+```sql
+SELECT COUNT(1)
+FROM trackedentityinstance te
+WHERE te.trackedentitytypeid IS NULL
+  AND NOT EXISTS (
+    SELECT 1
+    FROM programinstance pi
+    WHERE pi.trackedentityinstanceid = te.trackedentityinstanceid
+  );
+```
+
+#### Fixing Null Values
+
+Starting from version v42, NULL values are no longer allowed in the trackedentitytypeid column. The migration attempted to address the invalid data, but it was unsuccessful. There are two options going forward.
+- Change the `NULL` value to a valid trackedentitytypeid. ([Assign trackedentitytyeid to tracked entity](#assign-tracked-entity-type))
+- Completely remove invalid trackedentity record. ([Delete trackedentities](#deleting-invalid-trackedenetities))
+
+##### Assign tracked entity type
+To assign valid trackedentitytypeid 
+- Use the following command to list all the trackedentitytypes currently available in the system. This query retrieves the uid and name of all trackedentitytypes in your database. Review the output to identify the most appropriate trackedentitytype.
+
+```sql
+SELECT uid, name FROM trackedentitytype;
+```
+
+- Replace {REFERENCE_UID} with the uid of the selected trackedentitytype and execute the below mentioned command.
+
+
+```sql
+UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM trackedentitytype WHERE uid='{REFERENCE_UID}') WHERE trackedentitytypeid IS NULL;
+```
+
+
+##### Deleting invalid tracked enetities
+The script below can be used to remove all trackedentity records where the trackedentitytypeid column is null and migration was not able to fix it. Use this script with caution, as it may result in permanent data loss.
+
+```plsql
+DO $$
+DECLARE
+    invalid_count INT;  -- Variable to store the count of invalid TrackedEntities
+    deleted_count INT := 0;  -- Variable to keep track of deleted TrackedEntity count
+BEGIN
+    CREATE TEMP TABLE te AS (
+        SELECT trackedentityid
+        FROM trackedentity
+        WHERE trackedentitytypeid IS NULL
+    );
+
+    CREATE TEMP TABLE enrollment_ids AS (
+        SELECT enrollmentid
+        FROM enrollment
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+    );
+
+    CREATE TEMP TABLE event_ids AS (
+        SELECT eventid
+        FROM event
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+    );
+
+    CREATE TEMP TABLE te_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te)
+    );
+
+    CREATE TEMP TABLE pi_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids)
+    );
+
+    CREATE TEMP TABLE event_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE eventid IN (SELECT eventid FROM event_ids)
+    );
+
+    SELECT COUNT(trackedentityid)
+    INTO invalid_count
+    FROM trackedentity
+    WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
+            SELECT 1
+            FROM enrollment
+            WHERE enrollment.trackedentityid = trackedentity.trackedentityid
+        );
+
+    RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid IS NULL): %', invalid_count;
+
+    -- If there are any invalid TrackedEntities, proceed with deletion
+    IF invalid_count > 0 THEN
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM event_pm);
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM event_pm);
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM event_pm);
+
+        DELETE FROM event_notes
+        WHERE eventid IN (SELECT eventid FROM event_ids);
+
+        DELETE FROM enrollment_notes
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+        DELETE FROM note
+        WHERE noteid NOT IN (
+            SELECT noteid FROM event_notes
+            UNION ALL
+            SELECT noteid FROM enrollment_notes
+        );
+
+        DELETE FROM trackedentitydatavalueaudit
+        WHERE eventid IN (SELECT eventid FROM event_ids);
+
+        DELETE FROM programmessage
+        WHERE eventid IN (SELECT eventid FROM event_ids);
+
+        DELETE FROM programmessage
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+        DELETE FROM event
+        WHERE enrollmentid IN (SELECT enrollmentid FROM enrollment_ids);
+
+        DELETE FROM programmessage
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM relationshipitem
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM trackedentityattributevalue
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM trackedentityattributevalueaudit
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+      
+        DELETE FROM trackedentityprogramowner
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM programtempowner
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM programtempownershipaudit
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM programownershiphistory
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+
+        DELETE FROM enrollment
+        WHERE trackedentityid IN (SELECT trackedentityid FROM te);
+		
+        WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
+
+        RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
+
+    ELSE
+        RAISE NOTICE 'No invalid TrackedEntities found for deletion.';
+    END IF;
+
+    DROP TABLE IF EXISTS te, enrollment_ids, event_ids, te_pm, pi_pm, event_pm;
+
 END;
 $$;
 ```
