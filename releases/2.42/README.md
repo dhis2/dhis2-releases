@@ -38,6 +38,9 @@ Updating the `valueType` of a `DataElement` is prohibited if there is any existi
   In previous versions, this permission requirement was disregarded. If no organization unit permissions are explicitly granted,
   data capture and maintenance rights will be applied instead.
 
+* In the endpoint `/analytics/*/query`, the some filter capabilities were removed. ie.:
+| edqlbukwRfQ[*].vANAXwtLwcT, dqlbukwRfQ[-1~3].vANAXwtLwcT, edqlbukwRfQ[0~5~LAST_3_MONTHS].vANAXwtLwcT, edqlbukwRfQ[-1~3~2021-01-01~2022-05-31].vANAXwtLwcT
+
 ### Tracker
 
 #### Breaking Changes
