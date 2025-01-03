@@ -70,7 +70,7 @@ DROP TABLE IF EXISTS dashboarditem_charts CASCADE;
 Assuming the statements are successfully executed you will be able to try the upgrade again.
 
 ## SMS Codes
-During the upgrade process, the migration related to SMS codes might fail. The migration in question is named V2_37_46__Add_coc_fk_in_smscode.sql. If this occurs, you can resolve it using the SQL script provided below.
+During the upgrade process, the migration related to SMS codes might fail depending upon if database has invalid categoryoptioncomboid or not. The migration in question is named V2_37_46__Add_coc_fk_in_smscode.sql. If this occurs, you can resolve it using the SQL script provided below. More details can be found at https://dhis2.atlassian.net/browse/DHIS2-15169.
 
 After applying the script, retry the upgrade process. This should resolve the issue and allow the upgrade to complete successfully.
 
