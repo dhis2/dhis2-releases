@@ -68,3 +68,19 @@ DROP TABLE IF EXISTS dashboarditem_charts CASCADE;
 ```
 
 Assuming the statements are successfully executed you will be able to try the upgrade again.
+
+## SMS Codes
+During the upgrade process, the migration related to SMS codes might fail. The migration in question is named V2_37_46__Add_coc_fk_in_smscode.sql. If this occurs, you can resolve it using the SQL script provided below.
+
+After applying the script, retry the upgrade process. This should resolve the issue and allow the upgrade to complete successfully.
+
+Note: Please ensure you have a proper backup before executing any SQL scripts during the upgrade.
+
+```
+-- Set invalid cat option combos to default
+update smscodes set optionid = (
+  select categoryoptioncomboid from categoryoptioncombo where name = 'default')
+where optionid not in (
+  select distinct categoryoptioncomboid from categoryoptioncombo)
+or optionid is null;
+```
