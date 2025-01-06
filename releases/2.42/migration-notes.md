@@ -281,12 +281,12 @@ The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to
 
 #### Checking for Null Values
 
-To check for any NULL values in this column, you can use the following SQL script. If it returns a value greater than 0, it indicates the presence of inconsistent data which migration was not able to fix.
+To check for any NULL values in the trackedentitytypeid column, you can use the following SQL script. If the list returned is not empty, it indicates the presence of inconsistent data that the migration process was unable to resolve. The uids returned can be used in subsequent steps of this procedure.
 
 ##### For 2.41 Instances:
 
 ```sql
-SELECT COUNT(1)
+SELECT STRING_AGG(te.uid, ', ') AS uids
 FROM trackedentity te
 WHERE te.trackedentitytypeid IS NULL
   AND NOT EXISTS (
@@ -298,7 +298,7 @@ WHERE te.trackedentitytypeid IS NULL
 ##### For <= 2.40 Instances:
 
 ```sql
-SELECT COUNT(1)
+SELECT STRING_AGG(te.uid, ', ') AS uids
 FROM trackedentityinstance te
 WHERE te.trackedentitytypeid IS NULL
   AND NOT EXISTS (
@@ -322,11 +322,10 @@ To assign valid trackedentitytypeid
 SELECT uid, name FROM trackedentitytype;
 ```
 
-- Replace {REFERENCE_UID} with the uid of the selected trackedentitytype and execute the below mentioned command.
-
+- Replace {REFERENCE_UID} with the UID of the selected trackedentitytype and {UIDS} with the UIDs retrieved from the SQL query above. Then, execute the following command:
 
 ```sql
-UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM trackedentitytype WHERE uid='{REFERENCE_UID}') WHERE trackedentitytypeid IS NULL;
+UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM trackedentitytype WHERE uid='{REFERENCE_UID}') WHERE trackedentitytypeid IS NULL AND trackedentityid IN ({UIDS})?
 ```
 
 
@@ -379,9 +378,9 @@ BEGIN
     INTO invalid_count
     FROM trackedentity
     WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
-            SELECT 1
-            FROM enrollment
-            WHERE enrollment.trackedentityid = trackedentity.trackedentityid
+           SELECT 1
+            FROM enrollment e JOIN program p on e.programid = p.programid
+            WHERE e.trackedentityid = te.trackedentityid and p.trackedentitytypeid IS NOT NULL
         );
 
     RAISE NOTICE 'Number of invalid TrackedEntities (trackedentitytypeid IS NULL): %', invalid_count;
