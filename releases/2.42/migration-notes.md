@@ -311,7 +311,7 @@ WHERE te.trackedentitytypeid IS NULL
 
 Starting from version v42, NULL values are no longer allowed in the trackedentitytypeid column. The migration attempted to address the invalid data, but it was unsuccessful. There are two options going forward.
 - Change the `NULL` value to a valid trackedentitytypeid. ([Assign trackedentitytyeid to tracked entity](#assign-tracked-entity-type))
-- Completely remove invalid trackedentity record. ([Delete trackedentities](#deleting-invalid-trackedenetities))
+- Completely remove invalid trackedentity record. ([Delete trackedentities](#deleting-invalid-tracked-entities))
 
 ##### Assign tracked entity type
 To assign valid trackedentitytypeid 
@@ -328,7 +328,7 @@ UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM t
 ```
 
 
-##### Deleting invalid tracked enetities
+##### Deleting invalid tracked entities
 The script below can be used to remove all trackedentity records where the trackedentitytypeid column is null and migration was not able to fix it. Use this script with caution, as it may result in permanent data loss.
 
 ```plsql
