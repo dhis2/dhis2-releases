@@ -290,9 +290,9 @@ SELECT STRING_AGG(te.uid, ', ') AS uids
 FROM trackedentity te
 WHERE te.trackedentitytypeid IS NULL
   AND NOT EXISTS (
-    SELECT 1
-    FROM enrollment e
-    WHERE e.trackedentityid = te.trackedentityid
+ SELECT 1
+    FROM enrollment e JOIN program p on e.programid = p.programid
+    WHERE e.trackedentityid = te.trackedentityid and p.trackedentitytypeid IS NOT NULL
   );
 ```
 ##### For <= 2.40 Instances:
@@ -302,10 +302,9 @@ SELECT STRING_AGG(te.uid, ', ') AS uids
 FROM trackedentityinstance te
 WHERE te.trackedentitytypeid IS NULL
   AND NOT EXISTS (
-    SELECT 1
-    FROM programinstance pi
-    WHERE pi.trackedentityinstanceid = te.trackedentityinstanceid
-  );
+   SELECT 1
+    FROM programinstance pi JOIN program p ON pi.programid = p.programid
+    WHERE pi.trackedentityinstanceid = te.trackedentityinstanceid and p.trackedentitytypeid IS NOT NULL  );
 ```
 
 #### Fixing Null Values
