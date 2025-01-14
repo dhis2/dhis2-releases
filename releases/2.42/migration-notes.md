@@ -283,7 +283,7 @@ The `TrackedEntity`, previously known as `TrackedEntityInstance`, is required to
 
 To check for any NULL values in the trackedentitytypeid column, you can use the following SQL script. If the list returned is not empty, it indicates the presence of inconsistent data that the migration process was unable to resolve. The uids returned can be used in subsequent steps of this procedure.
 
-##### For 2.41 Instances:
+##### For >= 2.41 Instances:
 
 ```sql
 SELECT STRING_AGG(te.uid, ', ') AS uids
@@ -330,6 +330,8 @@ UPDATE trackedentity SET trackedentitytypeid=( SELECT trackedentitytypeid FROM t
 
 ##### Deleting invalid tracked entities
 The script below can be used to remove all trackedentity records where the trackedentitytypeid column is null and migration was not able to fix it. Use this script with caution, as it may result in permanent data loss.
+
+##### For >= 2.41 Instances:
 
 ```plsql
 DO $$
@@ -466,7 +468,12 @@ BEGIN
         DELETE FROM enrollment
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 		
-        WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
+        WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
+           SELECT 1
+            FROM enrollment e JOIN program p on e.programid = p.programid
+            WHERE e.trackedentityid = te.trackedentityid and p.trackedentitytypeid IS NOT NULL
+        ) 
+        RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
 
         RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
 
@@ -475,6 +482,162 @@ BEGIN
     END IF;
 
     DROP TABLE IF EXISTS te, enrollment_ids, event_ids, te_pm, pi_pm, event_pm;
+
+END;
+$$;
+```
+
+##### For <= 2.40 Instances:
+
+```plsql
+DO $$
+DECLARE
+    invalid_count INT;  -- Variable to store the count of invalid TrackedEntityInstances
+    deleted_count INT := 0;  -- Variable to keep track of deleted TrackedEntityInstance count
+BEGIN
+    CREATE TEMP TABLE te AS (
+        SELECT trackedentityinstanceid
+        FROM trackedentityinstance
+        WHERE trackedentitytypeid IS NULL
+    );
+
+    CREATE TEMP TABLE pi_ids AS (
+        SELECT programinstanceid
+        FROM programinstance
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te)
+    );
+
+    CREATE TEMP TABLE psi_ids AS (
+        SELECT programstageinstanceid
+        FROM programstageinstance
+        WHERE programinstanceid IN (SELECT programinstanceid FROM pi_ids )
+    );
+
+    CREATE TEMP TABLE te_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te)
+    );
+
+    CREATE TEMP TABLE pi_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE programinstanceid IN (SELECT programinstanceid FROM pi_ids )
+    );
+
+    CREATE TEMP TABLE psi_pm AS (
+        SELECT id
+        FROM programmessage
+        WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM psi_ids )
+    );
+
+    SELECT COUNT(trackedentityinstanceid)
+    INTO invalid_count
+    FROM trackedentityinstance
+    WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
+           SELECT 1
+            FROM programinstance e JOIN program p on e.programid = p.programid
+            WHERE e.trackedentityinstanceid = te. trackedentityinstanceid and p.trackedentitytypeid IS NOT NULL
+        );
+
+    RAISE NOTICE 'Number of invalid TrackedEntityInstances (trackedentitytypeid IS NULL): %', invalid_count;
+
+    -- If there are any invalid TrackedEntityInstances, proceed with deletion
+    IF invalid_count > 0 THEN
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM te_pm);
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM pi_pm);
+
+        DELETE FROM programmessage_deliverychannels
+        WHERE programmessagedeliverychannelsid IN (SELECT id FROM psi_pm );
+
+        DELETE FROM programmessage_emailaddresses
+        WHERE programmessageemailaddressid IN (SELECT id FROM psi_pm );
+
+        DELETE FROM programmessage_phonenumbers
+        WHERE programmessagephonenumberid IN (SELECT id FROM psi_pm );
+
+        DELETE FROM programstageinstancecomments
+        WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM psi_ids );
+
+        DELETE FROM programinstancecomments
+        WHERE programinstanceid IN (SELECT programinstanceid FROM pi_ids );
+
+        DELETE FROM trackedentitycomment
+        WHERE trackedentitycommentid NOT IN (
+            SELECT trackedentitycommentid FROM programstageinstancecomments
+            UNION ALL
+            SELECT trackedentitycommentid FROM programinstancecomments
+        );
+
+        DELETE FROM trackedentitydatavalueaudit
+        WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM psi_ids );
+
+        DELETE FROM programmessage
+        WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM psi_ids );
+
+        DELETE FROM programmessage
+        WHERE programinstanceid IN (SELECT programinstanceid FROM pi_ids );
+
+        DELETE FROM programstageinstance
+        WHERE programinstanceid IN (SELECT programinstanceid FROM pi_ids );
+
+        DELETE FROM programmessage
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM relationshipitem
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM trackedentityattributevalue
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM trackedentityattributevalueaudit
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+      
+        DELETE FROM trackedentityprogramowner
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM programtempowner
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM programtempownershipaudit
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM programownershiphistory
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+
+        DELETE FROM programinstance
+        WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
+		
+        WITH deleted AS (DELETE FROM trackedentityinstanceid WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
+           SELECT 1
+            FROM programinstance e JOIN program p on e.programid = p.programid
+            WHERE e.trackedentityinstanceid = te.trackedentityinstanceid and p.trackedentitytypeid IS NOT NULL
+        ) 
+        RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
+
+        RAISE NOTICE 'Total number of TrackedEntityInstances deleted: %', deleted_count;
+
+    ELSE
+        RAISE NOTICE 'No invalid TrackedEntityInstances found for deletion.';
+    END IF;
+
+    DROP TABLE IF EXISTS te, pi_ids, psi_ids, te_pm, pi_pm, psi_pm;
 
 END;
 $$;
