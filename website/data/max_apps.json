@@ -113,7 +113,7 @@
     },
     {
       "id": "",
-      "name": "Interpretation",
+      "name": "Interpretations",
       "functionalCategory": "Analyze",
       "core": "Yes",
       "status": "",
@@ -195,6 +195,14 @@
       "id": "",
       "name": "System Settings",
       "functionalCategory": "Configure",
+      "core": "Yes",
+      "status": "",
+      "notes": ""
+    },
+    {
+      "id": "",
+      "name": "Tracker Capture",
+      "functionalCategory": "Collect",
       "core": "Yes",
       "status": "",
       "notes": ""
