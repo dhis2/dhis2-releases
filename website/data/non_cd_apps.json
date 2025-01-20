@@ -1,0 +1,137 @@
+[
+    {
+      "id": "https://github.com/dhis2/event-reports-app",
+      "name": "Event Reports",
+      "description": "DHIS 2 app for event data visualization",
+      "developer": {
+        "organisation": "DHIS2" 
+      },
+      "images": [
+        {
+          "logo": true, 
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-event-reports.png?raw=true" 
+        }
+      ],
+      "versions": [
+        {
+          "version": "33.2.70",
+          "minDhisVersion": "(deprecated)",
+          "lastUpdated": "2024-10-27T10:00:00Z",
+          "releaseNotes": {
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://github.com/dhis2/data-quality-app",
+      "name": "Data Quality",
+      "description": "DHIS 2 app for data quality",
+      "developer": {
+        "organisation": "DHIS2" 
+      },
+      "images": [
+        {
+          "logo": true, 
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-data-quality.png?raw=true" 
+        }
+      ],
+      "versions": [
+        {
+          "version": "1.10.34",
+          "minDhisVersion": "",
+          "lastUpdated": "2024-12-08T10:00:00Z",
+          "releaseNotes": {
+          }
+        }
+      ]
+    },
+    {
+      "id": "https://github.com/dhis2/datastore-app",
+      "name": "Datastore",
+      "description": "DHIS2 app for managing data store entries",
+      "developer": {
+        "organisation": "DHIS2"
+      },
+      "images": [
+        {
+          "logo": true,
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-datastore.png?raw=true"
+        }
+      ],
+      "versions": [
+        {
+          "version": "1.3.5",
+          "minDhisVersion": "",
+          "lastUpdated": "2024-09-24T10:00:00Z",
+          "releaseNotes": {}
+        }
+      ]
+    },
+    {
+      "id": "https://github.com/dhis2/interpretation-app",
+      "name": "Interpretations",
+      "description": "DHIS2 app for data interpretations and discussions",
+      "developer": {
+        "organisation": "DHIS2"
+      },
+      "images": [
+        {
+          "logo": true,
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-interpretation.png?raw=true"
+        }
+      ],
+      "versions": [
+        {
+          "version": "1.0.1",
+          "minDhisVersion": "",
+          "lastUpdated": "2023-03-01T10:00:00Z",
+          "releaseNotes": {}
+        }
+      ]
+    },
+    {
+      "id": "https://github.com/dhis2/maintenance-app",
+      "name": "Maintenance",
+      "description": "DHIS2 app for metadata maintenance",
+      "developer": {
+        "organisation": "DHIS2"
+      },
+      "images": [
+        {
+          "logo": true,
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-maintenance.png?raw=true"
+        }
+      ],
+      "versions": [
+        {
+          "version": "32.33.5",
+          "minDhisVersion": "",
+          "lastUpdated": "2024-12-22T02:53:00Z",
+          "releaseNotes": {}
+        }
+      ]
+    },
+    {
+      "id": "https://github.com/dhis2/tracker-capture-app",
+      "name": "Tracker Capture",
+      "description": "DHIS2 app for tracking individual records",
+      "developer": {
+        "organisation": "DHIS2"
+      },
+      "images": [
+        {
+          "logo": true,
+          "imageUrl": "https://github.com/dhis2/dhis2-core/blob/patch/2.40.6/dhis-2/dhis-web/dhis-web-commons-resources/src/main/webapp/icons/dhis-web-tracker-capture.png?raw=true"
+        }
+      ],
+      "versions": [
+        {
+          "version": "31.13.47",
+          "minDhisVersion": "(deprecated)",
+          "lastUpdated": "2024-09-08T10:00:00Z",
+          "releaseNotes": {}
+        }
+      ]
+    }
+]
+
