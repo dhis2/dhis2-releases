@@ -89,7 +89,15 @@ function createAppCard(app) {
 
     const description = document.createElement('p');
     description.className = 'card-description';
-    description.textContent = app.description.split('\n')[0];
+    const firstLine = app.description.split('\n')[0];
+    
+    // Check if marked is available
+    if (typeof marked !== 'undefined') {
+        description.innerHTML = marked.parse(firstLine);
+    } else {
+        // Fallback to plain text if marked is not loaded
+        description.textContent = firstLine;
+    }
     cardBody.appendChild(description);
 
     cardFront.appendChild(cardBody);
