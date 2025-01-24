@@ -377,7 +377,7 @@ BEGIN
 
     SELECT COUNT(trackedentityid)
     INTO invalid_count
-    FROM trackedentity
+    FROM trackedentity te
     WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
            SELECT 1
             FROM enrollment e JOIN program p on e.programid = p.programid
