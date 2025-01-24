@@ -533,7 +533,7 @@ BEGIN
 
     SELECT COUNT(trackedentityinstanceid)
     INTO invalid_count
-    FROM trackedentityinstance
+    FROM trackedentityinstance te
     WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
            SELECT 1
             FROM programinstance e JOIN program p on e.programid = p.programid
