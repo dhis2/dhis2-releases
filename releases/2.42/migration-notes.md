@@ -22,7 +22,7 @@ To help you navigate the document, here's a detailed table of contents.
 In the system, every event and enrollment must belong to an organisation unit.  
 While this constraint is enforced in the code, it is not enforced at the database level.
 
-To align the database with the system's constraints, the `organisationunitid` column 
+To align the database with the system's constraints, the `organisationunitid` column
 in the `event` and `enrollment` tables must be made `NOT NULL`.
 
 #### Checking for Null Values
@@ -63,7 +63,7 @@ WHERE organisationunitid IS NULL;
 
 #### Fixing Null Values
 
-In version v42 `NULL` values on these columns are not allowed anymore, 
+In version v42 `NULL` values on these columns are not allowed anymore,
 and in order to upgrade all the inconsistencies must be resolved.
 So there are 2 options to fix the data:
 - Change the `NULL` value to a valid and meaningful organisation unit. ([Assign organisation unit to event](#assign-organisation-unit-to-event) and [Assign organisation unit to enrollment](#assign-organisation-unit-to-enrollment))
@@ -76,16 +76,27 @@ column `organisationunitid` is a sensitive operation as the organisation unit
 defines which users can access such event (through the search and capture scope).
 The first step is to find a "reference" event that should be in the same scope
 as the one to be updated.
-The following script assign the organisation unit of the "reference" event 
+The following script assign the organisation unit of the "reference" event
 to the event with `NULL` organisation unit.
 Substitute {REFERENCE_UID} with the `uid` of the reference event and
 {EVENT_UID} with the `uid` of the event to be updated.
+
+###### For 2.41 Instances:
 
 ```sql
 update event ev
 set organisationunitid = (select organisationunitid from event where uid = '{REFERENCE_UID}')
 where ev.organisationunitid is null
 and ev.uid = '{EVENT_UID}';
+```
+
+###### For <= 2.40 Instances:
+
+```sql
+update programstageinstance psi
+set organisationunitid = (select organisationunitid from programstageinstance where uid = '{REFERENCE_UID}')
+where psi.organisationunitid is null
+and psi.uid = '{PSI_UID}';
 ```
 
 ##### Assign organisation unit to enrollment
@@ -100,17 +111,31 @@ to the enrollment with `NULL` organisation unit.
 Substitute {REFERENCE_UID} with the `uid` of the reference enrollment and
 {ENROLLMENT_UID} with the `uid` of the enrollment to be updated.
 
+###### For 2.41 Instances:
+
 ```sql
 update enrollment en
 set organisationunitid = (select organisationunitid from enrollment where uid = '{REFERENCE_UID}')
 where en.organisationunitid is null
 and en.uid = '{ENROLLMENT_UID}'
-AND en.programid in (select programid from program where type = 'WITH_REGISTRATION');
+and en.programid in (select programid from program where type = 'WITH_REGISTRATION');
+```
+
+###### For <= 2.40 Instances:
+
+```sql
+update programinstance pi
+set organisationunitid = (select organisationunitid from programinstance where uid = '{REFERENCE_UID}')
+where pi.organisationunitid is null
+and pi.uid = '{PI_UID}'
+and pi.programid in (select programid from program where type = 'WITH_REGISTRATION');
 ```
 
 ##### Deleting inconsistent events
 
 The following script can be used to remove all the events that have a 'NULL' value in `organisationunitid` column.
+
+###### For 2.41 Instances:
 
 ```plsql
 DO $$
@@ -183,11 +208,86 @@ END;
 $$;
 ```
 
+###### For <= 2.40 Instances:
+
+```plsql
+DO $$
+DECLARE
+  programstageinstance_ids_temp RECORD;
+  pm_ids_temp RECORD;
+BEGIN
+  -- Create temporary table for programstageinstance_ids
+  CREATE TEMP TABLE temp_programstageinstance_ids AS
+  SELECT programstageinstanceid
+  FROM programstageinstance
+  WHERE organisationunitid IS NULL;
+
+  -- Create temporary table for pm_ids
+  CREATE TEMP TABLE temp_pm_ids AS
+  SELECT id
+  FROM programmessage
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from programmessage_deliverychannels
+  DELETE FROM programmessage_deliverychannels
+  WHERE programmessagedeliverychannelsid IN (SELECT id FROM temp_pm_ids);
+
+  -- Delete from programmessage_emailaddresses
+  DELETE FROM programmessage_emailaddresses
+  WHERE programmessageemailaddressid IN (SELECT id FROM temp_pm_ids);
+
+  -- Delete from programmessage_phonenumbers
+  DELETE FROM programmessage_phonenumbers
+  WHERE programmessagephonenumberid IN (SELECT id FROM temp_pm_ids);
+
+  -- Delete from programnotificationinstance
+  DELETE FROM programnotificationinstance
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from programstageinstance_notes
+  DELETE FROM programstageinstancecomments
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from note
+  DELETE FROM trackedentitycomment
+  WHERE trackedentitycommentid NOT IN (
+      SELECT trackedentitycommentid
+      FROM programstageinstancecomments
+      UNION ALL
+      SELECT trackedentitycommentid
+      FROM programinstancecomments
+  );
+
+  -- Delete from relationshipitem
+  DELETE FROM relationshipitem
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from trackedentitydatavalueaudit
+  DELETE FROM trackedentitydatavalueaudit
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from programmessage
+  DELETE FROM programmessage
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from programstageinstance
+  DELETE FROM programstageinstance
+  WHERE organisationunitid IS NULL;
+
+  -- Clean up temporary tables
+  DROP TABLE temp_programstageinstance_ids;
+  DROP TABLE temp_pm_ids;
+END;
+$$;
+```
+
 ##### Deleting inconsistent enrollments
 
 The following script can be used to remove all the enrollments that have a 'NULL' value in `organisationunitid` column.
 Event programs create a dummy enrollment in order to work properly, those enrollment cannot be deleted
 and the migration script is updating the value in `organisationunitid` column.
+
+###### For 2.41 Instances:
 
 ```plsql
 DO $$
@@ -270,7 +370,95 @@ BEGIN
   DROP TABLE temp_enrollment_ids;
   DROP TABLE temp_event_ids;
   DROP TABLE temp_pm_ids;
- 
+
+END;
+$$;
+```
+
+###### For <= 2.40 Instances:
+
+```plsql
+DO $$
+BEGIN
+  -- Create temporary tables for storing IDs
+  CREATE TEMP TABLE temp_programinstance_ids AS
+  SELECT programinstanceid
+  FROM programinstance
+  WHERE organisationunitid IS NULL
+    AND programid IN (SELECT programid FROM program WHERE type = 'WITH_REGISTRATION');
+
+  CREATE TEMP TABLE temp_programstageinstance_ids AS
+  SELECT programstageinstanceid
+  FROM programstageinstance
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  CREATE TEMP TABLE temp_pm_ids AS
+  SELECT id
+  FROM programmessage
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  -- Delete from programmessage related tables
+  DELETE FROM programmessage_deliverychannels
+  WHERE programmessagedeliverychannelsid IN (SELECT id FROM temp_pm_ids);
+
+  DELETE FROM programmessage_emailaddresses
+  WHERE programmessageemailaddressid IN (SELECT id FROM temp_pm_ids);
+
+  DELETE FROM programmessage_phonenumbers
+  WHERE programmessagephonenumberid IN (SELECT id FROM temp_pm_ids);
+
+  -- Delete from notes related tables
+  DELETE FROM programstageinstancecomments
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  DELETE FROM programinstancecomments
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  DELETE FROM trackedentitycomment
+  WHERE trackedentitycommentid NOT IN (
+      SELECT trackedentitycommentid
+      FROM programstageinstancecomments
+      UNION ALL
+      SELECT trackedentitycommentid
+      FROM programinstancecomments
+  );
+
+  -- Delete from program notification instances
+  DELETE FROM programnotificationinstance
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  DELETE FROM programnotificationinstance
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  -- Delete from relationship items
+  DELETE FROM relationshipitem
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from tracked entity data value audit
+  DELETE FROM trackedentitydatavalueaudit
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  -- Delete from program messages
+  DELETE FROM programmessage
+  WHERE programstageinstanceid IN (SELECT programstageinstanceid FROM temp_programstageinstance_ids);
+
+  DELETE FROM relationshipitem
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  DELETE FROM programmessage
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  DELETE FROM programstageinstance
+  WHERE programinstanceid IN (SELECT programinstanceid FROM temp_programinstance_ids);
+
+  DELETE FROM programinstance
+  WHERE organisationunitid IS NULL
+    AND programid IN (SELECT programid FROM program WHERE type = 'WITH_REGISTRATION');
+
+  DROP TABLE temp_programinstance_ids;
+  DROP TABLE temp_programstageinstance_ids;
+  DROP TABLE temp_pm_ids;
+
 END;
 $$;
 ```
@@ -314,7 +502,7 @@ Starting from version v42, NULL values are no longer allowed in the trackedentit
 - Completely remove invalid trackedentity record. ([Delete trackedentities](#deleting-invalid-tracked-entities))
 
 ##### Assign tracked entity type
-To assign valid trackedentitytypeid 
+To assign valid trackedentitytypeid
 - Use the following command to list all the trackedentitytypes currently available in the system. This query retrieves the uid and name of all trackedentitytypes in your database. Review the output to identify the most appropriate trackedentitytype.
 
 ```sql
@@ -452,7 +640,7 @@ BEGIN
 
         DELETE FROM trackedentityattributevalueaudit
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-      
+
         DELETE FROM trackedentityprogramowner
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
 
@@ -467,12 +655,12 @@ BEGIN
 
         DELETE FROM enrollment
         WHERE trackedentityid IN (SELECT trackedentityid FROM te);
-		
+
         WITH deleted AS (DELETE FROM trackedentity WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
            SELECT 1
             FROM enrollment e JOIN program p on e.programid = p.programid
             WHERE e.trackedentityid = te.trackedentityid and p.trackedentitytypeid IS NOT NULL
-        ) 
+        )
         RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
 
         RAISE NOTICE 'Total number of TrackedEntities deleted: %', deleted_count;
@@ -608,7 +796,7 @@ BEGIN
 
         DELETE FROM trackedentityattributevalueaudit
         WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
-      
+
         DELETE FROM trackedentityprogramowner
         WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
 
@@ -623,12 +811,12 @@ BEGIN
 
         DELETE FROM programinstance
         WHERE trackedentityinstanceid IN (SELECT trackedentityinstanceid FROM te);
-		
+
         WITH deleted AS (DELETE FROM trackedentityinstanceid WHERE trackedentitytypeid IS NULL AND NOT EXISTS (
            SELECT 1
             FROM programinstance e JOIN program p on e.programid = p.programid
             WHERE e.trackedentityinstanceid = te.trackedentityinstanceid and p.trackedentitytypeid IS NOT NULL
-        ) 
+        )
         RETURNING *) SELECT COUNT(*) INTO deleted_count FROM deleted;
 
         RAISE NOTICE 'Total number of TrackedEntityInstances deleted: %', deleted_count;
