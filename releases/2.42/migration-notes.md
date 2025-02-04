@@ -826,4 +826,7 @@ BEGIN
     END IF;
 
     DROP TABLE IF EXISTS te, pi_ids, psi_ids, te_pm, pi_pm, psi_pm;
+
+END;
+$$;
 ```
