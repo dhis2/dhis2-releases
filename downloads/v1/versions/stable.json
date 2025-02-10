@@ -78,10 +78,10 @@
             "version": 40,
             "releaseDate": "2023-05-10",
             "supported": true,
-            "latestPatchVersion": 6,
+            "latestPatchVersion": 7,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.6.0.war",
-            "sha256": "ac0ff4187dee2d4996c459b73f32dbc2e8b7ae5787a939ea298c18388fc8aedc",
+            "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.7.0.war",
+            "sha256": "bc6dc7500ebd38a93fbd264f5986fbf731797400f35001c92e10ea1bef1ad018",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -230,9 +230,20 @@
                     "sha256": "ac0ff4187dee2d4996c459b73f32dbc2e8b7ae5787a939ea298c18388fc8aedc",
                     "hotfix": false,
                     "fileSize": "302.77 MB"
+                },
+                {
+                    "name": "2.40.7",
+                    "displayName": "40.7.0",
+                    "version": 7,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2025-02-10",
+                    "url": "https://releases.dhis2.org/40/dhis2-stable-40.7.0.war",
+                    "sha256": "bc6dc7500ebd38a93fbd264f5986fbf731797400f35001c92e10ea1bef1ad018",
+                    "hotfix": false,
+                    "fileSize": "302.16 MB"
                 }
             ],
-            "fileSize": "302.77 MB"
+            "fileSize": "302.16 MB"
         },
         {
             "name": "2.39",
