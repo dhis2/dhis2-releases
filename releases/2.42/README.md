@@ -85,11 +85,12 @@ Administrators can decide how to handle these tables, but the remaining data lac
 
 The table below summarizes the deprecated API parameters:
 
-| Endpoint                   | Deprecated Parameter   | New Parameter        |
-|----------------------------|------------------------|----------------------|
-| `/tracker/trackedEntities` | `programStatus`        | `enrollmentStatus`   |
-| `/tracker/enrollments`     | `programStatus`        | `status`             |
-| `/tracker/events`          | `programStatus`        | `enrollmentStatus`   |
+| Endpoint                      | Deprecated Parameter   | New Parameter        |
+|-------------------------------|------------------------|----------------------|
+| `/tracker/trackedEntities`    | `programStatus`        | `enrollmentStatus`   |
+| `/tracker/enrollments`        | `programStatus`        | `status`             |
+| `/tracker/events`             | `programStatus`        | `enrollmentStatus`   |
+| `/tracker/ownership/transfer` | `ou`                   | `orgUnit`            |
 
 The table below summarizes the deprecated API endpoints:
 
