@@ -7,10 +7,10 @@
             "version": 41,
             "releaseDate": "2024-05-29",
             "supported": true,
-            "latestPatchVersion": 1,
+            "latestPatchVersion": 3,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.1.0.war",
-            "sha256": "7122a75b7ecacf3188f76d49b0386524b9ab1385cf7a42d3f9d593c4626a482c",
+            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.3.0.war",
+            "sha256": "360e954fecfc4df26661a6427bd4e826f132de47e4e2a0fc14825296fe385e05",
             "jdk": 17,
             "patchVersions": [
                 {
@@ -45,9 +45,31 @@
                     "sha256": "7122a75b7ecacf3188f76d49b0386524b9ab1385cf7a42d3f9d593c4626a482c",
                     "hotfix": false,
                     "fileSize": "293.2 MB"
+                },
+                {
+                    "name": "2.41.2",
+                    "displayName": "41.2.0",
+                    "version": 2,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2024-11-06",
+                    "url": "https://releases.dhis2.org/41/dhis2-stable-41.2.0.war",
+                    "sha256": "7daf6c59733ff9ea9df7a8b56e80f9e3b6d505b8150400ff87a3107460004d13",
+                    "hotfix": false,
+                    "fileSize": "295.4 MB"
+                },
+                {
+                    "name": "2.41.3",
+                    "displayName": "41.3.0",
+                    "version": 3,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2025-01-21",
+                    "url": "https://releases.dhis2.org/41/dhis2-stable-41.3.0.war",
+                    "sha256": "360e954fecfc4df26661a6427bd4e826f132de47e4e2a0fc14825296fe385e05",
+                    "hotfix": false,
+                    "fileSize": "297.67 MB"
                 }
             ],
-            "fileSize": "284.27 MB"
+            "fileSize": "297.67 MB"
         },
         {
             "name": "2.40",
@@ -56,10 +78,10 @@
             "version": 40,
             "releaseDate": "2023-05-10",
             "supported": true,
-            "latestPatchVersion": 5,
+            "latestPatchVersion": 7,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.5.0.war",
-            "sha256": "eefb7538453987a21d357e03dea02212b83e0d2ccdee1c11d35f519d07e9225e",
+            "latestStableUrl": "https://releases.dhis2.org/40/dhis2-stable-40.7.0.war",
+            "sha256": "bc6dc7500ebd38a93fbd264f5986fbf731797400f35001c92e10ea1bef1ad018",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -197,9 +219,31 @@
                     "sha256": "eefb7538453987a21d357e03dea02212b83e0d2ccdee1c11d35f519d07e9225e",
                     "hotfix": false,
                     "fileSize": "298.99 MB"
+                },
+                {
+                    "name": "2.40.6",
+                    "displayName": "40.6.0",
+                    "version": 6,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2024-11-25",
+                    "url": "https://releases.dhis2.org/40/dhis2-stable-40.6.0.war",
+                    "sha256": "ac0ff4187dee2d4996c459b73f32dbc2e8b7ae5787a939ea298c18388fc8aedc",
+                    "hotfix": false,
+                    "fileSize": "302.77 MB"
+                },
+                {
+                    "name": "2.40.7",
+                    "displayName": "40.7.0",
+                    "version": 7,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2025-02-10",
+                    "url": "https://releases.dhis2.org/40/dhis2-stable-40.7.0.war",
+                    "sha256": "bc6dc7500ebd38a93fbd264f5986fbf731797400f35001c92e10ea1bef1ad018",
+                    "hotfix": false,
+                    "fileSize": "302.16 MB"
                 }
             ],
-            "fileSize": "298.99 MB"
+            "fileSize": "302.16 MB"
         },
         {
             "name": "2.39",
@@ -207,10 +251,10 @@
             "version": 39,
             "releaseDate": "2022-10-27",
             "supported": true,
-            "latestPatchVersion": 7,
+            "latestPatchVersion": 8,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/39/dhis2-stable-39.7.0.war",
-            "sha256": "917cd7aacc1f56fc522777bb107718046096f0c94fd83022ef1a97db54768e02",
+            "latestStableUrl": "https://releases.dhis2.org/39/dhis2-stable-39.8.0.war",
+            "sha256": "19b88337f73f8d89dd3d8bf88ad034296a33a89fb51ee6085a8039a53b335bcc",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -372,9 +416,31 @@
                     "sha256": "917cd7aacc1f56fc522777bb107718046096f0c94fd83022ef1a97db54768e02",
                     "hotfix": false,
                     "fileSize": "297.87 MB"
+                },
+                {
+                    "name": "2.39.7.1",
+                    "displayName": "39.7.1",
+                    "version": 7,
+                    "hotfixVersion": 1,
+                    "releaseDate": "2024-12-05",
+                    "url": "https://releases.dhis2.org/39/dhis2-stable-39.7.1.war",
+                    "sha256": "dd5f48a1c90691f47e8b1295a86948a75832fe1080fef497f071c1149c5f74f2",
+                    "hotfix": true,
+                    "fileSize": "297.87 MB"
+                },
+                {
+                    "name": "2.39.8",
+                    "displayName": "39.8.0",
+                    "version": 8,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2024-12-18",
+                    "url": "https://releases.dhis2.org/39/dhis2-stable-39.8.0.war",
+                    "sha256": "19b88337f73f8d89dd3d8bf88ad034296a33a89fb51ee6085a8039a53b335bcc",
+                    "hotfix": false,
+                    "fileSize": "298.58 MB"
                 }
             ],
-            "fileSize": "297.87 MB"
+            "fileSize": "298.58 MB"
         },
         {
             "name": "2.38",

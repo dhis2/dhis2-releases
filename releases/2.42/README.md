@@ -11,21 +11,35 @@ To help you navigate the document, here's a detailed table of contents.
 ## Table of Contents
 
   - [API Changes](#api-changes)
+    - [Platform](#platform)
     - [Tracker](#tracker)
     - [Analytics](#analytics)
       - [Breaking Changes](#breaking-changes)
   - [Database](#database)
     - [Analytics](#analytics-1)
       - [Breaking Changes: renamed tables and columns](#breaking-changes-renamed-tables-and-columns)
+    - [Tracker](#tracker-1)
+        - [Data inconsistencies](#data-inconsistencies)
 ---
 ## API Changes
+
+### Platform
+
+#### DataElement
+
+Updating the `valueType` of a `DataElement` is prohibited if there is any existing data associated with that `DataElement`. See [Jira issue](https://dhis2.atlassian.net/browse/DHIS2-18152).
 
 ### Analytics
 
 #### Breaking Changes
 
 * In the endpoint `/analytics/trackedEntities/query`, the `header` column `trackedentityinstanceuid` (part of the response object) was replaced by `trackedentity`.
-* To enable the export and analysis of analytics data for organizational units, users need to have "Data Output and Analysis" permissions granted.
+* For analytics operations the authenticated user must have permission to export and analyze data for the designated organization units.
+  In previous versions, this permission requirement was disregarded. If no organization unit permissions are explicitly granted,
+  data capture and maintenance rights will be applied instead.
+
+* In the endpoint `/analytics/*/query`, the some filter capabilities were removed. ie.:
+| edqlbukwRfQ[*].vANAXwtLwcT, dqlbukwRfQ[-1~3].vANAXwtLwcT, edqlbukwRfQ[0~5~LAST_3_MONTHS].vANAXwtLwcT, edqlbukwRfQ[-1~3~2021-01-01~2022-05-31].vANAXwtLwcT
 
 ### Tracker
 
@@ -42,10 +56,30 @@ The most notable endpoints that have been removed are
 * `/relationships`
 
 Please follow [this migration
-guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker-deprecated.html#webapi_tracker_migration).
+guide](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/tracker-deprecated.html#webapi_tracker_migration).
 
 Tracker and event program data can no longer be synchronized via the [metadata
 synchronization](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/exchanging-data/metadata-synchronization.html#about-data-and-metadata-synchronization).
+
+The two change log endpoints have also been removed:
+| Removed Endpoint                      | Endpoint to use instead                     | Documentation                       |
+|---------------------------------------|---------------------------------------------|---------------------------------------------|
+| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          |[Event change logs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_event_data_value_change_logs)|
+| `/audits/trackedEntityAttributeValue` | `/tracker/trackedEntities/{uid}/changeLogs` |[Tracked entity attribute change logs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_attribute_change_logs)|
+
+Data from the `trackedentityattributevalueaudit` and `trackedentitydatavalueaudit` tables, which were used by now-removed endpoints, has been migrated to the new `trackedentitychangelog` and `eventchangelog` tables. 
+These new tables better align with updated requirements and will be used by the new change log endpoints.
+
+As part of the migration, only valid change log data was transferred. 
+Records were migrated if they met the following criteria:
+- For event change logs, the record contains a valid `eventid` and `dataelementid`.
+- For attribute change logs, the record contains a valid `trackedentityid` and `attributeid`.
+- For both, the change log type is one of `CREATE`, `UPDATE`, or `DELETE`.
+
+Records that did not meet these conditions were not migrated and remain in the original tables. 
+The `trackedentityattributevalueaudit` and `trackedentitydatavalueaudit` tables will not be deleted, but they are no longer maintained or used by the system. 
+Administrators can decide how to handle these tables, but the remaining data lacks the essential information needed for use as change logs in the new framework.
+
 
 #### Deprecated APIs
 
@@ -112,3 +146,21 @@ In release 41 we had some changes regarding the naming convention. Some terms we
 | analytics_event_*                     | tegeometry                    | teigeometry        |
 | analytics_enrollment_*                | pi                            | enrollment         |
 | analytics_enrollment_*                | pigeometry                    | engeometry         |
+
+### Tracker
+
+#### Data inconsistencies
+
+Some database migrations aim to make the schema as strict as possible and fully aligned with the data model.
+To ensure these migrations succeed, any inconsistencies in the database must be resolved beforehand.
+If a migration fails during the upgrade process, carefully review the logs
+and follow the provided instructions to address and fix the inconsistencies.
+
+`not null` constraints added
+
+| Table name                  |        Column name        |
+|-----------------------------|:-------------------------:|
+| event                       | organisationunitid        |
+| enrollment                  | organisationunitid        |
+
+For more information [migration notes](https://github.com/dhis2/dhis2-releases/blob/master/releases/2.42/migration-notes.md).

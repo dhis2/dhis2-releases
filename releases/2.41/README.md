@@ -1,12 +1,10 @@
 # DHIS2 Version 41 Upgrade Notes
 
-
 Welcome to the upgrade notes for DHIS2 version 41.
 
 > **It is important to be familiar with the contents of these notes *before* attempting an upgrade.**
 >
-> :warning: **Please ensure you have also read the upgrade notes from the [PREVIOUS RELEASE](../2.40/README.md), if upgrading from an earlier version**
-
+> :warning: **Ensure you have also read the upgrade notes from the [PREVIOUS RELEASE](../2.40/README.md) if upgrading from an earlier version**
 
 To help you navigate the document, here's a detailed table of contents.
 
@@ -38,7 +36,6 @@ To help you navigate the document, here's a detailed table of contents.
       - [Renamed Columns](#renamed-columns)
       - [Postgres Reference](#postgres-reference)
   - [Deprecations and Removals](#deprecations-and-removals)
-
 
 <!--
 1. [Functional Changes](#functional-changes)
@@ -110,22 +107,21 @@ END;
 $$ LANGUAGE plpgsql STRICT;
 
 select uid,
-       valuetype,
-       description,
-       'update trackedentityattribute set valuetype=''TEXT'' where uid = ''' || uid || ''';' as suggested_fix_statement
+    valuetype,
+    description,
+    'update trackedentityattribute set valuetype=''TEXT'' where uid = ''' || uid || ''';' as suggested_fix_statement
 from (select tea.uid,
-                   tea.valuetype,
-                   tea.description,
-                   teav.value,
-                   case
-                       when tea.valuetype in ('NUMBER', 'UNIT_INTERVAL', 'PERCENTAGE') then can_be_casted(teav.value, 'double precision')
-                       when tea.valuetype like '%INTEGER%' then can_be_casted(teav.value, 'integer')
-                       when tea.valuetype in ('DATE', 'DATETIME', 'AGE') then can_be_casted(teav.value, 'timestamp')
-                       end as safe_to_cast
-            from trackedentityattribute tea
-                     join trackedentityattributevalue teav
-                          on tea.trackedentityattributeid = teav.trackedentityattributeid) as t1
-      where safe_to_cast = false
+    tea.valuetype,
+    tea.description,
+    teav.value,
+    case
+        when tea.valuetype in ('NUMBER', 'UNIT_INTERVAL', 'PERCENTAGE') then can_be_casted(teav.value, 'double precision')
+        when tea.valuetype like '%INTEGER%' then can_be_casted(teav.value, 'integer')
+        when tea.valuetype in ('DATE', 'DATETIME', 'AGE') then can_be_casted(teav.value, 'timestamp')
+    end as safe_to_cast
+    from trackedentityattribute tea
+    join trackedentityattributevalue teav on tea.trackedentityattributeid = teav.trackedentityattributeid) as t1
+where safe_to_cast = false
 group by uid, valuetype, description;
 
 DROP function if exists can_be_casted(s text, type text);
@@ -235,21 +231,20 @@ have been deprecated in favor of a `pager` object. Both the flat pagination fiel
 the nested `pager` are returned as of 2.41 if pagination is enabled. The flat fields will be removed
 in a future release.
 
-> **Example**
->  ```json
->  {
->  "pager": {
->  "page": 3,    
->  "pageSize": 2,
->      "total": 373570,
->      "pageCount": 186785,
->    },
->    "page": 3,
->    "pageSize": 2,
->    "total": 373570,
->    "pageCount": 186785,
->  }
->  ```
+```json
+{
+  "pager": {
+    "page": 3,    
+    "pageSize": 2,
+    "total": 373570,
+    "pageCount": 186785,
+  },
+  "page": 3,
+  "pageSize": 2,
+  "total": 373570,
+  "pageCount": 186785,
+}
+```
 
 The actual data previously returned in `instances` is returned in a key named after the plural of
 the returned entity itself. For example `/tracker/trackedEntities` returns tracked entities in key
@@ -293,33 +288,33 @@ Tracker names have changed over time. In order to provide a consistent API we ha
 
 The table below summarizes the API changes in terminology from old tracker names to new ones:
 
-| Endpoint                          | Deprecated Parameter/Path    | New Parameter/Path   |
-|-----------------------------------|------------------------------|----------------------|
-| `/tracker/relationships`          | `tei`                        | `trackedEntity`      |
-| `/tracker/events`                 | `attributeCc`                | `attributeCategoryCombo` |
-| `/tracker/ownership/transfer`     | `trackedEntityInstance`      | `trackedEntity`      |
-| `/tracker/ownership/override`     | `trackedEntityInstance`      | `trackedEntity`      |
-| `/messages/`                      | `programInstance`            | `enrollment`         |
-| `/messages/`                      | `programStageInstance`       | `event`              |
-| `/messages/scheduled/sent`        | `programInstance`            | `enrollment`         |
-| `/messages/scheduled/sent`        | `programStageInstance`       | `event`              |
-| `/audits/trackedEntityDataValue`  | `psi`                        | `events`             |
-| `/audits/trackedEntityAttributeValue` | `tei`                   | `trackedEntities`    |
-| `/audits/trackedEntityInstance`   | `tei`                        | `trackedEntities`    |
-| `/programNotificationInstances`   | `programInstance`            | `enrollment`         |
-| `/programNotificationInstances`   | `programStageInstance`       | `event`              |
-| `/tracker/trackedEntities`        | `ouMode`                     | `orgUnitMode`        |
-| `/tracker/enrollments`            | `ouMode`                     | `orgUnitMode`        |
-| `/tracker/events`                 | `ouMode`                     | `orgUnitMode`        |
+| Endpoint                              | Deprecated Parameter/Path    | New Parameter/Path       |
+|---------------------------------------|------------------------------|--------------------------|
+| `/tracker/relationships`              | `tei`                        | `trackedEntity`          |
+| `/tracker/events`                     | `attributeCc`                | `attributeCategoryCombo` |
+| `/tracker/ownership/transfer`         | `trackedEntityInstance`      | `trackedEntity`          |
+| `/tracker/ownership/override`         | `trackedEntityInstance`      | `trackedEntity`          |
+| `/messages/`                          | `programInstance`            | `enrollment`             |
+| `/messages/`                          | `programStageInstance`       | `event`                  |
+| `/messages/scheduled/sent`            | `programInstance`            | `enrollment`             |
+| `/messages/scheduled/sent`            | `programStageInstance`       | `event`                  |
+| `/audits/trackedEntityDataValue`      | `psi`                        | `events`                 |
+| `/audits/trackedEntityAttributeValue` | `tei`                        | `trackedEntities`        |
+| `/audits/trackedEntityInstance`       | `tei`                        | `trackedEntities`        |
+| `/programNotificationInstances`       | `programInstance`            | `enrollment`             |
+| `/programNotificationInstances`       | `programStageInstance`       | `event`                  |
+| `/tracker/trackedEntities`            | `ouMode`                     | `orgUnitMode`            |
+| `/tracker/enrollments`                | `ouMode`                     | `orgUnitMode`            |
+| `/tracker/events`                     | `ouMode`                     | `orgUnitMode`            |
 
 ###### Deprecated Endpoints
 
-| Deprecated Endpoint                                     | New Endpoint                                              |
-|---------------------------------------------------------|-----------------------------------------------------------|
-| `/maintenance/softDeletedTrackedEntityInstanceRemoval`  | `/maintenance/softDeletedTrackedEntityRemoval`            |
-| `/maintenance/softDeletedProgramInstanceRemoval`        | `/maintenance/softDeletedEnrollmentRemoval`               |
-| `/maintenance/softDeletedProgramStageInstanceRemoval`   | `/maintenance/softDeletedEventRemoval`                    |
-| `/audits/trackedEntityInstance`                         | `/audits/trackedEntity`                                   |
+| Deprecated Endpoint                                     | New Endpoint                                   |
+|---------------------------------------------------------|------------------------------------------------|
+| `/maintenance/softDeletedTrackedEntityInstanceRemoval`  | `/maintenance/softDeletedTrackedEntityRemoval` |
+| `/maintenance/softDeletedProgramInstanceRemoval`        | `/maintenance/softDeletedEnrollmentRemoval`    |
+| `/maintenance/softDeletedProgramStageInstanceRemoval`   | `/maintenance/softDeletedEventRemoval`         |
+| `/audits/trackedEntityInstance`                         | `/audits/trackedEntity`                        |
 
 ###### Deprecated Keys in API Response Bodies
 
@@ -350,7 +345,7 @@ We have removed prefix `dataelement` from `category` and `categoryoption` tables
 
 | Old Table Name                | New Table Name               |
 | ------------------------------|:----------------------------:|
-| dataelementcategoryopion      | categoryoption               |
+| dataelementcategoryoption     | categoryoption               |
 | dataelementcategory           | category                     |
 
 ### Tracker
@@ -459,10 +454,13 @@ Therefore, no downtime is expected following the migrations.
 You can check that the index creation hasn't changed after the migration via the transaction commit.
 
 ```sql
-SELECT pg_xact_commit_timestamp(xmin)
-FROM pg_class
-WHERE relname = 'programstageinstance_pkey';
+select pg_xact_commit_timestamp(xmin)
+from pg_class
+where relname = 'programstageinstance_pkey';
 ```
-Notice if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
+Note that if you want to run the query, Postgres needs to start with `-c track_commit_timestamp=on`
 
 ## Deprecations and Removals
+
+### Google & Bing API keys removed
+The Google & Bing Map API keys were removed from the code. To setup and use a Bing Maps API key check [this guide](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html#accessing-bing-maps-basemaps).

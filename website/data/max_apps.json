@@ -2,10 +2,14 @@
     {
       "id": "",
       "name": "App Management",
+    "functionalCategory": "Extend",
+    "core": "Yes"
+  },
+  {
+    "id": "",
+    "name": "APK Distribution",
       "functionalCategory": "Configure",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "core": "No"
     },
     {
       "id": "",
@@ -19,9 +23,21 @@
       "id": "",
       "name": "Capture",
       "functionalCategory": "Collect",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "core": "Yes"
+  },
+  {
+    "id": "",
+    "name": "CHAP",
+    "functionalCategory": "Analyze",
+    "core": "No"
+  },
+  {
+    "id": "",
+    "name": "DHIS2 Climate App",
+    "functionalCategory": "Collect, Analyze, Extend",
+    "core": "No",
+    "Status": "",
+    "Notes": "AKA Climate Data app"
     },
     {
       "id": "",
@@ -42,10 +58,8 @@
     {
       "id": "",
       "name": "Data Approval",
-      "functionalCategory": "Collect",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "functionalCategory": "Collect, Configure",
+    "core": "Yes"
     },
     {
       "id": "",
@@ -82,7 +96,7 @@
     {
       "id": "",
       "name": "Datastore",
-      "functionalCategory": "Utilities",
+    "functionalCategory": "Extend",
       "core": "Yes",
       "status": "",
       "notes": "Not in app hub"
@@ -100,20 +114,26 @@
       "name": "Event Charts",
       "functionalCategory": "",
       "core": "Yes",
-      "status": "Omit - deprecated",
-      "notes": "I can't find information on this app"
+    "Status": "Omit - deprecated",
+    "Notes": "I can't find information on this app"
+  },
+  {
+    "id": "",
+    "name": "FHIR IG Generator",
+    "functionalCategory": "Extend",
+    "core": "No",
+    "Status": "",
+    "Notes": "Confirm name, will be added to app hub"
     },
     {
       "id": "",
       "name": "Import/Export",
-      "functionalCategory": "Collect, Extend",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "functionalCategory": "Collect, Configure, Extend",
+    "core": "Yes"
     },
     {
       "id": "",
-      "name": "Interpretation",
+      "name": "Interpretations",
       "functionalCategory": "Analyze",
       "core": "Yes",
       "status": "",
@@ -139,9 +159,15 @@
       "id": "",
       "name": "Maintenance",
       "functionalCategory": "Configure",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "core": "Yes"
+  },
+  {
+    "id": "",
+    "name": "Maintenance (Preview)",
+    "functionalCategory": "Configure",
+    "core": "No",
+    "Status": "",
+    "Notes": "New version of maintenance app"
     },
     {
       "id": "",
@@ -164,16 +190,26 @@
       "name": "Messaging",
       "functionalCategory": "Utilities",
       "core": "Yes",
-      "status": "",
-      "notes": "Not in app hub or documentation"
+    "Status": "",
+    "Notes": "Not in app hub or documentation"
+  },
+  {
+    "id": "",
+    "name": "Prediction",
+    "functionalCategory": "Analyze",
+    "core": "No"
     },
     {
       "id": "",
       "name": "Reports",
       "functionalCategory": "Analyze",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "core": "Yes"
+  },
+  {
+    "id": "",
+    "name": "Route Manager",
+    "functionalCategory": "Extend",
+    "core": "No"
     },
     {
       "id": "",
@@ -201,6 +237,14 @@
     },
     {
       "id": "",
+      "name": "Tracker Capture",
+      "functionalCategory": "Collect",
+      "core": "Yes",
+      "status": "",
+      "notes": ""
+    },
+    {
+      "id": "",
       "name": "Translations",
       "functionalCategory": "Configure",
       "core": "Yes",
@@ -211,9 +255,13 @@
       "id": "",
       "name": "Usage Analytics",
       "functionalCategory": "Utilities",
-      "core": "Yes",
-      "status": "",
-      "notes": ""
+    "core": "Yes"
+  },
+  {
+    "id": "",
+    "name": "Use Case Configuration",
+    "functionalCategory": "Configure",
+    "core": "No"
     },
     {
       "id": "",

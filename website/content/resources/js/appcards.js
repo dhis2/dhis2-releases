@@ -89,7 +89,15 @@ function createAppCard(app) {
 
     const description = document.createElement('p');
     description.className = 'card-description';
-    description.textContent = app.description.split('\n')[0];
+    const firstLine = app.description.split('\n')[0];
+    
+    // Check if marked is available
+    if (typeof marked !== 'undefined') {
+        description.innerHTML = marked.parse(firstLine);
+    } else {
+        // Fallback to plain text if marked is not loaded
+        description.textContent = firstLine;
+    }
     cardBody.appendChild(description);
 
     cardFront.appendChild(cardBody);
@@ -100,8 +108,13 @@ function createAppCard(app) {
 
     const latestVersionFooter = app.versions[0];
 
-    const minVersionChipFooter = createChip(`DHIS2 ${latestVersionFooter.minDhisVersion}+`);
-    cardFooter.appendChild(minVersionChipFooter);
+    if (latestVersionFooter.minDhisVersion) {
+        const versionText = latestVersionFooter.minDhisVersion.includes('(') 
+            ? latestVersionFooter.minDhisVersion
+            : `DHIS2 ${latestVersionFooter.minDhisVersion}+`;
+        const minVersionChipFooter = createChip(versionText);
+        cardFooter.appendChild(minVersionChipFooter);
+    }
 
     const lastUpdatedFooter = document.createElement('span');
     lastUpdatedFooter.className = 'last-updated';
@@ -109,9 +122,14 @@ function createAppCard(app) {
     cardFooter.appendChild(lastUpdatedFooter);
 
     const downloadLink = document.createElement('a');
-    downloadLink.href = `https://apps.dhis2.org/app/${app.id}`;
+    if (app.id.includes('github')) {
+        downloadLink.href = app.id;
+        downloadLink.textContent = 'GitHub';
+    } else {
+        downloadLink.href = `https://apps.dhis2.org/app/${app.id}`;
+        downloadLink.textContent = 'AppHub';
+    }
     downloadLink.className = 'download-link';
-    downloadLink.textContent = 'AppHub';
     cardFooter.appendChild(downloadLink);
 
     cardFront.appendChild(cardFooter);
@@ -192,13 +210,22 @@ function createChip(text) {
 }
 
 function fetchApps() {
+    // First fetch apphub.json
     fetch('../data/apphub.json')
         .then(response => response.json())
-        .then(data => {
-            apps.push(...data);
-            fetchMaxApps();
-        }
-    );
+        .then(apphubData => {
+            // Then fetch non_cd_apps.json
+            return fetch('../data/non_cd_apps.json')
+                .then(response => response.json())
+                .then(nonCdData => {
+                    // Combine both datasets
+                    apps.push(...apphubData, ...nonCdData);
+                    fetchMaxApps();
+                });
+        })
+        .catch(error => {
+            console.error('Error fetching app data:', error);
+        });
 }
 
 function fetchMaxApps() {
@@ -217,6 +244,9 @@ function renderAppCards() {
 
     // Clear existing categories
     categories.length = 0;
+
+    // sort apps by name
+    apps.sort((a, b) => a.name.localeCompare(b.name));
 
     // First pass: populate categories
     apps.forEach(app => {
