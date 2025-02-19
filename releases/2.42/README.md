@@ -31,7 +31,10 @@ To help you navigate the document, here's a detailed table of contents.
 
 #### Breaking Changes
 
-The following endpoints have been removed
+All parameters, properties and endpoints that have been deprecated in
+[v41](https://github.com/dhis2/dhis2-releases/tree/master/releases/2.41#tracker) have been removed.
+
+The most notable endpoints that have been removed are
 
 * `/trackedEntityInstances`
 * `/enrollments`
@@ -58,7 +61,7 @@ The table below summarizes the deprecated API endpoints:
 
 | Deprecated Endpoint                   | Endpoint to use instead                     |
 |---------------------------------------|---------------------------------------------|
-| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          | 
+| `/audits/trackedEntityDataValue`      | `/tracker/events/{uid}/changeLogs`          |
 | `/audits/trackedEntityAttributeValue` | `/tracker/trackedEntities/{uid}/changeLogs` |
 
 ## Database
