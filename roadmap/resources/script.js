@@ -45,10 +45,12 @@ function groupIssuesByApp(issues) {
         const apps = Array.isArray(issue.app) ? issue.app : [issue.app || 'Unspecified'];
         
         apps.forEach(app => {
-            if (!groups[app]) {
-                groups[app] = [];
+            // Rename "Web Capture" to "Capture"
+            const appName = app === 'Web Capture' ? 'Capture' : app;
+            if (!groups[appName]) {
+                groups[appName] = [];
             }
-            groups[app].push(issue);
+            groups[appName].push(issue);
         });
     });
     
