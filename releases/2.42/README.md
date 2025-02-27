@@ -10,6 +10,7 @@ To help you navigate the document, here's a detailed table of contents.
 
 ## Table of Contents
 
+  - [Prerequisits](#prerequisits)
   - [API Changes](#api-changes)
     - [Platform](#platform)
     - [Tracker](#tracker)
@@ -21,6 +22,12 @@ To help you navigate the document, here's a detailed table of contents.
     - [Tracker](#tracker-1)
         - [Data inconsistencies](#data-inconsistencies)
 ---
+## Prerequisits
+
+> **Important**
+>
+> Version 42 of DHIS2 **now requires Tomcat 10.1** or above.
+
 ## API Changes
 
 ### Platform
