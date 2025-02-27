@@ -10,7 +10,7 @@ To help you navigate the document, here's a detailed table of contents.
 
 ## Table of Contents
 
-  - [Prerequisites](#prerequisites)
+  - [Prerequisits](#prerequisits)
   - [API Changes](#api-changes)
     - [Sharing](#sharing)
     - [Analytics](#analytics)
@@ -46,7 +46,7 @@ To help you navigate the document, here's a detailed table of contents.
 -->
 
 ---
-## Prerequisites
+## Prerequisits
 
 > **Important**
 >
