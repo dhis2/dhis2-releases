@@ -83,7 +83,7 @@ function getBaseProductArea(productArea) {
 
 function getProductAreaSuffix(productArea) {
     const match = productArea.match(/\((.*?)\)/);
-    return match ? ` (${match[1]})` : '';
+    return match ? match[1] : '';
 }
 
 function groupIssuesByProductArea(issues) {
@@ -242,10 +242,21 @@ function displayProductAreaView(issues, selectedArea) {
     areaIssues
         .sort((a, b) => a.key.localeCompare(b.key))
         .forEach(issue => {
-            const productArea = Array.isArray(issue.productAreas) ? 
-                issue.productAreas.find(area => getBaseProductArea(area) === selectedArea) :
-                issue.productAreas;
-            const issueCopy = {...issue, productAreaSuffix: getProductAreaSuffix(productArea)};
+            const productAreas = Array.isArray(issue.productAreas) ? 
+                issue.productAreas.filter(area => getBaseProductArea(area) === selectedArea) :
+                [issue.productAreas];
+            
+            const suffixes = productAreas
+                .map(area => getProductAreaSuffix(area))
+                .filter(suffix => suffix);
+            
+            const formattedSuffix = suffixes.length > 0 
+                ? (suffixes.length === 1 
+                    ? ` [${suffixes[0]}]` 
+                    : ` [${suffixes.join(', ')}]`)
+                : '';
+            
+            const issueCopy = {...issue, productAreaSuffix: formattedSuffix};
             issuesList.appendChild(createIssueLink(issueCopy));
         });
     

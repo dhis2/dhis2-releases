@@ -5,11 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHIS2 Roadmap</title>
     <link rel="stylesheet" href="resources/styles.css">
+    <style>
+        /* ... existing styles ... */
+        
+        .external-link-icon {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .issue-link:hover .external-link-icon {
+            opacity: 1;
+        }
+
+        .product-area-suffix {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 4px;
+        }
+
+        .product-area-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .product-area-title {
+            margin: 0 0 1rem 0;
+            color: #333;
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-section label {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <h1>DHIS2 Feature Roadmap</h1>
     <div class="container">
         <div class="filter-section">
+            <label for="groupByFilter">Group by:</label>
+            <select id="groupByFilter"></select>
+            
             <label for="releaseFilter">Release:</label>
             <select id="releaseFilter"></select>
         </div>

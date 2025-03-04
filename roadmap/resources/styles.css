@@ -80,9 +80,10 @@ select {
 }
 
 .issue-list {
-    list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: 30px;
+    color:#1e88e5;
 }
 
 .issue-item {

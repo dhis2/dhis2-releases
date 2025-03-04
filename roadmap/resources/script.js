@@ -9,21 +9,14 @@ async function loadData() {
     }
 }
 
-function populateReleaseFilter(issues) {
+function populateFilters(issues) {
+    // Populate Release Filter
     const releases = [...new Set(issues
         .map(issue => issue.targetRelease)
         .filter(release => release))]
         .sort();
     
-    const filterElement = document.getElementById('releaseFilter');
-    
-    // Add "All" option
-    // const allOption = document.createElement('option');
-    // allOption.value = '';
-    // allOption.textContent = 'All Releases';
-    // filterElement.appendChild(allOption);
-    
-    // Add release options
+    const releaseFilter = document.getElementById('releaseFilter');
     releases.forEach(release => {
         const option = document.createElement('option');
         option.value = release;
@@ -31,21 +24,71 @@ function populateReleaseFilter(issues) {
         if (release === 'v42 (May 2025)') {
             option.selected = true;
         }
-        filterElement.appendChild(option);
+        releaseFilter.appendChild(option);
+    });
+
+    // Populate Group By Filter
+    const groupByFilter = document.getElementById('groupByFilter');
+    ['Product Area', 'App'].forEach(groupOption => {
+        const option = document.createElement('option');
+        option.value = groupOption.toLowerCase().replace(' ', '');
+        option.textContent = groupOption;
+        groupByFilter.appendChild(option);
     });
     
-    return filterElement.value;
+    return {
+        selectedRelease: releaseFilter.value,
+        groupBy: groupByFilter.value
+    };
+}
+
+function getBaseProductArea(productArea) {
+    // Extract the base product area (text before parenthesis)
+    return productArea.split('(')[0].trim();
+}
+
+function getProductAreaSuffix(productArea) {
+    // Extract the text in parentheses if it exists
+    const match = productArea.match(/\((.*?)\)/);
+    return match ? ` (${match[1]})` : '';
+}
+
+function groupIssuesByProductArea(issues) {
+    const groups = {};
+    
+    issues.forEach(issue => {
+        if (!issue.productAreas) {
+            if (!groups['Unspecified']) {
+                groups['Unspecified'] = [];
+            }
+            groups['Unspecified'].push(issue);
+            return;
+        }
+
+        const areas = Array.isArray(issue.productAreas) ? 
+            issue.productAreas : [issue.productAreas];
+        
+        areas.forEach(area => {
+            const baseArea = getBaseProductArea(area);
+            if (!groups[baseArea]) {
+                groups[baseArea] = [];
+            }
+            // Add the issue with its specific product area suffix
+            const issueCopy = {...issue, productAreaSuffix: getProductAreaSuffix(area)};
+            groups[baseArea].push(issueCopy);
+        });
+    });
+    
+    return groups;
 }
 
 function groupIssuesByApp(issues) {
     const groups = {};
     
     issues.forEach(issue => {
-        // Handle cases where app might be an array, string, or undefined
         const apps = Array.isArray(issue.app) ? issue.app : [issue.app || 'Unspecified'];
         
         apps.forEach(app => {
-            // Rename "Web Capture" to "Capture"
             const appName = app === 'Web Capture' ? 'Capture' : app;
             if (!groups[appName]) {
                 groups[appName] = [];
@@ -55,6 +98,35 @@ function groupIssuesByApp(issues) {
     });
     
     return groups;
+}
+
+function createIssueLink(issue) {
+    const issueItem = document.createElement('li');
+    issueItem.className = 'issue-item';
+    
+    const issueLink = document.createElement('a');
+    issueLink.href = `https://dhis2.atlassian.net/browse/${issue.key}`;
+    issueLink.textContent = issue.summary;
+    issueLink.className = 'issue-link';
+    issueLink.target = '_blank';
+    issueLink.rel = 'noopener noreferrer';
+    
+    // Add external link icon
+    const externalIcon = document.createElement('span');
+    externalIcon.className = 'external-link-icon';
+    externalIcon.innerHTML = '↗';
+    issueLink.appendChild(externalIcon);
+    
+    // Add product area suffix if it exists
+    if (issue.productAreaSuffix) {
+        const suffix = document.createElement('span');
+        suffix.className = 'product-area-suffix';
+        suffix.textContent = issue.productAreaSuffix;
+        issueLink.appendChild(suffix);
+    }
+    
+    issueItem.appendChild(issueLink);
+    return issueItem;
 }
 
 function createAppCard(appName, issues) {
@@ -78,60 +150,39 @@ function createAppCard(appName, issues) {
     issuesList.className = 'issue-list';
     
     issues.sort((a, b) => a.key.localeCompare(b.key));
-    
     issues.forEach(issue => {
-        const issueItem = document.createElement('li');
-        issueItem.className = 'issue-item';
-        
-        const issueLink = document.createElement('a');
-        issueLink.href = `https://dhis2.atlassian.net/browse/${issue.key}`;
-        issueLink.textContent = issue.key;
-        issueLink.className = 'issue-link';
-        issueLink.target = '_blank';
-        
-        issueItem.appendChild(issueLink);
-        issueItem.appendChild(document.createTextNode(issue.summary));
-        issuesList.appendChild(issueItem);
+        issuesList.appendChild(createIssueLink(issue));
     });
     
     body.appendChild(issuesList);
-    
-    // Card Footer
-    const footer = document.createElement('div');
-    footer.className = 'card-footer';
-    
-    // Product Areas
-    const allProductAreas = new Set();
-    issues.forEach(issue => {
-        if (issue.productAreas) {
-            const areas = Array.isArray(issue.productAreas) ? 
-                issue.productAreas : [issue.productAreas];
-            areas.forEach(area => allProductAreas.add(area));
-        }
-    });
-    
-    if (allProductAreas.size > 0) {
-        const tagList = document.createElement('div');
-        tagList.className = 'tag-list';
-        
-        [...allProductAreas].sort().forEach(area => {
-            const tag = document.createElement('span');
-            tag.className = 'tag';
-            tag.textContent = area;
-            tagList.appendChild(tag);
-        });
-        
-        footer.appendChild(tagList);
-    }
-    
     card.appendChild(header);
     card.appendChild(body);
-    card.appendChild(footer);
     
     return card;
 }
 
-function displayIssues(issues, selectedRelease) {
+function createProductAreaList(areaName, issues) {
+    const section = document.createElement('div');
+    section.className = 'product-area-section';
+    
+    const title = document.createElement('h3');
+    title.className = 'product-area-title';
+    title.textContent = areaName;
+    section.appendChild(title);
+    
+    const issuesList = document.createElement('ul');
+    issuesList.className = 'issue-list';
+    
+    issues.sort((a, b) => a.key.localeCompare(b.key));
+    issues.forEach(issue => {
+        issuesList.appendChild(createIssueLink(issue));
+    });
+    
+    section.appendChild(issuesList);
+    return section;
+}
+
+function displayIssues(issues, selectedRelease, groupBy) {
     const container = document.getElementById('issueCards');
     container.innerHTML = '';
     
@@ -140,24 +191,33 @@ function displayIssues(issues, selectedRelease) {
         !selectedRelease || issue.targetRelease === selectedRelease
     );
     
-    // Group filtered issues by app
-    const groupedIssues = groupIssuesByApp(filteredIssues);
+    // Group issues based on selected grouping
+    const groupedIssues = groupBy === 'productarea' ? 
+        groupIssuesByProductArea(filteredIssues) : 
+        groupIssuesByApp(filteredIssues);
     
-    // Create and append cards for each app group
+    // Create and append cards/sections for each group
     Object.entries(groupedIssues)
-        .sort(([appA], [appB]) => appA.localeCompare(appB))
-        .forEach(([app, appIssues]) => {
-            container.appendChild(createAppCard(app, appIssues));
+        .sort(([groupA], [groupB]) => groupA.localeCompare(groupB))
+        .forEach(([groupName, groupIssues]) => {
+            const element = groupBy === 'productarea' ?
+                createProductAreaList(groupName, groupIssues) :
+                createAppCard(groupName, groupIssues);
+            container.appendChild(element);
         });
 }
 
 async function initialize() {
     const issues = await loadData();
-    const selectedRelease = populateReleaseFilter(issues);
-    displayIssues(issues, selectedRelease);
+    const { selectedRelease, groupBy } = populateFilters(issues);
+    displayIssues(issues, selectedRelease, groupBy);
     
     document.getElementById('releaseFilter').addEventListener('change', (event) => {
-        displayIssues(issues, event.target.value);
+        displayIssues(issues, event.target.value, document.getElementById('groupByFilter').value);
+    });
+    
+    document.getElementById('groupByFilter').addEventListener('change', (event) => {
+        displayIssues(issues, document.getElementById('releaseFilter').value, event.target.value);
     });
 }
 
