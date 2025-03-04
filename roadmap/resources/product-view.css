@@ -1,0 +1,176 @@
+.external-link-icon {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.issue-link:hover .external-link-icon {
+    opacity: 1;
+}
+
+.product-area-suffix {
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 4px;
+}
+
+.product-area-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-area-title {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-section label {
+    display: flex;
+    align-items: center;
+}
+/* 
+.card {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} */
+
+.issue-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.issue-link {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.issue-link:hover {
+    text-decoration: underline;
+}
+
+/* Tabs styling */
+.tabs-container {
+    margin-top: 2rem;
+}
+
+.tabs {
+    display: flex;
+    _gap: 0.5rem;
+    margin-bottom: 2rem;
+    _border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+    justify-content: center;
+}
+
+.tab {
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Remove border radius from all tabs by default */
+.tab[data-view="productarea"] {
+    border-radius: 0;
+    margin: 0;
+    border-right: none;
+}
+
+/* Add right border to the last functional area tab */
+.tab[data-view="productarea"]:last-of-type {
+    border-right: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Add border radius to left side of first functional area tab */
+.tab[data-view="productarea"].first-area-tab {
+    border-radius: 4px 0 0 4px;
+}
+
+/* Keep the "List by App" tab separate with full border radius */
+.tab[data-view="apps"] {
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.tab:hover {
+    color: #333;
+}
+
+.tab.active {
+    _color: #0066cc;
+    _border-bottom-color: #0066cc;
+    background: #051841;
+    color: white;
+    border: 1px solid #051841;
+}
+
+.tab-label {
+    margin: 0 1rem;
+    align-self: center;
+}
+
+/* Product Area List View */
+.product-area-list {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    /* border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}
+
+.issue-item:last-child {
+    border-bottom: none;
+}
+
+.issue-link {
+    color: #0066cc;
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+}
+
+.issue-link:hover {
+    text-decoration: underline;
+}
+
+/* Inherit card styles from original CSS for app view */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+/* 
+.card {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+.card-header {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    margin: 0;
+    color: #333;
+}  */
