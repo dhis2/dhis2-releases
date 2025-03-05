@@ -20,7 +20,24 @@ function getUniqueProductAreas(issues) {
             });
         }
     });
-    return [...areas].sort();
+    
+    const orderedAreas = ['Core / Platform', 'Configure', 'Collect', 'Analyze', 'Extend'];
+    return [...areas].sort((a, b) => {
+        const indexA = orderedAreas.indexOf(a);
+        const indexB = orderedAreas.indexOf(b);
+        
+        // If both areas are in our ordered list, use that order
+        if (indexA !== -1 && indexB !== -1) {
+            return indexA - indexB;
+        }
+        
+        // If only one is in the list, put it first
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        
+        // For any other areas, sort alphabetically
+        return a.localeCompare(b);
+    });
 }
 
 function populateFilters(issues) {
