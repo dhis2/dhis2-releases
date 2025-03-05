@@ -21,7 +21,7 @@ function getUniqueProductAreas(issues) {
         }
     });
     
-    const orderedAreas = ['Core / Platform', 'Configure', 'Collect', 'Analyze', 'Extend'];
+    const orderedAreas = ['Platform', 'Configure', 'Collect', 'Analyse', 'Extend'];
     return [...areas].sort((a, b) => {
         const indexA = orderedAreas.indexOf(a);
         const indexB = orderedAreas.indexOf(b);
@@ -95,7 +95,8 @@ function populateFilters(issues) {
 }
 
 function getBaseProductArea(productArea) {
-    return productArea.split('(')[0].trim();
+    const area = productArea.split('(')[0].trim();
+    return area === 'Core / Platform' ? 'Platform' : area;
 }
 
 function getProductAreaSuffix(productArea) {
