@@ -190,7 +190,7 @@ function createAppCard(appName, issues) {
     const issuesList = document.createElement('ul');
     issuesList.className = 'issue-list';
     
-    issues.sort((a, b) => a.key.localeCompare(b.key));
+    issues.sort((a, b) => a.summary.localeCompare(b.summary));
     issues.forEach(issue => {
         issuesList.appendChild(createIssueLink(issue));
     });
@@ -253,7 +253,23 @@ function displayProductAreaView(issues, selectedArea) {
     issuesList.className = 'issue-list';
     
     areaIssues
-        .sort((a, b) => a.key.localeCompare(b.key))
+        .sort((a, b) => {
+            const getAppPrefix = (issue) => {
+                if (!issue.app) return 'Unspecified';
+                const apps = Array.isArray(issue.app) ? issue.app : [issue.app];
+                return apps.join(', ');
+            };
+            
+            const appA = getAppPrefix(a);
+            const appB = getAppPrefix(b);
+            
+            // First sort by app
+            const appCompare = appA.localeCompare(appB);
+            if (appCompare !== 0) return appCompare;
+            
+            // If apps are the same, sort by summary
+            return a.summary.localeCompare(b.summary);
+        })
         .forEach(issue => {
             const productAreas = Array.isArray(issue.productAreas) ? 
                 issue.productAreas.filter(area => getBaseProductArea(area) === selectedArea) :
