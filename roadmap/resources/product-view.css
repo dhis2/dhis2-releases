@@ -57,6 +57,7 @@
 .issue-link {
     color: #0066cc;
     text-decoration: none;
+    display: inline;
 }
 
 .issue-link:hover {
@@ -128,7 +129,7 @@
 
 /* Product Area List View */
 .product-area-list {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     background: #fff;
     padding: 2rem;
@@ -143,8 +144,7 @@
 .issue-link {
     color: #0066cc;
     text-decoration: none;
-    display: flex;
-    align-items: baseline;
+    display: inline;
 }
 
 .issue-link:hover {
@@ -174,3 +174,17 @@
     margin: 0;
     color: #333;
 }  */
+
+.app-label {
+    color: #666;
+    font-size: 0.9em;
+    display: inline;
+}
+
+.issue-item {
+    display: flex;
+}
+
+.app-prefix {
+    color: #666;
+}

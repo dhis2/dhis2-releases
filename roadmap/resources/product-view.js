@@ -132,13 +132,26 @@ function groupIssuesByApp(issues) {
     return groups;
 }
 
-function createIssueLink(issue) {
+function createIssueLink(issue, showApps = false) {
     const issueItem = document.createElement('li');
     issueItem.className = 'issue-item';
     
     const issueLink = document.createElement('a');
     issueLink.href = `https://dhis2.atlassian.net/browse/${issue.key}`;
-    issueLink.textContent = issue.summary;
+    
+    // Create span for app names with different styling
+    if (showApps && issue.app) {
+        const appSpan = document.createElement('span');
+        appSpan.className = 'app-prefix';
+        const apps = Array.isArray(issue.app) ? issue.app : [issue.app];
+        appSpan.textContent = `${apps.join(', ')}: `;
+        issueLink.appendChild(appSpan);
+    }
+    
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = issue.summary;
+    issueLink.appendChild(titleSpan);
+    
     issueLink.className = 'issue-link';
     issueLink.target = '_blank';
     issueLink.rel = 'noopener noreferrer';
@@ -257,7 +270,7 @@ function displayProductAreaView(issues, selectedArea) {
                 : '';
             
             const issueCopy = {...issue, productAreaSuffix: formattedSuffix};
-            issuesList.appendChild(createIssueLink(issueCopy));
+            issuesList.appendChild(createIssueLink(issueCopy, true));
         });
     
     container.appendChild(issuesList);
