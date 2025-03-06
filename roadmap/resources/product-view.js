@@ -21,7 +21,7 @@ function getUniqueProductAreas(issues) {
         }
     });
     
-    const orderedAreas = ['Platform', 'Configure', 'Collect', 'Analyse', 'Extend'];
+    const orderedAreas = ['Platform', 'Configure', 'Collect', 'Analyze', 'Extend'];
     return [...areas].sort((a, b) => {
         const indexA = orderedAreas.indexOf(a);
         const indexB = orderedAreas.indexOf(b);
