@@ -87,6 +87,7 @@ Records that did not meet these conditions were not migrated and remain in the o
 The `trackedentityattributevalueaudit` and `trackedentitydatavalueaudit` tables will not be deleted, but they are no longer maintained or used by the system. 
 Administrators can decide how to handle these tables, but the remaining data lacks the essential information needed for use as change logs in the new framework.
 
+When it comes to pagination, a request to `/trackedEntities` will throw a `BadRequestException` if the requested page size exceeds the system setting `KeyTrackedEntityMaxLimit`. This setting can be configured via the [API](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-241/settings-and-configuration.html?h=system+settings+develop+2.41#webapi_system_settings).
 
 #### Deprecated APIs
 
