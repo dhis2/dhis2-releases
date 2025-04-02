@@ -36,7 +36,8 @@ To help you navigate the document, here's a detailed table of contents.
 
 The /user/userCredentials object is merged into the user object and is now removed.
 Previous user object payload could look like this:
-`{
+```
+{
   "firstName": "John",
   "surname": "Doe",
   "email": "youremailaddress@mail.com",
@@ -53,10 +54,11 @@ Previous user object payload could look like this:
     "id": "vAvEltyXGbD"
   } ],
   "welcomeMessage": "Test Welcome Message"
-}`
-
+}
+```
 But from 2.42 it must look like this:
-`{
+```
+{
   "firstName": "John",
   "surname": "Doe",
   "email": "youremailaddress@mail.com",
@@ -71,7 +73,8 @@ But from 2.42 it must look like this:
     "id": "vAvEltyXGbD"
   } ],
   "welcomeMessage": "Test Welcome Message"
-}`
+}
+```
 
 
 #### DataElement
