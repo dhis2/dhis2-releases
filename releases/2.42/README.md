@@ -32,6 +32,48 @@ To help you navigate the document, here's a detailed table of contents.
 
 ### Platform
 
+#### Users
+
+The /user/userCredentials object is merged into the user object and is now removed.
+Previous user object payload could look like this:
+`{
+  "firstName": "John",
+  "surname": "Doe",
+  "email": "youremailaddress@mail.com",
+  "userCredentials": {
+    "username": "testUser",
+    "userRoles": [ {
+      "id": "Euq3XfEIEbx"
+    } ]
+  },
+  "organisationUnits": [ {
+    "id": "ImspTQPwCqd"
+  } ],
+  "userGroups": [ {
+    "id": "vAvEltyXGbD"
+  } ],
+  "welcomeMessage": "Test Welcome Message"
+}`
+
+But from 2.42 it must look like this:
+`{
+  "firstName": "John",
+  "surname": "Doe",
+  "email": "youremailaddress@mail.com",
+  "username": "testUser",
+  "userRoles": [ {
+    "id": "Euq3XfEIEbx"
+  } ],
+  "organisationUnits": [ {
+    "id": "ImspTQPwCqd"
+  } ],
+  "userGroups": [ {
+    "id": "vAvEltyXGbD"
+  } ],
+  "welcomeMessage": "Test Welcome Message"
+}`
+
+
 #### DataElement
 
 Updating the `valueType` of a `DataElement` is prohibited if there is any existing data associated with that `DataElement`. See [Jira issue](https://dhis2.atlassian.net/browse/DHIS2-18152).
