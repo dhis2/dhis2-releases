@@ -252,9 +252,9 @@
             "releaseDate": "2022-10-27",
             "supported": true,
             "latestPatchVersion": 9,
-            "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/39/dhis2-stable-39.9.0.war",
-            "sha256": "82e9fe288b5258590077dbab09b1a89f60a2062dfa918bfbf4e990934d9ec6cb",
+            "latestHotfixVersion": 1,
+            "latestStableUrl": "https://releases.dhis2.org/39/dhis2-stable-39.9.1.war",
+            "sha256": "760b894c0bd46ab29279202e88c2c5f631b5df693d54976de202949d175802cd",
             "jdk": 11,
             "patchVersions": [
                 {
@@ -448,6 +448,17 @@
                     "url": "https://releases.dhis2.org/39/dhis2-stable-39.9.0.war",
                     "sha256": "82e9fe288b5258590077dbab09b1a89f60a2062dfa918bfbf4e990934d9ec6cb",
                     "hotfix": false,
+                    "fileSize": "298.19 MB"
+                },
+                {
+                    "name": "2.39.9.1",
+                    "displayName": "39.9.1",
+                    "version": 9,
+                    "hotfixVersion": 1,
+                    "releaseDate": "2025-04-08",
+                    "url": "https://releases.dhis2.org/39/dhis2-stable-39.9.1.war",
+                    "sha256": "760b894c0bd46ab29279202e88c2c5f631b5df693d54976de202949d175802cd",
+                    "hotfix": true,
                     "fileSize": "298.19 MB"
                 }
             ],
