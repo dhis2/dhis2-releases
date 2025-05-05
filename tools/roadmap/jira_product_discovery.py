@@ -214,7 +214,7 @@ def main():
         issues_data = get_project_issues(jira, project_key)
         
         # Save to JSON
-        output_file = 'releases/jira_roadmap.json'
+        output_file = 'roadmap/jira_roadmap.json'
         
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump({
