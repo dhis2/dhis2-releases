@@ -22,14 +22,6 @@ The dashboard now supports custom plugins built with the app platform to be adde
 ** **Efficient dashboard menu:** The list of available dashboards is now located in the left-hand menu, providing a faster and more intuitive way to search for dashboards.
 ** **Enhanced dashboard grid:* The grid now has a more modern look and makes better use of the available space.
 
-Feature card | Screenshot 1 | 2 | 3
-
-!e6b13548fe58aa826f2d73eb05dd896f0907182c*2*1000x564.jpeg|width=1000,height=564,alt="image"!
-
-!f04cc5e0cd1241501d00ccadedb16aa0e6de2c6d*2*1000x199.png|width=1000,height=199,alt="image"!
-
-!451e0aee4c276abcdb94b036d80c0246598e34b9*2*1000x242.jpeg|width=1000,height=242,alt="image"!
-
 
 
 ### [Embedded Superset Dashboards  [ROADMAP-317]](https://dhis2.atlassian.net/browse/ROADMAP-317)
