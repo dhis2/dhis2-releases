@@ -348,8 +348,6 @@ The default is UID. All (supported) metadata is exported using the {{idScheme}} 
 
 Support of different idSchemes is added to {{/tracker/trackedEntities}} and {{/tracker/events}} endpoints.
 
-[Jira](https://dhis2.atlassian.net/browse/DHIS2-13363?atlOrigin=eyJpIjoiM2QwOWI5YmRkNzU2NGJhMGFiNGMyYTliMzJmOTI0NmQiLCJwIjoiaiJ9) | Feature card
-
 
 
 ### [Spring Framework Upgrades [ROADMAP-350]](https://dhis2.atlassian.net/browse/ROADMAP-350)
