@@ -1,3 +1,9 @@
+# DHIS2 version 42 and Android Capture 3.2 Release Note
+
+## Highlights
+
+## Product areas
+
 ---
 ## Analyze
 
