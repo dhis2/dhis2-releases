@@ -4,7 +4,6 @@
 
 ## Product areas
 
----
 ## Analyze
 
 ### Android Capture
@@ -93,7 +92,6 @@ The Period tab has been completely redesigned to improve flexibility and clarity
 
 
 
----
 ## Collect (Aggregate)
 
 ### Android Capture
@@ -156,7 +154,6 @@ The web Capture App uses now the CalendarInput component. The CalendarInput is a
 
 
 
----
 ## Collect (Individual)
 
 ### Android Capture
@@ -277,7 +274,6 @@ The web Capture App uses now the CalendarInput component. The CalendarInput is a
 
 
 
----
 ## Configure (Metadata)
 
 ### Data Approval
@@ -318,7 +314,6 @@ Merging of metadata is being gradually supported within DHIS2 core funcitonaliti
 
 
 
----
 ## Configure (System)
 
 ### Android Capture
@@ -339,7 +334,6 @@ From this version, DHIS2 also support email-based multi factor authentication (M
 
 
 
----
 ## Core / Platform
 
 ### DHIS2
@@ -386,7 +380,6 @@ The Web Capture App, the Android Capture App and backend use the same rule engin
 
 
 
----
 ## Extend
 
 ### DHIS2
