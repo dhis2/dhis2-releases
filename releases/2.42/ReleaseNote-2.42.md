@@ -124,12 +124,6 @@ You can now hover over organisation units in working lists, widget and forms and
 
 
 
-#### [Display event's org. unit in working lists [ROADMAP-213]](https://dhis2.atlassian.net/browse/ROADMAP-213)
-
-In event and program stage working lists, you can display the organisation unit for the event as a column. This can be helpful if you are for example looking at all events assigned to you or available to you, but have access to several organisation units.
-
-
-
 #### [Show org unit selector in all event forms [ROADMAP-332]](https://dhis2.atlassian.net/browse/ROADMAP-332)
 
 You can now change the org unit in the form itself (instead of the context selector) when creating or editing an event. The org unit selector is displayed in the “Basic info“ section in the workspace.
