@@ -6,19 +6,11 @@
 
 ## Analyze
 
-### Android Capture
-
-#### [Integrate analytics into RTS module  [ROADMAP-266]](https://dhis2.atlassian.net/browse/ROADMAP-266)
-
-*no description placeholder*
-
-
-
 ### Dashboard
 
 #### [Allow custom plugins to be added to a dashboard [ROADMAP-334]](https://dhis2.atlassian.net/browse/ROADMAP-334)
 
-The dashboard now supports custom plugins built with the app platform to be added  as dashboard items.
+The dashboard now supports custom plugins built with the app platform to be added  as dashboard items. These plugins offer more flexibility than the previous dashboard widgets, including more filtering support, custom titles, “open in app” options and better support of multiple of the same plugins being able to show different data.
 
 
 
@@ -84,9 +76,9 @@ The Period tab has been completely redesigned to improve flexibility and clarity
 
 
 
-#### [Provide enrollment coordinates in maps [ROADMAP-153]](https://dhis2.atlassian.net/browse/ROADMAP-153)
+#### [Support enrollment coordinates in Maps app [ROADMAP-153]](https://dhis2.atlassian.net/browse/ROADMAP-153)
 
-*no description placeholder*
+You can now use enrollment coordinates in the Event layer in the Maps app. In this way you can map events (and the associated information) but utilize the coordinate that was captured during program enrollment.
 
 
 
@@ -98,19 +90,21 @@ The Period tab has been completely redesigned to improve flexibility and clarity
 
 #### [Improve design and user experience [ROADMAP-262]](https://dhis2.atlassian.net/browse/ROADMAP-262)
 
-*no description placeholder*
+A revamped of the menus and navigation bar has been made to be more user-friendly and accessible. It includes a cleaner, more modern look that improves readability and usability. These updates are designed to provide a more efficient and enjoyable user experience.
 
 
 
 #### [Home screen: responsive display of programs [ROADMAP-120]](https://dhis2.atlassian.net/browse/ROADMAP-120)
 
-The home screen of the Android app will adjust automatically the display depending on the number of programs available. The purpose is to show the programs in bigger size and use all the available space on the screen when users only work with small numbers of programs, normaly below 6 or 7.
+The home screen of the Android app will adjust automatically the display depending on the number of programs available. The purpose is to show the programs in bigger size and use all the available space on the screen when users only work with small numbers of programs, normally below 6 or 7.
 
 
 
 #### [Configurable Forms Functionality for data sets [ROADMAP-44]](https://dhis2.atlassian.net/browse/ROADMAP-44)
 
-*no description placeholder*
+### Data Entry App
+
+The new section form configuration options allow for greater customization of the look and feel of aggregate data entry forms without the need to build a custom form. With vertical tabs, collapsible sections, and form titles added, there are now more ways to make your forms visually appealing and user-friendly.
 
 
 
@@ -118,9 +112,7 @@ The home screen of the Android app will adjust automatically the display dependi
 
 #### ["Days after period to qualify for timely submission" and "Expiry days" supports number type values [ROADMAP-344]](https://dhis2.atlassian.net/browse/ROADMAP-344)
 
-When specifying the parameters for a data set, you can now use numbers (eg 0.5) for the "Days after period to qualify for timely submission" and “Expiry days”.
-
-Willl meet usecase like eg In Sierra Leone, timely submission for weekly IDSR data is Monday at 12 (noon), which is 0.5 days after period end on Sunday midnight.
+When specifying the parameters for a data set, you can now use numbers (eg 0.5) for the "Days after period to qualify for timely submission" and “Expiry days”. This will support IDSR use cases where timely submission for weekly IDSR data is Monday at 12 (noon), which is 0.5 days after period end on Sunday midnight.
 
 With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
 
@@ -128,19 +120,9 @@ With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must
 
 #### [Configurable Forms Functionality for data sets [ROADMAP-44]](https://dhis2.atlassian.net/browse/ROADMAP-44)
 
-*no description placeholder*
+### Data Entry App
 
-
-
-### Maintenance
-
-#### ["Days after period to qualify for timely submission" and "Expiry days" supports number type values [ROADMAP-344]](https://dhis2.atlassian.net/browse/ROADMAP-344)
-
-When specifying the parameters for a data set, you can now use numbers (eg 0.5) for the "Days after period to qualify for timely submission" and “Expiry days”.
-
-Willl meet usecase like eg In Sierra Leone, timely submission for weekly IDSR data is Monday at 12 (noon), which is 0.5 days after period end on Sunday midnight.
-
-With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
+The new section form configuration options allow for greater customization of the look and feel of aggregate data entry forms without the need to build a custom form. With vertical tabs, collapsible sections, and form titles added, there are now more ways to make your forms visually appealing and user-friendly.
 
 
 
@@ -158,6 +140,20 @@ The web Capture App uses now the CalendarInput component. The CalendarInput is a
 
 ### Android Capture
 
+#### [Quick Actions bar [ROADMAP-363]](https://dhis2.atlassian.net/browse/ROADMAP-363)
+
+From RTSL collaboration (pending from 3.1)
+
+Allows users to configure and add "chips" representing different actions for easy access in the TEI Dashboard.
+
+
+
+#### [Update scheduling dialog [ROADMAP-362]](https://dhis2.atlassian.net/browse/ROADMAP-362)
+
+New intuitive and user-friendly schedule dialog has been implemented to enhance the booking, rescheduling, and canceling events.
+
+
+
 #### [Improve Relationships in Tracker and event programs [ROADMAP-319]](https://dhis2.atlassian.net/browse/ROADMAP-319)
 
 Relationship cards have been updated with the new design to offer a more intuitive and visually appealing. A new confirmation dialog also has been added when deleting a relationship.
@@ -166,19 +162,13 @@ Relationship cards have been updated with the new design to offer a more intuiti
 
 #### [Improve design and user experience [ROADMAP-262]](https://dhis2.atlassian.net/browse/ROADMAP-262)
 
-*no description placeholder*
+A revamped of the menus and navigation bar has been made to be more user-friendly and accessible. It includes a cleaner, more modern look that improves readability and usability. These updates are designed to provide a more efficient and enjoyable user experience.
 
 
 
 #### [Home screen: responsive display of programs [ROADMAP-120]](https://dhis2.atlassian.net/browse/ROADMAP-120)
 
-The home screen of the Android app will adjust automatically the display depending on the number of programs available. The purpose is to show the programs in bigger size and use all the available space on the screen when users only work with small numbers of programs, normaly below 6 or 7.
-
-
-
-#### [Allow disabling choice of location on a map (capture only current location) [ROADMAP-92]](https://dhis2.atlassian.net/browse/ROADMAP-92)
-
-*no description placeholder*
+The home screen of the Android app will adjust automatically the display depending on the number of programs available. The purpose is to show the programs in bigger size and use all the available space on the screen when users only work with small numbers of programs, normally below 6 or 7.
 
 
 
@@ -211,12 +201,6 @@ Now when entering the Capture app, the start page will give short, helpful text 
 #### [Related stages/Linked events enhancements [ROADMAP-330]](https://dhis2.atlassian.net/browse/ROADMAP-330)
 
 There have been some enhancements to the related stages functionality in Tracker programs. You now have a two event workspace so you can see both events that are linked in one page, the related stages widget is visible on the registration page, as well as in the view event page and you are also able to unlink events.
-
-
-
-#### [Additional form field plugins in the Capture app - Working list [ROADMAP-329]](https://dhis2.atlassian.net/browse/ROADMAP-329)
-
-*no description placeholder*
 
 
 
@@ -254,15 +238,9 @@ You can now hover over organisation units in working lists, widget and forms and
 
 
 
-#### [Row-based data entry interface for secondary data entry in tracker [ROADMAP-281]](https://dhis2.atlassian.net/browse/ROADMAP-281)
+#### [Display event's org. unit in working lists [ROADMAP-213]](https://dhis2.atlassian.net/browse/ROADMAP-213)
 
-*no description placeholder*
-
-
-
-#### [Make "Registering Unit" as option to include in data views for event programs in capture [ROADMAP-213]](https://dhis2.atlassian.net/browse/ROADMAP-213)
-
-*no description placeholder*
+In event and program stage working lists, you can display the organisation unit for the event as a column. This can be helpful if you are for example looking at all events assigned to you or available to you, but have access to several organisation units.
 
 
 
@@ -288,7 +266,7 @@ The web Capture App uses now the CalendarInput component. The CalendarInput is a
 
 #### [Program Indicator Disaggregations [ROADMAP-73]](https://dhis2.atlassian.net/browse/ROADMAP-73)
 
-This feature enables the possibility of creating dissagregations for Program Indicators that match with existing category options, and combinations. Such dissagregation will facilitate analysisng Program Indicators by those disaggregation witih the analytics apps as well as aggregating the values and importing within an aggregated data model thourgh the exchange app (in the same or different instance).
+This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model though the exchange app (in the same or different instance).
 
 
 
@@ -302,7 +280,7 @@ The Maintenance is being gradually reimplementend in its new and improved versio
 
 #### [Program Indicator Disaggregations [ROADMAP-73]](https://dhis2.atlassian.net/browse/ROADMAP-73)
 
-This feature enables the possibility of creating dissagregations for Program Indicators that match with existing category options, and combinations. Such dissagregation will facilitate analysisng Program Indicators by those disaggregation witih the analytics apps as well as aggregating the values and importing within an aggregated data model thourgh the exchange app (in the same or different instance).
+This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model though the exchange app (in the same or different instance).
 
 
 
@@ -358,15 +336,7 @@ Support of different idSchemes is added to {{/tracker/trackedEntities}} and {{/t
 
 #### [Spring Framework Upgrades [ROADMAP-350]](https://dhis2.atlassian.net/browse/ROADMAP-350)
 
-Ongoing upgrades to the Spring framework ensure that the security of DHIS2 is maintained
-
-
-
-#### [Dedicated analytics backend database - Aggregated data [ROADMAP-49]](https://dhis2.atlassian.net/browse/ROADMAP-49)
-
-Support for Apache doris as dedicated analytics database architecture for aggregated data. Deploying a dedicated analytics database architecture is to improve performance in query executions and the Analytics table update time. It also represents a modernization of analytics backend code incorporating Object orientation and abstraction and improved test automation coverage.
-
-Dedicated analytics database will be available for implementations to set up and test for aggregated data in v42 and individual data in v43.
+Ongoing upgrades to the Spring framework ensure that the security of DHIS2 is maintained. During this release the engineering team has performed an upgrade to Spring 6, upgrade Spring Security, and integrated Spring Authorisation Server which enables for implementing mutil-factor authentication in the DHIS2 Android App.
 
 
 
@@ -384,9 +354,35 @@ The Web Capture App, the Android Capture App and backend use the same rule engin
 
 ### DHIS2
 
-#### [Multi calendar - Dates in APIs [ROADMAP-71]](https://dhis2.atlassian.net/browse/ROADMAP-71)
+#### [FHIR IG Generator app [ROADMAP-360]](https://dhis2.atlassian.net/browse/ROADMAP-360)
 
-*no description placeholder*
+The FHIR IG Generator app is now available on the App Hub. It provides a user interface for creating FHIR implementation guides based on DHIS2 tracker metadata. It also provides guidance for publishing that implementation guide with the help of an external tool like SUSHI.
+
+
+
+#### [Route manager app [ROADMAP-358]](https://dhis2.atlassian.net/browse/ROADMAP-358)
+
+The Route Manager app is now available on the App Hub. It provides a user interface for managing Routes, which are secure ways of connecting DHIS2 to external services. The app enables creating, editing, and deleting Route objects, and allows the user to configure the authentication parameters a Route uses, the authorities required to run that Route, and sharing settings for the Route object.
+
+
+
+#### [New Routes API features [ROADMAP-357]](https://dhis2.atlassian.net/browse/ROADMAP-357)
+
+Routes can now be set up with more authentication schemes: authentication by custom headers, query parameters, or OAuth2 Client Credentials is now supported, in addition to the HTTP Basic auth and API token methods available previously.
+
+Routes can also now be configured with custom timeout limits: this decides the time that the DHIS2 server will wait for a response from an upstream service before returning a timeout error.
+
+
+
+#### [Updated Datastore Management app [ROADMAP-356]](https://dhis2.atlassian.net/browse/ROADMAP-356)
+
+The Datastore Management app has gotten an overhaul to introduce a modern design. Notable new features include the ability to manage user datastore objects and a user interface for managing sharing settings on datastore keys.
+
+
+
+#### [Calendar component [ROADMAP-71]](https://dhis2.atlassian.net/browse/ROADMAP-71)
+
+The DHIS2 UI library now provides a reusable Calendar component to input dates. Notably, it supports many calendar types, including Nepali and Ethiopian, which solves a localization challenge that many apps face when allowing users to input dates.
 
 
 
@@ -394,7 +390,7 @@ The Web Capture App, the Android Capture App and backend use the same rule engin
 
 #### [Allow custom plugins to be added to a dashboard [ROADMAP-334]](https://dhis2.atlassian.net/browse/ROADMAP-334)
 
-The dashboard now supports custom plugins built with the app platform to be added  as dashboard items.
+The dashboard now supports custom plugins built with the app platform to be added  as dashboard items. These plugins offer more flexibility than the previous dashboard widgets, including more filtering support, custom titles, “open in app” options and better support of multiple of the same plugins being able to show different data.
 
 
 
@@ -404,11 +400,21 @@ Many countries and organizations have their data spread out across multiple inst
 
 
 
-### Web Capture
+### Global (App Shell)
 
-#### [Additional form field plugins in the Capture app - Working list [ROADMAP-329]](https://dhis2.atlassian.net/browse/ROADMAP-329)
+#### [Command palette [ROADMAP-359]](https://dhis2.atlassian.net/browse/ROADMAP-359)
 
-*no description placeholder*
+The Command Palette is a new navigation feature that replaces the apps menu in the header bar. It provides navigation to apps and shortcuts, which are “deep links” to app sections, for example a particular page in the Maintenance app. It also provides a platform for launching other actions. Apps can be configured to define their own shortcuts.
+
+It is keyboard navigable, and can be opened It can be opened by either the {{Ctrl}} {{K}} or {{Cmd}} {{K}} keyboard shortcut, depending on the user’s operating system. It can also be opened by clicking on the apps icon in the header bar.
+
+
+
+#### [Global app shell [ROADMAP-355]](https://dhis2.atlassian.net/browse/ROADMAP-355)
+
+DHIS2 now features a Global App Shell, which serves as a container for any of the apps that are loaded. It ensures a consistent header bar and navigation interface across all apps, consolidates functionality that is required by all apps, and can be used to roll out new features to all apps at once, like the new Command Palette.
+
+The introduction of the Global Shell brings with it also some design upgrades in the header bar: it is more compact to give more space to app content and includes a modern design for the user profile menu.
 
 
 
