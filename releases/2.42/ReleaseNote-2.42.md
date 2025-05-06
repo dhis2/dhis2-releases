@@ -95,6 +95,11 @@ The filtering options in working lists have been improved in the DHIS2 web captu
 
 
 
+#### [Display event's org unit in working lists [ROADMAP-213]](https://dhis2.atlassian.net/browse/ROADMAP-213)
+
+In event and program stage working lists, you can display the organisation unit for the event as a column. This can be helpful if you are for example looking at all events assigned to you or available to you, but have access to several organisation units.
+
+
 #### [Launch/Start page [ROADMAP-331]](https://dhis2.atlassian.net/browse/ROADMAP-331)
 
 Now when entering the Capture app, the start page will give short, helpful text to guide the user to what the app is for, as well as a link to the user documentation.
