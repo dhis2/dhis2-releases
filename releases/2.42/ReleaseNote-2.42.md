@@ -209,9 +209,9 @@ The dashboard can be displayed in a slideshow by clicking on the **Slideshow** b
 
 #### [Updated Dashboard app design with improved user experience [ROADMAP-318]](https://dhis2.atlassian.net/browse/ROADMAP-318)
 
-** **Streamlined dashboard bar:** We’ve moved to a single, fixed dashboard bar, freeing up valuable vertical space and ensuring it remains accessible as you scroll.
-** **Efficient dashboard menu:** The list of available dashboards is now located in the left-hand menu, providing a faster and more intuitive way to search for dashboards.
-** **Enhanced dashboard grid:** The grid now has a more modern look and makes better use of the available space.
+* **Streamlined dashboard bar:** We’ve moved to a single, fixed dashboard bar, freeing up valuable vertical space and ensuring it remains accessible as you scroll.
+* **Efficient dashboard menu:** The list of available dashboards is now located in the left-hand menu, providing a faster and more intuitive way to search for dashboards.
+* **Enhanced dashboard grid:** The grid now has a more modern look and makes better use of the available space.
 
 
 
