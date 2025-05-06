@@ -232,10 +232,10 @@ HIS2 now supports displaying external dashboards through the bundled Dashboard a
 
 #### [Maps: Functional and UX Improvements [ROADMAP-354]](https://dhis2.atlassian.net/browse/ROADMAP-354)
 
-** **Allow selecting the user org unit in combination with other org units and/or org unit levels:** You can now combine org unit selections by selecting user org unit as well as other org units and org unit levels in all layer types.
-** **Support custom calculations**: You can now utilize custom calculations created in Data Visualization app in Maps app.
-**  **Additional information in pop-up for Tracked Entity Layers:** Pop-up now displays Coordinates, Org Unit name and attributes if marked to be displayed in list (similarly to Event layer pop-ups).
-** **Enhanced support for type of relationships in Tracked Entity layer:** Experimental relationships mapping now supports a broader variety of relationships definitions: unidirectional and bidirectional relationships and permutations of: same TrackedEntity type and same program (or program not specified), same TrackedEntity type but different program (or one program not specified) or different TrackedEntity types.
+* **Allow selecting the user org unit in combination with other org units and/or org unit levels:** You can now combine org unit selections by selecting user org unit as well as other org units and org unit levels in all layer types.
+* **Support custom calculations**: You can now utilize custom calculations created in Data Visualization app in Maps app.
+*  **Additional information in pop-up for Tracked Entity Layers:** Pop-up now displays Coordinates, Org Unit name and attributes if marked to be displayed in list (similarly to Event layer pop-ups).
+* **Enhanced support for type of relationships in Tracked Entity layer:** Experimental relationships mapping now supports a broader variety of relationships definitions: unidirectional and bidirectional relationships and permutations of: same TrackedEntity type and same program (or program not specified), same TrackedEntity type but different program (or one program not specified) or different TrackedEntity types.
 
 
 
@@ -243,10 +243,10 @@ HIS2 now supports displaying external dashboards through the bundled Dashboard a
 
 The Period tab has been completely redesigned to improve flexibility and clarity:
 
-** It now uses the same period selector as other analytics apps, allowing selection of multiple periods and support for non-Gregorian calendars.
-** All Maps now handle multiple periods selections, including mixed selections of different period types, fixed and/or relative presets.
-** Start and End Date inputs use the new standard calendar with improved data entry mask, which supports translations (currently limited to the Gregorian calendar).
-** Mapping options (Single, Timeline, or Split Map) are now more clearly displayed with icons and improved information messages.
+* It now uses the same period selector as other analytics apps, allowing selection of multiple periods and support for non-Gregorian calendars.
+* All Maps now handle multiple periods selections, including mixed selections of different period types, fixed and/or relative presets.
+* Start and End Date inputs use the new standard calendar with improved data entry mask, which supports translations (currently limited to the Gregorian calendar).
+* Mapping options (Single, Timeline, or Split Map) are now more clearly displayed with icons and improved information messages.
 
 
 
