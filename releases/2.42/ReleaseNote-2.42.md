@@ -147,7 +147,7 @@ Allows users to configure and add "chips" representing different actions for eas
 
 #### [Improved navigation bar [ROADMAP-262]](https://dhis2.atlassian.net/browse/ROADMAP-262)
 
-A revamped of the menus and navigation bar has been made to be more user-friendly and accessible. It includes a cleaner, more modern look that improves readability and usability. These updates are designed to provide a more efficient and enjoyable user experience.
+A revamp of the menus and navigation bar has been made to be more user-friendly and accessible. It includes a cleaner, more modern look that improves readability and usability. These updates are designed to provide a more efficient and enjoyable user experience.
 
 
 
