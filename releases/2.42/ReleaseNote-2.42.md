@@ -351,7 +351,7 @@ The introduction of the Global Shell brings with it also some design upgrades in
 
 ### DHIS2
 
-#### [New Apps menu - Keyboard controls and Deep Link navigation [ROADMAP-353]](https://dhis2.atlassian.net/browse/ROADMAP-353)
+#### [New Apps menu - Command pallete for keyboard controls and shortcuts navigation [ROADMAP-353]](https://dhis2.atlassian.net/browse/ROADMAP-353)
 
 The DHIS2 Apps menu component has been updated. The new feature provides navigation to apps and shortcuts, which are “deep links” to app sections, for example a particular page in the Maintenance app. It also provides a platform for launching other actions. Apps can be configured to define their own shortcuts.
 
