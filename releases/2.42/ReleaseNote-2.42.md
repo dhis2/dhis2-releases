@@ -223,7 +223,7 @@ The dashboard now supports custom plugins built with the app platform to be adde
 
 #### [External Dashboard types (Superset) [ROADMAP-317]](https://dhis2.atlassian.net/browse/ROADMAP-317)
 
-HIS2 now supports displaying external dashboards through the bundled Dashboard app. This allows dashboards served from other platforms to appear side-by-side with standard DHIS2 dashboards. The first supported external dashboard type is Superset, using a connector contributed by BAO Systems.
+DHIS2 now supports displaying external dashboards through the bundled Dashboard app. This allows dashboards served from other platforms to appear side-by-side with standard DHIS2 dashboards. The first supported external dashboard type is Superset, using a connector contributed by BAO Systems.
 
 
 
