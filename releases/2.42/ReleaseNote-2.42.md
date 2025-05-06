@@ -201,6 +201,12 @@ On the right of each data item in the selector there is now an information icon 
 
 ### Dashboard
 
+#### [External Dashboard types (Superset) [ROADMAP-317]](https://dhis2.atlassian.net/browse/ROADMAP-317)
+
+Many countries and organizations have their data spread out across multiple instances of DHIS2. Often, these instances are not synchronized in terms of metadata, which complicates integration and reporting. DHIS2 has not offered an easy way to present dashboards with data from multiple instances and different sources. This functionality implements support for embedding external Superset dashboards in our core dashboards app.
+
+
+
 #### [Dashboard slideshow [ROADMAP-151]](https://dhis2.atlassian.net/browse/ROADMAP-151)
 
 The dashboard can be displayed in a slideshow by clicking on the **Slideshow** button. When you enter the slideshow, you’ll find navigation buttons and an exit button in a navigation bar at the bottom of the page. You can also navigate with the forward and back arrow keys on the keyboard, and exit the slideshow with the **esc** key. Any filters that are applied will be displayed in the navigation bar. Note that messages and spacer items are not displayed in the slideshow.
@@ -273,12 +279,6 @@ Administrators with the authority to manage external layers can now select layer
 #### [Allow custom plugins to be added to a dashboard [ROADMAP-334]](https://dhis2.atlassian.net/browse/ROADMAP-334)
 
 The dashboard now supports custom plugins built with the app platform to be added  as dashboard items. These plugins offer more flexibility than the previous dashboard widgets, including more filtering support, custom titles, “open in app” options and better support of multiple of the same plugins being able to show different data.
-
-
-
-#### [External Dashboard types (Superset) [ROADMAP-317]](https://dhis2.atlassian.net/browse/ROADMAP-317)
-
-Many countries and organizations have their data spread out across multiple instances of DHIS2. Often, these instances are not synchronized in terms of metadata, which complicates integration and reporting. DHIS2 has not offered an easy way to present dashboards with data from multiple instances and different sources. This functionality implements support for embedding external Superset dashboards in our core dashboards app.
 
 
 
