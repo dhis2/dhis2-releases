@@ -15,7 +15,7 @@
 
 #### [Email-based authentication codes for multi-factor authentication [ROADMAP-234]](https://dhis2.atlassian.net/browse/ROADMAP-234)
 
-From this version, DHIS2 also support email-based multi factor authentication (MFA). Email-based MFA should be configured at the system level and will be an option for the users when they are turning on MFA/2FA. If the user selects "Email", they system emails a one-time password to the provided email address.
+From this version, DHIS2 also support email-based multi factor authentication (MFA). Email-based MFA should be configured at the system level and will be an option for the users when they are turning on MFA/2FA. If the user selects "Email", the system emails a one-time password to the provided email address during the login process.
 
 
 
