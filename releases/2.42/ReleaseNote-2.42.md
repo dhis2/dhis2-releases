@@ -61,7 +61,13 @@ When specifying the parameters for a data set, you can now use numbers (eg 0.5) 
 
 With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
 
+#### [Improvements in input dialog for all value types [ROADMAP-364]](https://dhis2.atlassian.net/browse/ROADMAP-364)
 
+The input dialog has been redesigned delivering a more modern, intuitive, and consistent experience across all value types. Users are also able to capture images and files directly within data set entry, alongside others, already supported types, like numeric, boolean, text, and date.
+
+#### [Single Table Rendering [ROADMAP-365]](https://dhis2.atlassian.net/browse/ROADMAP-365)
+
+Aligning to the Data Entry App, Data sets are now rendered using a single unified table that includes all category combinations and indicators, providing a cleaner and more consistent layout. 
 
 ## Collect - Individual data
 
@@ -132,54 +138,9 @@ You can now change the org unit in the form itself (instead of the context selec
 
 ### Android Capture App
 
-#### [Home screen: responsive display of programs [ROADMAP-120]](https://dhis2.atlassian.net/browse/ROADMAP-120)
-
-The home screen of the Android app will adjust automatically the display depending on the number of programs available. The purpose is to show the programs in bigger size and use all the available space on the screen when users only work with small numbers of programs, normally below 6 or 7.
-
-
-
 #### [Quick Actions bar [ROADMAP-363]](https://dhis2.atlassian.net/browse/ROADMAP-363)
 
 Allows users to configure and add "chips" representing different actions for easy access in the TEI Dashboard.
-
-
-
-#### [Improved navigation bar [ROADMAP-262]](https://dhis2.atlassian.net/browse/ROADMAP-262)
-
-A revamp of the menus and navigation bar has been made to be more user-friendly and accessible. It includes a cleaner, more modern look that improves readability and usability. These updates are designed to provide a more efficient and enjoyable user experience.
-
-
-
-#### [Improvemets in capture coordinates: display GPS accuracy [ROADMAP-89]](https://dhis2.atlassian.net/browse/ROADMAP-89)
-
-New Capture Coordinates process:  Introducing new features designed to enhance the capture coordinates process. These improvements aim to provide greater accuracy, flexibility, and control over location data capture.
-
-Accuracy: The capture coordinates process now includes a feature that displays the precision of the captured location. This allows users to see how accurate their location data is in real-time. This parameter can also be restricted using the Android Settings WebApp.
-
-Search Functionality: A new search functionality has been added, allowing users to look up specific locations by name or address. Users are also able to navigate through the map and perform area searches to discover other locations within a specified region. 
-
-Block Manual Capture: Using the Android Settings Web App, administrators now have the option to block manual location capture. When this setting is enabled, users can only capture the current location and cannot manually select or search a different one. This ensures that location data remains consistent and accurate.
-
-
-
-#### [Update scheduling dialog [ROADMAP-362]](https://dhis2.atlassian.net/browse/ROADMAP-362)
-
-New intuitive and user-friendly schedule dialog has been implemented to enhance the booking, rescheduling, and canceling events.
-
-
-
-#### [Improvements in transfer flow [ROADMAP-361]](https://dhis2.atlassian.net/browse/ROADMAP-361)
-
-From 3.1, the transfer button moves to a more accessible location within the three dot menu in the TEI Dashboard and new dialogs are implemented to provide clear, step-by-step guidance.
-
-
-#### [Improve Relationships in Tracker and event programs [ROADMAP-319]](https://dhis2.atlassian.net/browse/ROADMAP-319)
-
-Relationship cards have been updated with the new design to offer a more intuitive and visually appealing. A new confirmation dialog also has been added when deleting a relationship.
-
-
-
-
 
 
 ## Analyze
