@@ -18,15 +18,6 @@
 The new Synchronization Troubleshooting Web App provides implementation administrators real-time visibility and troubleshooting capabilities for synchronization errors occurring in the last 24 hours tracker or event programs. It will enable sys admins to analyze persisted Android sync error API responses. The app is available in the App hub and will require administrators to install it in their instances.
 
 
-
-### Data Approval
-
-#### [Improvements to Data Approval App including adding AOCs  [ROADMAP-255]](https://dhis2.atlassian.net/browse/ROADMAP-255)
-
-*no description placeholder*
-
-
-
 ### Login
 
 #### [Email-based authentication codes for multi-factor authentication [ROADMAP-234]](https://dhis2.atlassian.net/browse/ROADMAP-234)
@@ -353,9 +344,9 @@ The introduction of the Global Shell brings with it also some design upgrades in
 
 #### [New Apps menu - Command pallete for keyboard controls and shortcuts navigation [ROADMAP-353]](https://dhis2.atlassian.net/browse/ROADMAP-353)
 
-The DHIS2 Apps menu component has been updated. The new feature provides navigation to apps and shortcuts, which are “deep links” to app sections, for example a particular page in the Maintenance app. It also provides a platform for launching other actions. Apps can be configured to define their own shortcuts.
+The DHIS2 Apps menu component has been updated. The new feature provides navigation to apps as before, and introduces actions and shortcuts. Shortcuts are “deep links” to sections of an app, for example a particular page in the Maintenance app. Apps can define their shortcuts in their configuration files, then they will be visible and searchable in the Command Palette. Actions are scripts or jobs that can be run anywhere, and could be tasks like clearing caches or running analytics.
 
-It is keyboard navigable, and can be opened It can be opened by either the {{Ctrl}} {{K}} or {{Cmd}} {{K}} keyboard shortcut, depending on the user’s operating system. It can also be opened by clicking on the apps icon in the header bar.
+It is keyboard navigable, and can be opened It can be opened by either the Ctrl K or Cmd K keyboard shortcut, depending on the user’s operating system. It can also be opened by clicking on the apps icon in the header bar.
 
 
 
