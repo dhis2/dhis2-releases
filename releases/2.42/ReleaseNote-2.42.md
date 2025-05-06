@@ -29,13 +29,13 @@ The Maintenance is being gradually reimplementend in its new and improved versio
 
 #### [Program Indicator Disaggregations - Tracker to Aggregated data [ROADMAP-73]](https://dhis2.atlassian.net/browse/ROADMAP-73)
 
-This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model though the exchange app (in the same or different instance).
+This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model though the exchange app.
 
 
 
 #### [Metadata deduplication and merging [ROADMAP-39]](https://dhis2.atlassian.net/browse/ROADMAP-39)
 
-Merging of metadata is being gradually supported within DHIS2 core funcitonalities facilitating metadata cleanup operations. Backend supports merging the following metadata objetcs through the web API: Organisation Units, Data Eelements, Indicators, Indicator Types, Category options, Categories, Category Combinations, Category option combinations (limited to one use case, when the catoptcombination are the same).  Frontend support through the user interface is gradually implemented as well. So far the new Maintenance app supports meging options for Category option and Category option comninations, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge into.
+Merging of metadata is being gradually supported within DHIS2 core funcitonalities facilitating metadata cleanup operations. Backend supports merging the following metadata objetcs through the web API: Organisation Units, Data Eelements, Indicators, Indicator Types, Category options, Categories, Category Combinations, Category option combinations (limited to one use case, when the catoptcombination are the same).  Frontend support through the user interface is gradually implemented as well. So far the new Maintenance app supports meging options for Category option and Category option combinations, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge references into.
 
 
 ### Android Settings Webapp
