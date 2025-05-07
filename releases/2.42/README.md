@@ -1,4 +1,4 @@
-https://github.com/dhis2/dhis2-releases/blob/master/releases/2.42/README.md# DHIS2 Version 42 Upgrade Notes
+# DHIS2 Version 42 Upgrade Notes
 
 Welcome to the upgrade notes for DHIS2 version 42.
 
