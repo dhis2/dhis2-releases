@@ -1,4 +1,4 @@
-# DHIS2 Version 42 Upgrade Notes
+https://github.com/dhis2/dhis2-releases/blob/master/releases/2.42/README.md# DHIS2 Version 42 Upgrade Notes
 
 Welcome to the upgrade notes for DHIS2 version 42.
 
@@ -27,6 +27,12 @@ To help you navigate the document, here's a detailed table of contents.
 > **Important**
 >
 > Version 42 of DHIS2 **now requires Tomcat 10.1** or above.
+
+## Deprecations
+
+> **Important**
+>
+> The classic **Data Entry** and **Tracker Capture** apps are no longer compatible with the DHIS2 core and have been removed from this release! 
 
 ## API Changes
 
