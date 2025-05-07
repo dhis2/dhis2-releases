@@ -15,7 +15,7 @@
 
 #### [Email-based authentication codes for multi-factor authentication [ROADMAP-234]](https://dhis2.atlassian.net/browse/ROADMAP-234)
 
-From this version, DHIS2 also support email-based multi factor authentication (MFA). Email-based MFA should be configured at the system level and will be an option for the users when they are turning on MFA/2FA. If the user selects "Email", the system emails a one-time password to the provided email address during the login process.
+From this version, DHIS2 also supports email-based multi-factor authentication (MFA). Email-based MFA should be configured at the system level and will be an option for the users when they are turning on MFA/2FA. If the user selects "Email", the system emails a one-time password to the provided email address during the login process.
 
 
 
@@ -23,26 +23,26 @@ From this version, DHIS2 also support email-based multi factor authentication (M
 
 #### [New Maintenance App continuous release [ROADMAP-182]](https://dhis2.atlassian.net/browse/ROADMAP-182)
 
-The Maintenance is being gradually reimplementend in its new and improved version. The new Maintenance web app is on continuous release and keeps being dynamically updated. For the time of this v42 release we can announce the implementation of the Data Element, Categories and Indicator type sections.
+The Maintenance is being gradually reimplemented in its new and improved version. The new Maintenance web app is on continuous release and keeps being dynamically updated. For the time of this v42 release we can announce the implementation of the Data Element, Categories and Indicator type sections.
 
 
 
 #### [Program Indicator Disaggregations - Tracker to Aggregated data [ROADMAP-73]](https://dhis2.atlassian.net/browse/ROADMAP-73)
 
-This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model though the exchange app.
+This feature enables the possibility of creating disaggregations for Program Indicators that match with existing category options, and combinations. Such disaggregation will facilitate analysing Program Indicators by those disaggregation with the analytics apps as well as aggregating the values and importing within an aggregated data model through the exchange app.
 
 
 
 #### [Metadata deduplication and merging [ROADMAP-39]](https://dhis2.atlassian.net/browse/ROADMAP-39)
 
-Merging of metadata is being gradually supported within DHIS2 core funcitonalities facilitating metadata cleanup operations. Backend supports merging the following metadata objects through the web API: Organisation Units, Data Elements, Indicators, Indicator Types, Category options, Categories, Category Combinations, Category option combinations (limited to one use case, when the catoptcombination are the same).  Frontend support through the user interface is gradually implemented as well. So far the new Maintenance app supports merging options for Category option and Category option combinations, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge references to.
+Merging of metadata is being gradually supported within DHIS2 core functionalities facilitating metadata cleanup operations. Backend supports merging the following metadata objects through the web API: Organisation Units, Data Elements, Indicators, Indicator Types, Category options, Categories, Category Combinations, Category option combinations (limited to one use case, when the category option combinations are the same).  Frontend support through the user interface is gradually being implemented as well. So far the new Maintenance app supports merging options for Category option and Category option combinations, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge references to.
 
 
-### Android Settings Webapp
+### Android Settings Web app
 
-#### [Webapp for Android Synchronization troubleshooting   [ROADMAP-69]](https://dhis2.atlassian.net/browse/ROADMAP-69)
+#### [Web app for Android Synchronization troubleshooting   [ROADMAP-69]](https://dhis2.atlassian.net/browse/ROADMAP-69)
 
-The new Synchronization Troubleshooting Web App provides implementation administrators real-time visibility and troubleshooting capabilities for synchronization errors occurring in the last 24 hours tracker or event programs. It will enable sys admins to analyze persisted Android sync error API responses. The app is available in the App hub and will require administrators to install it in their instances.
+The new Synchronization Troubleshooting Web App provides implementation administrators real-time visibility and troubleshooting capabilities for synchronization errors occurring in the last 24 hours tracker or event programs. It will enable system admins to analyze persisted Android sync error API responses. The app is available in the App Hub and will require administrators to install it in their instances.
 
 
 ## Collect - Aggregated data
@@ -59,7 +59,7 @@ The new section form configuration options allow for greater customization of th
 
 When specifying the parameters for a data set, you can now use numbers (eg 0.5) for the "Days after period to qualify for timely submission" and “Expiry days”. This will support IDSR use cases where timely submission for weekly IDSR data is Monday at 12 (noon), which is 0.5 days after period end on Sunday midnight.
 
-With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
+With DHIS2 increasingly being used for IDSR where rapid reporting etc. are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
 
 
 ### Android Capture App
@@ -80,9 +80,9 @@ Aligning to the Data Entry App, Data sets are now rendered using a single unifie
 
 You can now perform bulk actions in event and tracker programs working lists. 
 
-For tracker programs, you can now either complete or delete enrollments sumiltaneously on multiple Tracked entities. The actions will apply to the tracked entities selected in the working list. Supported on continuous release, 2.39 and above.
+For tracker programs, you can now either complete or delete enrollments simultaneously on multiple Tracked entities. The actions will apply to the tracked entities selected in the working list. Supported on continuous release, 2.39 and above.
 
-For Events programs, you can either complete or delete simultanously multiple events. The action will apply to those events selected in the working list.
+For Events programs, you can either complete or delete multiple events simultaneously. The action will apply to those events selected in the working list.
 
 
 
@@ -123,7 +123,7 @@ There have been some enhancements to the related stages functionality in Tracker
 
 #### [Breadcrumb bar for event and enrollment pages [ROADMAP-320]](https://dhis2.atlassian.net/browse/ROADMAP-320)
 
-Breadcrum navigation has been added at the top of the event and enrollment pages. It tells the user the steps thy followed to reach the page where they are. Each item is actionable and will let them navigate across pages.
+Breadcrumb navigation has been added at the top of the event and enrollment pages. It tells the user the steps they followed to reach the page where they are. Each item is actionable and will let them navigate across pages.
 
 
 
@@ -318,7 +318,7 @@ Support of different idSchemes is added to {{/tracker/trackedEntities}} and {{/t
 
 #### [Spring Framework Upgrades [ROADMAP-350]](https://dhis2.atlassian.net/browse/ROADMAP-350)
 
-Ongoing upgrades to the Spring framework ensure that the security of DHIS2 is maintained. During this release the engineering team has performed an upgrade to Spring 6, upgrade Spring Security, and integrated Spring Authorisation Server which enables for implementing mutil-factor authentication in the DHIS2 Android App.
+Ongoing upgrades to the Spring framework ensure that the security of DHIS2 is maintained. During this release the engineering team has performed an upgrade to Spring 6, upgrade Spring Security, and integrated Spring Authorisation Server which enables for implementing mutli-factor authentication in the DHIS2 Android App.
 
 
 
