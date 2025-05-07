@@ -61,6 +61,9 @@ When specifying the parameters for a data set, you can now use numbers (eg 0.5) 
 
 With DHIS2 increasingly being used for IDSR where rapid reporting etc are a must, this change will increasingly be used to set timeliness requirements less than one day, or in some cases e.g. 1.5 days.  Historically this parameter has been mostly used for timeliness of "long transaction" monthly aggregated data (the term "long transaction" is a term used for data processes that take considerable time - in the DHIS2 case typically 5-20 days after the end of the month). Disease surveillance data is different, because rapid submission of e.g. outbreak data is of vital importance for the early containment of epidemics. Such data is also increasingly being submitted directly from health facilities or clinicians, using browsers or the Android Capture app.
 
+
+### Android Capture App
+
 #### [Improvements in input dialog for all value types [ROADMAP-364]](https://dhis2.atlassian.net/browse/ROADMAP-364)
 
 The input dialog has been redesigned delivering a more modern, intuitive, and consistent experience across all value types. Users are also able to capture images and files directly within data set entry, alongside others, already supported types, like numeric, boolean, text, and date.
