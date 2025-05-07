@@ -11,6 +11,7 @@ To help you navigate the document, here's a detailed table of contents.
 ## Table of Contents
 
   - [Prerequisits](#prerequisits)
+  - [Deprecated Apps](#deprecated-apps)
   - [API Changes](#api-changes)
     - [Platform](#platform)
     - [Tracker](#tracker)
@@ -28,7 +29,7 @@ To help you navigate the document, here's a detailed table of contents.
 >
 > Version 42 of DHIS2 **now requires Tomcat 10.1** or above.
 
-## Deprecations
+## Deprecated Apps
 
 > **Important**
 >
