@@ -35,7 +35,7 @@ This feature enables the possibility of creating disaggregations for Program Ind
 
 #### [Metadata deduplication and merging [ROADMAP-39]](https://dhis2.atlassian.net/browse/ROADMAP-39)
 
-Merging of metadata is being gradually supported within DHIS2 core funcitonalities facilitating metadata cleanup operations. Backend supports merging the following metadata objects through the web API: Organisation Units, Data Elements, Indicators, Indicator Types, Category options, Category option combinations (limited to one use case, when the catoptcombination are the same).  Frontend support through the user interface is gradually implemented as well. So far the new Maintenance app supports merging options for Category options, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge references to.
+Merging of metadata is being gradually supported within DHIS2 core functionalities facilitating metadata cleanup operations. Backend supports merging the following metadata objects through the web API: Organisation Units, Data Elements, Indicators, Indicator Types, Category options, Category option combinations (limited to one use case, when the category option combinations are the same).  Frontend support through the user interface is gradually being implemented as well. So far the new Maintenance app supports merging options for Category options, Indicators and Indicator types. In these cases the user is able to select the “source” object to merge and the “target” object to merge references to.
 
 
 ### Android Settings Web app
