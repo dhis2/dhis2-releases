@@ -17,10 +17,11 @@
 
 .product-area-section {
     margin-bottom: 2rem;
-    padding: 1rem;
+    _padding: 1rem;
     background: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
 .product-area-title {
@@ -51,7 +52,7 @@
 .issue-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 16px !important;
 }
 
 .issue-link {
@@ -71,7 +72,7 @@
 
 .tabs {
     display: flex;
-    _gap: 0.5rem;
+    gap: 0rem;
     margin-bottom: 2rem;
     _border-bottom: 1px solid #ddd;
     padding-bottom: 2px;
@@ -88,26 +89,15 @@
 
 /* Remove border radius from all tabs by default */
 .tab[data-view="productarea"] {
-    border-radius: 0;
     margin: 0;
-    border-right: none;
-}
-
-/* Add right border to the last functional area tab */
-.tab[data-view="productarea"]:last-of-type {
-    border-right: 1px solid #ccc;
     border-radius: 0 4px 4px 0;
 }
 
-/* Add border radius to left side of first functional area tab */
-.tab[data-view="productarea"].first-area-tab {
-    border-radius: 4px 0 0 4px;
-}
 
 /* Keep the "List by App" tab separate with full border radius */
 .tab[data-view="apps"] {
     border-radius: 4px;
-    margin-right: 1rem;
+    border-radius: 4px 0 0 4px;
 }
 
 .tab:hover {
@@ -153,10 +143,12 @@
 
 /* Inherit card styles from original CSS for app view */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
     padding: 1rem;
+    margin-bottom: 2rem;
 }
 /* 
 .card {
@@ -187,4 +179,11 @@
 
 .app-prefix {
     color: #666;
+}
+
+.card {
+    position: absolute;
+    box-sizing: border-box;
+    /* width will be set by JS */
+    /* Remove any grid/flex or width: 100% */
 }
