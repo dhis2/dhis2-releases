@@ -72,7 +72,7 @@
 
 .tabs {
     display: flex;
-    _gap: 0.5rem;
+    gap: 0rem;
     margin-bottom: 2rem;
     _border-bottom: 1px solid #ddd;
     padding-bottom: 2px;
@@ -89,26 +89,15 @@
 
 /* Remove border radius from all tabs by default */
 .tab[data-view="productarea"] {
-    border-radius: 0;
     margin: 0;
-    border-right: none;
-}
-
-/* Add right border to the last functional area tab */
-.tab[data-view="productarea"]:last-of-type {
-    border-right: 1px solid #ccc;
     border-radius: 0 4px 4px 0;
 }
 
-/* Add border radius to left side of first functional area tab */
-.tab[data-view="productarea"].first-area-tab {
-    border-radius: 4px 0 0 4px;
-}
 
 /* Keep the "List by App" tab separate with full border radius */
 .tab[data-view="apps"] {
     border-radius: 4px;
-    margin-right: 1rem;
+    border-radius: 4px 0 0 4px;
 }
 
 .tab:hover {
