@@ -21,7 +21,7 @@ function getUniqueProductAreas(issues) {
         }
     });
     
-    const orderedAreas = ['Platform', 'Configure', 'Collect', 'Analyze', 'Extend'];
+    const orderedAreas = ['Platform', 'Configure', 'Collect - Aggregated data', 'Collect - Individual data', 'Analyze', 'Extend'];
     return [...areas].sort((a, b) => {
         const indexA = orderedAreas.indexOf(a);
         const indexB = orderedAreas.indexOf(b);
@@ -51,7 +51,7 @@ function populateFilters(issues) {
         const option = document.createElement('option');
         option.value = release;
         option.textContent = release;
-        if (release === 'v42 (May 2025)') {
+        if (release === 'v43 (May 2026)') {
             option.selected = true;
         }
         releaseFilter.appendChild(option);
@@ -59,32 +59,19 @@ function populateFilters(issues) {
 
     // Create tabs
     const tabsContainer = document.getElementById('viewTabs');
-    const productAreas = getUniqueProductAreas(issues);
-    
-    // Add "Apps" tab first
+    // Only two tabs: Apps and Product Area
     const appsTab = document.createElement('button');
     appsTab.className = 'tab';
     appsTab.textContent = 'List by App';
     appsTab.dataset.view = 'apps';
     tabsContainer.appendChild(appsTab);
-    
-    // Add label for functional area tabs
-    const areaLabel = document.createElement('span');
-    areaLabel.textContent = 'List by functional area:';
-    areaLabel.className = 'tab-label';
-    tabsContainer.appendChild(areaLabel);
-    
-    // Add Product Area tabs
-    productAreas.forEach((area, index) => {
-        const tab = document.createElement('button');
-        tab.className = 'tab';
-        if (index === 0) tab.classList.add('first-area-tab');
-        tab.textContent = area;
-        tab.dataset.view = 'productarea';
-        tab.dataset.area = area;
-        tabsContainer.appendChild(tab);
-    });
-    
+
+    const productAreaTab = document.createElement('button');
+    productAreaTab.className = 'tab';
+    productAreaTab.textContent = 'List by product area';
+    productAreaTab.dataset.view = 'productarea';
+    tabsContainer.appendChild(productAreaTab);
+
     // Set initial active tab
     appsTab.classList.add('active');
     
@@ -220,23 +207,35 @@ function createAppCard(appName, issues) {
     return card;
 }
 
-function createProductAreaList(areaName, issues) {
+function createProductAreaList(areaName, issues, showApps = false) {
     const section = document.createElement('div');
     section.className = 'product-area-section';
-    
+    // Create header area
+    const header = document.createElement('div');
+    header.className = 'card-header';
     const title = document.createElement('h3');
-    title.className = 'product-area-title';
+    title.className = 'card-title';
     title.textContent = areaName;
-    section.appendChild(title);
-    
+    header.appendChild(title);
+    section.appendChild(header);
     const issuesList = document.createElement('ul');
     issuesList.className = 'issue-list';
-    
-    issues.sort((a, b) => a.key.localeCompare(b.key));
-    issues.forEach(issue => {
-        issuesList.appendChild(createIssueLink(issue));
+    // Sort by app prefix, then by summary
+    issues.sort((a, b) => {
+        const getAppPrefix = (issue) => {
+            if (!issue.app) return 'Unspecified';
+            const apps = Array.isArray(issue.app) ? issue.app : [issue.app];
+            return apps.join(', ');
+        };
+        const appA = getAppPrefix(a);
+        const appB = getAppPrefix(b);
+        const appCompare = appA.localeCompare(appB);
+        if (appCompare !== 0) return appCompare;
+        return a.summary.localeCompare(b.summary);
     });
-    
+    issues.forEach(issue => {
+        issuesList.appendChild(createIssueLink(issue, showApps));
+    });
     section.appendChild(issuesList);
     return section;
 }
@@ -245,80 +244,96 @@ function displayAppView(issues) {
     const container = document.getElementById('issueCards');
     container.className = 'cards-container';
     container.innerHTML = '';
-    
     const groupedIssues = groupIssuesByApp(issues);
-    
     Object.entries(groupedIssues)
         .sort(([appA], [appB]) => appA.localeCompare(appB))
         .forEach(([appName, appIssues]) => {
-            container.appendChild(createAppCard(appName, appIssues));
+            container.appendChild(createProductAreaList(appName, appIssues, true));
         });
+    // Apply masonry layout after rendering
+    setTimeout(() => applyMasonryLayout('.cards-container', '.product-area-section', 2, 24), 0);
 }
 
-function displayProductAreaView(issues, selectedArea) {
-    const container = document.getElementById('issueCards');
-    container.className = 'product-area-list';
-    container.innerHTML = '';
-    
-    const areaIssues = issues.filter(issue => {
-        if (!issue.productAreas) return false;
-        const areas = Array.isArray(issue.productAreas) ? 
-            issue.productAreas : [issue.productAreas];
-        return areas.some(area => getBaseProductArea(area) === selectedArea);
-    });
+// Vanilla JS Masonry Layout
+function applyMasonryLayout(containerSelector, cardSelector, columns = 2, gap = 24) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+  const cards = Array.from(container.querySelectorAll(cardSelector));
+  if (!cards.length) return;
 
-    const issuesList = document.createElement('ul');
-    issuesList.className = 'issue-list';
-    
-    areaIssues
-        .sort((a, b) => {
-            const getAppPrefix = (issue) => {
-                if (!issue.app) return 'Unspecified';
-                const apps = Array.isArray(issue.app) ? issue.app : [issue.app];
-                return apps.join(', ');
-            };
-            
-            const appA = getAppPrefix(a);
-            const appB = getAppPrefix(b);
-            
-            // First sort by app
-            const appCompare = appA.localeCompare(appB);
-            if (appCompare !== 0) return appCompare;
-            
-            // If apps are the same, sort by summary
-            return a.summary.localeCompare(b.summary);
-        })
-        .forEach(issue => {
-            const productAreas = Array.isArray(issue.productAreas) ? 
-                issue.productAreas.filter(area => getBaseProductArea(area) === selectedArea) :
-                [issue.productAreas];
-            
-            const suffixes = productAreas
-                .map(area => getProductAreaSuffix(area))
-                .filter(suffix => suffix);
-            
-            const formattedSuffix = suffixes.length > 0 
-                ? (suffixes.length === 1 
-                    ? ` [${suffixes[0]}]` 
-                    : ` [${suffixes.join(', ')}]`)
-                : '';
-            
-            const issueCopy = {...issue, productAreaSuffix: formattedSuffix};
-            issuesList.appendChild(createIssueLink(issueCopy, true));
-        });
-    
-    container.appendChild(issuesList);
+  // Responsive columns
+  const containerWidth = container.clientWidth;
+  let colCount = columns;
+  if (containerWidth < 700) colCount = 1;
+
+  // Calculate pixel width for each card
+  const cardWidth = (containerWidth - (colCount - 1) * gap) / colCount;
+
+  // Reset styles
+  container.style.position = 'relative';
+  cards.forEach(card => {
+    card.style.position = 'absolute';
+    card.style.width = cardWidth + 'px';
+    card.style.transform = '';
+  });
+
+  // Use rAF to ensure layout after paint
+  requestAnimationFrame(() => {
+    // Calculate column heights
+    const colHeights = Array(colCount).fill(0);
+    cards.forEach(card => {
+      // Find the shortest column
+      const minCol = colHeights.indexOf(Math.min(...colHeights));
+      const x = minCol * (cardWidth + gap);
+      const y = colHeights[minCol];
+      card.style.transform = `translate(${x}px, ${y}px)`;
+      colHeights[minCol] += card.offsetHeight + gap;
+    });
+    // Set container height
+    container.style.height = Math.max(...colHeights) + 'px';
+  });
+
+  // Observe card size changes and re-apply layout
+  if (!container._masonryResizeObserver) {
+    const ro = new ResizeObserver(() => {
+      applyMasonryLayout(containerSelector, cardSelector, columns, gap);
+    });
+    cards.forEach(card => ro.observe(card));
+    container._masonryResizeObserver = ro;
+  }
+}
+
+function displayAllProductAreasView(issues) {
+    const container = document.getElementById('issueCards');
+    container.className = 'cards-container';
+    container.innerHTML = '';
+    const grouped = groupIssuesByProductArea(issues);
+    // Use the same order as orderedAreas, then alphabetical for others
+    const orderedAreas = ['Platform', 'Configure', 'Collect - Aggregated data', 'Collect - Individual data', 'Analyze', 'Extend'];
+    const allAreas = Object.keys(grouped);
+    allAreas.sort((a, b) => {
+        const indexA = orderedAreas.indexOf(a);
+        const indexB = orderedAreas.indexOf(b);
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        return a.localeCompare(b);
+    });
+    allAreas.forEach(areaName => {
+        container.appendChild(createProductAreaList(areaName, grouped[areaName], true));
+    });
+    // Apply masonry layout after rendering
+    setTimeout(() => applyMasonryLayout('.cards-container', '.product-area-section', 2, 24), 0);
 }
 
 function displayIssues(issues, selectedRelease, view, selectedArea) {
     const filteredIssues = issues.filter(issue => 
         !selectedRelease || issue.targetRelease === selectedRelease
     );
-    
     if (view === 'apps') {
         displayAppView(filteredIssues);
-    } else {
-        displayProductAreaView(filteredIssues, selectedArea);
+    } else if (view === 'productarea') {
+        displayAllProductAreasView(filteredIssues);
     }
 }
 
@@ -356,5 +371,10 @@ async function initialize() {
         }
     });
 }
+
+// Re-apply masonry on window resize
+window.addEventListener('resize', () => {
+  setTimeout(() => applyMasonryLayout('.cards-container', '.product-area-section', 2, 24), 100);
+});
 
 initialize(); 
