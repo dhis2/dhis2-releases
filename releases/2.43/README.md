@@ -32,3 +32,8 @@ The following changes have been made to Tracker error codes to improve accuracy 
 - Error code `E1084` has been removed. Depending on the context, the system will now return
 the more appropriate error codes: `E1007` for attributes or `E1302` for data values.
 - Error code `E1085` has also been removed. In its place, the system will return error code `E1007`.​
+
+Tracker API improvements and cleanup:
+- Made program a mandatory parameter in `/tracker/enrollments` endpoint.
+- Removed trackedEntityType as a supported parameter in `/tracker/enrollments`.
+- Removed deprecated ou parameter from `/api/tracker/ownership/transfer`. Use orgUnit instead.
