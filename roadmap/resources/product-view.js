@@ -62,7 +62,7 @@ function populateFilters(issues) {
     // Only two tabs: Apps and Product Area
     const appsTab = document.createElement('button');
     appsTab.className = 'tab';
-    appsTab.textContent = 'List by App';
+    appsTab.textContent = 'List by app';
     appsTab.dataset.view = 'apps';
     tabsContainer.appendChild(appsTab);
 
