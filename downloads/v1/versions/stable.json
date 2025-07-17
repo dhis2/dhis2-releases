@@ -46,9 +46,9 @@
             "releaseDate": "2024-05-29",
             "supported": true,
             "latestPatchVersion": 4,
-            "latestHotfixVersion": 1,
-            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.4.1.war",
-            "sha256": "d51e5b5ee74dbe86461f7a9a9ad9922e9902eba9de47511888d1b5d934798838",
+            "latestHotfixVersion": 2,
+            "latestStableUrl": "https://releases.dhis2.org/41/dhis2-stable-41.4.2.war",
+            "sha256": "7b9fd6891dcfe50b1df0827901a1ec4f02d1a63fa0926b3b61ccfce273626977",
             "jdk": 17,
             "patchVersions": [
                 {
@@ -136,6 +136,17 @@
                     "releaseDate": "2025-07-01",
                     "url": "https://releases.dhis2.org/41/dhis2-stable-41.4.1.war",
                     "sha256": "d51e5b5ee74dbe86461f7a9a9ad9922e9902eba9de47511888d1b5d934798838",
+                    "hotfix": true,
+                    "fileSize": "287.03 MB"
+                },
+                {
+                    "name": "2.41.4.2",
+                    "displayName": "41.4.2",
+                    "version": 4,
+                    "hotfixVersion": 2,
+                    "releaseDate": "2025-07-17",
+                    "url": "https://releases.dhis2.org/41/dhis2-stable-41.4.2.war",
+                    "sha256": "7b9fd6891dcfe50b1df0827901a1ec4f02d1a63fa0926b3b61ccfce273626977",
                     "hotfix": true,
                     "fileSize": "287.03 MB"
                 }
