@@ -37,3 +37,4 @@ Tracker API improvements and cleanup:
 - Made program a mandatory parameter in `/tracker/enrollments` endpoint.
 - Removed trackedEntityType as a supported parameter in `/tracker/enrollments`.
 - Removed deprecated ou parameter from `/api/tracker/ownership/transfer`. Use orgUnit instead.
+- Removed the job type Tracker Search Optimization from `/api/jobTypes`. We [introduced](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html?h=tracker+search+optimization+master#scheduling_tracker_search_optimization) the new Tracker trigram index maintenance.
