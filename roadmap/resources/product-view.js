@@ -248,7 +248,7 @@ function displayAppView(issues) {
     Object.entries(groupedIssues)
         .sort(([appA], [appB]) => appA.localeCompare(appB))
         .forEach(([appName, appIssues]) => {
-            container.appendChild(createProductAreaList(appName, appIssues, true));
+            container.appendChild(createProductAreaList(appName, appIssues, false));
         });
     // Apply masonry layout after rendering
     setTimeout(() => applyMasonryLayout('.cards-container', '.product-area-section', 2, 24), 0);
