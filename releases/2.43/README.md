@@ -18,6 +18,8 @@ To help you navigate the document, here's a detailed table of contents.
 ---
 ## Prerequisits
 
+It must pass integrity check `Single events without an occurred date`.
+
 ## API Changes
 
 ### Platform
@@ -25,6 +27,31 @@ To help you navigate the document, here's a detailed table of contents.
 ### Analytics
 
 ### Tracker
+As described [in the docs] (https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_objects_events)
+events can be of 2 different types, tracker events and single events. We made this distinction
+explicit in the code and the database, so `event` table was splitted into `singleevent`
+and `trackerevent` tables.
+
+#### Table changes
+
+Given the new database structure, if you run **custom SQL scripts** or have created
+**SQL views**, you might need to adapt to the breaking changes described in the current section.
+
+Splitted tables
+
+| Original event table | Single event table   | Tracker event table   |
+| ---------------------|:--------------------:|----------------------:|
+| event                | singleevent          | trackerevent          |
+| eventchangelog       | singleeventchangelog | trackereventchangelog |
+| event_notes          | singleevent_notes    | trackerevent_notes    |
+
+Splitted columns
+
+| Table                       | Original event column | Single event column | Tracker event column |
+| ----------------------------|:---------------------:|:-------------------:|---------------------:|
+| programmessage              | eventid               | singleeventid       | trackereventid       |
+| relationshipitem            | eventid               | singleeventid       | trackereventid       |
+| programnotificationinstance | eventid               | singleeventid       | trackereventid       |
 
 #### Breaking Changes
 
@@ -34,6 +61,7 @@ the more appropriate error codes: `E1007` for attributes or `E1302` for data val
 - Error code `E1085` has also been removed. In its place, the system will return error code `E1007`.​
 
 Tracker API improvements and cleanup:
+- Made program a mandatory parameter in `/tracker/events` endpoint.
 - Made program a mandatory parameter in `/tracker/enrollments` endpoint.
 - Removed trackedEntityType as a supported parameter in `/tracker/enrollments`.
 - Removed deprecated ou parameter from `/api/tracker/ownership/transfer`. Use orgUnit instead.
