@@ -37,7 +37,7 @@ and `trackerevent` tables.
 Given the new database structure, if you run **custom SQL scripts** or have created
 **SQL views**, you might need to adapt to the breaking changes described in the current section.
 
-Splitted tables
+Split tables
 
 | Original event table | Single event table   | Tracker event table   |
 | ---------------------|:--------------------:|----------------------:|
