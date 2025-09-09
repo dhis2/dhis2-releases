@@ -45,7 +45,7 @@ Split tables
 | eventchangelog       | singleeventchangelog | trackereventchangelog |
 | event_notes          | singleevent_notes    | trackerevent_notes    |
 
-Splitted columns
+Split columns
 
 | Table                       | Original event column | Single event column | Tracker event column |
 | ----------------------------|:---------------------:|:-------------------:|---------------------:|
