@@ -38,7 +38,7 @@ there are inconsistent data in the system:
 ```sql
 SELECT COUNT(1)
 FROM event e
-JOIN programstage ps ON psi.programstageid = ps.programstageid
+JOIN programstage ps ON e.programstageid = ps.programstageid
 JOIN program p ON ps.programid = p.programid
 WHERE e.occurreddate IS NULL
   AND p.type = 'WITHOUT_REGISTRATION';
@@ -48,10 +48,10 @@ WHERE e.occurreddate IS NULL
 
 ```sql
 SELECT COUNT(1)
-FROM programstageinstance pso
+FROM programstageinstance psi
 JOIN programstage ps ON psi.programstageid = ps.programstageid
 JOIN program p ON ps.programid = p.programid
-WHERE psi.occurreddate IS NULL
+WHERE psi.executiondate IS NULL
   AND p.type = 'WITHOUT_REGISTRATION';
 ```
 
@@ -65,8 +65,17 @@ So there are 2 options to fix the data:
 
 ##### Assign occurred date to event
 
+The system do not allow to write a `null` value in `occurreddate` column in `event` table and
+this validation was present for a long time. If the inconsistency is present, most likely,
+it is because the single event was scheduled, even though `SCHEDULE` status does not make sense
+for a single event, or the event was created and already set to `COMPLETED` and the value for
+`occurreddate` was not provided.
 Use the following script to assign a meaningful value to `occurreddate` column in `event` table
-for single events (replace `{REFERENCE_DATE}` with a valid date like 2025-09-01 11:26:00'):
+(column is called `executiondate` for <=v40) for single events (replace `{REFERENCE_DATE}`
+with a valid date like 2025-09-01 11:26:00'):
+
+##### For >= v41 Instances:
+
 ```sql
 update event
 set occurreddate = coalesce(scheduleddate, completeddate, '{REFERENCE_DATE}')
@@ -75,6 +84,21 @@ and eventid in (
     SELECT ev.eventid
     FROM event ev
     JOIN programstage ps ON ev.programstageid = ps.programstageid
+    JOIN program p ON ps.programid = p.programid
+    WHERE p.type = 'WITHOUT_REGISTRATION'
+    );
+```
+
+##### For <= v40 Instances:
+
+```sql
+update programstageinstance
+set executiondate = coalesce(duedate, completeddate, '{REFERENCE_DATE}')
+where executiondate is null
+and programstageinstanceid in (
+    SELECT psi.programstageinstanceid
+    FROM programstageinstance psi
+    JOIN programstage ps ON psi.programstageid = ps.programstageid
     JOIN program p ON ps.programid = p.programid
     WHERE p.type = 'WITHOUT_REGISTRATION'
     );
