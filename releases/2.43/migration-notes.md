@@ -65,7 +65,7 @@ So there are 2 options to fix the data:
 
 ##### Assign occurred date to event
 
-The system do not allow to write a `null` value in `occurreddate` column in `event` table and
+The system does not allow to write a `null` value in `occurreddate` column in `event` table and
 this validation was present for a long time. If the inconsistency is present, most likely,
 it is because the single event was scheduled, even though `SCHEDULE` status does not make sense
 for a single event, or the event was created and already set to `COMPLETED` and the value for
