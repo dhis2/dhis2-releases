@@ -32,9 +32,6 @@ Components: _[App] Maps_
 **[DHIS2-19863](https://dhis2.atlassian.net/browse/DHIS2-19863): Expose the ApiToken/PAT's code field to the UI, so it can be used for naming tokens**  
 Components: _[App] User Profile_
 
-**[DHIS2-20143](https://dhis2.atlassian.net/browse/DHIS2-20143): Perf: Improve housekeeping job to only update file resources that need updating**  
-Components: _[Core] Job Scheduler_
-
 ## Bugs
 
 **[DHIS2-19989](https://dhis2.atlassian.net/browse/DHIS2-19989): Analytics API: Query with dimensions of type coordinate fails**  
