@@ -7,10 +7,10 @@
             "version": 42,
             "releaseDate": "2025-05-07",
             "supported": true,
-            "latestPatchVersion": 1,
+            "latestPatchVersion": 2,
             "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/42/dhis2-stable-42.1.0.war",
-            "sha256": "6f468d32497a6be7b7db47daf71db947fe829d0ac28945df186b627befb9ba3b",
+            "latestStableUrl": "https://releases.dhis2.org/42/dhis2-stable-42.2.0.war",
+            "sha256": "c1e90e6b897e43c1c59afb1be050ed96d6b9a81ad6dcdb2aca15dd60b52d69a9",
             "jdk": 17,
             "patchVersions": [
                 {
@@ -34,9 +34,20 @@
                     "sha256": "6f468d32497a6be7b7db47daf71db947fe829d0ac28945df186b627befb9ba3b",
                     "hotfix": false,
                     "fileSize": "330.36 MB"
+                },
+                {
+                    "name": "2.42.2",
+                    "displayName": "42.2.0",
+                    "version": 2,
+                    "hotfixVersion": 0,
+                    "releaseDate": "2025-09-24",
+                    "url": "https://releases.dhis2.org/42/dhis2-stable-42.2.0.war",
+                    "sha256": "c1e90e6b897e43c1c59afb1be050ed96d6b9a81ad6dcdb2aca15dd60b52d69a9",
+                    "hotfix": false,
+                    "fileSize": "329.90 MB"
                 }
             ],
-            "fileSize": "330.36 MB"
+            "fileSize": "329.90 MB"
         },
         {
             "name": "2.41",
