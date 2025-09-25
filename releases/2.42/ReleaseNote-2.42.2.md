@@ -14,9 +14,6 @@ Components: _[API] Other_, _[App] Settings_
 **[DHIS2-19828](https://dhis2.atlassian.net/browse/DHIS2-19828): HTTP HEAD as method for personal access tokens (PAT)**  
 Components: _[API] Security_
 
-**[DHIS2-18907](https://dhis2.atlassian.net/browse/DHIS2-18907): Implement slideshow autoplay**  
-Components: _[App] Dashboard_
-
 **[DHIS2-3354](https://dhis2.atlassian.net/browse/DHIS2-3354): Allow selecting data elements and tracked entity attributes with org unit value type as coordinate field**  
 Components: _[App] Maps_
 
