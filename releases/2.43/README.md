@@ -66,3 +66,10 @@ Tracker API improvements and cleanup:
 - Removed trackedEntityType as a supported parameter in `/tracker/enrollments`.
 - Removed deprecated ou parameter from `/api/tracker/ownership/transfer`. Use orgUnit instead.
 - Removed the job type Tracker Search Optimization from `/api/jobTypes`. We [introduced](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/scheduling.html?h=tracker+search+optimization+master#scheduling_tracker_search_optimization) the new Tracker trigram index maintenance.
+
+##### Change Log Configuration Update
+
+The global `changelog.tracker` property in `dhis.conf` has been removed. Change log collection is 
+now configured per Program and Tracked Entity Type using the new `enableChangeLog` property. After 
+upgrading to v43, all Programs will have change logs enabled, and Tracked Entity Types will inherit 
+their value from the existing `allowauditlog` field.
