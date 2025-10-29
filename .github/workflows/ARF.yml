@@ -27,7 +27,7 @@ jobs:
       run: python3 tools/app-release-notes/generate_app_notes.py
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.APP_RELEASES_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
         
     - name: pull any other changes
       run: git pull
