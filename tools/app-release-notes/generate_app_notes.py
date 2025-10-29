@@ -16,6 +16,8 @@ for a in apphub["result"]:
     if a["sourceUrl"] == "":
         if a["name"] == "Climate Data":
             a["sourceUrl"] = "https://github.com/dhis2/climate-data-app"
+    if a["name"] == "Modeling":
+        a["sourceUrl"] = "https://github.com/dhis2-chap/chap-frontend"
 
 # save to a file
 with open("website/data/apphub.json", "w") as f:
