@@ -60,6 +60,7 @@ def fetch_tags(app):
     url = f"{base_url}/{app}/tags"
     # print(url)
     response = requests.get(url, headers=headers)
+    print("app:", app, "url:", url, "response:", response.json())
     # print(app,response.json())
     return [tag['name'] for tag in response.json()]
 
