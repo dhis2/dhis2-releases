@@ -66,6 +66,7 @@ def fetch_tags(app):
 def fetch_releases(app):
     url = f"{base_url}/{app}/releases"
     response = requests.get(url, headers=headers)
+    print("app:", app, "url:", url, "response:", response.json())
     return response.json()
 
 # Function to fetch and categorize commits between two tags
