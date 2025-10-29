@@ -26,7 +26,7 @@ with open("website/data/apphub.json", "w") as f:
 # filter the list of apps to only those that have developer.organisation == "DHIS2"
 apps = [app for app in apphub["result"] if app["developer"]["organisation"] in ["DHIS2","UiO"] and app["sourceUrl"] != '']
 # appnames = [app["name"] for app in apphub["result"] if (app["developer"]["organisation"] == "DHIS2" and not app["sourceUrl"])]
-print(apps)
+#print(apps)
 # print(appnames)
 
 # save to a file
@@ -45,7 +45,7 @@ categories_config = {
     "chore": "Maintenance",
 }
 # apps = ["data-visualizer-app"]
-base_url = "https://api.github.com/repos/dhis2"
+base_url = "https://api.github.com/repos"
 output_file = "website/data/app_releases.json"
 
 # Initialize the output dictionary
@@ -54,7 +54,7 @@ output = {}
 # authorization headers
 headers = {
     'Authorization': 'Bearer ' + os.environ['GITHUB_TOKEN'],
-}   
+}
 
 
 # Function to fetch tags from the GitHub repository
@@ -62,15 +62,24 @@ def fetch_tags(app):
     url = f"{base_url}/{app}/tags"
     # print(url)
     response = requests.get(url, headers=headers)
-    print("app:", app, "url:", url, "response:", response.json())
-    # print(app,response.json())
+
+    if response.status_code == 200:
+        return [tag['name'] for tag in response.json()]
+    else:
+        print("Error fetching tags for app:", app, "status code:", response.status_code)
+        return []
+
+
     return [tag['name'] for tag in response.json()]
 
 def fetch_releases(app):
     url = f"{base_url}/{app}/releases"
     response = requests.get(url, headers=headers)
-    print("app:", app, "url:", url, "response:", response.json())
-    return response.json()
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Error fetching releases for app:", app, "status code:", response.status_code)
+        return []
 
 # Function to fetch and categorize commits between two tags
 def fetch_and_categorize_commits(app, from_tag, to_tag):
@@ -88,7 +97,7 @@ def fetch_and_categorize_commits(app, from_tag, to_tag):
                     replacement = match.group(1)+':' if match else ''
                     processed_line = re.sub(full_pattern, replacement, line, flags=re.I).strip()
                     categories.setdefault(category, set()).add(processed_line)
-    
+
     # Filter out substrings
     for category, messages in categories.items():
         filtered_messages = set()
@@ -96,20 +105,22 @@ def fetch_and_categorize_commits(app, from_tag, to_tag):
             if not any(msg != other_msg and msg in other_msg for other_msg in messages):
                 filtered_messages.add(msg)
         categories[category] = filtered_messages
-    
+
     return categories
 
 # Iterate over the apps and fetch the categorized commit messages
 for appie in apps:
+    # get the org and app name from the sourceUrl
+    org = appie["sourceUrl"].strip('/').split('/')[-2]
     app = appie["sourceUrl"].strip('/').split('/')[-1]
-    tags = fetch_tags(app)
-    releases = fetch_releases(app)
+    tags = fetch_tags(org+'/'+app)
+    releases = fetch_releases(org+'/'+app)
     app_output = {}
     versions = appie.get("versions", [])
     for i in range(len(tags) - 1):
         from_tag = tags[i + 1]
         to_tag = tags[i]
-        categories = fetch_and_categorize_commits(app, from_tag, to_tag)
+        categories = fetch_and_categorize_commits(org+'/'+app, from_tag, to_tag)
         version_output = {}
         for category, messages in categories.items():
             version_output[category] = list(messages)
