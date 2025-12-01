@@ -4,13 +4,25 @@
     "status": "APPROVED",
     "id": "a1bd6b5b-de8c-4998-8d34-56c18a139683",
     "created": 1595864000140,
-    "lastUpdated": 1746803621283,
+    "lastUpdated": 1764596964853,
     "name": "Android Settings",
     "description": "The Android Settings web app allows admins to configure synchronization parameters for the DHIS2 Android Capture App, encrypt the local database of the android devices, run tests on the size of data and metadata synchronized by a given android user, and configure analytics and visualization. The configuration parameters defined within this web app will overwrite the settings of all android devices using the DHIS2 Android Capture App.\n\nPlease refer to the [documentation](https://docs.dhis2.org/en/use/android-app/settings-configuration.html) for more information.",
     "hasPlugin": null,
     "pluginType": null,
     "coreApp": false,
     "versions": [
+      {
+        "created": 1764596964853,
+        "demoUrl": "",
+        "changeSummary": "",
+        "downloadUrl": "https://apps.dhis2.org/api/v1/apps/download/dhis2/android-settings_2.5.0.zip",
+        "id": "d115d8a7-39d1-4484-ae97-ddcf989e58c8",
+        "lastUpdated": 1764596964853,
+        "maxDhisVersion": "",
+        "minDhisVersion": "2.40",
+        "version": "2.5.0",
+        "channel": "stable"
+      },
       {
         "created": 1746803621283,
         "demoUrl": "",
@@ -174,12 +186,12 @@
         "logo": true
       },
       {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
         "caption": "",
-        "created": 1624314674393,
+        "created": 1624314977424,
         "description": "",
-        "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
-        "lastUpdated": 1624314674393,
+        "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
+        "lastUpdated": 1624314977424,
         "logo": false
       },
       {
@@ -192,21 +204,12 @@
         "logo": false
       },
       {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/4b115e05-12ec-4660-aa6d-e2b04f69c8be",
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
         "caption": "",
-        "created": 1624315022401,
+        "created": 1624314674393,
         "description": "",
-        "id": "4b115e05-12ec-4660-aa6d-e2b04f69c8be",
-        "lastUpdated": 1624315022401,
-        "logo": false
-      },
-      {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/f0bef01d-3570-4b20-9f26-8d0d6943093a",
-        "caption": "",
-        "created": 1624314977424,
-        "description": "",
-        "id": "f0bef01d-3570-4b20-9f26-8d0d6943093a",
-        "lastUpdated": 1624314977424,
+        "id": "afb0acb8-8ff3-48fe-8c3e-966ad83149ff",
+        "lastUpdated": 1624314674393,
         "logo": false
       },
       {
@@ -216,6 +219,15 @@
         "description": "",
         "id": "835094e5-4813-48be-b676-bccd6bd4df67",
         "lastUpdated": 1624314967152,
+        "logo": false
+      },
+      {
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/a1bd6b5b-de8c-4998-8d34-56c18a139683/4b115e05-12ec-4660-aa6d-e2b04f69c8be",
+        "caption": "",
+        "created": 1624315022401,
+        "description": "",
+        "id": "4b115e05-12ec-4660-aa6d-e2b04f69c8be",
+        "lastUpdated": 1624315022401,
         "logo": false
       }
     ],
@@ -9726,21 +9738,21 @@
         "logo": true
       },
       {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/4a5b87dc-015c-47db-ae77-f2f42e3bbb5a/a35d8e4a-aa51-47fe-b434-a94218941f53",
-        "caption": "",
-        "created": 1663847764454,
-        "description": "",
-        "id": "a35d8e4a-aa51-47fe-b434-a94218941f53",
-        "lastUpdated": 1663847764454,
-        "logo": false
-      },
-      {
         "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/4a5b87dc-015c-47db-ae77-f2f42e3bbb5a/97af18bb-86e0-4235-9e53-0b00b45280c6",
         "caption": "",
         "created": 1663847764455,
         "description": "",
         "id": "97af18bb-86e0-4235-9e53-0b00b45280c6",
         "lastUpdated": 1663847764455,
+        "logo": false
+      },
+      {
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/4a5b87dc-015c-47db-ae77-f2f42e3bbb5a/a35d8e4a-aa51-47fe-b434-a94218941f53",
+        "caption": "",
+        "created": 1663847764454,
+        "description": "",
+        "id": "a35d8e4a-aa51-47fe-b434-a94218941f53",
+        "lastUpdated": 1663847764454,
         "logo": false
       }
     ],
@@ -16290,21 +16302,21 @@
         "logo": true
       },
       {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/3c6d0723-904c-4c7a-bbd6-35f3c3aa356b/a88a5a11-c711-4780-899f-521a55ce5805",
-        "caption": "",
-        "created": 1717775672673,
-        "description": "",
-        "id": "a88a5a11-c711-4780-899f-521a55ce5805",
-        "lastUpdated": 1717775672673,
-        "logo": false
-      },
-      {
         "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/3c6d0723-904c-4c7a-bbd6-35f3c3aa356b/66f39098-9414-4c29-82a3-ab2ca801e045",
         "caption": "",
         "created": 1717775680765,
         "description": "",
         "id": "66f39098-9414-4c29-82a3-ab2ca801e045",
         "lastUpdated": 1717775680765,
+        "logo": false
+      },
+      {
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/3c6d0723-904c-4c7a-bbd6-35f3c3aa356b/a88a5a11-c711-4780-899f-521a55ce5805",
+        "caption": "",
+        "created": 1717775672673,
+        "description": "",
+        "id": "a88a5a11-c711-4780-899f-521a55ce5805",
+        "lastUpdated": 1717775672673,
         "logo": false
       }
     ],
@@ -18774,21 +18786,21 @@
         "logo": true
       },
       {
-        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/5dbe9ab8-46bd-411e-b22f-905f08a81d78/4b1f2aaf-d697-4848-a747-2e3e77d443d2",
-        "caption": "",
-        "created": 1738543396430,
-        "description": "",
-        "id": "4b1f2aaf-d697-4848-a747-2e3e77d443d2",
-        "lastUpdated": 1738543396430,
-        "logo": false
-      },
-      {
         "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/5dbe9ab8-46bd-411e-b22f-905f08a81d78/e1196a96-653d-446a-bca1-1a41ff093ab7",
         "caption": "",
         "created": 1738543396246,
         "description": "",
         "id": "e1196a96-653d-446a-bca1-1a41ff093ab7",
         "lastUpdated": 1738543396246,
+        "logo": false
+      },
+      {
+        "imageUrl": "https://apps.dhis2.org/api/v1/apps/media/dhis2/5dbe9ab8-46bd-411e-b22f-905f08a81d78/4b1f2aaf-d697-4848-a747-2e3e77d443d2",
+        "caption": "",
+        "created": 1738543396430,
+        "description": "",
+        "id": "4b1f2aaf-d697-4848-a747-2e3e77d443d2",
+        "lastUpdated": 1738543396430,
         "logo": false
       },
       {
