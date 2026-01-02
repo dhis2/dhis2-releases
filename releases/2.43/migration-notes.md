@@ -12,6 +12,7 @@ To help you navigate the document, here's a detailed table of contents.
     - [Tracker](#tracker)
       - [Null Occurred Date For Single Events](#null-occurred-date-for-single-event)
       - [Inconsistent Events](#inconsistent-events)
+      - [Tracker Associate](#tracker-associate)
 ---
 ## Inconsistent-data
 
@@ -194,3 +195,11 @@ Just run the following script:
 ```sql
 drop table inconsistentevent;
 ```
+
+### Tracker Associate
+
+`TRACKER_ASSOCIATE` value type is not supported anymore and if present in the DB the upgrade
+will fail.
+This check is already performed by `tracker_associate_is_deprecated` integrity check.
+Running this check will provide all the information to fix or delete the inconsistent data
+if present in the system.
