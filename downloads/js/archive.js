@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const iconsHtml = `
       <a class="action-icon" href="${upgradeUrl}" title="${texts.upgradeNotes || 'Upgrade notes'}"><i class="fa-solid fa-clipboard-list"></i><span class="icon-label">${texts.upgradeNotes || 'Upgrade'}</span></a>
       <a class="action-icon" href="${featureOverviewUrl}" title="${texts.featureOverview || 'Feature Overview'}"><i class="fa-solid fa-face-grin-stars"></i><span class="icon-label">${texts.featureOverview || 'Feature overview'}</span></a>
-      ${p ? `<a class="action-icon" href="${patchNotesUrl}" title="${texts.releaseNotes || 'Release note'}"><i class="fa-solid fa-file-lines"></i><span class="icon-label">${texts.releaseNotes || 'Release note'}</span></a>` : ''}
       ${showDocker ? `<a class="action-icon" href="${dockerUrl}" title="${texts.dockerImages || 'Docker images'}"><i class="fa-brands fa-docker"></i><span class="icon-label">${texts.dockerImages || 'Docker'}</span></a>` : ''}
       ${demoUrl ? `<a class="action-icon" href="${demoUrl}" title="${texts.sampleDatabase || 'Demo DB'}"><i class="fa-solid fa-database"></i><span class="icon-label">${texts.sampleDatabase || 'Demo'}</span></a>` : ''}
     `;
