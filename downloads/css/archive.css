@@ -1,0 +1,499 @@
+:root {
+    --accent: #2b6cb0;
+    --muted: #666
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    margin: 0;
+    padding: 1rem;
+    background: #fff;
+    color: #111
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem
+}
+
+.top h1 {
+    margin: .2rem 1rem .2rem 0;
+    font-size: 1.25rem
+}
+
+.select-label {
+    font-size: .9rem;
+    color: var(--muted)
+}
+
+#version-select {
+    padding: .4rem;
+    border: 1px solid #ddd;
+    border-radius: 4px
+}
+
+.tablepress {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    background: #fff
+}
+
+.tablepress th,
+.tablepress td {
+    padding: .45rem .6rem;
+    border: 1px solid #eee;
+    text-align: left;
+    font-size: .95rem;
+    vertical-align: middle
+}
+
+.tablepress thead {
+    display: table-header-group
+}
+
+/* show column headings */
+.tablepress .column-1 {
+    width: 8%
+}
+
+.tablepress .column-2 {
+    width: 10%
+}
+
+.tablepress .column-3 {
+    width: 14%
+}
+
+.tablepress .column-4 {
+    width: 12%
+}
+
+.tablepress .column-5 {
+    width: 30%
+}
+
+.tablepress .column-6 {
+    width: 12%
+}
+
+.tablepress .column-7 {
+    width: 4%
+}
+
+.tablepress .row-hover tr:hover {
+    background: #fafafa
+}
+
+/* hide superseded patch rows by default */
+.superseded-dhis2-dl {
+    display: none
+}
+
+/* hotfix styling */
+.tablepress .hotfix,
+.hotfix {
+    color: orange;
+    font-size: .85rem;
+    font-weight: 600
+}
+
+/* superseded rows are hidden by default; toggle with `#downloads-content.show-superseded` */
+.superseded-dhis2-dl {
+    display: none
+}
+
+/* show superseded rows at lower opacity when toggled on */
+.superseded-dhis2-dl td {
+    opacity: .45
+}
+
+#downloads-content.show-superseded .superseded-dhis2-dl {
+    display: table-row
+}
+
+/* Hotfix badge next to download buttons */
+/* .badge-hotfix{
+    display: inline-block;
+    background: #d35400;
+    color: #fff;
+    padding: 0 .4rem;
+    margin-left: .5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    line-height: 1.4rem;
+    font-weight: 700;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+} */
+.badge-hotfix {
+    background: #ffd18f;
+    background-image: url('data:image/svg+xml,<svg width="14" height="10" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="2" cy="2.5" r="1.5" fill="%23E68225" /></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: 7px;
+    margin-left: .5rem;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    padding: .2rem .45rem .15rem 1.4rem;
+    font-size: 0.9rem;
+}
+
+    font-size:.9rem @media (max-width:520px) {
+        .badge-hotfix {
+            margin-left: .4rem;
+            font-size: 0.65rem
+        }
+    }
+
+    /* wrapper spacing similar to example */
+    .add-cont-wrapper {
+        padding: 0.5rem 0
+    }
+
+    .table-scroll-wrapper h2 {
+        margin: 0 0 0.5rem 0
+    }
+
+    .error {
+        color: #a00
+    }
+
+    a {
+        color: var(--accent)
+    }
+
+    @media (max-width:700px) {
+        .top {
+            flex-direction: column;
+            align-items: flex-start
+        }
+    }
+
+    /* Compact table styles */
+    .button {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        padding: .35rem .6rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600
+    }
+
+    .button:focus {
+        outline: 2px solid #264a66
+    }
+
+    .small-actions {
+        margin-top: .4rem;
+        font-size: .85rem
+    }
+
+    .action-link {
+        margin-right: .6rem;
+        color: var(--accent);
+        text-decoration: none
+    }
+
+    .meta {
+        font-size: .85rem;
+        color: var(--muted);
+        margin-top: .35rem
+    }
+
+    .notes-truncate {
+        max-width: 40ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: top
+    }
+
+    .hotfix {
+        color: orange;
+        font-weight: 700;
+        margin-left: .35rem
+    }
+
+    .version {
+        font-weight: 700
+    }
+
+    .badge-supported {
+        background: #2b6cb0;
+        color: #fff;
+        padding: 0 .4rem;
+        border-radius: 3px;
+        font-size: .8rem;
+        margin-left: .4rem
+    }
+
+    .badge-unsupported {
+        background: #ffe7d0; /* stronger warm orange */
+        color: #c75a1a; /* stronger orange-brown text */
+        padding: 0 .4rem;
+        border-radius: 3px;
+        font-size: .8rem;
+        margin-left: .4rem;
+        border: 1px solid #ffbf90;
+    }
+
+    /* Responsive compact layout tweaks */
+    @media (max-width:900px) {
+        .tablepress .column-5 {
+            display: block
+        }
+
+        .notes-truncate {
+            max-width: 28ch
+        }
+    }
+
+    /* Card + Expand styles */
+    .card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem
+    }
+
+    .card {
+        border: 1px solid #eee;
+        border-radius: 6px;
+        padding: 0;
+        background: #fff;
+        overflow: hidden;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03)
+    }
+
+    .card.open {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06)
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .75rem 1rem;
+        gap: 1rem;
+        flex-wrap: wrap
+    }
+
+    .card-header .header-icons {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin-right: .6rem
+    }
+
+    .action-icon {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 1.05rem;
+        padding: .25rem .5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        gap: .4rem
+    }
+
+    .action-icon:hover {
+        color: var(--accent);
+        background: rgba(43, 108, 176, 0.08)
+    }
+
+    .header-right .header-icons {
+        order: 0
+    }
+
+    .header-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .action-icon .icon-label {
+        font-size: .79rem;
+        margin-left: .45rem;
+        color: var(--muted);
+        white-space: nowrap
+    }
+
+    @media (max-width:900px) {
+        .action-icon .icon-label {
+            display: none
+        }
+    }
+
+    /* Make header left take remaining space so right-side icons don't wrap on top */
+    .card-header .header-left {
+        flex: 1 1 0;
+        min-width: 0
+    }
+
+    .card-header .header-right {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        flex-shrink: 0
+    }
+
+    .card-header .header-left .ver {
+        font-weight: 700
+    }
+
+    .card-header .header-left .date {
+        font-size: .9rem;
+        color: var(--muted);
+        padding-top: 5px;
+    }
+
+    .card-header .header-right {
+        display: flex;
+        align-items: center;
+        gap: .6rem
+    }
+
+    .card-body {
+        padding: 0 1rem 1rem;
+        display: none;
+        max-height: 600px;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        overflow-x: hidden;
+    }
+
+    .card.open .card-body {
+        display: block
+    }
+
+    .card .notes {
+        margin-bottom: .6rem;
+        color: #222
+    }
+
+    .card .actions {
+        margin-bottom: .6rem
+    }
+
+    .card .actions .action-link {
+        margin-right: 1rem;
+        color: var(--accent)
+    }
+
+    .button.small {
+        background: rgba(5, 24, 65, .85);
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        padding: .2rem .45rem;
+        font-size: .9rem
+    }
+
+    .button.primary {
+        background: rgba(5, 24, 65, .85);
+        color: #fff;
+        padding: .4rem .7rem;
+        border-radius: 6px
+    }
+
+    .card .patch-table {
+        width: 100%;
+        border-collapse: collapse
+    }
+
+    .card .patch-table th,
+    .card .patch-table td {
+        padding: .4rem .6rem;
+        border: 1px solid #f2f4f7;
+        text-align: left
+    }
+
+    .card .size {
+        font-size: .9rem;
+        color: var(--muted)
+    }
+
+    .toggle {
+        background: transparent;
+        border: 1px solid #ddd;
+        padding: .35rem .5rem;
+        border-radius: 4px
+    }
+
+    .toggle:focus {
+        outline: 2px solid #264a66
+    }
+
+    @media (max-width:700px) {
+        .card-header {
+            flex-direction: column;
+            align-items: flex-start
+        }
+
+        .card-header .header-right {
+            width: 100%;
+            justify-content: space-between
+        }
+    }
+
+/* SHA256 hash toggle styling (copied from cards.css) */
+.dc-download-hash {
+    font-size: 0.7rem;
+}
+.dc-download-hash:hover {
+    cursor: pointer;
+}
+
+.dc-download-hash::after {
+  font: var(--fa-font-solid);
+  content: ' \f06e';
+}
+
+.dc-download-hash.expanded::after {
+  font: var(--fa-font-solid);
+  content: ' \f070';
+}
+
+.dc-hash {
+    position: absolute;
+    display: none;
+    background: #fff;
+    border: 1px solid #e8edf2;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: monospace;
+}
+
+.dc-hash:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #ffffff;
+    border-top: 0;
+    border-left: 0;
+    margin-left: -10px;
+    margin-top: -8px;
+}
