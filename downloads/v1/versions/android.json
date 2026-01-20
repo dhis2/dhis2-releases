@@ -1,8 +1,27 @@
 {
   "captureAppVersions": [
     {
-      "appVersion": "3.3.0.1",
+      "appVersion": "3.3.1",
       "latest": true,
+      "releaseDate": "2026-01-19",
+      "releaseNotes": "https://dhis2.org/android/version-3-3-0/",
+      "dhis2CoreVersion": {
+        "minVersion": "2.30",
+        "recommendedVersion": "v40,v41,v42"
+      },
+      "androidOSVersion": {
+        "minVersion": "5.0 (Lollipop)",
+        "recommendedVersion": "8.x"
+      },
+      "documentation": "https://docs.dhis2.org/en/use/android-app/introduction.html",
+      "download": {
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.dhis2",
+        "gitHub": "https://github.com/dhis2/dhis2-android-capture-app/releases"
+      }
+    },
+    {
+      "appVersion": "3.3.0.1",
+      "latest": false,
       "releaseDate": "2025-12-17",
       "releaseNotes": "https://dhis2.org/android/version-3-3-0/",
       "dhis2CoreVersion": {
