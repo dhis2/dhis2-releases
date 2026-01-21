@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <span class="dc-hash" id="hash${escAttr(patch.name)}">${esc(patch.sha256 || '')}</span>
           </td>
           <td>${esc(patch.fileSize || patch.downloadSize || '-')}</td>
-          <td><a class="action-icon" href="https://dhis2.github.io/dhis2-releases/releases/${escAttr(r.name)}/ReleaseNote-${escAttr(patch.name)}.html" title="Release note"><i class="fa-solid fa-file-lines"></i><span class="icon-label">Release note</span></a></td>
+          <td><a class="action-icon" href="https://dhis2.github.io/dhis2-releases/releases/${escAttr(r.name)}/ReleaseNote-${escAttr(patch.name)}.html" title="${texts.releaseNotes || 'Release note'}"><i class="fa-solid fa-file-lines"></i><span class="icon-label">${texts.releaseNotes || 'Release note'}</span></a></td>
         </tr>`;
       }).join('');
 
