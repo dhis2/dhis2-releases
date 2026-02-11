@@ -27,7 +27,7 @@ It must pass integrity check `Single events without an occurred date`.
 ### Analytics
 
 ### Tracker
-As described [in the docs] (https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_objects_events)
+As described [in the docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_objects_events)
 events can be of 2 different types, tracker events and single events. We made this distinction
 explicit in the code and the database, so the `event` table was split into `singleevent`
 and `trackerevent` tables.
