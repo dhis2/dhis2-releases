@@ -24,6 +24,37 @@ It must pass integrity check `Single events without an occurred date`.
 
 ### Platform
 
+#### `dhis.conf` changes
+
+##### Renamed logging keys
+
+The following `dhis.conf` logging keys have been renamed to use a consistent `logging.*` namespace.
+The old keys are no longer recognized.
+
+| Old key | New key |
+|---|---|
+| `enable.query.logging` | `logging.query` |
+| `slow.query.logging.threshold.time` | `logging.query.slow_threshold` |
+| `logging.request_id.enabled` | `logging.session_id` |
+
+`logging.request_id.enabled` was renamed to `logging.session_id` because the feature adds a hashed
+session ID to the logging context, not a request ID.
+
+The `method.query.logging.enabled` and `elapsed.time.query.logging.enabled` keys have been removed.
+
+##### New SQL context monitoring keys
+
+Two new keys allow adding request context as SQL comments for query attribution:
+
+| Key | Default | Description |
+|---|---|---|
+| `monitoring.sql.context` | `off` | Prepend SQL comments with request context for query attribution |
+| `monitoring.sql.context.keys` | `controller,method` | Controls which keys are included in SQL comments. Supported keys: `controller`, `method`, `requestId`, `sessionId` |
+
+SQL comments change the query text, which can prevent PostgreSQL prepared statement caching. Adding
+`requestId` or `sessionId` produces unique SQL text per request or session, which prevents caching
+entirely and can significantly degrade performance. Only enable those for debugging.
+
 ### Analytics
 
 ### Tracker
