@@ -57,6 +57,30 @@ entirely and can significantly degrade performance. Only enable those for debugg
 
 ### Analytics
 
+#### New skip analytics flag (for Tracked Entity Attributes)
+A new flag to **skip analytics** (named _skipAnalytics_) has been introduced by the Tracker team. This flag allows Tracked Entity Attributes (TEAs) to be excluded from analytics tables for reasons of **security and confidentiality**. This functionality is consistent with the existing behavior for Data Elements within a Program Stage. The flag is not configurable through the UI yet. So, one can enable it hitting the API directly. ie:
+
+PUT programSection/trackedEntityAttribute/VqEFza8wbwA
+
+{
+  "id": "VqEFza8wbwA",
+  "name": "Unique ID",
+  "shortName": "Unique identifier",
+  "valueType": "TEXT",
+  "aggregationType": "NONE",
+  "skipAnalytics": true
+}
+
+The primary goal of this enhancement is to **prevent the creation of columns** related to skipped dimensions during the analytics table export process. This ensures alignment with the expectations set by the new flag and maintains consistency across analytics handling.
+
+Summarizing, the dimensions with the skip flag enabled will:
+- Not appear in **internal analytics endpoints**.  
+- Be unavailable for selection in **Data Visualizer**, **Line Listing**, and any other applications that expose Data Elements or Tracked Entity Attributes to users.  
+
+This restriction ensures that skipped dimensions won't be exported to any analytics table. This means they cannot be used or selected in any analytics application.
+
+* The existing **skip analytics flag** for Program Stage Data Elements remains unchanged. It continues to function as before and is located in the same configuration area.
+
 ### Tracker
 As described [in the docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_objects_events)
 events can be of 2 different types, tracker events and single events. We made this distinction
