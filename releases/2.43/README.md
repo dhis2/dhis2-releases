@@ -58,13 +58,13 @@ entirely and can significantly degrade performance. Only enable those for debugg
 ### Analytics
 
 #### Support for `label` and `displayLabel` in PeriodType
-This release introduces support for both **`label`** and **`displayLabel`** properties in `PeriodType`. At present, `displayLabel` simply mirrors the value of `label`. This allows front-end applications to begin using `displayLabel` immediately, minimizing future changes once `displayLabel` is fully implemented. Users can update the `displayLabel` through a **PUT** request. ie:
+This release introduces support for both **`label`** and **`displayLabel`** properties in `PeriodType`. At present, `displayLabel` simply mirrors the value of `label`. This allows front-end applications to begin using `displayLabel` immediately, minimizing future changes once `displayLabel` is fully implemented. Users can update the `label` through a **PUT** request. ie:
 
 PUT api/periodTypes
 
 {
   "name": "Daily",
-  "displayName": "Daily display name",
+  "displayName": "Daily",
   "isoDuration": "P1D",
   "isoFormat": "yyyyMMdd",
   "frequencyOrder": 1,
@@ -73,8 +73,7 @@ PUT api/periodTypes
 
 The following constraints are applied, so we keep the current integrity for periods:
 - `PeriodType` instances cannot be created via **POST** requests, as they are predefined with hard-coded internal type names.  
-- Only the **label** property can be updated. No other attributes of `PeriodType` are modifiable.
-- All other properties remain immutable.
+- Only the **label** property can be updated. All other properties remain immutable.
 
 This ensures consistency while enabling front-end applications to adopt `displayLabel` without requiring structural changes later.
 
