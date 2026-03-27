@@ -57,6 +57,26 @@ entirely and can significantly degrade performance. Only enable those for debugg
 
 ### Analytics
 
+#### Support for `label` and `displayLabel` in PeriodType
+This release introduces support for both **`label`** and **`displayLabel`** properties in `PeriodType`. At present, `displayLabel` simply mirrors the value of `label`. This allows front-end applications to begin using `displayLabel` immediately, minimizing future changes once `displayLabel` is fully implemented. Users can update the `label` through a **PUT** request. ie:
+
+PUT api/periodTypes
+
+{
+  "name": "Daily",
+  "displayName": "Daily",
+  "isoDuration": "P1D",
+  "isoFormat": "yyyyMMdd",
+  "frequencyOrder": 1,
+  "label": "The new label"
+}
+
+The following constraints are applied, so we keep the current integrity for periods:
+- `PeriodType` instances cannot be created via **POST** requests, as they are predefined with hard-coded internal type names.  
+- Only the **label** property can be updated. All other properties remain immutable.
+
+This ensures consistency while enabling front-end applications to adopt `displayLabel` without requiring structural changes later.
+
 ### Tracker
 As described [in the docs](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/tracker.html#webapi_tracker_objects_events)
 events can be of 2 different types, tracker events and single events. We made this distinction
