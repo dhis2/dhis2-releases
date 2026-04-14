@@ -13,7 +13,9 @@ source ${SCRIPT_DIR}/lib/update_togglers.sh
 
 
 readonly PATCH_BRANCH_PREFIX="patch/"
-readonly core_repo="git@github.com:dhis2/dhis2-core.git"
+readonly repo_root="git@github.com:dhis2"
+readonly repo_extension=".git"
+readonly core_repo="${repo_root}/dhis2-core${repo_extension}"
 readonly REL_VERSION=$1
 readonly CORE_BRANCH=$(core_branch_name)
 readonly PATCH_BRANCH=$(patch_branch_name)
@@ -29,14 +31,22 @@ readonly continuous_delivery_apps=($(cat "$CDA" | grep "${CORE_BRANCH}:" | sed '
 
 function process_core {
 
-    echo "Cloning the core repository"
+    echo "Cloning the core repository: ${core_repo}"
     local name=$(app_name "$core_repo")
+    echo "name: ${name}"
     local repo_path="${TEMP}/${name}"
+    echo "clone ${core_repo} to ${repo_path} branch ${CORE_BRANCH}"
     clone "$core_repo" "${repo_path}" "$CORE_BRANCH"
 
-    local bundle_path="dhis-2/dhis-web/dhis-web-apps/apps-to-bundle.json"
+    local bundle_path="dhis-2/dhis-web-server/apps-to-bundle.json"
 
-    readonly app_repos=($(cat "${repo_path}/${bundle_path}" | grep "d2-ci" | sed 's;"https://github.com/d2-ci;git@github.com:dhis2; ; s;["#].*$;.git;'))
+    echo "Extracting app repos from ${bundle_path}"
+    cat "${repo_path}/${bundle_path}" | grep "d2-ci"| sed "s;https://github.com/d2-ci;${repo_root}; ; s;#.*$;${repo_extension};"
+
+
+    readonly app_repos=($(cat "${repo_path}/${bundle_path}" | grep "d2-ci" | sed "s;\"https://github.com/d2-ci;${repo_root}; ; s;#.*$;${repo_extension};"))
+
+    echo "app_repos: ${app_repos[@]}"
 
     # Make the updates to the core
     pushd "${repo_path}"
@@ -46,7 +56,7 @@ function process_core {
 
         for repo in "${app_repos[@]}"
         do
-            # echo "repo: " $repo
+            echo "repo: " $repo
             local app_name=$(app_name "$repo")
             if [[ " ${continuous_delivery_apps[@]} " =~ "$app_name" ]]
             then
@@ -61,7 +71,6 @@ function process_core {
         git add "${bundle_path}"
         git commit -m "chore: lock app versions to branch ${PATCH_BRANCH}"
         prepare_push "$PATCH_BRANCH"
-
 
         # update mvn version on the core dev branch
         git checkout "$CORE_BRANCH"
