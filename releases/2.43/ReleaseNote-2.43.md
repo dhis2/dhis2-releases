@@ -9,9 +9,11 @@
 
 ### Performance
 
+> **Note:** These are preliminary results based on pre-release builds. Final numbers will be updated when the 2.43.0 release is published.
+
 #### Method
 
-All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`. Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
+All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/eb221b31987/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`. Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
 
 ##### Versions
 
@@ -48,7 +50,7 @@ TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH 
 
 Each import request posts a batch to `POST /api/tracker?async=false&importStrategy=CREATE_AND_UPDATE`. The three programs run one after the other (not interleaved). All import users start simultaneously and each processes their share of the data.
 
-This differs from a single-program sustained-load test (like the [WHO import analysis](https://dhis2.atlassian.net/browse/DHIS2-20965)) in that the payload shape and size varies across programs, and the import phase ends when all data is consumed rather than running for a fixed duration. To achieve a soak-style test, `importMaxEntitiesPerProgram` is set high enough that the import runs for the desired duration.
+This differs from a single-program sustained-load test in that the payload shape and size varies across programs, and the import phase ends when all data is consumed rather than running for a fixed duration. To achieve a soak-style test, `importMaxEntitiesPerProgram` is set high enough that the import runs for the desired duration.
 
 #### Import
 
