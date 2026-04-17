@@ -42,11 +42,11 @@ Each line in an ndjson file is one top-level entity. The three programs differ i
 
 | Program | Type | ndjson lines | Entities per line | Breakdown per line |
 |---|---|---|---|---|
-| MNCH / PNC | tracker | 11,338 | 9 | 1 TE + 2 enrollments + 6 tracker events |
-| Child Programme | tracker | 29,969 | 4 | 1 TE + 1 enrollment + 2 tracker events |
-| ANC visit | event | 410,022 | 1 | 1 single event (no TE, no enrollment) |
+| MNCH / PNC | tracker program | 11,338 | 9 | 1 TE + 2 enrollments + 6 events |
+| Child Programme | tracker program | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
+| ANC visit | event program | 410,022 | 1 | 1 event (no TE, no enrollment) |
 
-"Tracker events" belong to an enrollment in a tracker program (`trackerevent` table). "Single events" belong to an event program and have no enrollment or tracked entity (`singleevent` table). The two types use different import and query paths.
+Events in tracker programs belong to an enrollment (`trackerevent` table). Events in event programs have no enrollment or tracked entity (`singleevent` table). The two use different import and query paths.
 
 At a target of 500 entities per request, one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events and attribute values flow through the persister for each TE); ANC is the lightest because it skips TE preheat and attribute validation entirely. When interpreting per-program p95 or throughput, these payload differences dominate the comparison between programs.
 
