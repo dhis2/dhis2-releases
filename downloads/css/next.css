@@ -52,9 +52,25 @@ height: 2px;
 }
 
 .release:hover .release-circle {
-    background: #51c3e9; 
+    background: #51c3e9;
+}
 
-    
+.release.major-release .release-circle {
+    width: 10px;
+    height: 10px;
+    background: #ffd54f;
+    border: 2px solid #f59e0b;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.release.major-release:hover .release-circle {
+    background: #fbbf24;
+}
+
+.details.major-release {
+    background: linear-gradient(150deg, #fef3c7 0%, #fffbeb 100%);
+    border-color: #f5d680;
 }
 
 .details {
