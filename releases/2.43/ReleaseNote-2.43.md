@@ -71,16 +71,54 @@ Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` f
 
 ##### Concurrency sweep
 
-For each version, 5-min import runs at increasing concurrency (2, 4, 5, 6, 7, 8 import users) to find the throughput plateau.
+For each version, 5-min import runs (300s per program) at increasing concurrency (2, 4, 5, 6, 7, 8 import users) to find each program's throughput plateau. Results are reported per program because the three programs have different payload shapes (see Import data above).
 
-| Import users | 2.43.0 req/s | 2.43.0 p95 (ms) | 2.42.4 req/s | 2.42.4 p95 (ms) | 2.41.8 req/s | 2.41.8 p95 (ms) |
-|---|---|---|---|---|---|---|
-| 2 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
-| 7 | | | | | | |
-| 8 | | | | | | |
+Throughput (req/s) comes from `simulation.csv`. p95 (ms) comes from the Gatling HTML report so it matches what you see when clicking the run link.
+
+**2.43.0** (image `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55`)
+
+Sweet spot: **6 users** (best trade-off across all three programs). All runs had 0 KO.
+
+MNCH / PNC import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 2 | 1.97 | 1012 | 1790 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 2.52 | 1579 | 3386 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 3.03 | 1648 | 3270 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| **6** | **3.78** | **1583** | **2897** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| 7 | 3.08 | 2259 | 4861 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 3.05 | 2610 | 5706 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+
+Child Programme import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 2 | 5.36 | 373 | 583 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 7.15 | 558 | 1056 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 8.65 | 576 | 1014 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| 6 | 10.48 | 571 | 867 | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| **7** | **10.80** | **646** | **1128** | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 10.31 | 773 | 1540 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+
+ANC visit import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 2 | 5.50 | 363 | 796 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 6.88 | 580 | 1469 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 9.11 | 547 | 1215 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| **6** | **9.97** | **600** | **1324** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| 7 | 9.15 | 762 | 2285 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 9.17 | 870 | 2304 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+
+**2.42.4**
+
+TODO
+
+**2.41.8**
+
+TODO
 
 ##### Soak test
 
