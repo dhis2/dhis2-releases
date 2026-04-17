@@ -17,11 +17,13 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 ##### Versions
 
-| Version | Image | DB_VERSION | Notes |
-|---|---|---|---|
-| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | patch/2.43.0 at `838e47af4c8` (2026-04-15). Uses the 2.42.0 dump because the 2.43 dump does not match the current schema; Flyway migrates on startup. |
-| 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | latest stable 2.42 release |
-| 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | latest stable 2.41 release |
+| Version | Image | DB_VERSION | Default pool | Notes |
+|---|---|---|---|---|
+| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | HikariCP | patch/2.43.0 at `838e47af4c8` (2026-04-15). Uses the 2.42.0 dump because the 2.43 dump does not match the current schema; Flyway migrates on startup. |
+| 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | c3p0 | latest stable 2.42 release |
+| 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | c3p0 | latest stable 2.41 release |
+
+2.43 switches the default JDBC connection pool from c3p0 to HikariCP. c3p0 wraps every JDBC call in a proxy that added ~10-15% CPU overhead on 2.41/2.42 under concurrent import load. Users on 2.41/2.42 can opt into HikariCP by setting `db.pool.type = hikari` in `dhis.conf`.
 
 ##### Server
 
@@ -30,9 +32,21 @@ Docker Compose allocates 4 CPUs and 16 GiB each to web and db containers. DHIS2 
 
 ##### Test design
 
-TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC (tracker, 9 entities/line), Child Programme (tracker, 4 entities/line), and ANC visit (event program, 1 event/line). Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3. Each import request posts 500 entities to `POST /api/tracker?async=false`.
+TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC, Child Programme, and ANC visit. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3. Each import request posts 500 entities to `POST /api/tracker?async=false`.
 
 For the `load` profile, each program imports for `importDurationSec` seconds using a closed injection model: a fixed pool of `importUsers` concurrent users loop until the duration elapses. The circular feeder replays the payload when exhausted. Since the Synthea payloads have no entity UIDs, DHIS2 generates a new UID for every request and every replay creates new entities.
+
+##### Import data
+
+Each line in an ndjson file is one top-level entity. The three programs differ in payload shape, which matters because events write more to the database than plain tracked entities or attribute values.
+
+| Program | Type | ndjson lines | Entities per line | Breakdown per line |
+|---|---|---|---|---|
+| MNCH / PNC | tracker | 11,338 | 9 | 1 TE + 2 enrollments + 6 events |
+| Child Programme | tracker | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
+| ANC visit | event | 410,022 | 1 | 1 event (no TE, no enrollment) |
+
+At a target of 500 entities per request, one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events and attribute values flow through the persister for each TE); ANC is the lightest because it skips TE preheat and attribute validation entirely. When interpreting per-program p95 or throughput, these payload differences dominate the comparison between programs.
 
 ##### How to reproduce
 
