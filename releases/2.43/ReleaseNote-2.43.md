@@ -19,7 +19,7 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 | Version | Image | DB_VERSION | Notes |
 |---|---|---|---|
-| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.43.0 | patch/2.43.0 at `838e47af4c8` (2026-04-15) |
+| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | patch/2.43.0 at `838e47af4c8` (2026-04-15). Uses the 2.42.0 dump because the 2.43 dump does not match the current schema; Flyway migrates on startup. |
 | 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | latest stable 2.42 release |
 | 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | latest stable 2.41 release |
 
@@ -44,12 +44,12 @@ gh workflow run performance-tests.yml \
   --field perf_tests_git_ref="0bce5b265e8c2d339a8d612b2b880ef2cb271756" \
   --field test_name="import-2.43.0-7users-30min" \
   --field test_env="DHIS2_IMAGE=dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55
-DB_VERSION=2.43.0
+DB_VERSION=2.42.0
 SIMULATION_CLASS=org.hisp.dhis.test.tracker.TrackerTest
 MVN_ARGS='-Dprofile=load -DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 ```
 
-Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. `DB_VERSION` must match the DHIS2 major version of the image (2.43.0 for 2.43.0.0-rc, 2.42.0 for 2.42.x, 2.41.0 for 2.41.x). `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
+Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. Use `DB_VERSION=2.42.0` for 2.43 and 2.42 images (Flyway migrates 2.43 on startup); use `DB_VERSION=2.41.0` for 2.41. `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
 
 #### Import
 
