@@ -73,6 +73,17 @@ height: 2px;
     border-color: #f5d680;
 }
 
+.major-release-label {
+    font-size: 0.5em;
+    font-weight: 600;
+    vertical-align: middle;
+    background: #f59e0b;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
 .details {
     display: none;
     width:50%;
