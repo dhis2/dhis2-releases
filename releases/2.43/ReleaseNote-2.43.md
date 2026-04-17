@@ -13,13 +13,13 @@
 
 #### Method
 
-All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/eb221b31987/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`. Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
+All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
 
 ##### Versions
 
 | Version | Image | DB_VERSION | Notes |
 |---|---|---|---|
-| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | dev | patch/2.43.0 at `838e47af4c8` (2026-04-15) |
+| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.43.0 | patch/2.43.0 at `838e47af4c8` (2026-04-15) |
 | 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | latest stable 2.42 release |
 | 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | latest stable 2.41 release |
 
@@ -28,29 +28,28 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/eb221b3
 Self-hosted runner: Intel Xeon E3-1275 v6 @ 3.80GHz, 4 cores / 8 threads, 64 GiB RAM.
 Docker Compose allocates 4 CPUs and 16 GiB each to web and db containers. DHIS2 and PostgreSQL run on the same machine.
 
+##### Test design
+
+TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC (tracker, 9 entities/line), Child Programme (tracker, 4 entities/line), and ANC visit (event program, 1 event/line). Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3. Each import request posts 500 entities to `POST /api/tracker?async=false`.
+
+For the `load` profile, each program imports for `importDurationSec` seconds using a closed injection model: a fixed pool of `importUsers` concurrent users loop until the duration elapses. The circular feeder replays the payload when exhausted. Since the Synthea payloads have no entity UIDs, DHIS2 generates a new UID for every request and every replay creates new entities.
+
 ##### How to reproduce
 
-All runs use `performance-tests.yml`. Example for a single run:
+Trigger a single load run via `performance-tests.yml`. The `perf_tests_git_ref` pins the TrackerTest source code; `DHIS2_IMAGE` pins the server under test. Example for 2.43.0:
 
 ```sh
 gh workflow run performance-tests.yml \
   --repo dhis2/dhis2-core \
-  --field perf_tests_git_ref="<full-40-char-sha-on-master>" \
+  --field perf_tests_git_ref="0bce5b265e8c2d339a8d612b2b880ef2cb271756" \
+  --field test_name="import-2.43.0-7users-30min" \
   --field test_env="DHIS2_IMAGE=dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55
-DB_VERSION=dev
+DB_VERSION=2.43.0
 SIMULATION_CLASS=org.hisp.dhis.test.tracker.TrackerTest
-MVN_ARGS=-Dprofile=load -DtestMode=import -DimportUsers=4 -DdurationSec=300"
+MVN_ARGS='-Dprofile=load -DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 ```
 
-Substitute image, DB_VERSION, and importUsers to get the full matrix. Each run produces a `run-simulation.env` file in the Gatling output directory that contains all parameters needed to reproduce.
-
-##### Test design
-
-TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC (tracker, 9 entities/line), Child Programme (tracker, 4 entities/line), and ANC visit (event program, 1 event/line). Each program imports up to 30,000 entities by default. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3.
-
-Each import request posts a batch to `POST /api/tracker?async=false&importStrategy=CREATE_AND_UPDATE`. The three programs run one after the other (not interleaved). All import users start simultaneously and each processes their share of the data.
-
-This differs from a single-program sustained-load test in that the payload shape and size varies across programs, and the import phase ends when all data is consumed rather than running for a fixed duration. To achieve a soak-style test, `importMaxEntitiesPerProgram` is set high enough that the import runs for the desired duration.
+Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. `DB_VERSION` must match the DHIS2 major version of the image (2.43.0 for 2.43.0.0-rc, 2.42.0 for 2.42.x, 2.41.0 for 2.41.x). `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
 
 #### Import
 
