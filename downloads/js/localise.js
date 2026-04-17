@@ -43,7 +43,9 @@ const localizationMap = {
         newMajorRelease: "New Major Release",
         jiraLink01Release: "See the full list of features and fixes for",
         jiraLink02Release: "this release on Jira",
-        roadmapLink: "See the features roadmap"
+        roadmapLink: "See the features roadmap",
+        lastPatchLabel: "Final Patch",
+        lastPatchNotice: "This is the final maintenance patch for this version."
     },
     fr: {
         latestVersion: "Dernière version",
@@ -80,7 +82,9 @@ const localizationMap = {
         newMajorRelease: "Nouvelle version majeure",
         jiraLink01Release: "Voir la liste complète des fonctionnalités et correctifs pour",
         jiraLink02Release: "cette version sur Jira",
-        roadmapLink: "Voir la feuille de route des fonctionnalités"
+        roadmapLink: "Voir la feuille de route des fonctionnalités",
+        lastPatchLabel: "Dernier patch",
+        lastPatchNotice: "Ceci est le dernier patch de maintenance pour cette version."
     },
     es: {
         latestVersion: "Última versión",
@@ -117,7 +121,9 @@ const localizationMap = {
         newMajorRelease: "Nueva versión principal",
         jiraLink01Release: "Ver la lista completa de funcionalidades y correcciones para",
         jiraLink02Release: "esta versión en Jira",
-        roadmapLink: "Ver la hoja de ruta de funcionalidades"
+        roadmapLink: "Ver la hoja de ruta de funcionalidades",
+        lastPatchLabel: "Último parche",
+        lastPatchNotice: "Este es el último parche de mantenimiento para esta versión."
     },
     pt: {
         latestVersion: "Versão mais recente",
@@ -154,6 +160,8 @@ const localizationMap = {
         newMajorRelease: "Nova versão principal",
         jiraLink01Release: "Veja a lista completa de funcionalidades e correções para",
         jiraLink02Release: "esta versão no Jira",
-        roadmapLink: "Ver o roteiro de funcionalidades"
+        roadmapLink: "Ver o roteiro de funcionalidades",
+        lastPatchLabel: "Último patch",
+        lastPatchNotice: "Este é o último patch de manutenção para esta versão."
     }
 }; 

@@ -44,8 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
         const isMajorRelease = release.name.endsWith('.0');
+        const isLastPatch = release.lastPatch === true;
         const releaseElement = document.createElement("div");
-        releaseElement.className = isMajorRelease ? "release major-release" : "release";
+        releaseElement.className = isMajorRelease ? "release major-release" : isLastPatch ? "release last-patch" : "release";
         releaseElement.style.left = `${offsetPercentage}%`;
 
         const releaseLabel = document.createElement("span");
@@ -62,10 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         releaseElement.addEventListener("click", () => {
           details.style.display = "block";
-          details.className = isMajorRelease ? "details major-release" : "details";
+          details.className = isMajorRelease ? "details major-release" : isLastPatch ? "details last-patch" : "details";
           if (isMajorRelease) {
             const baseVersion = release.version.replace(/\.0$/, '');
             details.innerHTML = `<h2>${release.name} <span class="major-release-label">${loc.newMajorRelease}</span></h2><p>${loc.targetReleaseDate}: ${formattedDate}</p><p><a href="https://dhis2.org/roadmap/#section-1" target="_blank" rel="noopener noreferrer">${loc.roadmapLink}</a></p><p>${loc.jiraLink01Release} <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20IN%20(${release.version}%2C%20${baseVersion})%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">${loc.jiraLink02Release}</a></p>`;
+          } else if (isLastPatch) {
+            details.innerHTML = `<h2>${release.name} <span class="last-patch-label">${loc.lastPatchLabel}</span></h2><p>${loc.targetReleaseDate}: ${formattedDate}</p><p>${loc.lastPatchNotice}</p><p>${loc.jiraLink01} <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.version}%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">${loc.jiraLink02}</a></p>`;
           } else {
             details.innerHTML = `<h2>${release.name}</h2><p>${loc.targetReleaseDate}: ${formattedDate}</p><p>${loc.jiraLink01} <a href="https://dhis2.atlassian.net/jira/software/c/projects/DHIS2/issues/?jql=project%20%3D%20%22DHIS2%22%20AND%20fixversion%20%3D%20${release.version}%20ORDER%20BY%20created%20DESC" target="_blank" rel="noopener noreferrer">${loc.jiraLink02}</a></p>`;
           }

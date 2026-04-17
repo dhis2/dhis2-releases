@@ -84,6 +84,32 @@ height: 2px;
     margin-left: 8px;
 }
 
+.release.last-patch .release-circle {
+    background: #fca5a5;
+    border: 2px solid #dc2626;
+    border-radius: 50%;
+}
+
+.release.last-patch:hover .release-circle {
+    background: #f87171;
+}
+
+.details.last-patch {
+    background: linear-gradient(150deg, #fee2e2 0%, #fff5f5 100%);
+    border-color: #f5a0a0;
+}
+
+.last-patch-label {
+    font-size: 0.5em;
+    font-weight: 600;
+    vertical-align: middle;
+    background: #dc2626;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
 .details {
     display: none;
     width:50%;
