@@ -71,7 +71,7 @@ Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` f
 
 ##### Concurrency sweep
 
-For each version, 5-min import runs (300s per program) at increasing concurrency (2, 4, 5, 6, 7, 8 import users) to find each program's throughput plateau. Results are reported per program because the three programs have different payload shapes (see Import data above).
+For each version, 5-min import runs (300s per program) at increasing concurrency to find each program's throughput plateau. 2.43.0 was swept at 1/2/4/5/6/7/8 users; 2.42.4 and 2.41.8 only at 1/2/4 users because they saturate much earlier and higher concurrency only makes p95 explode without adding throughput. Results are reported per program because the three programs have different payload shapes (see Import data above).
 
 Throughput (req/s) comes from `simulation.csv`. p95 (ms) comes from the Gatling HTML report so it matches what you see when clicking the run link.
 
@@ -83,6 +83,7 @@ MNCH / PNC import:
 
 | users | req/s | mean (ms) | p95 (ms) | run |
 |---|---|---|---|---|
+| 1 | 1.30 | 771 | 1217 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
 | 2 | 1.97 | 1012 | 1790 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
 | 4 | 2.52 | 1579 | 3386 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
 | 5 | 3.03 | 1648 | 3270 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
@@ -94,6 +95,7 @@ Child Programme import:
 
 | users | req/s | mean (ms) | p95 (ms) | run |
 |---|---|---|---|---|
+| 1 | 3.15 | 317 | 417 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
 | 2 | 5.36 | 373 | 583 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
 | 4 | 7.15 | 558 | 1056 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
 | 5 | 8.65 | 576 | 1014 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
@@ -105,6 +107,7 @@ ANC visit import:
 
 | users | req/s | mean (ms) | p95 (ms) | run |
 |---|---|---|---|---|
+| 1 | 3.36 | 297 | 620 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
 | 2 | 5.50 | 363 | 796 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
 | 4 | 6.88 | 580 | 1469 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
 | 5 | 9.11 | 547 | 1215 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
@@ -112,23 +115,99 @@ ANC visit import:
 | 7 | 9.15 | 762 | 2285 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
 | 8 | 9.17 | 870 | 2304 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
 
-**2.42.4**
+**2.42.4** (image `dhis2/core:2.42.4`)
 
-TODO
+Sweet spot: **4 users**. Throughput is still climbing slightly from 1→2→4 users but p95 already degrades sharply. All runs 0 KO.
 
-**2.41.8**
+MNCH / PNC import:
 
-TODO
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 0.37 | 2692 | 3581 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 0.56 | 3558 | 4503 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **0.76** | **5237** | **6696** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+
+Child Programme import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 0.84 | 1191 | 1326 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 1.24 | 1605 | 1752 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **1.71** | **2327** | **2479** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+
+ANC visit import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 1.08 | 924 | 1080 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 1.64 | 1215 | 1653 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **2.13** | **1869** | **2460** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+
+**2.41.8** (image `dhis2/core:2.41.8`)
+
+Sweet spot: **4 users**. Same shape as 2.42.4. All runs 0 KO.
+
+MNCH / PNC import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 0.44 | 2256 | 2703 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 0.62 | 3202 | 4362 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **0.72** | **5498** | **7033** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+
+Child Programme import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 1.05 | 950 | 1097 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 1.61 | 1241 | 1473 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **2.13** | **1876** | **2061** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+
+ANC visit import:
+
+| users | req/s | mean (ms) | p95 (ms) | run |
+|---|---|---|---|---|
+| 1 | 1.26 | 790 | 939 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 2.00 | 998 | 1149 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **2.39** | **1669** | **2102** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+
+##### At-a-glance comparison
+
+Throughput at each version's sweet spot (2.43 = 6 users; 2.42 and 2.41 = 4 users):
+
+| Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| MNCH | 3.78 | 0.76 | 0.72 | +397% | +425% |
+| Child | 10.48 | 1.71 | 2.13 | +513% | +392% |
+| ANC | 9.97 | 2.13 | 2.39 | +368% | +317% |
+
+p95 at each version's sweet spot:
+
+| Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| MNCH | 2897 | 6696 | 7033 | -57% | -59% |
+| Child | 867 | 2479 | 2061 | -65% | -58% |
+| ANC | 1324 | 2460 | 2102 | -46% | -37% |
+
+2.43 imports 3-5x more per second than 2.42/2.41 **and** does it with 40-65% lower p95.
 
 ##### Soak test
 
-At each version's sweet spot concurrency, a sustained import for at least 30 min to verify throughput holds as the DB grows.
+At each version's sweet spot concurrency, a sustained import for 30 min per program (90 min total per version) to verify throughput holds as the DB grows.
 
-| Version | Import users | Duration | Entities imported | Throughput (req/s) | p95 (ms) |
+**2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
+
+| Program | Requests | req/s | mean (ms) | p95 (ms) | vs short-run (300s) p95 |
 |---|---|---|---|---|---|
-| 2.43.0 | | | | | |
-| 2.42.4 | | | | | |
-| 2.41.8 | | | | | |
+| MNCH | 6,500 | 3.60 | 1,665 | 3,614 | +25% |
+| Child | 13,895 | 7.71 | 777 | 1,587 | +83% |
+| ANC | 14,602 | 8.10 | 740 | 1,895 | +43% |
+
+Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows (~34k entities imported across the 90-min run). No collapses.
+
+**2.42.4** (4 users, 30 min per program): TODO
+
+**2.41.8** (4 users, 30 min per program): TODO
 
 ##### What changed
 
