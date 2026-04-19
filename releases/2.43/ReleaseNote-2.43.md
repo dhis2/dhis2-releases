@@ -80,6 +80,20 @@ Events in tracker programs belong to an enrollment (`trackerevent` table). Event
 
 At a target of 500 entities per request, one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events and attribute values flow through the persister for each TE); ANC is the lightest because it skips TE preheat and attribute validation entirely. When interpreting per-program p95 or throughput, these payload differences dominate the comparison between programs.
 
+##### Pre-import DB state (`DB_VERSION=2.42.0` Sierra Leone dump)
+
+Totals across all programs: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
+
+The three programs the test imports into are sparsely populated in the dump, so the test mostly measures the cost of inserting new data rather than the cost of growing an already-large dataset in those programs:
+
+| Program | Type | TEs | Enrollments | Events |
+|---|---|---|---|---|
+| MNCH / PNC (`uy2gU8kT1jF`) | tracker | 3 | 3 | 14 |
+| Child Programme (`IpHINAT79UW`) | tracker | 19,030 | 19,031 | 37,643 |
+| ANC visit (`lxAQ7Zs9VYR`) | event | — | — | 3 |
+
+Other programs present in the dump (not touched by the test) include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
+
 ##### How to reproduce
 
 Trigger a single load run via `performance-tests.yml`. The `perf_tests_git_ref` pins the TrackerTest source code; `DHIS2_IMAGE` pins the server under test. Example for 2.43.0:
@@ -310,6 +324,8 @@ These import improvements are backported to 2.42 and 2.41 branches and will be a
 #### Export
 
 These numbers come from the `smoke` profile with `testMode=all`: each version first runs a deterministic, repeat-based import (1 user, 50 entities per request, 1000 requests per program = 50k entities per program, 150k total) to seed the same DB state, then runs the export scenarios (1 user, 100 iterations per request). This normalizes the DB state across versions so the export times are comparable. Concurrency is 1; a multi-user export sweep per version is not yet run.
+
+> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Pre-import DB state](#pre-import-db-state-db_version220-sierra-leone-dump)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases (millions of entities). Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
 
 Runs:
 * 2.43.0: [run 24599249365](https://github.com/dhis2/dhis2-core/actions/runs/24599249365)
