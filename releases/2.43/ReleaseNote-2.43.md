@@ -205,9 +205,49 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 
 Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows (~34k entities imported across the 90-min run). No collapses.
 
-**2.42.4** (4 users, 30 min per program): TODO
+**2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
-**2.41.8** (4 users, 30 min per program): TODO
+| Program | Requests | req/s | mean (ms) | p95 (ms) |
+|---|---|---|---|---|
+| MNCH | 989 | 0.55 | 7,293 | 10,614 |
+| Child | 3,059 | 1.70 | 2,355 | 3,177 |
+| ANC | 3,380 | 1.88 | 2,130 | 3,240 |
+
+**2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
+
+| Program | Requests | req/s | mean (ms) | p95 (ms) |
+|---|---|---|---|---|
+| MNCH | 1,381 | 0.77 | 5,220 | 6,572 |
+| Child | 2,691 | 1.49 | 2,677 | 3,172 |
+| ANC | 3,339 | 1.85 | 2,156 | 2,521 |
+
+**Soak summary** (sustained 30 min at each sweet spot, 0 KO all versions):
+
+| Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| MNCH | 3.60 | 0.55 | 0.77 | +555% | +368% |
+| Child | 7.71 | 1.70 | 1.49 | +354% | +418% |
+| ANC | 8.10 | 1.88 | 1.85 | +331% | +338% |
+
+| Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| MNCH | 3,614 | 10,614 | 6,572 | -66% | -45% |
+| Child | 1,587 | 3,177 | 3,172 | -50% | -50% |
+| ANC | 1,895 | 3,240 | 2,521 | -42% | -25% |
+
+##### HikariCP workaround on 2.42.4
+
+2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, setting `db.pool.type = hikari` in `dhis.conf` can help. On the TrackerTest import mix against 2.42.4, the effect is small:
+
+| Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
+|---|---|---|---|---|---|---|---|
+| 2 | c3p0 | 0.56 | 4,503 | 1.24 | 1,752 | 1.64 | 1,653 |
+| 2 | hikari | 0.58 | 4,267 | 1.31 | 1,699 | 1.68 | 1,475 |
+| 4 | c3p0 | 0.76 | 6,696 | 1.71 | 2,479 | 2.13 | 2,460 |
+| 4 | hikari | 0.78 | 6,378 | 1.80 | 2,347 | 2.22 | 2,574 |
+| 6 | hikari | 0.88 | 9,140 | 1.92 | 3,502 | 2.33 | 3,506 |
+
+Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816)). The sweet spot stays at 4 users. For users stuck on 2.42.4 the workaround is a small win but does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
 
 ##### What changed
 
