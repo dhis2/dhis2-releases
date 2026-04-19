@@ -18,7 +18,7 @@ Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leon
 * **Tracker import throughput is 3-5x higher** on 2.43 at each version's sweet spot (6 concurrent users on 2.43, 4 on 2.42/2.41). See [Import / Concurrency sweep](#concurrency-sweep).
 * **p95 response time is 25-66% lower** across MNCH, Child, and ANC programs. See [Import / At-a-glance comparison](#at-a-glance-comparison).
 * **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. No failures on any version. See [Import / Soak test](#soak-test).
-* **Export** (short-run, same-seed DB): TODO.
+* **Export** (1-user on a same-seeded DB): event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
 * The HikariCP connection pool is the new default on 2.43 (replacing c3p0). Most of the gain is in the import path itself; the pool change alone gives only +2-5% on 2.42.4. See [HikariCP workaround on 2.42.4](#hikaricp-workaround-on-2424).
 * Import improvements listed under [What changed](#what-changed) are backported to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9.
 
@@ -309,7 +309,54 @@ These import improvements are backported to 2.42 and 2.41 branches and will be a
 
 #### Export
 
-TODO
+These numbers come from the `smoke` profile with `testMode=all`: each version first runs a deterministic, repeat-based import (1 user, 50 entities per request, 1000 requests per program = 50k entities per program, 150k total) to seed the same DB state, then runs the export scenarios (1 user, 100 iterations per request). This normalizes the DB state across versions so the export times are comparable. Concurrency is 1; a multi-user export sweep per version is not yet run.
+
+Runs:
+* 2.43.0: [run 24599249365](https://github.com/dhis2/dhis2-core/actions/runs/24599249365)
+* 2.42.4: [run 24599249376](https://github.com/dhis2/dhis2-core/actions/runs/24599249376)
+* 2.41.8: [run 24599249364](https://github.com/dhis2/dhis2-core/actions/runs/24599249364)
+
+All runs 0 KO. p95 from Gatling HTML, n=100 per request (n=200 for relationships).
+
+##### Event program (ANC visit) queries
+
+| Request | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| Go to first page | 156 | 16,846 | 1,980 | **-99.1%** | **-92.1%** |
+| Go to second page | 158 | 16,887 | 1,974 | **-99.1%** | **-92.0%** |
+| Search not assigned | 150 | 17,246 | 1,979 | **-99.1%** | **-92.4%** |
+| Search by date range | 703 | 2,080 | 280 | -66.2% | +151% |
+| Get first event | 40 | 47 | 14 | -15% | +186% |
+| Get relationships for first event | 4 | 4 | 3 | 0% | +33% |
+
+Listing and filtering single events on 2.43 is dramatically faster than 2.42.4 (~100x). The 2.42 regression predates 2.43 and was not backported — upgrading to 2.43 closes it. Against 2.41 the event listing is ~12x faster, attributable to the single event default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)).
+
+Single-item fetches (`Get first event`, `Get relationships for first event`) are fast on all versions, and 2.41 is actually a few ms faster than 2.43 on these — within noise for single-digit millisecond queries.
+
+##### Tracker program (Child Programme) queries
+
+| Request | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
+|---|---|---|---|---|---|
+| Get first page of TEs | 106 | 224 | 65 | -53% | +63% |
+| Get TEs with enrollment status | 137 | 331 | 174 | -59% | -21% |
+| Get TEs from events | 8 | 42 | 9 | -81% | -11% |
+| Search TE by name (like) | 125 | 183 | 134 | -32% | -7% |
+| Search TE by name (eq) | 26 | 39 | 26 | -33% | 0% |
+| Search Birth events | 1,296 | 117 | 87 | +1008% | +1390% |
+| Not found TE by name (like) | 109 | 115 | 124 | -5% | -12% |
+| Not found TE by name (eq) | 6 | 10 | 15 | -40% | -60% |
+| Get first tracked entity | 27 | 41 | 23 | -34% | +17% |
+| Get first enrollment | 20 | 21 | 12 | -5% | +67% |
+| Get first event from enrollment | 24 | 47 | 13 | -49% | +85% |
+| Get relationships for first TE | 4 | 5 | 3 | -20% | +33% |
+
+Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, but a few single-item fetches are 10-70 ms slower on 2.43 (noise at this scale). **One real regression**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41 — this is under investigation and not yet filed.
+
+##### Takeaways
+
+* On the event program path, 2.43 is a large, unambiguous improvement (up to ~100x vs 2.42, ~12x vs 2.41).
+* On the tracker program path, 2.43 is clearly better than 2.42.4. Against 2.41.8 it is a wash on single-item fetches and an improvement on listings, with one regression to investigate.
+* These numbers are 1-user p95 on a seeded DB. A multi-user export sweep is still TODO and may shift the picture since the per-request differences are small compared to the concurrency sensitivity seen on import.
 
 ## Bugs
 
