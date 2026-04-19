@@ -11,6 +11,17 @@
 
 > **Note:** These are preliminary results based on pre-release builds. Final numbers will be updated when the 2.43.0 release is published.
 
+#### Summary
+
+Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leone demo DB:
+
+* **Tracker import throughput is 3-5x higher** on 2.43 at each version's sweet spot (6 concurrent users on 2.43, 4 on 2.42/2.41). See [Import / Concurrency sweep](#concurrency-sweep).
+* **p95 response time is 25-66% lower** across MNCH, Child, and ANC programs. See [Import / At-a-glance comparison](#at-a-glance-comparison).
+* **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. No failures on any version. See [Import / Soak test](#soak-test).
+* **Export** (short-run, same-seed DB): TODO.
+* The HikariCP connection pool is the new default on 2.43 (replacing c3p0). Most of the gain is in the import path itself; the pool change alone gives only +2-5% on 2.42.4. See [HikariCP workaround on 2.42.4](#hikaricp-workaround-on-2424).
+* Import improvements listed under [What changed](#what-changed) are backported to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9.
+
 #### Method
 
 All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
