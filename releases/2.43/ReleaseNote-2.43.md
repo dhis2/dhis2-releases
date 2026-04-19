@@ -27,8 +27,27 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 ##### Server
 
-Self-hosted runner: Intel Xeon E3-1275 v6 @ 3.80GHz, 4 cores / 8 threads, 64 GiB RAM.
-Docker Compose allocates 4 CPUs and 16 GiB each to web and db containers. DHIS2 and PostgreSQL run on the same machine.
+Self-hosted Linux runner (not a GitHub-hosted runner): Intel Xeon E3-1275 v6 @ 3.80GHz, 4 cores / 8 threads, 64 GiB RAM. Docker Compose allocates 4 CPUs and 16 GiB each to the `web` (DHIS2) and `db` (PostgreSQL) containers. Both containers run on the same machine.
+
+##### DHIS2 configuration
+
+`dhis.conf` is the [default from the performance test module](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/docker/dhis.conf):
+
+```properties
+connection.dialect = org.hibernate.dialect.PostgreSQLDialect
+connection.driver_class = org.postgresql.Driver
+connection.url = jdbc:postgresql://db/dhis
+connection.username = dhis
+connection.password = dhis
+
+system.update_notifications_enabled = off
+```
+
+No explicit pool config, so each image uses its built-in default: **HikariCP on 2.43, c3p0 on 2.42.4 and 2.41.8**. The [HikariCP workaround](#hikaricp-workaround-on-2424) section uses a modified dhis.conf with `db.pool.type = hikari`.
+
+##### Warmup
+
+Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). Warmup executes the same simulation once before the measured run so caches, JIT, and connection pools are hot. Numbers reported here are from the measured run, not the warmup.
 
 ##### Test design
 
@@ -197,29 +216,33 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 
 **2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
 
-| Program | Requests | req/s | mean (ms) | p95 (ms) | vs short-run (300s) p95 |
-|---|---|---|---|---|---|
-| MNCH | 6,500 | 3.60 | 1,665 | 3,614 | +25% |
-| Child | 13,895 | 7.71 | 777 | 1,587 | +83% |
-| ANC | 14,602 | 8.10 | 740 | 1,895 | +43% |
+| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) | vs short-run (300s) p95 |
+|---|---|---|---|---|---|---|
+| MNCH | 6,500 | 3,217,500 | 3.60 | 1,665 | 3,614 | +25% |
+| Child | 13,895 | 6,947,500 | 7.71 | 777 | 1,587 | +83% |
+| ANC | 14,602 | 7,301,000 | 8.10 | 740 | 1,895 | +43% |
 
-Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows (~34k entities imported across the 90-min run). No collapses.
+17.5M entities imported across the 90-min run. Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows. No collapses.
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
-| Program | Requests | req/s | mean (ms) | p95 (ms) |
-|---|---|---|---|---|
-| MNCH | 989 | 0.55 | 7,293 | 10,614 |
-| Child | 3,059 | 1.70 | 2,355 | 3,177 |
-| ANC | 3,380 | 1.88 | 2,130 | 3,240 |
+| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) |
+|---|---|---|---|---|---|
+| MNCH | 989 | 489,555 | 0.55 | 7,293 | 10,614 |
+| Child | 3,059 | 1,529,500 | 1.70 | 2,355 | 3,177 |
+| ANC | 3,380 | 1,690,000 | 1.88 | 2,130 | 3,240 |
+
+3.7M entities in the 90-min run.
 
 **2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
-| Program | Requests | req/s | mean (ms) | p95 (ms) |
-|---|---|---|---|---|
-| MNCH | 1,381 | 0.77 | 5,220 | 6,572 |
-| Child | 2,691 | 1.49 | 2,677 | 3,172 |
-| ANC | 3,339 | 1.85 | 2,156 | 2,521 |
+| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) |
+|---|---|---|---|---|---|
+| MNCH | 1,381 | 683,595 | 0.77 | 5,220 | 6,572 |
+| Child | 2,691 | 1,345,500 | 1.49 | 2,677 | 3,172 |
+| ANC | 3,339 | 1,669,500 | 1.85 | 2,156 | 2,521 |
+
+3.7M entities in the 90-min run. 2.43 imports **4.7x more entities** in the same wall time.
 
 **Soak summary** (sustained 30 min at each sweet spot, 0 KO all versions):
 
@@ -237,7 +260,13 @@ Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the
 
 ##### HikariCP workaround on 2.42.4
 
-2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, setting `db.pool.type = hikari` in `dhis.conf` can help. On the TrackerTest import mix against 2.42.4, the effect is small:
+| Version | Default pool | Override |
+|---|---|---|
+| 2.43.0 | HikariCP | `db.pool.type = c3p0` to opt out |
+| 2.42.4 | c3p0 | `db.pool.type = hikari` to opt in |
+| 2.41.8 | c3p0 | `db.pool.type = hikari` to opt in |
+
+On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, opting into HikariCP on 2.42.4 can help. On the TrackerTest import mix against 2.42.4, the effect is small:
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -251,19 +280,19 @@ Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dh
 
 ##### What changed
 
-Key import optimizations in 2.43 that explain the throughput difference:
+Key import optimizations in 2.43 that explain the throughput difference. The aggregate effect is shown in the sweep and soak tables above; the per-issue micro-benchmark numbers documented on each Jira ticket are not re-measured here.
 
-| Issue | Description | Impact |
-|---|---|---|
-| [DHIS2-21271](https://dhis2.atlassian.net/browse/DHIS2-21271) | Skip audit JMS pipeline when no consumer exists | ~19% CPU eliminated |
-| [DHIS2-21239](https://dhis2.atlassian.net/browse/DHIS2-21239) | Batch changelog inserts via multi-row INSERT | +39% throughput |
-| [DHIS2-21248](https://dhis2.atlassian.net/browse/DHIS2-21248) | Reduce JSONB serialization overhead for event data values | +17-26% throughput |
-| [DHIS2-21234](https://dhis2.atlassian.net/browse/DHIS2-21234) | Validate option sets using preheated data instead of DB queries | 151K queries eliminated |
-| [DHIS2-21177](https://dhis2.atlassian.net/browse/DHIS2-21177) | Batch-fetch user group members before notification dispatch | N*M queries reduced to 2 |
-| [DHIS2-21287](https://dhis2.atlassian.net/browse/DHIS2-21287) | Replace linear scans with indexed lookups in validation | Validation CPU halved |
-| [DHIS2-21178](https://dhis2.atlassian.net/browse/DHIS2-21178) | Reduce allocations for program rules evaluation | |
-| [DHIS2-21245](https://dhis2.atlassian.net/browse/DHIS2-21245) | Analyze rules before running to limit context | |
-| | HikariCP default connection pool (replaces c3p0) | c3p0 proxy overhead eliminated |
+| Issue | Description |
+|---|---|
+| [DHIS2-21271](https://dhis2.atlassian.net/browse/DHIS2-21271) | Skip audit JMS pipeline when no consumer exists |
+| [DHIS2-21239](https://dhis2.atlassian.net/browse/DHIS2-21239) | Batch changelog inserts via multi-row INSERT |
+| [DHIS2-21248](https://dhis2.atlassian.net/browse/DHIS2-21248) | Reduce JSONB serialization overhead for event data values |
+| [DHIS2-21234](https://dhis2.atlassian.net/browse/DHIS2-21234) | Validate option sets using preheated data instead of DB queries |
+| [DHIS2-21177](https://dhis2.atlassian.net/browse/DHIS2-21177) | Batch-fetch user group members before notification dispatch |
+| [DHIS2-21287](https://dhis2.atlassian.net/browse/DHIS2-21287) | Replace linear scans with indexed lookups in validation |
+| [DHIS2-21178](https://dhis2.atlassian.net/browse/DHIS2-21178) | Reduce allocations for program rules evaluation |
+| [DHIS2-21245](https://dhis2.atlassian.net/browse/DHIS2-21245) | Analyze rules before running to limit context |
+| | HikariCP default connection pool (replaces c3p0) |
 
 These import improvements are backported to 2.42 and 2.41 branches and will be available in the next patch releases (2.42.5, 2.41.9).
 
