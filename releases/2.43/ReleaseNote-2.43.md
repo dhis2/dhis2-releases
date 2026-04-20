@@ -221,7 +221,7 @@ ANC visit import:
 | 2 | 2.00 | 1149 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
 | **4** | **2.39** | **2102** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
 
-##### At-a-glance comparison
+##### Version comparison
 
 Throughput at the best concurrency measured per version (2.43 = 6 users sweet spot; 2.42 and 2.41 = 4 users as capped; higher concurrency on 2.42/2.41 only hurts p95):
 
@@ -273,9 +273,9 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 | Child | 2,691 | 1,345,500 | 1.49 | 3,172 |
 | ANC | 3,339 | 1,669,500 | 1.85 | 2,521 |
 
-3.7M entities in the 90-min run. 2.43 imports **4.7x more entities** in the same wall time.
+3.7M entities in the 90-min run.
 
-**Soak summary** (sustained 30 min at each sweet spot, 0 KO all versions):
+**Soak summary** (sustained 30 min at each sweet spot, 0 KO all versions). 2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M):
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
