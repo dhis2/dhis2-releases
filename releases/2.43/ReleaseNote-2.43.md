@@ -265,7 +265,7 @@ p95 at the same concurrency levels:
 
 3.7M entities in the 90-min run.
 
-**Soak summary.** 2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M):
+**Soak summary.** 2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-6x more throughput with 25-66% lower p95**.
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
