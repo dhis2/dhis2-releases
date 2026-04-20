@@ -66,11 +66,11 @@ Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). 
 
 TrackerTest exercises three Sierra Leone demo DB programs:
 
-| Program | Type | Table for events |
-|---|---|---|
-| MNCH / PNC | tracker program | `trackerevent` (belongs to an enrollment) |
-| Child Programme | tracker program | `trackerevent` (belongs to an enrollment) |
-| ANC visit | event program | `singleevent` (no TE, no enrollment) |
+| Program | Type |
+|---|---|
+| MNCH / PNC | tracker program |
+| Child Programme | tracker program |
+| ANC visit | event program |
 
 ##### Import payload
 
