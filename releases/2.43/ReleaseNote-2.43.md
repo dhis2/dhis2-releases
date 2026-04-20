@@ -34,7 +34,7 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 | Version | Image | DB_VERSION | Default pool | Notes |
 |---|---|---|---|---|
-| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | HikariCP | patch/2.43.0 at `838e47af4c8` (2026-04-15). Uses the 2.42.0 dump because the 2.43 dump does not match the current schema; Flyway migrates on startup. |
+| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | HikariCP | patch/2.43.0 at [`838e47af4c8`](https://github.com/dhis2/dhis2-core/commit/838e47af4c8) (2026-04-15). Uses the 2.42.0 dump because the 2.43 dump does not match the current schema; Flyway migrates on startup. |
 | 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | c3p0 | latest stable 2.42 release |
 | 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | c3p0 | latest stable 2.41 release |
 
@@ -62,25 +62,31 @@ No explicit pool config, so each image uses its built-in default: **HikariCP on 
 
 Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). Warmup executes the same simulation once before the measured run so caches, JIT, and connection pools are hot. Numbers reported here are from the measured run, not the warmup.
 
-##### Test design
+##### Programs under test
 
-TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC, Child Programme, and ANC visit. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each import request posts 500 entities to `POST /api/tracker?async=false`.
+TrackerTest exercises three Sierra Leone demo DB programs:
 
-The runs below use the duration-based import: each program imports for `importDurationSec` seconds using a fixed pool of concurrent `importUsers` loop until the duration elapses.
+| Program | Type | Table for events |
+|---|---|---|
+| MNCH / PNC | tracker program | `trackerevent` (belongs to an enrollment) |
+| Child Programme | tracker program | `trackerevent` (belongs to an enrollment) |
+| ANC visit | event program | `singleevent` (no TE, no enrollment) |
 
-##### Import data
+The two event tables have different import and query paths.
 
-Each line in an ndjson file is one top-level entity. The three programs differ in payload shape, which matters because events write more to the database than plain tracked entities or attribute values.
+##### Import payload
 
-| Program | Type | ndjson lines | Entities per line | Breakdown per line |
-|---|---|---|---|---|
-| MNCH / PNC | tracker program | 11,338 | 9 | 1 TE + 2 enrollments + 6 events |
-| Child Programme | tracker program | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
-| ANC visit | event program | 410,022 | 1 | 1 event (no TE, no enrollment) |
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity; the programs differ in payload shape, which matters because events write more than attribute values.
 
-Events in tracker programs belong to an enrollment (`trackerevent` table). Events in event programs have no enrollment or tracked entity (`singleevent` table). The two use different import and query paths.
+| Program | ndjson lines | Entities per line | Breakdown per line |
+|---|---|---|---|
+| MNCH / PNC | 11,338 | 9 | 1 TE + 2 enrollments + 6 events |
+| Child Programme | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
+| ANC visit | 410,022 | 1 | 1 event (no TE, no enrollment) |
 
-At a target of 500 entities per request, one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events and attribute values flow through the persister for each TE); ANC is the lightest because it skips TE preheat and attribute validation entirely. When interpreting per-program p95 or throughput, these payload differences dominate the comparison between programs.
+Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events + attributes flow through the persister for each TE); ANC is the lightest (skips TE preheat and attribute validation entirely). These payload differences dominate the comparison between programs.
+
+Programs are imported sequentially (MNCH → Child → ANC). The runs below use the duration-based import: each program imports for `importDurationSec` seconds with a fixed pool of `importUsers` concurrent users that loop until the duration elapses.
 
 ##### Pre-import DB state (`DB_VERSION=2.42.0` Sierra Leone dump)
 
@@ -117,7 +123,7 @@ Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` f
 
 ##### Concurrency sweep
 
-For each version, 5-min import runs (300s per program) at increasing concurrency to find each program's throughput plateau. 2.43.0 was swept at 1/2/4/5/6/7/8 users; 2.42.4 and 2.41.8 only at 1/2/4 users because they saturate much earlier and higher concurrency only makes p95 explode without adding throughput. Results are reported per program because the three programs have different payload shapes (see Import data above).
+For each version, 5-min import runs (300s per program) at increasing concurrency to find each program's throughput plateau. 2.43.0 was swept at 1/2/4/5/6/7/8 users; 2.42.4 and 2.41.8 only at 1/2/4 users because they saturate much earlier and higher concurrency only raises p95 without adding throughput. Results are reported per program because the three programs have different payload shapes (see Import data above).
 
 Throughput (req/s) comes from `simulation.csv`. p95 (ms) comes from the Gatling HTML report so it matches what you see when clicking the run link.
 
