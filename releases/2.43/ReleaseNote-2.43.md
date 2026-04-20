@@ -111,7 +111,7 @@ Import runs use duration-based import: `importUsers` concurrent users loop over 
 
 ##### Concurrency sweep
 
-For each version, 5-min import runs (300s per program) at increasing concurrency to find each program's throughput plateau. 2.43.0 was swept at 1/2/4/5/6/7/8 users; 2.42.4 and 2.41.8 only at 1/2/4 users because they saturate much earlier and higher concurrency only raises p95 without adding throughput. Results are reported per program because the three programs have different payload shapes (see Import data above).
+5-min runs per concurrency level to find each program's throughput plateau. 2.43.0 scales further than 2.42.4 and 2.41.8, which saturate early; beyond ~4 users the older versions only gain p95, no throughput. See the per-version tables below.
 
 Throughput (req/s) comes from `simulation.csv`. p95 (ms) comes from the Gatling HTML report so it matches what you see when clicking the run link.
 
