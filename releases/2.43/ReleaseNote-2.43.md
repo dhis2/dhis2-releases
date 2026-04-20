@@ -303,6 +303,33 @@ On heavily contended workloads where the c3p0 proxy layer amplifies per-call ove
 
 Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816)). The sweet spot stays at 4 users. For users stuck on 2.42.4 the workaround is a small win but does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
 
+##### 2.43 HikariCP (default) vs c3p0
+
+Forcing 2.43 back to c3p0 to measure what users would see if they opt out of the HikariCP default. c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers 10-35% less throughput and worse p95 across all three programs:
+
+| Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
+|---|---|---|---|---|---|---|---|
+| 2 | HikariCP | 1.97 | 1,790 | 5.36 | 583 | 5.50 | 796 |
+| 2 | c3p0 | 1.85 | 1,970 | 5.28 | 505 | 5.23 | 853 |
+| 4 | HikariCP | 2.52 | 3,386 | 7.15 | 1,056 | 6.88 | 1,469 |
+| 4 | c3p0 | 2.35 | 3,835 | 6.92 | 1,115 | 6.17 | 1,680 |
+| 6 | HikariCP | 3.78 | 2,897 | 10.48 | 867 | 9.97 | 1,324 |
+| 6 | c3p0 | 2.81 | 4,839 | 9.71 | 997 | 8.88 | 1,740 |
+| 7 | HikariCP | 3.08 | 4,861 | 10.80 | 1,128 | 9.15 | 2,285 |
+| 7 | c3p0 | 3.37 | 4,441 | 10.71 | 1,091 | 10.19 | 1,605 |
+
+At each pool's own sweet spot (HikariCP 6u, c3p0 7u):
+
+| Program | HikariCP req/s | c3p0 req/s | Δ | HikariCP p95 | c3p0 p95 | Δ |
+|---|---|---|---|---|---|---|
+| MNCH | 3.78 | 3.37 | +12% | 2,897 | 4,441 | -35% |
+| Child | 10.48 | 10.71 | -2% | 867 | 1,091 | -21% |
+| ANC | 9.97 | 10.19 | -2% | 1,324 | 1,605 | -18% |
+
+c3p0 on 2.43 gives throughput within 12% of HikariCP but p95 is 18-35% worse, especially on MNCH. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+
+c3p0 runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
+
 ##### What changed
 
 Key import optimizations in 2.43 that explain the throughput difference. The aggregate effect is shown in the sweep and soak tables above; the per-issue micro-benchmark numbers documented on each Jira ticket are not re-measured here.
