@@ -17,9 +17,9 @@ Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leon
 
 Import:
 
-* **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8** — 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
+* **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8**: 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
 * **2.43 scales further before p95 degrades.** It handles 6 concurrent import users comfortably; 2.42.4 and 2.41.8 cap out around 4 on the same hardware. See [Concurrency sweep](#concurrency-sweep).
-* **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported — 2.42/2.41 still default to c3p0.
+* **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported: 2.42/2.41 still default to c3p0.
 * **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool](#pool).
 
 Export:
@@ -70,7 +70,7 @@ TrackerTest exercises three programs in the Sierra Leone 2.42.0 dump. All three 
 |---|---|---|---|---|
 | MNCH / PNC (`uy2gU8kT1jF`) | tracker program | 3 | 3 | 14 |
 | Child Programme (`IpHINAT79UW`) | tracker program | 19,030 | 19,031 | 37,643 |
-| ANC visit (`lxAQ7Zs9VYR`) | event program | — | — | 3 |
+| ANC visit (`lxAQ7Zs9VYR`) | event program | n/a | n/a | 3 |
 
 Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values. Other programs present but not touched by the test include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
 
@@ -281,7 +281,7 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 
 2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4 (not on 2.41.8).
 
-**2.43 — HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 12% less throughput and 18-35% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+**2.43: HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 12% less throughput and 18-35% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -304,7 +304,7 @@ At each pool's own sweet spot (HikariCP 6u, c3p0 7u):
 
 c3p0 runs on 2.43: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
 
-**2.42.4 — c3p0 (default) vs HikariCP.** On 2.42.4 the pool switch is a small win (~2-5% throughput at matched concurrency). The sweet spot stays at 4 users. It does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
+**2.42.4: c3p0 (default) vs HikariCP.** On 2.42.4 the pool switch is a small win (~2-5% throughput at matched concurrency). The sweet spot stays at 4 users. It does not close the gap to 2.43: the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -358,9 +358,9 @@ All runs 0 KO. p95 from Gatling HTML, n=100 per request (n=200 for relationships
 | Get first event | 40 | 47 | 14 | -15% | +186% |
 | Get relationships for first event | 4 | 4 | 3 | 0% | +33% |
 
-Listing and filtering single events on 2.43 is dramatically faster than 2.42.4 (~100x). The 2.42 regression predates 2.43 and was not backported — upgrading to 2.43 closes it. Against 2.41 the event listing is ~12x faster, attributable to the single event default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)).
+Listing and filtering single events on 2.43 is dramatically faster than 2.42.4 (~100x). The 2.42 regression predates 2.43 and was not backported; upgrading to 2.43 closes it. Against 2.41 the event listing is ~12x faster, attributable to the single event default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)).
 
-Single-item fetches (`Get first event`, `Get relationships for first event`) are fast on all versions, and 2.41 is actually a few ms faster than 2.43 on these — within noise for single-digit millisecond queries.
+Single-item fetches (`Get first event`, `Get relationships for first event`) are fast on all versions, and 2.41 is actually a few ms faster than 2.43 on these; within noise for single-digit millisecond queries.
 
 ##### Tracker program (Child Programme) queries
 
@@ -379,7 +379,7 @@ Single-item fetches (`Get first event`, `Get relationships for first event`) are
 | Get first event from enrollment | 24 | 47 | 13 | -49% | +85% |
 | Get relationships for first TE | 4 | 5 | 3 | -20% | +33% |
 
-Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, but a few single-item fetches are 10-70 ms slower on 2.43 (noise at this scale). **One real regression**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41 — this is under investigation and not yet filed.
+Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, but a few single-item fetches are 10-70 ms slower on 2.43 (noise at this scale). **One real regression**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41; under investigation and not yet filed.
 
 ##### Takeaways
 
