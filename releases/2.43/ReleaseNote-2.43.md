@@ -72,20 +72,6 @@ TrackerTest exercises three Sierra Leone demo DB programs:
 | Child Programme | tracker program |
 | ANC visit | event program |
 
-##### Import payload
-
-Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity:
-
-| Program | Entities per line | Breakdown per line |
-|---|---|---|
-| MNCH / PNC | 9 | 1 TE + 2 enrollments + 6 events |
-| Child Programme | 4 | 1 TE + 1 enrollment + 2 events |
-| ANC visit | 1 | 1 event (no TE, no enrollment) |
-
-Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
-
-Programs are imported sequentially (MNCH → Child → ANC). The runs below use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
-
 ##### Baseline DB
 
 From the Sierra Leone 2.42.0 dump. Totals across all programs: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
@@ -99,6 +85,20 @@ The three programs the test imports into are sparsely populated in the dump, so 
 | ANC visit (`lxAQ7Zs9VYR`) | event | — | — | 3 |
 
 Other programs present in the dump (not touched by the test) include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
+
+##### Import payload
+
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity:
+
+| Program | Entities per line | Breakdown per line |
+|---|---|---|
+| MNCH / PNC | 9 | 1 TE + 2 enrollments + 6 events |
+| Child Programme | 4 | 1 TE + 1 enrollment + 2 events |
+| ANC visit | 1 | 1 event (no TE, no enrollment) |
+
+Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
+
+Programs are imported sequentially (MNCH → Child → ANC). The runs below use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
 
 ##### How to reproduce
 
