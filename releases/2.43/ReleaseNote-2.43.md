@@ -162,7 +162,7 @@ ANC visit import:
 
 **2.42.4** (image `dhis2/core:2.42.4`)
 
-Sweet spot: **4 users**. Throughput is still climbing slightly from 1→2→4 users but p95 already degrades sharply. All runs 0 KO.
+Highest concurrency measured: **4 users** (we stopped the sweep here because p95 is already several seconds). Throughput is still climbing mildly 1→2→4 so 4 is not necessarily the absolute peak, but past this point the latency cost is prohibitive. All runs 0 KO.
 
 MNCH / PNC import:
 
@@ -190,7 +190,7 @@ ANC visit import:
 
 **2.41.8** (image `dhis2/core:2.41.8`)
 
-Sweet spot: **4 users**. Same shape as 2.42.4. All runs 0 KO.
+Highest concurrency measured: **4 users**, same shape as 2.42.4. All runs 0 KO.
 
 MNCH / PNC import:
 
@@ -218,7 +218,7 @@ ANC visit import:
 
 ##### At-a-glance comparison
 
-Throughput at each version's sweet spot (2.43 = 6 users; 2.42 and 2.41 = 4 users):
+Throughput at the best concurrency measured per version (2.43 = 6 users sweet spot; 2.42 and 2.41 = 4 users as capped; higher concurrency on 2.42/2.41 only hurts p95):
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
@@ -226,7 +226,7 @@ Throughput at each version's sweet spot (2.43 = 6 users; 2.42 and 2.41 = 4 users
 | Child | 10.48 | 1.71 | 2.13 | +513% | +392% |
 | ANC | 9.97 | 2.13 | 2.39 | +368% | +317% |
 
-p95 at each version's sweet spot:
+p95 at the same concurrency levels:
 
 | Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
