@@ -15,11 +15,11 @@
 
 Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leone demo DB:
 
-* **Tracker import throughput is 4-6x higher** on 2.43 at each version's sweet spot (6 concurrent users on 2.43, 4 on 2.42/2.41), with **25-66% lower p95**. See [Concurrency sweep](#concurrency-sweep) and [At-a-glance comparison](#at-a-glance-comparison).
-* **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. No failures on any version. See [Soak test](#soak-test).
+* **Tracker import throughput is 4-6x higher** on 2.43 than on 2.42.4 / 2.41.8 at the concurrency each version handles best (2.43 scales to 6 concurrent users before p95 degrades; 2.42.4 and 2.41.8 cap out around 4). **p95 response time is 25-66% lower**. See [Concurrency sweep](#concurrency-sweep) and [At-a-glance comparison](#at-a-glance-comparison).
+* **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. See [Soak test](#soak-test).
+* **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported — 2.42/2.41 still default to c3p0.
 * **Export** (1-user on a same-seeded DB): event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
-* 2.43 defaults to HikariCP (replacing c3p0). Most of the import gain is in the import path itself: on 2.43, switching to c3p0 costs +18-35% p95 with throughput within 12%; on 2.42.4, opting into HikariCP adds only +2-5%. See [HikariCP sections](#2.43-hikaricp-default-vs-c3p0).
-* Import improvements listed under [What changed](#what-changed) are backported to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9.
+* **Pool matters more on 2.43 than on 2.42.** On 2.43, opting out of HikariCP to c3p0 costs 18-35% p95 with throughput within 12%. On 2.42.4, opting into HikariCP adds only 2-5%. See [Pool](#2.43-hikaricp-default-vs-c3p0).
 
 #### Method
 
