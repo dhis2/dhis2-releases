@@ -17,7 +17,7 @@ Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leon
 
 Import:
 
-* **Tracker import throughput is 4-6x higher** on 2.43 than on 2.42.4 / 2.41.8 at the concurrency each version handles best (2.43 scales to 6 concurrent users before p95 degrades; 2.42.4 and 2.41.8 cap out around 4). **p95 response time is 25-66% lower**. See [Concurrency sweep](#concurrency-sweep) and [At-a-glance comparison](#at-a-glance-comparison).
+* **Tracker import throughput is 4-6x higher** on 2.43 than on 2.42.4 / 2.41.8 at the concurrency each version handles best (2.43 scales to 6 concurrent users before p95 degrades; 2.42.4 and 2.41.8 cap out around 4). **p95 response time is 37-65% lower**. See [Concurrency sweep](#concurrency-sweep) and [At-a-glance comparison](#at-a-glance-comparison).
 * **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. See [Soak test](#soak-test).
 * **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported — 2.42/2.41 still default to c3p0.
 * **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool sections](#2.43-hikaricp-default-vs-c3p0).
@@ -76,7 +76,7 @@ The two event tables have different import and query paths.
 
 ##### Import payload
 
-Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity; the programs differ in payload shape, which matters because events write more than attribute values.
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity. The number of events per line differs between programs, and events are the dominant per-entity cost for import (each event inserts a row in `trackerevent`/`singleevent`, serializes JSONB data values, and writes audit and changelog entries), so programs with more events per line are heavier to import.
 
 | Program | ndjson lines | Entities per line | Breakdown per line |
 |---|---|---|---|
@@ -241,7 +241,7 @@ p95 at the same concurrency levels:
 | Child | 867 | 2479 | 2061 | -65% | -58% |
 | ANC | 1324 | 2460 | 2102 | -46% | -37% |
 
-2.43 imports 3-5x more per second than 2.42/2.41 **and** does it with 40-65% lower p95.
+2.43 imports 4-6x more per second than 2.42/2.41 **and** does it with 37-65% lower p95.
 
 ##### Soak test
 
@@ -293,13 +293,7 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 
 ##### 2.42.4 c3p0 (default) vs HikariCP
 
-| Version | Default pool | Override |
-|---|---|---|
-| 2.43.0 | HikariCP | `db.pool.type = c3p0` to opt out |
-| 2.42.4 | c3p0 | `db.pool.type = hikari` to opt in |
-| 2.41.8 | c3p0 | `db.pool.type = hikari` to opt in |
-
-On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, opting into HikariCP on 2.42.4 can help. On the TrackerTest import mix against 2.42.4, the effect is small:
+On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, opting into HikariCP on 2.42.4 (via `db.pool.type = hikari` in `dhis.conf`) can help. On the TrackerTest import mix against 2.42.4, the effect is small:
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -309,7 +303,7 @@ On heavily contended workloads where the c3p0 proxy layer amplifies per-call ove
 | 4 | hikari | 0.78 | 6,378 | 1.80 | 2,347 | 2.22 | 2,574 |
 | 6 | hikari | 0.88 | 9,140 | 1.92 | 3,502 | 2.33 | 3,506 |
 
-Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816)). The sweet spot stays at 4 users. For users stuck on 2.42.4 the workaround is a small win but does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
+Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816)). The sweet spot stays at 4 users. Switching the pool on 2.42.4 is a small win but does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool. We did not measure the pool switch on 2.41.8.
 
 ##### 2.43 HikariCP (default) vs c3p0
 
