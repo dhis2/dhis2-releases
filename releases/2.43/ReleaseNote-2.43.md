@@ -61,11 +61,9 @@ Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). 
 
 ##### Test design
 
-TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC, Child Programme, and ANC visit. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3. Each import request posts 500 entities to `POST /api/tracker?async=false`.
+TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC, Child Programme, and ANC visit. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each import request posts 500 entities to `POST /api/tracker?async=false`.
 
-The runs below use the duration-based import: each program imports for `importDurationSec` seconds using a closed injection model: a fixed pool of `importUsers` concurrent users loop until the duration elapses. The circular feeder replays the payload when exhausted. Since the Synthea payloads have no entity UIDs, DHIS2 generates a new UID for every request and every replay creates new entities. This mode fixes wall clock across versions, so we can compare how much work each version gets done in the same amount of time.
-
-On the pinned TrackerTest commit, duration-based was the load default. Current master defaults load to repeat-based (same workload across versions, variable wall clock); the duration-based mode is opt-in via `-DimportDurationSec=N`.
+The runs below use the duration-based import: each program imports for `importDurationSec` seconds using a fixed pool of concurrent `importUsers` loop until the duration elapses.
 
 ##### Import data
 
@@ -107,7 +105,7 @@ gh workflow run performance-tests.yml \
   --field test_env="DHIS2_IMAGE=dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55
 DB_VERSION=2.42.0
 SIMULATION_CLASS=org.hisp.dhis.test.tracker.TrackerTest
-MVN_ARGS='-Dprofile=load -DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
+MVN_ARGS='-DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 ```
 
 Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. Use `DB_VERSION=2.42.0` for 2.43 and 2.42 images (Flyway migrates 2.43 on startup); use `DB_VERSION=2.41.0` for 2.41. `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
@@ -404,9 +402,9 @@ Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the pi
 
 ## Bugs
 
-**[DHIS2-20611](https://dhis2.atlassian.net/browse/DHIS2-20611): Enforce check on null usernames**  
+**[DHIS2-20611](https://dhis2.atlassian.net/browse/DHIS2-20611): Enforce check on null usernames**
 Components: _[API] User_
 
-Under certain circumstances, users may have a `null` username. In this version, we will disable 
+Under certain circumstances, users may have a `null` username. In this version, we will disable
 such users and reasssign a username like `missing_uname_` + random UUID string. Additionally, a
-database constraint will be added to prevent creation of users with a `null` username. 
+database constraint will be added to prevent creation of users with a `null` username.
