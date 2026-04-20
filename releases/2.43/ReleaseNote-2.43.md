@@ -63,7 +63,9 @@ Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). 
 
 TrackerTest imports into three Sierra Leone demo DB programs sequentially: MNCH / PNC, Child Programme, and ANC visit. Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data fetched from S3. Each import request posts 500 entities to `POST /api/tracker?async=false`.
 
-For the `load` profile, each program imports for `importDurationSec` seconds using a closed injection model: a fixed pool of `importUsers` concurrent users loop until the duration elapses. The circular feeder replays the payload when exhausted. Since the Synthea payloads have no entity UIDs, DHIS2 generates a new UID for every request and every replay creates new entities.
+The runs below use the duration-based import: each program imports for `importDurationSec` seconds using a closed injection model: a fixed pool of `importUsers` concurrent users loop until the duration elapses. The circular feeder replays the payload when exhausted. Since the Synthea payloads have no entity UIDs, DHIS2 generates a new UID for every request and every replay creates new entities. This mode fixes wall clock across versions, so we can compare how much work each version gets done in the same amount of time.
+
+On the pinned TrackerTest commit, duration-based was the load default. Current master defaults load to repeat-based (same workload across versions, variable wall clock); the duration-based mode is opt-in via `-DimportDurationSec=N`.
 
 ##### Import data
 
