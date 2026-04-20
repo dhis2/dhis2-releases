@@ -20,7 +20,7 @@ Import:
 * **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8** — 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
 * **2.43 scales further before p95 degrades.** It handles 6 concurrent import users comfortably; 2.42.4 and 2.41.8 cap out around 4 on the same hardware. See [Concurrency sweep](#concurrency-sweep).
 * **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported — 2.42/2.41 still default to c3p0.
-* **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool sections](#2.43-hikaricp-default-vs-c3p0).
+* **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool](#pool).
 
 Export:
 
@@ -86,9 +86,9 @@ Each import request targets 500 entities to `POST /api/tracker?async=false`. At 
 
 Programs are imported sequentially (MNCH → Child → ANC). The runs below use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
 
-##### Pre-import DB state (`DB_VERSION=2.42.0` Sierra Leone dump)
+##### Baseline DB
 
-Totals across all programs: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
+From the Sierra Leone 2.42.0 dump. Totals across all programs: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
 
 The three programs the test imports into are sparsely populated in the dump, so the test mostly measures the cost of inserting new data rather than the cost of growing an already-large dataset in those programs:
 
@@ -289,23 +289,11 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 | Child | 1,587 | 3,177 | 3,172 | -50% | -50% |
 | ANC | 1,895 | 3,240 | 2,521 | -42% | -25% |
 
-##### 2.42.4 c3p0 (default) vs HikariCP
+##### Pool
 
-On heavily contended workloads where the c3p0 proxy layer amplifies per-call overhead, opting into HikariCP on 2.42.4 (via `db.pool.type = hikari` in `dhis.conf`) can help. On the TrackerTest import mix against 2.42.4, the effect is small:
+2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4 (not on 2.41.8).
 
-| Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
-|---|---|---|---|---|---|---|---|
-| 2 | c3p0 | 0.56 | 4,503 | 1.24 | 1,752 | 1.64 | 1,653 |
-| 2 | hikari | 0.58 | 4,267 | 1.31 | 1,699 | 1.68 | 1,475 |
-| 4 | c3p0 | 0.76 | 6,696 | 1.71 | 2,479 | 2.13 | 2,460 |
-| 4 | hikari | 0.78 | 6,378 | 1.80 | 2,347 | 2.22 | 2,574 |
-| 6 | hikari | 0.88 | 9,140 | 1.92 | 3,502 | 2.33 | 3,506 |
-
-Hikari adds ~2-5% at matched concurrency (runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816)). The sweet spot stays at 4 users. Switching the pool on 2.42.4 is a small win but does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool. We did not measure the pool switch on 2.41.8.
-
-##### 2.43 HikariCP (default) vs c3p0
-
-Forcing 2.43 back to c3p0 to measure what users would see if they opt out of the HikariCP default. c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers 10-35% less throughput and worse p95 across all three programs:
+**2.43 — HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 12% less throughput and 18-35% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -326,9 +314,19 @@ At each pool's own sweet spot (HikariCP 6u, c3p0 7u):
 | Child | 10.48 | 10.71 | -2% | 867 | 1,091 | -21% |
 | ANC | 9.97 | 10.19 | -2% | 1,324 | 1,605 | -18% |
 
-c3p0 on 2.43 drops throughput by up to 12% vs HikariCP and raises p95 by 18-35%, especially on MNCH. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+c3p0 runs on 2.43: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
 
-c3p0 runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
+**2.42.4 — c3p0 (default) vs HikariCP.** On 2.42.4 the pool switch is a small win (~2-5% throughput at matched concurrency). The sweet spot stays at 4 users. It does not close the gap to 2.43 — the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
+
+| Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
+|---|---|---|---|---|---|---|---|
+| 2 | c3p0 | 0.56 | 4,503 | 1.24 | 1,752 | 1.64 | 1,653 |
+| 2 | hikari | 0.58 | 4,267 | 1.31 | 1,699 | 1.68 | 1,475 |
+| 4 | c3p0 | 0.76 | 6,696 | 1.71 | 2,479 | 2.13 | 2,460 |
+| 4 | hikari | 0.78 | 6,378 | 1.80 | 2,347 | 2.22 | 2,574 |
+| 6 | hikari | 0.88 | 9,140 | 1.92 | 3,502 | 2.33 | 3,506 |
+
+hikari runs on 2.42.4: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816).
 
 ##### What changed
 
@@ -352,7 +350,7 @@ These import improvements are backported to 2.42 and 2.41 branches and will be a
 
 These numbers come from the `smoke` profile with `testMode=all`: each version first runs a deterministic, repeat-based import (1 user, 50 entities per request, 1000 requests per program = 50k entities per program, 150k total) to seed the same DB state, then runs the export scenarios (1 user, 100 iterations per request). This normalizes the DB state across versions so the export times are comparable. Concurrency is 1; a multi-user export sweep per version is not yet run.
 
-> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Pre-import DB state](#pre-import-db-state-db_version220-sierra-leone-dump)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases (millions of entities). Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
+> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Baseline DB](#baseline-db)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases (millions of entities). Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
 
 Runs:
 * 2.43.0: [run 24599249365](https://github.com/dhis2/dhis2-core/actions/runs/24599249365)
