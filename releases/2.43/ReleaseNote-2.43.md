@@ -72,8 +72,6 @@ TrackerTest exercises three Sierra Leone demo DB programs:
 | Child Programme | tracker program | `trackerevent` (belongs to an enrollment) |
 | ANC visit | event program | `singleevent` (no TE, no enrollment) |
 
-The two event tables have different import and query paths.
-
 ##### Import payload
 
 Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity. The number of events per line differs between programs, and events are the dominant per-entity cost for import (each event inserts a row in `trackerevent`/`singleevent`, serializes JSONB data values, and writes audit and changelog entries), so programs with more events per line are heavier to import.
