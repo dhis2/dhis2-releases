@@ -131,39 +131,39 @@ Sweet spot: **6 users** (best trade-off across all three programs). All runs had
 
 MNCH / PNC import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 1.30 | 771 | 1217 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 1.97 | 1012 | 1790 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 2.52 | 1579 | 3386 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 3.03 | 1648 | 3270 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| **6** | **3.78** | **1583** | **2897** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| 7 | 3.08 | 2259 | 4861 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 3.05 | 2610 | 5706 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 1.30 | 1217 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
+| 2 | 1.97 | 1790 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 2.52 | 3386 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 3.03 | 3270 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| **6** | **3.78** | **2897** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| 7 | 3.08 | 4861 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 3.05 | 5706 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
 
 Child Programme import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 3.15 | 317 | 417 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 5.36 | 373 | 583 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 7.15 | 558 | 1056 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 8.65 | 576 | 1014 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| 6 | 10.48 | 571 | 867 | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| **7** | **10.80** | **646** | **1128** | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 10.31 | 773 | 1540 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 3.15 | 417 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
+| 2 | 5.36 | 583 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 7.15 | 1056 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 8.65 | 1014 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| 6 | 10.48 | 867 | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| **7** | **10.80** | **1128** | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 10.31 | 1540 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
 
 ANC visit import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 3.36 | 297 | 620 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 5.50 | 363 | 796 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 6.88 | 580 | 1469 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 9.11 | 547 | 1215 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| **6** | **9.97** | **600** | **1324** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| 7 | 9.15 | 762 | 2285 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 9.17 | 870 | 2304 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 3.36 | 620 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
+| 2 | 5.50 | 796 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
+| 4 | 6.88 | 1469 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
+| 5 | 9.11 | 1215 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
+| **6** | **9.97** | **1324** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
+| 7 | 9.15 | 2285 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
+| 8 | 9.17 | 2304 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
 
 **2.42.4** (image `dhis2/core:2.42.4`)
 
@@ -171,27 +171,27 @@ Highest concurrency measured: **4 users** (we stopped the sweep here because p95
 
 MNCH / PNC import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 0.37 | 2692 | 3581 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
-| 2 | 0.56 | 3558 | 4503 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
-| **4** | **0.76** | **5237** | **6696** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 0.37 | 3581 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 0.56 | 4503 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **0.76** | **6696** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
 
 Child Programme import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 0.84 | 1191 | 1326 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
-| 2 | 1.24 | 1605 | 1752 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
-| **4** | **1.71** | **2327** | **2479** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 0.84 | 1326 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 1.24 | 1752 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **1.71** | **2479** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
 
 ANC visit import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 1.08 | 924 | 1080 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
-| 2 | 1.64 | 1215 | 1653 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
-| **4** | **2.13** | **1869** | **2460** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 1.08 | 1080 | [24566169785](https://github.com/dhis2/dhis2-core/actions/runs/24566169785) |
+| 2 | 1.64 | 1653 | [24564635144](https://github.com/dhis2/dhis2-core/actions/runs/24564635144) |
+| **4** | **2.13** | **2460** | [24564636860](https://github.com/dhis2/dhis2-core/actions/runs/24564636860) |
 
 **2.41.8** (image `dhis2/core:2.41.8`)
 
@@ -199,27 +199,27 @@ Highest concurrency measured: **4 users**, same shape as 2.42.4. All runs 0 KO.
 
 MNCH / PNC import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 0.44 | 2256 | 2703 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
-| 2 | 0.62 | 3202 | 4362 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
-| **4** | **0.72** | **5498** | **7033** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 0.44 | 2703 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 0.62 | 4362 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **0.72** | **7033** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
 
 Child Programme import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 1.05 | 950 | 1097 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
-| 2 | 1.61 | 1241 | 1473 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
-| **4** | **2.13** | **1876** | **2061** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 1.05 | 1097 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 1.61 | 1473 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **2.13** | **2061** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
 
 ANC visit import:
 
-| users | req/s | mean (ms) | p95 (ms) | run |
-|---|---|---|---|---|
-| 1 | 1.26 | 790 | 939 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
-| 2 | 2.00 | 998 | 1149 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
-| **4** | **2.39** | **1669** | **2102** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
+| users | req/s | p95 (ms) | run |
+|---|---|---|---|
+| 1 | 1.26 | 939 | [24566171631](https://github.com/dhis2/dhis2-core/actions/runs/24566171631) |
+| 2 | 2.00 | 1149 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
+| **4** | **2.39** | **2102** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
 
 ##### At-a-glance comparison
 
@@ -247,31 +247,31 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 
 **2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
 
-| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) | vs short-run (300s) p95 |
-|---|---|---|---|---|---|---|
-| MNCH | 6,500 | 3,217,500 | 3.60 | 1,665 | 3,614 | +25% |
-| Child | 13,895 | 6,947,500 | 7.71 | 777 | 1,587 | +83% |
-| ANC | 14,602 | 7,301,000 | 8.10 | 740 | 1,895 | +43% |
+| Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
+|---|---|---|---|---|---|
+| MNCH | 6,500 | 3,217,500 | 3.60 | 3,614 | +25% |
+| Child | 13,895 | 6,947,500 | 7.71 | 1,587 | +83% |
+| ANC | 14,602 | 7,301,000 | 8.10 | 1,895 | +43% |
 
 17.5M entities imported across the 90-min run. Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows. No collapses.
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
-| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) |
-|---|---|---|---|---|---|
-| MNCH | 989 | 489,555 | 0.55 | 7,293 | 10,614 |
-| Child | 3,059 | 1,529,500 | 1.70 | 2,355 | 3,177 |
-| ANC | 3,380 | 1,690,000 | 1.88 | 2,130 | 3,240 |
+| Program | Requests | Entities | req/s | p95 (ms) |
+|---|---|---|---|---|
+| MNCH | 989 | 489,555 | 0.55 | 10,614 |
+| Child | 3,059 | 1,529,500 | 1.70 | 3,177 |
+| ANC | 3,380 | 1,690,000 | 1.88 | 3,240 |
 
 3.7M entities in the 90-min run.
 
 **2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
-| Program | Requests | Entities | req/s | mean (ms) | p95 (ms) |
-|---|---|---|---|---|---|
-| MNCH | 1,381 | 683,595 | 0.77 | 5,220 | 6,572 |
-| Child | 2,691 | 1,345,500 | 1.49 | 2,677 | 3,172 |
-| ANC | 3,339 | 1,669,500 | 1.85 | 2,156 | 2,521 |
+| Program | Requests | Entities | req/s | p95 (ms) |
+|---|---|---|---|---|
+| MNCH | 1,381 | 683,595 | 0.77 | 6,572 |
+| Child | 2,691 | 1,345,500 | 1.49 | 3,172 |
+| ANC | 3,339 | 1,669,500 | 1.85 | 2,521 |
 
 3.7M entities in the 90-min run. 2.43 imports **4.7x more entities** in the same wall time.
 
