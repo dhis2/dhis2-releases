@@ -233,7 +233,7 @@ p95 at the same concurrency levels:
 
 ##### Soak test
 
-At each version's sweet spot concurrency, a sustained import for 30 min per program (90 min total per version) to verify throughput holds as the DB grows.
+30 min per program (90 min total per version) at each version's best concurrency (see [Version comparison](#version-comparison)) to verify throughput holds as the DB grows.
 
 **2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
 
