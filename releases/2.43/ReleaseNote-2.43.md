@@ -28,7 +28,7 @@ Export:
 
 #### Method
 
-All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/actions/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
+All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/.github/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, simulation.csv, gc.log) are available for 90 days.
 
 ##### Versions
 
@@ -76,11 +76,11 @@ TrackerTest exercises three Sierra Leone demo DB programs:
 
 Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity:
 
-| Program | ndjson lines | Entities per line | Breakdown per line |
-|---|---|---|---|
-| MNCH / PNC | 11,338 | 9 | 1 TE + 2 enrollments + 6 events |
-| Child Programme | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
-| ANC visit | 410,022 | 1 | 1 event (no TE, no enrollment) |
+| Program | Entities per line | Breakdown per line |
+|---|---|---|
+| MNCH / PNC | 9 | 1 TE + 2 enrollments + 6 events |
+| Child Programme | 4 | 1 TE + 1 enrollment + 2 events |
+| ANC visit | 1 | 1 event (no TE, no enrollment) |
 
 Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
 
