@@ -157,7 +157,7 @@ ANC visit import:
 
 **2.42.4** (image `dhis2/core:2.42.4`)
 
-Highest concurrency measured: **4 users** (we stopped the sweep here because p95 is already several seconds). Throughput is still climbing mildly 1→2→4 so 4 is not necessarily the absolute peak, but past this point the latency cost is prohibitive. All runs 0 KO.
+Highest concurrency measured: **4 users**. Throughput is still climbing mildly 1→2→4, but p95 is already several seconds so we stopped there. All runs 0 KO.
 
 MNCH / PNC import:
 
