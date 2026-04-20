@@ -62,29 +62,17 @@ No explicit pool config, so each image uses its built-in default: **HikariCP on 
 
 Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). Warmup executes the same simulation once before the measured run so caches, JIT, and connection pools are hot. Numbers reported here are from the measured run, not the warmup.
 
-##### Programs under test
-
-TrackerTest exercises three Sierra Leone demo DB programs:
-
-| Program | Type |
-|---|---|
-| MNCH / PNC | tracker program |
-| Child Programme | tracker program |
-| ANC visit | event program |
-
 ##### Baseline DB
 
-From the Sierra Leone 2.42.0 dump. Totals across all programs: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
-
-The three programs the test imports into are sparsely populated in the dump, so the test mostly measures the cost of inserting new data rather than the cost of growing an already-large dataset in those programs:
+TrackerTest exercises three programs in the Sierra Leone 2.42.0 dump. All three are sparsely populated, so the test mostly measures the cost of inserting new data rather than the cost of growing an already-large dataset:
 
 | Program | Type | TEs | Enrollments | Events |
 |---|---|---|---|---|
-| MNCH / PNC (`uy2gU8kT1jF`) | tracker | 3 | 3 | 14 |
-| Child Programme (`IpHINAT79UW`) | tracker | 19,030 | 19,031 | 37,643 |
-| ANC visit (`lxAQ7Zs9VYR`) | event | — | — | 3 |
+| MNCH / PNC (`uy2gU8kT1jF`) | tracker program | 3 | 3 | 14 |
+| Child Programme (`IpHINAT79UW`) | tracker program | 19,030 | 19,031 | 37,643 |
+| ANC visit (`lxAQ7Zs9VYR`) | event program | — | — | 3 |
 
-Other programs present in the dump (not touched by the test) include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
+Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values. Other programs present but not touched by the test include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
 
 ##### Import payload
 
