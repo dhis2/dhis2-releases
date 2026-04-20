@@ -213,7 +213,7 @@ ANC visit import:
 
 ##### Version comparison
 
-Throughput at the best concurrency measured per version (2.43 = 6 users sweet spot; 2.42 and 2.41 = 4 users as capped; higher concurrency on 2.42/2.41 only hurts p95):
+Throughput at each version's best concurrency from the [sweep above](#concurrency-sweep) (2.43 at 6 users, 2.42.4 and 2.41.8 at 4):
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
