@@ -15,11 +15,16 @@
 
 Compared against the latest stable 2.42.4 and 2.41.8 releases on the Sierra Leone demo DB:
 
+Import:
+
 * **Tracker import throughput is 4-6x higher** on 2.43 than on 2.42.4 / 2.41.8 at the concurrency each version handles best (2.43 scales to 6 concurrent users before p95 degrades; 2.42.4 and 2.41.8 cap out around 4). **p95 response time is 25-66% lower**. See [Concurrency sweep](#concurrency-sweep) and [At-a-glance comparison](#at-a-glance-comparison).
 * **Sustained 30-min soaks hold the numbers**: 2.43 imports 17.5M entities while 2.42/2.41 import 3.7M in the same wall time. See [Soak test](#soak-test).
 * **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported — 2.42/2.41 still default to c3p0.
-* **Export** (1-user on a same-seeded DB): event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
-* **Pool matters more on 2.43 than on 2.42.** On 2.43, opting out of HikariCP to c3p0 costs 18-35% p95 with throughput within 12%. On 2.42.4, opting into HikariCP adds only 2-5%. See [Pool](#2.43-hikaricp-default-vs-c3p0).
+* **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool sections](#2.43-hikaricp-default-vs-c3p0).
+
+Export:
+
+* **1-user on a same-seeded DB**: event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
 
 #### Method
 
@@ -33,11 +38,9 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 | 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | c3p0 | latest stable 2.42 release |
 | 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | c3p0 | latest stable 2.41 release |
 
-2.43 switches the default JDBC connection pool from c3p0 to HikariCP. c3p0 wraps every JDBC call in a proxy that added ~10-15% CPU overhead on 2.41/2.42 under concurrent import load. Users on 2.41/2.42 can opt into HikariCP by setting `db.pool.type = hikari` in `dhis.conf`.
-
 ##### Server
 
-Self-hosted Linux runner (not a GitHub-hosted runner): Intel Xeon E3-1275 v6 @ 3.80GHz, 4 cores / 8 threads, 64 GiB RAM. Docker Compose allocates 4 CPUs and 16 GiB each to the `web` (DHIS2) and `db` (PostgreSQL) containers. Both containers run on the same machine.
+Self-hosted Linux runner: Intel Xeon E3-1275 v6 @ 3.80GHz, 4 cores / 8 threads, 64 GiB RAM. Docker Compose allocates 4 CPUs and 16 GiB each to the `web` (DHIS2) and `db` (PostgreSQL) containers. Both containers run on the same machine.
 
 ##### DHIS2 configuration
 
@@ -53,7 +56,7 @@ connection.password = dhis
 system.update_notifications_enabled = off
 ```
 
-No explicit pool config, so each image uses its built-in default: **HikariCP on 2.43, c3p0 on 2.42.4 and 2.41.8**. The [HikariCP workaround](#hikaricp-workaround-on-2424) section uses a modified dhis.conf with `db.pool.type = hikari`.
+No explicit pool config, so each image uses its built-in default: **HikariCP on 2.43, c3p0 on 2.42.4 and 2.41.8**. The pool-comparison sections below add `db.pool.type = hikari` on 2.42.4 or `db.pool.type = c3p0` on 2.43.
 
 ##### Warmup
 
@@ -282,7 +285,7 @@ At each version's sweet spot concurrency, a sustained import for 30 min per prog
 | Child | 1,587 | 3,177 | 3,172 | -50% | -50% |
 | ANC | 1,895 | 3,240 | 2,521 | -42% | -25% |
 
-##### HikariCP workaround on 2.42.4
+##### 2.42.4 c3p0 (default) vs HikariCP
 
 | Version | Default pool | Override |
 |---|---|---|
@@ -325,7 +328,7 @@ At each pool's own sweet spot (HikariCP 6u, c3p0 7u):
 | Child | 10.48 | 10.71 | -2% | 867 | 1,091 | -21% |
 | ANC | 9.97 | 10.19 | -2% | 1,324 | 1,605 | -18% |
 
-c3p0 on 2.43 gives throughput within 12% of HikariCP but p95 is 18-35% worse, especially on MNCH. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+c3p0 on 2.43 drops throughput by up to 12% vs HikariCP and raises p95 by 18-35%, especially on MNCH. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
 
 c3p0 runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
 
