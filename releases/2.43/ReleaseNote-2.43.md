@@ -86,7 +86,7 @@ Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthe
 
 Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
 
-Programs are imported sequentially (MNCH → Child → ANC). The runs below use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
+Programs are imported sequentially (MNCH → Child → ANC).
 
 ##### How to reproduce
 
@@ -106,6 +106,8 @@ MVN_ARGS='-DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. Use `DB_VERSION=2.42.0` for 2.43 and 2.42 images (Flyway migrates 2.43 on startup); use `DB_VERSION=2.41.0` for 2.41. `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
 
 #### Import
+
+Import runs use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
 
 ##### Concurrency sweep
 
