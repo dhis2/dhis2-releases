@@ -74,7 +74,7 @@ TrackerTest exercises three Sierra Leone demo DB programs:
 
 ##### Import payload
 
-Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity. The number of events per line differs between programs, and events are the dominant per-entity cost for import (each event inserts a row in `trackerevent`/`singleevent`, serializes JSONB data values, and writes audit and changelog entries), so programs with more events per line are heavier to import.
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity:
 
 | Program | ndjson lines | Entities per line | Breakdown per line |
 |---|---|---|---|
@@ -82,9 +82,9 @@ Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthe
 | Child Programme | 29,969 | 4 | 1 TE + 1 enrollment + 2 events |
 | ANC visit | 410,022 | 1 | 1 event (no TE, no enrollment) |
 
-Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH lines, ~125 Child lines, or 500 ANC events. MNCH is the heaviest payload per TE (most events + attributes flow through the persister for each TE); ANC is the lightest (skips TE preheat and attribute validation entirely). These payload differences dominate the comparison between programs.
+Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
 
-Programs are imported sequentially (MNCH → Child → ANC). The runs below use the duration-based import: each program imports for `importDurationSec` seconds with a fixed pool of `importUsers` concurrent users that loop until the duration elapses.
+Programs are imported sequentially (MNCH → Child → ANC). The runs below use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
 
 ##### Pre-import DB state (`DB_VERSION=2.42.0` Sierra Leone dump)
 
