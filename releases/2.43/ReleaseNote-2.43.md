@@ -60,7 +60,7 @@ No explicit pool config, so each image uses its built-in default: **HikariCP on 
 
 ##### Warmup
 
-Each run performs one full warmup iteration (`WARMUP=1`, the workflow default). Warmup executes the same simulation once before the measured run so caches, JIT, and connection pools are hot. Numbers reported here are from the measured run, not the warmup.
+Each run executes the full simulation once as warmup (`WARMUP=1`, the workflow default). Reported numbers are from the measured run only.
 
 ##### Baseline DB
 
@@ -72,7 +72,7 @@ TrackerTest exercises three programs in the Sierra Leone 2.42.0 dump. All three 
 | Child Programme (`IpHINAT79UW`) | tracker program | 19,030 | 19,031 | 37,643 |
 | ANC visit (`lxAQ7Zs9VYR`) | event program | - | - | 3 |
 
-Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values. Other programs present but not touched by the test include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
+Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values.
 
 ##### Import payload
 
@@ -111,9 +111,7 @@ Import runs use duration-based import: `importUsers` concurrent users loop over 
 
 ##### Concurrency sweep
 
-5-min runs per concurrency level to find each program's throughput plateau. 2.43.0 scales further than 2.42.4 and 2.41.8, which saturate early; beyond ~4 users the older versions only gain p95, no throughput. See the per-version tables below.
-
-Throughput (req/s) comes from `simulation.csv`. p95 (ms) comes from the Gatling HTML report so it matches what you see when clicking the run link.
+5-min runs per concurrency level to find each program's throughput plateau. 2.43.0 scales further than 2.42.4 and 2.41.8, which saturate early; beyond ~4 users the older versions only gain p95, no throughput. p95 values are taken from the Gatling HTML report so they match the run link.
 
 **2.43.0** (image `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55`)
 
@@ -228,8 +226,6 @@ p95 at the same concurrency levels:
 | MNCH | 2897 | 6696 | 7033 | -57% | -59% |
 | Child | 867 | 2479 | 2061 | -65% | -58% |
 | ANC | 1324 | 2460 | 2102 | -46% | -37% |
-
-2.43 imports 4-6x more per second than 2.42/2.41 **and** does it with 37-65% lower p95.
 
 ##### Soak test
 
@@ -383,11 +379,7 @@ Single-item fetches (`Get first event`, `Get relationships for first event`) are
 
 Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, but a few single-item fetches are 10-70 ms slower on 2.43 (noise at this scale). **One real regression**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41; under investigation and not yet filed.
 
-##### Takeaways
-
-* On the event program path, 2.43 is a large, unambiguous improvement (up to ~100x vs 2.42, ~12x vs 2.41).
-* On the tracker program path, 2.43 is clearly better than 2.42.4. Against 2.41.8 it is a wash on single-item fetches and an improvement on listings, with one regression to investigate.
-* These numbers are 1-user p95 on a seeded DB. A multi-user export sweep is still TODO and may shift the picture since the per-request differences are small compared to the concurrency sensitivity seen on import.
+These numbers are 1-user p95 on a seeded DB. A multi-user export sweep is still TODO; concurrency sensitivity seen on import may shift this picture.
 
 ## Bugs
 
