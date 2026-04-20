@@ -70,7 +70,7 @@ TrackerTest exercises three programs in the Sierra Leone 2.42.0 dump. All three 
 |---|---|---|---|---|
 | MNCH / PNC (`uy2gU8kT1jF`) | tracker program | 3 | 3 | 14 |
 | Child Programme (`IpHINAT79UW`) | tracker program | 19,030 | 19,031 | 37,643 |
-| ANC visit (`lxAQ7Zs9VYR`) | event program | n/a | n/a | 3 |
+| ANC visit (`lxAQ7Zs9VYR`) | event program | - | - | 3 |
 
 Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollments, 373,597 events, 1,069,732 attribute values. Other programs present but not touched by the test include TB program (50,026 TEs), WHO RMNCH Tracker (4,009 TEs), Malaria case registration (200,001 single events), Inpatient morbidity and mortality (107,793 single events).
 
