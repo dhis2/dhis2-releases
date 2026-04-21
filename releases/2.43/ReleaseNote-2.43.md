@@ -24,7 +24,7 @@ Import:
 
 Export:
 
-* **1-user on a same-seeded DB**: event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
+* **Event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8** at 1 user. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
 * **Under concurrency 2.43 holds up**; 2.42.4 starts failing at 4 export users (3 KOs on ANC listings), 2.41.8 collapses with 24 KOs. See [Multi-user export](#multi-user-export-same-seeded-db).
 
 #### Method
