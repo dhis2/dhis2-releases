@@ -341,7 +341,7 @@ Each version first runs a deterministic seed (1 user, 50 entities per request, 1
 
 ##### 1-user export (same-seeded DB)
 
-1-user p95 on the same seeded DB. All runs 0 KO. n=100 per request, n=200 for relationships. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
+1-user p95 on the same seeded DB. All runs 0 KO. Each request runs 100 times; `Get relationships for first event` runs 200 times (appears in both export scenarios). Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
 
 ##### Event program (ANC visit) queries
 
@@ -354,7 +354,7 @@ Each version first runs a deterministic seed (1 user, 50 entities per request, 1
 | Get first event | 40 | 47 | 14 | -15% | +186% |
 | Get relationships for first event | 4 | 4 | 3 | 0% | +33% |
 
-Listing and filtering single events on 2.43 is dramatically faster than 2.42.4 (~100x). The 2.42 regression predates 2.43 and was not backported; upgrading to 2.43 closes it. Against 2.41 the event listing is ~12x faster, attributable to the single event default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)).
+Listing and filtering single events on 2.43 is ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)); we did not profile these runs to isolate each change's contribution.
 
 Single-item fetches (`Get first event`, `Get relationships for first event`) are fast on all versions, and 2.41 is actually a few ms faster than 2.43 on these; within noise for single-digit millisecond queries.
 
