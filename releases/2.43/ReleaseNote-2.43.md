@@ -59,8 +59,6 @@ connection.password = dhis
 system.update_notifications_enabled = off
 ```
 
-No explicit pool config, so each image uses its built-in default: **HikariCP on 2.43, c3p0 on 2.42.4 and 2.41.8**. The pool-comparison sections below add `db.pool.type = hikari` on 2.42.4 or `db.pool.type = c3p0` on 2.43.
-
 ##### Warmup
 
 Each run executes the full simulation once as warmup (`WARMUP=1`, the workflow default). Reported numbers are from the measured run only.
