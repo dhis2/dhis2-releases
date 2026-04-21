@@ -77,15 +77,15 @@ Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollme
 
 ##### Import payload
 
-Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. Each line in an ndjson file is one top-level entity:
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. For the two tracker programs, one patient contributes one tracked entity plus their enrollments and events. For the event program, one record is one event with no tracked entity:
 
-| Program | Entities per line | Breakdown per line |
+| Program | Entities per patient (or event) | Breakdown |
 |---|---|---|
 | MNCH / PNC | 9 | 1 TE + 2 enrollments + 6 events |
 | Child Programme | 4 | 1 TE + 1 enrollment + 2 events |
 | ANC visit | 1 | 1 event (no TE, no enrollment) |
 
-Each import request targets 500 entities to `POST /api/tracker?async=false`. At that size one request contains ~55 MNCH, ~125 Child, or 500 ANC lines. Throughput and p95 therefore differ between programs regardless of version.
+Each import request posts ~500 entities to `POST /api/tracker?async=false`, so one request imports ~55 MNCH patients, ~125 Child patients, or 500 ANC events. Throughput and p95 differ between programs regardless of version because the per-request work differs.
 
 Programs are imported sequentially (MNCH → Child → ANC).
 
