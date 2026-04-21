@@ -77,7 +77,7 @@ Totals across all programs in the dump: 73,125 tracked entities, 73,133 enrollme
 
 ##### Import payload
 
-Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data. For the two tracker programs, one patient contributes one tracked entity plus their enrollments and events. For the event program, one record is one event with no tracked entity:
+Import data is pre-generated [Synthea](https://github.com/synthetichealth/synthea) synthetic patient data:
 
 | Program | Entities per patient (or event) | Breakdown |
 |---|---|---|
