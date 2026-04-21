@@ -210,9 +210,9 @@ ANC visit import:
 | 2 | 2.00 | 1149 | [24564643009](https://github.com/dhis2/dhis2-core/actions/runs/24564643009) |
 | **4** | **2.39** | **2102** | [24564644824](https://github.com/dhis2/dhis2-core/actions/runs/24564644824) |
 
-##### Version comparison
+**Summary.**
 
-Throughput at each version's best concurrency from the [sweep above](#concurrency-sweep) (2.43 at 6 users, 2.42.4 and 2.41.8 at 4):
+Throughput at each version's best concurrency (2.43 at 6 users, 2.42.4 and 2.41.8 at 4):
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
@@ -230,7 +230,7 @@ p95 at the same concurrency levels:
 
 ##### Soak test
 
-30 min per program (90 min total per version) at each version's best concurrency (see [Version comparison](#version-comparison)) to verify throughput holds as the DB grows.
+30 min per program (90 min total per version) at each version's best concurrency (from the [concurrency sweep](#concurrency-sweep)) to verify throughput holds as the DB grows.
 
 **2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
 
@@ -262,7 +262,9 @@ p95 at the same concurrency levels:
 
 3.7M entities in the 90-min run.
 
-**Soak summary.** 2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-6x more throughput with 25-66% lower p95**.
+**Summary.**
+
+2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-6x more throughput with 25-66% lower p95**.
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
