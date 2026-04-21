@@ -5,9 +5,9 @@
 
 ## Features
 
-## Tracker
+## Performance
 
-### Performance
+### Tracker
 
 > **Note:** These are preliminary results based on pre-release builds. Final numbers will be updated when the 2.43.0 release is published.
 
