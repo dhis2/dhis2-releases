@@ -356,7 +356,7 @@ Each version first runs a deterministic seed (1 user, 50 entities per request, 1
 
 Listing and filtering single events on 2.43 is ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)); we did not profile these runs to isolate each change's contribution.
 
-Single-item fetches (`Get first event`, relationship lookups) are fast on all versions, and 2.41 is a few ms faster than 2.43 on these (within noise for single-digit millisecond queries). The seeded data contains no relationships, so relationship queries always return an empty array and measure only lookup cost, not serialization.
+Single-item fetches (`Get first event`, relationship lookups) are fast on all versions, and 2.41 is a few ms faster than 2.43 on these. The seeded data contains no relationships, so relationship queries are cheap by construction.
 
 ##### Tracker program (Child Programme) queries
 
