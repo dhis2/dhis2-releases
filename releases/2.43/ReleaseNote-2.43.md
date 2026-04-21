@@ -391,7 +391,7 @@ At 6u two queries start to degrade: `Get TEs with enrollment status` p95 climbs 
 
 **2.41.8** collapses at 4 users. At 2u all succeed but ANC listings already sit around 40s p95. At 4u: **24 KOs** on ANC queries (all 16 `Go to first/second page` and `Search not assigned` requests timeout at 60s), plus severe p95 growth on everything: `Search Birth events` 28006 ms, `Not found TE by name like` 29258 ms, `Get TEs with enrollment status` 3171 ms. Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459).
 
-The ANC listing pathology on 2.42/2.41 is the deprecated event endpoint doing expensive work against what is in fact a tiny dataset (3 baseline events + 50k seeded). 2.43 closes this via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations.
+2.43 is the only version that holds up cleanly at 4+ export users on this test mix. The root cause of the 2.42/2.41 failures is not profiled in this release note; likely candidates are the ANC event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations, but it could also be connection pool exhaustion or other effects.
 
 ## Bugs
 
