@@ -19,7 +19,7 @@ Import:
 
 * **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8**: 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
 * **2.43 scales further before p95 degrades.** It handles 6 concurrent import users comfortably; 2.42.4 and 2.41.8 cap out around 4 on the same hardware. See [Concurrency sweep](#concurrency-sweep).
-* **Most import improvements are backported** to the 2.42 and 2.41 branches and will ship in 2.42.5 and 2.41.9. Which specific fixes made it into which version is per-issue; check the Jira tickets under [What changed](#what-changed) for exact backport status. The HikariCP default is not backported: 2.42/2.41 still default to c3p0.
+* **Most import improvements are backported** and will ship in 2.42.5 and 2.41.9; see [What changed](#what-changed) for the per-issue backport status.
 * **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool](#pool).
 
 Export:
@@ -319,7 +319,7 @@ hikari runs on 2.42.4: [2u](https://github.com/dhis2/dhis2-core/actions/runs/246
 
 ##### What changed
 
-Key import optimizations in 2.43 that explain the throughput difference. The aggregate effect is shown in the sweep and soak tables above; the per-issue micro-benchmark numbers documented on each Jira ticket are not re-measured here.
+Key import optimizations in 2.43. Most are backported to 2.42/2.41 (shipping in 2.42.5 / 2.41.9); HikariCP as default is **not** backported. Check each Jira for exact backport status.
 
 | Issue | Description |
 |---|---|
@@ -332,8 +332,6 @@ Key import optimizations in 2.43 that explain the throughput difference. The agg
 | [DHIS2-21178](https://dhis2.atlassian.net/browse/DHIS2-21178) | Reduce allocations for program rules evaluation |
 | [DHIS2-21245](https://dhis2.atlassian.net/browse/DHIS2-21245) | Analyze rules before running to limit context |
 | | HikariCP default connection pool (replaces c3p0) |
-
-These import improvements are backported to 2.42 and 2.41 branches and will be available in the next patch releases (2.42.5, 2.41.9).
 
 #### Export
 
