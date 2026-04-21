@@ -244,21 +244,21 @@ p95 at the same concurrency levels:
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
-| Program | Requests | Entities | req/s | p95 (ms) |
-|---|---|---|---|---|
-| MNCH | 989 | 489,555 | 0.55 | 10,614 |
-| Child | 3,059 | 1,529,500 | 1.70 | 3,177 |
-| ANC | 3,380 | 1,690,000 | 1.88 | 3,240 |
+| Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
+|---|---|---|---|---|---|
+| MNCH | 989 | 489,555 | 0.55 | 10,614 | +59% |
+| Child | 3,059 | 1,529,500 | 1.70 | 3,177 | +28% |
+| ANC | 3,380 | 1,690,000 | 1.88 | 3,240 | +32% |
 
 3.7M entities in the 90-min run.
 
 **2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
-| Program | Requests | Entities | req/s | p95 (ms) |
-|---|---|---|---|---|
-| MNCH | 1,381 | 683,595 | 0.77 | 6,572 |
-| Child | 2,691 | 1,345,500 | 1.49 | 3,172 |
-| ANC | 3,339 | 1,669,500 | 1.85 | 2,521 |
+| Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
+|---|---|---|---|---|---|
+| MNCH | 1,381 | 683,595 | 0.77 | 6,572 | -7% |
+| Child | 2,691 | 1,345,500 | 1.49 | 3,172 | +54% |
+| ANC | 3,339 | 1,669,500 | 1.85 | 2,521 | +20% |
 
 3.7M entities in the 90-min run.
 
