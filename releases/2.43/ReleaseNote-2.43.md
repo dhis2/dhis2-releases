@@ -381,7 +381,7 @@ Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the pi
 
 Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. p95 in ms; `KO` means the request hit the 60 s Gatling timeout.
 
-**2.43.0** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
+**2.43.0** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
 
 | Request | 2u | 4u | 6u |
 |---|---|---|---|
@@ -392,7 +392,7 @@ Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 us
 | Search not assigned (ANC) | 28 | 39 | 38 |
 | Search TE by name (like) | 854 | 894 | 1049 |
 
-**2.42.4** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 3 KOs at 4u (all on ANC listings).
+**2.42.4** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 3 KOs at 4u (all on ANC listings).
 
 | Request | 2u | 4u |
 |---|---|---|
@@ -403,7 +403,7 @@ Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 us
 | Search not assigned (ANC) | 60001 | 59935 |
 | Search TE by name (like) | 723 | 1445 |
 
-**2.41.8** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings).
+**2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings).
 
 | Request | 2u | 4u |
 |---|---|---|
