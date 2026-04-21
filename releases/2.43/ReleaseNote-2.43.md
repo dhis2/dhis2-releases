@@ -240,7 +240,7 @@ p95 at the same concurrency levels:
 | Child | 13,895 | 6,947,500 | 7.71 | 1,587 | +83% |
 | ANC | 14,602 | 7,301,000 | 8.10 | 1,895 | +43% |
 
-17.5M entities imported across the 90-min run. Throughput stays within 5-8% of the short-run peak, p95 rises as expected as the DB grows. No collapses.
+17.5M entities imported across the 90-min run. Throughput stays within 5-8% of the short-run peak, p95 rises gradually as the DB grows but stays within a single-digit multiple of the short-run values.
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
