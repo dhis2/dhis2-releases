@@ -20,7 +20,7 @@ Import:
 * **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8**: 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
 * **2.43 scales further before p95 degrades.** It handles 6 concurrent import users comfortably; 2.42.4 and 2.41.8 cap out around 4 on the same hardware. See [Concurrency sweep](#concurrency-sweep).
 * **Most import improvements are backported** and will ship in 2.42.5 and 2.41.9; see [What changed](#what-changed) for the per-issue backport status.
-* **Pool matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [Pool](#pool).
+* **The DB connection pool choice matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [DB connection pool](#db-connection-pool).
 
 Export:
 
@@ -278,7 +278,7 @@ p95 at the same concurrency levels:
 | Child | 1,587 | 3,177 | 3,172 | -50% | -50% |
 | ANC | 1,895 | 3,240 | 2,521 | -42% | -25% |
 
-##### Pool
+##### DB connection pool
 
 2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4.
 
