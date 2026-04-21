@@ -379,17 +379,43 @@ Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the pi
 
 ##### Multi-user export (same-seeded DB)
 
-Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4.
+Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. p95 in ms; `KO` means the request hit the 60 s Gatling timeout.
 
-**2.43.0** holds up cleanly. All runs 0 KO. Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223).
+**2.43.0** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
 
-At 6u two queries start to degrade: `Get TEs with enrollment status` p95 climbs from 951 → 948 → 5596 ms (2u → 4u → 6u) and `Search Birth events` from 4106 → 1029 → 15192 ms. 2-4 users is the safe range.
+| Request | 2u | 4u | 6u |
+|---|---|---|---|
+| Get TEs with enrollment status | 951 | 948 | 5596 |
+| Search Birth events | 4106 | 1029 | 15192 |
+| Go to first page (ANC) | 13 | 20 | 19 |
+| Go to second page (ANC) | 36 | 40 | 40 |
+| Search not assigned (ANC) | 28 | 39 | 38 |
+| Search TE by name (like) | 854 | 894 | 1049 |
 
-**2.42.4** starts failing at 4 users. At 2u all 0 KO. At 4u the ANC listing queries hit the 60s Gatling timeout: `Go to first page`, `Go to second page`, `Search not assigned` return **3 KOs**. Non-ANC queries hold but p95 rises (Search Birth events 2487 → 7088 ms; Search TE by name like 723 → 1445 ms). Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673).
+**2.42.4** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 3 KOs at 4u (all on ANC listings).
 
-**2.41.8** collapses at 4 users. At 2u all succeed but ANC listings already sit around 40s p95. At 4u: **24 KOs** on ANC queries (all 16 `Go to first/second page` and `Search not assigned` requests timeout at 60s), plus severe p95 growth on everything: `Search Birth events` 28006 ms, `Not found TE by name like` 29258 ms, `Get TEs with enrollment status` 3171 ms. Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459).
+| Request | 2u | 4u |
+|---|---|---|
+| Get TEs with enrollment status | 793 | 928 |
+| Search Birth events | 2487 | 7088 |
+| Go to first page (ANC) | 60001 | 60001 |
+| Go to second page (ANC) | 60001 | 60000 |
+| Search not assigned (ANC) | 60001 | 59935 |
+| Search TE by name (like) | 723 | 1445 |
 
-2.43 is the only version that holds up cleanly at 4+ export users on this test mix. The root cause of the 2.42/2.41 failures is not profiled in this release note; likely candidates are the ANC event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations, but it could also be connection pool exhaustion or other effects.
+**2.41.8** — [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings).
+
+| Request | 2u | 4u |
+|---|---|---|
+| Get TEs with enrollment status | 121 | 3171 |
+| Search Birth events | 508 | 28006 |
+| Go to first page (ANC) | 39989 | 60001 |
+| Go to second page (ANC) | 39684 | 60002 |
+| Search not assigned (ANC) | 39735 | 60003 |
+| Search TE by name (like) | 104 | 2544 |
+| Not found TE by name (like) | 450 | 29258 |
+
+2.43 is the only version that holds up at 4+ export users on this test mix. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations, or connection pool exhaustion.
 
 ## Bugs
 
