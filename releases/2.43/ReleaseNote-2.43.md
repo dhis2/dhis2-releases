@@ -25,6 +25,7 @@ Import:
 Export:
 
 * **1-user on a same-seeded DB**: event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
+* **Under concurrency 2.43 holds up**; 2.42.4 starts failing at 4 export users (3 KOs on ANC listings), 2.41.8 collapses with 24 KOs. See [Multi-user export](#multi-user-export-same-seeded-db).
 
 #### Method
 
@@ -336,16 +337,13 @@ These import improvements are backported to 2.42 and 2.41 branches and will be a
 
 #### Export
 
-These numbers come from the `smoke` profile with `testMode=all`: each version first runs a deterministic, repeat-based import (1 user, 50 entities per request, 1000 requests per program = 50k entities per program, 150k total) to seed the same DB state, then runs the export scenarios (1 user, 100 iterations per request). This normalizes the DB state across versions so the export times are comparable. Concurrency is 1; a multi-user export sweep per version is not yet run.
+Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Export then runs with the `load` profile at N concurrent users for 300s per scenario.
 
 > The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Baseline DB](#baseline-db)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases (millions of entities). Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
 
-Runs:
-* 2.43.0: [run 24599249365](https://github.com/dhis2/dhis2-core/actions/runs/24599249365)
-* 2.42.4: [run 24599249376](https://github.com/dhis2/dhis2-core/actions/runs/24599249376)
-* 2.41.8: [run 24599249364](https://github.com/dhis2/dhis2-core/actions/runs/24599249364)
+##### 1-user export (same-seeded DB)
 
-All runs 0 KO. p95 from Gatling HTML, n=100 per request (n=200 for relationships).
+1-user p95 on the same seeded DB. All runs 0 KO. n=100 per request, n=200 for relationships. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
 
 ##### Event program (ANC visit) queries
 
@@ -381,7 +379,19 @@ Single-item fetches (`Get first event`, `Get relationships for first event`) are
 
 Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, but a few single-item fetches are 10-70 ms slower on 2.43 (noise at this scale). **One real regression**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41; under investigation and not yet filed.
 
-These numbers are 1-user p95 on a seeded DB. A multi-user export sweep is still TODO; concurrency sensitivity seen on import may shift this picture.
+##### Multi-user export (same-seeded DB)
+
+Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4.
+
+**2.43.0** holds up cleanly. All runs 0 KO. Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223).
+
+At 6u two queries start to degrade: `Get TEs with enrollment status` p95 climbs from 951 → 948 → 5596 ms (2u → 4u → 6u) and `Search Birth events` from 4106 → 1029 → 15192 ms. 2-4 users is the safe range.
+
+**2.42.4** starts failing at 4 users. At 2u all 0 KO. At 4u the ANC listing queries hit the 60s Gatling timeout: `Go to first page`, `Go to second page`, `Search not assigned` return **3 KOs**. Non-ANC queries hold but p95 rises (Search Birth events 2487 → 7088 ms; Search TE by name like 723 → 1445 ms). Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673).
+
+**2.41.8** collapses at 4 users. At 2u all succeed but ANC listings already sit around 40s p95. At 4u: **24 KOs** on ANC queries (all 16 `Go to first/second page` and `Search not assigned` requests timeout at 60s), plus severe p95 growth on everything: `Search Birth events` 28006 ms, `Not found TE by name like` 29258 ms, `Get TEs with enrollment status` 3171 ms. Runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459).
+
+The ANC listing pathology on 2.42/2.41 is the deprecated event endpoint doing expensive work against what is in fact a tiny dataset (3 baseline events + 50k seeded). 2.43 closes this via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations.
 
 ## Bugs
 
