@@ -104,7 +104,7 @@ SIMULATION_CLASS=org.hisp.dhis.test.tracker.TrackerTest
 MVN_ARGS='-DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 ```
 
-Substitute `DHIS2_IMAGE`, `DB_VERSION`, `importUsers`, and `importDurationSec` for other versions and scenarios. Use `DB_VERSION=2.42.0` for 2.43 and 2.42 images (Flyway migrates 2.43 on startup); use `DB_VERSION=2.41.0` for 2.41. `MVN_ARGS` must be single-quoted so multiple `-D` args reach Maven as one value. `perf_tests_git_ref` must be a full 40-char SHA.
+Substitute `DHIS2_IMAGE`, `DB_VERSION` (see [Versions](#versions)), `importUsers`, and `importDurationSec` for other scenarios.
 
 #### Import
 
