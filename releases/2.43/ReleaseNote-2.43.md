@@ -337,7 +337,7 @@ Key import optimizations in 2.43. Most are backported to 2.42/2.41 (shipping in 
 
 Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Export then runs with the `load` profile at N concurrent users for 300s per scenario.
 
-> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Baseline DB](#baseline-db)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases (millions of entities). Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
+> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Baseline DB](#baseline-db)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases. Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
 
 ##### 1-user export (same-seeded DB)
 
