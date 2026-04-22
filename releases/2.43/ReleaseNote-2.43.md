@@ -399,52 +399,97 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 | Request | 2u p95 | 4u p95 | 6u p95 |
 |---|---|---|---|
-| Get TEs with enrollment status | 951 | 948 | 5596 |
-| Search Birth events | 4106 | 1029 | 15192 |
-| Go to first page (ANC) | 13 | 20 | 19 |
-| Go to second page (ANC) | 36 | 40 | 40 |
-| Search not assigned (ANC) | 28 | 39 | 38 |
-| Search TE by name (like) | 854 | 894 | 1049 |
+| Go to first page | 13 | 20 | 19 |
+| Go to second page | 36 | 40 | 40 |
+| Search not assigned | 28 | 39 | 38 |
+| Search by date range | 39 | 40 | 39 |
+| Get first event | 67 | 93 | 73 |
+| Get relationships for first event | 5 | 5 | 5 |
+| Get first page of TEs | 60 | 73 | 150 |
+| Get TEs with enrollment status | 951 | 948 | 5,596 |
+| Get TEs from events | 20 | 11 | 65 |
+| Search TE by name (like) | 854 | 894 | 1,049 |
+| Search TE by name (eq) | 49 | 55 | 80 |
+| Search Birth events | 4,106 | 1,029 | 15,192 |
+| Not found TE by name (like) | 760 | 754 | 1,208 |
+| Not found TE by name (eq) | 20 | 21 | 26 |
+| Get first tracked entity | 79 | 90 | 183 |
+| Get first enrollment | 37 | 27 | 179 |
+| Get first event from enrollment | 123 | 85 | 361 |
+| Get relationships for first TE | 7 | 6 | 31 |
 
 **2.42.4** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 10 KOs at 2u (all on ANC listings); 13 KOs at 4u (10 on MNCH import 60s timeouts, 3 on ANC listings).
 
 | Request | 2u p95 | 4u p95 |
 |---|---|---|
+| Go to first page | 60,001 | 60,001 |
+| Go to second page | 60,001 | 60,000 |
+| Search not assigned | 60,001 | 59,935 |
+| Search by date range | 8,607 | 7,513 |
+| Get first event | 44 | 63 |
+| Get relationships for first event | 8 | 7 |
+| Get first page of TEs | 322 | 392 |
 | Get TEs with enrollment status | 793 | 928 |
-| Search Birth events | 2487 | 7088 |
-| Go to first page (ANC) | 60001 | 60001 |
-| Go to second page (ANC) | 60001 | 60000 |
-| Search not assigned (ANC) | 60001 | 59935 |
-| Search TE by name (like) | 723 | 1445 |
+| Get TEs from events | 62 | 150 |
+| Search TE by name (like) | 723 | 1,445 |
+| Search TE by name (eq) | 115 | 92 |
+| Search Birth events | 2,487 | 7,088 |
+| Not found TE by name (like) | 468 | 494 |
+| Not found TE by name (eq) | 35 | 30 |
+| Get first tracked entity | 88 | 81 |
+| Get first enrollment | 23 | 31 |
+| Get first event from enrollment | 81 | 77 |
+| Get relationships for first TE | 5 | 7 |
 
-**2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings).
+**2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings). At 4u, `Get first event` and `Get relationships for first event` do not appear in the Gatling report because the preceding ANC listing requests timed out and the scenario never reached them.
 
 | Request | 2u p95 | 4u p95 |
 |---|---|---|
-| Get TEs with enrollment status | 121 | 3171 |
-| Search Birth events | 508 | 28006 |
-| Go to first page (ANC) | 39989 | 60001 |
-| Go to second page (ANC) | 39684 | 60002 |
-| Search not assigned (ANC) | 39735 | 60003 |
-| Search TE by name (like) | 104 | 2544 |
-| Not found TE by name (like) | 450 | 29258 |
+| Go to first page | 39,989 | 60,001 |
+| Go to second page | 39,684 | 60,002 |
+| Search not assigned | 39,735 | 60,003 |
+| Search by date range | 4,987 | 60,001 |
+| Get first event | 20 | - |
+| Get relationships for first event | 6 | - |
+| Get first page of TEs | 119 | 2,721 |
+| Get TEs with enrollment status | 121 | 3,171 |
+| Get TEs from events | 14 | 304 |
+| Search TE by name (like) | 104 | 2,544 |
+| Search TE by name (eq) | 59 | 951 |
+| Search Birth events | 508 | 28,006 |
+| Not found TE by name (like) | 450 | 29,258 |
+| Not found TE by name (eq) | 31 | 464 |
+| Get first tracked entity | 56 | 266 |
+| Get first enrollment | 13 | 66 |
+| Get first event from enrollment | 39 | 200 |
+| Get relationships for first TE | 4 | 76 |
 
 **Summary.**
 
-At 2u the tracker-side requests (`Get TEs with enrollment status`, `Search TE by name (like)`, `Not found TE by name (like)`) are slightly slower on 2.43 than on the older versions, but every ANC event-program request is already multiple orders of magnitude faster (ms vs tens of seconds). At 4u the picture is almost uniformly in 2.43's favor: tracker-side requests are faster than both older versions and ANC-side requests remain in the tens of ms while 2.42/2.41 time out at 60s. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
+At 2u the ANC event-program requests are already multiple orders of magnitude faster on 2.43 (tens of ms vs tens of seconds), but on small-item tracker-side fetches 2.43 is a few ms slower than either older version (e.g. `Get first event` 67 vs 20 on 2.41, `Get first enrollment` 37 vs 13). At 4u the picture is almost uniformly in 2.43's favor: the ANC listings stay in the tens of ms while 2.42/2.41 time out at 60s, and tracker-side listings (`Get first page of TEs`, `Get TEs from events`, `Search TE by name (like)`, `Search Birth events`, `Not found TE by name (like)`) are faster on 2.43 than on both older versions. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
 
 Matched concurrency:
 
 | Request | 2.43 2u p95 | 2.42 2u p95 | 2.41 2u p95 | 2.43 4u p95 | 2.42 4u p95 | 2.41 4u p95 |
 |---|---|---|---|---|---|---|
+| Go to first page | 13 | 60,001 | 39,989 | 20 | 60,001 | 60,001 |
+| Go to second page | 36 | 60,001 | 39,684 | 40 | 60,000 | 60,002 |
+| Search not assigned | 28 | 60,001 | 39,735 | 39 | 59,935 | 60,003 |
+| Search by date range | 39 | 8,607 | 4,987 | 40 | 7,513 | 60,001 |
+| Get first event | 67 | 44 | 20 | 93 | 63 | - |
+| Get relationships for first event | 5 | 8 | 6 | 5 | 7 | - |
+| Get first page of TEs | 60 | 322 | 119 | 73 | 392 | 2,721 |
 | Get TEs with enrollment status | 951 | 793 | 121 | 948 | 928 | 3,171 |
-| Search Birth events | 4,106 | 2,487 | 508 | 1,029 | 7,088 | 28,006 |
-| Go to first page (ANC) | 13 | 60,001 | 39,989 | 20 | 60,001 | 60,001 |
-| Go to second page (ANC) | 36 | 60,001 | 39,684 | 40 | 60,000 | 60,002 |
-| Search not assigned (ANC) | 28 | 60,001 | 39,735 | 39 | 59,935 | 60,003 |
-| Search by date range (ANC) | 39 | 8,607 | 4,987 | 40 | 7,513 | 60,001 |
+| Get TEs from events | 20 | 62 | 14 | 11 | 150 | 304 |
 | Search TE by name (like) | 854 | 723 | 104 | 894 | 1,445 | 2,544 |
+| Search TE by name (eq) | 49 | 115 | 59 | 55 | 92 | 951 |
+| Search Birth events | 4,106 | 2,487 | 508 | 1,029 | 7,088 | 28,006 |
 | Not found TE by name (like) | 760 | 468 | 450 | 754 | 494 | 29,258 |
+| Not found TE by name (eq) | 20 | 35 | 31 | 21 | 30 | 464 |
+| Get first tracked entity | 79 | 88 | 56 | 90 | 81 | 266 |
+| Get first enrollment | 37 | 23 | 13 | 27 | 31 | 66 |
+| Get first event from enrollment | 123 | 81 | 39 | 85 | 77 | 200 |
+| Get relationships for first TE | 7 | 5 | 4 | 6 | 7 | 76 |
 
 **`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 goes from 87 ms (1u) to 508 ms (2u) to 28s (4u); 2.43.0 goes from 1,297 ms (1u) to 4,106 ms (2u) to 15,192 ms (6u). The 2.43 numbers are non-monotonic (4,106 ms at 2u, 1,029 ms at 4u, 15,192 ms at 6u), which we have not explained; likely a single run per concurrency level is not enough given the bimodal behavior seen at 1 user. 2.43 is faster than 2.41 at 4u (1,029 ms vs 28,006 ms) but the slow mode is still present under load and is not yet root-caused.
 
