@@ -24,8 +24,10 @@ Import:
 
 Export:
 
-* **At 1 user the three ANC event-program listing queries (`Go to first page`, `Go to second page`, `Search not assigned`) are ~100x faster than 2.42.4 and ~12x faster than 2.41.8.** Tracker program queries are 5-81% faster than 2.42.4 (most in the 30-60% range). Against 2.41.8 the picture is mixed with one regression under investigation. See [Export](#export).
-* **At 4 concurrent export users 2.43 is faster than 2.41.8 on every request (including two ANC-scenario requests that did not execute at all on 2.41.8), and faster than 2.42.4 on most** (3 requests are 20-260 ms slower on 2.43 than 2.42.4). At 2 users only the ANC event-program paths are clearly faster on 2.43; several tracker-side requests are slower than on 2.42.4 and/or 2.41.8. 2.43 is the only version that stays at 0 KO across 2/4/6u; 2.42.4 has KOs at 2u and 4u, 2.41.8 at 4u. See [Multi-user export](#multi-user-export-same-seeded-db).
+* **At 1 user the three ANC event program listing queries (`Go to first page`, `Go to second page`, `Search not assigned`) are ~100x faster than 2.42.4 and ~12x faster than 2.41.8.** Tracker program queries are 5-81% faster than 2.42.4 (most in the 30-60% range). Against 2.41.8 the picture is mixed, with one regression under investigation. See [Export](#export).
+* **Under concurrency 2.43 is the only version that stays at 0 KO across all levels measured** (2/4/6 users); 2.42.4 has KOs at 2u and 4u, 2.41.8 at 4u. See [Multi-user export](#multi-user-export-same-seeded-db). At matched users:
+  * At 4 users, 2.43 is faster than 2.41.8 on every request (including two ANC scenario requests that do not execute on 2.41.8), and faster than 2.42.4 on most (3 requests are 20-260 ms slower on 2.43).
+  * At 2 users, only the ANC event program paths are clearly faster on 2.43; several tracker program requests are slower than on 2.42.4 and/or 2.41.8.
 
 #### Method
 
@@ -441,7 +443,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 | Get first event from enrollment | 81 | 77 |
 | Get relationships for first TE | 5 | 7 |
 
-**2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings). At 4u the ANC-scenario `Get first event` and `Get relationships for first event` never execute because the scenario picks the event UID from the `Search by date range` response (`saveAs("eventUid")`) and then runs those two inside a `doIf(session.contains("eventUid"))`; `Search by date range` KOs on all 4 iterations at 2.41.8 4u, so no UID is ever saved and the `doIf` block is skipped.
+**2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings). At 4u the ANC scenario `Get first event` and `Get relationships for first event` never execute because the scenario picks the event UID from the `Search by date range` response (`saveAs("eventUid")`) and then runs those two inside a `doIf(session.contains("eventUid"))`; `Search by date range` KOs on all 4 iterations at 2.41.8 4u, so no UID is ever saved and the `doIf` block is skipped.
 
 | Request | 2u p95 | 4u p95 |
 |---|---|---|
@@ -466,7 +468,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 **Summary.**
 
-At 2u the four ANC event-program requests on 2.43 are tens of ms while 2.42.4 and 2.41.8 are in the tens of seconds; outside of those, 2.43 is slower by ≥ 15 ms on several tracker-side requests (notably `Get TEs with enrollment status`, `Search TE by name (like)`, `Not found TE by name (like)`, `Search Birth events`). At 4u 2.43 is faster than 2.41.8 on every request; the ANC-scenario `Get first event` and `Get relationships for first event` never execute on 2.41.8 4u because the scenario gates them on a `saveAs` from `Search by date range`, which KOs on every iteration there (see the 2.41.8 table note). 2.43 is faster than 2.42.4 everywhere except `Get first event` (+30 ms), `Get TEs with enrollment status` (+20 ms), and `Not found TE by name (like)` (+260 ms). The 2.42/2.41 ANC failures under concurrency are not root-caused here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
+At 2u the four ANC event program requests on 2.43 are tens of ms while 2.42.4 and 2.41.8 are in the tens of seconds; outside of those, 2.43 is slower by ≥ 15 ms on several tracker program requests (notably `Get TEs with enrollment status`, `Search TE by name (like)`, `Not found TE by name (like)`, `Search Birth events`). At 4u 2.43 is faster than 2.41.8 on every request; the ANC scenario `Get first event` and `Get relationships for first event` never execute on 2.41.8 4u because the scenario gates them on a `saveAs` from `Search by date range`, which KOs on every iteration there (see the 2.41.8 table note). 2.43 is faster than 2.42.4 everywhere except `Get first event` (+30 ms), `Get TEs with enrollment status` (+20 ms), and `Not found TE by name (like)` (+260 ms). The 2.42/2.41 ANC failures under concurrency are not root-caused here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
 
 Matched concurrency:
 
