@@ -345,13 +345,13 @@ Key import optimizations in 2.43. Most are backported to 2.42/2.41 (shipping in 
 
 #### Export
 
-Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Export then runs with the `load` profile at N concurrent users for 300s per scenario.
+Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Both export subsections below run against that same seeded DB.
 
-> The Sierra Leone demo DB has comparatively little data in the three programs the test exports from: ~19k TEs in Child Programme and just 3 events in the ANC event program at baseline (see [Baseline DB](#baseline-db)). The seed step adds 50k entities per program, which is enough to differentiate version behavior on the query paths but still modest compared to production-scale databases. Treat absolute numbers here as indicative; relative differences between versions on the same DB are fair to compare.
+> DB size after seeding is modest compared to production. Treat absolute numbers as indicative; relative differences between versions on the same DB are fair to compare.
 
 ##### 1-user export (same-seeded DB)
 
-1-user p95 on the same seeded DB. All runs 0 KO. Each request runs 100 times; `Get relationships for first event` runs 200 times (appears in both export scenarios). Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
+`smoke` profile: single user, each request repeated 100 times sequentially (200 for `Get relationships for first event`, which appears in both event and tracker scenarios). Isolates per-request cost without concurrency. All runs 0 KO. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
 
 ##### Event program (ANC visit) queries
 
@@ -393,7 +393,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 ##### Multi-user export (same-seeded DB)
 
-Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. p95 in ms; `KO` means the request hit the 60 s Gatling timeout.
+`load` profile: N concurrent users loop through the scenario for 300 s per run. Stresses concurrency behavior. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. p95 in ms; `KO` means the request hit the 60 s Gatling timeout.
 
 **2.43.0** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
 
@@ -430,6 +430,8 @@ Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 us
 | Not found TE by name (like) | 450 | 29258 |
 
 2.43 is the only version that holds up at 4+ export users on this test mix. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations, or connection pool exhaustion.
+
+**`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 goes from 87 ms (1u) to 508 ms (2u) to 28 s (4u); 2.43.0 goes from 1,296 ms (1u) to 4,106 ms (2u) to 15,192 ms (6u). 2.43 is faster than 2.41 at 4u (1,029 ms vs 28,006 ms) but the 2u>4u dip on 2.43 suggests the bimodal slow mode observed at 1 user is not fully captured by a single run at each concurrency level. This is consistent with the 1-user investigation: the Birth events path has a CI-specific failure mode that compounds under load, not yet root-caused.
 
 ## Bugs
 
