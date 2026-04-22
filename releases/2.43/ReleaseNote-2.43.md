@@ -387,6 +387,10 @@ Single-item fetches (`Get first event`, relationship lookups) are fast on all ve
 
 Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, a few single-item fetches measure 10-70 ms slower on 2.43. We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs. **One clear outlier**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41. Four repeat runs on 2.43 reproduce the same p95 (1,297-1,310 ms) and the same bimodal pattern within a single run, so this is not run-to-run noise. The slow mode does not reproduce locally on the same 2.43 image and an equivalently-seeded DB (p95 stays at ~60 ms across 100 iterations), so the behavior is specific to the self-hosted CI runner. Under active investigation; cause not yet identified.
 
+![Search Birth events response times over time (2.43.0 CI smoke run)](images/performance-tracker-search-birth-events-bimodal.png)
+
+Each spike in the chart is one of the 100 `Search Birth events` requests. Response times are strictly bimodal: requests are either near zero or ~1,200 ms, with nothing in between. After the first ~10 fast requests, the scenario transitions into the sustained slow mode.
+
 ##### Multi-user export (same-seeded DB)
 
 Export at increasing concurrency on the same seeded DB. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. p95 in ms; `KO` means the request hit the 60 s Gatling timeout.
