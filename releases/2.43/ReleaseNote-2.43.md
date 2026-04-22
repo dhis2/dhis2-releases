@@ -20,11 +20,11 @@ Import:
 * **In a sustained 30-min import at each version's best concurrency, 2.43 imports 17.5M entities vs 3.7M on 2.42.4 / 2.41.8**: 4-6x more throughput with 25-66% lower p95. See [Soak test](#soak-test).
 * **2.43 scales further before p95 degrades.** It handles 6 concurrent import users comfortably; 2.42.4 and 2.41.8 cap out around 4 on the same hardware. See [Concurrency sweep](#concurrency-sweep).
 * **Most import improvements are backported** and will ship in 2.42.5 and 2.41.9; see [What changed](#what-changed) for the per-issue backport status.
-* **The DB connection pool choice matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 raises p95 by 18-35% and drops throughput by up to 12%. On 2.42.4, switching from c3p0 (default) to HikariCP only adds 2-5% throughput. See [DB connection pool](#db-connection-pool).
+* **The DB connection pool choice matters more on 2.43 than on 2.42** (measured on import). On 2.43, switching from HikariCP (default) to c3p0 drops throughput by up to 11% and raises p95 by 21-53%. On 2.42.4, switching from c3p0 (default) to HikariCP adds 3-5% throughput and lowers p95 by 3-5%. See [DB connection pool](#db-connection-pool).
 
 Export:
 
-* **Event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8** at 1 user. Tracker program queries are 30-80% faster than 2.42.4, mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
+* **Event program listing queries are ~100x faster than 2.42.4 and ~12x faster than 2.41.8** at 1 user. Tracker program queries are 5-81% faster than 2.42.4 (most in the 30-60% range), mostly flat or slightly improved vs 2.41.8 with one regression under investigation. See [Export](#export).
 * **Under concurrency 2.43 holds up**; 2.42.4 starts failing at 4 export users (3 KOs on ANC listings), 2.41.8 collapses with 24 KOs. See [Multi-user export](#multi-user-export-same-seeded-db).
 
 #### Method
@@ -32,6 +32,8 @@ Export:
 All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Import tests use `testMode=import` with the `load` profile. Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/.github/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, `simulation.csv`, ...) are available for 90 days.
 
 p95 values in the tables come from the Gatling HTML report so they match what you see when clicking the run link. Throughput (req/s) and request counts are computed from `simulation.csv`.
+
+All percentage deltas in this document use `(new − old) / old`, where `old` is whatever appears first in the column header ("2.43 vs 2.42" means 2.43 is new, 2.42 is old/baseline). Positive throughput deltas mean faster; negative p95 deltas mean faster.
 
 ##### Versions
 
@@ -282,7 +284,7 @@ p95 at the same concurrency levels:
 
 2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4.
 
-**2.43: HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 12% less throughput and 18-35% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+**2.43: HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 11% less throughput and 21-53% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -295,17 +297,17 @@ p95 at the same concurrency levels:
 | 7 | HikariCP | 3.08 | 4,861 | 10.80 | 1,128 | 9.15 | 2,285 |
 | 7 | c3p0 | 3.37 | 4,441 | 10.71 | 1,091 | 10.19 | 1,605 |
 
-At each pool's own sweet spot (HikariCP 6u, c3p0 7u):
+At each pool's own sweet spot (HikariCP 6u, c3p0 7u). Δ is (c3p0 − HikariCP) / HikariCP.
 
-| Program | HikariCP req/s | c3p0 req/s | Δ | HikariCP p95 | c3p0 p95 | Δ |
+| Program | HikariCP req/s | c3p0 req/s | Δ req/s | HikariCP p95 | c3p0 p95 | Δ p95 |
 |---|---|---|---|---|---|---|
-| MNCH | 3.78 | 3.37 | +12% | 2,897 | 4,441 | -35% |
-| Child | 10.48 | 10.71 | -2% | 867 | 1,091 | -21% |
-| ANC | 9.97 | 10.19 | -2% | 1,324 | 1,605 | -18% |
+| MNCH | 3.78 | 3.37 | -11% | 2,897 | 4,441 | +53% |
+| Child | 10.48 | 10.71 | +2% | 867 | 1,091 | +26% |
+| ANC | 9.97 | 10.19 | +2% | 1,324 | 1,605 | +21% |
 
 c3p0 runs on 2.43: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
 
-**2.42.4: c3p0 (default) vs HikariCP.** On 2.42.4 the pool switch is a small win (~2-5% throughput at matched concurrency). The sweet spot stays at 4 users. It does not close the gap to 2.43: the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
+**2.42.4: c3p0 (default) vs HikariCP.** On 2.42.4 switching to HikariCP is a small win: 3-5% more throughput and 3-5% lower p95 at matched concurrency (4u, c3p0's sweet spot). It does not close the gap to 2.43: the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -314,6 +316,14 @@ c3p0 runs on 2.43: [2u](https://github.com/dhis2/dhis2-core/actions/runs/2462086
 | 4 | c3p0 | 0.76 | 6,696 | 1.71 | 2,479 | 2.13 | 2,460 |
 | 4 | hikari | 0.78 | 6,378 | 1.80 | 2,347 | 2.22 | 2,574 |
 | 6 | hikari | 0.88 | 9,140 | 1.92 | 3,502 | 2.33 | 3,506 |
+
+At c3p0's sweet spot (4u), matched concurrency. Δ is (hikari − c3p0) / c3p0.
+
+| Program | c3p0 req/s | hikari req/s | Δ req/s | c3p0 p95 | hikari p95 | Δ p95 |
+|---|---|---|---|---|---|---|
+| MNCH | 0.76 | 0.78 | +3% | 6,696 | 6,378 | -5% |
+| Child | 1.71 | 1.80 | +5% | 2,479 | 2,347 | -5% |
+| ANC | 2.13 | 2.22 | +4% | 2,460 | 2,574 | +5% |
 
 hikari runs on 2.42.4: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24601217263), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24601218072), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24601218816).
 
