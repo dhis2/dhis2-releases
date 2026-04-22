@@ -26,7 +26,7 @@ Export:
 
 * **At 1 user the three ANC event program listing queries (`Go to first page`, `Go to second page`, `Search not assigned`) are ~100x faster than 2.42.4 and ~12x faster than 2.41.8.** Tracker program queries are 5-81% faster than 2.42.4 (most in the 30-60% range). Against 2.41.8 the picture is mixed, with one regression under investigation. See [Export](#export).
 * **Under concurrency 2.43 is the only version that stays at 0 KO across all levels measured** (2/4/6 users); 2.42.4 has KOs at 2u and 4u, 2.41.8 at 4u. See [Multi-user export](#multi-user-export-same-seeded-db). At matched users:
-  * At 4 users, 2.43 is faster than 2.41.8 on every request (including two ANC scenario requests that do not execute on 2.41.8), and faster than 2.42.4 on most (3 requests are 20-260 ms slower on 2.43).
+  * At 4 users, 2.43 is faster than 2.41.8 on every request and faster than 2.42.4 on most (3 requests are 20-260 ms slower on 2.43).
   * At 2 users, only the ANC event program paths are clearly faster on 2.43; several tracker program requests are slower than on 2.42.4 and/or 2.41.8.
 
 #### Method
