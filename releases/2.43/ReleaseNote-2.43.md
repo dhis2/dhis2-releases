@@ -112,7 +112,7 @@ Substitute `DHIS2_IMAGE`, `DB_VERSION` (see [Versions](#versions)), `importUsers
 
 #### Import
 
-Import runs use duration-based import: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
+Models a bulk-import workload: posts large batches to `POST /api/tracker`. Runs are duration-based: `importUsers` concurrent users loop over import requests for `importDurationSec` seconds per program.
 
 ##### Concurrency sweep
 
@@ -347,7 +347,7 @@ Key import optimizations in 2.43. Most are backported to 2.42/2.41 (shipping in 
 
 #### Export
 
-Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Both export subsections below run against that same seeded DB.
+Models the read traffic a Capture app user generates while navigating the UI. The request mix is derived from the actual HTTP calls the app issues for common flows (opening event lists, searching TEs, opening a TE, viewing enrollments and events). Each version first runs a deterministic seed (1 user, 50 entities per request, 1000 requests per program = 50k per program, 150k total) to bring all three versions to the same DB state. Both export subsections below run against that same seeded DB.
 
 > DB size after seeding is modest compared to production. Treat absolute numbers as indicative; relative differences between versions on the same DB are fair to compare.
 
