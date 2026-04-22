@@ -31,7 +31,7 @@ Export:
 
 All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/.github/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, `simulation.csv`, ...) are available for 90 days.
 
-p95 values in the tables come from the Gatling HTML report so they match what you see when clicking the run link. Throughput (req/s) and request counts are computed from `simulation.csv`.
+p95 values in the tables come from the Gatling HTML report so they match what you see when clicking the run link; all p95 values are in milliseconds. Throughput (req/s) and request counts are computed from `simulation.csv`.
 
 All percentage deltas in this document use `(new − old) / old`. In column headers like "2.43 vs 2.42", the first version is `new` and the second is `old` (baseline). Positive throughput deltas mean faster; negative p95 deltas mean faster.
 
@@ -393,11 +393,11 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 ##### Multi-user export (same-seeded DB)
 
-`load` profile: N concurrent users loop through the scenario for 300s per run. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. At matched concurrency 2.43 is faster than 2.42.4 and 2.41.8 on nearly every request, often by orders of magnitude. p95 in ms; `KO` counts Gatling-level failures (request hit the 60s timeout or a `.check()` assertion on the response failed).
+`load` profile: N concurrent users loop through the scenario for 300s per run. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. At matched concurrency 2.43 is faster than 2.42.4 and 2.41.8 on nearly every request, often by orders of magnitude. `KO` counts Gatling-level failures (request hit the 60s timeout or a `.check()` assertion on the response failed).
 
 **2.43.0** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
 
-| Request | 2u | 4u | 6u |
+| Request | 2u p95 | 4u p95 | 6u p95 |
 |---|---|---|---|
 | Get TEs with enrollment status | 951 | 948 | 5596 |
 | Search Birth events | 4106 | 1029 | 15192 |
@@ -408,7 +408,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 **2.42.4** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 10 KOs at 2u (all on ANC listings); 13 KOs at 4u (10 on MNCH import 60s timeouts, 3 on ANC listings).
 
-| Request | 2u | 4u |
+| Request | 2u p95 | 4u p95 |
 |---|---|---|
 | Get TEs with enrollment status | 793 | 928 |
 | Search Birth events | 2487 | 7088 |
@@ -419,7 +419,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 **2.41.8** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650132188), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650133459). 24 KOs at 4u (all on ANC listings).
 
-| Request | 2u | 4u |
+| Request | 2u p95 | 4u p95 |
 |---|---|---|
 | Get TEs with enrollment status | 121 | 3171 |
 | Search Birth events | 508 | 28006 |
@@ -433,9 +433,9 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 At 2u the tracker-side requests (`Get TEs with enrollment status`, `Search TE by name (like)`, `Not found TE by name (like)`) are slightly slower on 2.43 than on the older versions, but every ANC event-program request is already multiple orders of magnitude faster (ms vs tens of seconds). At 4u the picture is almost uniformly in 2.43's favor: tracker-side requests are faster than both older versions and ANC-side requests remain in the tens of ms while 2.42/2.41 time out at 60s. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
 
-p95 in ms, matched concurrency:
+Matched concurrency:
 
-| Request | 2.43 2u | 2.42 2u | 2.41 2u | 2.43 4u | 2.42 4u | 2.41 4u |
+| Request | 2.43 2u p95 | 2.42 2u p95 | 2.41 2u p95 | 2.43 4u p95 | 2.42 4u p95 | 2.41 4u p95 |
 |---|---|---|---|---|---|---|
 | Get TEs with enrollment status | 951 | 793 | 121 | 948 | 928 | 3,171 |
 | Search Birth events | 4,106 | 2,487 | 508 | 1,029 | 7,088 | 28,006 |
