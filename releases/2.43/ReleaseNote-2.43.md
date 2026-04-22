@@ -33,7 +33,7 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 p95 values in the tables come from the Gatling HTML report so they match what you see when clicking the run link. Throughput (req/s) and request counts are computed from `simulation.csv`.
 
-All percentage deltas in this document use `(new − old) / old`, where `old` is whatever appears first in the column header ("2.43 vs 2.42" means 2.43 is new, 2.42 is old/baseline). Positive throughput deltas mean faster; negative p95 deltas mean faster.
+All percentage deltas in this document use `(new − old) / old`. In column headers like "2.43 vs 2.42", the first version is `new` and the second is `old` (baseline). Positive throughput deltas mean faster; negative p95 deltas mean faster.
 
 ##### Versions
 
