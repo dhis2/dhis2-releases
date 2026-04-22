@@ -351,7 +351,9 @@ Each version first runs a deterministic seed (1 user, 50 entities per request, 1
 
 ##### 1-user export (same-seeded DB)
 
-`smoke` profile: single user, each request repeated 100 times sequentially (200 for `Get relationships for first event`, which appears in both event and tracker scenarios). Isolates per-request cost without concurrency. All runs 0 KO. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
+`smoke` profile: single user, each request repeated 100 times sequentially. Isolates per-request cost without concurrency. All runs 0 KO. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
+
+`Get relationships for first event` shows 200 samples because the label is reused across both the ANC and Child Programme scenarios (different events, same endpoint). With the seeded DB containing no relationships, both return the same empty result, so grouping them is harmless here; on a DB with relationships they would likely diverge.
 
 ##### Event program (ANC visit) queries
 
@@ -364,7 +366,7 @@ Each version first runs a deterministic seed (1 user, 50 entities per request, 1
 | Get first event | 40 | 47 | 14 | -15% | +186% |
 | Get relationships for first event | 4 | 4 | 3 | 0% | +33% |
 
-Listing and filtering single events on 2.43 is ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922), [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)); we did not profile these runs to isolate each change's contribution.
+Listing and filtering single events on 2.43 is ~100x faster than 2.42.4 and ~12x faster than 2.41.8. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the single-event query join eliminations ([DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)). These were unlocked by [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961), which split tracker events and single events into separate tables so each path can be optimized independently. We did not profile these runs to isolate each change's contribution.
 
 Single-item fetches (`Get first event`, relationship lookups) are fast on all versions, and 2.41 is a few ms faster than 2.43 on these. The seeded data contains no relationships, so relationship queries are cheap by construction.
 
@@ -385,7 +387,7 @@ Single-item fetches (`Get first event`, relationship lookups) are fast on all ve
 | Get first event from enrollment | 24 | 47 | 13 | -49% | +85% |
 | Get relationships for first TE | 4 | 5 | 3 | -20% | +33% |
 
-Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, a few single-item fetches measure 10-70 ms slower on 2.43. We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs. **One clear outlier**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41. Four repeat runs on 2.43 reproduce the same p95 (1,297-1,310 ms) and the same bimodal pattern within a single run, so this is not run-to-run noise. The slow mode does not reproduce locally on the same 2.43 image and an equivalently-seeded DB (p95 stays at ~60 ms across 100 iterations), so the behavior is specific to the self-hosted CI runner. Under active investigation; cause not yet identified.
+Tracker queries on 2.43 are consistently faster than 2.42.4. Tracker-event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922)) contribute on this path, also unlocked by the tracker/single event table split in [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961). Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, a few single-item fetches measure 10-70 ms slower on 2.43. We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs. **One clear outlier**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41. Four repeat runs on 2.43 reproduce the same p95 (1,297-1,310 ms) and the same bimodal pattern within a single run, so this is not run-to-run noise. The slow mode does not reproduce locally on the same 2.43 image and an equivalently-seeded DB (p95 stays at ~60 ms across 100 iterations), so the behavior is specific to the self-hosted CI runner. Under active investigation; cause not yet identified.
 
 ![Search Birth events response times over time (2.43.0 CI smoke run)](images/performance-tracker-search-birth-events-bimodal.png)
 
@@ -429,7 +431,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 | Search TE by name (like) | 104 | 2544 |
 | Not found TE by name (like) | 450 | 29258 |
 
-2.43 is the only version that holds up at 4+ export users on this test mix. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and the event query join eliminations, or connection pool exhaustion.
+2.43 is the only version that holds up at 4+ export users on this test mix. The root cause of the 2.42/2.41 ANC failures is not profiled here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
 
 **`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 goes from 87 ms (1u) to 508 ms (2u) to 28 s (4u); 2.43.0 goes from 1,296 ms (1u) to 4,106 ms (2u) to 15,192 ms (6u). 2.43 is faster than 2.41 at 4u (1,029 ms vs 28,006 ms) but the 2u>4u dip on 2.43 suggests the bimodal slow mode observed at 1 user is not fully captured by a single run at each concurrency level. This is consistent with the 1-user investigation: the Birth events path has a CI-specific failure mode that compounds under load, not yet root-caused.
 
