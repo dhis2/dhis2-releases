@@ -375,7 +375,7 @@ Single-item fetches (`Get first event`, relationship lookups) are fast on all ve
 | Get first event from enrollment | 24 | 47 | 13 | -49% | +85% |
 | Get relationships for first TE | 4 | 5 | 3 | -20% | +33% |
 
-Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, a few single-item fetches measure 10-70 ms slower on 2.43. We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs. **One clear outlier**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41; under investigation and not yet filed.
+Tracker queries on 2.43 are consistently faster than 2.42.4. Against 2.41 the picture is mixed: most listing queries improve slightly or stay flat, a few single-item fetches measure 10-70 ms slower on 2.43. We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs. **One clear outlier**: `Search Birth events` (filtering tracker events by program stage) is ~10x slower on 2.43 than on 2.41. Four repeat runs on 2.43 reproduce the same p95 (1,297-1,310 ms) and the same bimodal pattern within a single run, so this is not run-to-run noise. Under active investigation; cause not yet identified.
 
 ##### Multi-user export (same-seeded DB)
 
