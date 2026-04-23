@@ -39,7 +39,13 @@ const localizationMap = {
         noLongerMaintained: "No longer maintained",
         targetReleaseDate: "Target release date",
         jiraLink01: "See the list of fixes so far for",
-        jiraLink02: "this patch on Jira"
+        jiraLink02: "this patch on Jira",
+        newMajorRelease: "New Major Release",
+        jiraLink01Release: "See the full list of features and fixes for",
+        jiraLink02Release: "this release on Jira",
+        roadmapLink: "See the features roadmap",
+        lastPatchLabel: "Final Patch",
+        lastPatchNotice: "This is the final maintenance patch for this version."
     },
     fr: {
         latestVersion: "Dernière version",
@@ -72,7 +78,13 @@ const localizationMap = {
         noLongerMaintained: "N'est plus maintenu",
         targetReleaseDate: "Date de sortie prévue",
         jiraLink01: "Voir la liste des correctifs jusqu'à présent pour",
-        jiraLink02: "ce patch sur Jira"
+        jiraLink02: "ce patch sur Jira",
+        newMajorRelease: "Nouvelle version majeure",
+        jiraLink01Release: "Voir la liste complète des fonctionnalités et correctifs pour",
+        jiraLink02Release: "cette version sur Jira",
+        roadmapLink: "Voir la feuille de route des fonctionnalités",
+        lastPatchLabel: "Dernier patch",
+        lastPatchNotice: "Ceci est le dernier patch de maintenance pour cette version."
     },
     es: {
         latestVersion: "Última versión",
@@ -105,7 +117,13 @@ const localizationMap = {
         noLongerMaintained: "Ya no se mantiene",
         targetReleaseDate: "Fecha de lanzamiento prevista",
         jiraLink01: "Ver la lista de correcciones hasta ahora para",
-        jiraLink02: "este parche en Jira"
+        jiraLink02: "este parche en Jira",
+        newMajorRelease: "Nueva versión principal",
+        jiraLink01Release: "Ver la lista completa de funcionalidades y correcciones para",
+        jiraLink02Release: "esta versión en Jira",
+        roadmapLink: "Ver la hoja de ruta de funcionalidades",
+        lastPatchLabel: "Último parche",
+        lastPatchNotice: "Este es el último parche de mantenimiento para esta versión."
     },
     pt: {
         latestVersion: "Versão mais recente",
@@ -138,6 +156,12 @@ const localizationMap = {
         noLongerMaintained: "Não é mais mantido",
         targetReleaseDate: "Data de lançamento prevista",
         jiraLink01: "Veja a lista de correções até agora para",
-        jiraLink02: "esta correção no Jira"
+        jiraLink02: "esta correção no Jira",
+        newMajorRelease: "Nova versão principal",
+        jiraLink01Release: "Veja a lista completa de funcionalidades e correções para",
+        jiraLink02Release: "esta versão no Jira",
+        roadmapLink: "Ver o roteiro de funcionalidades",
+        lastPatchLabel: "Último patch",
+        lastPatchNotice: "Este é o último patch de manutenção para esta versão."
     }
 }; 

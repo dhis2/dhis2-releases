@@ -35,7 +35,7 @@ function process_core {
     local repo_path="${TEMP}/${name}"
     clone "$core_repo" "${repo_path}" "master"
 
-    local bundle_path="dhis-2/dhis-web/dhis-web-apps/apps-to-bundle.json"
+    local bundle_path="dhis-2/dhis-web-server/apps-to-bundle.json"
 
     readonly app_repos=($(cat "${repo_path}/${bundle_path}" | grep "d2-ci" | sed 's;"https://github.com/d2-ci;git@github.com:dhis2; ; s;["#].*$;.git;'))
 
@@ -98,7 +98,8 @@ function process_apps {
         #echo $repo
         local app_name=$(app_name "$repo")
         local app_branch=$(app_branch_name "$repo")
-        if [[ "$app_branch" != "master" ]]
+        # if the app branch is not master or main, we need to create it and push it
+        if [[ "$app_branch" != "master" && "$app_branch" != "main" ]]
         then
             local repo_path="${TEMP}/${app_name}"
             clone "${repo}" "${repo_path}" "master"

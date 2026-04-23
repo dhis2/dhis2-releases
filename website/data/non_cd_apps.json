@@ -2,7 +2,7 @@
     {
       "id": "https://github.com/dhis2/event-reports-app",
       "name": "Event Reports",
-      "description": "DHIS 2 app for event data visualization",
+      "description": "Analyze event data by creating aggregated or individual event reports with flexible dimensions and filters. Includes the ability to visualize, save, and manage reports as favorites. Note that this app is deprecated and will be replaced soon.",
       "developer": {
         "organisation": "DHIS2" 
       },
@@ -25,7 +25,7 @@
     {
       "id": "https://github.com/dhis2/data-quality-app",
       "name": "Data Quality",
-      "description": "DHIS 2 app for data quality",
+      "description": "Check and improve data, detect outliers, and apply other quality tools to identify inconsistent values.",
       "developer": {
         "organisation": "DHIS2" 
       },
@@ -48,7 +48,7 @@
     {
       "id": "https://github.com/dhis2/datastore-app",
       "name": "Datastore",
-      "description": "DHIS2 app for managing data store entries",
+      "description": "View and manage data used by apps stored in the DHIS2 Web API data store, including namespaces, keys, and values (legacy app for DHIS2 versions prior to v41).",
       "developer": {
         "organisation": "DHIS2"
       },
@@ -70,7 +70,7 @@
     {
       "id": "https://github.com/dhis2/interpretation-app",
       "name": "Interpretations",
-      "description": "DHIS2 app for data interpretations and discussions",
+      "description": "Add comments/interpretations to analytic outputs to support discussion and collaborative data use.",
       "developer": {
         "organisation": "DHIS2"
       },
@@ -92,7 +92,7 @@
     {
       "id": "https://github.com/dhis2/maintenance-app",
       "name": "Maintenance",
-      "description": "DHIS2 app for metadata maintenance",
+      "description": "Manage the creation and editing of metadata such as data elements, data sets, categories, organization units, programs and more in a centralized location. From core version 41, functionality is replaced and improved in the new Metadata Management app.",
       "developer": {
         "organisation": "DHIS2"
       },
@@ -114,7 +114,7 @@
     {
       "id": "https://github.com/dhis2/tracker-capture-app",
       "name": "Tracker Capture",
-      "description": "DHIS2 app for tracking individual records",
+      "description": "Register and track individuals and their related events over time using tracker programs, with program based search, validation, and role based access control.",
       "developer": {
         "organisation": "DHIS2"
       },

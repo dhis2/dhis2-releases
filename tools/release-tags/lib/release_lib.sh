@@ -11,7 +11,10 @@ popd () {
 function app_name {
     local repo=$1
     local name=$(echo "${repo}" | sed -n "s/^.*dhis2\/\(.*\)\.git.*$/\1/p")
-
+    if [[ "$name" == "" ]]
+    then
+        name=$(echo "${repo}" | sed "s/^.*local\///")
+    fi
     echo "$name"
 }
 
@@ -26,7 +29,7 @@ function clone {
         git clone -c advice.detachedHead=false -q "${repo}" --branch ${branch} "${path}"
     else
         echo "cloning ${repo} to ${path}"
-        git clone -q "${repo}" "${path}"
+        git clone "${repo}" "${path}"
     fi
 
 }
@@ -66,7 +69,12 @@ function app_branch_name {
       if [[ "$1" =~ "core-resources-app" ]]; then
         echo "FINAL"
       else
-        echo "master"
+        # if the app is global-shell-app, login-app or metadata-management-app then branch is "main", else "master"
+        if [[ "$1" =~ "global-shell-app" || "$1" =~ "login-app" ]]; then
+          echo "main"
+        else
+            echo "master"
+        fi
       fi
     else
       if [[ "$1" =~ "data-visualizer-app" ]]; then

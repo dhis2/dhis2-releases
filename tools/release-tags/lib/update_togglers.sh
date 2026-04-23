@@ -58,7 +58,18 @@ function process_line() {
                         then
                             echo -n "${versions[$col]}:FINAL " >> $CDA
                         fi
-
+                    else
+                        if [[ "$c" == "main" ]]
+                        then
+                            echo -n "${versions[$col]} " >> $FTA
+                            #$CDA
+                            if [[ "$contver" == "" ]]
+                            then
+                                contver=$(git -c 'versionsort.suffix=-'     ls-remote --exit-code --refs --sort='version:refname' --tags "${columns[0]}" '*.*.*'     | tail --lines=1     | cut --delimiter='/' --fields=3)
+                            fi
+                            echo -n "${versions[$col]}:$contver " >> $CDA
+                            
+                        fi
                     fi
                 fi
                 ((col+=1))
