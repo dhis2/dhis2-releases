@@ -223,41 +223,41 @@ p95 at the same concurrency levels:
 
 17.5M entities imported across the 90-min run. Throughput drops 5-26% from the short-run peak (MNCH stays close to peak, Child and ANC drop more as their DB grows fastest), p95 rises but stays within a single-digit multiple of the short-run values.
 
-**2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
+**2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
 | Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
 |---|---|---|---|---|---|
-| MNCH | 989 | 489,555 | 0.55 | 10,607 | +59% |
-| Child | 3,059 | 1,529,500 | 1.70 | 3,178 | +28% |
-| ANC | 3,380 | 1,690,000 | 1.88 | 3,235 | +31% |
+| MNCH | 1,381 | 683,595 | 0.77 | 6,572 | -1% |
+| Child | 2,691 | 1,345,500 | 1.49 | 3,174 | +28% |
+| ANC | 3,339 | 1,669,500 | 1.85 | 2,523 | +2% |
 
 3.7M entities in the 90-min run.
 
-**2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
+**2.41.8** (4 users, 30 min per program, 0 KO): [run 24599094193](https://github.com/dhis2/dhis2-core/actions/runs/24599094193)
 
 | Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
 |---|---|---|---|---|---|
-| MNCH | 1,381 | 683,595 | 0.77 | 6,572 | -6% |
-| Child | 2,691 | 1,345,500 | 1.49 | 3,174 | +54% |
-| ANC | 3,339 | 1,669,500 | 1.85 | 2,523 | +20% |
+| MNCH | 989 | 489,555 | 0.55 | 10,607 | +51% |
+| Child | 3,059 | 1,529,500 | 1.70 | 3,178 | +54% |
+| ANC | 3,380 | 1,690,000 | 1.88 | 3,235 | +54% |
 
 3.7M entities in the 90-min run.
 
 **Summary.**
 
-2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-7x more throughput with 25-66% lower p95**.
+2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-6x more throughput with 25-66% lower p95**.
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 3.60 | 0.55 | 0.77 | +555% | +368% |
-| Child | 7.71 | 1.70 | 1.49 | +354% | +418% |
-| ANC | 8.10 | 1.88 | 1.85 | +331% | +338% |
+| MNCH | 3.60 | 0.77 | 0.55 | +368% | +555% |
+| Child | 7.71 | 1.49 | 1.70 | +418% | +354% |
+| ANC | 8.10 | 1.85 | 1.88 | +338% | +331% |
 
 | Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 3,605 | 10,607 | 6,572 | -66% | -45% |
-| Child | 1,584 | 3,178 | 3,174 | -50% | -50% |
-| ANC | 1,900 | 3,235 | 2,523 | -41% | -25% |
+| MNCH | 3,605 | 6,572 | 10,607 | -45% | -66% |
+| Child | 1,584 | 3,174 | 3,178 | -50% | -50% |
+| ANC | 1,900 | 2,523 | 3,235 | -25% | -41% |
 
 ### DB connection pool
 
