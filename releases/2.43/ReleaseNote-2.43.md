@@ -497,6 +497,23 @@ Matched concurrency:
 
 **`Search Birth events` under concurrency (2026-04-16).** The same request flagged as the 1-user outlier also degraded under concurrency on every version: 2.41.8 went from 87 ms (1u) to 508 ms (2u) to 28s (4u); 2.43.0 went from 1,297 ms (1u) to 4,106 ms (2u) to 15,192 ms (6u). The 2.43 numbers were non-monotonic (4,106 ms at 2u, 1,029 ms at 4u, 15,192 ms at 6u). As noted above, the 1-user bimodal pattern no longer reproduces on the current runner; the concurrency numbers here were captured during the same window and are left in the table for completeness.
 
+##### What changed
+
+Key export optimizations in 2.43, grouped by query path. Unlike the import changes, most of these are not backported. Check each Jira for exact backport status.
+
+| Issue | Description |
+|---|---|
+| [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961) | Split tracker events and single events into separate tables (enabler for the per-path optimizations below) |
+| [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) | Change single-event default order to `occurredDate desc` with supporting indices |
+| [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891) | Optimize `/events` for single events (program-table join elimination, dedicated count query, program-stage filtering, AssignedUser filter) |
+| [DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922) | Optimize `/events` for tracker events (program-table join elimination, dedicated count query, INNER JOIN for filtered attribute values, indexed AssignedUser filter) |
+| [DHIS2-20921](https://dhis2.atlassian.net/browse/DHIS2-20921) | Optimize `/enrollments` queries (program/trackedentitytype join elimination on data and count queries) |
+| [DHIS2-20863](https://dhis2.atlassian.net/browse/DHIS2-20863) | Optimize `/trackedEntities` queries (program-table join elimination, attribute filtering at SQL level, flattened event subquery, ownership-clause optimization, org-unit paths resolved at query build time, skip `DISTINCT ON` for `enrolledAt` order on `onlyEnrollOnce` programs) |
+| [DHIS2-19910](https://dhis2.atlassian.net/browse/DHIS2-19910) | Make field filtering efficient for tracker (avoid serializing fields that are filtered out) |
+| [DHIS2-20655](https://dhis2.atlassian.net/browse/DHIS2-20655) | Fix `/trackedEntities` connection pool exhaustion |
+| [DHIS2-20512](https://dhis2.atlassian.net/browse/DHIS2-20512) | Exclude tracker read APIs from Open-Session-In-View, freeing DB connections sooner |
+| | HikariCP default connection pool (replaces c3p0; see [DB connection pool](#db-connection-pool)) |
+
 ## Bugs
 
 **[DHIS2-20611](https://dhis2.atlassian.net/browse/DHIS2-20611): Enforce check on null usernames**
