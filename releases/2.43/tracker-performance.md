@@ -10,7 +10,7 @@ All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b2
 
 p95 values come from [`gstat`](https://github.com/dhis2/gatling-statistics) over each run's `simulation.csv`; see [its percentile note](https://github.com/dhis2/gatling-statistics#percentiles) for why these will not exactly match the Gatling HTML report. All p95 values are in milliseconds. Throughput (req/s) and request counts are computed from `simulation.csv`.
 
-A cell shows `-` when every iteration of that scenario KO'd at the 60s Gatling timeout, leaving no successful samples for a percentile.
+`gstat` computes percentiles over **all** request rows (OK and KO together), matching the Gatling HTML report. A cell shows `-` when every iteration KO'd at the 60s timeout. Cells near 60,000 ms reflect timeout artifacts, not server response time; per-section KO totals call out which rows are affected.
 
 All percentage deltas in this document use `(new − old) / old`. In column headers like "2.43 vs 2.42", the first version is `new` and the second is `old` (baseline). Positive throughput deltas mean faster; negative p95 deltas mean faster.
 
@@ -403,8 +403,8 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 | Request | 2u p95 | 4u p95 |
 |---|---|---|
-| Go to first page | - | 59,796 |
-| Go to second page | - | 59,879 |
+| Go to first page | - | 60,001 |
+| Go to second page | - | 59,990 |
 | Search not assigned | - | 59,929 |
 | Search by date range | 8,605 | 7,503 |
 | Get first event | 44 | 62 |
@@ -420,7 +420,7 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 | Get first tracked entity | 80 | 76 |
 | Get first enrollment | 23 | 29 |
 | Get first event from enrollment | 79 | 76 |
-| Get relationships for first TE | 5 | 6 |
+| Get relationships for first TE | 5 | 7 |
 
 `-` = no successful samples (all iterations KO'd at the 60s Gatling timeout). Of the 10 KOs at 2u, all fall in the three ANC listing requests above.
 
@@ -457,8 +457,8 @@ Matched concurrency:
 
 | Request | 2.43 2u p95 | 2.42 2u p95 | 2.41 2u p95 | 2.43 4u p95 | 2.42 4u p95 | 2.41 4u p95 |
 |---|---|---|---|---|---|---|
-| Go to first page | 12 | - | 39,952 | 19 | 59,796 | - |
-| Go to second page | 35 | - | 39,641 | 40 | 59,879 | - |
+| Go to first page | 12 | - | 39,952 | 19 | 60,001 | - |
+| Go to second page | 35 | - | 39,641 | 40 | 59,990 | - |
 | Search not assigned | 28 | - | 39,735 | 38 | 59,929 | - |
 | Search by date range | 38 | 8,605 | 4,987 | 39 | 7,503 | - |
 | Get first event | 56 | 44 | 19 | 91 | 62 | - |
@@ -474,7 +474,7 @@ Matched concurrency:
 | Get first tracked entity | 67 | 80 | 45 | 89 | 76 | 196 |
 | Get first enrollment | 30 | 23 | 12 | 27 | 29 | 65 |
 | Get first event from enrollment | 123 | 79 | 38 | 84 | 76 | 155 |
-| Get relationships for first TE | 6 | 5 | 4 | 6 | 6 | 65 |
+| Get relationships for first TE | 6 | 5 | 4 | 6 | 7 | 65 |
 
 **`Search Birth events` under concurrency (2026-04-16).** The same request flagged as the 1-user outlier also degraded under concurrency on every version: 2.41.8 went from 87 ms (1u) to 492 ms (2u) to 27.3s (4u); 2.43.0 went from 1,296 ms (1u) to 2,512 ms (2u) to 14,245 ms (6u). The 2.43 numbers were non-monotonic (2,512 ms at 2u, 1,008 ms at 4u, 14,245 ms at 6u). As noted above, the 1-user bimodal pattern no longer reproduces on the current runner; the concurrency numbers here were captured during the same window and are left in the table for completeness.
 
