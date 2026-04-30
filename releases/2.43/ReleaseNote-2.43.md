@@ -3,7 +3,7 @@
 ## Highlights
 
 * Performance improvements and Infrastructure to measure and benchmark DHIS2 versions 
-* DHIS2 Custom Theme
+* DHIS2 Custom Theme in web and Android App
 * New Metadata Management App to replace the Maintenance App
 * Support JavaScript in custom Data Entry Forms
 * EPI weeks available in relative periods
