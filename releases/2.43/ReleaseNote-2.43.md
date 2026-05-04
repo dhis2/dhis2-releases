@@ -15,10 +15,10 @@
 New infrastructure for systematically benchmarking DHIS2 performance across versions, enabling data-driven release QA. Preliminary v43 results show major import/export gains vs v42/v41. Follow the Roadmap Idea link for full methodology and details.
 
 #### [Dedicated analytics backend database [ROADMAP-49]](https://dhis2.atlassian.net/browse/ROADMAP-49) [[ROADMAP-394]](https://dhis2.atlassian.net/browse/ROADMAP-394)
-DHIS2 supports Apache Doris as a dedicated analytics database to improve query performance and analytics table updates. Modernizes backend code with better structure and testing. Available for aggregate data in v42 and individual data in v43.
+DHIS2 supports Apache Doris and Clickhouse as dedicated analytics database to improve query performance and analytics table updates. Modernizes backend code with better structure and testing. Available for aggregate data in v42 and individual data in v43.
 
 #### [Platform API performance improvements [ROADMAP-403]](https://dhis2.atlassian.net/browse/ROADMAP-403)
-The Data Import process has been fundamentally rewritten to improve performance. Instead of processing data values one-by-one through a Java middleware layer, the system now sends bulk SQL operations directly to the database, greatly improving imports. 
+The Data Import process has been fundamentally rewritten to improve performance. Instead of processing data values one-by-one through a Java middleware layer, the system now sends bulk SQL operations directly to the database, greatly improving efficiency. 
 
 #### [Tracked Entity Search Performance Configuration [ROADMAP-128]](https://dhis2.atlassian.net/browse/ROADMAP-128)
 Configure search operators for tracked entity attributes to improve performance. Web and Android Capture use recommended operators, restrict inefficient ones, avoid LIKE by default, and support min character limits and trigram indexing for faster searches.
@@ -106,11 +106,11 @@ Upgrades the DHIS2 backend from Hibernate 5 to Hibernate 6, addressing deprecati
 The Data Visualizer chart library has been upgraded to Highcharts v12. Chart exports to PDF and PNG now happen client-side rather than on the server, giving faster and more reliable exports, including full support for non-latin characters in PDF exports.
 
 #### [Enrollment AOCs (backend) [ROADMAP-140]](https://dhis2.atlassian.net/browse/ROADMAP-140)
-The support for Enrollment Attribute Option Combos (AOCs) in Tracker programs has been implemented in the backend. Next steps will be to implement the required configuration functionality in the Metadata Management and the support in capture and analytics apps. These changes can be added through continuous release during the v44 release cycle.
+The support for Enrollment Attribute Option Combos (AOCs) in Tracker programs has been implemented in the backend. Next steps will be to implement the required configuration functionality in the Metadata Management and the support in capture and analytics apps. These changes will be added in future releases of the app via the App Hub.
 
 This functionality, when completed, will enable more granular attribution, sharing, and analytics at the enrollment level, only available at event level at the moment.
 
 #### [Metadata Deduplication Category and Category Combinations [ROADMAP-39]](https://dhis2.atlassian.net/browse/ROADMAP-39)
-The backend and API support for merging Categories and Categories Combinations has been implemented in v43. Next steps will be to integrate in the Metadata Management to enable its use through the User Interface. These changes can be added through continuous release during the v44 release cycle.
+The backend and API support for merging Categories and Categories Combinations has been implemented in v43. Next steps will be to integrate in the Metadata Management to enable its use through the User Interface. These changes will be added in future releases of the app via the App Hub.
 
 
