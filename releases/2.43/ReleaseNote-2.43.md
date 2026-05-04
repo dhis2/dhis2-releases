@@ -7,7 +7,7 @@
 * New Metadata Management App to replace the Maintenance App
 * Support JavaScript in custom Data Entry Forms
 * EPI weeks available in relative periods
-* Possibility to disable not relevant period types
+* Possibility to disable inapplicable period types
 * Markdown and legend support in Android Feedback Widget
   
 ## Performance
