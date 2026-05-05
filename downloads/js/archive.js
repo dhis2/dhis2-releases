@@ -152,11 +152,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const cls = classes.length ? `class="${classes.join(' ')}"` : '';
         const isHotfix = (patch.hotfix || patch.hotfixVersion);
         const hotfixBadge = isHotfix ? `<span class="badge-hotfix">Hotfix</span>` : '';
+        let warningBadge = '';
+        if (patch.warning) {
+          const w = patch.warning;
+          const sev = esc(w.severity || 'warning');
+          const tip = escAttr(w.summary || '');
+          const recVer = w.recommendation ? ` — ${esc(w.recommendation)}` : '';
+          const inner = `<i class="fa-solid fa-triangle-exclamation"></i> ${texts.knownIssue || 'Known issue'}${recVer}`;
+          warningBadge = w.detailsUrl
+            ? `<a class="badge-warning badge-warning-${sev}" href="${escAttr(w.detailsUrl)}" target="_blank" rel="noopener" title="${tip}">${inner}</a>`
+            : `<span class="badge-warning badge-warning-${sev}" title="${tip}">${inner}</span>`;
+        }
         return `<tr ${cls}>
           <td>${esc(patch.displayName || patch.name)}</td>
           <td>${fmtDate(patch.releaseDate)}</td>
             <td><a class="button small" href="${escAttr(patch.url||'')}" title="Production WAR file">⬇︎ ${esc(patch.displayName || patch.name)}</a>
-            <span class="dc-download-hash" id="label${escAttr(patch.name)}" onClick="toggleHash('hash${escAttr(patch.name)}');">${texts.sha256sum || 'SHA256SUM'}</span>${hotfixBadge}
+            <span class="dc-download-hash" id="label${escAttr(patch.name)}" onClick="toggleHash('hash${escAttr(patch.name)}');">${texts.sha256sum || 'SHA256SUM'}</span>${hotfixBadge}${warningBadge}
             <span class="dc-hash" id="hash${escAttr(patch.name)}">${esc(patch.sha256 || '')}</span>
           </td>
           <td>${esc(patch.fileSize || patch.downloadSize || '-')}</td>
