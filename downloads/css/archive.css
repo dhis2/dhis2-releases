@@ -483,6 +483,28 @@ body {
     font-family: monospace;
 }
 
+/* Warning badge for patches with known issues */
+.badge-warning {
+    display: inline-block;
+    margin-left: .5rem;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    padding: .2rem .45rem .15rem;
+    font-size: 0.9rem;
+    background: #fff3cd;
+    color: #7a4f00;
+}
+
+.badge-warning-high {
+    background: #ffe0de;
+    color: #8b1a1a;
+}
+
+a.badge-warning:hover {
+    opacity: .85;
+}
+
 .dc-hash:after {
     content: '';
     position: absolute;

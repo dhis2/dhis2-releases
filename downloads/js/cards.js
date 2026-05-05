@@ -67,16 +67,29 @@ function createReleaseCard(release, patchVersion) {
     cardElement.className = 'download-card';
 
     // Set the inner HTML of the card with localized content
+    const w = patchVersion.warning;
+    const warnBadge = w
+        ? `<span class="dc-badge dc-badge-warning dc-badge-warning-${w.severity || 'warning'}" title="${texts.knownIssue || 'Known issue'}"><i class="fa-solid fa-triangle-exclamation"></i></span>`
+        : '';
+    const warnBlock = w ? `
+        <div class="dc-warning dc-warning-${w.severity || 'warning'}">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>${w.summary || ''}${w.recommendation ? ` — ${w.recommendation}` : ''}</span>
+            ${w.detailsUrl ? `<a href="${w.detailsUrl}" target="_blank" rel="noopener noreferrer">${texts.details || 'Details'}</a>` : ''}
+        </div>` : '';
+
     cardElement.innerHTML = `
         <div class="dc-title">
             <span class="dc-title-version">DHIS2 version ${patchVersion.displayName || patchVersion.name}</span>
             ${release.latest ? `<span class="dc-badge dc-badge-latest"><i class="svg-icon svg-icon-latest"><!-- SVG latest --></i>${texts.latestVersion}</span>` : ''}
             ${(patchVersion.hotfix || patchVersion.hotfixVersion) ? `<span class="dc-badge dc-badge-hotfix"><i class="svg-icon svg-icon-hotfix"><!-- SVG hotfix --></i>${texts.hotfix}</span>` : ''}
+            ${warnBadge}
         </div>
         <div class="dc-subtitle">
             <span>${texts.latestPatch} ${patchVersion.releaseDate}</span>
             <span>${texts.released} ${release.releaseDate}</span>
         </div>
+        ${warnBlock}
         <div class="dc-outbound-links">
             <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/ReleaseNote-${patchVersion.name}.md" target="_blank" rel="noopener noreferrer">${patchVersion.displayName} ${texts.releaseNotes}</a>
             <a href="https://github.com/dhis2/dhis2-releases/blob/master/releases/${release.name}/README.md" target="_blank" rel="noopener noreferrer">${release.displayName} ${texts.upgradeNotes}</a>

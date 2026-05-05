@@ -166,6 +166,44 @@
     padding-right:10px;
     gap: 6px;
 }
+/* Warning badge in title — icon only, no background */
+.dc-badge-warning {
+    background: none;
+    padding: 0;
+    color: #c47f00;
+}
+
+.dc-badge-warning-high {
+    color: #c0392b;
+}
+
+/* Warning detail block shown below subtitle */
+.dc-warning {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: .9rem;
+    background: #fff3cd;
+    color: #7a4f00;
+    border: 1px solid #f0c040;
+}
+
+.dc-warning-high {
+    background: #ffe0de;
+    color: #8b1a1a;
+    border-color: #e57373;
+}
+
+.dc-warning a {
+    color: inherit;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: .75rem;
+}
+
 .dc-subtitle {
     display: flex;
     gap: 1.5rem;

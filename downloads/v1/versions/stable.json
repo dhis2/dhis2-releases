@@ -77,7 +77,14 @@
                     "url": "https://releases.dhis2.org/42/dhis2-stable-42.4.0.war",
                     "sha256": "7082d9f0884664bdf20de138cff8e0e6f656d7a60429caf74034e1f1022eaad3",
                     "hotfix": false,
-                    "fileSize": "332.89 MB"
+                    "fileSize": "332.89 MB",
+                    "warning": {
+                        "severity": "high",
+                        "summary": "Known issue with unintentional deletion of Tracker file uploads after upgrade to this version!",
+                        "detailsUrl": "https://dhis2.atlassian.net/browse/DHIS2-21427",
+                        "hotfixPending": true,
+                        "recommendation": "use 42.4.1"
+                    }
                 }
             ],
             "fileSize": "332.89 MB"
@@ -247,7 +254,14 @@
                     "url": "https://releases.dhis2.org/41/dhis2-stable-41.7.0.war",
                     "sha256": "267bb722be013d9a424a990f84ac5d872a70d72df83d327e9412e61e243fd210",
                     "hotfix": false,
-                    "fileSize": "322.48 MB"
+                    "fileSize": "322.48 MB",
+                    "warning": {
+                        "severity": "high",
+                        "summary": "Known issue with unintentional deletion of Tracker file uploads after upgrade to this version!",
+                        "detailsUrl": "https://dhis2.atlassian.net/browse/DHIS2-21427",
+                        "hotfixPending": true,
+                        "recommendation": "use 41.8.1"
+                    }
                 },
                 {
                     "name": "2.41.8",
@@ -258,7 +272,14 @@
                     "url": "https://releases.dhis2.org/41/dhis2-stable-41.8.0.war",
                     "sha256": "fee8dfe03961a3c305e4cf047172d0b8718e3e1d733499fef0ed3e273e05a1bc",
                     "hotfix": false,
-                    "fileSize": "323.20 MB"
+                    "fileSize": "323.20 MB",
+                    "warning": {
+                        "severity": "high",
+                        "summary": "Known issue with unintentional deletion of Tracker file uploads after upgrade to this version!",
+                        "detailsUrl": "https://dhis2.atlassian.net/browse/DHIS2-21427",
+                        "hotfixPending": true,
+                        "recommendation": "use 41.8.1"
+                    }
                 }
             ],
             "fileSize": "323.20 MB"
