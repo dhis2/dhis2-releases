@@ -4,7 +4,7 @@
       "appVersion": "3.4",
       "latest": true,
       "releaseDate": "2026-05-06",
-      "releaseNotes": "https://dhis2.org/android/version-3-3-0/",
+      "releaseNotes": "https://dhis2.github.io/dhis2-releases/releases/2.43/ReleaseNote-2.43.html",
       "dhis2CoreVersion": {
         "minVersion": "2.30",
         "recommendedVersion": "v41,v42,v43"
@@ -13,7 +13,7 @@
         "minVersion": "6.0 (Marshmallow)",
         "recommendedVersion": "8.x"
       },
-      "documentation": "https://dhis2.github.io/dhis2-releases/releases/2.43/ReleaseNote-2.43.html",
+      "documentation": "https://docs.dhis2.org/en/use/android-app/introduction.html",
       "download": {
         "googlePlay": "https://play.google.com/store/apps/details?id=com.dhis2",
         "gitHub": "https://github.com/dhis2/dhis2-android-capture-app/releases"
