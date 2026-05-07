@@ -81,7 +81,7 @@ The Maps app now uses the same data item selector as Data Visualizer, replacing 
 #### [Android Log In process improvements [ROADMAP-618]](https://dhis2.atlassian.net/browse/ROADMAP-618)
 Updates the PIN creation screen in the login flow with a new full screen design, replacing the previous component while preserving the existing behavior.
 
-#### [Improved Event ordering for consistent sync and calculations [ROADMAP-618]](https://dhis2.atlassian.net/browse/ROADMAP-618)
+#### [Improved Event ordering for consistent sync and calculations [ROADMAP-619]](https://dhis2.atlassian.net/browse/ROADMAP-619)
 Improves sync compatibility between Web and Android by aligning event synchronization and ordering. For LMIS it ensures more consistent stock calculations across platforms.
 
 #### [Session expiration handling [ROADMAP-621]](https://dhis2.atlassian.net/browse/ROADMAP-621)
