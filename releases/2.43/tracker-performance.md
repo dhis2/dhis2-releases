@@ -223,7 +223,7 @@ The 2.43.0 soak was run at 6 users to match the original methodology; the final-
 | Child | 13,771 | 6,885,500 | 7.65 | 1,612 | +67% |
 | ANC | 14,602 | 7,301,000 | 8.11 | 1,892 | +8% |
 
-17.4M entities imported across the 90-min run. Throughput stays within a few percent of the 6u short-run peak (3.36/10.19/9.17 → 3.59/7.65/8.11); MNCH and ANC even nudge slightly higher, Child drops 25% as its DB grows fastest. p95 rises modestly for MNCH and ANC but climbs 67% for Child.
+17.4M entities imported across the 90-min run. Compared to the 6u short-run peak (3.36/10.19/9.17 → 3.59/7.65/8.11): MNCH nudges slightly higher (+7%), ANC drops 12%, Child drops 25% as its DB grows fastest. p95 rises modestly for MNCH and ANC but climbs 67% for Child.
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
@@ -265,7 +265,7 @@ The 2.43.0 soak was run at 6 users to match the original methodology; the final-
 
 2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4. c3p0 is deprecated and will be removed in a future version (see [DHIS2-13818](https://dhis2.atlassian.net/browse/DHIS2-13818)); see the [HikariCP benchmark](https://github.com/brettwooldridge/HikariCP-benchmark) for background on why HikariCP is generally faster.
 
-**2.43: HikariCP (default) vs c3p0.** At matched concurrency, c3p0 on 2.43 delivers roughly equivalent throughput to HikariCP (within ±18% at the same user count) but consistently worse p95 (5-31% higher across all three programs at the shared 7u sweet spot). HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency, particularly on MNCH.
+**2.43: HikariCP (default) vs c3p0.** At matched concurrency, c3p0 on 2.43 delivers roughly equivalent throughput to HikariCP (within ±18% at the same user count) but consistently worse p95 (3-32% higher across all three programs at the shared 7u sweet spot). HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency, particularly on MNCH.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
@@ -478,7 +478,7 @@ Matched concurrency:
 | Get first event from enrollment | 63 | 79 | 38 | 72 | 76 | 155 |
 | Get relationships for first TE | 5 | 5 | 4 | 6 | 7 | 65 |
 
-**`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 went from 87 ms (1u) to 492 ms (2u) to 27.3 s (4u); on the final 2.43.0 image (2026-05-07) p95 is 1,321 ms (1u) → 36,623 ms (2u) → 9,979 ms (4u) → 5,089 ms (6u). The 2.43 numbers are non-monotonic: at 2u 25/28 samples returned in 1-5 s and 3/28 sat near 36 s (essentially Gatling-timeout-adjacent), inflating p95; at 4u and 6u the long tail is shorter and most samples are under 1 s (median 709/712 ms). This is consistent with the bimodal behaviour on the same runner: the slow mode dominates 2u (small sample, less averaging) and is diluted by higher concurrency.
+**`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 went from 87 ms (1u) to 492 ms (2u) to 27.3 s (4u); on the final 2.43.0 image (2026-05-07) p95 is 1,321 ms (1u) → 36,623 ms (2u) → 9,979 ms (4u) → 5,089 ms (6u). The 2.43 numbers are non-monotonic: at 2u 23/28 samples returned in 2-3 s, 2/28 in the 6-14 s range, and 3/28 sat near 36 s (essentially Gatling-timeout-adjacent), inflating p95; at 4u and 6u the p95 tail is shorter and most samples are under 1 s (median 709/713 ms). This is consistent with the bimodal behaviour on the same runner: the slow mode dominates 2u (small sample, less averaging) and is diluted by higher concurrency.
 
 ### What changed
 
