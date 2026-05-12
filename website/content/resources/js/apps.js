@@ -117,6 +117,7 @@ fetch('../data/apphub.json')
             },
             yaxis: {
                 borderwidth: 0,
+                autorange: 'reversed',
                 // title: 'DHIS2 Core Team Apps',
             },
             margin: {
