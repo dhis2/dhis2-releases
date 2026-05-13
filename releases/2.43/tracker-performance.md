@@ -1,6 +1,6 @@
 # Tracker performance (2.43)
 
-This document backs the [tracker performance summary](ReleaseNote-2.43.md#tracker) in the 2.43 release notes with the test methodology, raw measurements, and per-issue change list.
+This document backs the [performance summary](ReleaseNote-2.43.md#performance) in the 2.43 release notes with the test methodology, raw measurements, and per-issue change list.
 
 ## Method
 
