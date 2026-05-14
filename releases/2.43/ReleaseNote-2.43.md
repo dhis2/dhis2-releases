@@ -12,7 +12,7 @@
   
 ## Performance
 #### [Infrastructure to measure and compare DHIS2 performance [ROADMAP-400]](https://dhis2.atlassian.net/browse/ROADMAP-400)
-New infrastructure for systematically benchmarking DHIS2 performance across versions, enabling data-driven release QA. v43 results show major tracker import/export gains vs v42/v41; see [Tracker performance (2.43)](tracker-performance.md) for full methodology, raw measurements, and per-issue change list. Follow the Roadmap Idea link for the broader infrastructure work.
+New infrastructure for systematically benchmarking DHIS2 performance across versions, enabling data-driven release QA. v43 results show major import/export gains vs v42/v41. Follow the Roadmap Idea link for full methodology and details.
 
 #### [Dedicated analytics backend database [ROADMAP-49]](https://dhis2.atlassian.net/browse/ROADMAP-49) [[ROADMAP-394]](https://dhis2.atlassian.net/browse/ROADMAP-394)
 DHIS2 supports Apache Doris and Clickhouse as dedicated analytics database to improve query performance and analytics table updates. Modernizes backend code with better structure and testing. Available for aggregate data in v42 and individual data in v43.
