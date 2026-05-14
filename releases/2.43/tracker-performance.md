@@ -1,14 +1,12 @@
 # Tracker performance (2.43)
 
-> **Note:** These are preliminary results based on pre-release builds. Final numbers will be updated when the 2.43.0 release is published.
-
-This document backs the [tracker performance summary](ReleaseNote-2.43.md#tracker) in the 2.43 release notes with the test methodology, raw measurements, and per-issue change list.
+This document backs the [performance summary](ReleaseNote-2.43.md#performance) in the 2.43 release notes with the test methodology, raw measurements, and per-issue change list.
 
 ## Method
 
 All tests use the [TrackerTest](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/dhis-2/dhis-test-performance/src/test/java/org/hisp/dhis/test/tracker/TrackerTest.java) Gatling simulation from `dhis-2/dhis-test-performance`, pinned to master commit [`0bce5b265e8c2d339a8d612b2b880ef2cb271756`](https://github.com/dhis2/dhis2-core/commit/0bce5b265e8c2d339a8d612b2b880ef2cb271756). Runs are executed via the [`performance-tests.yml`](https://github.com/dhis2/dhis2-core/blob/0bce5b265e8c2d339a8d612b2b880ef2cb271756/.github/workflows/performance-tests.yml) workflow. Each run is linked by GitHub Actions run ID; artifacts (Gatling HTML report, `simulation.csv`, ...) are available for 90 days.
 
-p95 values come from [`gstat` v0.2.0](https://github.com/dhis2/gatling-statistics/releases/tag/v0.2.0) over each run's `simulation.csv`; see [its percentile note](https://github.com/dhis2/gatling-statistics#percentiles) for why these will not exactly match the Gatling HTML report. All p95 values are in milliseconds.
+p95 values come from [`gstat` v0.4.0](https://github.com/dhis2/gatling-statistics/releases/tag/v0.4.0) over each run's `simulation.csv`; see [its percentile note](https://github.com/dhis2/gatling-statistics#percentiles) for why these will not exactly match the Gatling HTML report. All p95 values are in milliseconds. The 2.43.0 numbers in this revision of the doc were recomputed with v0.4.0 against the final 2.43.0 image; the 2.42.4 and 2.41.8 numbers were originally computed with v0.2.0 and are unchanged. Percentile values are stable across the two versions for the data used here.
 
 Request counts and throughput (req/s) in the [Import](#import) tables are computed directly from `simulation.csv`, **per program**: `count / (max(end_timestamp) − min(start_timestamp))` over that program's rows only. The import scenario runs MNCH → Child → ANC sequentially, so each program is active for ~1/3 of the total run wall time. The per-program span captures the rate the system sustained while that program was being driven. This is **not** what Gatling's HTML report or `gstat req_per_sec` show: both use the whole-run window as denominator, so the per-program rates in the import tables are ~3x higher than the whole-run numbers Gatling and `gstat` report. The [Export](#export) tables do not report throughput.
 
@@ -20,7 +18,7 @@ All percentage deltas in this document use `(new − old) / old`. In column head
 
 | Version | Image | DB_VERSION | Default pool | Notes |
 |---|---|---|---|---|
-| 2.43.0 | `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55` | 2.42.0 | HikariCP | patch/2.43.0 at [`838e47af4c8`](https://github.com/dhis2/dhis2-core/commit/838e47af4c8) (2026-04-15). |
+| 2.43.0 | `dhis2/core:2.43.0@sha256:5c077d30fc186ed1b20ebb8bcfc9cf031c83c1e836d36930b92d607bda2d4bde` | 2.42.0 | HikariCP | 2.43.0 at [`0c543cc7776`](https://github.com/dhis2/dhis2-core/commit/0c543cc7776) (2026-05-05). |
 | 2.42.4 | `dhis2/core:2.42.4` | 2.42.0 | c3p0 | latest stable 2.42 release |
 | 2.41.8 | `dhis2/core:2.41.8` | 2.41.0 | c3p0 | latest stable 2.41 release |
 
@@ -81,13 +79,13 @@ gh workflow run performance-tests.yml \
   --repo dhis2/dhis2-core \
   --field perf_tests_git_ref="0bce5b265e8c2d339a8d612b2b880ef2cb271756" \
   --field test_name="import-2.43.0-7users-30min" \
-  --field test_env="DHIS2_IMAGE=dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55
+  --field test_env="DHIS2_IMAGE=dhis2/core:2.43.0@sha256:5c077d30fc186ed1b20ebb8bcfc9cf031c83c1e836d36930b92d607bda2d4bde
 DB_VERSION=2.42.0
 SIMULATION_CLASS=org.hisp.dhis.test.tracker.TrackerTest
 MVN_ARGS='-DtestMode=import -DimportUsers=7 -DimportDurationSec=1800'"
 ```
 
-Substitute `DHIS2_IMAGE`, `DB_VERSION` (see [Versions](#versions)), `importUsers`, and `importDurationSec` for other scenarios.
+Substitute `DHIS2_IMAGE`, `DB_VERSION` (see [Versions](#versions)), `importUsers`, and `importDurationSec` for other scenarios. The c3p0 runs in the [DB connection pool](#db-connection-pool) section use a different `perf_tests_git_ref` (`8ff23e1760ace5a8295f59c9e79ff10a619ddb8c`) which adds `db.pool.type = c3p0` to the perf test `dhis.conf`; the export multi-user runs use ref `cc753e90e118d9727d111b7fb4fdba0033c476af` (the predecessor that allowed seeding the DB inline via `-DimportRequestsPerUser`).
 
 ## Import
 
@@ -97,45 +95,45 @@ Models a bulk-import workload: posts large batches to `POST /api/tracker`. Runs 
 
 5-min runs per concurrency level to find each program's throughput plateau. 2.43.0 scales further than 2.42.4 and 2.41.8, which saturate early; beyond ~4 users the older versions only gain p95, no throughput.
 
-**2.43.0** (image `dhis2/core:2.43.0.0-rc@sha256:f95e0dd187613483972433020ff714ef14d1cc4ddf442d8e0a7f9fe6f63aee55`)
+**2.43.0** (image `dhis2/core:2.43.0@sha256:5c077d30fc186ed1b20ebb8bcfc9cf031c83c1e836d36930b92d607bda2d4bde`)
 
-Sweet spot: **6 users** (best trade-off across all three programs). All runs had 0 KO.
+Sweet spot: **7 users** (best trade-off across all three programs; MNCH and ANC peak at 7u, Child is still climbing slowly through 8u but with worse p95). All runs had 0 KO.
 
 MNCH / PNC import:
 
 | users | req/s | p95 (ms) | run |
 |---|---|---|---|
-| 1 | 1.30 | 1214 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 1.97 | 1785 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 2.52 | 3372 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 3.03 | 3274 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| **6** | **3.78** | **2897** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| 7 | 3.08 | 4857 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 3.05 | 5701 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| 1 | 1.26 | 1363 | [25475748072](https://github.com/dhis2/dhis2-core/actions/runs/25475748072) |
+| 2 | 2.08 | 1597 | [25475749097](https://github.com/dhis2/dhis2-core/actions/runs/25475749097) |
+| 4 | 2.85 | 3024 | [25475750207](https://github.com/dhis2/dhis2-core/actions/runs/25475750207) |
+| 5 | 3.06 | 3506 | [25475751310](https://github.com/dhis2/dhis2-core/actions/runs/25475751310) |
+| 6 | 3.36 | 3451 | [25475752291](https://github.com/dhis2/dhis2-core/actions/runs/25475752291) |
+| **7** | **3.79** | **4021** | [25475753301](https://github.com/dhis2/dhis2-core/actions/runs/25475753301) |
+| 8 | 3.30 | 5581 | [25475754313](https://github.com/dhis2/dhis2-core/actions/runs/25475754313) |
 
 Child Programme import:
 
 | users | req/s | p95 (ms) | run |
 |---|---|---|---|
-| 1 | 3.15 | 416 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 5.36 | 567 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 7.15 | 1045 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 8.65 | 1012 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| 6 | 10.48 | 868 | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| **7** | **10.80** | **1126** | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 10.31 | 1542 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| 1 | 3.16 | 458 | [25475748072](https://github.com/dhis2/dhis2-core/actions/runs/25475748072) |
+| 2 | 5.53 | 467 | [25475749097](https://github.com/dhis2/dhis2-core/actions/runs/25475749097) |
+| 4 | 7.55 | 921 | [25475750207](https://github.com/dhis2/dhis2-core/actions/runs/25475750207) |
+| 5 | 8.13 | 1150 | [25475751310](https://github.com/dhis2/dhis2-core/actions/runs/25475751310) |
+| 6 | 10.19 | 965 | [25475752291](https://github.com/dhis2/dhis2-core/actions/runs/25475752291) |
+| **7** | **10.39** | **1236** | [25475753301](https://github.com/dhis2/dhis2-core/actions/runs/25475753301) |
+| 8 | 11.07 | 1330 | [25475754313](https://github.com/dhis2/dhis2-core/actions/runs/25475754313) |
 
 ANC visit import:
 
 | users | req/s | p95 (ms) | run |
 |---|---|---|---|
-| 1 | 3.36 | 604 | [24566167645](https://github.com/dhis2/dhis2-core/actions/runs/24566167645) |
-| 2 | 5.50 | 770 | [24555265579](https://github.com/dhis2/dhis2-core/actions/runs/24555265579) |
-| 4 | 6.88 | 1422 | [24555267507](https://github.com/dhis2/dhis2-core/actions/runs/24555267507) |
-| 5 | 9.11 | 1171 | [24555269466](https://github.com/dhis2/dhis2-core/actions/runs/24555269466) |
-| **6** | **9.97** | **1326** | [24555271744](https://github.com/dhis2/dhis2-core/actions/runs/24555271744) |
-| 7 | 9.15 | 2295 | [24555273620](https://github.com/dhis2/dhis2-core/actions/runs/24555273620) |
-| 8 | 9.17 | 2296 | [24555275573](https://github.com/dhis2/dhis2-core/actions/runs/24555275573) |
+| 1 | 3.41 | 596 | [25475748072](https://github.com/dhis2/dhis2-core/actions/runs/25475748072) |
+| 2 | 5.75 | 647 | [25475749097](https://github.com/dhis2/dhis2-core/actions/runs/25475749097) |
+| 4 | 7.49 | 1270 | [25475750207](https://github.com/dhis2/dhis2-core/actions/runs/25475750207) |
+| **5** | **8.98** | **1214** | [25475751310](https://github.com/dhis2/dhis2-core/actions/runs/25475751310) |
+| 6 | 9.17 | 1749 | [25475752291](https://github.com/dhis2/dhis2-core/actions/runs/25475752291) |
+| 7 | 9.98 | 1786 | [25475753301](https://github.com/dhis2/dhis2-core/actions/runs/25475753301) |
+| 8 | 9.63 | 2302 | [25475754313](https://github.com/dhis2/dhis2-core/actions/runs/25475754313) |
 
 **2.42.4** (image `dhis2/core:2.42.4`)
 
@@ -195,35 +193,37 @@ ANC visit import:
 
 **Summary.**
 
-Throughput at each version's best concurrency (2.43 at 6 users, 2.42.4 and 2.41.8 at 4):
+Throughput at each version's best concurrency (2.43 at 7 users, 2.42.4 and 2.41.8 at 4):
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 3.78 | 0.76 | 0.72 | +397% | +425% |
-| Child | 10.48 | 1.71 | 2.13 | +513% | +392% |
-| ANC | 9.97 | 2.13 | 2.39 | +368% | +317% |
+| MNCH | 3.79 | 0.76 | 0.72 | +399% | +426% |
+| Child | 10.39 | 1.71 | 2.13 | +507% | +388% |
+| ANC | 9.98 | 2.13 | 2.39 | +369% | +318% |
 
 p95 at the same concurrency levels:
 
 | Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 2897 | 6667 | 7016 | -57% | -59% |
-| Child | 868 | 2474 | 2062 | -65% | -58% |
-| ANC | 1326 | 2468 | 2104 | -46% | -37% |
+| MNCH | 4021 | 6667 | 7016 | -40% | -43% |
+| Child | 1236 | 2474 | 2062 | -50% | -40% |
+| ANC | 1786 | 2468 | 2104 | -28% | -15% |
 
 ### Soak test
 
 30 min per program (90 min total per version) at each version's best concurrency (from the [concurrency sweep](#concurrency-sweep)) to verify throughput holds as the DB grows.
 
-**2.43.0** (6 users, 30 min per program, 0 KO): [run 24566213531](https://github.com/dhis2/dhis2-core/actions/runs/24566213531)
+**2.43.0** (6 users, 30 min per program, 0 KO): [run 25489782293](https://github.com/dhis2/dhis2-core/actions/runs/25489782293)
+
+The 2.43.0 soak was run at 6 users to match the original methodology; the final-image short-run sweet spot is 7 users (see [concurrency sweep](#concurrency-sweep)), so this soak is at one user below the new peak.
 
 | Program | Requests | Entities | req/s | p95 (ms) | vs short-run (300s) p95 |
 |---|---|---|---|---|---|
-| MNCH | 6,500 | 3,217,500 | 3.60 | 3,605 | +24% |
-| Child | 13,895 | 6,947,500 | 7.71 | 1,584 | +83% |
-| ANC | 14,602 | 7,301,000 | 8.10 | 1,900 | +43% |
+| MNCH | 6,460 | 3,230,000 | 3.59 | 3,620 | +5% |
+| Child | 13,771 | 6,885,500 | 7.65 | 1,612 | +67% |
+| ANC | 14,602 | 7,301,000 | 8.11 | 1,892 | +8% |
 
-17.5M entities imported across the 90-min run. Throughput drops 5-26% from the short-run peak (MNCH stays close to peak, Child and ANC drop more as their DB grows fastest), p95 rises but stays within a single-digit multiple of the short-run values.
+17.4M entities imported across the 90-min run. Compared to the 6u short-run peak (3.36/10.19/9.17 → 3.59/7.65/8.11): MNCH nudges slightly higher (+7%), ANC drops 12%, Child drops 25% as its DB grows fastest. p95 rises modestly for MNCH and ANC but climbs 67% for Child.
 
 **2.42.4** (4 users, 30 min per program, 0 KO): [run 24599094195](https://github.com/dhis2/dhis2-core/actions/runs/24599094195)
 
@@ -247,46 +247,46 @@ p95 at the same concurrency levels:
 
 **Summary.**
 
-2.43 imports **4.7x more entities** in the same wall time (17.5M vs 3.7M): **4-7x more throughput with 25-66% lower p95**.
+2.43 imports **4.7x more entities** in the same wall time (17.4M vs 3.7M): **4-6x more throughput with 25-66% lower p95**.
 
 | Program | 2.43.0 req/s | 2.42.4 req/s | 2.41.8 req/s | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 3.60 | 0.77 | 0.55 | +368% | +555% |
-| Child | 7.71 | 1.49 | 1.70 | +418% | +354% |
-| ANC | 8.10 | 1.85 | 1.88 | +338% | +331% |
+| MNCH | 3.59 | 0.77 | 0.55 | +366% | +553% |
+| Child | 7.65 | 1.49 | 1.70 | +413% | +350% |
+| ANC | 8.11 | 1.85 | 1.88 | +338% | +331% |
 
 | Program | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| MNCH | 3,605 | 6,572 | 10,607 | -45% | -66% |
-| Child | 1,584 | 3,174 | 3,178 | -50% | -50% |
-| ANC | 1,900 | 2,523 | 3,235 | -25% | -41% |
+| MNCH | 3,620 | 6,572 | 10,607 | -45% | -66% |
+| Child | 1,612 | 3,174 | 3,178 | -49% | -49% |
+| ANC | 1,892 | 2,523 | 3,235 | -25% | -42% |
 
 ### DB connection pool
 
 2.43 defaults to HikariCP; 2.42.4 and 2.41.8 default to c3p0. Either can be overridden with `db.pool.type` in `dhis.conf`. We measured the non-default pool on 2.43 and on 2.42.4. c3p0 is deprecated and will be removed in a future version (see [DHIS2-13818](https://dhis2.atlassian.net/browse/DHIS2-13818)); see the [HikariCP benchmark](https://github.com/brettwooldridge/HikariCP-benchmark) for background on why HikariCP is generally faster.
 
-**2.43: HikariCP (default) vs c3p0.** c3p0 on 2.43 peaks slightly higher in concurrency (7 users vs HikariCP's 6) but delivers up to 11% less throughput and 21-54% higher p95 across all three programs. HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency.
+**2.43: HikariCP (default) vs c3p0.** At matched concurrency, c3p0 on 2.43 delivers roughly equivalent throughput to HikariCP (within ±18% at the same user count) but consistently worse p95 (3-32% higher across all three programs at the shared 7u sweet spot). HikariCP is the recommended default; users who opt into c3p0 get most of the 2.43 improvements but with more tail latency, particularly on MNCH.
 
 | Users | Pool | MNCH req/s | MNCH p95 | Child req/s | Child p95 | ANC req/s | ANC p95 |
 |---|---|---|---|---|---|---|---|
-| 2 | HikariCP | 1.97 | 1,785 | 5.36 | 567 | 5.50 | 770 |
-| 2 | c3p0 | 1.85 | 1,966 | 5.28 | 503 | 5.23 | 832 |
-| 4 | HikariCP | 2.52 | 3,372 | 7.15 | 1,045 | 6.88 | 1,422 |
-| 4 | c3p0 | 2.35 | 3,830 | 6.92 | 1,107 | 6.17 | 1,681 |
-| 6 | HikariCP | 3.78 | 2,897 | 10.48 | 868 | 9.97 | 1,326 |
-| 6 | c3p0 | 2.81 | 4,838 | 9.71 | 996 | 8.88 | 1,714 |
-| 7 | HikariCP | 3.08 | 4,857 | 10.80 | 1,126 | 9.15 | 2,295 |
-| 7 | c3p0 | 3.37 | 4,458 | 10.71 | 1,089 | 10.19 | 1,603 |
+| 2 | HikariCP | 2.08 | 1,597 | 5.53 | 467 | 5.75 | 647 |
+| 2 | c3p0 | 1.94 | 1,810 | 5.16 | 576 | 5.43 | 737 |
+| 4 | HikariCP | 2.85 | 3,024 | 7.55 | 921 | 7.49 | 1,270 |
+| 4 | c3p0 | 2.35 | 3,649 | 6.97 | 1,111 | 6.71 | 1,485 |
+| 6 | HikariCP | 3.36 | 3,451 | 10.19 | 965 | 9.17 | 1,749 |
+| 6 | c3p0 | 3.00 | 4,178 | 10.19 | 926 | 8.82 | 1,946 |
+| 7 | HikariCP | 3.79 | 4,021 | 10.39 | 1,236 | 9.98 | 1,786 |
+| 7 | c3p0 | 3.12 | 5,303 | 10.15 | 1,278 | 8.83 | 2,248 |
 
-At each pool's own sweet spot (HikariCP 6u, c3p0 7u). Δ is (c3p0 − HikariCP) / HikariCP.
+At the shared 7u sweet spot. Δ is (c3p0 − HikariCP) / HikariCP.
 
 | Program | HikariCP req/s | c3p0 req/s | Δ req/s | HikariCP p95 | c3p0 p95 | Δ p95 |
 |---|---|---|---|---|---|---|
-| MNCH | 3.78 | 3.37 | -11% | 2,897 | 4,458 | +54% |
-| Child | 10.48 | 10.71 | +2% | 868 | 1,089 | +25% |
-| ANC | 9.97 | 10.19 | +2% | 1,326 | 1,603 | +21% |
+| MNCH | 3.79 | 3.12 | -18% | 4,021 | 5,303 | +32% |
+| Child | 10.39 | 10.15 | -2% | 1,236 | 1,278 | +3% |
+| ANC | 9.98 | 8.83 | -12% | 1,786 | 2,248 | +26% |
 
-c3p0 runs on 2.43: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24620867667), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24620868345), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24620869073), [7u](https://github.com/dhis2/dhis2-core/actions/runs/24620869806).
+c3p0 runs on 2.43 (final image): [2u](https://github.com/dhis2/dhis2-core/actions/runs/25489783967), [4u](https://github.com/dhis2/dhis2-core/actions/runs/25489785785), [6u](https://github.com/dhis2/dhis2-core/actions/runs/25489787335), [7u](https://github.com/dhis2/dhis2-core/actions/runs/25489788792).
 
 **2.42.4: c3p0 (default) vs HikariCP.** On 2.42.4 switching to HikariCP is a small win on throughput (3-5% more) and a small shift on p95 (4-5% lower on MNCH and Child, 3% higher on ANC) at matched concurrency (4u, c3p0's sweet spot). It does not close the gap to 2.43: the bulk of the improvement in 2.43 comes from the import path changes listed below, not the pool.
 
@@ -332,20 +332,20 @@ Models the read traffic a Capture app user generates while navigating the UI. Th
 
 ### 1-user export (same-seeded DB)
 
-`smoke` profile: single user, each request repeated 100 times sequentially. Isolates per-request cost without concurrency. All runs 0 KO. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/24599249365), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
+`smoke` profile: single user, each request repeated 100 times sequentially. Isolates per-request cost without concurrency. All runs 0 KO. Runs: [2.43.0](https://github.com/dhis2/dhis2-core/actions/runs/25489790747), [2.42.4](https://github.com/dhis2/dhis2-core/actions/runs/24599249376), [2.41.8](https://github.com/dhis2/dhis2-core/actions/runs/24599249364).
 
 ### Event program (ANC visit) queries
 
 | Request | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| Go to first page | 156 | 16,858 | 1,980 | **-99.1%** | **-92.1%** |
-| Go to second page | 158 | 16,897 | 1,974 | **-99.1%** | **-92.0%** |
-| Search not assigned | 150 | 17,263 | 1,979 | **-99.1%** | **-92.4%** |
-| Search by date range | 703 | 2,080 | 280 | -66.2% | +151% |
-| Get first event | 40 | 47 | 14 | -15% | +186% |
-| Get relationships for first event | 4 | 4 | 3 | 0% | +33% |
+| Go to first page | 162 | 16,858 | 1,980 | **-99.0%** | **-91.8%** |
+| Go to second page | 163 | 16,897 | 1,974 | **-99.0%** | **-91.7%** |
+| Search not assigned | 163 | 17,263 | 1,979 | **-99.1%** | **-91.8%** |
+| Search by date range | 618 | 2,080 | 280 | -70.3% | +121% |
+| Get first event | 37 | 47 | 14 | -21% | +164% |
+| Get relationships for first event | 3 | 4 | 3 | -25% | 0% |
 
-The three event listing queries (`Go to first page`, `Go to second page`, `Search not assigned`) on 2.43 are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. `Search by date range` is also faster on 2.43 than 2.42.4 (~3x) but slower than 2.41.8 (703 vs 280 ms). `Get first event` is 40 ms on 2.43 vs 47 on 2.42.4 and 14 on 2.41.8 (+26 ms vs 2.41.8); `Get relationships for first event` is within 1 ms on all three. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the single-event query join eliminations ([DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)). These were unlocked by [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961), which split tracker events and single events into separate tables so each path can be optimized independently.
+The three event listing queries (`Go to first page`, `Go to second page`, `Search not assigned`) on 2.43 are ~100x faster than 2.42.4 and ~12x faster than 2.41.8. `Search by date range` is also faster on 2.43 than 2.42.4 (~3x) but slower than 2.41.8 (618 vs 280 ms). `Get first event` is 37 ms on 2.43 vs 47 on 2.42.4 and 14 on 2.41.8 (+23 ms vs 2.41.8); `Get relationships for first event` is within 1 ms on all three. Relevant 2.43 changes on the single event path include the default order change ([DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991)) and the single-event query join eliminations ([DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891)). These were unlocked by [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961), which split tracker events and single events into separate tables so each path can be optimized independently.
 
 The seeded data does not include any relationships, so relationship lookup times reflect the cost of an empty-result query path only.
 
@@ -353,22 +353,22 @@ The seeded data does not include any relationships, so relationship lookup times
 
 | Request | 2.43.0 p95 | 2.42.4 p95 | 2.41.8 p95 | 2.43 vs 2.42 | 2.43 vs 2.41 |
 |---|---|---|---|---|---|
-| Get first page of TEs | 106 | 225 | 65 | -53% | +63% |
-| Get TEs with enrollment status | 137 | 331 | 174 | -59% | -21% |
+| Get first page of TEs | 114 | 225 | 65 | -49% | +75% |
+| Get TEs with enrollment status | 145 | 331 | 174 | -56% | -17% |
 | Get TEs from events | 8 | 42 | 9 | -81% | -11% |
-| Search TE by name (like) | 125 | 183 | 134 | -32% | -7% |
+| Search TE by name (like) | 132 | 183 | 134 | -28% | -1% |
 | Search TE by name (eq) | 26 | 39 | 26 | -33% | 0% |
-| Search Birth events | 1,296 | 117 | 87 | +1008% | +1390% |
-| Not found TE by name (like) | 109 | 115 | 124 | -5% | -12% |
-| Not found TE by name (eq) | 6 | 10 | 15 | -40% | -60% |
+| Search Birth events | 1,321 | 117 | 87 | +1029% | +1418% |
+| Not found TE by name (like) | 76 | 115 | 124 | -34% | -39% |
+| Not found TE by name (eq) | 5 | 10 | 15 | -50% | -67% |
 | Get first tracked entity | 27 | 41 | 23 | -34% | +17% |
-| Get first enrollment | 20 | 21 | 12 | -5% | +67% |
-| Get first event from enrollment | 24 | 47 | 13 | -49% | +85% |
-| Get relationships for first TE | 4 | 5 | 3 | -20% | +33% |
+| Get first enrollment | 19 | 21 | 12 | -10% | +58% |
+| Get first event from enrollment | 23 | 47 | 13 | -51% | +77% |
+| Get relationships for first TE | 5 | 5 | 3 | 0% | +67% |
 
-Tracker queries on 2.43 are consistently faster than 2.42.4. Tracker-event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922)) contribute on this path, also unlocked by the tracker/single event table split in [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961). Against 2.41 the picture is mixed: 5 queries are faster on 2.43, 1 is tied, and 6 are slower by 1-41 ms (only `Get first page of TEs` exceeds 15 ms). We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs.
+Tracker queries on 2.43 are consistently faster than 2.42.4. Tracker-event query join eliminations ([DHIS2-20922](https://dhis2.atlassian.net/browse/DHIS2-20922)) contribute on this path, also unlocked by the tracker/single event table split in [DHIS2-17961](https://dhis2.atlassian.net/browse/DHIS2-17961). Against 2.41 the picture is mixed: 4 queries are faster on 2.43, 2 are within ±2%, and 6 are slower (most by 2-10 ms, with `Get first page of TEs` at +49 ms and the `Search Birth events` outlier called out below). We have not characterised run-to-run variance on this pipeline, so small deltas should not be read as regressions without repeated runs.
 
-**`Search Birth events` bimodal regression (observed 2026-04-16, no longer reproducing as of 2026-04-22).** On the original smoke runs `Search Birth events` (tracker-event listing filtered by program stage) was ~15x slower on 2.43 than on 2.41.8 (1,296 ms vs 87 ms at 1 user). Four repeat runs on that date all produced p95 within a ~15 ms band and the same bimodal pattern within each run: the first ~10 requests returned in ~90 ms, then the scenario flipped to a sustained ~1,200 ms mode for the remainder of the run (chart below). Investigation of SQL (captured PG queries and Hibernate logs), DB connection pool stats (HikariCP metrics), and GC pauses from that date showed no correlated regression — the server saw no slow queries, the pool had no waiters, and GC pauses were short and uncorrelated. The slow mode did not reproduce locally on the same 2.43 image and an equivalently-seeded DB (p95 ~60 ms across 100 iterations), so the behavior was specific to the self-hosted CI runner. Five reruns on 2026-04-22 of the same commit, image digest, and DB version no longer reproduce the bimodal (p95 13-34 ms). Something in the runner environment changed; whatever triggered the flip is not currently active. Keeping the original numbers and chart below because the regression did happen, even though we cannot currently reproduce it to dig further.
+**`Search Birth events` bimodal regression.** `Search Birth events` (tracker-event listing filtered by program stage) is ~15x slower on 2.43 than on 2.41.8 at 1 user on the CI runner (1,321 ms vs 87 ms on the final-image smoke run; first observed 2026-04-16 on the RC image at 1,296 ms). Every run shows the same bimodal pattern within itself: the first ~10 requests return in ~90 ms, then the scenario flips to a sustained ~1,300 ms mode for the remainder of the run (chart below). The chart shown is from the original 2026-04-16 RC run; the final 2.43.0 image on 2026-05-07 reproduces the identical shape (8 fast then 92 slow at ~1,300 ms). Investigation of SQL (captured PG queries and Hibernate logs), DB connection pool stats (HikariCP metrics), and GC pauses showed no correlated regression: the server saw no slow queries, the pool had no waiters, and GC pauses were short and uncorrelated. The slow mode did not reproduce locally on the same 2.43 image and an equivalently-seeded DB (p95 ~60 ms across 100 iterations), so the behavior is specific to the self-hosted CI runner. The bimodal briefly stopped reproducing on 2026-04-22 (five reruns p95 13-34 ms) but came back by the time of the final-image runs on 2026-05-07. The root cause is still not identified.
 
 ![Search Birth events response times over time (2.43.0 CI smoke run)](images/performance-tracker-search-birth-events-bimodal.png)
 
@@ -378,28 +378,28 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 `load` profile: N concurrent users loop through the scenario for 300s per run. 2.43 was run at 2/4/6 users; 2.42.4 and 2.41.8 only at 2/4 because they already show failures at 4. 2.43 is the only version that stays at 0 KO across all concurrency levels measured; at 4 users 2.43 is faster than 2.41.8 on every request (including two that did not execute at all on 2.41.8) and faster than 2.42.4 on most. `KO` counts Gatling-level failures (request hit the 60s timeout or a `.check()` assertion on the response failed).
 
-**2.43.0** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650125776), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650127007), [6u](https://github.com/dhis2/dhis2-core/actions/runs/24650128223). All 0 KO.
+**2.43.0** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/25723839557), [4u](https://github.com/dhis2/dhis2-core/actions/runs/25723841366), [6u](https://github.com/dhis2/dhis2-core/actions/runs/25723843045). All 0 KO.
 
 | Request | 2u p95 | 4u p95 | 6u p95 |
 |---|---|---|---|
-| Go to first page | 12 | 19 | 16 |
-| Go to second page | 35 | 40 | 39 |
-| Search not assigned | 28 | 38 | 38 |
-| Search by date range | 38 | 39 | 39 |
-| Get first event | 56 | 91 | 73 |
-| Get relationships for first event | 4 | 4 | 5 |
-| Get first page of TEs | 59 | 73 | 135 |
-| Get TEs with enrollment status | 941 | 948 | 5,122 |
-| Get TEs from events | 16 | 11 | 61 |
-| Search TE by name (like) | 848 | 894 | 1,037 |
-| Search TE by name (eq) | 49 | 54 | 79 |
-| Search Birth events | 2,512 | 1,008 | 14,245 |
-| Not found TE by name (like) | 748 | 752 | 1,157 |
-| Not found TE by name (eq) | 20 | 21 | 24 |
-| Get first tracked entity | 67 | 89 | 159 |
-| Get first enrollment | 30 | 27 | 177 |
-| Get first event from enrollment | 123 | 84 | 350 |
-| Get relationships for first TE | 6 | 6 | 27 |
+| Go to first page | 15 | 14 | 19 |
+| Go to second page | 40 | 39 | 41 |
+| Search not assigned | 38 | 37 | 38 |
+| Search by date range | 39 | 38 | 39 |
+| Get first event | 87 | 83 | 80 |
+| Get relationships for first event | 5 | 4 | 6 |
+| Get first page of TEs | 65 | 78 | 93 |
+| Get TEs with enrollment status | 1,280 | 1,311 | 1,750 |
+| Get TEs from events | 16 | 14 | 42 |
+| Search TE by name (like) | 911 | 895 | 1,442 |
+| Search TE by name (eq) | 69 | 95 | 90 |
+| Search Birth events | 36,623 | 9,979 | 5,089 |
+| Not found TE by name (like) | 786 | 762 | 1,003 |
+| Not found TE by name (eq) | 22 | 21 | 23 |
+| Get first tracked entity | 85 | 61 | 78 |
+| Get first enrollment | 24 | 30 | 40 |
+| Get first event from enrollment | 63 | 72 | 88 |
+| Get relationships for first TE | 5 | 6 | 6 |
 
 **2.42.4** runs: [2u](https://github.com/dhis2/dhis2-core/actions/runs/24650129500), [4u](https://github.com/dhis2/dhis2-core/actions/runs/24650130673). 10 KOs at 2u (all on ANC listings); 13 KOs at 4u (10 on MNCH import 60s timeouts, 3 on ANC listings).
 
@@ -453,32 +453,32 @@ Each spike in the chart is one of the 100 `Search Birth events` requests. Respon
 
 **Summary.**
 
-At 2u the four ANC event program requests on 2.43 are tens of ms while 2.42.4 and 2.41.8 are tens of seconds (or KO'd entirely on 2.42.4); outside of those, 2.43 is slower by ≥ 15 ms vs at least one older version on several tracker program requests (notably `Get TEs with enrollment status`, `Search TE by name (like)`, `Not found TE by name (like)`, `Search Birth events`, `Get first event from enrollment`). At 4u 2.43 is faster than 2.41.8 on every request that executed; the ANC scenario `Get first event` and `Get relationships for first event` never execute on 2.41.8 4u because the scenario gates them on a `saveAs` from `Search by date range`, which KOs on every iteration there (see the 2.41.8 table note). 2.43 is faster than 2.42.4 on most 4u requests but slower on five: `Get first event` (+29 ms), `Get TEs with enrollment status` (+90 ms), `Not found TE by name (like)` (+261 ms), `Get first tracked entity` (+13 ms), `Get first event from enrollment` (+8 ms). The 2.42/2.41 ANC failures under concurrency are not root-caused here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
+At 2u the four ANC event program requests on 2.43 are tens of ms while 2.42.4 and 2.41.8 are tens of seconds (or KO'd entirely on 2.42.4); outside of those, 2.43 is slower by ≥ 15 ms vs at least one older version on several tracker program requests (notably `Get TEs with enrollment status` +499 ms, `Search TE by name (like)` +192 ms, `Not found TE by name (like)` +320 ms, `Search Birth events` +34 s, where the `Search Birth events` 2u tail is dominated by 3/28 requests that timed out near 36 s; see Birth-events bimodal note below). At 4u 2.43 is faster than 2.41.8 on every request that executed; the ANC scenario `Get first event` and `Get relationships for first event` never execute on 2.41.8 4u because the scenario gates them on a `saveAs` from `Search by date range`, which KOs on every iteration there (see the 2.41.8 table note). 2.43 is faster than 2.42.4 on most 4u requests but slower on five: `Get first event` (+21 ms), `Get TEs with enrollment status` (+453 ms), `Search TE by name (eq)` (+4 ms), `Not found TE by name (like)` (+271 ms), `Search Birth events` (+4,105 ms). The 2.42/2.41 ANC failures under concurrency are not root-caused here; candidates include the single-event query paths that 2.43 addresses via [DHIS2-20991](https://dhis2.atlassian.net/browse/DHIS2-20991) and [DHIS2-20891](https://dhis2.atlassian.net/browse/DHIS2-20891), or connection pool exhaustion.
 
 Matched concurrency:
 
 | Request | 2.43 2u p95 | 2.42 2u p95 | 2.41 2u p95 | 2.43 4u p95 | 2.42 4u p95 | 2.41 4u p95 |
 |---|---|---|---|---|---|---|
-| Go to first page | 12 | - | 39,952 | 19 | 60,001 | - |
-| Go to second page | 35 | - | 39,641 | 40 | 59,990 | - |
-| Search not assigned | 28 | - | 39,735 | 38 | 59,929 | - |
-| Search by date range | 38 | 8,605 | 4,987 | 39 | 7,503 | - |
-| Get first event | 56 | 44 | 19 | 91 | 62 | - |
-| Get relationships for first event | 4 | 8 | 6 | 4 | 7 | - |
-| Get first page of TEs | 59 | 322 | 106 | 73 | 372 | 2,676 |
-| Get TEs with enrollment status | 941 | 781 | 117 | 948 | 858 | 2,644 |
-| Get TEs from events | 16 | 57 | 13 | 11 | 116 | 299 |
-| Search TE by name (like) | 848 | 719 | 93 | 894 | 975 | 2,539 |
-| Search TE by name (eq) | 49 | 109 | 57 | 54 | 91 | 925 |
-| Search Birth events | 2,512 | 2,460 | 492 | 1,008 | 5,874 | 27,333 |
-| Not found TE by name (like) | 748 | 466 | 446 | 752 | 491 | 28,990 |
-| Not found TE by name (eq) | 20 | 34 | 24 | 21 | 29 | 464 |
-| Get first tracked entity | 67 | 80 | 45 | 89 | 76 | 196 |
-| Get first enrollment | 30 | 23 | 12 | 27 | 29 | 65 |
-| Get first event from enrollment | 123 | 79 | 38 | 84 | 76 | 155 |
-| Get relationships for first TE | 6 | 5 | 4 | 6 | 7 | 65 |
+| Go to first page | 15 | - | 39,952 | 14 | 60,001 | - |
+| Go to second page | 40 | - | 39,641 | 39 | 59,990 | - |
+| Search not assigned | 38 | - | 39,735 | 37 | 59,929 | - |
+| Search by date range | 39 | 8,605 | 4,987 | 38 | 7,503 | - |
+| Get first event | 87 | 44 | 19 | 83 | 62 | - |
+| Get relationships for first event | 5 | 8 | 6 | 4 | 7 | - |
+| Get first page of TEs | 65 | 322 | 106 | 78 | 372 | 2,676 |
+| Get TEs with enrollment status | 1,280 | 781 | 117 | 1,311 | 858 | 2,644 |
+| Get TEs from events | 16 | 57 | 13 | 14 | 116 | 299 |
+| Search TE by name (like) | 911 | 719 | 93 | 895 | 975 | 2,539 |
+| Search TE by name (eq) | 69 | 109 | 57 | 95 | 91 | 925 |
+| Search Birth events | 36,623 | 2,460 | 492 | 9,979 | 5,874 | 27,333 |
+| Not found TE by name (like) | 786 | 466 | 446 | 762 | 491 | 28,990 |
+| Not found TE by name (eq) | 22 | 34 | 24 | 21 | 29 | 464 |
+| Get first tracked entity | 85 | 80 | 45 | 61 | 76 | 196 |
+| Get first enrollment | 24 | 23 | 12 | 30 | 29 | 65 |
+| Get first event from enrollment | 63 | 79 | 38 | 72 | 76 | 155 |
+| Get relationships for first TE | 5 | 5 | 4 | 6 | 7 | 65 |
 
-**`Search Birth events` under concurrency (2026-04-16).** The same request flagged as the 1-user outlier also degraded under concurrency on every version: 2.41.8 went from 87 ms (1u) to 492 ms (2u) to 27.3s (4u); 2.43.0 went from 1,296 ms (1u) to 2,512 ms (2u) to 14,245 ms (6u). The 2.43 numbers were non-monotonic (2,512 ms at 2u, 1,008 ms at 4u, 14,245 ms at 6u). As noted above, the 1-user bimodal pattern no longer reproduces on the current runner; the concurrency numbers here were captured during the same window and are left in the table for completeness.
+**`Search Birth events` under concurrency.** The same request flagged as the 1-user outlier also degrades under concurrency on every version: 2.41.8 went from 87 ms (1u) to 492 ms (2u) to 27.3 s (4u); on the final 2.43.0 image (2026-05-07) p95 is 1,321 ms (1u) → 36,623 ms (2u) → 9,979 ms (4u) → 5,089 ms (6u). The 2.43 numbers are non-monotonic: at 2u 23/28 samples returned in 2-3 s, 2/28 in the 6-14 s range, and 3/28 sat near 36 s (essentially Gatling-timeout-adjacent), inflating p95; at 4u and 6u the p95 tail is shorter and most samples are under 1 s (median 709/713 ms). This is consistent with the bimodal behaviour on the same runner: the slow mode dominates 2u (small sample, less averaging) and is diluted by higher concurrency.
 
 ### What changed
 
