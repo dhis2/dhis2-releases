@@ -8,19 +8,21 @@ To help you navigate the document, here's a detailed table of contents.
 
 ## Table of Contents
 
-  - [Inconsistent data](#inconsistent-data)
-    - [Tracker](#tracker)
-      - [Null Occurred Date For Single Events](#null-occurred-date-for-single-event)
-      - [Inconsistent Events](#inconsistent-events)
-      - [Tracker Associate](#tracker-associate)
+- [Inconsistent data](#inconsistent-data)
+  - [Tracker](#tracker)
+    - [Null Occurred Date for Single Events](#null-occurred-date-for-single-events)
+    - [Inconsistent Events](#inconsistent-events)
+    - [Tracker Associate](#tracker-associate)
+
 ---
-## Inconsistent-data
+
+## Inconsistent data
 
 ### Tracker
 
-### Null Occurred Date For Single Events
+### Null Occurred Date for Single Events
 
-Single events cannot be scheduled, hence `occurreddate` column in `single_event` is marked as
+Single events cannot be scheduled; therefore, the `occurreddate` column in `single_event` is marked as
 `not null`. While this constraint is enforced in the code, it was not enforced
 at the database level in the `event` table.
 
@@ -29,10 +31,10 @@ table must be made `not null`.
 
 #### Checking for Null Values
 
-To identify any `null` values in `occurredate` columns in `event` table for single events,
-you can run `Single events without an occurred date` integrity check or you can use
-the following SQL scripts, if any of these return a value of greater than 0, that means
-there are inconsistent data in the system:
+To identify any `null` values in the `occurreddate` column in the `event` table for single events,
+you can run the `Single events without an occurred date` integrity check, or you can use
+the following SQL scripts. If any of these return a value greater than 0, that means
+there is inconsistent data in the system:
 
 ##### For >= v41 Instances:
 
@@ -58,22 +60,22 @@ WHERE psi.executiondate IS NULL
 
 #### Fixing Null Values
 
-In version v43 `null` values on `occurreddate` column  in `singleevent` table is not allowed,
-and in order to upgrade all the inconsistencies must be resolved.
+In version v43, `null` values in the `occurreddate` column in the `singleevent` table are not allowed,
+and in order to upgrade, all inconsistencies must be resolved.
 So there are 2 options to fix the data:
 - Change the `null` value to a valid and meaningful date. ([Assign occurred date to event](#assign-occurred-date-to-event))
-- Completely remove the record. ([Delete events](#deleting-inconsistent-events)).
+- Completely remove the record. ([Delete events](#deleting-inconsistent-events))
 
 ##### Assign occurred date to event
 
-The system does not allow to write a `null` value in `occurreddate` column in `event` table and
-this validation was present for a long time. If the inconsistency is present, most likely,
-it is because the single event was scheduled, even though `SCHEDULE` status does not make sense
-for a single event, or the event was created and already set to `COMPLETED` and the value for
-`occurreddate` was not provided.
-Use the following script to assign a meaningful value to `occurreddate` column in `event` table
-(column is called `executiondate` for <=v40) for single events (replace `{REFERENCE_DATE}`
-with a valid date like 2025-09-01 11:26:00'):
+The system does not allow writing a `null` value in the `occurreddate` column in the `event` table, and
+this validation has been present for a long time. If the inconsistency is present, it is most likely
+because the single event was scheduled, even though `SCHEDULE` status does not make sense
+for a single event, or because the event was created and already set to `COMPLETED` without a value for
+`occurreddate`.
+Use the following script to assign a meaningful value to the `occurreddate` column in the `event` table
+(the column is called `executiondate` for <=v40) for single events (replace `{REFERENCE_DATE}`
+with a valid date like `2025-09-01 11:26:00`):
 
 ##### For >= v41 Instances:
 
@@ -107,8 +109,8 @@ and programstageinstanceid in (
 
 ##### Deleting inconsistent events
 
-The following script can be used to soft delete all the single events that have a `null` value
-in `occurreddate` column.
+The following script can be used to soft delete all single events that have a `null` value
+in the `occurreddate` column.
 
 ```sql
 update event
@@ -123,26 +125,27 @@ and eventid in (
     );
 ```
 
-Then, you can permanently delete all soft deleted events from  `data-administration` app
-in `maintenance` section, setting `Permanently remove soft deleted events` option and clicking on
+Then, you can permanently delete all soft-deleted events from the `data-administration` app
+in the `maintenance` section by setting the `Permanently remove soft deleted events` option and clicking
 `Perform maintenance option`.
 
 ### Inconsistent Events
 
-The migration script that split `event` table into `single_event` and `tracker_event` is possibly
-creating a `inconsistentevent` table to collect all the events that, during the split,
-couldn't be move to either one of the new tables because it is linked to a program stage that
-has a `null` value in `programid` column.
-This check is already performed by `program_stages_no_programs` integrity check. Running this check
-will provide all the information to fix or delete the inconsistent data if present in the system.
+The migration script that split the `event` table into `single_event` and `tracker_event` may create
+an `inconsistentevent` table to collect all events that, during the split,
+could not be moved to either of the new tables because they are linked to a program stage that
+has a `null` value in the `programid` column.
+This check is already performed by the `program_stages_no_programs` integrity check. Running this check
+will provide all the information needed to fix or delete the inconsistent data, if present in the system.
 
-If `inconsistentevent` table is present and there are records in it,
+If the `inconsistentevent` table is present and there are records in it,
 there are 2 options to fix the data:
 - Fix the program stage inconsistency with the integrity check and move the inconsistent events
-to the right table. ([Move inconsistent events to the right table](#move-inconsistent-events-to-the-right-table))
-- Completely remove the `inconsistentevent` table. ([Delete inconsistentevent table](#deleting-inconsistentevent-table)).
+  to the right table. ([Move inconsistent events to the right table](#move-inconsistent-events-to-the-right-table))
+- Completely remove the `inconsistentevent` table. ([Delete inconsistentevent table](#deleting-the-inconsistentevent-table))
 
 #### Move inconsistent events to the right table
+
 Run the following scripts:
 
 ```sql
@@ -189,7 +192,8 @@ insert into singleevent (
 drop table inconsistentevent;
 ```
 
-#### Deleting inconsistentevent table
+#### Deleting the inconsistentevent table
+
 Just run the following script:
 
 ```sql
@@ -198,8 +202,8 @@ drop table inconsistentevent;
 
 ### Tracker Associate
 
-`TRACKER_ASSOCIATE` value type is not supported anymore and if present in the DB the upgrade
+The `TRACKER_ASSOCIATE` value type is no longer supported, and if it is present in the database, the upgrade
 will fail.
-This check is already performed by `tracker_associate_is_deprecated` integrity check.
-Running this check will provide all the information to fix or delete the inconsistent data
+This check is already performed by the `tracker_associate_is_deprecated` integrity check.
+Running this check will provide all the information needed to fix or delete the inconsistent data,
 if present in the system.
