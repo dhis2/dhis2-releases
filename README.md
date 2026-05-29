@@ -6,6 +6,7 @@ This repository contains information about the DHIS 2 releases. It includes upgr
 
 You can find release and upgrade notes for the following releases below:
 
+- [2.43](releases/2.43/)
 - [2.42](releases/2.42/)
 - [2.41](releases/2.41/)
 - [2.40](releases/2.40/)
