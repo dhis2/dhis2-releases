@@ -25,6 +25,7 @@ The `storedBy` field has been removed from Notes, Tracked Entities, Enrollments,
 
 Please note that both `createdBy` and `createdByUserInfo` are set server-side, so no user input is required.
 
-For TrackedEntityAttributeValues, the `storedBy` field is still available. However, it will now store the authenticated user instead of the user provided in the payload. This value is also set server-side, making the field effectively read-only.
+For TrackedEntityAttributeValues, the `storedBy` field has been renamed to `updatedBy`. It stores the authenticated user instead of the user provided in the payload, and is also set server-side, making it effectively read-only.
+
 
 ### Analytics
