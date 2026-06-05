@@ -207,3 +207,17 @@ will fail.
 This check is already performed by the `tracker_associate_is_deprecated` integrity check.
 Running this check will provide all the information needed to fix or delete the inconsistent data,
 if present in the system.
+
+
+### Enrollment Attribute Option Combo
+
+There is a known issue in `V2_43_45__add_enrollment_categoryoptioncombo.sql` when using a non-standard default category option combo.
+
+If your database contains multiple category option combos named `default` and none of them has the canonical UID `HllvX50cXC0`, the migration will fail during upgrade. Flyway will mark the migration as failed and prevent the application from starting.
+
+Run the data integrity check "Only one default category option combo should exist" to identify duplicates before upgrading.
+
+To recover:
+
+- Ensure that either there is exactly one default category option combo, or that one of the default category option combos has the UID `HllvX50cXC0`.
+- Restart DHIS2. The migration will run again and complete successfully.
