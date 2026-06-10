@@ -8,9 +8,9 @@
             "releaseDate": "2026-05-05",
             "supported": true,
             "latestPatchVersion": 0,
-            "latestHotfixVersion": 0,
-            "latestStableUrl": "https://releases.dhis2.org/43/dhis2-stable-43.0.0.war",
-            "sha256": "6f75e6b4a42206a502b1fe40392e067bb9f7cafc3d439b5280e19e8a266ff9d9",
+            "latestHotfixVersion": 1,
+            "latestStableUrl": "https://releases.dhis2.org/43/dhis2-stable-43.0.1.war",
+            "sha256": "233590576f38931a1bf926c7954f54d7a1049c14dff6e583a1b892de6abe36c7",
             "jdk": 17,
             "patchVersions": [
                 {
@@ -22,6 +22,17 @@
                     "url": "https://releases.dhis2.org/43/dhis2-stable-43.0.0.war",
                     "sha256": "6f75e6b4a42206a502b1fe40392e067bb9f7cafc3d439b5280e19e8a266ff9d9",
                     "hotfix": false,
+                    "fileSize": "338.07 MB"
+                },
+                {
+                    "name": "2.43.0.1",
+                    "displayName": "43.0.1",
+                    "version": 0,
+                    "hotfixVersion": 1,
+                    "releaseDate": "2026-06-10",
+                    "url": "https://releases.dhis2.org/43/dhis2-stable-43.0.1.war",
+                    "sha256": "233590576f38931a1bf926c7954f54d7a1049c14dff6e583a1b892de6abe36c7",
+                    "hotfix": true,
                     "fileSize": "338.07 MB"
                 }
             ],
