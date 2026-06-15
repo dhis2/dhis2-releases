@@ -220,4 +220,4 @@ Run the data integrity check "Only one default category option combo should exis
 To recover:
 
 - Ensure that either there is exactly one default category option combo, or that one of the default category option combos has the UID `HllvX50cXC0`.
-- Restart DHIS2. The migration will run again and complete successfully.
+- Retry the DHIS2 upgrade.The migration will run again and should complete successfully.
