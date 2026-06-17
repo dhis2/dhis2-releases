@@ -20,14 +20,26 @@ To help you navigate the document, here's a detailed table of contents.
 
 ### Tracker
 
+In v43, the `event` table has been split into two separate tables: `singleevent` and `trackerevent`.
+The original `event` table stored two different types of events (single events and tracker events) in the
+same place. Because a single table had to accommodate both types, several columns could not be constrained
+as strictly as each event type required. By splitting the data into dedicated tables, we can now enforce
+the stricter constraints that are appropriate for each type.
+
+However, the rules that these new constraints represent were previously enforced only by the application
+code, not by the database itself. This means that, while the system was preventing inconsistent data from
+being written through normal use, the database had no way to guarantee it. As a result, it is possible that
+some existing data is not consistent with the constraints we now want to enforce (for example, due to direct
+database manipulation, data imports, or issues in older versions).
+
+Before these stricter constraints can be applied, we must make sure the existing data is consistent. The
+following sections explain how to check for inconsistencies and how to fix them.
+
 ### Null Occurred Date for Single Events
 
-Single events cannot be scheduled; therefore, the `occurreddate` column in `single_event` is marked as
-`not null`. While this constraint is enforced in the code, it was not enforced
+Single events cannot be scheduled; therefore, in v43 the `occurreddate` column in `singleevent`
+is marked as `not null`. While this constraint was enforced in the code, it was not enforced
 at the database level in the `event` table.
-
-To align the database with the system's constraints, the `occurreddate` column in the `singleevent`
-table must be made `not null`.
 
 #### Checking for Null Values
 
@@ -68,9 +80,9 @@ So there are 2 options to fix the data:
 
 ##### Assign occurred date to event
 
-The system does not allow writing a `null` value in the `occurreddate` column in the `event` table, and
-this validation has been present for a long time. If the inconsistency is present, it is most likely
-because the single event was scheduled, even though `SCHEDULE` status does not make sense
+The system does not allow writing a `null` value in the `occurreddate` column in the `event` table
+for single events, and this validation has been present for a long time. If the inconsistency is present,
+it is most likely because the single event was scheduled, even though `SCHEDULE` status does not make sense
 for a single event, or because the event was created and already set to `COMPLETED` without a value for
 `occurreddate`.
 Use the following script to assign a meaningful value to the `occurreddate` column in the `event` table
@@ -131,7 +143,7 @@ in the `maintenance` section by setting the `Permanently remove soft deleted eve
 
 ### Inconsistent Events
 
-The migration script that split the `event` table into `single_event` and `tracker_event` may create
+The migration script that split the `event` table into `singleevent` and `trackerevent` may create
 an `inconsistentevent` table to collect all events that, during the split,
 could not be moved to either of the new tables because they are linked to a program stage that
 has a `null` value in the `programid` column.
