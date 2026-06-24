@@ -51,7 +51,7 @@ function populateFilters(issues) {
         const option = document.createElement('option');
         option.value = release;
         option.textContent = release;
-        if (release === 'v43 (May 2026)') {
+        if (release === 'v44 (May 2027)') {
             option.selected = true;
         }
         releaseFilter.appendChild(option);
