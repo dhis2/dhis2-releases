@@ -124,75 +124,69 @@ def get_project_issues(jira, project_key, max_results=None):
         'customfield_10216': 'productAreas'
     }
     
-    start_at = 0
+    # Jira Cloud removed the legacy startAt-paginated search API. The enhanced
+    # JQL endpoint pages through results internally via nextPageToken; passing
+    # a falsy maxResults fetches every matching issue.
+    issues_batch = jira.enhanced_search_issues(
+        jql_query, maxResults=max_results or False, fields='*all')
+
     issues_data = []
-    while True:
-        issues_batch = jira.search_issues(jql_query, startAt=start_at, maxResults=1000)
-        
-        for issue in issues_batch:
-            # Get all field values
-            issue_dict = {
-                'key': issue.key,
-                'summary': issue.fields.summary,
-                'status': issue.fields.status.name,
-                'created': issue.fields.created,
-                'updated': issue.fields.updated,
-                'assignee': issue.fields.assignee.displayName if issue.fields.assignee else 'Unassigned',
-                'reporter': issue.fields.reporter.displayName,
-                'priority': issue.fields.priority.name if issue.fields.priority else 'None',
-                'issueType': issue.fields.issuetype.name
-            }
-            
-            # Add all other available fields
-            for field_name in dir(issue.fields):
-                if not field_name.startswith('_') and field_name not in issue_dict:
-                    try:
-                        value = getattr(issue.fields, field_name)
-                        if value is not None:  # Only add non-null values
-                            # Handle complex objects
-                            if hasattr(value, 'name'):
-                                value = value.name
-                            elif hasattr(value, 'value'):
-                                value = value.value
-                            elif hasattr(value, 'displayName'):
-                                value = value.displayName
-                            
-                            # Parse CustomFieldOption lists
-                            value = parse_custom_field_options(value)
-                            
-                            # Convert JIRA markup to Markdown for description field
-                            if field_name == 'description':
-                                value = convert_jira_to_markdown(value)
-                            
-                            # Use mapped field name if available
-                            final_field_name = field_mappings.get(field_name, field_name)
-                            
-                            # Convert to string if the value is not JSON serializable
-                            try:
-                                json.dumps({final_field_name: value})
-                                issue_dict[final_field_name] = value
-                            except (TypeError, OverflowError):
-                                issue_dict[final_field_name] = str(value)
-                    except:
-                        continue
-            
-            issues_data.append(issue_dict)
-        
-        if len(issues_batch) == 0 or (max_results and len(issues_data) >= max_results):
-            break
-            
-        start_at += len(issues_batch)
-    
-    if max_results:
-        issues_data = issues_data[:max_results]
-    
+    for issue in issues_batch:
+        # Get all field values
+        issue_dict = {
+            'key': issue.key,
+            'summary': issue.fields.summary,
+            'status': issue.fields.status.name,
+            'created': issue.fields.created,
+            'updated': issue.fields.updated,
+            'assignee': issue.fields.assignee.displayName if issue.fields.assignee else 'Unassigned',
+            'reporter': issue.fields.reporter.displayName,
+            'priority': issue.fields.priority.name if issue.fields.priority else 'None',
+            'issueType': issue.fields.issuetype.name
+        }
+
+        # Add all other available fields
+        for field_name in dir(issue.fields):
+            if not field_name.startswith('_') and field_name not in issue_dict:
+                try:
+                    value = getattr(issue.fields, field_name)
+                    if value is not None:  # Only add non-null values
+                        # Handle complex objects
+                        if hasattr(value, 'name'):
+                            value = value.name
+                        elif hasattr(value, 'value'):
+                            value = value.value
+                        elif hasattr(value, 'displayName'):
+                            value = value.displayName
+
+                        # Parse CustomFieldOption lists
+                        value = parse_custom_field_options(value)
+
+                        # Convert JIRA markup to Markdown for description field
+                        if field_name == 'description':
+                            value = convert_jira_to_markdown(value)
+
+                        # Use mapped field name if available
+                        final_field_name = field_mappings.get(field_name, field_name)
+
+                        # Convert to string if the value is not JSON serializable
+                        try:
+                            json.dumps({final_field_name: value})
+                            issue_dict[final_field_name] = value
+                        except (TypeError, OverflowError):
+                            issue_dict[final_field_name] = str(value)
+                except:
+                    continue
+
+        issues_data.append(issue_dict)
+
     return issues_data
 
 def main():
     # Get Jira credentials from environment variables
     email = os.getenv('JIRA_EMAIL')
     api_token = os.getenv('JIRA_API_TOKEN')
-    project_key = os.getenv('JIRA_PROJECT_KEY', 'PD')
+    project_key = os.getenv('JIRA_PROJECT_KEY', 'ROADMAP')
     
     if not all([email, api_token]):
         raise ValueError("Please set JIRA_EMAIL and JIRA_API_TOKEN environment variables")
@@ -212,10 +206,19 @@ def main():
         
         # Get issues with all fields
         issues_data = get_project_issues(jira, project_key)
-        
+
+        # Refuse to overwrite existing data with an empty result, which would
+        # silently wipe the published roadmap. An empty result here means the
+        # query failed upstream (e.g. the search API returned nothing), so fail.
+        if not issues_data:
+            raise RuntimeError(
+                f"No issues returned for project {project_key}. "
+                "Refusing to overwrite roadmap/jira_roadmap.json with an empty result."
+            )
+
         # Save to JSON
         output_file = 'roadmap/jira_roadmap.json'
-        
+
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump({
                 'metadata': {
@@ -241,6 +244,7 @@ def main():
         
     except Exception as e:
         print(f"Error: {str(e)}")
+        raise
 
 if __name__ == "__main__":
     main() 

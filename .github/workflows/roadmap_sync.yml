@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Set up Python 3.12
+    - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.10'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -41,10 +41,13 @@ jobs:
         ssh-signing-key-passphrase: ${{ secrets.DHIS2_BOT_SSH_SIGNING_PASSPHRASE }}
       
     - name: Commit & Push changes
-      uses: actions-js/push@master
-      with:
-        directory: roadmap/
-        branch: master
-        github_token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
+      run: |
+        git add roadmap/
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+        git commit -m "chore: autopublish $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+        git push origin master
+      shell: bash
 
-   
