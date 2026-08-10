@@ -38,7 +38,11 @@ function process_core {
     echo "clone ${core_repo} to ${repo_path} branch ${CORE_BRANCH}"
     clone "$core_repo" "${repo_path}" "$CORE_BRANCH"
 
-    local bundle_path="dhis-2/dhis-web-server/apps-to-bundle.json"
+    local core_minor=${CORE_BRANCH#2.}
+    local bundle_path="dhis-2/dhis-web/dhis-web-apps/apps-to-bundle.json"
+    if [ "$core_minor" -ge 42 ]; then
+        bundle_path="dhis-2/dhis-web-server/apps-to-bundle.json"
+    fi
 
     echo "Extracting app repos from ${bundle_path}"
     cat "${repo_path}/${bundle_path}" | grep "d2-ci"| sed "s;https://github.com/d2-ci;${repo_root}; ; s;#.*$;${repo_extension};"

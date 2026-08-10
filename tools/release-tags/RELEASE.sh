@@ -26,7 +26,12 @@ function process_core {
     local repo_path="${TEMP}/${name}"
     clone "$core_repo" "${repo_path}" "${PATCH_BRANCH}"
 
+    local core_branch=$(core_branch_name)
+    local core_minor=${core_branch#2.}
     local bundle_path="dhis-2/dhis-web/dhis-web-apps/apps-to-bundle.json"
+    if [ "$core_minor" -ge 42 ]; then
+        bundle_path="dhis-2/dhis-web-server/apps-to-bundle.json"
+    fi
 
     # for RELEASE tagging we only tag app repos that have a patch release branch (i.e. not Continuous Delivery apps)
     readonly app_repos=($(cat "${repo_path}/${bundle_path}" | grep "${PATCH_BRANCH}" | sed 's;"https://github.com/d2-ci;git@github.com:dhis2; ; s;["#].*$;.git;'))
