@@ -27,5 +27,15 @@ Please note that both `createdBy` and `createdByUserInfo` are set server-side, s
 
 For TrackedEntityAttributeValues, the `storedBy` field has been renamed to `updatedBy`. It stores the authenticated user instead of the user provided in the payload, and is also set server-side, making it effectively read-only.
 
+#### Export requests are now bounded by a timeout
+
+Tracker export requests are now cancelled once they exceed a time budget, failing with `504 Gateway Timeout`.
+
+| Key | Default | Description |
+|---|---|---|
+| `tracker.export.timeout` | `600` | Seconds a tracker export request may spend fetching data. One budget is shared by every database query and object store read of a request. `0` disables it |
+
+10 minutes is a backstop so that no export runs unbounded, generous enough that typical workloads are unaffected. Set it below any timeout in front of DHIS2, such as a reverse proxy, so DHIS2 is the layer that times out first. See the [documentation](https://docs.dhis2.org/en/manage/reference/dhis-core-version-master/dhis.conf.html#install_tracker_configuration).
+
 
 ### Analytics
