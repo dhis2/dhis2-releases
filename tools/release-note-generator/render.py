@@ -4,7 +4,7 @@
 import re
 from dataclasses import dataclass, field
 
-from commits import REPORTED_CATEGORIES
+from commits import BUG_FIXES, FEATURES, REPORTED_CATEGORIES
 from jira_issues import ISSUE_KEY, ISSUE_KEY_PATTERN
 
 ISSUE_BROWSE = "https://dhis2.atlassian.net/browse"
@@ -25,7 +25,7 @@ COMPONENT_APPS = {
 }
 
 # The app category a Jira issue of each type joins.
-APP_CATEGORIES = {"Feature": "Features", "Bug": "Bug Fixes"}
+APP_CATEGORIES = {"Feature": FEATURES, "Bug": BUG_FIXES}
 
 
 @dataclass

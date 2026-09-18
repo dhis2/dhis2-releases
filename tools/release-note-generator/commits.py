@@ -6,9 +6,12 @@ import re
 from bundled_apps import SOURCE_ORG
 from jira_issues import ISSUE_KEY
 
+FEATURES = "Features"
+BUG_FIXES = "Bug Fixes"
+
 CONVENTIONAL_TYPES = {
-    "feat": "Features",
-    "fix": "Bug Fixes",
+    "feat": FEATURES,
+    "fix": BUG_FIXES,
     "perf": "Performance",
     "refactor": "Refactoring",
     "docs": "Documentation",
@@ -20,8 +23,8 @@ CONVENTIONAL_TYPES = {
 # Categories a release note reports, in the order they appear under each app.
 # Anything else describes the app's internals and is left out.
 REPORTED_CATEGORIES = (
-    "Features",
-    "Bug Fixes",
+    FEATURES,
+    BUG_FIXES,
     "Performance",
     "Refactoring",
     "Documentation",
@@ -35,8 +38,8 @@ THEME_PATTERNS = (
     ("dependency updates", re.compile(r"\bbump\b|\bdeps\b|dependenc", re.I)),
 )
 CATEGORY_THEMES = (
-    ("Features", "minor improvements"),
-    ("Bug Fixes", "minor bug fixes"),
+    (FEATURES, "minor improvements"),
+    (BUG_FIXES, "minor bug fixes"),
     ("Performance", "performance improvements"),
     ("Documentation", "documentation updates"),
 )
