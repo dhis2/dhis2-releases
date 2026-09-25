@@ -51,5 +51,7 @@ jobs:
         directory: website/data/
         branch: master
         github_token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
+        author_name: dhis2-bot
+        author_email: apps@dhis2.org
 
    
