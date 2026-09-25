@@ -28,6 +28,13 @@ jobs:
         ssh-signing-key: ${{ secrets.DHIS2_BOT_SSH_SIGNING_KEY }}
         ssh-signing-key-passphrase: ${{ secrets.DHIS2_BOT_SSH_SIGNING_PASSPHRASE }}
         
+    - name: Verify commit signing configuration
+      run: |
+        git config --global --get gpg.format
+        git config --global --get user.signingkey
+        git config --global --get commit.gpgsign
+        git config --global --get user.email
+    
     - name: Run the script
       run: python3 tools/app-release-notes/generate_app_notes.py
       shell: bash
