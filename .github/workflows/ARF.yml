@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@master
@@ -23,6 +23,11 @@ jobs:
         pip install requests
         pip install markdown
 
+    - uses: dhis2/action-commit-signing@v1
+      with:
+        ssh-signing-key: ${{ secrets.DHIS2_BOT_SSH_SIGNING_KEY }}
+        ssh-signing-key-passphrase: ${{ secrets.DHIS2_BOT_SSH_SIGNING_PASSPHRASE }}
+        
     - name: Run the script
       run: python3 tools/app-release-notes/generate_app_notes.py
       shell: bash
