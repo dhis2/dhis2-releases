@@ -52,6 +52,9 @@ AND (value IS NULL OR value = '');
 
 ### Notes without an enrollment or event
 
+This also applies when upgrading to 2.43.3 or a later 2.43 patch, which ships the same
+migration as `V2_43_70`.
+
 In v44 every note belongs to exactly one enrollment, tracker event or single event. Earlier versions
 left notes without one, which cannot be read through the API, when:
 
@@ -110,6 +113,9 @@ drop table inconsistentnote;
 ```
 
 ### Notes linked to more than one enrollment or event
+
+This also applies when upgrading to 2.43.3 or a later 2.43 patch, which ships the same
+migration as `V2_43_70`.
 
 The migration fails if a note is linked more than once. The tracker importer never does this, so
 such links only come from changes made directly in the database.
