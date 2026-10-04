@@ -13,6 +13,7 @@ To help you navigate the document, here's a detailed table of contents.
     - [Null Occurred Date for Single Events](#null-occurred-date-for-single-events)
     - [Inconsistent Events](#inconsistent-events)
     - [Tracker Associate](#tracker-associate)
+    - [Notes](#notes)
 
 ---
 
@@ -220,6 +221,15 @@ This check is already performed by the `tracker_associate_is_deprecated` integri
 Running this check will provide all the information needed to fix or delete the inconsistent data,
 if present in the system.
 
+
+### Notes
+
+2.43.3 replaces the `enrollment_notes`, `trackerevent_notes` and `singleevent_notes` tables with
+a reference from each note to its enrollment or event. The migration is the same as in v44, see
+the v44 migration notes before upgrading:
+
+* [Notes without an enrollment or event](../2.44/migration-notes.md#notes-without-an-enrollment-or-event)
+* [Notes linked to more than one enrollment or event](../2.44/migration-notes.md#notes-linked-to-more-than-one-enrollment-or-event)
 
 ### Enrollment Attribute Option Combo
 
