@@ -120,6 +120,10 @@ Split tables
 | eventchangelog       | singleeventchangelog | trackereventchangelog |
 | event_notes          | singleevent_notes    | trackerevent_notes    |
 
+From 2.43.3, the `singleevent_notes`, `trackerevent_notes` and `enrollment_notes` tables are
+removed. A note references its enrollment or event through a column on the `note` table instead,
+see the [migration notes](migration-notes.md#notes).
+
 Split columns
 
 | Table                       | Original event column | Single event column | Tracker event column |
