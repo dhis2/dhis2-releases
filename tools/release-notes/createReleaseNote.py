@@ -20,6 +20,8 @@ optional arguments:
 from jira import JIRA
 from pprint import pprint
 import argparse
+import os
+import re
 
 parser = argparse.ArgumentParser(description='Create a simple release note for DHIS 2, based on Jira Fix Version.')
 parser.add_argument('version', action="store", help='Patch ID. e.g. 2.32.2')
@@ -27,13 +29,18 @@ parser.add_argument('-u','--user', action="store", help='Jira user', required=Tr
 parser.add_argument('-p','--password', action="store", help='Jira password', required=True)
 args = parser.parse_args()
 
+if not re.match(r'^\d+\.\d+(\.\d+)?$', args.version):
+    parser.error('Invalid version format. Expected e.g. 2.32.2')
 
 options = {
     'server': 'https://dhis2.atlassian.net'}
 jira = JIRA(options,basic_auth=(args.user, args.password))
 
 release= args.version[0:4]
-outfile="../../releases/"+release+"/ReleaseNote-"+args.version+".md"
+releases_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), "../../releases"))
+outfile = os.path.realpath(os.path.join(releases_dir, release, "ReleaseNote-"+args.version+".md"))
+if os.path.commonpath([releases_dir, outfile]) != releases_dir:
+    parser.error('Invalid version results in an output path outside of the releases directory')
 apifile= open(outfile,'w')
 notdone="notdone.txt"
 notdonefile= open(notdone,'w')
