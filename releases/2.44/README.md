@@ -37,5 +37,21 @@ Tracker export requests are now cancelled once they exceed a time budget, failin
 
 10 minutes is a backstop so that no export runs unbounded, generous enough that typical workloads are unaffected. Set it below any timeout in front of DHIS2, such as a reverse proxy, so DHIS2 is the layer that times out first. See the [documentation](https://docs.dhis2.org/en/manage/reference/dhis-core-version-master/dhis.conf.html#install_tracker_configuration).
 
+#### Table changes
+
+If you run **custom SQL scripts** or have created **SQL views** on notes, you might need to adapt them. The `enrollment_notes`, `trackerevent_notes` and `singleevent_notes` tables have been removed. A note now references its enrollment or event through a column on the `note` table, exactly one of which is set.
+
+| Removed table      | Column on `note` |
+|--------------------|------------------|
+| enrollment_notes   | enrollmentid     |
+| trackerevent_notes | trackereventid   |
+| singleevent_notes  | singleeventid    |
+
+The upgrade moves notes without an enrollment or event to a new `inconsistentnote` table, see the [migration notes](migration-notes.md#notes-without-an-enrollment-or-event).
+
+#### Breaking Changes
+
+- `/api/identifiableObjects/{uid}` no longer returns notes. Notes are returned with their enrollment or event, for example `/api/tracker/enrollments/{uid}?fields=notes`.
+
 
 ### Analytics
