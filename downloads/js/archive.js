@@ -1,6 +1,7 @@
 // Single clean renderer for archive page
 document.addEventListener('DOMContentLoaded', async () => {
   const URL = 'v1/versions/stable.json';
+  const EOS_URL = 'v1/versions/eos.json';
   const locale = (typeof getLocaleFromURL === 'function') ? getLocaleFromURL() : 'en';
   //const locale = "fr"; // for testing only
   const texts = (typeof localizationMap !== 'undefined' && localizationMap[locale]) ? localizationMap[locale] : (typeof localizationMap !== 'undefined' ? localizationMap['en'] : {});
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let data;
   try{ const res = await fetch(URL); data = await res.json(); } catch(e){ mount.innerHTML = `<p class="error">Failed to load ${URL}</p>`; return; }
+
+  // EOS builds are optional extras: the archive still renders without them
+  let eosBuilds = {};
+  try{ const res = await fetch(EOS_URL); if (res.ok) eosBuilds = await res.json(); } catch(e){ console.warn(`Failed to load ${EOS_URL}`, e); }
 
   const releases = (data.versions || []).slice().sort((a,b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 
@@ -89,12 +94,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     card.id = `release-${idx}`;
 
     const p = getLatestPatch(r);
+    const eos = r.supported ? null : eosBuilds[r.name];
+    const eosLabel = texts.eosBuild || 'EOS build';
     const displayName = esc(r.displayName || r.name);
     const supportBadge = (r.supported) ? `<span class="badge-supported">${texts.supported || 'Supported'}</span>` : `<span class="badge-unsupported">${texts.noLongerMaintained || 'No longer maintained'}</span>`;
+    const eosBadge = eos ? `<span class="badge-eos" title="${escAttr(texts.eosNotice || '')}">${esc(eosLabel)}</span>` : '';
     const releaseDate = fmtDate(r.releaseDate);
-    const primaryUrl = escAttr((p && p.url) || r.latestStableUrl || '');
-    const primaryLabel = p ? (esc(p.displayName || p.name)) : `DHIS2 ${esc(r.name)}`;
-    const sizeText = esc((p && (p.fileSize || p.downloadSize)) || r.fileSize || r.downloadSize || '-');
+    const primaryUrl = escAttr(eos ? eos.url : ((p && p.url) || r.latestStableUrl || ''));
+    const primaryLabel = eos ? `${displayName} ${esc(eosLabel)}` : p ? (esc(p.displayName || p.name)) : `DHIS2 ${esc(r.name)}`;
+    const sizeText = esc(eos ? eos.fileSize : ((p && (p.fileSize || p.downloadSize)) || r.fileSize || r.downloadSize || '-'));
 
     const header = document.createElement('header');
     header.className = 'card-header';
@@ -114,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     header.innerHTML = `
       <div class="header-left">
-        <div class="ver">${displayName} ${supportBadge}</div>
+        <div class="ver">${displayName} ${supportBadge}${eosBadge}</div>
         <div class="date">${texts.introduced || 'Introduced:'} ${releaseDate}</div>
       </div>
       <div class="header-right">
@@ -175,10 +183,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         </tr>`;
       }).join('');
 
+      const eosRow = eos ? `<tr class="eos-row">
+          <td>${esc(eosLabel)}</td>
+          <td>${fmtDate(eos.buildDate)}</td>
+          <td><a class="button small" href="${escAttr(eos.url)}" title="Production WAR file">⬇︎ ${displayName} ${esc(eosLabel)}</a>
+            <span class="dc-download-hash" id="label${escAttr(r.name)}-eos" onClick="toggleHash('hash${escAttr(r.name)}-eos');">${texts.sha256sum || 'SHA256SUM'}</span>
+            <span class="dc-hash" id="hash${escAttr(r.name)}-eos">${esc(eos.sha256)}</span>
+          </td>
+          <td>${esc(eos.fileSize)}</td>
+          <td></td>
+        </tr>
+        <tr class="eos-row eos-note-row"><td colspan="5"><span class="eos-note">${esc(texts.eosNotice || '')}</span></td></tr>` : '';
+
       patchesTable = `
         <table class="patch-table">
           <thead><tr><th>${texts.tablePatch || 'Patch'}</th><th>${texts.tableReleaseDate || 'Release date'}</th><th>${texts.tableProductionFile || 'Production WAR file'}</th><th>${texts.tableSize || 'Size'}</th><th>${texts.tableNotes || 'Notes'}</th></tr></thead>
-          <tbody>${rows}</tbody>
+          <tbody>${eosRow}${rows}</tbody>
         </table>`;
     }
 

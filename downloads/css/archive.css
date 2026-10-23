@@ -505,6 +505,36 @@ a.badge-warning:hover {
     opacity: .85;
 }
 
+/* End-of-support build badge and its row at the top of the patch table */
+.badge-eos {
+    background: #e3f2ea;
+    color: #1e6b3a;
+    padding: 0 .4rem;
+    border-radius: 3px;
+    font-size: .8rem;
+    margin-left: .4rem;
+    border: 1px solid #a8d5b9;
+}
+
+.eos-row td {
+    background: #f4faf6;
+}
+
+/* Note row continues the EOS row above it, spanning all columns */
+.card .patch-table .eos-row:has(+ .eos-note-row) td {
+    border-bottom: none;
+}
+
+.card .patch-table .eos-note-row td {
+    border-top: none;
+    padding-top: 0;
+}
+
+.eos-note {
+    font-size: .8rem;
+    color: var(--muted);
+}
+
 .dc-hash:after {
     content: '';
     position: absolute;

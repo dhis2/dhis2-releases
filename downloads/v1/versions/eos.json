@@ -1,0 +1,65 @@
+{
+    "2.39": {
+        "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39-eos.war",
+        "buildDate": "2026-06-09",
+        "sha256": "3d55abb26db792e466ff997d2eb3a065addaa6d349bb12e93a7eb79ee330b949",
+        "fileSize": "296.01 MB",
+        "etag": "93500f66e449aa04b5dcc190c02861fe-38"
+    },
+    "2.38": {
+        "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38-eos.war",
+        "buildDate": "2026-06-09",
+        "sha256": "0d0b2384293a5d14afc77a1c1e225017d5bd10ef68d81ddcaee91521634dbfbb",
+        "fileSize": "299.14 MB",
+        "etag": "3bb384842245c3f0f1bcf84afb7902c2-38"
+    },
+    "2.37": {
+        "url": "https://releases.dhis2.org/2.37/dhis2-stable-2.37-eos.war",
+        "buildDate": "2026-06-10",
+        "sha256": "c69f76a47d44e2a005d759edd75e8e498deb8aec952e8844374c4de6c4110bc2",
+        "fileSize": "316.23 MB",
+        "etag": "203c31e5697118d5670ea86bcec6b800-40"
+    },
+    "2.36": {
+        "url": "https://releases.dhis2.org/2.36/dhis2-stable-2.36-eos.war",
+        "buildDate": "2023-12-05",
+        "sha256": "6380c41fea6c629c8f8cba20863a9a524cd5159c987effdcf230448fa24356f5",
+        "fileSize": "295.92 MB",
+        "etag": "bd71ffe00274b9177f9903b5f809d864-37"
+    },
+    "2.35": {
+        "url": "https://releases.dhis2.org/2.35/dhis2-stable-2.35-eos.war",
+        "buildDate": "2022-09-14",
+        "sha256": "9936b170895ab0925cc923f36b97f7ff74dd2f6dedbb342c0d93512d80f73be1",
+        "fileSize": "275.98 MB",
+        "etag": "cd6b00d26989b64caff09160b21167ea-35"
+    },
+    "2.34": {
+        "url": "https://releases.dhis2.org/2.34/dhis2-stable-2.34-eos.war",
+        "buildDate": "2022-11-18",
+        "sha256": "335259d78ea2f080d1f80eb2d3f7ee67aad30ac16ba0ddcfb1afaebd52a61c1b",
+        "fileSize": "300.98 MB",
+        "etag": "46808f79f9e4e4361d12eef8899b12ab-38"
+    },
+    "2.33": {
+        "url": "https://releases.dhis2.org/2.33/dhis2-stable-2.33-eos.war",
+        "buildDate": "2022-03-02",
+        "sha256": "cf11d3e00b4a8beb4a7de833e61b15bda774c88bb51362aad834cc168bffef23",
+        "fileSize": "280.09 MB",
+        "etag": "02e10cbb4be53246cd5fb0c44a45d40d-36"
+    },
+    "2.32": {
+        "url": "https://releases.dhis2.org/2.32/dhis2-stable-2.32-eos.war",
+        "buildDate": "2022-08-03",
+        "sha256": "a0982747fd03b35ab6d6b9eb9a6f17870056f450dcf74a4611f7d1906569c5cd",
+        "fileSize": "272.78 MB",
+        "etag": "d95394ff0b139ba770535e14b63d69d2-35"
+    },
+    "2.31": {
+        "url": "https://releases.dhis2.org/2.31/dhis2-stable-2.31-eos.war",
+        "buildDate": "2022-08-03",
+        "sha256": "27302fa4db1370aa823960ea750ee2b87738d5093c02d44a23dfd5166eaefc39",
+        "fileSize": "256.75 MB",
+        "etag": "284333254f2e679310b92eb8ca24b449-33"
+    }
+}

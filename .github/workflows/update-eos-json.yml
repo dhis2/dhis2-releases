@@ -1,0 +1,55 @@
+name: Update eos.json
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '37 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Run the script
+      run: |
+        python3 tools/update-eos-json/update_eos_json.py \
+          --stable-json-file downloads/v1/versions/stable.json \
+          --json-file downloads/v1/versions/eos.json
+      shell: bash
+
+    - name: pull any other changes
+      run: git pull
+      shell: bash
+
+    - uses: dhis2/action-commit-signing@v1
+      with:
+        ssh-signing-key: ${{ secrets.DHIS2_BOT_SSH_SIGNING_KEY }}
+        ssh-signing-key-passphrase: ${{ secrets.DHIS2_BOT_SSH_SIGNING_PASSPHRASE }}
+
+    - name: Commit & Push changes
+      run: |
+        git add downloads/v1/versions/eos.json
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+        git commit -m "chore: update eos.json $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+        git push origin master
+      shell: bash
+
+    - name: Upload eos.json to S3
+      uses: prewk/s3-cp-action@v2
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_region: eu-west-1
+        source: './downloads/v1/versions/eos.json'
+        dest: 's3://releases.dhis2.org/v1/versions/eos.json'
