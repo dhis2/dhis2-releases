@@ -45,7 +45,9 @@ const localizationMap = {
         jiraLink02Release: "this release on Jira",
         roadmapLink: "See the features roadmap",
         lastPatchLabel: "Final Patch",
-        lastPatchNotice: "This is the final maintenance patch for this version."
+        lastPatchNotice: "This is the final maintenance patch for this version.",
+        eosBuild: "EOS build",
+        eosNotice: "Ongoing build of this version's branch after end of support. EOS builds include selected important fixes made since the last patch release. Fixes are minimal and these builds are not regression tested."
     },
     fr: {
         latestVersion: "Dernière version",
@@ -84,7 +86,9 @@ const localizationMap = {
         jiraLink02Release: "cette version sur Jira",
         roadmapLink: "Voir la feuille de route des fonctionnalités",
         lastPatchLabel: "Dernier patch",
-        lastPatchNotice: "Ceci est le dernier patch de maintenance pour cette version."
+        lastPatchNotice: "Ceci est le dernier patch de maintenance pour cette version.",
+        eosBuild: "Build EOS",
+        eosNotice: "Build continu de la branche de cette version après la fin du support. Les builds EOS incluent une sélection de correctifs importants apportés depuis la dernière version de patch. Les correctifs sont minimaux et ces builds ne font pas l'objet de tests de régression."
     },
     es: {
         latestVersion: "Última versión",
@@ -123,7 +127,9 @@ const localizationMap = {
         jiraLink02Release: "esta versión en Jira",
         roadmapLink: "Ver la hoja de ruta de funcionalidades",
         lastPatchLabel: "Último parche",
-        lastPatchNotice: "Este es el último parche de mantenimiento para esta versión."
+        lastPatchNotice: "Este es el último parche de mantenimiento para esta versión.",
+        eosBuild: "Compilación EOS",
+        eosNotice: "Compilación continua de la rama de esta versión tras el fin del soporte. Las compilaciones EOS incluyen una selección de correcciones importantes realizadas desde la última versión de parche. Las correcciones son mínimas y estas compilaciones no se someten a pruebas de regresión."
     },
     pt: {
         latestVersion: "Versão mais recente",
@@ -162,6 +168,8 @@ const localizationMap = {
         jiraLink02Release: "esta versão no Jira",
         roadmapLink: "Ver o roteiro de funcionalidades",
         lastPatchLabel: "Último patch",
-        lastPatchNotice: "Este é o último patch de manutenção para esta versão."
+        lastPatchNotice: "Este é o último patch de manutenção para esta versão.",
+        eosBuild: "Build EOS",
+        eosNotice: "Build contínuo do ramo desta versão após o fim do suporte. Os builds EOS incluem uma seleção de correções importantes feitas desde a última versão de patch. As correções são mínimas e estes builds não passam por testes de regressão."
     }
 }; 

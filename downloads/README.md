@@ -13,15 +13,31 @@ pages themselves rarely change — updating a release usually means updating the
 
 | Page | Embedded at | Reads | Script / Style | What it shows |
 |------|-------------|-------|----------------|---------------|
-| [releases-index.html](releases-index.html) | _https://releases.dhis2.org/_ | [v1/versions/stable.json](v1/versions/stable.json) + live S3 listing | [js/releases-index.js](js/releases-index.js), [landing.css](landing.css) + [css/archive.css](css/archive.css) | Main "DHIS2 Releases" page. Stable / Development tabs, version selector, toggles for superseded patches and release candidates (the RC view queries the S3 bucket directly). |
+| [releases-index.html](releases-index.html) | _https://releases.dhis2.org/_ | [v1/versions/stable.json](v1/versions/stable.json) + [v1/versions/eos.json](v1/versions/eos.json) + live S3 listing | [js/releases-index.js](js/releases-index.js), [landing.css](landing.css) + [css/archive.css](css/archive.css) | Main "DHIS2 Releases" page. Stable / Development tabs, version selector, toggles for superseded patches and release candidates (the RC view queries the S3 bucket directly). |
 | [downloads_stable.html](downloads_stable.html) | _https://dhis2.org/downloads/_ | [v1/versions/stable.json](v1/versions/stable.json) | [js/cards.js](js/cards.js), [css/cards.css](css/cards.css) | One download card per supported major version, showing its latest patch (WAR download, SHA256, release/upgrade notes, Docker pull). |
 | [downloads_android.html](downloads_android.html) | _https://dhis2.org/downloads/_ | [v1/versions/android.json](v1/versions/android.json) | [js/carda.js](js/carda.js), [css/cards.css](css/cards.css) | Card for the latest Android Capture app (Google Play + GitHub links, Android and DHIS2 compatibility). |
 | [downloads_demodb.html](downloads_demodb.html) | _https://dhis2.org/downloads/_ | [v1/versions/stable.json](v1/versions/stable.json) | [js/demo.js](js/demo.js), [css/cards.css](css/cards.css) | Cards linking to the Sierra Leone sample databases on databases.dhis2.org for each supported version. |
 | [upcomingPatches.html](upcomingPatches.html) | _https://dhis2.org/downloads/#next_patch_ | [upcomingPatches.json](upcomingPatches.json) | [js/next.js](js/next.js), [css/next.css](css/next.css) | Timeline of patch and major releases scheduled over the next three months, with per-release detail (target date, Jira and roadmap links). |
-| [archive.html](archive.html) | _https://dhis2.org/downloads/archive/_ | [v1/versions/stable.json](v1/versions/stable.json) | [js/archive.js](js/archive.js), [css/archive.css](css/archive.css) | Browsable archive of all releases, with a version selector and a full per-patch table (downloads, sizes, hashes, release notes). |
+| [archive.html](archive.html) | _https://dhis2.org/downloads/archive/_ | [v1/versions/stable.json](v1/versions/stable.json) + [v1/versions/eos.json](v1/versions/eos.json) | [js/archive.js](js/archive.js), [css/archive.css](css/archive.css) | Browsable archive of all releases, with a version selector and a full per-patch table (downloads, sizes, hashes, release notes). |
+
+> [!IMPORTANT]
+> releases-index.html is not served from GitHub Pages: it is `index.html` at the root of the
+> `releases.dhis2.org` S3 bucket. After changing it or the files it loads, copy them to the
+> bucket from this folder:
+>
+> ```shell
+> aws s3 cp releases-index.html s3://releases.dhis2.org/index.html
+> aws s3 cp js/releases-index.js s3://releases.dhis2.org/js/releases-index.js
+> aws s3 cp landing.css s3://releases.dhis2.org/landing.css
+> aws s3 cp css/archive.css s3://releases.dhis2.org/css/archive.css
+> aws s3 cp dhis2-logo-rgb-positive.png s3://releases.dhis2.org/dhis2-logo-rgb-positive.png
+> ```
+>
+> The page reads stable.json and eos.json from the bucket's `v1/versions/`, which the
+> upload-stable-json and update-eos-json workflows keep up to date.
 
 > [!NOTE]
-> stable.json is updated automatically, but upcomingPatches.json is updated manually be the release team. 
+> stable.json and eos.json are updated automatically, but upcomingPatches.json is updated manually be the release team. 
 
 ## Shared script
 
@@ -37,6 +53,12 @@ These are the source of truth for the pages above.
 - [v1/versions/stable.json](v1/versions/stable.json) — Canonical list of stable releases.
   Each major version lists its patch versions with download URL, SHA256, file size,
   release date, hotfix and support flags. Drives the stable, demo-db and archive pages.
+- [v1/versions/eos.json](v1/versions/eos.json) — End-of-support (EOS) builds of unsupported
+  versions, keyed by version name, with download URL, build date, SHA256 and file size. EOS
+  builds are rebuilt in place whenever their branch changes, so this file is refreshed nightly
+  from the S3 bucket by the [update-eos-json](../.github/workflows/update-eos-json.yml) workflow
+  (see [tools/update-eos-json](../tools/update-eos-json)). The stable and archive pages show the
+  EOS build as the recommended download for an unsupported version.
 - [v1/versions/android.json](v1/versions/android.json) — Android Capture app versions,
   with download links, release notes and Android/DHIS2 compatibility ranges.
 - [upcomingPatches.json](upcomingPatches.json) — Schedule of upcoming releases (name,
