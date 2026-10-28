@@ -1,10 +1,17 @@
 {
+    "2.40": {
+        "url": "https://releases.dhis2.org/2.40/dhis2-stable-2.40-eos.war",
+        "buildDate": "2026-10-28",
+        "sha256": "f72bddec5d50d075a415aecef9e6b04a1151b37e3baecc2574d12b3a688dd5ba",
+        "fileSize": "337.14 MB",
+        "etag": "ca8fe824be4276550976bc3dd0b96cab-43"
+    },
     "2.39": {
         "url": "https://releases.dhis2.org/2.39/dhis2-stable-2.39-eos.war",
-        "buildDate": "2026-06-09",
-        "sha256": "3d55abb26db792e466ff997d2eb3a065addaa6d349bb12e93a7eb79ee330b949",
-        "fileSize": "296.01 MB",
-        "etag": "93500f66e449aa04b5dcc190c02861fe-38"
+        "buildDate": "2026-10-28",
+        "sha256": "56ce93f4714743ea43829a787d575e4c95f79cd1dea7e1f8bc1a44f05d0e3106",
+        "fileSize": "296.46 MB",
+        "etag": "bef1fc64071b06bb022067774008e25e-38"
     },
     "2.38": {
         "url": "https://releases.dhis2.org/2.38/dhis2-stable-2.38-eos.war",
