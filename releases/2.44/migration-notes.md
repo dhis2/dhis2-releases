@@ -9,6 +9,8 @@ Welcome to the migration notes for DHIS2 version 44.
 - [Tracked entity value has encrypted value but no plain text value](#tracked-entity-value-has-encrypted-value-but-no-plain-text-value)
 - [Notes without an enrollment or event](#notes-without-an-enrollment-or-event)
 - [Notes linked to more than one enrollment or event](#notes-linked-to-more-than-one-enrollment-or-event)
+- [The TwoYearly period type has been removed](#the-twoyearly-period-type-has-been-removed)
+
 
 ## Tracked entity value has encrypted value but no plain text value
 
@@ -135,3 +137,10 @@ Keep one link per note and delete the others before upgrading again. For example
 ```
 
 Use `enrollment_notes` and `enrollmentid`, or `singleevent_notes` and `singleevent`, to remove a link to an enrollment or single event.
+
+
+## The TwoYearly period type has been removed
+
+The obsolete `TwoYearly` period type has been removed. It has not been functional for well over a decade, so we expect nothing to reference it. If anything still does — through a data set, data approval workflow, configuration, validation rule, predictor, program, program stage or period boundary — the database cannot be cleaned up automatically, and the migration will fail. The error message lists the referencing tables, columns and row counts, and no rows are changed.
+
+Resolve this manually before upgrading: decide what to do with each referenced row (for example reassign it to another period type, or delete it), then run the migration again.
