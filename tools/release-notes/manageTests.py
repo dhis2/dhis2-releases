@@ -39,7 +39,8 @@ label = args.label
 
 print(zql)
 
-r = requests.get('https://jira.dhis2.org/rest/zapi/latest/zql/executeSearch?maxRecords=500&zqlQuery='+zql, auth=(args.user, args.password))
+r = requests.get('https://jira.dhis2.org/rest/zapi/latest/zql/executeSearch',
+    params={'maxRecords': 500, 'zqlQuery': zql}, auth=(args.user, args.password), timeout=30)
 
 if r.status_code == 200:
     executions = r.json()
