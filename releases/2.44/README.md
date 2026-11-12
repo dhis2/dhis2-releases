@@ -52,6 +52,6 @@ The upgrade moves notes without an enrollment or event to a new `inconsistentnot
 #### Breaking Changes
 
 - `/api/identifiableObjects/{uid}` no longer returns notes. Notes are returned with their enrollment or event, for example `/api/tracker/enrollments/{uid}?fields=notes`.
-
+- The authority "Search Tracked Entity Instance in All Org Units" (`F_TRACKED_ENTITY_INSTANCE_SEARCH_IN_ALL_ORGUNITS`) has been removed. Only superusers can now search tracker data across all organisation units using the org unit mode `ALL`. From now on, non-superusers attempting to use the `ALL` mode will receive a 403 response.
 
 ### Analytics
