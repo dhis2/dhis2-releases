@@ -463,4 +463,4 @@ Note that if you want to run the query, Postgres needs to start with `-c track_c
 ## Deprecations and Removals
 
 ### Google & Bing API keys removed
-The Google & Bing Map API keys were removed from the code. To setup and use a Bing Maps API key check [this guide](https://docs.dhis2.org/en/topics/tutorials/google-earth-engine-sign-up.html#accessing-bing-maps-basemaps).
+The Google & Bing Map API keys were removed from the code. To setup and use a Bing Maps API key check [this guide](https://docs.dhis2.org/en/topics/tutorials/azure-maps-and-bing-maps-basemaps-setup.html).
