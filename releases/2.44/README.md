@@ -26,8 +26,8 @@ The `userRoles` property has been removed from programs. `/api/programs` and `/a
 The property linked programs to user roles, but no server feature reads this link. It does not give a user role access to a program.
 
 - A request with `fields=userRoles` returns the programs without the property.
-- Metadata import ignores `userRoles` in program JSON, so older exports still import.
-- `PATCH /api/programs/{uid}` with the path `/userRoles` returns `400 Bad Request`.
+- Metadata import ignores `userRoles` in program JSON, so older exports still import. The import gives no warning: the response is a normal `OK` with no error reports and nothing listed as ignored.
+- `PATCH /api/programs/{uid}` with the path `/userRoles` returns `400 Bad Request`. The response carries the message `Property userRoles does not exist on Schema` and no error code.
 - The upgrade drops the `program_userroles` table and all its rows (migration `V2_44_38`). No API returns these links after the upgrade.
 
 Before upgrading, remove `userRoles` from any script or app that reads or writes it on programs.
