@@ -20,6 +20,26 @@ To help you navigate the document, here's a detailed table of contents.
 
 ### Platform
 
+#### Removed `userRoles` from programs
+
+The `userRoles` property has been removed from programs. `/api/programs` and `/api/schemas/program` no longer return it.
+The property linked programs to user roles, but no server feature reads this link. It does not give a user role access to a program.
+
+- A request with `fields=userRoles` returns the programs without the property.
+- Metadata import ignores `userRoles` in program JSON, so older exports still import. The import gives no warning: the response is a normal `OK` with no error reports and nothing listed as ignored.
+- `PATCH /api/programs/{uid}` with the path `/userRoles` returns `400 Bad Request`. The response carries the message `Property userRoles does not exist on Schema` and no error code.
+- The upgrade drops the `program_userroles` table and all its rows (migration `V2_44_38`). No API returns these links after the upgrade.
+
+Before upgrading, remove `userRoles` from any script or app that reads or writes it on programs.
+If you need a record of the links, export them before the upgrade:
+
+```sql
+select p.uid as program, r.uid as userrole
+from program_userroles pu
+left join program p on p.programid = pu.programid
+left join userrole r on r.userroleid = pu.userroleid;
+```
+
 ### Tracker
 The `storedBy` field has been removed from Notes, Tracked Entities, Enrollments, Events, and EventDataValues. For these objects, the existing `createdBy` field should be used instead, as it already provides the relevant user information. The only exception is EventDataValues, which expose this information through the `createdByUserInfo` field.
 
